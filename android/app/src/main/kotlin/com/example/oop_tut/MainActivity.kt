@@ -1,4 +1,4 @@
-package com.example.oop_tut
+package com.artisticloops.tuts
 
 import io.flutter.embedding.android.FlutterActivity
 

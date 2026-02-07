@@ -1,4 +1,4 @@
-import "package:oop_tut/core/code_examples.dart";
+import "package:tuts/core/code_examples.dart";
 
 class RefactoringData {
   static Map<String, dynamic> getContent(String key) {

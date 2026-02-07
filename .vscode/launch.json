@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "oop_tut",
+            "name": "tuts",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "oop_tut (profile mode)",
+            "name": "tuts (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "oop_tut (release mode)",
+            "name": "tuts (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

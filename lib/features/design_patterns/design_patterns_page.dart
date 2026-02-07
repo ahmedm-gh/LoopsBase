@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
-import "package:oop_tut/core/extensions.dart";
-import "package:oop_tut/l10n/app_localizations.dart";
-import "package:oop_tut/features/design_patterns/pattern_details_page.dart";
+import "package:tuts/core/extensions.dart";
+import "package:tuts/l10n/app_localizations.dart";
+import "package:tuts/features/design_patterns/pattern_details_page.dart";
 
 class DesignPatternsPage extends StatelessWidget {
   const DesignPatternsPage({super.key});
@@ -26,7 +26,7 @@ class DesignPatternsPage extends StatelessWidget {
               "singleton",
             ],
           ),
-          const SizedBox(height: 32),
+          Divider(height: 30),
           _CategorySection(
             title: l10n.structuralPatterns,
             description: l10n.structuralPatternsDesc,
@@ -40,7 +40,7 @@ class DesignPatternsPage extends StatelessWidget {
               "proxy",
             ],
           ),
-          const SizedBox(height: 32),
+          Divider(height: 30),
           _CategorySection(
             title: l10n.behavioralPatterns,
             description: l10n.behavioralPatternsDesc,
@@ -80,23 +80,31 @@ class _CategorySection extends StatelessWidget {
     final textTheme = context.textTheme;
     final colors = context.colorScheme;
 
-    return Material(
-      type: .transparency,
-      child: Column(
-        crossAxisAlignment: .start,
-        children: [
-          Text(
-            title,
-            style: textTheme.headlineSmall?.copyWith(
-              fontWeight: .bold,
-              color: colors.primary,
+    return ListTileTheme(
+      tileColor: context.colorScheme.surfaceContainerLow,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: context.colorScheme.outlineVariant.withAlpha(80),
+        ),
+        borderRadius: .circular(10),
+      ),
+      child: Material(
+        type: .transparency,
+        child: Column(
+          crossAxisAlignment: .start,
+          spacing: 10,
+          children: [
+            Text(
+              title,
+              style: textTheme.headlineSmall?.copyWith(
+                fontWeight: .bold,
+                color: colors.primary,
+              ),
             ),
-          ),
-          const SizedBox(height: 4),
-          Text(description, style: textTheme.bodySmall),
-          const SizedBox(height: 16),
-          ...patterns.map(_PatternTile.new),
-        ],
+            Text(description),
+            ...patterns.map(_PatternTile.new),
+          ],
+        ),
       ),
     );
   }
@@ -112,8 +120,6 @@ class _PatternTile extends StatelessWidget {
     final name = _getPatternName(l10n, pattern);
 
     return ListTile(
-      tileColor: context.colorScheme.surface,
-      shape: RoundedRectangleBorder(borderRadius: .circular(12)),
       title: Text(name),
       trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
       onTap: () => Navigator.push(

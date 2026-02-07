@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import "package:intl/intl.dart" as intl;
-import "package:oop_tut/l10n/app_localizations.dart";
-import "package:oop_tut/l10n/app_localizations_en.dart";
+import "package:tuts/l10n/app_localizations.dart";
+import "package:tuts/l10n/app_localizations_en.dart";
 
 extension ContextExtensions on BuildContext {
   ThemeData get theme => Theme.of(this);

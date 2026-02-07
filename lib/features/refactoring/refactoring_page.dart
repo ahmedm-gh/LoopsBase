@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
-import "package:oop_tut/core/extensions.dart";
-import "package:oop_tut/core/refactoring_data.dart";
-import "package:oop_tut/l10n/app_localizations.dart";
-import "package:oop_tut/shared/widgets/app_widgets.dart";
+import "package:tuts/core/extensions.dart";
+import "package:tuts/core/refactoring_data.dart";
+import "package:tuts/l10n/app_localizations.dart";
+import "package:tuts/shared/app_widgets.dart";
 
 class RefactoringPage extends StatelessWidget {
   const RefactoringPage({super.key});
@@ -121,10 +121,10 @@ class _TechniqueTile extends StatelessWidget {
 
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
+      builder: (context) => AppDialog(
         title: Text(title),
         content: SizedBox(
-          width: double.maxFinite,
+          width: .maxFinite,
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: .min,
@@ -139,7 +139,7 @@ class _TechniqueTile extends StatelessWidget {
                   "Before",
                   style: TextStyle(fontWeight: .bold, color: Colors.red[700]),
                 ),
-                CodeBlock(code: before, isBad: true),
+                CodeBlock(code: before, codeQuality: .bad),
                 const SizedBox(height: 16),
                 Text(
                   "After",

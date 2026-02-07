@@ -1,53 +1,54 @@
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:url_launcher/url_launcher.dart";
-import "package:oop_tut/core/extensions.dart";
+import "package:tuts/core/extensions.dart";
+
+enum CodeQuality {
+  normal,
+  good,
+  bad;
+
+  bool get isNormal => this == .normal;
+  bool get isGood => this == .good;
+  bool get isBad => this == .bad;
+}
 
 class CodeBlock extends StatelessWidget {
   final String code;
   final String? language;
-  final bool isBad;
+  final CodeQuality codeQuality;
 
   const CodeBlock({
     super.key,
     required this.code,
     this.language = "Dart",
-    this.isBad = false,
+    this.codeQuality = .normal,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isDark = context.isDark;
+    final colors = context.colorScheme;
 
     return Directionality(
       textDirection: .ltr,
       child: Container(
-        margin: const .symmetric(vertical: 8),
         clipBehavior: .antiAlias,
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFAFAFA),
-          borderRadius: .circular(12),
+          color: colors.surfaceContainer,
+          borderRadius: .circular(10),
           border: Border.all(
-            color: isBad
-                ? Colors.red.withValues(alpha: 0.5)
-                : (isDark
-                      ? Colors.white10
-                      : Colors.grey.withValues(alpha: 0.3)),
-            width: isBad ? 1.5 : 1,
+            color: switch (codeQuality) {
+              .good => Colors.green.withValues(alpha: 0.25),
+              .bad => Colors.red.withValues(alpha: 0.25),
+              _ => colors.outlineVariant,
+            },
+            width: codeQuality.isBad ? 1.5 : 1,
           ),
-          boxShadow: [
-            if (!isDark)
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.03),
-                blurRadius: 8,
-                offset: const Offset(0, 2),
-              ),
-          ],
         ),
         child: Column(
           children: [
-            _CodeHeader(language: language, isBad: isBad, code: code),
-            _CodeContent(code: code, isDark: isDark),
+            _CodeHeader(language: language, state: codeQuality, code: code),
+            _CodeContent(code: code),
           ],
         ),
       ),
@@ -57,12 +58,12 @@ class CodeBlock extends StatelessWidget {
 
 class _CodeHeader extends StatelessWidget {
   final String? language;
-  final bool isBad;
+  final CodeQuality state;
   final String code;
 
   const _CodeHeader({
     required this.language,
-    required this.isBad,
+    required this.state,
     required this.code,
   });
 
@@ -71,12 +72,17 @@ class _CodeHeader extends StatelessWidget {
     final l10n = context.l10n;
     final isDark = context.isDark;
 
-    final statusColor = isBad ? Colors.redAccent : const Color(0xFF00C853);
-    final bgColor = isBad
-        ? Colors.red.withValues(alpha: 0.08)
-        : (isDark
-              ? Colors.white.withValues(alpha: 0.05)
-              : Colors.black.withValues(alpha: 0.03));
+    final statusColor = switch (state) {
+      .good => Colors.green,
+      .bad => Colors.red,
+      _ => Colors.grey,
+    };
+
+    final bgColor = switch (state) {
+      .good => Colors.green.withValues(alpha: 0.08),
+      .bad => Colors.red.withValues(alpha: 0.08),
+      _ => Colors.grey.withValues(alpha: 0.08),
+    };
 
     return Container(
       padding: const .symmetric(horizontal: 16, vertical: 8),
@@ -102,15 +108,16 @@ class _CodeHeader extends StatelessWidget {
                 fontWeight: .w500,
               ),
             ),
-          Text(
-            // isBad ? l10n.badExample : l10n.goodExample,
-            "(${isBad ? "Bad" : "Good"})",
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: .bold,
-              color: statusColor,
+          if (!state.isNormal)
+            Text(
+              // isBad ? l10n.badExample : l10n.goodExample,
+              "(${state.isBad ? "Bad" : "Good"})",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: .bold,
+                color: statusColor,
+              ),
             ),
-          ),
           const Spacer(),
           _ActionButton(
             icon: Icons.play_arrow_rounded,
@@ -177,14 +184,15 @@ class _ActionButton extends StatelessWidget {
 
 class _CodeContent extends StatelessWidget {
   final String code;
-  final bool isDark;
 
-  const _CodeContent({required this.code, required this.isDark});
+  const _CodeContent({required this.code});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = context.isDark;
+
     return Container(
-      width: double.infinity,
+      width: .infinity,
       padding: const .all(16),
       child: SelectableText.rich(
         _SyntaxHighlighter(code, isDark).highlight(),

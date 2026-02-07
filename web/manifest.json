@@ -1,6 +1,6 @@
 {
-    "name": "oop_tut",
-    "short_name": "oop_tut",
+    "name": "tuts",
+    "short_name": "tuts",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

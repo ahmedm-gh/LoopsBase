@@ -578,6 +578,30 @@ abstract class AppLocalizations {
   /// **'References'**
   String get references;
 
+  /// No description provided for @pros.
+  ///
+  /// In en, this message translates to:
+  /// **'Pros'**
+  String get pros;
+
+  /// No description provided for @cons.
+  ///
+  /// In en, this message translates to:
+  /// **'Cons'**
+  String get cons;
+
+  /// No description provided for @whenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'When to Use'**
+  String get whenToUse;
+
+  /// No description provided for @bestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Best Use Cases'**
+  String get bestUse;
+
   /// No description provided for @close.
   ///
   /// In en, this message translates to:
@@ -661,6 +685,558 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Builders solve the \'Telescoping Constructor\' problem and provide readable code.'**
   String get builderNote;
+
+  /// No description provided for @singletonPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Controlled access to the sole instance.\nReduced name space (avoiding global variables).\nPermits refinement of operations and representation via subclassing.\nPermits a variable number of instances if logic changes.'**
+  String get singletonPros;
+
+  /// No description provided for @singletonCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Violates Single Responsibility Principle.\nCan mask bad design where components know too much about each other.\nRequires special handling in multi-threaded environments.\nDifficult to unit test due to global state.'**
+  String get singletonCons;
+
+  /// No description provided for @singletonWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when a class should have exactly one instance available to all clients (e.g., a database object or a file system manager).'**
+  String get singletonWhenToUse;
+
+  /// No description provided for @singletonBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Logging services, database connection pools, configuration managers, or hardware access.'**
+  String get singletonBestUse;
+
+  /// No description provided for @factoryMethodPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoids tight coupling between the creator and the concrete products.\nSingle Responsibility Principle: You can move the product creation code into one place.\nOpen/Closed Principle: You can introduce new product types without breaking client code.'**
+  String get factoryMethodPros;
+
+  /// No description provided for @factoryMethodCons.
+  ///
+  /// In en, this message translates to:
+  /// **'The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern.'**
+  String get factoryMethodCons;
+
+  /// No description provided for @factoryMethodWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you don\'t know beforehand the exact types and dependencies of the objects your code should work with.'**
+  String get factoryMethodWhenToUse;
+
+  /// No description provided for @factoryMethodBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'UI frameworks providing hooks for creating different components, or any system where the exact type is determined at runtime.'**
+  String get factoryMethodBestUse;
+
+  /// No description provided for @abstractFactoryPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Guarantees compatibility of products.\nAvoids tight coupling.\nSingle Responsibility Principle.\nOpen/Closed Principle.'**
+  String get abstractFactoryPros;
+
+  /// No description provided for @abstractFactoryCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Code complexity increases with many new interfaces and classes.'**
+  String get abstractFactoryCons;
+
+  /// No description provided for @abstractFactoryWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when your code needs to work with various families of related products, but you don\'t want it to depend on the concrete classes of those products.'**
+  String get abstractFactoryWhenToUse;
+
+  /// No description provided for @abstractFactoryBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Cross-platform UI toolkits (Windows/Android/iOS styles), or multiple theme support.'**
+  String get abstractFactoryBestUse;
+
+  /// No description provided for @builderPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Construct objects step-by-step.\nReuse the same construction code for various representations.\nSingle Responsibility Principle (isolated complex construction).'**
+  String get builderPros;
+
+  /// No description provided for @builderCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Increased overall complexity due to multiple new classes.'**
+  String get builderCons;
+
+  /// No description provided for @builderWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use to get rid of a \'telescoping constructor\' (too many parameters) or when you need different representations of an object.'**
+  String get builderWhenToUse;
+
+  /// No description provided for @builderBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Complex configurations, Document builders (HTML/JSON/PDF), or complex data models.'**
+  String get builderBestUse;
+
+  /// No description provided for @prototypePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Clone objects without coupling to concrete classes.\nGet rid of repeated initialization code.\nProduce complex objects more conveniently.'**
+  String get prototypePros;
+
+  /// No description provided for @prototypeCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloning complex objects with circular references might be tricky.'**
+  String get prototypeCons;
+
+  /// No description provided for @prototypeWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when the cost of creating a new object is higher than cloning an existing one.'**
+  String get prototypeWhenToUse;
+
+  /// No description provided for @prototypeBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Game engines (spawning units), Graphics software, or Object caching.'**
+  String get prototypeBestUse;
+
+  /// No description provided for @adapterPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Single Responsibility Principle (separable interface/data conversion).\nOpen/Closed Principle (new adapters without breaking client code).'**
+  String get adapterPros;
+
+  /// No description provided for @adapterCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Over-engineering (code complexity increases).'**
+  String get adapterCons;
+
+  /// No description provided for @adapterWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you want to use an existing class, but its interface isn\'t compatible with the rest of your code.'**
+  String get adapterWhenToUse;
+
+  /// No description provided for @adapterBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Integrating 3rd party libraries, Legacy code migration, or XML/JSON data mapping.'**
+  String get adapterBestUse;
+
+  /// No description provided for @bridgePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Decouples abstraction from implementation.\nPlatform-independent code.\nOpen/Closed Principle.'**
+  String get bridgePros;
+
+  /// No description provided for @bridgeCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Might make code more complicated in highly cohesive classes.'**
+  String get bridgeCons;
+
+  /// No description provided for @bridgeWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you want to divide and organize a monolithic class that has several variants of some functionality.'**
+  String get bridgeWhenToUse;
+
+  /// No description provided for @bridgeBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'GUI frameworks, Cross-platform drivers, or Graphics libraries.'**
+  String get bridgeBestUse;
+
+  /// No description provided for @compositePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Work with complex tree structures conveniently.\nOpen/Closed Principle.'**
+  String get compositePros;
+
+  /// No description provided for @compositeCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Difficult to provide a common interface for classes whose functionality differs too much.'**
+  String get compositeCons;
+
+  /// No description provided for @compositeWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you have to implement a tree-like object structure.'**
+  String get compositeWhenToUse;
+
+  /// No description provided for @compositeBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'File systems, UI component hierarchies (widgets), or XML structures.'**
+  String get compositeBestUse;
+
+  /// No description provided for @decoratorPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Extend object\'s behavior without making a new subclass.\nAdd or remove responsibilities from an object at runtime.\nCombine several behaviors by wrapping an object into multiple decorators.'**
+  String get decoratorPros;
+
+  /// No description provided for @decoratorCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Difficult to remove a specific wrapper from the wrappers stack.\nHard to implement a decorator in such a way that its behavior doesn\'t depend on the order in the decorators stack.'**
+  String get decoratorCons;
+
+  /// No description provided for @decoratorWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you need to be able to assign extra behaviors to objects at runtime without breaking the code that uses these objects.'**
+  String get decoratorWhenToUse;
+
+  /// No description provided for @decoratorBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Streams (IO), Notification systems, or UI component wrappers (borders/scrollbars).'**
+  String get decoratorBestUse;
+
+  /// No description provided for @facadePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Isolate your code from the complexity of a subsystem.'**
+  String get facadePros;
+
+  /// No description provided for @facadeCons.
+  ///
+  /// In en, this message translates to:
+  /// **'A facade can become a god object coupled to all classes of an app.'**
+  String get facadeCons;
+
+  /// No description provided for @facadeWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you need to have a limited but straightforward interface to a complex subsystem.'**
+  String get facadeWhenToUse;
+
+  /// No description provided for @facadeBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Complex 3rd party SDKs, Audio/Video processing libraries, or Multi-service API clients.'**
+  String get facadeBestUse;
+
+  /// No description provided for @proxyPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Control the service object without clients knowing about it.\nManage life cycle of the service object.\nWorks even if the service object isn\'t ready or is not available.'**
+  String get proxyPros;
+
+  /// No description provided for @proxyCons.
+  ///
+  /// In en, this message translates to:
+  /// **'The code may become more complicated since you need to introduce a lot of new classes.\nThe response from the service might be delayed.'**
+  String get proxyCons;
+
+  /// No description provided for @proxyWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use for Lazy initialization (virtual proxy), Access control (protection proxy), or Logging requests (logging proxy).'**
+  String get proxyWhenToUse;
+
+  /// No description provided for @proxyBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Caching, Access Control, Lazy Loading, or Remote Service Proxy.'**
+  String get proxyBestUse;
+
+  /// No description provided for @observerPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Open/Closed Principle.\nEstablish relations between objects at runtime.'**
+  String get observerPros;
+
+  /// No description provided for @observerCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribers are notified in random order.'**
+  String get observerCons;
+
+  /// No description provided for @observerWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when changes to the state of one object may require changing other objects, and the actual set of objects is unknown beforehand or changes dynamically.'**
+  String get observerWhenToUse;
+
+  /// No description provided for @observerBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Event handling systems, UI updates in response to state changes (Streams/Notifiers), or Stock market trackers.'**
+  String get observerBestUse;
+
+  /// No description provided for @strategyPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Swap algorithms used inside an object at runtime.\nIsolate implementation details of an algorithm from code that uses it.\nOpen/Closed Principle.'**
+  String get strategyPros;
+
+  /// No description provided for @strategyCons.
+  ///
+  /// In en, this message translates to:
+  /// **'If you only have a couple of algorithms and they rarely change, no real reason to over-complicate the program with new classes.'**
+  String get strategyCons;
+
+  /// No description provided for @strategyWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.'**
+  String get strategyWhenToUse;
+
+  /// No description provided for @strategyBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment methods, Sorting algorithms, Route planning, or Compression styles.'**
+  String get strategyBestUse;
+
+  /// No description provided for @commandPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Single Responsibility Principle.\nOpen/Closed Principle.\nImplement undo/redo.\nImplement deferred execution.'**
+  String get commandPros;
+
+  /// No description provided for @commandCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Code may become more complicated since you introduce a whole new layer between senders and receivers.'**
+  String get commandCons;
+
+  /// No description provided for @commandWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you want to parametrize objects with operations or queue/schedule their execution.'**
+  String get commandWhenToUse;
+
+  /// No description provided for @commandBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'GUI button actions, Undo/Redo systems, Task queues, or Transaction logs.'**
+  String get commandBestUse;
+
+  /// No description provided for @statePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Single Responsibility Principle.\nOpen/Closed Principle.\nSimplify state-dependent code (eliminate massive switch/if-else).'**
+  String get statePros;
+
+  /// No description provided for @stateCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Applying the pattern can be overkill if a state machine has only a few states or rarely changes.'**
+  String get stateCons;
+
+  /// No description provided for @stateWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you have an object that behaves differently depending on its current state, the number of states is enormous, and the state-specific code changes frequently.'**
+  String get stateWhenToUse;
+
+  /// No description provided for @stateBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Vending machines, Game character behaviors, Order processing, or Media players.'**
+  String get stateBestUse;
+
+  /// No description provided for @chainOfResponsibilityPros.
+  ///
+  /// In en, this message translates to:
+  /// **'You can control the order of request handling.\nSingle Responsibility Principle.\nOpen/Closed Principle.'**
+  String get chainOfResponsibilityPros;
+
+  /// No description provided for @chainOfResponsibilityCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Some requests may end up unhandled.'**
+  String get chainOfResponsibilityCons;
+
+  /// No description provided for @chainOfResponsibilityWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when your program is expected to process different kinds of requests in various ways, but the exact types of requests and their sequences are unknown beforehand.'**
+  String get chainOfResponsibilityWhenToUse;
+
+  /// No description provided for @chainOfResponsibilityBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Middleware in web frameworks, event bubbling in UI, or sequential validation logic.'**
+  String get chainOfResponsibilityBestUse;
+
+  /// No description provided for @iteratorPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Single Responsibility Principle.\nOpen/Closed Principle.\nYou can delay an iteration and continue it when needed.'**
+  String get iteratorPros;
+
+  /// No description provided for @iteratorCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Applying the pattern can be an overkill if your app only works with simple collections.'**
+  String get iteratorCons;
+
+  /// No description provided for @iteratorWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when your collection has a complex data structure under the hood, but you want to hide its complexity from clients.'**
+  String get iteratorWhenToUse;
+
+  /// No description provided for @iteratorBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom collection types, directory traversal, or complex data streaming.'**
+  String get iteratorBestUse;
+
+  /// No description provided for @interpreterPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Easy to change and extend the grammar.\nImplementing the grammar is straightforward.'**
+  String get interpreterPros;
+
+  /// No description provided for @interpreterCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance becomes difficult as the number of rules in the grammar increases.'**
+  String get interpreterCons;
+
+  /// No description provided for @interpreterWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you have a simple grammar to interpret and you can represent statements in the language as abstract syntax trees.'**
+  String get interpreterWhenToUse;
+
+  /// No description provided for @interpreterBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'SQL parsing, regular expressions, or mathematical expression evaluators.'**
+  String get interpreterBestUse;
+
+  /// No description provided for @mediatorPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Single Responsibility Principle.\nOpen/Closed Principle.\nReduces coupling between various components of a program.'**
+  String get mediatorPros;
+
+  /// No description provided for @mediatorCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Over time a mediator can evolve into a God Object.'**
+  String get mediatorCons;
+
+  /// No description provided for @mediatorWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when it\'s hard to change some of the classes because they are tightly coupled to a bunch of other classes.'**
+  String get mediatorWhenToUse;
+
+  /// No description provided for @mediatorBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat application rooms, UI dialog coordination, or airline traffic control systems.'**
+  String get mediatorBestUse;
+
+  /// No description provided for @mementoPros.
+  ///
+  /// In en, this message translates to:
+  /// **'You can produce snapshots of the object\'s state without violating its encapsulation.\nYou can simplify the originator\'s code.'**
+  String get mementoPros;
+
+  /// No description provided for @mementoCons.
+  ///
+  /// In en, this message translates to:
+  /// **'The app might consume lots of RAM if clients create mementos too often.'**
+  String get mementoCons;
+
+  /// No description provided for @mementoWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you want to produce snapshots of the object\'s state to be able to restore a previous state of the object.'**
+  String get mementoWhenToUse;
+
+  /// No description provided for @mementoBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo/Redo systems, game checkpoints, or configuration rollbacks.'**
+  String get mementoBestUse;
+
+  /// No description provided for @templateMethodPros.
+  ///
+  /// In en, this message translates to:
+  /// **'You can let clients override only certain parts of a large algorithm.\nYou can pull the duplicate code into a superclass.'**
+  String get templateMethodPros;
+
+  /// No description provided for @templateMethodCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Some clients may be limited by the provided skeleton of an algorithm.'**
+  String get templateMethodCons;
+
+  /// No description provided for @templateMethodWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you want to let clients extend only particular steps of an algorithm, but not the whole algorithm or its structure.'**
+  String get templateMethodWhenToUse;
+
+  /// No description provided for @templateMethodBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Data processing frameworks, build scripts, or standard algorithm hooks.'**
+  String get templateMethodBestUse;
+
+  /// No description provided for @visitorPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Open/Closed Principle.\nSingle Responsibility Principle.\nA visitor object can accumulate some useful information while working with various objects.'**
+  String get visitorPros;
+
+  /// No description provided for @visitorCons.
+  ///
+  /// In en, this message translates to:
+  /// **'You need to update all visitors each time a class gets added to or removed from the element hierarchy.'**
+  String get visitorCons;
+
+  /// No description provided for @visitorWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use when you need to perform an operation on all elements of a complex object structure (e.g., an object tree).'**
+  String get visitorWhenToUse;
+
+  /// No description provided for @visitorBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Document exporting, code analysis tools (AST visitors), or operations on heterogeneous collections.'**
+  String get visitorBestUse;
+
+  /// No description provided for @flyweightPros.
+  ///
+  /// In en, this message translates to:
+  /// **'You can save lots of RAM, assuming your app has tons of similar objects.'**
+  String get flyweightPros;
+
+  /// No description provided for @flyweightCons.
+  ///
+  /// In en, this message translates to:
+  /// **'You might be exchanging RAM for CPU cycles when some of the context data needs to be recalculated.\nThe code becomes much more complicated.'**
+  String get flyweightCons;
+
+  /// No description provided for @flyweightWhenToUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the Flyweight pattern only when your program must support a huge number of objects which barely fit into available RAM.'**
+  String get flyweightWhenToUse;
+
+  /// No description provided for @flyweightBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Particle systems (smoke, fire), map markers in large datasets, or text editors handling millions of characters.'**
+  String get flyweightBestUse;
 }
 
 class _AppLocalizationsDelegate

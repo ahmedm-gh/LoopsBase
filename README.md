@@ -16,7 +16,8 @@ A comprehensive, visually stunning Flutter application designed to master **Obje
   - **Behavioral**: Observer, Strategy, State, etc.
 - 🛠️ **Refactoring Suite**: Step-by-step guides on transforming "bad" code into "clean" code using industry-standard techniques.
 - 💻 **Interactive Code Blocks**: Beautifully highlighted Dart code examples powered by a custom design system and FiraCode typography.
-- 🌓 **Dynamic Theme**: Supports both Light and Dark modes with a premium Indigo-based color palette and glassmorphism elements.
+- 🌓 **Dynamic Theme**: Supports both Light and Dark modes.
+<!-- - premium Indigo-based color palette. -->
 - 🌍 **Localization Support**: Built with multi-language support in mind.
 
 ---
@@ -53,7 +54,7 @@ Learn how to improve your codebase without changing its external behavior.
    ```
 2. Navigate to the project directory:
    ```bash
-   cd oop_tut
+   cd tuts
    ```
 3. Get the dependencies:
    ```bash
@@ -77,7 +78,3 @@ Learn how to improve your codebase without changing its external behavior.
 ## 📜 License
 
 This project is open-source and available for educational purposes. Feel free to use the examples in your own projects!
-
----
-
-*Made with ❤️ for the Dart & Flutter Community*

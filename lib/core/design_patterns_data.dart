@@ -1,4 +1,4 @@
-import "package:oop_tut/core/code_examples.dart";
+import "package:tuts/core/code_examples.dart";
 
 class DesignPatternData {
   static Map<String, dynamic> getCode(String key) {

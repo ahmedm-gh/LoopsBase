@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart";
-import "package:oop_tut/core/extensions.dart";
+import "package:tuts/core/extensions.dart";
 
 class ReferenceWidget extends StatelessWidget {
   final List<String> urls;

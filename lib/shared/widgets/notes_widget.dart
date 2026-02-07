@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:oop_tut/core/extensions.dart";
+import "package:tuts/core/extensions.dart";
 
 class NotesWidget extends StatelessWidget {
   final String note;

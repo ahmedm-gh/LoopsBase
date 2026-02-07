@@ -2,9 +2,9 @@ import "dart:developer";
 
 import "package:flutter/material.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
-import "package:oop_tut/l10n/app_localizations.dart";
-import "package:oop_tut/core/app_notifiers.dart";
-import "package:oop_tut/features/home/home_page.dart";
+import "package:tuts/l10n/app_localizations.dart";
+import "package:tuts/core/app_notifiers.dart";
+import "package:tuts/features/home/home_page.dart";
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +20,11 @@ class MyApp extends StatelessWidget {
       builder: (context, appValues, _) {
         log("appValues.locale: ${appValues.locale}");
         log("appValues.brightness: ${appValues.brightness}");
+        final colorScheme = ColorScheme.fromSeed(
+          seedColor: Colors.blueGrey,
+          brightness: appValues.brightness,
+        );
+
         return MaterialApp(
           locale: appValues.locale,
           supportedLocales: AppLocalizations.supportedLocales,
@@ -32,16 +37,27 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             useMaterial3: true,
-            colorScheme: .fromSeed(
-              seedColor: Colors.indigo,
-              brightness: appValues.brightness,
+            colorScheme: colorScheme,
+            dividerTheme: DividerThemeData(
+              color: colorScheme.outlineVariant,
+              thickness: 1,
+              space: 15,
+              radius: .all(.circular(1)),
             ),
-            appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
+            appBarTheme: AppBarTheme(
+              backgroundColor: colorScheme.surfaceContainerHigh,
+            ),
+            dialogTheme: DialogThemeData(
+              shape: RoundedRectangleBorder(
+                borderRadius: .circular(10),
+                side: BorderSide(color: colorScheme.outlineVariant),
+              ),
+            ),
             cardTheme: CardThemeData(
               elevation: 0,
               shape: RoundedRectangleBorder(
                 borderRadius: .circular(16),
-                side: const BorderSide(color: Colors.white10),
+                side: BorderSide(color: colorScheme.outlineVariant),
               ),
             ),
           ),
