@@ -1,16 +1,17 @@
 /// Interview question model for the Flutter interview questions feature.
 library;
 
-import 'package:tuts/core/enums/difficulty_level.dart';
 import 'package:tuts/core/models/code_block.dart';
 import 'package:tuts/core/models/content.dart';
+
+import '../enums/enums.dart';
 
 /// Represents a single interview question with all its content
 class InterviewQuestion {
   const InterviewQuestion({
     required this.id,
     required this.difficulty,
-    required this.category,
+    required this.categories,
     required this.type,
     required this.tags,
     required this.contentEn,
@@ -24,10 +25,11 @@ class InterviewQuestion {
        _prosAr = prosAr,
        _consEn = consEn,
        _prosEn = prosEn;
+
   final String id;
   final DifficultyLevel difficulty;
-  final String category;
-  final String type;
+  final List<QuestionCategory> categories;
+  final QuestionType type;
   final List<String>? tags;
   final QuestionContent contentEn, contentAr;
   final List<StrCodeBlock>? examples;
@@ -63,42 +65,4 @@ class QuestionContent {
   final List<Content> answer;
   final List<String>? notes;
   final String? bestUse;
-}
-
-/// A section of the answer
-class AnswerSection {
-  const AnswerSection({required this.content, this.title, this.codeExample});
-  final String? title;
-  final String content;
-  final String? codeExample;
-}
-
-/// Question category enum
-enum QuestionCategory {
-  basic("Basic", "أساسي"),
-  oop("OOP", "البرمجة الكائنية"),
-  solid("SOLID", "مبادئ SOLID"),
-  designPatterns("Design Patterns", "أنماط التصميم"),
-  stateManagement("State Management", "إدارة الحالة"),
-  performance("Performance", "الأداء"),
-  testing("Testing", "الاختبار"),
-  architecture("Architecture", "البنية"),
-  networking("Networking", "الشبكات"),
-  database("Database", "قواعد البيانات"),
-  animations("Animations", "الرسوم المتحركة"),
-  security("Security", "الأمان"),
-  deployment("Deployment", "النشر"),
-  modernFeatures("Modern Features", "الميزات الحديثة"),
-  nativePlatform("Native Platform", "المنصة الأصلية"),
-  dataStructures("Data Structures", "هياكل البيانات"),
-  algorithms("Algorithms", "الخوارزميات");
-
-  const QuestionCategory(this.nameEn, this.nameAr);
-
-  final String nameEn;
-  final String nameAr;
-
-  String getLocalizedName(String languageCode) {
-    return languageCode == 'ar' ? nameAr : nameEn;
-  }
 }

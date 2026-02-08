@@ -17,6 +17,7 @@ class PatternDetailsPage extends StatelessWidget {
     final l10n = context.l10n;
     final textTheme = context.textTheme;
     final pattern = DesignPatternsRepository.getPattern(context, patternKey);
+    final content = pattern.content;
 
     return Scaffold(
       appBar: AppBar(title: Text(patternName)),
@@ -38,7 +39,7 @@ class PatternDetailsPage extends StatelessWidget {
             ),
 
             // Bad Example
-            if (pattern.content.badExample != null) ...[
+            if (content.badExample != null) ...[
               Text(
                 l10n.badExample,
                 style: textTheme.titleMedium?.copyWith(
@@ -46,12 +47,12 @@ class PatternDetailsPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              if (pattern.content.badExample case final code?)
+              if (content.badExample case final code?)
                 CodeBlockViewer.fromStrCodeBlock(code),
             ],
 
             // Good Example
-            if (pattern.content.goodExample != null) ...[
+            if (content.goodExample != null) ...[
               Text(
                 l10n.goodExample,
                 style: textTheme.titleMedium?.copyWith(
@@ -59,34 +60,33 @@ class PatternDetailsPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              if (pattern.content.goodExample case final code?)
+              if (content.goodExample case final code?)
                 CodeBlockViewer.fromStrCodeBlock(code),
             ],
 
-            if (pattern.content.note case final note?)
-              SmallTitledList.notes(content: Text(note)),
+            if (content.notes case final notes? when notes.isNotEmpty)
+              SmallTitledList.notes(
+                content: notes.length == 1 ? Text(notes.first) : null,
+                items: notes.length > 1 ? notes.map(Text.new).toList() : null,
+              ),
 
-            if (pattern.content.whenToUse.isNotEmpty)
+            if (content.whenToUse case final whenToUse?
+                when whenToUse.isNotEmpty)
               SmallTitledList.whenToUse(
-                items: pattern.content.whenToUse.map(Text.new).toList(),
+                items: whenToUse.map(Text.new).toList(),
               ),
 
-            if (pattern.content.pros.isNotEmpty)
-              SmallTitledList.advantages(
-                items: pattern.content.pros.map(Text.new).toList(),
-              ),
+            if (content.pros case final pros? when pros.isNotEmpty)
+              SmallTitledList.advantages(items: pros.map(Text.new).toList()),
 
-            if (pattern.content.cons.isNotEmpty)
-              SmallTitledList.disadvantages(
-                items: pattern.content.cons.map(Text.new).toList(),
-              ),
+            if (content.cons case final cons? when cons.isNotEmpty)
+              SmallTitledList.disadvantages(items: cons.map(Text.new).toList()),
 
-            if (pattern.content.bestUse.isNotEmpty)
-              SmallTitledList.bestFor(
-                items: pattern.content.bestUse.map(Text.new).toList(),
-              ),
-            if (pattern.content.references.isNotEmpty)
-              ReferenceWidget(urls: pattern.content.references),
+            if (content.bestUse case final bestUse? when bestUse.isNotEmpty)
+              SmallTitledList.bestFor(items: bestUse.map(Text.new).toList()),
+
+            if (content.references case final refs? when refs.isNotEmpty)
+              ReferenceWidget(urls: refs),
           ],
         ),
       ),

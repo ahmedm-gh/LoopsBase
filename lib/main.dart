@@ -2,17 +2,16 @@ import "dart:developer";
 
 import "package:flutter/material.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
-import "package:tuts/core/extensions.dart";
-import "package:tuts/l10n/app_localizations.dart";
 import "package:tuts/core/app_notifiers.dart";
 import "package:tuts/features/home/home_page.dart";
+import "package:tuts/l10n/app_localizations.dart";
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   static final navigatorKey = GlobalKey<NavigatorState>();
   static BuildContext? get currentContext => navigatorKey.currentContext;
@@ -24,16 +23,14 @@ class MyApp extends StatelessWidget {
     return ValueListenableBuilder(
       valueListenable: AppNotifiers.appNotifier,
       builder: (context, appValues, _) {
-        log("appValues.locale: ${appValues.locale}");
-        log("appValues.brightness: ${appValues.brightness}");
+        log("locale: ${appValues.locale}", name: "app");
+        log("brightness: ${appValues.brightness}", name: "app");
         final colorScheme = ColorScheme.fromSeed(
           seedColor: Colors.blueGrey,
           brightness: appValues.brightness,
         );
         return MaterialApp(
           builder: (context, child) {
-            final l10n = context.l10n;
-
             return ColoredBox(
               color: colorScheme.surface,
               child: Column(
@@ -42,54 +39,12 @@ class MyApp extends StatelessWidget {
                     Expanded(child: ClipRect(child: child))
                   else
                     const Spacer(),
-                  Divider(
-                    height: 1,
-                    thickness: 1,
-                    color: colorScheme.outlineVariant,
-                  ),
-                  Material(
-                    type: .transparency,
-                    child: Directionality(
-                      textDirection: .ltr,
-                      child: SafeArea(
-                        child: Padding(
-                          padding: const .all(5),
-                          child: SizedBox(
-                            width: .infinity,
-                            child: Wrap(
-                              spacing: 10,
-                              crossAxisAlignment: .center,
-                              children: [
-                                const IconButton(
-                                  onPressed: AppNotifiers.toggleLocale,
-                                  icon: Icon(Icons.translate_rounded),
-                                ),
-                                IconButton(
-                                  key: ValueKey(appValues.brightness),
-                                  icon: Icon(
-                                    appValues.brightness == .dark
-                                        ? Icons.light_mode_rounded
-                                        : Icons.dark_mode_rounded,
-                                  ),
-                                  onPressed: AppNotifiers.toggleTheme,
-                                  tooltip: appValues.brightness == .dark
-                                      ? l10n.lightMode
-                                      : l10n.darkMode,
-                                ),
-                                const Text("LinkedIn: @ahmeds1"),
-                                const Text("GitHub: @ahmedm-gh"),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  const AppBottomBar(),
                 ],
               ),
             );
           },
-          navigatorKey: MyApp.navigatorKey,
+          navigatorKey: App.navigatorKey,
           locale: appValues.locale,
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: const [
@@ -128,6 +83,54 @@ class MyApp extends StatelessWidget {
           home: const HomePage(),
         );
       },
+    );
+  }
+}
+
+class AppBottomBar extends StatelessWidget {
+  const AppBottomBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final appValues = AppNotifiers.appNotifier.value;
+
+    return Directionality(
+      textDirection: .ltr,
+      child: Material(
+        type: .transparency,
+        child: SafeArea(
+          child: Padding(
+            padding: const .all(5),
+            child: SizedBox(
+              width: .infinity,
+              child: Wrap(
+                spacing: 10,
+                crossAxisAlignment: .center,
+                children: [
+                  const IconButton(
+                    onPressed: AppNotifiers.toggleLocale,
+                    icon: Icon(Icons.translate_rounded),
+                  ),
+                  IconButton(
+                    key: ValueKey(appValues.brightness),
+                    icon: Icon(
+                      appValues.brightness == .dark
+                          ? Icons.light_mode_rounded
+                          : Icons.dark_mode_rounded,
+                    ),
+                    onPressed: AppNotifiers.toggleTheme,
+                    // tooltip: appValues.brightness == .dark
+                    //     ? l10n.lightMode
+                    //     : l10n.darkMode,
+                  ),
+                  const Text("LinkedIn: @ahmeds1"),
+                  const Text("GitHub: @ahmedm-gh"),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

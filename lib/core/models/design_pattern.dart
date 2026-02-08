@@ -19,19 +19,20 @@ class DesignPatternContent {
   const DesignPatternContent({
     this.badExample,
     this.goodExample,
-    this.note,
-    this.pros = const [],
-    this.cons = const [],
-    this.whenToUse = const [],
-    this.bestUse = const [],
-    this.references = const [],
+    this.notes,
+    this.pros,
+    this.cons,
+    this.whenToUse,
+    this.bestUse,
+    this.references,
   });
+
   final StrCodeBlock? badExample;
   final StrCodeBlock? goodExample;
-  final String? note;
-  final List<String> pros;
-  final List<String> cons;
-  final List<String> whenToUse;
-  final List<String> bestUse;
-  final List<String> references;
+  final List<String>? notes;
+  final List<String>? pros;
+  final List<String>? cons;
+  final List<String>? whenToUse;
+  final List<String>? bestUse;
+  final List<String>? references;
 }

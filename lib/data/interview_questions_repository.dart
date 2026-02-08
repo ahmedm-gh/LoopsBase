@@ -5,7 +5,7 @@ import 'package:tuts/core/models/code_block.dart';
 import 'package:tuts/core/models/interview_question.dart';
 
 import '../../core/enums/difficulty_level.dart';
-import 'models/content.dart';
+import '../core/models/content.dart';
 
 /// Repository that provides interview questions
 class InterviewQuestionsRepository {
@@ -44,8 +44,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-001",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["widgets", "dartBasics"],
     contentEn: QuestionContent(
       question:
@@ -125,8 +125,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-002",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["widgets", "statelessWidget", "statefulWidget"],
     contentEn: QuestionContent(
       question:
@@ -186,8 +186,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-003",
     difficulty: .intermediate,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["buildContext", "widgets"],
     contentEn: QuestionContent(
       question: "What is BuildContext and why is it important?",
@@ -244,8 +244,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-004",
     difficulty: .basic,
-    category: "oop",
-    type: "theoretical",
+    categories: [.oop],
+    type: .theoretical,
     tags: [
       "dartBasics",
       "encapsulation",
@@ -299,8 +299,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-005",
     difficulty: .intermediate,
-    category: "solid",
-    type: "theoretical",
+    categories: [.solid],
+    type: .theoretical,
     tags: [
       "singleResponsibility",
       "openClosed",
@@ -355,8 +355,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-006",
     difficulty: .intermediate,
-    category: "designPatterns",
-    type: "practical",
+    categories: [.designPatterns],
+    type: .practical,
     tags: ["singleton", "factory", "repository"],
     contentEn: QuestionContent(
       question:
@@ -412,8 +412,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-007",
     difficulty: .basic,
-    category: "dataStructures",
-    type: "theoretical",
+    categories: [.dataStructures],
+    type: .theoretical,
     tags: ["dartBasics", "algorithms"],
     contentEn: QuestionContent(
       question:
@@ -472,8 +472,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-008",
     difficulty: .intermediate,
-    category: "stateManagement",
-    type: "practical",
+    categories: [.stateManagement],
+    type: .practical,
     tags: ["provider", "bloc", "riverpod", "setState"],
     contentEn: QuestionContent(
       question:
@@ -533,8 +533,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-009",
     difficulty: .intermediate,
-    category: "basic",
-    type: "practical",
+    categories: [.basic],
+    type: .practical,
     tags: ["asyncAwait", "futures", "streams"],
     contentEn: QuestionContent(
       question:
@@ -586,8 +586,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-010",
     difficulty: .advanced,
-    category: "performance",
-    type: "practical",
+    categories: [.performance],
+    type: .practical,
     tags: ["optimization", "lazyLoading", "memoryManagement"],
     contentEn: QuestionContent(
       question:
@@ -647,8 +647,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-011",
     difficulty: .intermediate,
-    category: "performance",
-    type: "practical",
+    categories: [.performance],
+    type: .practical,
     tags: ["keys", "widgets", "optimization"],
     contentEn: QuestionContent(
       question: "What are Keys in Flutter and when should you use them?",
@@ -725,8 +725,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-012",
     difficulty: .intermediate,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["lifecycle", "appLifecycle", "widgetsBinding"],
     contentEn: QuestionContent(
       question: "Explain the Flutter Application Lifecycle.",
@@ -781,8 +781,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-013",
     difficulty: .advanced,
-    category: "testing",
-    type: "practical",
+    categories: [.testing],
+    type: .practical,
     tags: ["unitTesting", "widgetTesting", "integrationTesting"],
     contentEn: QuestionContent(
       question:
@@ -828,8 +828,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-014",
     difficulty: .advanced,
-    category: "performance",
-    type: "theoretical",
+    categories: [.performance],
+    type: .theoretical,
     tags: ["rendering", "impeller", "skia"],
     contentEn: QuestionContent(
       question: "What is Impeller and how does it improve Flutter performance?",
@@ -866,8 +866,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-015",
     difficulty: .intermediate,
-    category: "networking",
-    type: "practical",
+    categories: [.networking],
+    type: .practical,
     tags: ["http", "dio", "restApi"],
     contentEn: QuestionContent(
       question:
@@ -914,8 +914,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-016",
     difficulty: .intermediate,
-    category: "database",
-    type: "practical",
+    categories: [.database],
+    type: .practical,
     tags: ["sqlite", "hive", "sharedPreferences", "persistence"],
     contentEn: QuestionContent(
       question:
@@ -962,8 +962,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-017",
     difficulty: .advanced,
-    category: "architecture",
-    type: "theoretical",
+    categories: [.architecture],
+    type: .theoretical,
     tags: ["cleanArchitecture", "mvc", "mvvm", "featuresFirst"],
     contentEn: QuestionContent(
       question:
@@ -1015,8 +1015,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-018",
     difficulty: .basic,
-    category: "dartBasics",
-    type: "practical",
+    categories: [.dartBasics],
+    type: .practical,
     tags: ["nullSafety", "soundness"],
     contentEn: QuestionContent(
       question: "What is Null Safety and how does it help?",
@@ -1069,8 +1069,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-019",
     difficulty: .advanced,
-    category: "performance",
-    type: "practical",
+    categories: [.performance],
+    type: .practical,
     tags: ["isolates", "concurrency", "eventLoop", "multithreading"],
     contentEn: QuestionContent(
       question: "What are Isolates and how do they differ from threads?",
@@ -1129,8 +1129,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-020",
     difficulty: .advanced,
-    category: "nativePlatform",
-    type: "practical",
+    categories: [.nativePlatform],
+    type: .practical,
     tags: ["methodChannel", "platformChannels", "nativeCode"],
     contentEn: QuestionContent(
       question:
@@ -1182,8 +1182,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-021",
     difficulty: .intermediate,
-    category: "animations",
-    type: "practical",
+    categories: [.animations],
+    type: .practical,
     tags: ["implicitAnimations", "explicitAnimations", "animationController"],
     contentEn: QuestionContent(
       question: "Difference between Implicit and Explicit Animations?",
@@ -1226,8 +1226,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-022",
     difficulty: .advanced,
-    category: "animations",
-    type: "practical",
+    categories: [.animations],
+    type: .practical,
     tags: ["customPaint", "canvas", "drawing"],
     contentEn: QuestionContent(
       question: "How to use CustomPaint in Flutter?",
@@ -1264,8 +1264,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-023",
     difficulty: .intermediate,
-    category: "basic",
-    type: "practical",
+    categories: [.basic],
+    type: .practical,
     tags: ["streamBuilder", "futureBuilder", "asyncWidgets"],
     contentEn: QuestionContent(
       question: "What are StreamBuilder and FutureBuilder?",
@@ -1316,8 +1316,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-024",
     difficulty: .advanced,
-    category: "modernFeatures",
-    type: "theoretical",
+    categories: [.modernFeatures],
+    type: .theoretical,
     tags: ["accessibility", "semantics", "screenReader"],
     contentEn: QuestionContent(
       question: "How do you make a Flutter app accessible?",
@@ -1370,8 +1370,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-025",
     difficulty: .advanced,
-    category: "security",
-    type: "critical",
+    categories: [.security],
+    type: .practical,
     tags: ["obfuscation", "flutterSecureStorage", "sslPinning"],
     contentEn: QuestionContent(
       question: "What are key security best practices in Flutter?",
@@ -1421,8 +1421,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-026",
     difficulty: .advanced,
-    category: "deployment",
-    type: "theoretical",
+    categories: [.deployment],
+    type: .theoretical,
     tags: ["ciCd", "codemagic", "githubActions", "fastlane"],
     contentEn: QuestionContent(
       question: "How do you implement CI/CD for a Flutter application?",
@@ -1478,8 +1478,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-027",
     difficulty: .basic,
-    category: "basic",
-    type: "practical",
+    categories: [.basic],
+    type: .practical,
     tags: ["column", "row", "stack", "expanded"],
     contentEn: QuestionContent(
       question: "Explain Common Layout Widgets used in Flutter.",
@@ -1528,8 +1528,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-028",
     difficulty: .advanced,
-    category: "architecture",
-    type: "practical",
+    categories: [.architecture],
+    type: .practical,
     tags: ["navigator2", "router", "goRouter", "navigation"],
     contentEn: QuestionContent(
       question: "What is Navigator 2.0 (Router API)?",
@@ -1582,8 +1582,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-029",
     difficulty: .advanced,
-    category: "performance",
-    type: "theoretical",
+    categories: [.performance],
+    type: .theoretical,
     tags: ["renderObject", "elements", "widgets"],
     contentEn: QuestionContent(
       question: "Explain the Widgets, Elements, and RenderObjects trees.",
@@ -1634,8 +1634,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-030",
     difficulty: .advanced,
-    category: "performance",
-    type: "practical",
+    categories: [.performance],
+    type: .practical,
     tags: ["memoryLeak", "dispose", "devtools"],
     contentEn: QuestionContent(
       question: "How to detect and fix Memory Leaks in Flutter?",
@@ -1694,8 +1694,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-031",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "flutter", "crossplatform"],
     contentEn: QuestionContent(
       question: 'What is Flutter?',
@@ -1736,8 +1736,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-032",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "dart", "language"],
     contentEn: QuestionContent(
       question: 'What is Dart, and why is it used in Flutter?',
@@ -1778,8 +1778,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-033",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "flutter", "widgets"],
     contentEn: QuestionContent(
       question: 'What are Widgets in Flutter?',
@@ -1817,8 +1817,8 @@ const List<InterviewQuestion> questionsData = [
   InterviewQuestion(
     id: "FLT-034",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "flutter", "widgets", "performance"],
     contentEn: QuestionContent(
       question:
@@ -1884,8 +1884,8 @@ class _MyWidgetState extends State<MyWidget> {
   InterviewQuestion(
     id: "FLT-035",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.ui],
+    type: .theoretical,
     tags: ["intermediate", "flutter", "widgets"],
     contentEn: QuestionContent(
       question: 'What is a Key in Flutter and why is it used?',
@@ -1923,8 +1923,8 @@ class _MyWidgetState extends State<MyWidget> {
   InterviewQuestion(
     id: "FLT-036",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.flutterBasics],
+    type: .theoretical,
     tags: ["intermediate", "flutter", "development"],
     contentEn: QuestionContent(
       question:
@@ -1968,8 +1968,8 @@ Hot Reload يسرع تطوير الواجهة بشكل كبير من خلال ا
   InterviewQuestion(
     id: "FLT-037",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "flutter", "ui"],
     contentEn: QuestionContent(
       question: 'What is the purpose of the MaterialApp and Scaffold widgets?',
@@ -2015,8 +2015,8 @@ Using these widgets saves setup time: MaterialApp handles app-level configuratio
   InterviewQuestion(
     id: "FLT-038",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.flutterBasics],
+    type: .theoretical,
     tags: ["intermediate", "flutter", "widgets"],
     contentEn: QuestionContent(
       question:
@@ -2056,8 +2056,8 @@ Using these widgets saves setup time: MaterialApp handles app-level configuratio
   InterviewQuestion(
     id: "FLT-039",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.oop],
+    type: .theoretical,
     tags: ["intermediate", "dart", "oop"],
     contentEn: QuestionContent(
       question: 'What are mixins in Dart and how are they used?',
@@ -2112,8 +2112,8 @@ class MyClass with Logger {
   InterviewQuestion(
     id: "FLT-040",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.dartBasics],
+    type: .theoretical,
     tags: ["intermediate", "dart"],
     contentEn: QuestionContent(
       question: 'What are extension methods in Dart?',
@@ -2169,8 +2169,8 @@ void example() {
   InterviewQuestion(
     id: "FLT-041",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "dart", "datastructures"],
     contentEn: QuestionContent(
       question: 'What are Lists, Sets, and Maps in Dart and when to use each?',
@@ -2213,9 +2213,9 @@ Lists allow indexed access and ordering. Sets ensure no duplicates and provide f
   InterviewQuestion(
     id: "FLT-042",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
-    tags: ["intermediate", "flutter", "architecture"],
+    categories: [.solid],
+    type: .theoretical,
+    tags: ["intermediate", "flutter", "architecture", "solid"],
     contentEn: QuestionContent(
       question:
           'What are the SOLID principles and how do they apply in Flutter?',
@@ -2265,8 +2265,8 @@ Strict adherence can lead to more abstraction and boilerplate; it may complicate
   InterviewQuestion(
     id: "FLT-043",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.designPatterns],
+    type: .theoretical,
     tags: ["intermediate", "flutter", "designpattern", "statemanagement"],
     contentEn: QuestionContent(
       question: 'What is the BLoC pattern in Flutter?',
@@ -2316,8 +2316,8 @@ Adds boilerplate (stream controllers, sinks, etc.) and can be overkill for simpl
   InterviewQuestion(
     id: "FLT-044",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.designPatterns, .stateManagement],
+    type: .theoretical,
     tags: ["intermediate", "flutter", "designpattern", "statemanagement"],
     contentEn: QuestionContent(
       question: 'What is Provider in Flutter and how does it differ from BLoC?',
@@ -2366,8 +2366,8 @@ Does not enforce a strict pattern, which can lead to scattered state logic if no
   InterviewQuestion(
     id: "FLT-045",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.dartBasics],
+    type: .theoretical,
     tags: ["intermediate", "dart", "async"],
     contentEn: QuestionContent(
       question: 'What is the difference between Future and Stream in Dart?',
@@ -2432,8 +2432,8 @@ Stream<int> countStream() async* {
   InterviewQuestion(
     id: "FLT-046",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.flutterBasics],
+    type: .theoretical,
     tags: ["intermediate", "flutter", "navigation"],
     contentEn: QuestionContent(
       question:
@@ -2473,8 +2473,8 @@ Stream<int> countStream() async* {
   InterviewQuestion(
     id: "FLT-047",
     difficulty: .advanced,
-    category: "advanced",
-    type: "theoretical",
+    categories: [.flutterBasics],
+    type: .theoretical,
     tags: ["advanced", "flutter", "navigation"],
     contentEn: QuestionContent(
       question:
@@ -2515,8 +2515,8 @@ Stream<int> countStream() async* {
   InterviewQuestion(
     id: "FLT-048",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "flutter", "widgets"],
     contentEn: QuestionContent(
       question: 'What is Flutter’s build() method context parameter?',
@@ -2555,8 +2555,8 @@ Stream<int> countStream() async* {
   InterviewQuestion(
     id: "FLT-049",
     difficulty: .advanced,
-    category: "advanced",
-    type: "theoretical",
+    categories: [.dartBasics],
+    type: .theoretical,
     tags: ["advanced", "dart", "concurrency"],
     contentEn: QuestionContent(
       question: 'What is an Isolate in Dart and how is it used?',
@@ -2607,8 +2607,8 @@ Use isolates for expensive computations (image processing, large computations) o
   InterviewQuestion(
     id: "FLT-050",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.flutterBasics, .ui],
+    type: .theoretical,
     tags: ["intermediate", "flutter", "widgets"],
     contentEn: QuestionContent(
       question: 'What are FutureBuilder and StreamBuilder used for in Flutter?',
@@ -2658,8 +2658,8 @@ Use FutureBuilder for one-time async calls (like HTTP requests) and StreamBuilde
   InterviewQuestion(
     id: "FLT-051",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.oop],
+    type: .theoretical,
     tags: ["intermediate", "dart", "oop"],
     contentEn: QuestionContent(
       question:
@@ -2716,8 +2716,8 @@ Factory constructors cannot access 'this' and don't automatically create a new i
   InterviewQuestion(
     id: "FLT-052",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.designPatterns, .oop],
+    type: .theoretical,
     tags: ["intermediate", "designpattern", "dart"],
     contentEn: QuestionContent(
       question:
@@ -2772,8 +2772,8 @@ Global state can make testing harder and lead to hidden dependencies.''',
   InterviewQuestion(
     id: "FLT-053",
     difficulty: .advanced,
-    category: "advanced",
-    type: "theoretical",
+    categories: [.performance],
+    type: .theoretical,
     tags: ["advanced", "flutter", "performance"],
     contentEn: QuestionContent(
       question: 'How do you optimize Flutter application performance?',
@@ -2823,8 +2823,8 @@ Use performance profiling (DevTools) to find bottlenecks. Apply optimizations li
   InterviewQuestion(
     id: "FLT-054",
     difficulty: .advanced,
-    category: "advanced",
-    type: "theoretical",
+    categories: [.flutterBasics, .ui],
+    type: .theoretical,
     tags: ["advanced", "flutter", "rendering"],
     contentEn: QuestionContent(
       question:
@@ -2876,8 +2876,8 @@ Skia يوفر عرض عالي الجودة وسريع؛ Impeller يحسن است
   InterviewQuestion(
     id: "FLT-055",
     difficulty: .advanced,
-    category: "advanced",
-    type: "theoretical",
+    categories: [.flutterBasics, .ui],
+    type: .theoretical,
     tags: ["advanced", "flutter", "comparison", "reactnative"],
     contentEn: QuestionContent(
       question:
@@ -2934,8 +2934,8 @@ Flutter: حجم تطبيق أكبر، دارت أقل شهرة، عدد حزم �
   InterviewQuestion(
     id: "FLT-056",
     difficulty: .intermediate,
-    category: "intermediate",
-    type: "theoretical",
+    categories: [.oop],
+    type: .theoretical,
     tags: ["intermediate", "dart", "oop"],
     contentEn: QuestionContent(
       question: 'Explain inheritance and composition in Dart.',
@@ -2973,8 +2973,8 @@ Flutter: حجم تطبيق أكبر، دارت أقل شهرة، عدد حزم �
   InterviewQuestion(
     id: "FLT-057",
     difficulty: .basic,
-    category: "basic",
-    type: "theoretical",
+    categories: [.basic],
+    type: .theoretical,
     tags: ["basic", "dart", "oop"],
     contentEn: QuestionContent(
       question: 'What is polymorphism in object-oriented programming?',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tuts/core/enums/difficulty_level.dart';
 import 'package:tuts/core/extensions.dart';
-import 'package:tuts/core/interview_questions_repository.dart';
+import 'package:tuts/data/interview_questions_repository.dart';
 import 'package:tuts/core/models/interview_question.dart';
 import 'package:tuts/features/interview_questions/question_details_page.dart';
 import 'package:tuts/shared/widgets/app_chip.dart';

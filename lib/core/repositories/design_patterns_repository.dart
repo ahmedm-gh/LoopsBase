@@ -33,7 +33,7 @@ class DesignPatternsRepository {
       content: DesignPatternContent(
         badExample: codeData['bad'] as StrCodeBlock?,
         goodExample: codeData['good'] as StrCodeBlock?,
-        note: note,
+        notes: [?note],
         pros: pros,
         cons: cons,
         whenToUse: whenToUse,
