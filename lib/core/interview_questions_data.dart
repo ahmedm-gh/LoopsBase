@@ -3,13 +3,6 @@
 library;
 
 class InterviewQuestionsData {
-  /// All available difficulty levels (ordered)
-  static const List<String> difficulties = [
-    "basic",
-    "intermediate",
-    "advanced",
-  ];
-
   /// All available tags in the system
   static const List<String> allTags = [
     "flutter",

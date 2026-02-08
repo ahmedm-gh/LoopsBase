@@ -15,7 +15,7 @@ class CodeBlockViewer extends StatelessWidget {
     super.key,
   }) : code = StrCodeBlock(code, codeQuality: codeQuality);
 
-  const CodeBlockViewer.fromStrCodeBlock({required this.code, super.key});
+  const CodeBlockViewer.fromStrCodeBlock(this.code, {super.key});
 
   @override
   Widget build(BuildContext context) {

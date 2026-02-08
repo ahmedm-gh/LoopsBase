@@ -205,11 +205,15 @@ class _QuestionCard extends StatelessWidget {
                 runSpacing: 4,
                 children: [
                   DifficultyChip(difficultyLevel: question.difficulty),
-                  ...question.tags.map(
-                    (tag) => TagChip(
-                      child: Text(tag, style: const TextStyle(fontSize: 10)),
-                    ),
-                  ),
+                  ...question.tags?.map(
+                        (tag) => TagChip(
+                          child: Text(
+                            tag,
+                            style: const TextStyle(fontSize: 10),
+                          ),
+                        ),
+                      ) ??
+                      [],
                 ],
               ),
             ],

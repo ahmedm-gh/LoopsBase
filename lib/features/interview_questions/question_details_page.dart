@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tuts/core/extensions.dart';
 import 'package:tuts/core/models/interview_question.dart';
-import 'package:tuts/shared/widgets/q_answer.dart';
 import 'package:tuts/shared/widgets/app_chip.dart';
-import 'package:tuts/shared/widgets/code_block.dart';
+import 'package:tuts/shared/widgets/q_answer.dart';
 import 'package:tuts/shared/widgets/small_titled_list.dart';
+
+import '../../shared/widgets/code_block.dart';
 
 class QuestionDetailsPage extends StatelessWidget {
   final InterviewQuestion question;
@@ -64,7 +65,8 @@ class QuestionDetailsPage extends StatelessWidget {
             ),
 
             // Code example
-            if (content.example != null && content.example!.isNotEmpty) ...[
+            if (question.examples case final examples?
+                when examples.isNotEmpty) ...[
               Text(
                 l10n.codeExample,
                 style: TextStyle(
@@ -73,8 +75,7 @@ class QuestionDetailsPage extends StatelessWidget {
                   color: colors.onSurface,
                 ),
               ),
-              if (content.example case final example? when example.isNotEmpty)
-                CodeBlockViewer(code: example, codeQuality: .normal),
+              ...examples.map(CodeBlockViewer.fromStrCodeBlock),
             ],
 
             // Notes
@@ -89,16 +90,18 @@ class QuestionDetailsPage extends StatelessWidget {
             ],
 
             // Pros
-            if (question.pros.isNotEmpty) ...[
+            if (question.getLocalizedPros(langCode) case final pros?
+                when pros.isNotEmpty) ...[
               SmallTitledList.advantages(
-                items: question.pros.map((p) => Text(p)).toList(),
+                items: pros.map((p) => Text(p)).toList(),
               ),
             ],
 
             // Cons
-            if (question.cons.isNotEmpty) ...[
+            if (question.getLocalizedCons(langCode) case final cons?
+                when cons.isNotEmpty) ...[
               SmallTitledList.disadvantages(
-                items: question.cons.map((c) => Text(c)).toList(),
+                items: cons.map((c) => Text(c)).toList(),
               ),
             ],
 
@@ -111,18 +114,19 @@ class QuestionDetailsPage extends StatelessWidget {
             ],
 
             // Tags
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: question.tags
-                  .map(
-                    (t) => Chip(
-                      label: Text(t),
-                      backgroundColor: colors.surfaceContainerHighest,
-                    ),
-                  )
-                  .toList(),
-            ),
+            if (question.tags case final tags? when tags.isNotEmpty)
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: tags
+                    .map(
+                      (t) => Chip(
+                        label: Text(t),
+                        backgroundColor: colors.surfaceContainerHighest,
+                      ),
+                    )
+                    .toList(),
+              ),
           ],
         ),
       ),

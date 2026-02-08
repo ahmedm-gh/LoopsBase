@@ -60,7 +60,7 @@ class RefactoringDetailsPage extends StatelessWidget {
               "Before",
               style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
             ),
-            CodeBlockViewer.fromStrCodeBlock(code: technique.simpleBefore),
+            CodeBlockViewer.fromStrCodeBlock(technique.simpleBefore),
             const SizedBox(height: 8),
             Text(
               "After",
@@ -69,7 +69,7 @@ class RefactoringDetailsPage extends StatelessWidget {
                 color: Colors.green,
               ),
             ),
-            CodeBlockViewer.fromStrCodeBlock(code: technique.simpleAfter),
+            CodeBlockViewer.fromStrCodeBlock(technique.simpleAfter),
 
             // Complex Example (if available)
             if (technique.complexBefore != null) ...[
@@ -88,7 +88,7 @@ class RefactoringDetailsPage extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              CodeBlockViewer.fromStrCodeBlock(code: technique.complexBefore!),
+              CodeBlockViewer.fromStrCodeBlock(technique.complexBefore!),
               const SizedBox(height: 8),
               Text(
                 "After",
@@ -97,7 +97,7 @@ class RefactoringDetailsPage extends StatelessWidget {
                   color: Colors.green,
                 ),
               ),
-              CodeBlockViewer.fromStrCodeBlock(code: technique.complexAfter!),
+              CodeBlockViewer.fromStrCodeBlock(technique.complexAfter!),
             ],
           ],
         ),

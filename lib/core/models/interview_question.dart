@@ -2,6 +2,7 @@
 library;
 
 import 'package:tuts/core/enums/difficulty_level.dart';
+import 'package:tuts/core/models/code_block.dart';
 import 'package:tuts/core/models/question_answer.dart';
 
 /// Represents a single interview question with all its content
@@ -10,10 +11,11 @@ class InterviewQuestion {
   final DifficultyLevel difficulty;
   final String category;
   final String type;
-  final List<String> tags;
+  final List<String>? tags;
   final QuestionContent contentEn, contentAr;
-  final List<String> pros;
-  final List<String> cons;
+  final List<StrCodeBlock>? examples;
+  final List<String>? _prosEn, _prosAr;
+  final List<String>? _consEn, _consAr;
 
   const InterviewQuestion({
     required this.id,
@@ -23,13 +25,29 @@ class InterviewQuestion {
     required this.tags,
     required this.contentEn,
     required this.contentAr,
-    this.pros = const [],
-    this.cons = const [],
-  });
+    this.examples,
+    List<String>? prosEn,
+    List<String>? consEn,
+    List<String>? prosAr,
+    List<String>? consAr,
+  }) : _consAr = consAr,
+       _prosAr = prosAr,
+       _consEn = consEn,
+       _prosEn = prosEn;
 
   /// Get the localized content based on the current locale
   QuestionContent getLocalizedContent(String languageCode) {
-    return languageCode == 'ar' ? contentAr : contentEn;
+    return languageCode == "ar" ? contentAr : contentEn;
+  }
+
+  /// Get the localized pros based on the current locale
+  List<String>? getLocalizedPros(String languageCode) {
+    return languageCode == "ar" ? _prosAr : _prosEn;
+  }
+
+  /// Get the localized cons based on the current locale
+  List<String>? getLocalizedCons(String languageCode) {
+    return languageCode == "ar" ? _consAr : _consEn;
   }
 }
 
@@ -37,29 +55,15 @@ class InterviewQuestion {
 class QuestionContent {
   final String question;
   final List<QuestionAnswer> answer;
-  final String? example;
   final List<String>? notes;
   final String? bestUse;
 
   const QuestionContent({
     required this.question,
     required this.answer,
-    this.example,
     this.notes,
     this.bestUse,
   });
-
-  /// Parse code examples from the answer or example field
-  List<String> get codeExamples {
-    final examples = <String>[];
-
-    // Extract code from example field
-    if (example != null && example!.isNotEmpty) {
-      examples.add(example!);
-    }
-
-    return examples;
-  }
 }
 
 /// A section of the answer

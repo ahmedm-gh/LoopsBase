@@ -24,7 +24,11 @@ class QuestionAnswerViewer extends StatelessWidget {
       QuestionAnswerList value => Column(
         crossAxisAlignment: .stretch,
         spacing: 2.5,
-        children: buildItems(value, colors),
+        children: [
+          if (value.title case final title?)
+            Text(title, style: TextStyle(fontWeight: .bold, fontSize: 16)),
+          ...buildItems(value, colors),
+        ],
       ),
       _ => const SizedBox.shrink(),
     };
