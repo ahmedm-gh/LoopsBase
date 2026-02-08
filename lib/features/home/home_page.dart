@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:tuts/core/app_notifiers.dart";
 import "package:tuts/core/extensions.dart";
 import "package:tuts/features/design_patterns/design_patterns_page.dart";
+import "package:tuts/features/interview_questions/interview_questions_page.dart";
 import "package:tuts/features/refactoring/refactoring_page.dart";
 
 class HomePage extends StatelessWidget {
@@ -77,14 +78,12 @@ class HomePage extends StatelessWidget {
                 title: l10n.interviewQuestions,
                 icon: Icons.question_mark_rounded,
                 color: colors.secondary,
-                onTap: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (_) => const InterviewQuestionsPage(),
-                  //   ),
-                  // );
-                },
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const InterviewQuestionsPage(),
+                  ),
+                ),
               ),
             ],
           ),

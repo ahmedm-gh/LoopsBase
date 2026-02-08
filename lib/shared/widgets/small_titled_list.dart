@@ -13,20 +13,21 @@ enum TitledListType {
 }
 
 class SmallTitledList extends StatelessWidget {
-  // const SmallTitledList({
-  //   super.key,
-  //   required this.title,
-  //   required this.content,
-  //   required this.icon,
-  //   required this.color,
-  // }) : type = .none;
+  const SmallTitledList({
+    super.key,
+    required this.title,
+    this.content,
+    this.items,
+    required this.icon,
+    required this.color,
+  }) : type = .none;
 
   const SmallTitledList.notes({
     super.key,
     this.title,
     this.content,
     this.items,
-    this.icon = Icons.lightbulb_rounded,
+    this.icon = Icons.info_rounded,
     this.color = Colors.grey,
   }) : type = .notes;
 
@@ -35,7 +36,7 @@ class SmallTitledList extends StatelessWidget {
     this.title,
     this.content,
     this.items,
-    this.icon = Icons.info_rounded,
+    this.icon = Icons.lightbulb_rounded,
     this.color = Colors.blue,
   }) : type = .whenToUse;
 
@@ -84,12 +85,16 @@ class SmallTitledList extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            color.withValues(alpha: 0.05),
-            color.withValues(alpha: 0.02),
-          ],
-        ),
+        // gradient: LinearGradient(
+        //   colors: [
+        //     color.withValues(alpha: 0.02),
+        //     color.withValues(alpha: 0.05),
+        //     color.withValues(alpha: 0.02),
+        //   ],
+        //   begin: .topLeft,
+        //   end: .bottomRight,
+        // ),
+        color: color.withValues(alpha: 0.035),
         borderRadius: .circular(8),
         border: .all(color: color.withValues(alpha: 0.1)),
       ),
@@ -107,7 +112,7 @@ class SmallTitledList extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const .all(5),
-                    child: Icon(icon, color: color, size: 20),
+                    child: Icon(icon, color: color, size: 18),
                   ),
                 ),
                 const SizedBox(width: 5),

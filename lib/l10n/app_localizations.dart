@@ -1243,6 +1243,888 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Particle systems (smoke, fire), map markers in large datasets, or text editors handling millions of characters.'**
   String get flyweightBestUse;
+
+  /// No description provided for @answer.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer'**
+  String get answer;
+
+  /// No description provided for @basicLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic'**
+  String get basicLevel;
+
+  /// No description provided for @basicLevelDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Fundamental concepts every Flutter developer should know.'**
+  String get basicLevelDesc;
+
+  /// No description provided for @intermediateLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Intermediate'**
+  String get intermediateLevel;
+
+  /// No description provided for @intermediateLevelDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Deeper understanding of Flutter and Dart features.'**
+  String get intermediateLevelDesc;
+
+  /// No description provided for @advancedLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced'**
+  String get advancedLevel;
+
+  /// No description provided for @advancedLevelDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Expert-level topics for senior developers.'**
+  String get advancedLevelDesc;
+
+  /// No description provided for @qWhatIsFlutter.
+  ///
+  /// In en, this message translates to:
+  /// **'What is Flutter?'**
+  String get qWhatIsFlutter;
+
+  /// No description provided for @qWhatIsFlutterNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter is an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses the Dart programming language and provides a rich set of customizable widgets and tools for fast development.'**
+  String get qWhatIsFlutterNotes;
+
+  /// No description provided for @qWhatIsFlutterPros.
+  ///
+  /// In en, this message translates to:
+  /// **'High performance due to native compilation.\nHot reload for fast development.\nSingle codebase for multiple platforms.'**
+  String get qWhatIsFlutterPros;
+
+  /// No description provided for @qWhatIsFlutterCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Larger app size compared to some alternatives.\nFewer third-party libraries.\nLearning Dart may be challenging for new developers.'**
+  String get qWhatIsFlutterCons;
+
+  /// No description provided for @qWhatIsFlutterBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Ideal for building cross-platform mobile apps with beautiful custom UI and fast development cycles.'**
+  String get qWhatIsFlutterBestUse;
+
+  /// No description provided for @qWhatIsDart.
+  ///
+  /// In en, this message translates to:
+  /// **'What is Dart, and why is it used in Flutter?'**
+  String get qWhatIsDart;
+
+  /// No description provided for @qWhatIsDartNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Dart is a modern object-oriented programming language optimized for building UI, used to develop Flutter applications. It compiles to native code for high performance and has features like sound null-safety and a rich standard library.'**
+  String get qWhatIsDartNotes;
+
+  /// No description provided for @qWhatIsDartPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Easy to learn for developers familiar with C-style syntax.\nSupports both AOT and JIT compilation.\nStrong null-safety features.'**
+  String get qWhatIsDartPros;
+
+  /// No description provided for @qWhatIsDartCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Smaller ecosystem compared to JavaScript.\nPrimarily used with Flutter, limiting server-side reuse.'**
+  String get qWhatIsDartCons;
+
+  /// No description provided for @qWhatIsDartBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Best used for Flutter app development and client-side applications where performance and developer productivity matter.'**
+  String get qWhatIsDartBestUse;
+
+  /// No description provided for @qWhatAreWidgets.
+  ///
+  /// In en, this message translates to:
+  /// **'What are Widgets in Flutter?'**
+  String get qWhatAreWidgets;
+
+  /// No description provided for @qWhatAreWidgetsNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Widgets are the basic building blocks of a Flutter app\'s UI. Everything you see on screen in Flutter is a Widget, which can be either stateful or stateless. Widgets describe how to display elements on the screen in a declarative manner.'**
+  String get qWhatAreWidgetsNotes;
+
+  /// No description provided for @qWhatAreWidgetsPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Highly customizable and composable.\nYou can build complex UIs by combining simpler widgets.\nFlutter\'s hot reload works well with its widget tree.'**
+  String get qWhatAreWidgetsPros;
+
+  /// No description provided for @qWhatAreWidgetsCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Deep widget hierarchies can become complex.\nRequires understanding of widget lifecycle for effective state management.'**
+  String get qWhatAreWidgetsCons;
+
+  /// No description provided for @qWhatAreWidgetsBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use widgets for all UI components; take advantage of stateless widgets for static parts and stateful widgets for interactive parts.'**
+  String get qWhatAreWidgetsBestUse;
+
+  /// No description provided for @qStatelessVsStateful.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the difference between StatelessWidget and StatefulWidget?'**
+  String get qStatelessVsStateful;
+
+  /// No description provided for @qStatelessVsStatefulNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'A StatelessWidget cannot change its state once built; it\'s immutable. A StatefulWidget has mutable state (via a State object) that can change over time, triggering rebuilds. StatelessWidget is simpler and more performant for static content. StatefulWidget allows dynamic and interactive UI.'**
+  String get qStatelessVsStatefulNotes;
+
+  /// No description provided for @qStatelessVsStatefulPros.
+  ///
+  /// In en, this message translates to:
+  /// **'StatelessWidget is simpler and more performant for static content.\nStatefulWidget allows dynamic and interactive UI.'**
+  String get qStatelessVsStatefulPros;
+
+  /// No description provided for @qStatelessVsStatefulCons.
+  ///
+  /// In en, this message translates to:
+  /// **'StatelessWidget can\'t update UI based on changes.\nStatefulWidget introduces overhead of state management and rebuilds.'**
+  String get qStatelessVsStatefulCons;
+
+  /// No description provided for @qStatelessVsStatefulBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use StatelessWidget for UI that doesn\'t change (e.g., static text), and StatefulWidget when UI needs to update (e.g., forms, animations).'**
+  String get qStatelessVsStatefulBestUse;
+
+  /// No description provided for @qWhatIsKey.
+  ///
+  /// In en, this message translates to:
+  /// **'What is a Key in Flutter and why is it used?'**
+  String get qWhatIsKey;
+
+  /// No description provided for @qWhatIsKeyNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'A Key is an identifier for Widgets, Elements, and SemanticsNodes. Keys preserve state and control widget identity when the widget tree changes (e.g., reordering). Using keys helps Flutter match widgets between builds.'**
+  String get qWhatIsKeyNotes;
+
+  /// No description provided for @qWhatIsKeyPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Using keys (especially UniqueKey or ValueKey) helps avoid unexpected behavior when reordering or dynamically changing lists of widgets.'**
+  String get qWhatIsKeyPros;
+
+  /// No description provided for @qWhatIsKeyCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Often not needed unless you manage dynamic widget lists.\nOverusing keys can complicate the code.'**
+  String get qWhatIsKeyCons;
+
+  /// No description provided for @qWhatIsKeyBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use keys when you have multiple widgets of the same type and need to preserve their state when they move or change position.'**
+  String get qWhatIsKeyBestUse;
+
+  /// No description provided for @qHotReloadVsRestart.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain the difference between Hot Reload and Hot Restart in Flutter.'**
+  String get qHotReloadVsRestart;
+
+  /// No description provided for @qHotReloadVsRestartNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Hot Reload injects updated source code into a running Dart VM, preserving the app state and making UI changes visible almost instantly. Hot Restart completely restarts the app, rebuilding the widget tree and reinitializing state, which is slower than hot reload.'**
+  String get qHotReloadVsRestartNotes;
+
+  /// No description provided for @qHotReloadVsRestartPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Hot Reload greatly speeds up UI development by preserving state.\nHot Restart ensures full reset, useful when major changes require clean state.'**
+  String get qHotReloadVsRestartPros;
+
+  /// No description provided for @qHotReloadVsRestartCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Hot Reload may not reflect changes outside widget code or initial setup.\nHot Restart is slower and loses the current state.'**
+  String get qHotReloadVsRestartCons;
+
+  /// No description provided for @qHotReloadVsRestartBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Hot Reload for quick iterations during UI development; use Hot Restart when you need to apply changes that require restarting the app.'**
+  String get qHotReloadVsRestartBestUse;
+
+  /// No description provided for @qMaterialAppScaffold.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the purpose of MaterialApp and Scaffold widgets?'**
+  String get qMaterialAppScaffold;
+
+  /// No description provided for @qMaterialAppScaffoldNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'MaterialApp is a convenience widget that wraps a number of widgets commonly required for Material Design applications, such as themes and navigation. Scaffold provides a framework for implementing the basic visual layout structure of Material Design (app bars, drawers, bottom sheets, etc.).'**
+  String get qMaterialAppScaffoldNotes;
+
+  /// No description provided for @qMaterialAppScaffoldPros.
+  ///
+  /// In en, this message translates to:
+  /// **'MaterialApp handles app-level configurations (theme, locale, navigator).\nScaffold provides standard UI elements out of the box.'**
+  String get qMaterialAppScaffoldPros;
+
+  /// No description provided for @qMaterialAppScaffoldCons.
+  ///
+  /// In en, this message translates to:
+  /// **'They impose Material Design.\nFor a custom look or non-Material design, one might use WidgetsApp or a custom layout.'**
+  String get qMaterialAppScaffoldCons;
+
+  /// No description provided for @qMaterialAppScaffoldBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use MaterialApp and Scaffold when developing a Flutter app following Material Design guidelines.'**
+  String get qMaterialAppScaffoldBestUse;
+
+  /// No description provided for @qWidgetLifecycle.
+  ///
+  /// In en, this message translates to:
+  /// **'What is a Flutter Widget\'s lifecycle (StatefulWidget lifecycle)?'**
+  String get qWidgetLifecycle;
+
+  /// No description provided for @qWidgetLifecycleNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'A StatefulWidget has a State object whose lifecycle includes initState(), didChangeDependencies(), build(), setState(), deactivate(), dispose(), and reassemble (during hot reload). initState is called once when the widget is inserted into the widget tree; build() is called often to redraw; dispose() is called when the widget is removed.'**
+  String get qWidgetLifecycleNotes;
+
+  /// No description provided for @qWidgetLifecyclePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Understanding lifecycle is crucial for resource management (e.g., initializing and disposing controllers) and for controlling rebuilds.'**
+  String get qWidgetLifecyclePros;
+
+  /// No description provided for @qWidgetLifecycleCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Managing complex lifecycles can be error-prone.\nForgetting to dispose can cause memory leaks.'**
+  String get qWidgetLifecycleCons;
+
+  /// No description provided for @qWidgetLifecycleBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use initState for one-time initialization, build to construct the UI, and dispose to clean up resources like animations or streams.'**
+  String get qWidgetLifecycleBestUse;
+
+  /// No description provided for @qWhatAreMixins.
+  ///
+  /// In en, this message translates to:
+  /// **'What are mixins in Dart and how are they used?'**
+  String get qWhatAreMixins;
+
+  /// No description provided for @qWhatAreMixinsNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Mixins allow a class to use methods and properties from multiple classes without multiple inheritance. In Dart, you define a mixin with the \'mixin\' keyword and then use it with the \'with\' keyword in a class declaration. They are useful for code reuse.'**
+  String get qWhatAreMixinsNotes;
+
+  /// No description provided for @qWhatAreMixinsPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Provide a way to add common functionality to multiple classes without forcing an inheritance relationship.\nThey keep classes more modular.'**
+  String get qWhatAreMixinsPros;
+
+  /// No description provided for @qWhatAreMixinsCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Overusing mixins can lead to complex hierarchies and unexpected behavior if many mixins modify similar properties.'**
+  String get qWhatAreMixinsCons;
+
+  /// No description provided for @qWhatAreMixinsBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use mixins when you want to share functionality (like logging, validation, etc.) across different classes without creating a base class.'**
+  String get qWhatAreMixinsBestUse;
+
+  /// No description provided for @qExtensionMethods.
+  ///
+  /// In en, this message translates to:
+  /// **'What are extension methods in Dart?'**
+  String get qExtensionMethods;
+
+  /// No description provided for @qExtensionMethodsNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Extension methods allow you to add new methods (or getters/setters) to existing libraries or classes without modifying them. Defined using the \'extension\' keyword, they are a syntactic convenience to extend functionality.'**
+  String get qExtensionMethodsNotes;
+
+  /// No description provided for @qExtensionMethodsPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable cleaner code by extending functionality of built-in types or classes (e.g., adding utility methods to String).'**
+  String get qExtensionMethodsPros;
+
+  /// No description provided for @qExtensionMethodsCons.
+  ///
+  /// In en, this message translates to:
+  /// **'They can make code harder to discover, as methods are not visible on the original class definition.'**
+  String get qExtensionMethodsCons;
+
+  /// No description provided for @qExtensionMethodsBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use extension methods to add helper functions to types in your project without creating utility classes.'**
+  String get qExtensionMethodsBestUse;
+
+  /// No description provided for @qListsSetsMaps.
+  ///
+  /// In en, this message translates to:
+  /// **'What are Lists, Sets, and Maps in Dart and when to use each?'**
+  String get qListsSetsMaps;
+
+  /// No description provided for @qListsSetsMapsNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'List is an ordered collection allowing duplicates; use when order matters. Set is an unordered collection of unique items; use when you need uniqueness. Map is a key-value store; use when you need to associate values with keys for fast lookup.'**
+  String get qListsSetsMapsNotes;
+
+  /// No description provided for @qListsSetsMapsProsPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Lists allow indexed access and ordering.\nSets ensure no duplicates and provide fast membership checks.\nMaps provide fast key-based lookup.'**
+  String get qListsSetsMapsProsPros;
+
+  /// No description provided for @qListsSetsMapsProsCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Lists may be inefficient if you need to enforce uniqueness.\nSets do not maintain insertion order.\nMaps use more memory per entry than a simple list.'**
+  String get qListsSetsMapsProsCons;
+
+  /// No description provided for @qListsSetsMapsProsBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use List for ordered data sequences, Set for unique collections, and Map for key-value associations.'**
+  String get qListsSetsMapsProsBestUse;
+
+  /// No description provided for @qSolidPrinciples.
+  ///
+  /// In en, this message translates to:
+  /// **'What are the SOLID principles and how do they apply in Flutter?'**
+  String get qSolidPrinciples;
+
+  /// No description provided for @qSolidPrinciplesNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'SOLID refers to five principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. In Flutter, keep widgets/controllers with a single responsibility, use abstractions for dependencies, and make classes open for extension but closed for modification.'**
+  String get qSolidPrinciplesNotes;
+
+  /// No description provided for @qSolidPrinciplesPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Following SOLID makes code more maintainable, testable, and extensible.\nFor Flutter, it encourages clean separation of UI and logic.'**
+  String get qSolidPrinciplesPros;
+
+  /// No description provided for @qSolidPrinciplesCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Strict adherence can lead to more abstraction and boilerplate.\nIt may complicate simple projects if overdone.'**
+  String get qSolidPrinciplesCons;
+
+  /// No description provided for @qSolidPrinciplesBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use SOLID to structure larger Flutter apps; start simple but refactor towards SOLID as complexity grows.'**
+  String get qSolidPrinciplesBestUse;
+
+  /// No description provided for @qBlocPattern.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the BLoC pattern in Flutter?'**
+  String get qBlocPattern;
+
+  /// No description provided for @qBlocPatternNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'BLoC (Business Logic Component) is an architectural pattern that separates business logic from UI by using Streams. BLoC exposes streams of data, and UI widgets listen to them. This makes the code more testable and reusable.'**
+  String get qBlocPatternNotes;
+
+  /// No description provided for @qBlocPatternPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotes separation of concerns and testability.\nWorks well with reactive programming.\nSimplifies state management for complex apps.'**
+  String get qBlocPatternPros;
+
+  /// No description provided for @qBlocPatternCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Adds boilerplate (stream controllers, sinks, etc.).\nCan be overkill for simple apps.\nLearning curve is higher than simple setState.'**
+  String get qBlocPatternCons;
+
+  /// No description provided for @qBlocPatternBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use BLoC for medium to large apps where separation of logic is beneficial. For smaller apps, simpler methods may suffice.'**
+  String get qBlocPatternBestUse;
+
+  /// No description provided for @qProviderVsBloc.
+  ///
+  /// In en, this message translates to:
+  /// **'What is Provider in Flutter and how does it differ from BLoC?'**
+  String get qProviderVsBloc;
+
+  /// No description provided for @qProviderVsBlocNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Provider is a wrapper around InheritedWidget that makes state management easier by providing and accessing state objects. Unlike BLoC (which uses Streams), Provider often uses ChangeNotifier or simple objects. Provider simplifies passing data down the widget tree.'**
+  String get qProviderVsBlocNotes;
+
+  /// No description provided for @qProviderVsBlocPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Lightweight and easy to use.\nLess boilerplate than BLoC.\nWell-integrated with Flutter.'**
+  String get qProviderVsBlocPros;
+
+  /// No description provided for @qProviderVsBlocCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Does not enforce a strict pattern, which can lead to scattered state logic if not organized.\nLess formal separation than BLoC.'**
+  String get qProviderVsBlocCons;
+
+  /// No description provided for @qProviderVsBlocBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Provider for simpler state management needs or smaller apps. It integrates well with Flutter and is easier to start with than BLoC.'**
+  String get qProviderVsBlocBestUse;
+
+  /// No description provided for @qFutureVsStream.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the difference between Future and Stream in Dart?'**
+  String get qFutureVsStream;
+
+  /// No description provided for @qFutureVsStreamNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'A Future represents a single asynchronous computation that either completes with a value or an error. A Stream represents a sequence of asynchronous events or data over time. FutureBuilder is used for one-time async results, StreamBuilder for ongoing data streams.'**
+  String get qFutureVsStreamNotes;
+
+  /// No description provided for @qFutureVsStreamPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Future for single HTTP requests or quick async tasks.\nUse Stream for events like WebSocket messages, sensor data, or periodic updates.'**
+  String get qFutureVsStreamPros;
+
+  /// No description provided for @qFutureVsStreamCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Future cannot handle multiple values or continuous updates.\nStreams introduce more complexity (listeners, cancellations).'**
+  String get qFutureVsStreamCons;
+
+  /// No description provided for @qFutureVsStreamBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Future when expecting a single result. Use Stream when listening for multiple results or changes over time.'**
+  String get qFutureVsStreamBestUse;
+
+  /// No description provided for @qNavigationPushReplace.
+  ///
+  /// In en, this message translates to:
+  /// **'How do you navigate between screens in Flutter? (push, pushReplacement)'**
+  String get qNavigationPushReplace;
+
+  /// No description provided for @qNavigationPushReplaceNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigation in Flutter uses the Navigator widget. Navigator.push adds a route to the stack (user can press back to return). Navigator.pushReplacement replaces the current route with a new one, removing the previous from the stack.'**
+  String get qNavigationPushReplaceNotes;
+
+  /// No description provided for @qNavigationPushReplacePros.
+  ///
+  /// In en, this message translates to:
+  /// **'push keeps the previous screen in memory (user can go back).\npushReplacement removes it (suitable for login screens or flows where going back is not needed).'**
+  String get qNavigationPushReplacePros;
+
+  /// No description provided for @qNavigationPushReplaceCons.
+  ///
+  /// In en, this message translates to:
+  /// **'push can accumulate many routes if not managed (memory).\npushReplacement prevents back navigation but loses previous screen state.'**
+  String get qNavigationPushReplaceCons;
+
+  /// No description provided for @qNavigationPushReplaceBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use push for normal forward navigation. Use pushReplacement for replacing screens permanently (e.g., after login or splash screen).'**
+  String get qNavigationPushReplaceBestUse;
+
+  /// No description provided for @qNavigator1Vs2.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the difference between Navigator 1.0 and Navigator 2.0?'**
+  String get qNavigator1Vs2;
+
+  /// No description provided for @qNavigator1Vs2Notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigator 1.0 is the classic imperative API (push/pop by widget), while Navigator 2.0 is a declarative, URL-based API with Router and RouteInformationParser. Navigator 2.0 offers more control over browser URL and deep linking.'**
+  String get qNavigator1Vs2Notes;
+
+  /// No description provided for @qNavigator1Vs2Pros.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigator 2.0 enables web and more complex navigation patterns (deep linking).'**
+  String get qNavigator1Vs2Pros;
+
+  /// No description provided for @qNavigator1Vs2Cons.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigator 2.0 has a steeper learning curve and more code overhead.\nFor simple apps, Navigator 1.0 is easier to use.'**
+  String get qNavigator1Vs2Cons;
+
+  /// No description provided for @qNavigator1Vs2BestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Navigator 2.0 for web apps or apps requiring deep linking and custom routing behavior. For basic navigation, 1.0 is sufficient.'**
+  String get qNavigator1Vs2BestUse;
+
+  /// No description provided for @qBuildContext.
+  ///
+  /// In en, this message translates to:
+  /// **'What is Flutter\'s build() method context parameter?'**
+  String get qBuildContext;
+
+  /// No description provided for @qBuildContextNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'BuildContext is an object which represents the location of a widget in the widget tree. It is passed to the build method and can be used to access theme data, localization, and to find ancestor widgets in the tree.'**
+  String get qBuildContextNotes;
+
+  /// No description provided for @qBuildContextPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Allows widgets to access inherited widgets like Theme or MediaQuery.\nEssential for widget communication.'**
+  String get qBuildContextPros;
+
+  /// No description provided for @qBuildContextCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Misusing context (e.g., using it before initState or in async) can lead to errors.'**
+  String get qBuildContextCons;
+
+  /// No description provided for @qBuildContextBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use context inside build() to obtain theme or other inherited data, or Navigator for navigation.'**
+  String get qBuildContextBestUse;
+
+  /// No description provided for @qWhatIsIsolate.
+  ///
+  /// In en, this message translates to:
+  /// **'What is an Isolate in Dart and how is it used?'**
+  String get qWhatIsIsolate;
+
+  /// No description provided for @qWhatIsIsolateNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'An Isolate is a separate thread of execution that doesn\'t share memory with the main isolate. It has its own memory heap. Communication is done via message passing (SendPort/ReceivePort). Use isolates for CPU-intensive tasks to avoid blocking the main UI thread.'**
+  String get qWhatIsIsolateNotes;
+
+  /// No description provided for @qWhatIsIsolatePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Enables true parallel computation in Dart without shared-memory concurrency bugs.\nImproves performance for heavy tasks.'**
+  String get qWhatIsIsolatePros;
+
+  /// No description provided for @qWhatIsIsolateCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Communication via message passing can be complex and slower.\nStarting an isolate has overhead; not suitable for small tasks.'**
+  String get qWhatIsIsolateCons;
+
+  /// No description provided for @qWhatIsIsolateBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use isolates for expensive computations (image processing, large computations) off the main thread. For most UI tasks, use async/await instead.'**
+  String get qWhatIsIsolateBestUse;
+
+  /// No description provided for @qFutureBuilderStreamBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'What are FutureBuilder and StreamBuilder used for in Flutter?'**
+  String get qFutureBuilderStreamBuilder;
+
+  /// No description provided for @qFutureBuilderStreamBuilderNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'FutureBuilder is a widget that builds itself based on the latest snapshot of interaction with a Future. StreamBuilder similarly rebuilds when new Stream events arrive. They simplify handling of asynchronous data in the UI without manual listeners.'**
+  String get qFutureBuilderStreamBuilderNotes;
+
+  /// No description provided for @qFutureBuilderStreamBuilderPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Makes it easy to update UI based on async results or stream data.\nHandles connection states and snapshots automatically.'**
+  String get qFutureBuilderStreamBuilderPros;
+
+  /// No description provided for @qFutureBuilderStreamBuilderCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Can lead to rebuilds on every event.\nNeed to manage performance if streams are frequent.'**
+  String get qFutureBuilderStreamBuilderCons;
+
+  /// No description provided for @qFutureBuilderStreamBuilderBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use FutureBuilder for one-time async calls (like HTTP requests) and StreamBuilder for continuous data (like realtime updates or web sockets).'**
+  String get qFutureBuilderStreamBuilderBestUse;
+
+  /// No description provided for @qConstructorFactory.
+  ///
+  /// In en, this message translates to:
+  /// **'What is a Constructor in Dart and what are factory constructors?'**
+  String get qConstructorFactory;
+
+  /// No description provided for @qConstructorFactoryNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'A constructor in Dart is a special method to create objects of a class. A factory constructor is a special type of constructor that can return an existing instance or a subclass. It\'s declared with the \'factory\' keyword. Useful for singleton or cache implementations.'**
+  String get qConstructorFactoryNotes;
+
+  /// No description provided for @qConstructorFactoryPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Factory constructors allow control over instance creation (e.g., implementing singletons or caches).\nCan return different subtypes.'**
+  String get qConstructorFactoryPros;
+
+  /// No description provided for @qConstructorFactoryCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Factory constructors cannot access \'this\' and don\'t automatically create a new instance.\nThey add complexity compared to a normal constructor.'**
+  String get qConstructorFactoryCons;
+
+  /// No description provided for @qConstructorFactoryBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use factory constructors for patterns like singleton or when you need custom logic to decide which instance to return.'**
+  String get qConstructorFactoryBestUse;
+
+  /// No description provided for @qSingletonPattern.
+  ///
+  /// In en, this message translates to:
+  /// **'What is a Singleton pattern and how can you implement it in Dart?'**
+  String get qSingletonPattern;
+
+  /// No description provided for @qSingletonPatternNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Singleton ensures a class has only one instance and provides a global access point. In Dart, you can implement a singleton by using a private constructor and a static instance. Useful for caches or shared resources.'**
+  String get qSingletonPatternNotes;
+
+  /// No description provided for @qSingletonPatternPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensures a single shared instance across the app (useful for caches, shared resources).'**
+  String get qSingletonPatternPros;
+
+  /// No description provided for @qSingletonPatternCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Global state can make testing harder and lead to hidden dependencies.'**
+  String get qSingletonPatternCons;
+
+  /// No description provided for @qSingletonPatternBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use singleton for classes that manage global state or resources (e.g., a settings manager or network client).'**
+  String get qSingletonPatternBestUse;
+
+  /// No description provided for @qFlutterPerformance.
+  ///
+  /// In en, this message translates to:
+  /// **'How do you optimize Flutter application performance?'**
+  String get qFlutterPerformance;
+
+  /// No description provided for @qFlutterPerformanceNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Common Flutter performance optimizations include: using const constructors to avoid rebuilds, splitting widgets to reduce rebuild scope, using efficient data structures, minimizing widget layers (RepaintBoundary), and caching images or data. Avoid large asset sizes and excessive rebuilds.'**
+  String get qFlutterPerformanceNotes;
+
+  /// No description provided for @qFlutterPerformancePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Applying these techniques can significantly improve frame rates and responsiveness.'**
+  String get qFlutterPerformancePros;
+
+  /// No description provided for @qFlutterPerformanceCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Over-optimizing early can complicate code.\nFocus on bottlenecks identified by profiling.'**
+  String get qFlutterPerformanceCons;
+
+  /// No description provided for @qFlutterPerformanceBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use performance profiling (DevTools) to find bottlenecks. Apply optimizations like const constructors, efficient layout, and offloading work to isolates as needed.'**
+  String get qFlutterPerformanceBestUse;
+
+  /// No description provided for @qRenderingEngine.
+  ///
+  /// In en, this message translates to:
+  /// **'What is Flutter\'s rendering engine and how does it work (e.g., Skia, Impeller)?'**
+  String get qRenderingEngine;
+
+  /// No description provided for @qRenderingEngineNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter\'s default rendering engine is Skia, a C++ based 2D graphics library. The newer Impeller engine improves performance and reduces graphical issues on some platforms. These engines compile Flutter\'s UI to native graphics commands on each platform.'**
+  String get qRenderingEngineNotes;
+
+  /// No description provided for @qRenderingEnginePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Skia provides high-quality, fast rendering.\nImpeller further optimizes GPU use and predictability.'**
+  String get qRenderingEnginePros;
+
+  /// No description provided for @qRenderingEngineCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine details are mostly abstracted away.\nDevelopers should be aware for debugging only.\nImpeller is still maturing on some platforms.'**
+  String get qRenderingEngineCons;
+
+  /// No description provided for @qRenderingEngineBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Benefit from engine improvements via Flutter upgrades. For advanced needs (e.g., custom shaders), learn how to use the appropriate engine.'**
+  String get qRenderingEngineBestUse;
+
+  /// No description provided for @qFlutterVsReactNative.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare Flutter with React Native: what are the pros and cons?'**
+  String get qFlutterVsReactNative;
+
+  /// No description provided for @qFlutterVsReactNativeNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter and React Native are both cross-platform frameworks. Flutter compiles to native ARM code and has its own rendering, offering high performance. React Native uses a JavaScript bridge to native components, which can be slower. Flutter\'s UI is highly customizable, while React Native uses native widgets with less flexibility.'**
+  String get qFlutterVsReactNativeNotes;
+
+  /// No description provided for @qFlutterVsReactNativePros.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter: high performance, full UI control, one codebase.\nReact Native: larger library ecosystem, JavaScript familiarity for web developers.'**
+  String get qFlutterVsReactNativePros;
+
+  /// No description provided for @qFlutterVsReactNativeCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter: larger app size, Dart is less known, fewer third-party packages.\nReact Native: performance overhead from JS bridge, UI consistency issues.'**
+  String get qFlutterVsReactNativeCons;
+
+  /// No description provided for @qFlutterVsReactNativeBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Flutter when performance and custom UI are top priorities. Use React Native if leveraging existing JavaScript code or ecosystem matters more.'**
+  String get qFlutterVsReactNativeBestUse;
+
+  /// No description provided for @qInheritanceVsComposition.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain inheritance and composition in Dart.'**
+  String get qInheritanceVsComposition;
+
+  /// No description provided for @qInheritanceVsCompositionNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Inheritance is when a class extends another class, inheriting its properties and methods (\"is-a\" relationship). Composition is when a class includes instances of other classes as fields (\"has-a\" relationship). Composition is often preferred for flexibility.'**
+  String get qInheritanceVsCompositionNotes;
+
+  /// No description provided for @qInheritanceVsCompositionPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Inheritance makes code reuse easy for closely related classes.\nComposition provides more flexibility and looser coupling.'**
+  String get qInheritanceVsCompositionPros;
+
+  /// No description provided for @qInheritanceVsCompositionCons.
+  ///
+  /// In en, this message translates to:
+  /// **'Inheritance can lead to rigid hierarchies and tight coupling.\nComposition can lead to more boilerplate but is more adaptable.'**
+  String get qInheritanceVsCompositionCons;
+
+  /// No description provided for @qInheritanceVsCompositionBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use inheritance when classes have clear hierarchy and share behavior. Use composition to assemble behavior from multiple classes for flexibility.'**
+  String get qInheritanceVsCompositionBestUse;
+
+  /// No description provided for @qWhatIsPolymorphism.
+  ///
+  /// In en, this message translates to:
+  /// **'What is polymorphism in object-oriented programming?'**
+  String get qWhatIsPolymorphism;
+
+  /// No description provided for @qWhatIsPolymorphismNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Polymorphism means \"many forms\". In Dart, it allows treating objects of different classes through a common interface (e.g., methods overridden in subclasses). A function can accept a base class type and operate on any subclass instance.'**
+  String get qWhatIsPolymorphismNotes;
+
+  /// No description provided for @qWhatIsPolymorphismPros.
+  ///
+  /// In en, this message translates to:
+  /// **'Makes code more flexible and reusable by programming to an interface or superclass rather than concrete classes.'**
+  String get qWhatIsPolymorphismPros;
+
+  /// No description provided for @qWhatIsPolymorphismCons.
+  ///
+  /// In en, this message translates to:
+  /// **'May make code harder to understand if overused, as the actual object type is less obvious.'**
+  String get qWhatIsPolymorphismCons;
+
+  /// No description provided for @qWhatIsPolymorphismBestUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use polymorphism when you want to use a common interface (abstract class or base class) for different concrete implementations.'**
+  String get qWhatIsPolymorphismBestUse;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search questions...'**
+  String get search;
+
+  /// No description provided for @noResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No results found'**
+  String get noResults;
+
+  /// No description provided for @all.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all;
+
+  /// No description provided for @expertLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Expert'**
+  String get expertLevel;
+
+  /// No description provided for @codeExample.
+  ///
+  /// In en, this message translates to:
+  /// **'Code Example'**
+  String get codeExample;
 }
 
 class _AppLocalizationsDelegate

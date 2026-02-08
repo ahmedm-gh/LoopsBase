@@ -1,29 +1,21 @@
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
+import "package:tuts/core/models/code_block.dart";
 import "package:url_launcher/url_launcher.dart";
 import "package:tuts/core/extensions.dart";
 
-enum CodeQuality {
-  normal,
-  good,
-  bad;
+import "../../core/enums/code_quality.dart";
 
-  bool get isNormal => this == .normal;
-  bool get isGood => this == .good;
-  bool get isBad => this == .bad;
-}
+class CodeBlockViewer extends StatelessWidget {
+  final StrCodeBlock code;
 
-class CodeBlock extends StatelessWidget {
-  final String code;
-  final String? language;
-  final CodeQuality codeQuality;
-
-  const CodeBlock({
+  CodeBlockViewer({
+    required String code,
+    required CodeQuality codeQuality,
     super.key,
-    required this.code,
-    this.language = "Dart",
-    this.codeQuality = .normal,
-  });
+  }) : code = StrCodeBlock(code, codeQuality: codeQuality);
+
+  const CodeBlockViewer.fromStrCodeBlock({required this.code, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +29,22 @@ class CodeBlock extends StatelessWidget {
           color: colors.surfaceContainer,
           borderRadius: .circular(10),
           border: Border.all(
-            color: switch (codeQuality) {
+            color: switch (code.codeQuality) {
               .good => Colors.green.withValues(alpha: 0.25),
               .bad => Colors.red.withValues(alpha: 0.25),
               _ => colors.outlineVariant,
             },
-            width: codeQuality.isBad ? 1.5 : 1,
+            width: code.codeQuality.isBad ? 1.5 : 1,
           ),
         ),
         child: Column(
           children: [
-            _CodeHeader(language: language, state: codeQuality, code: code),
-            _CodeContent(code: code),
+            _CodeHeader(
+              language: "Dart",
+              state: code.codeQuality,
+              code: code.value,
+            ),
+            _CodeContent(code: code.value),
           ],
         ),
       ),
