@@ -4,4 +4,4 @@ export 'widgets/dialog.dart';
 export 'widgets/app_chip.dart';
 export 'widgets/notes_widget.dart';
 export 'widgets/reference_widget.dart';
-export 'widgets/q_answer.dart';
+export 'widgets/content_viewer.dart';

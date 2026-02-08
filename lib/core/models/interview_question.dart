@@ -3,7 +3,7 @@ library;
 
 import 'package:tuts/core/enums/difficulty_level.dart';
 import 'package:tuts/core/models/code_block.dart';
-import 'package:tuts/core/models/question_answer.dart';
+import 'package:tuts/core/models/content.dart';
 
 /// Represents a single interview question with all its content
 class InterviewQuestion {
@@ -54,7 +54,7 @@ class InterviewQuestion {
 /// Content for a specific language
 class QuestionContent {
   final String question;
-  final List<QuestionAnswer> answer;
+  final List<Content> answer;
   final List<String>? notes;
   final String? bestUse;
 

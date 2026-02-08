@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tuts/core/extensions.dart';
 import 'package:tuts/core/models/interview_question.dart';
 import 'package:tuts/shared/widgets/app_chip.dart';
-import 'package:tuts/shared/widgets/q_answer.dart';
+import 'package:tuts/shared/widgets/content_viewer.dart';
 import 'package:tuts/shared/widgets/small_titled_list.dart';
 
 import '../../shared/widgets/code_block.dart';
@@ -59,7 +59,7 @@ class QuestionDetailsPage extends StatelessWidget {
                     l10n.answer,
                     style: const TextStyle(fontSize: 20, fontWeight: .bold),
                   ),
-                  ...content.answer.map(QuestionAnswerViewer.new),
+                  ...content.answer.map(ContentViewer.new),
                 ],
               ),
             ),

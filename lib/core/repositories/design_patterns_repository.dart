@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:tuts/core/code_examples.dart';
+import 'package:tuts/core/models/code_block.dart';
 import 'package:tuts/core/models/design_pattern.dart';
 import 'package:tuts/l10n/app_localizations.dart';
 
@@ -30,8 +31,8 @@ class DesignPatternsRepository {
       description: description,
       type: type,
       content: DesignPatternContent(
-        badExample: codeData['bad'] as String?,
-        goodExample: codeData['good'] as String?,
+        badExample: codeData['bad'] as StrCodeBlock?,
+        goodExample: codeData['good'] as StrCodeBlock?,
         note: note,
         pros: pros,
         cons: cons,

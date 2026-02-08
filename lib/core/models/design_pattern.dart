@@ -1,3 +1,5 @@
+import 'package:tuts/core/models/code_block.dart';
+
 class DesignPattern {
   final String id;
   final String title;
@@ -15,8 +17,8 @@ class DesignPattern {
 }
 
 class DesignPatternContent {
-  final String? badExample;
-  final String? goodExample;
+  final StrCodeBlock? badExample;
+  final StrCodeBlock? goodExample;
   final String? note;
   final List<String> pros;
   final List<String> cons;

@@ -1,43 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:tuts/core/extensions.dart';
-import 'package:tuts/core/models/question_answer.dart';
+import 'package:tuts/core/models/content.dart';
 
-// class AnswerPart {
-//   final String content;
-//   final String? number;
-//   final bool isNumbered;
+class ContentViewer extends StatelessWidget {
+  const ContentViewer(this.content, {super.key});
 
-//   AnswerPart({required this.content, this.number, required this.isNumbered});
-// }
-
-class QuestionAnswerViewer extends StatelessWidget {
-  const QuestionAnswerViewer(this.answer, {super.key});
-
-  final QuestionAnswer answer;
+  final Content content;
 
   @override
   Widget build(BuildContext context) {
     final colors = context.colorScheme;
 
-    return switch (answer) {
-      QuestionAnswerString value => Text(value.value),
-      QuestionAnswerList value => Column(
+    return switch (content) {
+      StringContent value => Text(value.value),
+      ListContent value => Column(
         crossAxisAlignment: .stretch,
-        spacing: 2.5,
+        spacing: 7.5,
         children: [
           if (value.title case final title?)
             Text(title, style: TextStyle(fontWeight: .bold, fontSize: 16)),
           ...buildItems(value, colors),
         ],
       ),
-      _ => const SizedBox.shrink(),
     };
   }
 
-  List<Widget> buildItems(QuestionAnswerList answer, ColorScheme colors) {
-    if (answer is QuestionAnswerOrderedList) {
+  List<Widget> buildItems(ListContent content, ColorScheme colors) {
+    if (content is OrderedListContent) {
       return [
-        for (var i = 0; i < answer.value.length; i++)
+        for (var i = 0; i < content.value.length; i++)
           Row(
             children: [
               Container(
@@ -54,12 +45,12 @@ class QuestionAnswerViewer extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 5),
-              Expanded(child: Text(answer.value[i])),
+              Expanded(child: Text(content.value[i])),
             ],
           ),
       ];
     } else {
-      return answer.value.map((item) => Text(item)).toList();
+      return content.value.map((item) => Text(item)).toList();
     }
   }
 }

@@ -49,10 +49,8 @@ class PatternDetailsPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              CodeBlockViewer(
-                code: pattern.content.badExample!,
-                codeQuality: .bad,
-              ),
+              if (pattern.content.badExample case final code?)
+                CodeBlockViewer.fromStrCodeBlock(code),
               const SizedBox(height: 16),
             ],
 
@@ -66,10 +64,8 @@ class PatternDetailsPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              CodeBlockViewer(
-                code: pattern.content.goodExample!,
-                codeQuality: .good,
-              ),
+              if (pattern.content.goodExample case final code?)
+                CodeBlockViewer.fromStrCodeBlock(code),
               const SizedBox(height: 16),
             ],
 

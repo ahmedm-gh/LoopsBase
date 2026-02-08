@@ -5,7 +5,7 @@ import 'package:tuts/core/models/code_block.dart';
 import 'package:tuts/core/models/interview_question.dart';
 
 import '../../core/enums/difficulty_level.dart';
-import '../../core/models/question_answer.dart';
+import 'models/content.dart';
 
 /// Repository that provides interview questions
 class InterviewQuestionsRepository {
@@ -51,10 +51,10 @@ const List<InterviewQuestion> questionsData = [
       question:
           "What is Flutter and how does it differ from other mobile development frameworks?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Flutter is Google's open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Key differences:",
           value: [
             "Uses Dart programming language",
@@ -76,10 +76,10 @@ const List<InterviewQuestion> questionsData = [
       question:
           "ما هو Flutter وكيف يختلف عن أطر تطوير التطبيقات المحمولة الأخرى؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Flutter هو مجموعة أدوات واجهة المستخدم مفتوحة المصدر من Google لبناء تطبيقات مترجمة محليًا للهاتف المحمول والويب وسطح المكتب من قاعدة كود واحدة.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الاختلافات الرئيسية:",
           value: [
             "يستخدم لغة البرمجة Dart",
@@ -132,7 +132,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "What is the difference between StatelessWidget and StatefulWidget?",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "StatelessWidget: Immutable widget that doesn't maintain any state. It's built once and doesn't rebuild unless its parent rebuilds. Use for static content.",
             "StatefulWidget: Mutable widget that maintains state. It can rebuild itself when setState() is called or when dependencies change. Has a State object that persists between rebuilds. Use when widget needs to change based on user interaction or data changes.",
@@ -148,7 +148,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما الفرق بين StatelessWidget و StatefulWidget؟",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "StatelessWidget: ويدجت غير قابل للتغيير لا يحافظ على أي حالة. يُبنى مرة واحدة ولا يُعاد بناؤه إلا إذا أعاد الأب بناءه. يُستخدم للمحتوى الثابت.",
             "StatefulWidget: ويدجت قابل للتغيير يحافظ على الحالة. يمكنه إعادة بناء نفسه عند استدعاء ()setState أو عند تغيير التبعيات. لديه كائن State يستمر بين عمليات إعادة البناء. يُستخدم عندما يحتاج الويدجت للتغيير بناءً على تفاعل المستخدم أو تغييرات البيانات.",
@@ -192,10 +192,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What is BuildContext and why is it important?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "BuildContext is a handle to the location of a widget in the widget tree. It represents the relationship between a widget and its ancestors. Each widget has its own BuildContext passed to the build() method.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Important for:",
           value: [
             "Accessing inherited widgets (Theme.of(context))",
@@ -215,10 +215,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هو BuildContext ولماذا هو مهم؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "BuildContext هو مؤشر لموقع الويدجت في شجرة الويدجت. يمثل العلاقة بين الويدجت وأسلافه. كل ويدجت له BuildContext الخاص به يتم تمريره إلى طريقة ()build.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "مهم لـ:",
           value: [
             "الوصول إلى عناصر التصميم (Widgets) الموروثة (Theme.of(context))",
@@ -257,7 +257,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "Explain the four pillars of Object-Oriented Programming with Dart examples.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Encapsulation: Bundling data and methods, hiding internal details using private members (underscore prefix).",
             "Inheritance: Creating new classes from existing ones using 'extends'.",
@@ -275,7 +275,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "اشرح الأعمدة الأربعة للبرمجة كائنية التوجه مع أمثلة Dart.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "التغليف: تجميع البيانات والطرق، إخفاء التفاصيل الداخلية باستخدام الأعضاء الخاصة (بادئة الشرطة السفلية).",
             "الوراثة: إنشاء فئات جديدة من الفئات الموجودة باستخدام 'extends'.",
@@ -311,7 +311,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "Explain all five SOLID principles with Flutter/Dart examples.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "S - Single Responsibility: A class should have one reason to change. Examples: [StrCodeBlock( Separate UserRepository from UserValidator.",
             "O - Open/Closed: Open for extension, closed for modification. Use abstract classes/interfaces.",
@@ -330,7 +330,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "اشرح جميع مبادئ SOLID الخمسة مع أمثلة Flutter/Dart.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "S - المسؤولية الواحدة: يجب أن يكون للفئة سبب واحد للتغيير. مثال: فصل UserRepository عن UserValidator.",
             "O - المفتوح/المغلق: مفتوح للتوسع، مغلق للتعديل. استخدم الفئات/الواجهات المجردة.",
@@ -362,7 +362,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "Implement Singleton, Factory, and Repository patterns in Flutter.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Singleton: Ensures only one instance exists. Use for app-wide services.",
             "Factory: Creates objects without exposing creation logic. Use factory constructors in Dart.",
@@ -379,7 +379,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "نفذ أنماط Singleton و Factory و Repository في Flutter.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Singleton: يضمن وجود نسخة واحدة فقط. استخدمه للخدمات على مستوى التطبيق.",
             "Factory: ينشئ كائنات دون كشف منطق الإنشاء. استخدم منشئات factory في Dart.",
@@ -419,7 +419,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "What are the main data structures available in Dart and when to use each?",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "List: Ordered collection, indexed access, allows duplicates. Use for ordered data.",
             "Set: Unordered collection, unique elements only. Use when uniqueness matters.",
@@ -440,7 +440,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "ما هي هياكل البيانات الرئيسية المتاحة في Dart ومتى تستخدم كل منها؟",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "List: مجموعة مرتبة، وصول مفهرس، تسمح بالتكرار. استخدمها للبيانات المرتبة.",
             "Set: مجموعة غير مرتبة، عناصر فريدة فقط. استخدمها عندما يهم التفرد.",
@@ -479,7 +479,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "Compare setState, Provider, BLoC, and Riverpod for state management.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "setState: Built-in, simple, local state only, causes entire widget rebuild.",
             "Provider: InheritedWidget wrapper, easy to use, dependency injection, less boilerplate than BLoC.",
@@ -497,7 +497,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "قارن بين setState و Provider و BLoC و Riverpod لإدارة الحالة.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "setState: مدمج، بسيط، حالة محلية فقط، يسبب إعادة بناء الويدجت بالكامل.",
             "Provider: غلاف InheritedWidget، سهل الاستخدام، حقن التبعية، أقل كودًا نمطيًا من BLoC.",
@@ -540,7 +540,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "Explain Future, async/await, and Streams in Dart with examples.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Future: Represents a potential value or error available at some time in the future. Single asynchronous result.",
             "async/await: Syntactic sugar for working with Futures, makes async code look synchronous.",
@@ -557,7 +557,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "اشرح Future و async/await و Streams في Dart مع أمثلة.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Future: يمثل قيمة محتملة أو خطأ متاح في وقت ما في المستقبل. نتيجة غير متزامنة واحدة.",
             "async/await: سكر نحوي للعمل مع Futures، يجعل الكود غير المتزامن يبدو متزامنًا.",
@@ -593,7 +593,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "What are the best practices for optimizing Flutter app performance?",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Use const constructors for immutable widgets.",
             "Implement ListView.builder for long lists (lazy loading).",
@@ -617,7 +617,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هي أفضل الممارسات لتحسين أداء تطبيق Flutter؟",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "استخدم منشئات const لعناصر التصميم (Widgets) غير القابلة للتغيير.",
             "نفذ ListView.builder للقوائم الطويلة (التحميل الكسول).",
@@ -653,10 +653,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What are Keys in Flutter and when should you use them?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Keys control how widgets are replaced in the widget tree. They preserve state when widgets move around.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Types:",
           value: [
             "ValueKey (simple value)",
@@ -665,7 +665,7 @@ const List<InterviewQuestion> questionsData = [
             "GlobalKey (access state from anywhere, expensive)",
           ],
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Usage:",
           value: [
             "When preserving state in a list of StatefulWidgets that changes order.",
@@ -683,10 +683,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هي المفاتيح (Keys) في Flutter ومتى يجب استخدامها؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "تتحكم المفاتيح في كيفية استبدال عناصر التصميم (Widgets) في شجرة الويدجت. تحافظ على الحالة عندما تتحرك عناصر التصميم (Widgets).",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الأنواع:",
           value: [
             "ValueKey (قيمة بسيطة)",
@@ -695,7 +695,7 @@ const List<InterviewQuestion> questionsData = [
             "GlobalKey (الوصول للحالة من أي مكان، مكلف)",
           ],
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الاستخدام:",
           value: [
             "عند الحفاظ على الحالة في قائمة من StatefulWidgets التي يتغير ترتيبها.",
@@ -731,10 +731,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "Explain the Flutter Application Lifecycle.",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "The lifecycle of the app as a whole (not just a widget). Monitor using WidgetsBindingObserver and didChangeAppLifecycleState.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "States:",
           value: [
             "detached: App is not hosted by any view (starting/closing).",
@@ -753,10 +753,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "اشرح دورة حياة تطبيق Flutter.",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "دورة حياة التطبيق ككل (وليس فقط الويدجت). راقب باستخدام WidgetsBindingObserver و didChangeAppLifecycleState.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الحالات:",
           value: [
             "detached: التطبيق غير مستضاف (بدء/إغلاق).",
@@ -788,7 +788,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "What are the three types of tests in Flutter and how do they differ?",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Unit Tests: Test a single function, method, or class. Verified logic. Fast execution. No UI.",
             "Widget Tests: Test a single widget. Verify UI layout and interaction. Uses WidgetTester. Medium speed.",
@@ -805,7 +805,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هي أنواع الاختبارات الثلاثة في Flutter وكيف تختلف؟",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "اختبارات الوحدة: اختبار دالة أو طريقة أو فئة واحدة. منطق تم التحقق منه. تنفيذ سريع. لا واجهة مستخدم.",
             "اختبارات الويدجت: اختبار ويدجت واحد. التحقق من تخطيط وتفاعل واجهة المستخدم. يستخدم WidgetTester. سرعة متوسطة.",
@@ -834,7 +834,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What is Impeller and how does it improve Flutter performance?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Impeller is the new rendering engine for Flutter, replacing Skia on iOS (default in 3.10+) and Android (preview). It solves 'shader compilation jank' by pre-compiling shaders at build time (AOT) instead of runtime. It is designed specifically for Flutter to leverage modern graphics APIs (Metal for iOS, Vulkan for Android) efficiently, providing silky-smooth animations and eliminating drop frames during first runs.",
         ),
       ],
@@ -847,7 +847,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هو Impeller وكيف يحسن أداء Flutter؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Impeller هو محرك العرض الجديد لـ Flutter، يحل محل Skia على iOS (افتراضي في 3.10+) و Android (معاينة). يحل مشكلة 'تقطع تجميع التظليل' عن طريق التجميع المسبق للتظليل في وقت البناء (AOT) بدلاً من وقت التشغيل. تم تصميمه خصيصًا لـ Flutter للاستفادة من واجهات برمجة تطبيقات الرسومات الحديثة (Metal لـ iOS، Vulkan لـ Android) بكفاءة، مما يوفر رسومًا متحركة سلسة للغاية ويقضي على سقوط الإطارات أثناء التشغيل الأول.",
         ),
       ],
@@ -873,7 +873,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "How to handle networking in Flutter? Difference between http and dio packages?",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "'http': Basic, official, simple API, good for simple requests.",
             "'dio': Powerful, feature-rich 3rd party package. Features of Dio: Interceptors (global headers/logging), Global configuration, File downloading/uploading, Cancellation tokens (cancel request), Custom adapters, Transformer.",
@@ -891,7 +891,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "كيفية التعامل مع الشبكات في Flutter؟ الفرق بين حزمتي http و dio؟",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "'http': أساسية، رسمية، واجهة برمجة تطبيقات بسيطة، جيدة للطلبات البسيطة.",
             "'dio': قوية، حزمة طرف ثالث غنية بالميزات. ميزات Dio: المعترضات (الرؤوس العالمية/التسجيل)، التكوين العالمي، تنزيل/تحميل الملفات، رموز الإلغاء (إلغاء الطلب)، محولات مخصصة، محولات.",
@@ -921,7 +921,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "Comparison of local database options: SharedPreferences vs SQLite vs Hive.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "SharedPreferences: Key-Value store, xml/plist based. Good for flags, settings, simple tokens. NOT for large data. Sync/Async API.",
             "SQLite (sqflite): Relational database (SQL). Good for structured data, complex queries, relations. Reliable, standard.",
@@ -939,7 +939,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "مقارنة خيارات قواعد البيانات المحلية: SharedPreferences vs SQLite vs Hive.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "SharedPreferences: مخزن مفتاح-قيمة، يعتمد على xml/plist. جيد للإشارات، الإعدادات، الرموز البسيطة. ليس للبيانات الكبيرة. واجهة برمجة تطبيقات متزامنة/غير متزامنة.",
             "SQLite (sqflite): قاعدة بيانات علائقية (SQL). جيدة للبيانات المنظمة، الاستعلامات المعقدة، العلاقات. موثوقة، قياسية.",
@@ -969,10 +969,8 @@ const List<InterviewQuestion> questionsData = [
       question:
           "Common Architectural Patterns in Flutter? (MVC, MVVM, Clean Architecture)",
       answer: [
-        QuestionAnswerString(
-          "Architecture organizes code for maintainability.",
-        ),
-        QuestionAnswerOrderedList(
+        StringContent("Architecture organizes code for maintainability."),
+        OrderedListContent(
           value: [
             "MVC (Model-View-Controller): Classic, separate data, UI, logic. Often Controller manages UI state.",
             "MVVM (Model-View-ViewModel): View binds to ViewModel. ViewModel holds state/logic, unaware of View. Very popular in Flutter (Provider/Riverpod act as VM).",
@@ -990,10 +988,10 @@ const List<InterviewQuestion> questionsData = [
       question:
           "اشرح البنية النظيفة (Clean Architecture) في Flutter مع الطبقات وهيكل المجلدات.",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "البنية النظيفة تفصل الاهتمامات إلى طبقات: العرض (واجهة المستخدم، عناصر التصميم (Widgets)، إدارة الحالة)، النطاق (منطق الأعمال، حالات الاستخدام، الكيانات)، البيانات (المستودعات، مصادر البيانات، النماذج).",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "المفاهيم الرئيسية:",
           value: [
             "قاعدة التبعية: الطبقات الخارجية تعتمد على الداخلية، وليس العكس.",
@@ -1023,10 +1021,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What is Null Safety and how does it help?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Null Safety allows the Dart type system to distinguish between nullable and non-nullable types. By default, types are non-nullable (`String`), preventing null reference errors at runtime (Standard Null Pointer Exception). `String?` means it can be null.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Benefits:",
           value: [
             "Compile-time error detection.",
@@ -1044,10 +1042,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هو أمان العدم (Null Safety) وكيف يساعد؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "يسمح أمان العدم لنظام أنواع Dart بالتمييز بين الأنواع القابلة للعدم وغير القابلة للعدم. افتراضيًا، الأنواع غير قابلة للعدم (`String`)، مما يمنع أخطاء مرجع العدم في وقت التشغيل. `String?` تعني أنه يمكن أن يكون null.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الفوائد:",
           value: [
             "اكتشاف الأخطاء في وقت الترجمة.",
@@ -1077,10 +1075,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What are Isolates and how do they differ from threads?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Dart is single-threaded (Event Loop). To perform heavy parallel work without blocking the UI, we use Isolates.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Key differences vs Threads:",
           value: [
             "Isolates DO NOT share memory (no shared state concurrency).",
@@ -1089,7 +1087,7 @@ const List<InterviewQuestion> questionsData = [
             "This prevents race conditions and locks.",
           ],
         ),
-        QuestionAnswerString(
+        StringContent(
           "'compute()' is a helper used to spawn an isolate for a single task easily.",
         ),
       ],
@@ -1101,10 +1099,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هي العزلات (Isolates) وكيف تختلف عن الخيوط (Threads)؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Dart أحادي الخيط (حلقة الحدث). لأداء عمل متوازٍ ثقيل دون حجب واجهة المستخدم، نستخدم العزلات.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الاختلافات الرئيسية عن الخيوط:",
           value: [
             "العزلات لا تشترك في الذاكرة (لا توجد حالة مشتركة للتزامن).",
@@ -1113,7 +1111,7 @@ const List<InterviewQuestion> questionsData = [
             "هذا يمنع ظروف السباق والأقفال.",
           ],
         ),
-        QuestionAnswerString(
+        StringContent(
           "'()'compute هو مساعد يستخدم لإنشاء عزلة لمهمة واحدة بسهولة.",
         ),
       ],
@@ -1138,10 +1136,10 @@ const List<InterviewQuestion> questionsData = [
       question:
           "How to communicate with specific native platform code (Android/iOS)?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Use Platform Channels. MethodChannel deals with invoking methods.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Flutter: creates MethodChannel('name'), calls invokeMethod('method').",
             "Native (Android/Kotlin): listens on same channel name, overrides onMethodCall, checks method name, executes native code, returns result.",
@@ -1158,10 +1156,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "كيف تتواصل مع كود النظام الأساسي الأصلي المحدد (Android/iOS)؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "استخدم قنوات المنصة. MethodChannel تتعامل مع استدعاء الطرق.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Flutter: ينشئ MethodChannel('name')، يستدعي invokeMethod('method').",
             "Native (Android/Kotlin): يستمع على نفس اسم القناة، يتجاوز onMethodCall، يتحقق من اسم الطريقة، ينفذ الكود الأصلي، يعيد النتيجة.",
@@ -1190,7 +1188,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "Difference between Implicit and Explicit Animations?",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Implicit Animations: Simple, built-in widgets that animate changes automatically when a property changes. Easy to use, no AnimationController needed. Examples: AnimatedContainer, AnimatedOpacity, AnimatedAlign.",
             "Explicit Animations: Complex, requires manual control using AnimationController. Use when you need to repeat, reverse, or coordinate animations. Examples: RotationTransition, FadeTransition, SlideTransition.",
@@ -1206,7 +1204,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما الفرق بين الرسوم المتحركة الضمنية والصريحة؟",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "الرسوم المتحركة الضمنية: عناصر التصميم (Widgets) بسيطة ومدمجة تقوم بتحريك التغييرات تلقائيًا عند تغيير الخاصية. سهلة الاستخدام، لا تحتاج إلى AnimationController. أمثلة: AnimatedContainer، AnimatedOpacity، AnimatedAlign.",
             "الرسوم المتحركة الصريحة: معقدة، تتطلب تحكمًا يدويًا باستخدام AnimationController. استخدمها عندما تحتاج إلى تكرار الرسوم المتحركة أو عكسها أو تنسيقها. أمثلة: RotationTransition، FadeTransition، SlideTransition.",
@@ -1234,7 +1232,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "How to use CustomPaint in Flutter?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "CustomPaint is a widget that provides a canvas for low-level drawing. It takes a 'painter' argument (subclass of CustomPainter). In the paint() method, you use the Canvas object to draw shapes, paths, text, images, etc. You must also implement shouldRepaint() to optimize performance. Useful for complex custom shapes, charts, or visual effects not possible with standard widgets.",
         ),
       ],
@@ -1247,7 +1245,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "كيفية استخدام CustomPaint في Flutter؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "CustomPaint هو ويدجت يوفر لوحة للرسم منخفض المستوى. يأخذ وسيط 'painter' (فئة فرعية من CustomPainter). في طريقة ()paint، تستخدم كائن Canvas لرسم الأشكال والمسارات والنصوص والصور وما إلى ذلك. يجب عليك أيضًا تنفيذ ()shouldRepaint لتحسين الأداء. مفيد للأشكال المخصصة المعقدة أو المخططات أو التأثيرات المرئية غير الممكنة باستخدام عناصر التصميم (Widgets) القياسية.",
         ),
       ],
@@ -1272,10 +1270,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What are StreamBuilder and FutureBuilder?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Widgets that build themselves based on the latest snapshot of interaction with a Stream or Future.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "FutureBuilder: Triggers a build when a Future completes (one-time). Good for API calls.",
             "StreamBuilder: Triggers a rebuild every time a Stream emits a new value (continuous). Good for real-time data.",
@@ -1292,10 +1290,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هما StreamBuilder و FutureBuilder؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "عناصر التصميم (Widgets) تبني نفسها بناءً على أحدث لقطة للتفاعل مع Stream أو Future.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "FutureBuilder: يطلق عملية بناء عند اكتمال Future (مرة واحدة). جيد لاستدعاءات API.",
             "StreamBuilder: يطلق عملية إعادة بناء في كل مرة يصدر فيها Stream قيمة جديدة (مستمر). جيد للبيانات في الوقت الفعلي.",
@@ -1324,10 +1322,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "How do you make a Flutter app accessible?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Flutter provides Semantic widgets to annotate the widget tree for screen readers (TalkBack/VoiceOver).",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Semantics Widget: Wrap widgets to provide label, hint, value.",
             "ExcludeSemantics: Hide widgets from screen readers (e.g., decorative images).",
@@ -1345,10 +1343,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "كيف تجعل تطبيق Flutter قابلاً للوصول (Accessible)؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "يوفر Flutter عناصر التصميم (Widgets) Semantics للتعليق على شجرة الويدجت لقارئات الشاشة (TalkBack/VoiceOver).",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Semantics Widget: لف عناصر التصميم (Widgets) لتوفير تسمية، تلميح، قيمة.",
             "ExcludeSemantics: إخفاء عناصر التصميم (Widgets) عن قارئات الشاشة (مثل الصور الزخرفية).",
@@ -1378,7 +1376,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What are key security best practices in Flutter?",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Obfuscation: Use '--obfuscate' flag when building releases to hide Dart code strings.",
             "Secure Storage: Use 'flutter_secure_storage' to store sensitive data (tokens) instead of SharedPreferences.",
@@ -1397,7 +1395,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هي الممارسات الأمنية الرئيسية في Flutter؟",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "التعتيم (Obfuscation): استخدم علامة '--obfuscate' عند بناء الإصدارات لإخفاء سلاسل كود Dart.",
             "التخزين الآمن: استخدم 'flutter_secure_storage' لتخزين البيانات الحساسة (الرموز) بدلاً من SharedPreferences.",
@@ -1429,10 +1427,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "How do you implement CI/CD for a Flutter application?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "CI/CD (Continuous Integration/Continuous Deployment) automates testing and building. Tools: Codemagic (Flutter specific), GitHub Actions, Bitrise. Fastlane is often used to script the deployment process.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Steps:",
           value: [
             "Trigger on push to main branch.",
@@ -1452,10 +1450,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "كيف تنفذ CI/CD لتطبيق Flutter؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "CI/CD (التكامل المستمر/النشر المستمر) يؤتمت الاختبار والبناء. الأدوات: Codemagic (مخصص لـ Flutter)، GitHub Actions، Bitrise. غالبًا ما يستخدم Fastlane لبرمجة عملية النشر.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الخطوات:",
           value: [
             "1) التشغيل عند الدفع إلى الفرع الرئيسي.",
@@ -1486,7 +1484,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "Explain Common Layout Widgets used in Flutter.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Column: Arranges children vertically. MainAxisAlignment (vertical), CrossAxisAlignment (horizontal).",
             "Row: Arranges children horizontally.",
@@ -1506,7 +1504,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           "اشرح عناصر التصميم (Widgets) التخطيط الشائعة المستخدمة في Flutter.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "العمود (Column): يرتب الأطفال عموديًا. MainAxisAlignment (عمودي)، CrossAxisAlignment (أفقي).",
             "الصف (Row): يرتب الأطفال أفقيًا.",
@@ -1536,10 +1534,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "What is Navigator 2.0 (Router API)?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Navigator 1.0 (imperative) uses push/pop. Navigator 2.0 (declarative) treats navigation as a function of the app state. It usually involves a Router, RouterDelegate, and RouteInformationParser. Most devs use packages like 'go_router' which simplify Navigator 2.0.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "It enables:",
           value: [
             "Deep linking (URL syncing on web).",
@@ -1557,10 +1555,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "ما هو Navigator 2.0 (Router API)؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Navigator 1.0 (أمر) يستخدم push/pop. Navigator 2.0 (تصريحي) يعامل التنقل كدالة لحالة التطبيق. يتضمن عادةً Router و RouterDelegate و RouteInformationParser. يستخدم معظم المطورين حزمًا مثل 'go_router' التي تبسط Navigator 2.0.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "يتيح:",
           value: [
             "الروابط العميقة (مزامنة URL على الويب).",
@@ -1590,14 +1588,14 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "Explain the Widgets, Elements, and RenderObjects trees.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "Widget Tree: Immutable description of UI configuration. Cheap to create/destroy.",
             "Element Tree: Mutable instances that manage the lifecycle of widgets. Links Widget to RenderObject. Holds state.",
             "RenderObject Tree: Responsible for layout (sizing) and painting. Expensive to create/change.",
           ],
         ),
-        QuestionAnswerString(
+        StringContent(
           "When a Widget rebuilds, the Element checks if the new Widget is the same type/key. If so, it updates the existing RenderObject properties instead of recreating it.",
         ),
       ],
@@ -1610,14 +1608,14 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "اشرح أشجار عناصر التصميم (Widgets) والعناصر وكائنات العرض.",
       answer: [
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           value: [
             "شجرة الويدجت: وصف غير قابل للتغيير لتكوين واجهة المستخدم. رخيص الإنشاء/التدمير.",
             "شجرة العناصر: مثيلات قابلة للتغيير تدير دورة حياة عناصر التصميم (Widgets). تربط الويدجت بـ RenderObject. تحتفظ بالحالة.",
             "شجرة كائنات العرض: مسؤولة عن التخطيط (تغيير الحجم) والرسم. مكلفة الإنشاء/التغيير.",
           ],
         ),
-        QuestionAnswerString(
+        StringContent(
           "عندما يعاد بناء الويدجت، يتحقق العنصر مما إذا كان الويدجت الجديد من نفس النوع/المفتاح. إذا كان الأمر كذلك، فإنه يحدث خصائص RenderObject الموجودة بدلاً من إعادة إنشائها.",
         ),
       ],
@@ -1642,10 +1640,10 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: "How to detect and fix Memory Leaks in Flutter?",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "Memory leaks happen when objects are still referenced after they are no longer needed, preventing Garbage Collection.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "Common causes:",
           value: [
             "Not disposing Controllers (AnimationController, TextEditingController).",
@@ -1653,7 +1651,7 @@ const List<InterviewQuestion> questionsData = [
             "Storing BuildContext in async gaps improperly.",
           ],
         ),
-        QuestionAnswerString(
+        StringContent(
           "Detection: Use Flutter DevTools Memory view. Look for increasing heap size over time or instances sticking around after leaving a screen. Fix: Use dispose() method properly.",
         ),
       ],
@@ -1666,10 +1664,10 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: "كيف تكتشف وتعالج تسرب الذاكرة في Flutter؟",
       answer: [
-        QuestionAnswerString(
+        StringContent(
           "يحدث تسرب الذاكرة عندما تظل الكائنات مشارًا إليها بعد عدم الحاجة إليها، مما يمنع جمع النفايات.",
         ),
-        QuestionAnswerOrderedList(
+        OrderedListContent(
           title: "الأسباب الشائعة:",
           value: [
             "عدم التخلص من المتحكمات (AnimationController، TextEditingController).",
@@ -1677,7 +1675,7 @@ const List<InterviewQuestion> questionsData = [
             "تخزين BuildContext في فجوات غير متزامنة بشكل غير صحيح.",
           ],
         ),
-        QuestionAnswerString(
+        StringContent(
           "الاكتشاف: استخدم عرض الذاكرة في Flutter DevTools. ابحث عن زيادة حجم الكومة بمرور الوقت أو بقاء المثيلات بعد مغادرة الشاشة. الإصلاح: استخدم طريقة ()dispose بشكل صحيح.",
         ),
       ],
@@ -1702,7 +1700,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: 'What is Flutter?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Flutter is an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses the Dart programming language and provides a rich set of customizable widgets and tools for fast development.',
         ),
       ],
@@ -1712,7 +1710,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: 'ما هو فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'فلاتر هو إطار عمل مفتوح المصدر لبناء تطبيقات مُترجمة بشكل أصلي لأنظمة تشغيل الهواتف المحمولة والويب وسطح المكتب من قاعدة كود واحدة. يستخدم لغة دارت ويوفر مجموعة غنية من الودجتس والأدوات القابلة للتخصيص لتطوير سريع.',
         ),
       ],
@@ -1744,7 +1742,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: 'What is Dart, and why is it used in Flutter?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Dart is a modern object-oriented programming language optimized for building UI, used to develop Flutter applications. It compiles to native code for high performance and has features like sound null-safety and a rich standard library.',
         ),
       ],
@@ -1754,7 +1752,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: 'ما هي لغة دارت ولماذا تُستخدم في فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'دارت هي لغة برمجة حديثة موجهة للكائنات ومُحسَّنة لبناء واجهات المستخدم، تُستخدم لتطوير تطبيقات فلاتر. يتم تجميعها إلى كود أصلي لتحقيق أداء عالي وتحتوي على ميزات مثل السلامة من القيمة الخالية (Null Safety) ومكتبة قياسية غنية.',
         ),
       ],
@@ -1786,7 +1784,7 @@ const List<InterviewQuestion> questionsData = [
     contentEn: QuestionContent(
       question: 'What are Widgets in Flutter?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Widgets are the basic building blocks of a Flutter app’s UI. Everything you see on screen in Flutter is a Widget, which can be either stateful or stateless. Widgets describe how to display elements on the screen in a declarative manner.',
         ),
       ],
@@ -1796,7 +1794,7 @@ const List<InterviewQuestion> questionsData = [
     contentAr: QuestionContent(
       question: 'ما هي الودجتس (Widgets) في فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'الودجتس هي لبنات البناء الأساسية لواجهة تطبيق فلاتر. كل ما تراه على الشاشة في فلاتر هو ودجت، والذي يمكن أن يكون ذا حالة (Stateful) أو بدون حالة (Stateless). تصف الودجتس كيف يتم عرض العناصر على الشاشة بطريقة إعلانية.',
         ),
       ],
@@ -1826,7 +1824,7 @@ const List<InterviewQuestion> questionsData = [
       question:
           'What is the difference between StatelessWidget and StatefulWidget?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''A StatelessWidget cannot change its state once built; it’s immutable. A StatefulWidget has mutable state (via a State object) that can change over time, triggering rebuilds.
 
 StatelessWidget is simpler and more performant for static content. StatefulWidget allows dynamic and interactive UI.''',
@@ -1838,7 +1836,7 @@ StatelessWidget is simpler and more performant for static content. StatefulWidge
     contentAr: QuestionContent(
       question: 'ما الفرق بين StatelessWidget و StatefulWidget؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''StatelessWidget لا يمكن أن تتغير حالتها بعد بنائه؛ فهي غير قابلة للتغيير. أما StatefulWidget فلها حالة قابلة للتغيير (من خلال كائن State) يمكن أن تتغير مع الوقت، مما يؤدي إلى إعادة بناء الودجت.
 
 StatelessWidget أبسط وأكثر كفاءة للأجزاء الثابتة. StatefulWidget تتيح واجهة مستخدم ديناميكية وتفاعلية.''',
@@ -1892,7 +1890,7 @@ class _MyWidgetState extends State<MyWidget> {
     contentEn: QuestionContent(
       question: 'What is a Key in Flutter and why is it used?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'A Key is an identifier for Widgets, Elements, and SemanticsNodes. Keys preserve state and control widget identity when the widget tree changes (e.g., reordering). Using keys helps Flutter match widgets between builds.',
         ),
       ],
@@ -1902,7 +1900,7 @@ class _MyWidgetState extends State<MyWidget> {
     contentAr: QuestionContent(
       question: 'ما هو المفتاح (Key) في فلاتر ولماذا يُستخدم؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'المفتاح هو معرف للودجتس والعناصر (Elements) وعقد الدلالات. المفاتيح تحافظ على الحالة وتتحكم في هوية الودجت عندما تتغير شجرة الودجتس (مثل إعادة ترتيب العناصر). يساعد استخدام المفاتيح فلاتر على مطابقة الودجتس بين عمليات إعادة البناء.',
         ),
       ],
@@ -1932,7 +1930,7 @@ class _MyWidgetState extends State<MyWidget> {
       question:
           'Explain the difference between Hot Reload and Hot Restart in Flutter.',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Hot Reload injects updated source code into a running Dart VM, preserving the app state and making UI changes visible almost instantly. Hot Restart completely restarts the app, rebuilding the widget tree and reinitializing state, which is slower than hot reload.
 
 Hot Reload greatly speeds up UI development by preserving state. Hot Restart ensures full reset, useful when major changes require clean state.''',
@@ -1944,7 +1942,7 @@ Hot Reload greatly speeds up UI development by preserving state. Hot Restart ens
     contentAr: QuestionContent(
       question: 'اشرح الفرق بين Hot Reload و Hot Restart في فلاتر.',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''يقوم Hot Reload بحقن الكود المصدر المحدث في آلة دارت الافتراضية قيد التشغيل، محافظًا على حالة التطبيق وجاعلاً تغييرات الواجهة مرئية تقريبًا على الفور. أما Hot Restart فيعيد تشغيل التطبيق بالكامل، مما يعيد بناء شجرة الودجت ويعيد تهيئة الحالة، وهو أبطأ من Hot Reload.
 
 Hot Reload يسرع تطوير الواجهة بشكل كبير من خلال الحفاظ على الحالة. Hot Restart يضمن إعادة التعيين الكامل، وهو مفيد عندما تتطلب التغييرات الكبيرة حالة نظيفة.''',
@@ -1976,7 +1974,7 @@ Hot Reload يسرع تطوير الواجهة بشكل كبير من خلال ا
     contentEn: QuestionContent(
       question: 'What is the purpose of the MaterialApp and Scaffold widgets?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''MaterialApp is a convenience widget that wraps a number of widgets commonly required for Material Design applications, such as themes and navigation. Scaffold provides a framework for implementing the basic visual layout structure of Material Design (app bars, drawers, bottom sheets, etc.).
 
 Using these widgets saves setup time: MaterialApp handles app-level configurations (theme, locale, navigator), and Scaffold provides standard UI elements out of the box.''',
@@ -1988,7 +1986,7 @@ Using these widgets saves setup time: MaterialApp handles app-level configuratio
     contentAr: QuestionContent(
       question: 'ما هو غرض ودجت MaterialApp و Scaffold في فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''MaterialApp هو ودجت ملائم يلف مجموعة من الودجتس المطلوبة عادةً لتطبيقات تصميم المواد، مثل السمات (themes) والتنقل. يوفر Scaffold إطارًا لبناء الهيكل البصري الأساسي لتصميم المواد، مثل شريط التطبيق (AppBar)، الدُرج (drawer)، والنوافذ المنبثقة أسفل الشاشة.
 
 استخدام هذه الودجتس يوفر وقت الإعداد: فـ MaterialApp يدير إعدادات على مستوى التطبيق (السمة، لغة الواجهة، المُسوِّر)، و Scaffold يوفر عناصر واجهة قياسية جاهزة للاستخدام.''',
@@ -2024,7 +2022,7 @@ Using these widgets saves setup time: MaterialApp handles app-level configuratio
       question:
           'What is a Flutter Widget’s lifecycle (StatefulWidget lifecycle)?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'A StatefulWidget has a State object whose lifecycle includes initState(), didChangeDependencies(), build(), setState(), deactivate(), dispose(), and reassemble (during hot reload). initState is called once when the widget is inserted into the widget tree; build() is called often to redraw; dispose() is called when the widget is removed.',
         ),
       ],
@@ -2034,7 +2032,7 @@ Using these widgets saves setup time: MaterialApp handles app-level configuratio
     contentAr: QuestionContent(
       question: 'ما هي دورة حياة ودجت في فلاتر (دورة حياة StatefulWidget)؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'يحتوي StatefulWidget على كائن State تشمل دورة حياته دوال initState()، didChangeDependencies()، build()، setState()، deactivate()، dispose()، و reassemble (أثناء التحميل السريع). تُستدعى initState مرة واحدة عند إضافة الودجت إلى شجرة الودجتس؛ يُستدعى build عدة مرات لإعادة الرسم؛ ويُستدعى dispose عند إزالة الودجت.',
         ),
       ],
@@ -2064,7 +2062,7 @@ Using these widgets saves setup time: MaterialApp handles app-level configuratio
     contentEn: QuestionContent(
       question: 'What are mixins in Dart and how are they used?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Mixins allow a class to use methods and properties from multiple classes without multiple inheritance. In Dart, you define a mixin with the 'mixin' keyword and then use it with the 'with' keyword in a class declaration. They are useful for code reuse.
 
 Provide a way to add common functionality to multiple classes without forcing an inheritance relationship. They keep classes more modular.''',
@@ -2076,7 +2074,7 @@ Provide a way to add common functionality to multiple classes without forcing an
     contentAr: QuestionContent(
       question: 'ما هي الـ mixins في دارت وكيف تُستخدم؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''تسمح الـ mixins لفئة معينة باستخدام الدوال والخصائص من فئات متعددة دون استخدام تعدد الميراث. في دارت، تعرف الـ mixin باستخدام الكلمة المحجوزة 'mixin' ثم تستخدمه في إعلان الفئة باستخدام 'with'. وهي مفيدة لإعادة استخدام الكود.
 
 توفر طريقة لإضافة وظائف شائعة لعدة فئات دون فرض علاقة وراثة. تحافظ على فصل الفئات وزيادة modularity.''',
@@ -2120,7 +2118,7 @@ class MyClass with Logger {
     contentEn: QuestionContent(
       question: 'What are extension methods in Dart?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Extension methods allow you to add new methods (or getters/setters) to existing libraries or classes without modifying them. Defined using the 'extension' keyword, they are a syntactic convenience to extend functionality.
 
 Enable cleaner code by extending functionality of built-in types or classes (e.g., adding utility methods to String).''',
@@ -2132,7 +2130,7 @@ Enable cleaner code by extending functionality of built-in types or classes (e.g
     contentAr: QuestionContent(
       question: 'ما هي طرق الامتداد (extension methods) في دارت؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''طرق الامتداد تسمح لك بإضافة طرق (أو getters/setters) جديدة إلى مكتبات أو فئات موجودة دون تعديلها. تعرف باستخدام الكلمة المحجوزة 'extension'، وهي وسيلة لراحة الاستخدام لتمديد الوظائف.
 
 تسمح بكتابة أكواد أنظف عن طريق توسيع وظائف الأنواع أو الفئات المدمجة (مثل إضافة طرق مساعدة لنوع String).''',
@@ -2177,7 +2175,7 @@ void example() {
     contentEn: QuestionContent(
       question: 'What are Lists, Sets, and Maps in Dart and when to use each?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''List is an ordered collection (like arrays) allowing duplicates; use when order matters and you may have repeats. Set is an unordered collection of unique items; use when you need uniqueness (e.g., a set of tags). Map is a key-value store (like dictionary); use when you need to associate values with keys for fast lookup.
 
 Lists allow indexed access and ordering. Sets ensure no duplicates and provide fast membership checks. Maps provide fast key-based lookup.''',
@@ -2190,7 +2188,7 @@ Lists allow indexed access and ordering. Sets ensure no duplicates and provide f
       question:
           'ما هي القوائم (Lists) والمجموعات (Sets) والقواميس (Maps) في دارت، ومتى يجب استخدام كل منها؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''List هي مجموعة مرتبة (مثل المصفوفات) تسمح بالعناصر المكررة؛ استخدمها عندما يهم الترتيب وقد تكون هناك عناصر متكررة. Set هي مجموعة غير مرتبة من العناصر الفريدة؛ استخدمها عندما تحتاج إلى الفريدة (مثل مجموعة من الوسوم tags). Map هو هيكل بيانات من المفاتيح والقيم (مثل القاموس dictionary)؛ استخدمه عندما تحتاج إلى ربط قيم بمفاتيح للبحث السريع.
 
 تسمح الـ List بالوصول إلى العناصر عبر مؤشر وترتيب ثابت. تضمن الـ Set عدم وجود تكرارات وتوفر فحص أسرع للانتماء. يوفر الـ Map بحثًا سريعًا عن القيمة بناءً على المفتاح.''',
@@ -2222,7 +2220,7 @@ Lists allow indexed access and ordering. Sets ensure no duplicates and provide f
       question:
           'What are the SOLID principles and how do they apply in Flutter?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''SOLID refers to five principles of object-oriented design: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. For example, in Flutter you should keep widgets/controllers with a single responsibility, use abstractions for dependencies (Dependency Inversion), and make classes open for extension but closed for modification.
 
 Following SOLID makes code more maintainable, testable, and extensible. For Flutter, it encourages clean separation of UI and logic, and small reusable widgets/controllers.
@@ -2236,7 +2234,7 @@ Strict adherence can lead to more abstraction and boilerplate; it may complicate
     contentAr: QuestionContent(
       question: 'ما هي مبادئ SOLID وكيف يتم تطبيقها في فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''يشير SOLID إلى خمسة مبادئ لتصميم البرمجيات الموجهة للكائنات: مبدأ المسؤولية الوحيدة، مبدأ الانفتاح/الإغلاق، مبدأ استبدال ليسكوف، مبدأ تقسيم الواجهات، ومبدأ عكس التبعيات. على سبيل المثال، في فلاتر يجب أن تحتفظ الودجتس/متحكمات الحالة بمسؤولية واحدة فقط، واستخدام التجريدات للتبعيات (Dependency Inversion)، وجعل الفئات قابلة للتمديد لكن مغلقة للتعديل.
 
 اتباع SOLID يجعل الكود أكثر قابلية للصيانة والاختبار والتمديد. في فلاتر، يشجع ذلك على فصل واضح بين الواجهة والمنطق، وإنشاء ودجتس/متحكمات صغيرة قابلة لإعادة الاستخدام.
@@ -2273,7 +2271,7 @@ Strict adherence can lead to more abstraction and boilerplate; it may complicate
     contentEn: QuestionContent(
       question: 'What is the BLoC pattern in Flutter?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''BLoC (Business Logic Component) is an architectural pattern that separates business logic from UI by using Streams. BLoC exposes streams of data, and UI widgets listen to them. This makes the code more testable and reusable.
 
 Promotes separation of concerns and testability, works well with reactive programming, and simplifies state management for complex apps.
@@ -2287,7 +2285,7 @@ Adds boilerplate (stream controllers, sinks, etc.) and can be overkill for simpl
     contentAr: QuestionContent(
       question: 'ما هو نمط BLoC في فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''BLoC (مكون منطق الأعمال) هو نمط معماري يفصل منطق العمل عن واجهة المستخدم باستخدام التدفقات (Streams). يقوم BLoC بعرض تدفقات بيانات تستمع لها ودجتس الواجهة. هذا يجعل الكود أكثر قابلية للاختبار وإعادة الاستخدام.
 
 يعزز فصل الاهتمامات وقابلية الاختبار، ويعمل جيدًا مع البرمجة التفاعلية، ويبسط إدارة الحالة للتطبيقات المعقدة.
@@ -2324,7 +2322,7 @@ Adds boilerplate (stream controllers, sinks, etc.) and can be overkill for simpl
     contentEn: QuestionContent(
       question: 'What is Provider in Flutter and how does it differ from BLoC?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Provider is a wrapper around InheritedWidget that makes state management easier by providing and accessing state objects. Unlike BLoC, which is based on Streams, Provider often uses ChangeNotifier or simple objects. Provider simplifies passing data down the widget tree without using Streams.
 
 Lightweight and easy to use, less boilerplate than BLoC, well-integrated with Flutter. Good for many apps’ state needs.
@@ -2338,7 +2336,7 @@ Does not enforce a strict pattern, which can lead to scattered state logic if no
     contentAr: QuestionContent(
       question: 'ما هو Provider في فلاتر وكيف يختلف عن BLoC؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Provider هو طبقة تغليف حول InheritedWidget يجعل إدارة الحالة أسهل من خلال توفير والوصول إلى كائنات الحالة. على عكس BLoC المستند إلى التدفقات (Streams)، يستخدم Provider غالبًا ChangeNotifier أو كائنات بسيطة. يقوم Provider بتبسيط تمرير البيانات في شجرة الودجتس دون استخدام التدفقات.
 
 خفيف الوزن وسهل الاستخدام، مع كود أقل تكرارًا من BLoC، ومتكامل جيدًا مع فلاتر. جيد لتلبية احتياجات العديد من تطبيقات الحالة.
@@ -2374,7 +2372,7 @@ Does not enforce a strict pattern, which can lead to scattered state logic if no
     contentEn: QuestionContent(
       question: 'What is the difference between Future and Stream in Dart?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''A Future represents a single asynchronous computation that either completes with a value or an error. A Stream represents a sequence of asynchronous events or data over time. FutureBuilder is used for one-time async results, StreamBuilder for ongoing data streams.
 
 Use Future for single HTTP requests or quick async tasks. Use Stream for events like WebSocket messages, sensor data, or periodic updates.
@@ -2388,7 +2386,7 @@ Future cannot handle multiple values or continuous updates. Streams introduce mo
     contentAr: QuestionContent(
       question: 'ما الفرق بين Future و Stream في دارت؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Future تمثل عملية غير متزامنة واحدة تنتهي بقيمة أو بخطأ. Stream تمثل سلسلة من الأحداث أو البيانات غير المتزامنة على مدار الوقت. FutureBuilder يستخدم للنتائج غير المتزامنة لمرة واحدة، بينما StreamBuilder يستخدم لبيانات مستمرة.
 
 استخدم Future لطلبات HTTP الأحادية أو المهام السريعة غير المتزامنة. استخدم Stream للأحداث مثل رسائل WebSocket أو بيانات المستشعرات أو التحديثات الدورية.
@@ -2441,7 +2439,7 @@ Stream<int> countStream() async* {
       question:
           'How do you navigate between screens in Flutter? (push, pushReplacement)',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Navigation in Flutter uses the Navigator widget. Navigator.push adds a route to the stack (user can press back to return). Navigator.pushReplacement replaces the current route with a new one, removing the previous from the stack.',
         ),
       ],
@@ -2451,7 +2449,7 @@ Stream<int> countStream() async* {
     contentAr: QuestionContent(
       question: 'كيف تتنقل بين الشاشات في فلاتر؟ (push، pushReplacement)',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'التنقل في فلاتر يستخدم ويدجت Navigator. يقوم Navigator.push بإضافة مسار إلى المكدس (يمكن للمستخدم الضغط على الرجوع للعودة). يقوم Navigator.pushReplacement باستبدال المسار الحالي بآخر جديد، مما يزيل المسار السابق من المكدس.',
         ),
       ],
@@ -2482,7 +2480,7 @@ Stream<int> countStream() async* {
       question:
           'What is the difference between Navigator 1.0 and Navigator 2.0?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Navigator 1.0 is the classic imperative API (push/pop by widget), while Navigator 2.0 is a declarative, URL-based API with Router and RouteInformationParser. Navigator 2.0 offers more control over browser URL and deep linking.',
         ),
       ],
@@ -2492,7 +2490,7 @@ Stream<int> countStream() async* {
     contentAr: QuestionContent(
       question: 'ما الفرق بين Navigator 1.0 و Navigator 2.0؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Navigator 1.0 هو الواجهة الإمبريالية الكلاسيكية (push/pop عبر الودجت)، بينما Navigator 2.0 هو واجهة إعلانية تعتمد على عناوين URL مع Router و RouteInformationParser. يوفر Navigator 2.0 مزيدًا من التحكم في عناوين المتصفح والروابط العميقة.',
         ),
       ],
@@ -2523,7 +2521,7 @@ Stream<int> countStream() async* {
     contentEn: QuestionContent(
       question: 'What is Flutter’s build() method context parameter?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'BuildContext is an object which represents the location of a widget in the widget tree. It is passed to the build method and can be used to access theme data, localization, and to find ancestor widgets in the tree.',
         ),
       ],
@@ -2533,7 +2531,7 @@ Stream<int> countStream() async* {
     contentAr: QuestionContent(
       question: 'ما هو وسيط BuildContext في دالة build() في Flutter؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'BuildContext هو كائن يمثل موقع الودجت في شجرة الودجتس. يتم تمريره إلى دالة build ويمكن استخدامه للوصول إلى بيانات السمة، والعولمة، وللعثور على الودجتس الأجداد في الشجرة.',
         ),
       ],
@@ -2563,7 +2561,7 @@ Stream<int> countStream() async* {
     contentEn: QuestionContent(
       question: 'What is an Isolate in Dart and how is it used?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''An Isolate is a separate thread of execution that doesn’t share memory with the main isolate. It has its own memory heap. Communication is done via message passing (SendPort/ReceivePort). Use isolates for CPU-intensive tasks to avoid blocking the main UI thread.
 
 Enables true parallel computation in Dart without shared-memory concurrency bugs, improving performance for heavy tasks.
@@ -2579,7 +2577,7 @@ Use isolates for expensive computations (image processing, large computations) o
     contentAr: QuestionContent(
       question: 'ما هو Isolate في دارت وكيف يُستخدم؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''الـ Isolate هو خيط تنفيذ منفصل لا يشارك الذاكرة مع الـ Isolate الرئيسي. لديه مساحة ذاكرة مستقلة. تتم الاتصالات عبر تبادل الرسائل (SendPort/ReceivePort). استخدم الـ Isolates للمهام الحسابية الشاقة لتجنب حظر خيط واجهة المستخدم الرئيسي.
 
 يُمكن من الحساب المتوازي الحقيقي في دارت دون أخطاء التعارض في الذاكرة المشتركة، مما يحسن الأداء للمهام الثقيلة.
@@ -2615,7 +2613,7 @@ Use isolates for expensive computations (image processing, large computations) o
     contentEn: QuestionContent(
       question: 'What are FutureBuilder and StreamBuilder used for in Flutter?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''FutureBuilder is a widget that builds itself based on the latest snapshot of interaction with a Future. StreamBuilder similarly rebuilds when new Stream events arrive. They simplify handling of asynchronous data in the UI without manual listeners.
 
 Makes it easy to update UI based on async results or stream data; handles connection states and snapshots automatically.
@@ -2631,7 +2629,7 @@ Use FutureBuilder for one-time async calls (like HTTP requests) and StreamBuilde
     contentAr: QuestionContent(
       question: 'ما الغرض من FutureBuilder و StreamBuilder في فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''FutureBuilder هو ودجت يعيد بناء نفسه استنادًا إلى أحدث لقطة (snapshot) من تفاعل مع Future. StreamBuilder على نحو مماثل يعيد البناء عند وصول أحداث جديدة من Stream. هم يبسطون التعامل مع البيانات غير المتزامنة في الواجهة دون مستمعين يدويين.
 
 يسهل تحديث الواجهة بناءً على النتائج غير المتزامنة أو بيانات التدفق؛ يعالج حالات الاتصال واللقطات تلقائيًا.
@@ -2667,7 +2665,7 @@ Use FutureBuilder for one-time async calls (like HTTP requests) and StreamBuilde
       question:
           'What is a Constructor in Dart and what are factory constructors?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''A constructor in Dart is a special method to create objects of a class. A factory constructor is a special type of constructor that can return an existing instance or a subclass. It's declared with the 'factory' keyword. Useful for singleton or cache implementations.
 
 Factory constructors allow control over instance creation (e.g., implementing singletons or caches) and can return different subtypes.
@@ -2681,7 +2679,7 @@ Factory constructors cannot access 'this' and don't automatically create a new i
     contentAr: QuestionContent(
       question: 'ما هو الباني (Constructor) في دارت وما هي البانيات factory؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''الباني في دارت هو دالة خاصة لإنشاء كائنات من فئة. الباني factory هو نوع خاص من الباني يمكنه إعادة كائن موجود بالفعل أو كائن من فئة فرعية. يُعلن عنه باستخدام الكلمة المحجوزة 'factory'. مفيد لتنفيذ أنماط مثل المفرد (singleton) أو التخزين المؤقت.
 
 تسمح البانيات factory بالتحكم في إنشاء الكائنات (مثل تنفيذ نمط المفرد أو التخزين المؤقت) ويمكنها إعادة أنواع فرعية مختلفة.
@@ -2725,7 +2723,7 @@ Factory constructors cannot access 'this' and don't automatically create a new i
       question:
           'What is a Singleton pattern and how can you implement it in Dart?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Singleton ensures a class has only one instance and provides a global access point. In Dart, you can implement a singleton by using a private constructor and a static instance. Useful for caches or shared resources.
 
 Ensures a single shared instance across the app (useful for caches, shared resources).
@@ -2739,7 +2737,7 @@ Global state can make testing harder and lead to hidden dependencies.''',
     contentAr: QuestionContent(
       question: 'ما هو نمط Singleton وكيف يمكنك تنفيذه في دارت؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Singleton يضمن أن فئة معينة لها مثيل واحد فقط ويوفر نقطة وصول عالمية له. في دارت، يمكنك تنفيذ Singleton عن طريق استخدام باني خاص ومثيل ثابت. مفيد للتخزين المؤقت أو الموارد المشتركة.
 
 يضمن مثيلًا واحدًا مشتركًا عبر التطبيق (مفيد للتخزين المؤقت، الموارد المشتركة).
@@ -2780,7 +2778,7 @@ Global state can make testing harder and lead to hidden dependencies.''',
     contentEn: QuestionContent(
       question: 'How do you optimize Flutter application performance?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Common Flutter performance optimizations include: using const constructors to avoid rebuilds, splitting widgets to reduce rebuild scope, using efficient data structures (List, Set, Map), minimizing widget layers (RepaintBoundary), and caching images or data. Avoid large asset sizes and excessive rebuilds.
 
 Applying these techniques can significantly improve frame rates and responsiveness.
@@ -2796,7 +2794,7 @@ Use performance profiling (DevTools) to find bottlenecks. Apply optimizations li
     contentAr: QuestionContent(
       question: 'كيف تحسن أداء تطبيق فلاتر؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''تشمل تحسينات الأداء الشائعة في فلاتر: استخدام البانيات الثابتة (const) لتجنب إعادة البناء، تقسيم الودجتس لتقليل نطاق إعادة البناء، استخدام هياكل بيانات فعّالة (List, Set, Map)، تقليل طبقات الودجتس (RepaintBoundary)، وتخزين الصور أو البيانات مؤقتًا. تجنب استخدام الأصول كبيرة الحجم وإعادة البناء الزائدة.
 
 تطبيق هذه التقنيات يمكن أن يحسن بشكل كبير معدلات الإطارات والاستجابة.
@@ -2832,7 +2830,7 @@ Use performance profiling (DevTools) to find bottlenecks. Apply optimizations li
       question:
           'What is Flutter\'s rendering engine and how does it work (e.g., Skia, Impeller)?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Flutter’s default rendering engine is Skia, a C++ based 2D graphics library, which renders the UI. The newer Impeller engine (introduced recently) improves performance and reduces graphical issues on some platforms. These engines compile Flutter's UI to native graphics commands on each platform.
 
 Skia provides high-quality, fast rendering; Impeller further optimizes GPU use and predictability.
@@ -2848,7 +2846,7 @@ Benefit from engine improvements via Flutter upgrades. For advanced needs (e.g.,
     contentAr: QuestionContent(
       question: 'ما هو محرك العرض في فلاتر وكيف يعمل (مثل Skia و Impeller)؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''محرك العرض الافتراضي في فلاتر هو Skia، وهي مكتبة رسوميات ثنائية الأبعاد بلغة C++، تُستخدم لرسم واجهة المستخدم. محرك Impeller الأحدث (المقدم مؤخرًا) يحسن الأداء ويقلل المشاكل الرسومية على بعض المنصات. تقوم هذه المحركات بتحويل واجهة Flutter إلى أوامر رسومية أصلية لكل منصة.
 
 Skia يوفر عرض عالي الجودة وسريع؛ Impeller يحسن استخدام GPU والقابلية للتنبؤ بالأداء.
@@ -2885,7 +2883,7 @@ Skia يوفر عرض عالي الجودة وسريع؛ Impeller يحسن است
       question:
           'Compare Flutter with React Native: what are the pros and cons?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''Flutter and React Native are both cross-platform frameworks. Flutter compiles to native ARM code and has its own rendering, offering high performance. React Native uses a JavaScript bridge to native components, which can be slower. Flutter’s UI is highly customizable, while React Native uses native widgets with less flexibility. Flutter’s community is growing; React Native has a larger ecosystem (JavaScript). Hot reload exists in both, but Flutter’s is typically faster.
 
 Flutter: high performance, full UI control, one codebase (Android/iOS). React Native: larger library ecosystem, JavaScript familiarity for web developers.
@@ -2901,7 +2899,7 @@ Use Flutter when performance and custom UI are top priorities. Use React Native 
     contentAr: QuestionContent(
       question: 'قارن بين فلاتر و React Native: ما هي المزايا والعيوب؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           '''فلاتر و React Native هما إطاران لتطبيقات عبر المنصات. يقوم فلاتر بالترجمة إلى كود أصلي ويمتلك محرك عرض خاص به، مما يوفر أداء عالي. يستخدم React Native جسر JavaScript إلى مكونات أصلية، مما قد يكون أبطأ. واجهة فلاتر قابلة للتخصيص بشكل كبير، بينما يستخدم React Native ودجتس أصلية مع حرية أقل. مجتمع فلاتر في نمو؛ بينما لدى React Native نظام بيئي أكبر (JavaScript). هناك ميزة Hot Reload في كلاهما، لكن فيلاتر أسرع عادة.
 
 Flutter: أداء عالي، تحكم كامل بالواجهة، قاعدة كود واحدة (Android/iOS). React Native: نظام بيئي أكبر من المكتبات، مألوف لمطوري الويب (JavaScript).
@@ -2942,7 +2940,7 @@ Flutter: حجم تطبيق أكبر، دارت أقل شهرة، عدد حزم �
     contentEn: QuestionContent(
       question: 'Explain inheritance and composition in Dart.',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Inheritance is when a class extends another class, inheriting its properties and methods ("is-a" relationship). Composition is when a class includes instances of other classes as fields ("has-a" relationship). Composition is often preferred for flexibility, as it allows changing components at runtime.',
         ),
       ],
@@ -2952,7 +2950,7 @@ Flutter: حجم تطبيق أكبر، دارت أقل شهرة، عدد حزم �
     contentAr: QuestionContent(
       question: 'اشرح الميراث (inheritance) والتجميع (composition) في دارت.',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'الميراث هو عندما تمتد فئة من فئة أخرى، فترث خصائصها وطرائقها (علاقة "هي-نوعٌ من"). التجميع هو عندما تحتوي فئة على مثيلات من فئات أخرى كحقول (علاقة "يحتوي-على"). غالبًا ما يُفضل التجميع للمرونة، لأنه يسمح بتغيير المكونات أثناء التشغيل.',
         ),
       ],
@@ -2981,7 +2979,7 @@ Flutter: حجم تطبيق أكبر، دارت أقل شهرة، عدد حزم �
     contentEn: QuestionContent(
       question: 'What is polymorphism in object-oriented programming?',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'Polymorphism means "many forms". In Dart, it allows treating objects of different classes through a common interface (e.g., methods overridden in subclasses). A function can accept a base class type and operate on any subclass instance.',
         ),
       ],
@@ -2991,13 +2989,41 @@ Flutter: حجم تطبيق أكبر، دارت أقل شهرة، عدد حزم �
     contentAr: QuestionContent(
       question: 'ما هو التعدد الشكلي (polymorphism) في البرمجة الشيئية؟',
       answer: [
-        QuestionAnswerString(
+        StringContent(
           'التعدد الشكلي يعني "أشكال متعددة". في دارت، يسمح بالتعامل مع كائنات من فئات مختلفة من خلال واجهة مشتركة (مثل الدوال التي يتم تجاوزها في الفئات الفرعية). يمكن لدالة أن تستقبل نوع الفئة الأساسية وتعمل على أي مثيل من فئات فرعية.',
         ),
       ],
       bestUse:
           'استخدم التعدد الشكلي عندما تريد استخدام واجهة مشتركة (فئة مجردة أو أساسية) لتنفيذات ملموسة مختلفة.',
     ),
+    examples: [
+      StrCodeBlock("""
+// Base class
+class Animal {
+  void makeSound() => print('Generic animal sound');
+}
+
+// Subclass 1
+class Dog extends Animal {
+  @override
+  void makeSound() => print('Woof!');
+}
+
+// Subclass 2
+class Cat extends Animal {
+  @override
+  void makeSound() => print('Meow!');
+}
+
+void main() {
+  Animal myPet = Dog();
+  myPet.makeSound(); // Output: Woof!
+  
+  myPet = Cat();
+  myPet.makeSound(); // Output: Meow!
+}
+"""),
+    ],
     prosEn: [
       "Makes code more flexible and reusable by programming to an interface or superclass rather than concrete classes.",
     ],

@@ -13,8 +13,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static final navigatorKey = GlobalKey<NavigatorState>();
+  static BuildContext? get currentContext => navigatorKey.currentContext;
+
   @override
   Widget build(BuildContext context) {
+    // implement backbutton with esc key
+
     return ValueListenableBuilder(
       valueListenable: AppNotifiers.appNotifier,
       builder: (context, appValues, _) {
@@ -24,8 +29,8 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.blueGrey,
           brightness: appValues.brightness,
         );
-
         return MaterialApp(
+          navigatorKey: MyApp.navigatorKey,
           locale: appValues.locale,
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: const [

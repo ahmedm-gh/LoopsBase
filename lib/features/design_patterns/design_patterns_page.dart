@@ -77,7 +77,6 @@ class _CategorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.textTheme;
     final colors = context.colorScheme;
 
     return ListTileTheme(
@@ -96,7 +95,8 @@ class _CategorySection extends StatelessWidget {
           children: [
             Text(
               title,
-              style: textTheme.headlineSmall?.copyWith(
+              style: TextStyle(
+                fontSize: 18,
                 fontWeight: .bold,
                 color: colors.primary,
               ),
