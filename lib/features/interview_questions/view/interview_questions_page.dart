@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tuts/core/enums/difficulty_level.dart';
@@ -5,7 +7,7 @@ import 'package:tuts/core/extensions/extensions.dart';
 import 'package:tuts/core/models/interview_question.dart';
 import 'package:tuts/features/interview_questions/controller/cubit/questions_cubit.dart';
 import 'package:tuts/shared/app_widgets.dart';
-import 'package:tuts/shared/widgets/filter_chip.dart';
+import 'package:tuts/shared/design_layouts.dart';
 
 import 'widgets/question_card.dart';
 
@@ -22,21 +24,6 @@ class InterviewQuestionsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.interviewQuestions),
-        // actions: [
-        //   BlocSelector<QuestionsCubit, QuestionsState, bool>(
-        //     selector: (state) {
-        //       return state.onlyBookmarked;
-        //     },
-        //     builder: (context, onlyBookmarked) {
-        //       return BookmarkIconButton(
-        //         tooltip: l10n.onlyBookmarked,
-        //         onPressed: cubit.toggleOnlyBookmarked,
-        //         isActive: onlyBookmarked,
-        //         animated: true,
-        //       );
-        //     },
-        //   ),
-        // ],
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
       ),
@@ -154,7 +141,7 @@ class InterviewQuestionsScreen extends StatelessWidget {
                         elevation: 0,
                         color: colors.surfaceContainerLow,
                         shape: RoundedRectangleBorder(
-                          borderRadius: .circular(16),
+                          borderRadius: DL.inListCardBorderRadius,
                           side: BorderSide(
                             color: colors.outlineVariant.withValues(
                               alpha: 0.35,
@@ -167,18 +154,19 @@ class InterviewQuestionsScreen extends StatelessWidget {
                               QuestionsState,
                               List<InterviewQuestion>
                             >(
-                              selector: (state) {
-                                return state.questions;
-                              },
+                              selector: (state) => state.questions,
                               builder: (context, questions) {
+                                log("questions: ${questions.length}");
                                 return ListView.separated(
-                                  padding: const EdgeInsets.all(16),
+                                  padding: DL.listPadding,
                                   itemCount: questions.length,
                                   itemBuilder: (_, i) {
                                     return QuestionCard(question: questions[i]);
                                   },
                                   separatorBuilder: (_, i) {
-                                    return const SizedBox(height: 10);
+                                    return const SizedBox(
+                                      height: DL.listSeparatorHeight,
+                                    );
                                   },
                                 );
                               },

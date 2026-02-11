@@ -1,0 +1,198 @@
+Variable
+Constant
+Data Type
+Primitive Type
+Object
+Class
+Method
+Function
+Parameter
+Argument
+Return Value
+Null
+Null Safety
+Type Inference
+Strong Typing
+Dynamic Typing
+Static Typing
+Compilation
+Interpretation
+Runtime
+Build
+Package
+Dependency
+Library
+Framework
+SDK
+API
+Module
+Namespace
+Import
+Export
+Encapsulation
+Abstraction
+Inheritance
+Polymorphism
+Interface
+Abstract Class
+Mixin
+Constructor
+Factory Constructor
+Singleton
+Getter
+Setter
+Immutable
+Mutable
+State
+State Management
+Widget
+StatelessWidget
+StatefulWidget
+Build Method
+Context (BuildContext)
+Hot Reload
+Hot Restart
+Async
+Await
+Future
+Stream
+Isolate
+Thread
+Process
+Concurrency
+Parallelism
+Race Condition
+Deadlock
+Event Loop
+Callback
+Promise
+Reactive Programming
+Observer Pattern
+MVC
+MVVM
+Clean Architecture
+Layered Architecture
+Repository Pattern
+Dependency Injection
+Service Locator
+Bloc
+Cubit
+Provider
+Riverpod
+GetIt
+Redux
+Design Pattern
+SOLID
+DRY
+KISS
+YAGNI
+Algorithm
+Big O Notation
+Time Complexity
+Space Complexity
+Array
+List
+Set
+Map
+Dictionary
+HashMap
+Linked List
+Stack
+Queue
+Tree
+Binary Tree
+Heap
+Graph
+Recursion
+Iteration
+Loop
+Conditional
+Switch
+Exception
+Error Handling
+Try-Catch
+Assertion
+Testing
+Unit Test
+Widget Test
+Integration Test
+Mock
+Stub
+CI/CD
+Version Control
+Git
+Branch
+Merge
+Rebase
+Commit
+Pull Request
+Code Review
+Refactoring
+Code Smell
+Technical Debt
+Lint
+Formatter
+Compiler
+Interpreter
+Garbage Collection
+Memory Leak
+Heap
+Stack Memory
+Pointer
+Reference
+Serialization
+Deserialization
+JSON
+REST
+HTTP
+HTTPS
+WebSocket
+Authentication
+Authorization
+JWT
+Encryption
+Hashing
+Database
+SQL
+NoSQL
+ORM
+Migration
+Index
+Caching
+Docker
+Containerization
+Cloud Computing
+Serverless
+Microservices
+Monolith
+DevOps
+Deployment
+Environment
+Production
+Staging
+Debug
+Release Mode
+Responsive Design
+Material Design
+Cupertino
+Animation
+Lifecycle
+Lifecycle Method
+Rendering
+Layout
+Constraint
+Flex
+Expanded
+MediaQuery
+Navigator
+Routing
+Deep Linking
+Theming
+Localization
+Internationalization (i18n)
+Accessibility
+Performance Optimization
+Lazy Loading
+Code Splitting
+Ahead-of-Time (AOT)
+Just-in-Time (JIT)

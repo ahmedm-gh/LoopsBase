@@ -144,9 +144,7 @@ class PatternDetailsScreen extends StatelessWidget {
                     ),
                     for (final relative in relatives)
                       if (designPatterns[relative] case final pattern?)
-                        PatternChip(
-                          name: pattern.title.call(Locale(l10n.localeName)),
-                        ),
+                        PatternChip(name: pattern.title(l10n.localeName)),
                   ],
                 ),
               if (pattern.oftenConfusedWith case final confusedWith?
@@ -167,7 +165,7 @@ class PatternDetailsScreen extends StatelessWidget {
                     for (final confPattern in confusedWith)
                       if (designPatterns[confPattern] case final pattern?)
                         PatternChip(
-                          name: pattern.title.call(Locale(l10n.localeName)),
+                          name: pattern.title(l10n.localeName),
                           color: colors.errorContainer,
                         ),
                   ],

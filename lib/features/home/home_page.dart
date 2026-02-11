@@ -3,6 +3,9 @@ import "package:tuts/core/extensions/extensions.dart";
 import "package:tuts/core/services/routes.dart";
 import "package:tuts/features/design_patterns/design_patterns_page.dart";
 
+import "../../data/svg_icons.dart";
+import "../../shared/widgets/svg_icon.dart";
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -178,8 +181,16 @@ class HomeScreen extends StatelessWidget {
               // if (kDebugMode)
               //   Text(l.join("\n"), textScaler: const TextScaler.linear(1.5)),
               HomeMenuCard(
+                title: l10n.programmingTerms,
+                icon: const Icon(Icons.format_quote_rounded),
+                color: colors.secondary,
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.programmingTermsList);
+                },
+              ),
+              HomeMenuCard(
                 title: l10n.designPatterns,
-                icon: Icons.architecture_rounded,
+                icon: const Icon(Icons.architecture_rounded),
                 color: colors.primary,
                 onTap: () => Navigator.push(
                   context,
@@ -190,13 +201,13 @@ class HomeScreen extends StatelessWidget {
               ),
               HomeMenuCard(
                 title: l10n.interviewQuestions,
-                icon: Icons.question_mark_rounded,
+                icon: const Icon(Icons.question_mark_rounded),
                 color: colors.secondary,
                 onTap: () => Navigator.pushNamed(context, Routes.questionList),
               ),
               HomeMenuCard(
                 title: l10n.refactoring,
-                icon: Icons.auto_fix_high_rounded,
+                icon: const Icon(Icons.auto_fix_high_rounded),
                 color: colors.tertiary,
                 onTap: null,
                 // onTap: () => Navigator.push(
@@ -207,20 +218,8 @@ class HomeScreen extends StatelessWidget {
                 // ),
               ),
               HomeMenuCard(
-                title: l10n.programmingTerms,
-                icon: Icons.format_quote_rounded,
-                color: colors.secondary,
-                onTap: null,
-                // onTap: () => Navigator.push(
-                //   context,
-                //   MaterialPageRoute<void>(
-                //     builder: (_) => const ProgrammingTermsPage(),
-                //   ),
-                // ),
-              ),
-              HomeMenuCard(
                 title: l10n.usefulPubPackages,
-                icon: Icons.extension_rounded,
+                icon: const Icon(Icons.extension_rounded),
                 color: colors.secondary,
                 onTap: null,
                 // onTap: () => Navigator.push(
@@ -247,7 +246,7 @@ class HomeMenuCard extends StatelessWidget {
     super.key,
   });
   final String title;
-  final IconData icon;
+  final Widget icon;
   final Color color;
   final VoidCallback? onTap;
 
@@ -267,7 +266,10 @@ class HomeMenuCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: .center,
             children: [
-              Icon(icon, size: 38, color: color),
+              IconTheme.merge(
+                data: IconThemeData(size: 38, color: color),
+                child: icon,
+              ),
               const SizedBox(height: 16),
               Text(
                 title,

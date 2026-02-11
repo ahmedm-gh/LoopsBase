@@ -3,6 +3,7 @@ import 'package:tuts/core/extensions/extensions.dart';
 import 'package:tuts/core/models/interview_question.dart';
 
 import '../../../shared/app_widgets.dart';
+import '../../../shared/design_layouts.dart';
 import '../../../shared/widgets/difficulty_chip.dart';
 
 // TODO: ADD .safeBidi()
@@ -34,10 +35,10 @@ class QuestionDetailsScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const .all(16),
+        padding: DL.pagePadding,
         child: Column(
           crossAxisAlignment: .stretch,
-          spacing: 16,
+          spacing: DL.compactSeparatorHeight,
           children: [
             // Question type and categories
             Text(
@@ -59,17 +60,17 @@ class QuestionDetailsScreen extends StatelessWidget {
 
             // Question answer
             Container(
-              padding: const .all(16),
+              padding: DL.inListCardPadding,
               decoration: BoxDecoration(
                 color: colors.surfaceContainerLow,
-                borderRadius: .circular(12),
+                borderRadius: DL.inListCardBorderRadius,
                 border: .all(
                   color: colors.outlineVariant.withValues(alpha: 0.5),
                 ),
               ),
               child: Column(
                 crossAxisAlignment: .stretch,
-                spacing: 10,
+                spacing: DL.compactSeparatorHeight,
                 children: [
                   Text(
                     l10n.answer,

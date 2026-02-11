@@ -35,8 +35,8 @@ class DesignPatternsScreen extends StatelessWidget {
                       children: [
                         ListTile(
                           title: Text(
-                            designPatternCategories[index].title.call(
-                              Locale(l10n.localeName),
+                            designPatternCategories[index].title(
+                              l10n.localeName,
                             ),
                           ),
                         ),
@@ -56,9 +56,7 @@ class DesignPatternsScreen extends StatelessWidget {
                               },
                               child: Padding(
                                 padding: const .all(10),
-                                child: Text(
-                                  pattern.title.call(Locale(l10n.localeName)),
-                                ),
+                                child: Text(pattern.title(l10n.localeName)),
                               ),
                             ),
                       ],

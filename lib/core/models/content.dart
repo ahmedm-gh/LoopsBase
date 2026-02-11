@@ -21,8 +21,8 @@ final class StringContent extends Content<String> {
 final class CodeContent extends Content<String> {
   const CodeContent(
     super.value, {
+    required this.codeLanguage,
     this.codeQuality = .normal,
-    this.codeLanguage = .dart,
     this.codeType = .code,
   });
 

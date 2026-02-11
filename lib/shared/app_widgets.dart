@@ -6,3 +6,5 @@ export 'widgets/reference_widget.dart';
 export 'widgets/content_viewer.dart';
 export 'widgets/filter_chip.dart';
 export 'widgets/bookmark_button.dart';
+export 'widgets/svg_icon.dart';
+export 'widgets/icons.dart';

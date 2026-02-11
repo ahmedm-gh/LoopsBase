@@ -1,16 +1,14 @@
-import 'dart:ui';
-
 class LocalizedValue<E> {
   const LocalizedValue({required this.en, required this.ar});
 
   final E en, ar;
 
-  E get(Locale locale) => switch (locale.languageCode) {
+  E get(String languageCode) => switch (languageCode) {
     "ar" => ar,
     _ => en,
   };
 
-  E call(Locale locale) => get(locale);
+  E call(String languageCode) => get(languageCode);
 
   Map<String, E> toMap() => {"en": en, "ar": ar};
 

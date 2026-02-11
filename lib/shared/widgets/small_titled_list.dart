@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tuts/l10n/app_localizations.dart';
+import 'package:tuts/shared/widgets/icons.dart';
 
 import '../../core/extensions/extensions.dart';
 
@@ -115,16 +116,7 @@ class SmallTitledList extends StatelessWidget {
           if (title ?? _getTitle(context.l10n) case final title?)
             Row(
               children: [
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    borderRadius: .circular(5),
-                    color: color.withValues(alpha: 0.1),
-                  ),
-                  child: Padding(
-                    padding: const .all(5),
-                    child: Icon(icon, color: color, size: 18),
-                  ),
-                ),
+                FilledIcon(icon: icon, color: color),
                 const SizedBox(width: 5),
                 Expanded(
                   child: DefaultTextStyle.merge(

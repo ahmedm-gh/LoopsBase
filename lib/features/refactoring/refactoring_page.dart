@@ -1,119 +1,13 @@
-import "package:flutter/material.dart";
-import "package:tuts/core/extensions/extensions.dart";
-import "package:tuts/core/models/refactoring_technique.dart";
-import "package:tuts/core/repositories/refactoring_repository.dart";
-import "package:tuts/features/refactoring/refactoring_details_page.dart";
+import 'package:flutter/material.dart';
 
-class RefactoringPage extends StatelessWidget {
-  const RefactoringPage({super.key});
+class RefactoringScreen extends StatelessWidget {
+  const RefactoringScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.refactoring)),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          _RefactoringCategory(
-            title: l10n.composingMethods,
-            description: l10n.composingMethodsDesc,
-            techniques: RefactoringRepository.getTechniquesByCategory(
-              context,
-              'composing',
-            ),
-          ),
-          const SizedBox(height: 32),
-          _RefactoringCategory(
-            title: l10n.movingFeatures,
-            description: l10n.movingFeaturesDesc,
-            techniques: RefactoringRepository.getTechniquesByCategory(
-              context,
-              'moving',
-            ),
-          ),
-          const SizedBox(height: 32),
-          _RefactoringCategory(
-            title: l10n.organizingData,
-            description: l10n.organizingDataDesc,
-            techniques: RefactoringRepository.getTechniquesByCategory(
-              context,
-              'organizing',
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _RefactoringCategory extends StatelessWidget {
-  const _RefactoringCategory({
-    required this.title,
-    required this.description,
-    required this.techniques,
-  });
-  final String title;
-  final String description;
-  final List<RefactoringTechnique> techniques;
-
-  @override
-  Widget build(BuildContext context) {
-    final textTheme = context.textTheme;
-    final colors = context.colorScheme;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: textTheme.headlineSmall?.copyWith(
-            fontWeight: FontWeight.bold,
-            color: colors.tertiary,
-          ),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          description,
-          textDirection: description.getDirection(),
-          style: textTheme.bodySmall,
-        ),
-        const SizedBox(height: 16),
-        ...techniques.map((t) => _TechniqueTile(technique: t)),
-      ],
-    );
-  }
-}
-
-class _TechniqueTile extends StatelessWidget {
-  const _TechniqueTile({required this.technique});
-  final RefactoringTechnique technique;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.only(bottom: 8),
-      child: ListTile(
-        title: Text(technique.title),
-        leading: const Icon(
-          Icons.auto_fix_normal_rounded,
-          size: 20,
-          color: Colors.orange,
-        ),
-        trailing: const Icon(
-          Icons.arrow_forward_ios,
-          size: 16,
-          color: Colors.grey,
-        ),
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (context) =>
-                  RefactoringDetailsPage(techniqueId: technique.id),
-            ),
-          );
-        },
+    return const Material(
+      child: Center(
+        child: Text("Refactoring\nComing Soon...", textAlign: .center),
       ),
     );
   }

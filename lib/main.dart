@@ -1,13 +1,17 @@
+import "dart:convert";
 import "dart:developer";
 
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
+import "package:flutter_svg/svg.dart";
 import "package:tuts/core/app_notifiers.dart";
 import "package:tuts/core/extensions/extensions.dart";
 import "package:tuts/core/services/locator.dart";
 import "package:tuts/core/services/routes.dart";
+import "package:tuts/data/svg_icons.dart";
 import "package:tuts/l10n/app_localizations.dart";
+import "package:tuts/shared/app_widgets.dart";
 import "package:url_launcher/url_launcher.dart";
 
 void main() {
@@ -147,6 +151,7 @@ class AppBottomBar extends StatelessWidget {
           ),
           padding: const .all(7.5),
           child: SafeArea(
+            top: false,
             child: Wrap(
               spacing: 5,
               runSpacing: 5,
@@ -170,20 +175,20 @@ class AppBottomBar extends StatelessWidget {
                   //     ? l10n.lightMode
                   //     : l10n.darkMode,
                 ),
-                TextButton(
+                const Text("•"),
+                IconButton(
+                  onPressed: () {
+                    launchUrl(Uri.parse("https://github.com/ahmedm-gh"));
+                  },
+                  icon: const SvgIcon(SvgIcons.gitHub),
+                ),
+                IconButton(
                   onPressed: () {
                     launchUrl(
                       Uri.parse("https://www.linkedin.com/in/ahmeds1/"),
                     );
                   },
-                  child: const Text("LinkedIn: @ahmeds1"),
-                ),
-                const Text("|"),
-                TextButton(
-                  onPressed: () {
-                    launchUrl(Uri.parse("https://github.com/ahmedm-gh"));
-                  },
-                  child: const Text("GitHub: @ahmedm-gh"),
+                  icon: const SvgIcon(SvgIcons.linkedIn),
                 ),
               ],
             ),

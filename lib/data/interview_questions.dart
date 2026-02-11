@@ -137,7 +137,8 @@ const List<InterviewQuestion> questionsData = [
               "StatefulWidget: Mutable widget that maintains state through a separate State object. It can rebuild itself when setState() is called or when dependencies change. The State object persists between rebuilds. Use when widget needs to change based on user interaction or data changes.",
             ],
           ),
-          CodeContent('''// StatelessWidget Example
+          CodeContent(
+            '''// StatelessWidget Example
 class MyText extends StatelessWidget {
   final String text;
   const MyText(this.text, {Key? key}) : super(key: key);
@@ -171,7 +172,10 @@ class _CounterState extends State<Counter> {
       ],
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Choose StatelessWidget by default for better performance; only use StatefulWidget when state is needed.",
@@ -192,7 +196,8 @@ class _CounterState extends State<Counter> {
               "StatefulWidget: ويدجت قابل للتغيير يحافظ على الحالة من خلال كائن State منفصل. يمكنه إعادة بناء نفسه عند استدعاء ()setState أو عند تغيير التبعيات. كائن State يستمر بين عمليات إعادة البناء. يُستخدم عندما يحتاج الويدجت للتغيير بناءً على تفاعل المستخدم أو تغييرات البيانات.",
             ],
           ),
-          CodeContent('''// مثال StatelessWidget
+          CodeContent(
+            '''// مثال StatelessWidget
 class MyText extends StatelessWidget {
   final String text;
   const MyText(this.text, {Key? key}) : super(key: key);
@@ -226,7 +231,10 @@ class _CounterState extends State<Counter> {
       ],
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "اختر StatelessWidget افتراضيًا لأداء أفضل؛ استخدم StatefulWidget فقط عندما تكون الحالة مطلوبة.",
@@ -303,7 +311,8 @@ class _CounterState extends State<Counter> {
               "Localizing text with Localizations.of(context)",
             ],
           ),
-          CodeContent('''// Common BuildContext uses
+          CodeContent(
+            '''// Common BuildContext uses
 Widget build(BuildContext context) {
   // Access theme
   final primaryColor = Theme.of(context).primaryColor;
@@ -322,7 +331,10 @@ Widget build(BuildContext context) {
   );
   
   return Container();
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Context is only valid during the build phase and when the widget is mounted. Don't store it for later async use without proper handling.",
@@ -348,7 +360,8 @@ Widget build(BuildContext context) {
               "ترجمة النص باستخدام (Localizations.of(context",
             ],
           ),
-          CodeContent('''// استخدامات BuildContext الشائعة
+          CodeContent(
+            '''// استخدامات BuildContext الشائعة
 Widget build(BuildContext context) {
   // الوصول إلى السمة
   final primaryColor = Theme.of(context).primaryColor;
@@ -367,7 +380,10 @@ Widget build(BuildContext context) {
   );
   
   return Container();
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "السياق صالح فقط أثناء مرحلة البناء وعندما يكون الويدجت مثبتًا. لا تخزنه للاستخدام غير المتزامن اللاحق بدون معالجة مناسبة.",
@@ -431,7 +447,8 @@ Widget build(BuildContext context) {
               "Abstraction: Hiding complex implementation details using abstract classes and interfaces. Shows only essential features.",
             ],
           ),
-          CodeContent('''// Encapsulation
+          CodeContent(
+            '''// Encapsulation
 class BankAccount {
   String _balance = '1000'; // Private field
   
@@ -473,7 +490,10 @@ class Circle implements Shape {
   
   @override
   double calculateArea() => 3.14 * radius * radius;
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Dart supports single inheritance but multiple interface implementation. Use mixins for shared behavior across unrelated classes.",
@@ -495,7 +515,8 @@ class Circle implements Shape {
               "التجريد: إخفاء تفاصيل التنفيذ المعقدة باستخدام الفئات والواجهات المجردة. يظهر فقط الميزات الأساسية.",
             ],
           ),
-          CodeContent('''// التغليف
+          CodeContent(
+            '''// التغليف
 class BankAccount {
   String _balance = '1000'; // حقل خاص
   
@@ -537,7 +558,10 @@ class Circle implements Shape {
   
   @override
   double calculateArea() => 3.14 * radius * radius;
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Dart يدعم الوراثة الفردية ولكن تنفيذ واجهات متعددة. استخدم mixins للسلوك المشترك عبر فئات غير مرتبطة.",
@@ -602,7 +626,8 @@ class Circle implements Shape {
               "D - Dependency Inversion Principle: Depend on abstractions, not on concretions. High-level modules should not depend on low-level modules; both should depend on abstractions.",
             ],
           ),
-          CodeContent('''// Single Responsibility Principle
+          CodeContent(
+            '''// Single Responsibility Principle
 class UserRepository {
   Future<User> getUser(String id) async {
     // Only responsible for data access
@@ -646,7 +671,10 @@ class UserService {
   UserService(this.repository); // Inject abstraction, not concrete class
   
   Future<User> fetchUser(String id) => repository.getUser(id);
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "SOLID principles improve code maintainability, testability, and scalability. Essential for large Flutter applications.",
@@ -670,7 +698,8 @@ class UserService {
               "D - مبدأ عكس التبعية: اعتمد على التجريدات، وليس على التفاصيل الملموسة. الوحدات عالية المستوى لا يجب أن تعتمد على وحدات منخفضة المستوى؛ كلاهما يجب أن يعتمد على التجريدات.",
             ],
           ),
-          CodeContent('''// مبدأ المسؤولية الواحدة
+          CodeContent(
+            '''// مبدأ المسؤولية الواحدة
 class UserRepository {
   Future<User> getUser(String id) async {
     // مسؤول فقط عن الوصول للبيانات
@@ -707,7 +736,10 @@ class UserService {
   UserService(this.repository); // حقن التجريد، وليس الفئة الملموسة
   
   Future<User> fetchUser(String id) => repository.getUser(id);
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "مبادئ SOLID تحسن قابلية الصيانة والاختبار وقابلية التوسع للكود. ضرورية للتطبيقات الكبيرة في Flutter.",
@@ -763,7 +795,8 @@ class UserService {
               "Repository: Abstracts data sources and provides a clean API for data access. Acts as a mediator between data sources (API, local DB) and business logic.",
             ],
           ),
-          CodeContent('''// Singleton Pattern
+          CodeContent(
+            '''// Singleton Pattern
 class ApiService {
   static final ApiService _instance = ApiService._internal();
   
@@ -833,7 +866,10 @@ class UserRepository implements IUserRepository {
     await _db.saveUser(user);
     await _api.updateUser(user);
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Singleton can cause testing issues; consider using dependency injection instead for better testability.",
@@ -858,7 +894,8 @@ class UserRepository implements IUserRepository {
           StringContent(
             "تطبيق هذه الأنماط يسهل اختبار الكود وفصله عن بعضه البعض.",
           ),
-          CodeContent('''// نمط Singleton
+          CodeContent(
+            '''// نمط Singleton
 class ApiService {
   static final ApiService _instance = ApiService._internal();
   
@@ -928,7 +965,10 @@ class UserRepository implements IUserRepository {
     await _db.saveUser(user);
     await _api.updateUser(user);
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Singleton يمكن أن يسبب مشاكل في الاختبار؛ فكر في استخدام حقن التبعية بدلاً من ذلك لقابلية اختبار أفضل.",
@@ -1009,7 +1049,8 @@ class UserRepository implements IUserRepository {
               "HashMap/LinkedHashMap: Different iteration order guarantees for Maps.",
             ],
           ),
-          CodeContent('''// List - Ordered, allows duplicates
+          CodeContent(
+            '''// List - Ordered, allows duplicates
 List<String> items = ['a', 'b', 'c', 'a'];
 print(items[0]); // 'a'
 
@@ -1034,7 +1075,10 @@ Task next = taskQueue.removeFirst(); // 'First'
 // LinkedHashSet - Unique and ordered
 LinkedHashSet<String> orderedSet = LinkedHashSet();
 orderedSet.addAll(['c', 'a', 'b']);
-// Maintains insertion order: c, a, b''', codeQuality: .good),
+// Maintains insertion order: c, a, b''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Choose based on requirements: order, uniqueness, lookup speed.",
@@ -1061,7 +1105,8 @@ orderedSet.addAll(['c', 'a', 'b']);
               "HashMap/LinkedHashMap: ضمانات ترتيب تكرار مختلفة للـ Maps.",
             ],
           ),
-          CodeContent('''// List - مرتبة، تسمح بالتكرار
+          CodeContent(
+            '''// List - مرتبة، تسمح بالتكرار
 List<String> items = ['a', 'b', 'c', 'a'];
 print(items[0]); // 'a'
 
@@ -1086,7 +1131,10 @@ Task next = taskQueue.removeFirst(); // 'الأول'
 // LinkedHashSet - فريد ومرتب
 LinkedHashSet<String> orderedSet = LinkedHashSet();
 orderedSet.addAll(['ج', 'أ', 'ب']);
-// يحافظ على ترتيب الإدراج: ج، أ، ب''', codeQuality: .good),
+// يحافظ على ترتيب الإدراج: ج، أ، ب''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "اختر بناءً على المتطلبات: الترتيب، التفرد، سرعة البحث.",
@@ -1168,7 +1216,8 @@ orderedSet.addAll(['ج', 'أ', 'ب']);
               "Riverpod: Provider 2.0, compile-time safety, no BuildContext needed for reading state. Better testing support, modern approach with no runtime errors.",
             ],
           ),
-          CodeContent('''// setState - Local state
+          CodeContent(
+            '''// setState - Local state
 class Counter extends StatefulWidget {
   @override
   _CounterState createState() => _CounterState();
@@ -1217,7 +1266,10 @@ class CounterNotifier extends StateNotifier<int> {
 }
 
 // Usage
-ref.read(counterProvider.notifier).increment();''', codeQuality: .good),
+ref.read(counterProvider.notifier).increment();''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Choose based on app complexity: setState for simple local state, Provider for medium apps, BLoC for complex enterprise apps, Riverpod for modern type-safe approach.",
@@ -1240,7 +1292,8 @@ ref.read(counterProvider.notifier).increment();''', codeQuality: .good),
               "Riverpod: Provider 2.0، أمان وقت الترجمة، لا حاجة لـ BuildContext لقراءة الحالة. دعم اختبار أفضل، نهج حديث بدون أخطاء وقت التشغيل.",
             ],
           ),
-          CodeContent('''// setState - حالة محلية
+          CodeContent(
+            '''// setState - حالة محلية
 class Counter extends StatefulWidget {
   @override
   _CounterState createState() => _CounterState();
@@ -1289,7 +1342,10 @@ class CounterNotifier extends StateNotifier<int> {
 }
 
 // الاستخدام
-ref.read(counterProvider.notifier).increment();''', codeQuality: .good),
+ref.read(counterProvider.notifier).increment();''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "اختر بناءً على تعقيد التطبيق: setState للحالة المحلية البسيطة، Provider للتطبيقات المتوسطة، BLoC للتطبيقات المؤسسية المعقدة، Riverpod للنهج الحديث الآمن من حيث النوع.",
@@ -1372,7 +1428,8 @@ ref.read(counterProvider.notifier).increment();''', codeQuality: .good),
               "Streams: Sequence of asynchronous events that can emit multiple values over time. Can be single-subscription (one listener) or broadcast (multiple listeners).",
             ],
           ),
-          CodeContent('''// Future - Single async result
+          CodeContent(
+            '''// Future - Single async result
 Future<String> fetchData() async {
   await Future.delayed(Duration(seconds: 2));
   return 'Data loaded';
@@ -1419,7 +1476,10 @@ Future<void> loadAll() async {
     fetchData(),
   ]);
   print('All loaded: \$results');
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Use Future for single async operations (API calls, database queries). Use Streams for continuous data (WebSocket, user events, sensors).",
@@ -1442,7 +1502,8 @@ Future<void> loadAll() async {
               "Streams: تسلسل من الأحداث غير المتزامنة يمكن أن يصدر قيمًا متعددة مع مرور الوقت. يمكن أن يكون اشتراك واحد (مستمع واحد) أو بث (مستمعون متعددون).",
             ],
           ),
-          CodeContent('''// Future - نتيجة واحدة غير متزامنة
+          CodeContent(
+            '''// Future - نتيجة واحدة غير متزامنة
 Future<String> fetchData() async {
   await Future.delayed(Duration(seconds: 2));
   return 'تم تحميل البيانات';
@@ -1489,7 +1550,10 @@ Future<void> loadAll() async {
     fetchData(),
   ]);
   print('تم التحميل جميعًا: \$results');
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "استخدم Future للعمليات غير المتزامنة الواحدة (استدعاءات API، استعلامات قاعدة البيانات). استخدم Streams للبيانات المستمرة (WebSocket، أحداث المستخدم، المستشعرات).",
@@ -1573,7 +1637,8 @@ Future<void> loadAll() async {
               "Use SliverList for complex scrollable layouts",
             ],
           ),
-          CodeContent('''// Use const constructors
+          CodeContent(
+            '''// Use const constructors
 const Text('Static text'); // Won't rebuild
 
 // ListView.builder for performance
@@ -1617,7 +1682,10 @@ class MyWidget extends StatelessWidget {
       ],
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Always profile before optimizing - measure, don't guess. Use Flutter DevTools to identify bottlenecks.",
@@ -1649,7 +1717,8 @@ class MyWidget extends StatelessWidget {
               "استخدم SliverList للتخطيطات القابلة للتمرير المعقدة",
             ],
           ),
-          CodeContent('''// استخدم منشئات const
+          CodeContent(
+            '''// استخدم منشئات const
 const Text('نص ثابت'); // لن يُعاد بناؤه
 
 // ListView.builder للأداء
@@ -1693,7 +1762,10 @@ class MyWidget extends StatelessWidget {
       ],
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "راقب الأداء دائمًا قبل التحسين - قِس، لا تخمن. استخدم Flutter DevTools لتحديد الاختناقات.",
@@ -1761,7 +1833,8 @@ class MyWidget extends StatelessWidget {
               "When widgets of the same type are swapped in the tree",
             ],
           ),
-          CodeContent('''// Problem: Swapping widgets without keys
+          CodeContent(
+            '''// Problem: Swapping widgets without keys
 class _MyState extends State<MyWidget> {
   List<Widget> items = [
     StatefulTile('A'),
@@ -1811,7 +1884,10 @@ Widget build(BuildContext context) {
 ListView.builder(
   key: PageStorageKey<String>('myList'),
   itemBuilder: (context, index) => ...,
-);''', codeQuality: .good),
+);''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Don't use keys unless necessary, especially GlobalKey as it's expensive.",
@@ -1846,7 +1922,8 @@ ListView.builder(
               "عندما يتم تبديل الودجتس من نفس النوع في الشجرة",
             ],
           ),
-          CodeContent('''// مشكلة: تبديل الودجتس بدون مفاتيح
+          CodeContent(
+            '''// مشكلة: تبديل الودجتس بدون مفاتيح
 class _MyState extends State<MyWidget> {
   List<Widget> items = [
     StatefulTile('أ'),
@@ -1896,7 +1973,10 @@ Widget build(BuildContext context) {
 ListView.builder(
   key: PageStorageKey<String>('قائمتي'),
   itemBuilder: (context, index) => ...,
-);''', codeQuality: .good),
+);''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "لا تستخدم المفاتيح إلا إذا لزم الأمر، خاصة GlobalKey لأنه مكلف.",
@@ -2028,6 +2108,7 @@ ListView.builder(
   @override
   Widget build(BuildContext context) => MaterialApp(home: HomeScreen());
 }''',
+            codeLanguage: .dart,
             codeQuality: .good,
           ),
         ],
@@ -2103,6 +2184,7 @@ ListView.builder(
   @override
   Widget build(BuildContext context) => MaterialApp(home: HomeScreen());
 }''',
+            codeLanguage: .dart,
             codeQuality: .good,
           ),
         ],
@@ -2160,7 +2242,8 @@ ListView.builder(
               "Integration Tests: Test complete app or large feature flows end-to-end. Run on real devices or emulators. Verify entire user journeys (e.g., login → home → details). Slowest (minutes). Most comprehensive but expensive to maintain.",
             ],
           ),
-          CodeContent('''// UNIT TEST - Testing business logic
+          CodeContent(
+            '''// UNIT TEST - Testing business logic
 import 'package:test/test.dart';
 
 void main() {
@@ -2226,7 +2309,10 @@ void main() {
     // Verify navigation to home screen
     expect(find.text('Welcome'), findsOneWidget);
   });
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Follow the testing pyramid: Many unit tests (70%), fewer widget tests (20%), very few integration tests (10%).",
@@ -2249,7 +2335,8 @@ void main() {
               "اختبارات التكامل: اختبار التطبيق الكامل أو تدفقات الميزات الكبيرة من البداية إلى النهاية. التشغيل على أجهزة حقيقية أو محاكيات. التحقق من رحلات المستخدم الكاملة (مثل تسجيل الدخول → الصفحة الرئيسية → التفاصيل). الأبطأ (دقائق). الأكثر شمولية ولكن مكلفة للصيانة.",
             ],
           ),
-          CodeContent('''// اختبار الوحدة - اختبار منطق الأعمال
+          CodeContent(
+            '''// اختبار الوحدة - اختبار منطق الأعمال
 import 'package:test/test.dart';
 
 void main() {
@@ -2315,7 +2402,10 @@ void main() {
     // التحقق من الانتقال إلى الشاشة الرئيسية
     expect(find.text('مرحبًا'), findsOneWidget);
   });
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "اتبع هرم الاختبار: العديد من اختبارات الوحدة (70%)، عدد أقل من اختبارات الودجت (20%)، عدد قليل جدًا من اختبارات التكامل (10%).",
@@ -2402,6 +2492,7 @@ void main() {
   debugPrint('Impeller enabled: \${WidgetsBinding.instance.renderView != null}');
   runApp(MyApp());
 }''',
+            codeLanguage: .dart,
             codeQuality: .good,
           ),
         ],
@@ -2457,6 +2548,7 @@ void main() {
   debugPrint('Impeller مفعّل: \${WidgetsBinding.instance.renderView != null}');
   runApp(MyApp());
 }''',
+            codeLanguage: .dart,
             codeQuality: .good,
           ),
         ],
@@ -2508,7 +2600,8 @@ void main() {
               "Use 'dio' for: Production apps, apps needing authentication token management, file uploads, request retries, logging, or apps with complex networking requirements",
             ],
           ),
-          CodeContent('''// Using HTTP package (simple)
+          CodeContent(
+            '''// Using HTTP package (simple)
 import 'package:http/http.dart' as http;
 
 Future<User> fetchUser() async {
@@ -2586,7 +2679,10 @@ class ApiService {
       },
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Always handle network errors properly - consider connectivity issues, timeouts, and server errors.",
@@ -2616,7 +2712,8 @@ class ApiService {
               "استخدم 'dio' لـ: تطبيقات الإنتاج، التطبيقات التي تحتاج إدارة رمز المصادقة، تحميل الملفات، إعادة محاولة الطلبات، التسجيل، أو التطبيقات ذات متطلبات الشبكات المعقدة",
             ],
           ),
-          CodeContent('''// استخدام حزمة HTTP (بسيط)
+          CodeContent(
+            '''// استخدام حزمة HTTP (بسيط)
 import 'package:http/http.dart' as http;
 
 Future<User> fetchUser() async {
@@ -2694,7 +2791,10 @@ class ApiService {
       },
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "تعامل دائمًا مع أخطاء الشبكة بشكل صحيح - ضع في اعتبارك مشاكل الاتصال، انتهاء المهلة، وأخطاء الخادم.",
@@ -2846,6 +2946,7 @@ final retrievedUser = box.get('user1');
 
 // Query
 final adults = box.values.where((user) => user.age >= 18).toList();''',
+            codeLanguage: .dart,
             codeQuality: .good,
           ),
         ],
@@ -2969,6 +3070,7 @@ final retrievedUser = box.get('user1');
 
 // الاستعلام
 final adults = box.values.where((user) => user.age >= 18).toList();''',
+            codeLanguage: .dart,
             codeQuality: .good,
           ),
         ],
@@ -3025,7 +3127,8 @@ final adults = box.values.where((user) => user.age >= 18).toList();''',
               "Feature-First: Organize code by features rather than layers. Each feature folder contains its own presentation, domain, and data. Good for large apps with many features.",
             ],
           ),
-          CodeContent('''// Clean Architecture Structure
+          CodeContent(
+            '''// Clean Architecture Structure
 /lib
   /core
     /error
@@ -3104,7 +3207,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       (user) => emit(UserLoaded(user)),
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Don't over-engineer small apps - start simple and add architecture as needed.",
@@ -3129,7 +3235,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
               "Feature-First: تنظيم الكود حسب الميزات بدلاً من الطبقات. كل مجلد ميزة يحتوي على العرض والمجال والبيانات الخاصة به. جيد للتطبيقات الكبيرة ذات الميزات العديدة.",
             ],
           ),
-          CodeContent('''// هيكل البنية النظيفة
+          CodeContent(
+            '''// هيكل البنية النظيفة
 /lib
   /core
     /error
@@ -3208,7 +3315,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       (user) => emit(UserLoaded(user)),
     );
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "لا تبالغ في هندسة التطبيقات الصغيرة - ابدأ بسيطًا وأضف البنية حسب الحاجة.",
@@ -3273,7 +3383,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
               "Better tooling: IDE can provide better code completion and warnings",
             ],
           ),
-          CodeContent('''// Null Safety basics
+          CodeContent(
+            '''// Null Safety basics
 String name = 'John'; // Cannot be null
 // name = null; // Compile error!
 
@@ -3326,7 +3437,10 @@ void greet(String name, {String? nickname}) {
   if (nickname != null) {
     print('Also known as \$nickname');
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "Migrate older apps to null safety using 'dart migrate' command.",
@@ -3360,7 +3474,8 @@ void greet(String name, {String? nickname}) {
               "أدوات أفضل: IDE يمكنه توفير إكمال كود وتحذيرات أفضل",
             ],
           ),
-          CodeContent('''// أساسيات أمان العدم
+          CodeContent(
+            '''// أساسيات أمان العدم
 String name = 'علي'; // لا يمكن أن يكون null
 // name = null; // خطأ في الترجمة!
 
@@ -3413,7 +3528,10 @@ void greet(String name, {String? nickname}) {
   if (nickname != null) {
     print('يُعرف أيضًا بـ \$nickname');
   }
-}''', codeQuality: .good),
+}''',
+            codeLanguage: .dart,
+            codeQuality: .good,
+          ),
         ],
         notes: [
           "رحّل التطبيقات القديمة إلى أمان العدم باستخدام أمر 'dart migrate'.",

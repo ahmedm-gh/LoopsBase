@@ -137,35 +137,35 @@ class DesignPattern {
 
   bool get isClassic => category == .GoF;
 
-  String getLocalizedTitle(String languageCode) {
-    return languageCode == 'ar' ? title.ar : title.en;
+  String getLocalizedTitle(String langCode) {
+    return langCode == 'ar' ? title.ar : title.en;
   }
 
-  String getLocalizedDescription(String languageCode) {
-    return languageCode == 'ar' ? description.ar : description.en;
+  String getLocalizedDescription(String langCode) {
+    return langCode == 'ar' ? description.ar : description.en;
   }
 
-  List<Content> getLocalizedContent(String languageCode) {
-    return languageCode == 'ar' ? content.ar : content.en;
+  List<Content> getLocalizedContent(String langCode) {
+    return langCode == 'ar' ? content.ar : content.en;
   }
 
-  List<StrCodeBlock>? getLocalizedExamples(String languageCode) {
-    return languageCode == 'ar' ? examples?.ar : examples?.en;
+  List<StrCodeBlock>? getLocalizedExamples(String langCode) {
+    return langCode == 'ar' ? examples?.ar : examples?.en;
   }
 
-  List<String>? getLocalizedPros(String languageCode) {
-    return languageCode == 'ar' ? pros?.ar : pros?.en;
+  List<String>? getLocalizedPros(String langCode) {
+    return langCode == 'ar' ? pros?.ar : pros?.en;
   }
 
-  List<String>? getLocalizedCons(String languageCode) {
-    return languageCode == 'ar' ? cons?.ar : cons?.en;
+  List<String>? getLocalizedCons(String langCode) {
+    return langCode == 'ar' ? cons?.ar : cons?.en;
   }
 
-  List<Content>? getLocalizedWhenToUse(String languageCode) {
-    return languageCode == 'ar' ? whenToUse?.ar : whenToUse?.en;
+  List<Content>? getLocalizedWhenToUse(String langCode) {
+    return langCode == 'ar' ? whenToUse?.ar : whenToUse?.en;
   }
 
-  List<String>? getLocalizedCommonMistakes(String languageCode) {
-    return languageCode == 'ar' ? commonMistakes?.ar : commonMistakes?.en;
+  List<String>? getLocalizedCommonMistakes(String langCode) {
+    return langCode == 'ar' ? commonMistakes?.ar : commonMistakes?.en;
   }
 }
