@@ -453,15 +453,17 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
     r'\b(if|else|switch|case|default|break|continue|return|do|while|for|in|try|catch|finally|throw|rethrow|assert|async|await|yield|on|sync|when)\b|'
     // 5. Structural/Storage (Blue)
     r'\b(abstract|as|base|class|const|covariant|deferred|dynamic|enum|export|extends|extension|external|factory|false|final|Function|get|hide|implements|import|interface|is|late|library|mixin|new|null|of|operator|part|required|sealed|set|show|static|struct|super|this|true|type|typedef|var|void|with)\b|'
-    // 6. Functions (Lookahead for opening paren)
+    // 6. Built-in Types (NEW - must come before functions)
+    r'\b(int|double|num|bool|String|Object|List|Set|Map|Iterable|Iterator|Future|Stream|Duration|DateTime|Uri|RegExp|Pattern|Match|Error|Exception|StackTrace|Type|Symbol|Null|Never)\b|'
+    // 7. Functions (Lookahead for opening paren)
     r'\b([a-z_]\w*)(?=\s*\()|'
-    // 7. Types (PascalCase)
+    // 8. Types (PascalCase)
     r'\b([A-Z][a-zA-Z0-9_]*)\b|'
-    // 8. Numbers
+    // 9. Numbers
     r'\b(0x[0-9a-fA-F]+|\d+(?:\.\d+)?)\b|'
-    // 9. Named Parameters (Lookahead for colon)
+    // 10. Named Parameters (Lookahead for colon)
     r'(\w+)(?=:)|'
-    // 10. Operators
+    // 11. Operators
     r'([+\-*/%<>=!&|^~?]+|[{}()[\].,;:])',
   );
 
@@ -500,26 +502,30 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
         else if (m.group(5) != null) {
           color = keyword;
         }
-        // Group 6: Function
+        // Group 6: Built-in Types (NEW)
         else if (m.group(6) != null) {
-          color = function;
-          text = m.group(6)!;
-        }
-        // Group 7: Type
-        else if (m.group(7) != null) {
           color = type;
         }
-        // Group 8: Number
+        // Group 7: Function
+        else if (m.group(7) != null) {
+          color = function;
+          text = m.group(7)!;
+        }
+        // Group 8: Type (PascalCase)
         else if (m.group(8) != null) {
+          color = type;
+        }
+        // Group 9: Number
+        else if (m.group(9) != null) {
           color = number;
         }
-        // Group 9: Named Param
-        else if (m.group(9) != null) {
-          color = param;
-          text = m.group(9)!;
-        }
-        // Group 10: Punctuation/Operators
+        // Group 10: Named Param
         else if (m.group(10) != null) {
+          color = param;
+          text = m.group(10)!;
+        }
+        // Group 11: Punctuation/Operators
+        else if (m.group(11) != null) {
           color = punctuation;
         }
 
@@ -610,7 +616,9 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
       },
     );
   }
-} // ============================================================================
+}
+
+// ============================================================================
 // PYTHON SYNTAX HIGHLIGHTER
 // ============================================================================
 

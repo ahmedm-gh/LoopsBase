@@ -798,7 +798,7 @@ void main() {
       .addTopping("mushrooms")
       .build();
   
-  print("Pizza: \${pizza.diameter}" \${pizza.crust} crust");
+  print("Pizza: \${pizza.diameter} \${pizza.crust} crust");
   print("Toppings: \${pizza.toppings.join(", ")}");
 }"""),
       ],
