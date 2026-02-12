@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:tuts/core/models/code_block.dart';
 import 'package:tuts/core/models/localized_text.dart';
 import 'package:tuts/l10n/app_localizations.dart';
@@ -55,7 +56,7 @@ enum PatternCategory {
 
 enum PatternLevel { beginner, intermediate, advanced }
 
-class DesignPatternsCategory {
+class DesignPatternsCategory with EquatableMixin {
   const DesignPatternsCategory({
     required this.id,
     required this.title,
@@ -72,9 +73,12 @@ class DesignPatternsCategory {
   final bool isClassic;
 
   final List<String> patterns;
+
+  @override
+  List<Object?> get props => [id, title, description, isClassic, patterns];
 }
 
-class DesignPattern {
+class DesignPattern with EquatableMixin {
   const DesignPattern({
     required this.id,
     required this.title,
@@ -168,4 +172,23 @@ class DesignPattern {
   List<String>? getLocalizedCommonMistakes(String langCode) {
     return langCode == 'ar' ? commonMistakes?.ar : commonMistakes?.en;
   }
+
+  @override
+  List<Object?> get props => [
+    id,
+    title,
+    description,
+    group,
+    type,
+    category,
+    level,
+    content,
+    examples,
+    pros,
+    cons,
+    whenToUse,
+    commonMistakes,
+    relatedPatterns,
+    oftenConfusedWith,
+  ];
 }

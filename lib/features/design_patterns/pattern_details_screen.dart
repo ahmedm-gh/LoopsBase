@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:tuts/core/extensions/extensions.dart";
 import "package:tuts/shared/app_widgets.dart";
+import "package:tuts/shared/design_layouts.dart";
 
 import "../../core/models/design_patterns.dart";
 import "../../data/design_patterns.dart";
@@ -27,10 +28,10 @@ class PatternDetailsScreen extends StatelessWidget {
           title: Text(pattern.getLocalizedTitle(l10n.localeName)),
         ),
         body: SingleChildScrollView(
-          padding: const .all(16),
+          padding: DL.listPadding,
           child: Column(
             crossAxisAlignment: .stretch,
-            spacing: 15,
+            spacing: DL.listSeparatorHeight,
             children: [
               // MISSING
               // - id
@@ -45,10 +46,10 @@ class PatternDetailsScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      [
+                      <String>[
                         pattern.category.label(l10n),
                         pattern.group.label(l10n),
-                        pattern.type?.label(l10n),
+                        ?pattern.type?.label(l10n),
                       ].join(" • "),
                       // maxLines: 1,
                       // overflow: .ellipsis,

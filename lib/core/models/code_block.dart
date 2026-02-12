@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 enum CodeQuality {
   normal,
   good,
@@ -12,7 +14,7 @@ enum CodeLanguage { dart, yaml }
 
 enum CodeType { code, explanation }
 
-class StrCodeBlock {
+class StrCodeBlock with EquatableMixin {
   const StrCodeBlock(
     this.value, {
     this.codeLanguage = .dart,
@@ -40,10 +42,5 @@ class StrCodeBlock {
   static const empty = StrCodeBlock("");
 
   @override
-  int get hashCode => value.hashCode;
-
-  @override
-  bool operator ==(Object other) {
-    return other is StrCodeBlock && other.value == value;
-  }
+  List<Object?> get props => [value, codeLanguage, codeType];
 }

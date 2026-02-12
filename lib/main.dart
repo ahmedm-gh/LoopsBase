@@ -1,10 +1,8 @@
-import "dart:convert";
 import "dart:developer";
 
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
-import "package:flutter_svg/svg.dart";
 import "package:tuts/core/app_notifiers.dart";
 import "package:tuts/core/extensions/extensions.dart";
 import "package:tuts/core/services/locator.dart";
@@ -39,8 +37,7 @@ class App extends StatelessWidget {
           name: "app",
         );
         final colorScheme = ColorScheme.fromSeed(
-          seedColor: const Color(0xff135bec),
-          // seedColor: Colors.blueGrey,
+          seedColor: Colors.lightBlue,
           brightness: appValues.brightness,
         );
         return MaterialApp(
@@ -74,6 +71,12 @@ class App extends StatelessWidget {
             splashFactory: kIsWeb ? NoSplash.splashFactory : null,
             useMaterial3: true,
             colorScheme: colorScheme,
+            buttonTheme: ButtonThemeData(
+              shape: RoundedRectangleBorder(
+                borderRadius: .circular(7.5),
+                // side: BorderSide(color: colorScheme.outlineVariant),
+              ),
+            ),
             iconButtonTheme: IconButtonThemeData(
               style: IconButton.styleFrom(
                 shape: RoundedRectangleBorder(

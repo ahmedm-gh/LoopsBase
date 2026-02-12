@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:tuts/core/models/code_block.dart';
 
-class RefactoringTechnique {
+class RefactoringTechnique with EquatableMixin {
   const RefactoringTechnique({
     required this.id,
     required this.title,
@@ -24,4 +25,18 @@ class RefactoringTechnique {
   final StrCodeBlock? complexAfter;
   final String problem;
   final String solution;
+
+  @override
+  List<Object?> get props => [
+    id,
+    title,
+    description,
+    category,
+    simpleBefore,
+    simpleAfter,
+    complexBefore,
+    complexAfter,
+    problem,
+    solution,
+  ];
 }

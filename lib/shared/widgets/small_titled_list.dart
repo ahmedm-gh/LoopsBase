@@ -116,7 +116,10 @@ class SmallTitledList extends StatelessWidget {
           if (title ?? _getTitle(context.l10n) case final title?)
             Row(
               children: [
-                FilledIcon(icon: icon, color: color),
+                FilledIcon(
+                  icon: Icon(icon, color: color),
+                  background: color.withValues(alpha: 0.1),
+                ),
                 const SizedBox(width: 5),
                 Expanded(
                   child: DefaultTextStyle.merge(

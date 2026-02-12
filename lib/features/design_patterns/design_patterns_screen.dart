@@ -2,8 +2,9 @@ import "package:flutter/material.dart";
 import "package:tuts/core/extensions/extensions.dart";
 import "package:tuts/core/services/routes.dart";
 import "package:tuts/data/design_patterns.dart";
+import "package:tuts/shared/design_layouts.dart";
 
-import "pattern_details_page.dart";
+import "pattern_details_screen.dart";
 
 class DesignPatternsScreen extends StatelessWidget {
   const DesignPatternsScreen({super.key});
@@ -19,19 +20,19 @@ class DesignPatternsScreen extends StatelessWidget {
         tileColor: colors.surfaceContainer,
         style: .list,
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
+          borderRadius: DL.inListCardBorderRadius,
         ),
         child: Material(
           type: .transparency,
           child: CustomScrollView(
             slivers: [
               SliverPadding(
-                padding: const .all(16),
+                padding: DL.listPadding,
                 sliver: SliverList.separated(
                   itemBuilder: (context, index) {
                     return Column(
                       crossAxisAlignment: .stretch,
-                      spacing: 5,
+                      spacing: DL.compactSeparatorHeight,
                       children: [
                         ListTile(
                           title: Text(
@@ -44,7 +45,7 @@ class DesignPatternsScreen extends StatelessWidget {
                             in designPatternCategories[index].patterns)
                           if (designPatterns[patternStr] case final pattern?)
                             InkWell(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: DL.inListCardBorderRadius,
                               onTap: () {
                                 Navigator.pushNamed(
                                   context,
@@ -63,7 +64,7 @@ class DesignPatternsScreen extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (context, index) {
-                    return const SizedBox(height: 16);
+                    return const SizedBox(height: DL.listSeparatorHeight);
                   },
                   itemCount: designPatternCategories.length,
                 ),

@@ -1,10 +1,12 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:tuts/core/enums/enums.dart';
 
 import 'content.dart';
 import 'localized_text.dart';
 
 @immutable
-class ProgrammingTerm {
+class ProgrammingTerm with EquatableMixin {
   const ProgrammingTerm({
     required this.id,
     required this.title,
@@ -60,94 +62,30 @@ class ProgrammingTerm {
   final List<String> tags;
 
   /// Classic / Modern / Emerging
-  final TermEra? era;
+  final Era? era;
 
   /// Usage popularity
   final PopularityTier? popularityTier;
 
   /// Historical reference
   final int? introducedYear;
+
+  @override
+  List<Object?> get props => [
+    id,
+    title,
+    quickOverview,
+    details,
+    type,
+    category,
+    notes,
+    bestUse,
+    languages,
+    relatedTerms,
+    aliases,
+    tags,
+    era,
+    popularityTier,
+    introducedYear,
+  ];
 }
-
-enum TermType {
-  concept,
-  paradigm,
-  pattern,
-  principle,
-  syntax,
-  keyword,
-  feature,
-  architecture,
-  dataStructure,
-  algorithm,
-  tool,
-  framework,
-  library,
-  runtime,
-  protocol,
-  methodology,
-  designSystem,
-}
-
-enum TermCategory {
-  fundamentals,
-  oop,
-  functionalProgramming,
-  proceduralProgramming,
-  reactiveProgramming,
-  concurrency,
-  memoryManagement,
-  networking,
-  security,
-  databases,
-  uiUx,
-  frontend,
-  backend,
-  mobileDevelopment,
-  webDevelopment,
-  devOps,
-  testing,
-  architecture,
-  stateManagement,
-  performance,
-  compilerInternals,
-  versionControl,
-  cloud,
-  artificialIntelligence,
-}
-
-enum ProgrammingLanguage {
-  // Priority
-  dart("Dart"),
-  flutter("Flutter"),
-
-  // Common modern languages
-  java("Java"),
-  kotlin("Kotlin"),
-  swift("Swift"),
-  objectiveC("Objective-C"),
-  javascript("JavaScript"),
-  typescript("TypeScript"),
-  python("Python"),
-  c("C"),
-  cpp("C++"),
-  csharp("C#"),
-  go("Go"),
-  rust("Rust"),
-  php("PHP"),
-  ruby("Ruby"),
-  scala("Scala"),
-  haskell("Haskell"),
-  sql("SQL"),
-
-  // Markup / Styling
-  html("HTML"),
-  css("CSS");
-
-  const ProgrammingLanguage(this.label);
-  final String label;
-}
-
-enum TermEra { classic, modern, emerging }
-
-enum PopularityTier { veryHigh, high, medium, low, niche }

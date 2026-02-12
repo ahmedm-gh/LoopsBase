@@ -1,6 +1,7 @@
 /// Interview question model for the Flutter interview questions feature.
 library;
 
+import 'package:equatable/equatable.dart';
 import 'package:tuts/core/models/code_block.dart';
 import 'package:tuts/core/models/content.dart';
 import 'package:tuts/core/models/localized_text.dart';
@@ -8,7 +9,7 @@ import 'package:tuts/core/models/localized_text.dart';
 import '../enums/enums.dart';
 
 /// Represents a single interview question with all its content
-class InterviewQuestion {
+class InterviewQuestion with EquatableMixin {
   const InterviewQuestion({
     required this.id,
     required this.difficulty,
@@ -54,10 +55,24 @@ class InterviewQuestion {
   List<Content>? getLocalizedWhenToUse(String languageCode) {
     return languageCode == "ar" ? whenToUse?.ar : whenToUse?.en;
   }
+
+  @override
+  List<Object?> get props => [
+    id,
+    difficulty,
+    categories,
+    type,
+    tags,
+    content,
+    examples,
+    pros,
+    cons,
+    whenToUse,
+  ];
 }
 
 /// Content for a specific language
-class QuestionContent {
+class QuestionContent with EquatableMixin {
   const QuestionContent({
     required this.question,
     required this.answer,
@@ -69,4 +84,7 @@ class QuestionContent {
   final List<Content> answer;
   final List<String>? notes;
   final String? bestUse;
+
+  @override
+  List<Object?> get props => [question, answer, notes, bestUse];
 }

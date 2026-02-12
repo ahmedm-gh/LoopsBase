@@ -29,12 +29,14 @@ extension BidiUtil on String {
       (match) {
         final segment = match.group(0) ?? "";
         if (RegExp(r'[a-zA-Z0-9]').hasMatch(segment)) {
-          return '\u2066$segment\u2069';
+          return segment.ltr;
         }
         return segment;
       },
     );
   }
+
+  String get ltr => "\u2066$this\u2069";
 }
 
 extension ColorExtensions on Color {

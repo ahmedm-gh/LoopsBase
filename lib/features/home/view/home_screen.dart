@@ -1,10 +1,9 @@
 import "package:flutter/material.dart";
 import "package:tuts/core/extensions/extensions.dart";
 import "package:tuts/core/services/routes.dart";
-import "package:tuts/features/design_patterns/design_patterns_page.dart";
+import "package:tuts/features/design_patterns/design_patterns_screen.dart";
 
-import "../../data/svg_icons.dart";
-import "../../shared/widgets/svg_icon.dart";
+import "widgets/home_button.dart";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -222,95 +221,11 @@ class HomeScreen extends StatelessWidget {
                 icon: const Icon(Icons.extension_rounded),
                 color: colors.secondary,
                 onTap: null,
-                // onTap: () => Navigator.push(
-                //   context,
-                //   MaterialPageRoute<void>(
-                //     builder: (_) => const UsefulPubPackagesPage(),
-                //   ),
-                // ),
               ),
             ],
           ),
         ),
       ),
     );
-  }
-}
-
-class HomeMenuCard extends StatelessWidget {
-  const HomeMenuCard({
-    required this.title,
-    required this.icon,
-    required this.color,
-    required this.onTap,
-    super.key,
-  });
-  final String title;
-  final Widget icon;
-  final Color color;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final card = Card(
-      margin: .zero,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: context.colorScheme.outlineVariant),
-        borderRadius: .circular(20),
-      ),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: .circular(20),
-        child: Padding(
-          padding: const .all(17.5),
-          child: Column(
-            mainAxisAlignment: .center,
-            children: [
-              IconTheme.merge(
-                data: IconThemeData(size: 38, color: color),
-                child: icon,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                title,
-                style: TextStyle(fontSize: 18, fontWeight: .bold, color: color),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-
-    if (onTap == null) {
-      return Stack(
-        alignment: .center,
-        children: [
-          SizedBox(
-            width: .infinity,
-            child: Opacity(opacity: 0.5, child: card),
-          ),
-          Positioned(
-            right: 16,
-            top: 16,
-            child: Container(
-              padding: const .all(8),
-              decoration: BoxDecoration(
-                color: context.colorScheme.surfaceContainerHighest.withValues(
-                  alpha: 0.75,
-                ),
-                border: Border.all(
-                  color: context.colorScheme.primary.withValues(alpha: 0.5),
-                  width: 2,
-                ),
-                borderRadius: .circular(10),
-              ),
-              child: const Icon(Icons.construction_rounded, size: 24),
-            ),
-          ),
-        ],
-      );
-    }
-
-    return card;
   }
 }

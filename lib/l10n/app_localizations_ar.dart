@@ -353,4 +353,157 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get termNotFound => 'المصطلح غير موجود';
+
+  @override
+  String get termTypeConcept => 'مفهوم';
+
+  @override
+  String get termTypeParadigm => 'نمط برمجي';
+
+  @override
+  String get termTypePattern => 'نمط';
+
+  @override
+  String get termTypePrinciple => 'مبدأ';
+
+  @override
+  String get termTypeSyntax => 'صياغة';
+
+  @override
+  String get termTypeKeyword => 'كلمة محجوزة';
+
+  @override
+  String get termTypeFeature => 'ميزة';
+
+  @override
+  String get termTypeArchitecture => 'معمارية';
+
+  @override
+  String get termTypeDataStructure => 'هيكل بيانات';
+
+  @override
+  String get termTypeAlgorithm => 'خوارزمية';
+
+  @override
+  String get termTypeTool => 'أداة';
+
+  @override
+  String get termTypeFramework => 'إطار عمل';
+
+  @override
+  String get termTypeLibrary => 'مكتبة';
+
+  @override
+  String get termTypeRuntime => 'بيئة تشغيل';
+
+  @override
+  String get termTypeProtocol => 'بروتوكول';
+
+  @override
+  String get termTypeMethodology => 'منهجية';
+
+  @override
+  String get termTypeDesignSystem => 'نظام تصميم';
+
+  @override
+  String get termCategoryFundamentals => 'الأساسيات';
+
+  @override
+  String get termCategoryOOP => 'البرمجة كائنية التوجه';
+
+  @override
+  String get termCategoryFunctionalProgramming => 'البرمجة الوظيفية';
+
+  @override
+  String get termCategoryProceduralProgramming => 'البرمجة الإجرائية';
+
+  @override
+  String get termCategoryReactiveProgramming => 'البرمجة التفاعلية';
+
+  @override
+  String get termCategoryConcurrency => 'التزامن';
+
+  @override
+  String get termCategoryMemoryManagement => 'إدارة الذاكرة';
+
+  @override
+  String get termCategoryNetworking => 'الشبكات';
+
+  @override
+  String get termCategorySecurity => 'الأمن';
+
+  @override
+  String get termCategoryDatabases => 'قواعد البيانات';
+
+  @override
+  String get termCategoryUiUx => 'واجهة وتجربة المستخدم';
+
+  @override
+  String get termCategoryFrontend => 'الواجهة الأمامية';
+
+  @override
+  String get termCategoryBackend => 'الواجهة الخلفية';
+
+  @override
+  String get termCategoryMobileDevelopment => 'تطوير تطبيقات الجوال';
+
+  @override
+  String get termCategoryWebDevelopment => 'تطوير الويب';
+
+  @override
+  String get termCategoryDevOps => 'ديف أوبس';
+
+  @override
+  String get termCategoryTesting => 'الاختبار';
+
+  @override
+  String get termCategoryArchitecture => 'المعمارية';
+
+  @override
+  String get termCategoryStateManagement => 'إدارة الحالة';
+
+  @override
+  String get termCategoryPerformance => 'الأداء';
+
+  @override
+  String get termCategoryCompilerInternals => 'بنية المترجم الداخلية';
+
+  @override
+  String get termCategoryVersionControl => 'إدارة الإصدارات';
+
+  @override
+  String get termCategoryCloud => 'الحوسبة السحابية';
+
+  @override
+  String get termCategoryArtificialIntelligence => 'الذكاء الاصطناعي';
+
+  @override
+  String get termEraClassic => 'كلاسيكي';
+
+  @override
+  String get termEraModern => 'حديث';
+
+  @override
+  String get termEraEmerging => 'ناشئ';
+
+  @override
+  String get popularityTierLabel => 'الشعبية';
+
+  @override
+  String get popularityTierVeryHigh => 'عالية جدًا';
+
+  @override
+  String get popularityTierHigh => 'عالية';
+
+  @override
+  String get popularityTierMedium => 'متوسطة';
+
+  @override
+  String get popularityTierLow => 'منخفضة';
+
+  @override
+  String get popularityTierNiche => 'متخصصة';
+
+  @override
+  String get aliases => 'معروف بـ';
 }

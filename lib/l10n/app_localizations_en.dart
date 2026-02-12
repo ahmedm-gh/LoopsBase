@@ -346,4 +346,157 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get termNotFound => 'Term not found';
+
+  @override
+  String get termTypeConcept => 'Concept';
+
+  @override
+  String get termTypeParadigm => 'Paradigm';
+
+  @override
+  String get termTypePattern => 'Pattern';
+
+  @override
+  String get termTypePrinciple => 'Principle';
+
+  @override
+  String get termTypeSyntax => 'Syntax';
+
+  @override
+  String get termTypeKeyword => 'Keyword';
+
+  @override
+  String get termTypeFeature => 'Feature';
+
+  @override
+  String get termTypeArchitecture => 'Architecture';
+
+  @override
+  String get termTypeDataStructure => 'Data Structure';
+
+  @override
+  String get termTypeAlgorithm => 'Algorithm';
+
+  @override
+  String get termTypeTool => 'Tool';
+
+  @override
+  String get termTypeFramework => 'Framework';
+
+  @override
+  String get termTypeLibrary => 'Library';
+
+  @override
+  String get termTypeRuntime => 'Runtime';
+
+  @override
+  String get termTypeProtocol => 'Protocol';
+
+  @override
+  String get termTypeMethodology => 'Methodology';
+
+  @override
+  String get termTypeDesignSystem => 'Design System';
+
+  @override
+  String get termCategoryFundamentals => 'Fundamentals';
+
+  @override
+  String get termCategoryOOP => 'Object-Oriented Programming';
+
+  @override
+  String get termCategoryFunctionalProgramming => 'Functional Programming';
+
+  @override
+  String get termCategoryProceduralProgramming => 'Procedural Programming';
+
+  @override
+  String get termCategoryReactiveProgramming => 'Reactive Programming';
+
+  @override
+  String get termCategoryConcurrency => 'Concurrency';
+
+  @override
+  String get termCategoryMemoryManagement => 'Memory Management';
+
+  @override
+  String get termCategoryNetworking => 'Networking';
+
+  @override
+  String get termCategorySecurity => 'Security';
+
+  @override
+  String get termCategoryDatabases => 'Databases';
+
+  @override
+  String get termCategoryUiUx => 'UI/UX';
+
+  @override
+  String get termCategoryFrontend => 'Frontend';
+
+  @override
+  String get termCategoryBackend => 'Backend';
+
+  @override
+  String get termCategoryMobileDevelopment => 'Mobile Development';
+
+  @override
+  String get termCategoryWebDevelopment => 'Web Development';
+
+  @override
+  String get termCategoryDevOps => 'DevOps';
+
+  @override
+  String get termCategoryTesting => 'Testing';
+
+  @override
+  String get termCategoryArchitecture => 'Architecture';
+
+  @override
+  String get termCategoryStateManagement => 'State Management';
+
+  @override
+  String get termCategoryPerformance => 'Performance';
+
+  @override
+  String get termCategoryCompilerInternals => 'Compiler Internals';
+
+  @override
+  String get termCategoryVersionControl => 'Version Control';
+
+  @override
+  String get termCategoryCloud => 'Cloud Computing';
+
+  @override
+  String get termCategoryArtificialIntelligence => 'Artificial Intelligence';
+
+  @override
+  String get termEraClassic => 'Classic';
+
+  @override
+  String get termEraModern => 'Modern';
+
+  @override
+  String get termEraEmerging => 'Emerging';
+
+  @override
+  String get popularityTierLabel => 'Popularity';
+
+  @override
+  String get popularityTierVeryHigh => 'Very High';
+
+  @override
+  String get popularityTierHigh => 'High';
+
+  @override
+  String get popularityTierMedium => 'Medium';
+
+  @override
+  String get popularityTierLow => 'Low';
+
+  @override
+  String get popularityTierNiche => 'Niche';
+
+  @override
+  String get aliases => 'Aliases';
 }

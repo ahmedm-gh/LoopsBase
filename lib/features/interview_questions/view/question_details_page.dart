@@ -6,15 +6,21 @@ import '../../../shared/app_widgets.dart';
 import '../../../shared/design_layouts.dart';
 import '../../../shared/widgets/difficulty_chip.dart';
 
+class QuestionDetailsScreenArguments {
+  const QuestionDetailsScreenArguments({required this.question});
+  final InterviewQuestion question;
+}
+
 // TODO: ADD .safeBidi()
 class QuestionDetailsScreen extends StatelessWidget {
-  const QuestionDetailsScreen({required this.question, super.key});
-  final InterviewQuestion? question;
+  const QuestionDetailsScreen({required this.arguments, super.key});
+  final QuestionDetailsScreenArguments? arguments;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final question = this.question;
+    final question = arguments?.question;
+
     if (question == null) {
       return Material(child: Center(child: Text(l10n.questionNotFound)));
     }
@@ -42,7 +48,7 @@ class QuestionDetailsScreen extends StatelessWidget {
           children: [
             // Question type and categories
             Text(
-              [
+              <String>[
                 question.id,
                 question.type.label(l10n),
                 ...question.categories.map((c) => c.label(l10n)),

@@ -50,7 +50,7 @@ enum DifficultyLevel {
     .basic => Colors.green,
     .intermediate => Colors.orange,
     .advanced => Colors.red,
-    .expert => Colors.deepPurple,
+    .expert => Colors.purple,
   };
 
   String label(AppLocalizations l10n) {

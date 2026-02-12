@@ -3,12 +3,13 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tuts/core/services/locator.dart';
-import 'package:tuts/features/design_patterns/design_patterns_page.dart';
-import 'package:tuts/features/design_patterns/pattern_details_page.dart';
-import 'package:tuts/features/home/home_page.dart';
+import 'package:tuts/features/design_patterns/design_patterns_screen.dart';
+import 'package:tuts/features/design_patterns/pattern_details_screen.dart';
+import 'package:tuts/features/home/view/home_screen.dart';
 import 'package:tuts/features/interview_questions/controller/cubit/questions_cubit.dart';
 import 'package:tuts/features/interview_questions/view/interview_questions_page.dart';
 import 'package:tuts/features/interview_questions/view/question_details_page.dart';
+import 'package:tuts/features/programming_terms/controller/cubit/terms_cubit.dart';
 import 'package:tuts/features/refactoring/refactoring_details_page.dart';
 import 'package:tuts/features/refactoring/refactoring_page.dart';
 import 'package:tuts/features/splash/splash_screen.dart';
@@ -65,13 +66,19 @@ abstract class Routes {
         },
       ),
       questionList => MaterialPageRoute(
-        builder: (_) => BlocProvider<QuestionsCubit>(
-          create: (context) => sl(),
-          child: const InterviewQuestionsScreen(),
-        ),
+        builder: (_) {
+          return BlocProvider<QuestionsCubit>(
+            create: (context) => sl(),
+            child: const InterviewQuestionsScreen(),
+          );
+        },
       ),
       questionDetails => MaterialPageRoute(
-        builder: (_) => const QuestionDetailsScreen(question: null),
+        builder: (_) {
+          return QuestionDetailsScreen(
+            arguments: toValue(settings.arguments, null),
+          );
+        },
       ),
       refactoringList => MaterialPageRoute(
         builder: (_) => const RefactoringScreen(),
@@ -80,12 +87,19 @@ abstract class Routes {
         builder: (_) => const RefactoringDetailsScreen(),
       ),
       programmingTermsList => MaterialPageRoute(
-        builder: (_) => const ProgrammingTermsScreen(),
+        builder: (_) {
+          return BlocProvider<TermsCubit>(
+            create: (context) => sl(),
+            child: const ProgrammingTermsScreen(),
+          );
+        },
       ),
       programmingTermDetails => MaterialPageRoute(
-        builder: (_) => ProgrammingTermDetailsScreen(
-          arguments: toValue(settings.arguments, null),
-        ),
+        builder: (_) {
+          return ProgrammingTermDetailsScreen(
+            arguments: toValue(settings.arguments, null),
+          );
+        },
       ),
       usefulPluginsList => MaterialPageRoute(
         builder: (_) => const UsefulPluginsScreen(),

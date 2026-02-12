@@ -54,7 +54,7 @@ abstract class TermKeys {
   static const dartMixin = "dart_mixin";
 }
 
-const List<ProgrammingTerm> terms = [
+const List<ProgrammingTerm> allTermsList = [
   // ============================================================================
   // FUNDAMENTALS
   // ============================================================================
@@ -3387,3 +3387,7 @@ const List<ProgrammingTerm> terms = [
     popularityTier: .high,
   ),
 ];
+
+final Map<String, ProgrammingTerm> allTerms = {
+  for (final t in allTermsList) t.id: t,
+};

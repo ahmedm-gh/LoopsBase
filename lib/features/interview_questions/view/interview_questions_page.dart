@@ -126,7 +126,7 @@ class InterviewQuestionsScreen extends StatelessWidget {
             ),
           ),
 
-          const Opacity(opacity: 0.4, child: Divider(height: 1, thickness: 1)),
+          const LiteDivider(),
 
           // Questions list
           Expanded(
@@ -137,46 +137,40 @@ class InterviewQuestionsScreen extends StatelessWidget {
               builder: (context, isEmpty) {
                 return isEmpty
                     ? Center(child: Text(l10n.noResults))
-                    : CardTheme(
-                        elevation: 0,
-                        color: colors.surfaceContainerLow,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: DL.inListCardBorderRadius,
-                          side: BorderSide(
-                            color: colors.outlineVariant.withValues(
-                              alpha: 0.35,
-                            ),
-                          ),
-                        ),
-                        child:
-                            BlocSelector<
-                              QuestionsCubit,
-                              QuestionsState,
-                              List<InterviewQuestion>
-                            >(
-                              selector: (state) => state.questions,
-                              builder: (context, questions) {
-                                log("questions: ${questions.length}");
-                                return ListView.separated(
-                                  padding: DL.listPadding,
-                                  itemCount: questions.length,
-                                  itemBuilder: (_, i) {
-                                    return QuestionCard(question: questions[i]);
-                                  },
-                                  separatorBuilder: (_, i) {
-                                    return const SizedBox(
-                                      height: DL.listSeparatorHeight,
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                      );
+                    : buildQuestionsList(colors);
               },
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildQuestionsList(ColorScheme colors) {
+    return CardTheme(
+      elevation: 0,
+      color: colors.surfaceContainerLow,
+      shape: RoundedRectangleBorder(
+        borderRadius: DL.inListCardBorderRadius,
+        side: BorderSide(color: colors.outlineVariant.withValues(alpha: 0.35)),
+      ),
+      child:
+          BlocSelector<QuestionsCubit, QuestionsState, List<InterviewQuestion>>(
+            selector: (state) => state.questions,
+            builder: (context, questions) {
+              log("questions: ${questions.length}");
+              return ListView.separated(
+                padding: DL.listPadding,
+                itemCount: questions.length,
+                itemBuilder: (_, i) {
+                  return QuestionCard(question: questions[i]);
+                },
+                separatorBuilder: (_, i) {
+                  return const SizedBox(height: DL.listSeparatorHeight);
+                },
+              );
+            },
+          ),
     );
   }
 }

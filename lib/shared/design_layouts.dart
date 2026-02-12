@@ -12,6 +12,8 @@ abstract class DL {
   // Radius
   static const BorderRadius inListCardBorderRadius = .all(.circular(16));
 
+  static const BorderRadius inCardRadius = .all(.circular(6));
+
   // Separator
   static const double listSeparatorHeight = 16;
   static const double compactSeparatorHeight = 8;

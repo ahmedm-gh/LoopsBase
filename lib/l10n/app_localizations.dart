@@ -769,6 +769,312 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Term not found'**
   String get termNotFound;
+
+  /// No description provided for @termTypeConcept.
+  ///
+  /// In en, this message translates to:
+  /// **'Concept'**
+  String get termTypeConcept;
+
+  /// No description provided for @termTypeParadigm.
+  ///
+  /// In en, this message translates to:
+  /// **'Paradigm'**
+  String get termTypeParadigm;
+
+  /// No description provided for @termTypePattern.
+  ///
+  /// In en, this message translates to:
+  /// **'Pattern'**
+  String get termTypePattern;
+
+  /// No description provided for @termTypePrinciple.
+  ///
+  /// In en, this message translates to:
+  /// **'Principle'**
+  String get termTypePrinciple;
+
+  /// No description provided for @termTypeSyntax.
+  ///
+  /// In en, this message translates to:
+  /// **'Syntax'**
+  String get termTypeSyntax;
+
+  /// No description provided for @termTypeKeyword.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyword'**
+  String get termTypeKeyword;
+
+  /// No description provided for @termTypeFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature'**
+  String get termTypeFeature;
+
+  /// No description provided for @termTypeArchitecture.
+  ///
+  /// In en, this message translates to:
+  /// **'Architecture'**
+  String get termTypeArchitecture;
+
+  /// No description provided for @termTypeDataStructure.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Structure'**
+  String get termTypeDataStructure;
+
+  /// No description provided for @termTypeAlgorithm.
+  ///
+  /// In en, this message translates to:
+  /// **'Algorithm'**
+  String get termTypeAlgorithm;
+
+  /// No description provided for @termTypeTool.
+  ///
+  /// In en, this message translates to:
+  /// **'Tool'**
+  String get termTypeTool;
+
+  /// No description provided for @termTypeFramework.
+  ///
+  /// In en, this message translates to:
+  /// **'Framework'**
+  String get termTypeFramework;
+
+  /// No description provided for @termTypeLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Library'**
+  String get termTypeLibrary;
+
+  /// No description provided for @termTypeRuntime.
+  ///
+  /// In en, this message translates to:
+  /// **'Runtime'**
+  String get termTypeRuntime;
+
+  /// No description provided for @termTypeProtocol.
+  ///
+  /// In en, this message translates to:
+  /// **'Protocol'**
+  String get termTypeProtocol;
+
+  /// No description provided for @termTypeMethodology.
+  ///
+  /// In en, this message translates to:
+  /// **'Methodology'**
+  String get termTypeMethodology;
+
+  /// No description provided for @termTypeDesignSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Design System'**
+  String get termTypeDesignSystem;
+
+  /// No description provided for @termCategoryFundamentals.
+  ///
+  /// In en, this message translates to:
+  /// **'Fundamentals'**
+  String get termCategoryFundamentals;
+
+  /// No description provided for @termCategoryOOP.
+  ///
+  /// In en, this message translates to:
+  /// **'Object-Oriented Programming'**
+  String get termCategoryOOP;
+
+  /// No description provided for @termCategoryFunctionalProgramming.
+  ///
+  /// In en, this message translates to:
+  /// **'Functional Programming'**
+  String get termCategoryFunctionalProgramming;
+
+  /// No description provided for @termCategoryProceduralProgramming.
+  ///
+  /// In en, this message translates to:
+  /// **'Procedural Programming'**
+  String get termCategoryProceduralProgramming;
+
+  /// No description provided for @termCategoryReactiveProgramming.
+  ///
+  /// In en, this message translates to:
+  /// **'Reactive Programming'**
+  String get termCategoryReactiveProgramming;
+
+  /// No description provided for @termCategoryConcurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Concurrency'**
+  String get termCategoryConcurrency;
+
+  /// No description provided for @termCategoryMemoryManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Memory Management'**
+  String get termCategoryMemoryManagement;
+
+  /// No description provided for @termCategoryNetworking.
+  ///
+  /// In en, this message translates to:
+  /// **'Networking'**
+  String get termCategoryNetworking;
+
+  /// No description provided for @termCategorySecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get termCategorySecurity;
+
+  /// No description provided for @termCategoryDatabases.
+  ///
+  /// In en, this message translates to:
+  /// **'Databases'**
+  String get termCategoryDatabases;
+
+  /// No description provided for @termCategoryUiUx.
+  ///
+  /// In en, this message translates to:
+  /// **'UI/UX'**
+  String get termCategoryUiUx;
+
+  /// No description provided for @termCategoryFrontend.
+  ///
+  /// In en, this message translates to:
+  /// **'Frontend'**
+  String get termCategoryFrontend;
+
+  /// No description provided for @termCategoryBackend.
+  ///
+  /// In en, this message translates to:
+  /// **'Backend'**
+  String get termCategoryBackend;
+
+  /// No description provided for @termCategoryMobileDevelopment.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Development'**
+  String get termCategoryMobileDevelopment;
+
+  /// No description provided for @termCategoryWebDevelopment.
+  ///
+  /// In en, this message translates to:
+  /// **'Web Development'**
+  String get termCategoryWebDevelopment;
+
+  /// No description provided for @termCategoryDevOps.
+  ///
+  /// In en, this message translates to:
+  /// **'DevOps'**
+  String get termCategoryDevOps;
+
+  /// No description provided for @termCategoryTesting.
+  ///
+  /// In en, this message translates to:
+  /// **'Testing'**
+  String get termCategoryTesting;
+
+  /// No description provided for @termCategoryArchitecture.
+  ///
+  /// In en, this message translates to:
+  /// **'Architecture'**
+  String get termCategoryArchitecture;
+
+  /// No description provided for @termCategoryStateManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'State Management'**
+  String get termCategoryStateManagement;
+
+  /// No description provided for @termCategoryPerformance.
+  ///
+  /// In en, this message translates to:
+  /// **'Performance'**
+  String get termCategoryPerformance;
+
+  /// No description provided for @termCategoryCompilerInternals.
+  ///
+  /// In en, this message translates to:
+  /// **'Compiler Internals'**
+  String get termCategoryCompilerInternals;
+
+  /// No description provided for @termCategoryVersionControl.
+  ///
+  /// In en, this message translates to:
+  /// **'Version Control'**
+  String get termCategoryVersionControl;
+
+  /// No description provided for @termCategoryCloud.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloud Computing'**
+  String get termCategoryCloud;
+
+  /// No description provided for @termCategoryArtificialIntelligence.
+  ///
+  /// In en, this message translates to:
+  /// **'Artificial Intelligence'**
+  String get termCategoryArtificialIntelligence;
+
+  /// No description provided for @termEraClassic.
+  ///
+  /// In en, this message translates to:
+  /// **'Classic'**
+  String get termEraClassic;
+
+  /// No description provided for @termEraModern.
+  ///
+  /// In en, this message translates to:
+  /// **'Modern'**
+  String get termEraModern;
+
+  /// No description provided for @termEraEmerging.
+  ///
+  /// In en, this message translates to:
+  /// **'Emerging'**
+  String get termEraEmerging;
+
+  /// No description provided for @popularityTierLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Popularity'**
+  String get popularityTierLabel;
+
+  /// No description provided for @popularityTierVeryHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Very High'**
+  String get popularityTierVeryHigh;
+
+  /// No description provided for @popularityTierHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get popularityTierHigh;
+
+  /// No description provided for @popularityTierMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get popularityTierMedium;
+
+  /// No description provided for @popularityTierLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get popularityTierLow;
+
+  /// No description provided for @popularityTierNiche.
+  ///
+  /// In en, this message translates to:
+  /// **'Niche'**
+  String get popularityTierNiche;
+
+  /// No description provided for @aliases.
+  ///
+  /// In en, this message translates to:
+  /// **'Aliases'**
+  String get aliases;
 }
 
 class _AppLocalizationsDelegate

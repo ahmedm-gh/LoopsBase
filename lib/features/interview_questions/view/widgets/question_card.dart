@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tuts/core/services/routes.dart';
 
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/models/interview_question.dart';
@@ -23,15 +24,14 @@ class QuestionCard extends StatelessWidget {
       child: InkWell(
         borderRadius: .circular(16),
         onTap: () {
-          Navigator.push(
+          Navigator.pushNamed(
             context,
-            MaterialPageRoute<void>(
-              builder: (_) => QuestionDetailsScreen(question: question),
-            ),
+            Routes.questionDetails,
+            arguments: QuestionDetailsScreenArguments(question: question),
           );
         },
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const .all(16),
           child: Column(
             crossAxisAlignment: .start,
             spacing: 10,
@@ -47,7 +47,7 @@ class QuestionCard extends StatelessWidget {
                         DifficultyChip(question.difficulty),
                         Flexible(
                           child: Text(
-                            [
+                            <String>[
                               question.type.label(l10n),
                               ...question.categories.map((c) => c.label(l10n)),
                             ].join(" • "),
