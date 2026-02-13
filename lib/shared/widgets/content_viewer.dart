@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/extensions.dart';
-import 'package:tuts/core/models/content.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
+import 'package:loopsbase/core/models/content.dart';
 
 import 'code_block.dart';
 

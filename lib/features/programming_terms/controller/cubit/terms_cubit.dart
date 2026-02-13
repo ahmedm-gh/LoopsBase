@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:tuts/data/programming_terms.dart';
-import 'package:tuts/shared/methods/to_value.dart';
+import 'package:loopsbase/data/programming_terms.dart';
+import 'package:loopsbase/shared/methods/to_value.dart';
 
 import '../../../../core/enums/term_enums.dart';
 import '../../../../core/models/term.dart';

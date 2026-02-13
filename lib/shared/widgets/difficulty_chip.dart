@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/enums/enums.dart';
-import 'package:tuts/core/extensions/extensions.dart';
+import 'package:loopsbase/core/enums/enums.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
 
 class DifficultyChip extends StatelessWidget {
   const DifficultyChip(this.difficulty, {super.key});

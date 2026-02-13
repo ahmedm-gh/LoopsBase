@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:tuts/core/extensions/extensions.dart";
+import "package:loopsbase/core/extensions/extensions.dart";
 import "package:url_launcher/url_launcher.dart";
 
 class ReferenceWidget extends StatelessWidget {

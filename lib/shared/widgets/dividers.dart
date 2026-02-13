@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/extensions.dart' show ContextExtensions;
+import 'package:loopsbase/core/extensions/extensions.dart' show ContextExtensions;
 
 class LiteDivider extends StatelessWidget {
   const LiteDivider({super.key});

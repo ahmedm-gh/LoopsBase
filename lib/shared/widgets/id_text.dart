@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/extensions.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
 
 class IdText extends StatelessWidget {
   const IdText({required this.id, super.key});

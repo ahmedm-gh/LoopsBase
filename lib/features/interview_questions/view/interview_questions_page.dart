@@ -2,12 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tuts/core/enums/difficulty_level.dart';
-import 'package:tuts/core/extensions/extensions.dart';
-import 'package:tuts/core/models/interview_question.dart';
-import 'package:tuts/features/interview_questions/controller/cubit/questions_cubit.dart';
-import 'package:tuts/shared/app_widgets.dart';
-import 'package:tuts/shared/design_layouts.dart';
+import 'package:loopsbase/core/enums/difficulty_level.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
+import 'package:loopsbase/core/models/interview_question.dart';
+import 'package:loopsbase/features/interview_questions/controller/cubit/questions_cubit.dart';
+import 'package:loopsbase/shared/app_widgets.dart';
+import 'package:loopsbase/shared/design_layouts.dart';
 
 import 'widgets/question_card.dart';
 import 'widgets/question_cards_wrapper.dart';
@@ -35,6 +35,7 @@ class InterviewQuestionsScreen extends StatelessWidget {
           Padding(
             padding: const .only(right: 16, left: 16, bottom: 16),
             child: Column(
+              mainAxisSize: .min,
               children: [
                 Row(
                   children: [
@@ -49,11 +50,9 @@ class InterviewQuestionsScreen extends StatelessWidget {
                             cubit.filterQuestions(query: () => query),
                       ),
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: DL.compactListSeparatorHeight),
                     BlocSelector<QuestionsCubit, QuestionsState, bool>(
-                      selector: (state) {
-                        return state.onlyBookmarked;
-                      },
+                      selector: (state) => state.onlyBookmarked,
                       builder: (context, onlyBookmarked) {
                         return BookmarkIconButton.bookmarks(
                           tooltip: l10n.onlyBookmarked,
@@ -66,7 +65,7 @@ class InterviewQuestionsScreen extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: DL.compactListSeparatorHeight),
 
                 // Filter chips
                 SizedBox(

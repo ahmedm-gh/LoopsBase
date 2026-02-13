@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/extensions.dart';
-import 'package:tuts/core/models/interview_question.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
+import 'package:loopsbase/core/models/interview_question.dart';
 
 import '../../../shared/app_widgets.dart';
 import '../../../shared/design_layouts.dart';

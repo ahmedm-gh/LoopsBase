@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/services/routes.dart';
+import 'package:loopsbase/core/services/routes.dart';
 
 Future<void> init(void Function() onDone) async {
   await Future<void>.delayed(const Duration(seconds: 2));

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/extensions.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
 
 class AppDialog extends StatelessWidget {
   const AppDialog({super.key, this.title, this.content, this.actions});

@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:tuts/data/interview_questions.dart';
-import 'package:tuts/shared/methods/to_value.dart' show toValue;
+import 'package:loopsbase/data/interview_questions.dart';
+import 'package:loopsbase/shared/methods/to_value.dart' show toValue;
 
 import '../../../../core/enums/difficulty_level.dart';
 import '../../../../core/models/interview_question.dart';

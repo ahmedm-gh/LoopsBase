@@ -1,6 +1,6 @@
-import 'package:tuts/core/models/code_block.dart';
-import 'package:tuts/core/models/interview_question.dart';
-import 'package:tuts/core/models/localized_text.dart';
+import 'package:loopsbase/core/models/code_block.dart';
+import 'package:loopsbase/core/models/interview_question.dart';
+import 'package:loopsbase/core/models/localized_text.dart';
 import '../core/models/content.dart';
 
 const List<InterviewQuestion> questionsData = [

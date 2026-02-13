@@ -1,4 +1,4 @@
-import 'package:tuts/l10n/app_localizations.dart';
+import 'package:loopsbase/l10n/app_localizations.dart';
 
 enum QuestionCategory {
   basic,

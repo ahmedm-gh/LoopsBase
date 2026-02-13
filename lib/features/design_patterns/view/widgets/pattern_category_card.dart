@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/extensions.dart';
-import 'package:tuts/core/models/design_patterns.dart';
-import 'package:tuts/shared/app_widgets.dart';
-import 'package:tuts/shared/design_layouts.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
+import 'package:loopsbase/core/models/design_patterns.dart';
+import 'package:loopsbase/shared/app_widgets.dart';
+import 'package:loopsbase/shared/design_layouts.dart';
 
 class PatternCategoryCard extends StatelessWidget {
   const PatternCategoryCard({

@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
-import "package:tuts/core/models/code_block.dart";
+import "package:loopsbase/core/models/code_block.dart";
 import "package:url_launcher/url_launcher.dart";
-import "package:tuts/core/extensions/extensions.dart";
+import "package:loopsbase/core/extensions/extensions.dart";
 
 class CodeBlockViewer extends StatelessWidget {
   CodeBlockViewer({
@@ -205,11 +205,7 @@ class _CodeContent extends StatelessWidget {
     return Padding(
       padding: const .all(16),
       child: SelectableText.rich(
-        SyntaxHighlighterFactory.create(
-          codeLanguage,
-          code.trim(),
-          isDark,
-        ).highlight(),
+        SyntaxHighlighter.create(codeLanguage, code, isDark).highlight(),
         style: const TextStyle(
           fontFamily: "FiraCode",
           fontWeight: .w500,
@@ -243,6 +239,22 @@ extension CodeLanguageExtension on CodeLanguage {
 
 abstract class SyntaxHighlighter {
   SyntaxHighlighter(this.code, this.isDark);
+
+  factory SyntaxHighlighter.create(
+    CodeLanguage language,
+    String code,
+    bool isDark,
+  ) {
+    return switch (language) {
+      .text => TextSyntaxHighlighter(code, isDark),
+      .sql => SQLSyntaxHighlighter(code, isDark),
+      .dart => DartSyntaxHighlighter(code, isDark),
+      .yaml => YamlSyntaxHighlighter(code, isDark),
+      .python => PythonSyntaxHighlighter(code, isDark),
+      .bash => BashSyntaxHighlighter(code, isDark),
+      .json => JsonSyntaxHighlighter(code, isDark),
+    };
+  }
 
   final String code;
   final bool isDark;
@@ -300,28 +312,6 @@ abstract class SyntaxHighlighter {
 
   /// Highlights a single line of code. Must be implemented by subclasses.
   TextSpan highlightLine(String line);
-}
-
-// ============================================================================
-// FACTORY
-// ============================================================================
-
-class SyntaxHighlighterFactory {
-  static SyntaxHighlighter create(
-    CodeLanguage language,
-    String code,
-    bool isDark,
-  ) {
-    return switch (language) {
-      .text => TextSyntaxHighlighter(code, isDark),
-      .sql => SQLSyntaxHighlighter(code, isDark),
-      .dart => DartSyntaxHighlighter(code, isDark),
-      .yaml => YamlSyntaxHighlighter(code, isDark),
-      .python => PythonSyntaxHighlighter(code, isDark),
-      .bash => BashSyntaxHighlighter(code, isDark),
-      .json => JsonSyntaxHighlighter(code, isDark),
-    };
-  }
 }
 
 // ============================================================================

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:tuts/core/enums/enums.dart';
+import 'package:loopsbase/core/enums/enums.dart';
 
 import 'content.dart';
 import 'localized_text.dart';

@@ -2,9 +2,9 @@
 library;
 
 import 'package:equatable/equatable.dart';
-import 'package:tuts/core/models/code_block.dart';
-import 'package:tuts/core/models/content.dart';
-import 'package:tuts/core/models/localized_text.dart';
+import 'package:loopsbase/core/models/code_block.dart';
+import 'package:loopsbase/core/models/content.dart';
+import 'package:loopsbase/core/models/localized_text.dart';
 
 import '../enums/enums.dart';
 

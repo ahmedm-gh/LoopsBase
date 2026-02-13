@@ -6,14 +6,14 @@ import "package:flutter_bloc/flutter_bloc.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
 import "package:hydrated_bloc/hydrated_bloc.dart";
 import "package:path_provider/path_provider.dart";
-import "package:tuts/core/app_controller/app_controller_cubit.dart";
-import "package:tuts/core/app_controller/app_controller_state.dart";
-import "package:tuts/core/extensions/extensions.dart";
-import "package:tuts/core/services/locator.dart";
-import "package:tuts/core/services/routes.dart";
-import "package:tuts/data/svg_icons.dart";
-import "package:tuts/l10n/app_localizations.dart";
-import "package:tuts/shared/app_widgets.dart";
+import "package:loopsbase/core/app_controller/app_controller_cubit.dart";
+import "package:loopsbase/core/app_controller/app_controller_state.dart";
+import "package:loopsbase/core/extensions/extensions.dart";
+import "package:loopsbase/core/services/locator.dart";
+import "package:loopsbase/core/services/routes.dart";
+import "package:loopsbase/data/svg_icons.dart";
+import "package:loopsbase/l10n/app_localizations.dart";
+import "package:loopsbase/shared/app_widgets.dart";
 import "package:url_launcher/url_launcher.dart";
 
 void main() async {

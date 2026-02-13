@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/extensions.dart';
-import 'package:tuts/core/models/design_patterns.dart';
-import 'package:tuts/shared/design_layouts.dart';
+import 'package:loopsbase/core/extensions/extensions.dart';
+import 'package:loopsbase/core/models/design_patterns.dart';
+import 'package:loopsbase/shared/design_layouts.dart';
 
 class DesignPatternCard extends StatelessWidget {
   const DesignPatternCard({

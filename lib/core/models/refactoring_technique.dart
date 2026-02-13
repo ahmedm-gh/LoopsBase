@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:tuts/core/models/code_block.dart';
+import 'package:loopsbase/core/models/code_block.dart';
 
 class RefactoringTechnique with EquatableMixin {
   const RefactoringTechnique({

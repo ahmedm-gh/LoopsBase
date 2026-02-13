@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tuts/features/programming_terms/controller/cubit/terms_cubit.dart';
-import 'package:tuts/l10n/app_localizations.dart';
-import 'package:tuts/shared/app_widgets.dart';
+import 'package:loopsbase/features/programming_terms/controller/cubit/terms_cubit.dart';
+import 'package:loopsbase/l10n/app_localizations.dart';
+import 'package:loopsbase/shared/app_widgets.dart';
 
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/models/term.dart';
@@ -169,7 +169,7 @@ class TermCard extends StatelessWidget {
           ],
         ],
       ),
-      style: const TextStyle(fontSize: 16, fontWeight: .bold),
+      style: TextStyle(fontSize: 16, fontWeight: .bold, color: colors.primary),
     );
   }
 }

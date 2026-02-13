@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:tuts/shared/methods/to_value.dart';
+import 'package:loopsbase/shared/methods/to_value.dart';
 
 class AppControllerState extends Equatable {
   const AppControllerState({

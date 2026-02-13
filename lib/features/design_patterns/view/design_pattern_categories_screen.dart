@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
-import "package:tuts/core/extensions/extensions.dart";
-import "package:tuts/core/services/routes.dart";
-import "package:tuts/data/design_patterns.dart";
-import "package:tuts/features/design_patterns/view/patterns_list.dart";
-import "package:tuts/shared/design_layouts.dart";
+import "package:loopsbase/core/extensions/extensions.dart";
+import "package:loopsbase/core/services/routes.dart";
+import "package:loopsbase/data/design_patterns.dart";
+import "package:loopsbase/features/design_patterns/view/patterns_list.dart";
+import "package:loopsbase/shared/design_layouts.dart";
 
 import "../../../core/models/design_patterns.dart";
 import "pattern_details_screen.dart";

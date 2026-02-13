@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:tuts/core/models/code_block.dart';
-import 'package:tuts/core/models/localized_text.dart';
-import 'package:tuts/l10n/app_localizations.dart';
+import 'package:loopsbase/core/models/code_block.dart';
+import 'package:loopsbase/core/models/localized_text.dart';
+import 'package:loopsbase/l10n/app_localizations.dart';
 
 import 'content.dart';
 

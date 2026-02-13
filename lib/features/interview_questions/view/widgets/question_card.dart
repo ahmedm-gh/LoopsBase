@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tuts/core/services/routes.dart';
+import 'package:loopsbase/core/services/routes.dart';
 
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/models/interview_question.dart';

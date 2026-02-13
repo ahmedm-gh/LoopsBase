@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:tuts/core/extensions/extensions.dart";
-import "package:tuts/core/services/routes.dart";
+import "package:loopsbase/core/extensions/extensions.dart";
+import "package:loopsbase/core/services/routes.dart";
 
 import "widgets/home_button.dart";
 

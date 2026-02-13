@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:tuts/shared/methods/to_value.dart';
+import 'package:loopsbase/shared/methods/to_value.dart';
 
 class DesignPatternsState extends Equatable {
   const DesignPatternsState({

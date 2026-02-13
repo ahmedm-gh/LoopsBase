@@ -2,21 +2,21 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tuts/core/services/locator.dart';
-import 'package:tuts/features/design_patterns/view/design_pattern_categories_screen.dart';
-import 'package:tuts/features/design_patterns/view/pattern_details_screen.dart';
-import 'package:tuts/features/design_patterns/controller/cubit/design_patterns_cubit.dart';
-import 'package:tuts/features/design_patterns/view/patterns_list.dart'
+import 'package:loopsbase/core/services/locator.dart';
+import 'package:loopsbase/features/design_patterns/view/design_pattern_categories_screen.dart';
+import 'package:loopsbase/features/design_patterns/view/pattern_details_screen.dart';
+import 'package:loopsbase/features/design_patterns/controller/cubit/design_patterns_cubit.dart';
+import 'package:loopsbase/features/design_patterns/view/patterns_list.dart'
     show PatternsListScreen;
-import 'package:tuts/features/home/view/home_screen.dart';
-import 'package:tuts/features/interview_questions/controller/cubit/questions_cubit.dart';
-import 'package:tuts/features/interview_questions/view/interview_questions_page.dart';
-import 'package:tuts/features/interview_questions/view/question_details_page.dart';
-import 'package:tuts/features/programming_terms/controller/cubit/terms_cubit.dart';
-import 'package:tuts/features/refactoring/refactoring_details_page.dart';
-import 'package:tuts/features/refactoring/refactoring_page.dart';
-import 'package:tuts/features/splash/splash_screen.dart';
-import 'package:tuts/shared/methods/to_value.dart';
+import 'package:loopsbase/features/home/view/home_screen.dart';
+import 'package:loopsbase/features/interview_questions/controller/cubit/questions_cubit.dart';
+import 'package:loopsbase/features/interview_questions/view/interview_questions_page.dart';
+import 'package:loopsbase/features/interview_questions/view/question_details_page.dart';
+import 'package:loopsbase/features/programming_terms/controller/cubit/terms_cubit.dart';
+import 'package:loopsbase/features/refactoring/refactoring_details_page.dart';
+import 'package:loopsbase/features/refactoring/refactoring_page.dart';
+import 'package:loopsbase/features/splash/splash_screen.dart';
+import 'package:loopsbase/shared/methods/to_value.dart';
 
 import '../../features/programming_terms/view/programming_terms.dart';
 import '../../features/programming_terms/view/term_details.dart';

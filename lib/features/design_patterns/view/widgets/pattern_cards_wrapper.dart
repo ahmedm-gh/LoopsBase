@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/shared/design_layouts.dart';
+import 'package:loopsbase/shared/design_layouts.dart';
 
 import '../../../../core/extensions/context_extensions.dart';
 

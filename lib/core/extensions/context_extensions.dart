@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:tuts/l10n/app_localizations.dart';
-import 'package:tuts/l10n/app_localizations_en.dart';
+import 'package:loopsbase/l10n/app_localizations.dart';
+import 'package:loopsbase/l10n/app_localizations_en.dart';
 
 extension ContextExtensions on BuildContext {
   /// Returns the theme of the app.

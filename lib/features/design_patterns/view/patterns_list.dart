@@ -1,12 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:tuts/core/extensions/context_extensions.dart';
-import 'package:tuts/core/models/design_patterns.dart';
-import 'package:tuts/data/design_patterns.dart';
-import 'package:tuts/features/design_patterns/view/widgets/pattern_cards_wrapper.dart';
-import 'package:tuts/features/design_patterns/view/widgets/pattern_category_card.dart';
-import 'package:tuts/shared/widgets/small_titled_list.dart';
+import 'package:loopsbase/core/extensions/context_extensions.dart';
+import 'package:loopsbase/core/models/design_patterns.dart';
+import 'package:loopsbase/data/design_patterns.dart';
+import 'package:loopsbase/features/design_patterns/view/widgets/pattern_cards_wrapper.dart';
+import 'package:loopsbase/features/design_patterns/view/widgets/pattern_category_card.dart';
+import 'package:loopsbase/shared/widgets/small_titled_list.dart';
 
 import '../../../core/services/routes.dart';
 import '../../../shared/design_layouts.dart';

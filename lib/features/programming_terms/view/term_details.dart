@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tuts/core/services/routes.dart';
-import 'package:tuts/shared/app_widgets.dart';
-import 'package:tuts/shared/design_layouts.dart';
+import 'package:loopsbase/core/services/routes.dart';
+import 'package:loopsbase/shared/app_widgets.dart';
+import 'package:loopsbase/shared/design_layouts.dart';
 
 import '../../../core/extensions/extensions.dart';
 import '../../../core/models/term.dart';
