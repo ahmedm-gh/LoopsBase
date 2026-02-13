@@ -86,3 +86,4 @@ linter:
     use_full_hex_values_for_flutter_colors: true
     use_rethrow_when_possible: true
     valid_regexps: true
+    no_wildcard_variable_uses: true

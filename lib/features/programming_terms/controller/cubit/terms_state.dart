@@ -1,6 +1,6 @@
 part of 'terms_cubit.dart';
 
-final class TermsState {
+final class TermsState with EquatableMixin {
   const TermsState({
     required this.bookmarkedTerms,
     required this.terms,
@@ -50,4 +50,14 @@ final class TermsState {
   Map<String, dynamic> toJson() {
     return {"bookmarkedTerms": bookmarkedTerms.toList()};
   }
+
+  @override
+  List<Object?> get props => [
+    bookmarkedTerms,
+    terms,
+    query,
+    category,
+    type,
+    onlyBookmarked,
+  ];
 }

@@ -106,7 +106,7 @@ class SmallTitledList extends StatelessWidget {
         //   end: .bottomRight,
         // ),
         color: color.withValues(alpha: 0.035),
-        borderRadius: .circular(8),
+        borderRadius: const .all(.circular(8)),
         border: .all(color: color.withValues(alpha: 0.1)),
       ),
       child: Column(

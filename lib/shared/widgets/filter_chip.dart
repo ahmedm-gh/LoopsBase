@@ -31,9 +31,9 @@ class AppFilterChip extends StatelessWidget {
               ? color
               : colors.surfaceContainerHighest.withValues(alpha: 0.25),
           borderRadius: BorderRadius.circular(5),
-          border: Border.all(
-            color: colors.outlineVariant.withValues(alpha: 0.35),
-          ),
+          // border: Border.all(
+          //   color: colors.outlineVariant.withValues(alpha: 0.35),
+          // ),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2.5),
