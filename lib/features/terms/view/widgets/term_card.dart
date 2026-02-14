@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:loopsbase/features/programming_terms/controller/cubit/terms_cubit.dart';
+import 'package:loopsbase/features/terms/controller/cubit/terms_cubit.dart';
 import 'package:loopsbase/l10n/app_localizations.dart';
 import 'package:loopsbase/shared/app_widgets.dart';
 
@@ -26,20 +26,23 @@ class TermCard extends StatelessWidget {
           Navigator.pushNamed(
             context,
             Routes.programmingTermDetails,
-            arguments: ProgrammingTermDetailsScreenArguments(term: term),
+            arguments: TermDetailsScreenArguments(term: term),
           );
         },
         child: Padding(
           padding: DL.inListCardPadding,
           child: Column(
+            mainAxisSize: .min,
             crossAxisAlignment: .start,
             spacing: DL.compactListSeparatorHeight,
             children: [
               Row(
+                mainAxisSize: .min,
                 crossAxisAlignment: .start,
                 children: [
-                  Expanded(
+                  Flexible(
                     child: Column(
+                      mainAxisSize: .min,
                       crossAxisAlignment: .start,
                       spacing: 7.5,
                       children: [
@@ -102,6 +105,7 @@ class TermCard extends StatelessWidget {
               if (false)
                 if (term.popularityTier case final pt?)
                   Row(
+                    mainAxisSize: .min,
                     children: [
                       FilledIcon(
                         icon: Icon(

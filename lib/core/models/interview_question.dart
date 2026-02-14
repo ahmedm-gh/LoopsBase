@@ -28,13 +28,13 @@ class InterviewQuestion with EquatableMixin {
   final List<QuestionCategory> categories;
   final QuestionType type;
   final List<String>? tags;
-  final LocalizedValue<QuestionContent> content;
+  final LocV<QuestionContent> content;
   final List<StrCodeBlock>? examples;
 
-  final LocalizedValue<List<String>>? pros;
-  final LocalizedValue<List<String>>? cons;
+  final LocV<List<String>>? pros;
+  final LocV<List<String>>? cons;
 
-  final LocalizedValue<List<Content>>? whenToUse;
+  final LocV<List<Content>>? whenToUse;
 
   /// Get the localized content based on the current locale
   QuestionContent getLocalizedContent(String languageCode) {

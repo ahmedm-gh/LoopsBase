@@ -84,13 +84,13 @@ class DesignPatternsCategory with EquatableMixin {
   });
 
   final String id;
-  final LocalizedString title;
-  final LocalizedValue<List<Content>> description;
+  final LocS title;
+  final LocV<List<Content>> description;
   final bool isClassic;
   final List<String> patterns;
 
   /// Key defining characteristics of this pattern category
-  final LocalizedValue<List<String>> keyCharacteristics;
+  final LocV<List<String>> keyCharacteristics;
 
   /// Icon representing this category
   final IconData icon;
@@ -99,10 +99,10 @@ class DesignPatternsCategory with EquatableMixin {
   final Color color;
 
   /// Common scenarios where patterns from this category are useful
-  final LocalizedValue<List<String>>? commonUseCases;
+  final LocV<List<String>>? commonUseCases;
 
   /// Real-world examples of applications/systems using these patterns
-  final LocalizedValue<List<String>>? realWorldExamples;
+  final LocV<List<String>>? realWorldExamples;
 
   /// IDs of related pattern categories
   final List<String> relatedCategories;
@@ -151,8 +151,8 @@ class DesignPattern with EquatableMixin {
   /// Stable unique identifier (used for routing, bookmarks, search)
   final String id;
 
-  final LocalizedString title;
-  final LocalizedString description;
+  final LocS title;
+  final LocS description;
 
   /// High-level classification
   final PatternGroup group;
@@ -167,22 +167,22 @@ class DesignPattern with EquatableMixin {
   final PatternLevel level;
 
   /// Main educational content
-  final LocalizedValue<List<Content>> content;
+  final LocV<List<Content>> content;
 
   /// Code examples (localized for comments/explanations)
-  final LocalizedValue<List<StrCodeBlock>>? examples;
+  final LocV<List<StrCodeBlock>>? examples;
 
   /// Advantages
-  final LocalizedValue<List<String>>? pros;
+  final LocSL? pros;
 
   /// Disadvantages
-  final LocalizedValue<List<String>>? cons;
+  final LocSL? cons;
 
   /// When this pattern should be applied
-  final LocalizedValue<List<Content>>? whenToUse;
+  final LocV<List<Content>>? whenToUse;
 
   /// Common pitfalls and anti-pattern usage
-  final LocalizedValue<List<String>>? commonMistakes;
+  final LocV<List<String>>? commonMistakes;
 
   /// Related patterns (by id)
   final List<String>? relatedPatterns;

@@ -10,15 +10,15 @@ const List<InterviewQuestion> questionsData = [
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["widgets", "dartBasics", "framework"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What is Flutter and how does it differ from other mobile development frameworks?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter is Google's open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase using the Dart programming language.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Key differences from other frameworks:",
             value: [
               "Uses Dart programming language instead of JavaScript",
@@ -40,10 +40,10 @@ const List<InterviewQuestion> questionsData = [
         question:
             "ما هو Flutter وكيف يختلف عن أطر تطوير التطبيقات المحمولة الأخرى؟",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter هو مجموعة أدوات واجهة المستخدم مفتوحة المصدر من Google لبناء تطبيقات مترجمة محليًا للهاتف المحمول والويب وسطح المكتب من قاعدة كود واحدة باستخدام لغة Dart.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "الاختلافات الرئيسية عن الأطر الأخرى:",
             value: [
               "يستخدم لغة البرمجة Dart بدلاً من JavaScript",
@@ -62,7 +62,7 @@ const List<InterviewQuestion> questionsData = [
             "التطبيقات متعددة المنصات التي تتطلب واجهة مستخدم/تجربة مستخدم متسقة، التطبيقات عالية الأداء، التطبيقات ذات واجهة المستخدم المخصصة المعقدة",
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Fast development with hot reload",
         "Single codebase for multiple platforms",
@@ -78,7 +78,7 @@ const List<InterviewQuestion> questionsData = [
         "دعم قوي ومتنامي من المجتمع",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Larger app size due to engine inclusion (typically 4-8 MB overhead)",
         "Relatively newer compared to native development",
@@ -92,9 +92,9 @@ const List<InterviewQuestion> questionsData = [
         "يتطلب تعلم Dart (أقل شهرة من JavaScript)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Flutter when:",
           value: [
             "Building cross-platform apps with a single codebase",
@@ -105,7 +105,7 @@ const List<InterviewQuestion> questionsData = [
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Flutter عندما:",
           value: [
             "بناء تطبيقات متعددة المنصات بقاعدة كود واحدة",
@@ -123,15 +123,15 @@ const List<InterviewQuestion> questionsData = [
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["widgets", "statelessWidget", "statefulWidget", "state"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What is the difference between StatelessWidget and StatefulWidget?",
         answer: [
-          StringContent(
+          StrContent(
             "StatelessWidget and StatefulWidget are the two fundamental widget types in Flutter, differing in how they handle state:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "StatelessWidget: Immutable widget that doesn't maintain any internal state. It's built once and doesn't rebuild unless its parent rebuilds with different parameters. Use for static content that doesn't change.",
               "StatefulWidget: Mutable widget that maintains state through a separate State object. It can rebuild itself when setState() is called or when dependencies change. The State object persists between rebuilds. Use when widget needs to change based on user interaction or data changes.",
@@ -187,10 +187,10 @@ class _CounterState extends State<Counter> {
       ar: QuestionContent(
         question: "ما الفرق بين StatelessWidget و StatefulWidget؟",
         answer: [
-          StringContent(
+          StrContent(
             "StatelessWidget و StatefulWidget هما نوعان أساسيان من الودجتس في Flutter، يختلفان في كيفية التعامل مع الحالة:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "StatelessWidget: ويدجت غير قابل للتغيير لا يحافظ على أي حالة داخلية. يُبنى مرة واحدة ولا يُعاد بناؤه إلا إذا أعاد الأب بناءه بمعاملات مختلفة. يُستخدم للمحتوى الثابت الذي لا يتغير.",
               "StatefulWidget: ويدجت قابل للتغيير يحافظ على الحالة من خلال كائن State منفصل. يمكنه إعادة بناء نفسه عند استدعاء ()setState أو عند تغيير التبعيات. كائن State يستمر بين عمليات إعادة البناء. يُستخدم عندما يحتاج الويدجت للتغيير بناءً على تفاعل المستخدم أو تغييرات البيانات.",
@@ -244,7 +244,7 @@ class _CounterState extends State<Counter> {
             "StatelessWidget لعرض البيانات الثابتة؛ StatefulWidget لواجهة المستخدم التفاعلية والنماذج والرسوم المتحركة",
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "StatelessWidget: Better performance, simpler code, easier to understand",
         "StatefulWidget: Dynamic content, user interaction support, can maintain internal state",
@@ -254,7 +254,7 @@ class _CounterState extends State<Counter> {
         "StatefulWidget: محتوى ديناميكي، دعم التفاعل مع المستخدم، يمكنه الحفاظ على الحالة الداخلية",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "StatelessWidget: Cannot handle dynamic changes or user interactions",
         "StatefulWidget: More complex, potential performance overhead if misused, requires two classes",
@@ -264,9 +264,9 @@ class _CounterState extends State<Counter> {
         "StatefulWidget: أكثر تعقيدًا، احتمال تكلفة أداء إذا أسيء استخدامه، يتطلب فئتين",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use StatelessWidget when:",
           value: [
             "Widget displays static content without internal state",
@@ -276,7 +276,7 @@ class _CounterState extends State<Counter> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم StatelessWidget عندما:",
           value: [
             "العنصر يعرض محتوى ثابت بدون حالة داخلية",
@@ -293,14 +293,14 @@ class _CounterState extends State<Counter> {
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["buildContext", "widgets", "inheritedWidget"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is BuildContext and why is it important?",
         answer: [
-          StringContent(
+          StrContent(
             "BuildContext is a handle to the location of a widget in the widget tree. It represents the relationship between a widget and its ancestors in the tree. Each widget has its own BuildContext that is passed to the build() method.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Important uses of BuildContext:",
             value: [
               "Accessing inherited widgets like Theme.of(context), MediaQuery.of(context)",
@@ -346,10 +346,10 @@ Widget build(BuildContext context) {
       ar: QuestionContent(
         question: "ما هو BuildContext ولماذا هو مهم؟",
         answer: [
-          StringContent(
+          StrContent(
             "BuildContext هو مؤشر لموقع الويدجت في شجرة الويدجت. يمثل العلاقة بين الويدجت وأسلافه في الشجرة. كل ويدجت له BuildContext الخاص به يتم تمريره إلى طريقة ()build.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "الاستخدامات المهمة لـ BuildContext:",
             value: [
               "الوصول إلى الودجتس الموروثة مثل (Theme.of(context، (MediaQuery.of(context",
@@ -393,9 +393,9 @@ Widget build(BuildContext context) {
             "الوصول إلى بيانات السمة، التنقل، الودجتس الموروثة، التصميم المستجيب، عرض الحوارات",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use BuildContext when:",
           value: [
             "Accessing inherited widgets (Theme, MediaQuery, Provider)",
@@ -406,7 +406,7 @@ Widget build(BuildContext context) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم BuildContext عندما:",
           value: [
             "الوصول للعناصر الموروثة (الثيم، بيانات الشاشة، Provider)",
@@ -431,15 +431,15 @@ Widget build(BuildContext context) {
       "abstraction",
       "oop",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Explain the four pillars of Object-Oriented Programming with Dart examples.",
         answer: [
-          StringContent(
+          StrContent(
             "The four pillars of OOP are fundamental concepts that help organize and structure code:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "Encapsulation: Bundling data and methods together, hiding internal details using private members (underscore prefix in Dart). Protects data from unauthorized access.",
               "Inheritance: Creating new classes from existing ones using 'extends'. Promotes code reuse and establishes 'is-a' relationships.",
@@ -504,10 +504,10 @@ class Circle implements Shape {
       ar: QuestionContent(
         question: "اشرح الأعمدة الأربعة للبرمجة كائنية التوجه مع أمثلة Dart.",
         answer: [
-          StringContent(
+          StrContent(
             "الأعمدة الأربعة للبرمجة كائنية التوجه هي مفاهيم أساسية تساعد في تنظيم وهيكلة الكود:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "التغليف: تجميع البيانات والطرق معًا، إخفاء التفاصيل الداخلية باستخدام الأعضاء الخاصة (بادئة الشرطة السفلية في Dart). يحمي البيانات من الوصول غير المصرح به.",
               "الوراثة: إنشاء فئات جديدة من الفئات الموجودة باستخدام 'extends'. يعزز إعادة استخدام الكود ويؤسس علاقات 'هو-نوع-من'.",
@@ -570,9 +570,9 @@ class Circle implements Shape {
             "التغليف لحماية البيانات، الوراثة لإعادة استخدام الكود، تعدد الأشكال للمرونة، التجريد لواجهات برمجية نظيفة",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Apply OOP Pillars when:",
           value: [
             "Encapsulation: Protecting internal data from unintended access",
@@ -583,7 +583,7 @@ class Circle implements Shape {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "طبق أعمدة البرمجة الكائنية عندما:",
           value: [
             "التغليف: حماية البيانات الداخلية من الوصول غير المقصود",
@@ -609,15 +609,15 @@ class Circle implements Shape {
       "solid",
       "cleanCode",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Explain all five SOLID principles with Flutter/Dart examples.",
         answer: [
-          StringContent(
+          StrContent(
             "SOLID principles are five design principles that make software designs more understandable, flexible, and maintainable:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "S - Single Responsibility Principle: A class should have one, and only one, reason to change. Each class should handle a single part of functionality. Example: Separate UserRepository from UserValidator.",
               "O - Open/Closed Principle: Classes should be open for extension but closed for modification. Use abstract classes and interfaces to allow new functionality without changing existing code.",
@@ -686,10 +686,10 @@ class UserService {
       ar: QuestionContent(
         question: "اشرح جميع مبادئ SOLID الخمسة مع أمثلة Flutter/Dart.",
         answer: [
-          StringContent(
+          StrContent(
             "مبادئ SOLID هي خمسة مبادئ تصميم تجعل تصاميم البرمجيات أكثر قابلية للفهم والمرونة والصيانة:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "S - مبدأ المسؤولية الواحدة: يجب أن يكون للفئة سبب واحد فقط للتغيير. كل فئة يجب أن تتعامل مع جزء واحد من الوظائف. مثال: فصل UserRepository عن UserValidator.",
               "O - مبدأ المفتوح/المغلق: يجب أن تكون الفئات مفتوحة للتوسع ولكن مغلقة للتعديل. استخدم الفئات المجردة والواجهات للسماح بوظائف جديدة دون تغيير الكود الموجود.",
@@ -749,9 +749,9 @@ class UserService {
             "طبقها في طبقات الخدمة والمستودعات ومنطق الأعمال. ضرورية للبنية النظيفة والتطبيقات المؤسسية.",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Apply SOLID when:",
           value: [
             "Developing large-scale, enterprise-level applications",
@@ -762,7 +762,7 @@ class UserService {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "طبق SOLID عندما:",
           value: [
             "تطوير تطبيقات واسعة النطاق على مستوى مؤسسي",
@@ -780,15 +780,15 @@ class UserService {
     categories: [.designPatterns],
     type: .practical,
     tags: ["singleton", "factory", "repository", "designPatterns"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Implement Singleton, Factory, and Repository patterns in Flutter.",
         answer: [
-          StringContent(
+          StrContent(
             "These three design patterns are commonly used in Flutter applications:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "Singleton: Ensures only one instance of a class exists throughout the app lifecycle. Use for app-wide services like API clients, database instances, or configuration managers.",
               "Factory: Creates objects without exposing the creation logic to the client. Use factory constructors in Dart to return instances based on parameters or cached objects.",
@@ -881,17 +881,17 @@ class UserRepository implements IUserRepository {
       ar: QuestionContent(
         question: "نفذ أنماط Singleton و Factory و Repository في Flutter.",
         answer: [
-          StringContent(
+          StrContent(
             "هذه الأنماط الثلاثة للتصميم شائعة الاستخدام في تطبيقات Flutter:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "Singleton: يضمن وجود نسخة واحدة فقط من الفئة خلال دورة حياة التطبيق. استخدمه للخدمات على مستوى التطبيق مثل عملاء API أو مثيلات قاعدة البيانات أو مديري التكوين.",
               "Factory: ينشئ كائنات دون كشف منطق الإنشاء للعميل. استخدم منشئات factory في Dart لإرجاع مثيلات بناءً على المعاملات أو الكائنات المخزنة مؤقتًا.",
               "Repository: يجرد مصادر البيانات ويوفر واجهة برمجية نظيفة للوصول إلى البيانات. يعمل كوسيط بين مصادر البيانات (API، قاعدة البيانات المحلية) ومنطق الأعمال.",
             ],
           ),
-          StringContent(
+          StrContent(
             "تطبيق هذه الأنماط يسهل اختبار الكود وفصله عن بعضه البعض.",
           ),
           CodeContent(
@@ -978,7 +978,7 @@ class UserRepository implements IUserRepository {
             "Singleton للخدمات العامة، Factory لمرونة إنشاء الكائنات، Repository لتجريد طبقة البيانات وقابلية الاختبار",
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Singleton: Global access point, memory efficient (one instance)",
         "Factory: Flexible object creation, encapsulates instantiation logic",
@@ -990,7 +990,7 @@ class UserRepository implements IUserRepository {
         "Repository: قابل للاختبار، يفصل الاهتمامات، تبديل مصادر البيانات بسهولة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Singleton: Hard to test, global state issues, can hide dependencies",
         "Factory: Can become complex with many types",
@@ -1002,9 +1002,9 @@ class UserRepository implements IUserRepository {
         "Repository: طبقة تجريد إضافية، المزيد من الكود للصيانة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Design Pattern Usage:",
           value: [
             "Singleton: Global services, configuration managers, database instances",
@@ -1014,7 +1014,7 @@ class UserRepository implements IUserRepository {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام أنماط التصميم:",
           value: [
             "Singleton: الخدمات العالمية، مديرو التكوين، مثيلات قاعدة البيانات",
@@ -1031,15 +1031,15 @@ class UserRepository implements IUserRepository {
     categories: [.dataStructures, .dartBasics],
     type: .theoretical,
     tags: ["dartBasics", "dataStructures", "list", "set", "map"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What are the main data structures available in Dart and when to use each?",
         answer: [
-          StringContent(
+          StrContent(
             "Dart provides several built-in collection types, each optimized for specific use cases:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "List: Ordered collection with indexed access, allows duplicates. Use when order matters and you may have repeated elements. Supports both fixed and growable length.",
               "Set: Unordered collection of unique elements only. Use when uniqueness is required and order doesn't matter (e.g., set of tags, unique IDs).",
@@ -1092,10 +1092,10 @@ orderedSet.addAll(['c', 'a', 'b']);
         question:
             "ما هي هياكل البيانات الرئيسية المتاحة في Dart ومتى تستخدم كل منها؟",
         answer: [
-          StringContent(
+          StrContent(
             "توفر Dart عدة أنواع مجموعات مدمجة، كل منها محسّن لحالات استخدام محددة:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "List: مجموعة مرتبة مع وصول مفهرس، تسمح بالتكرار. استخدمها عندما يهم الترتيب وقد تكون هناك عناصر متكررة. تدعم الطول الثابت والقابل للنمو.",
               "Set: مجموعة غير مرتبة من العناصر الفريدة فقط. استخدمها عندما يكون التفرد مطلوبًا والترتيب غير مهم (مثل مجموعة من الوسوم، معرفات فريدة).",
@@ -1145,7 +1145,7 @@ orderedSet.addAll(['ج', 'أ', 'ب']);
             "List للمجموعات المرتبة، Set للعناصر الفريدة، Map للبحث السريع بالمفاتيح، Queue لجدولة المهام",
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "List: Fast indexed access O(1), maintains order, versatile",
         "Set: Ensures uniqueness, fast membership check O(1)",
@@ -1157,7 +1157,7 @@ orderedSet.addAll(['ج', 'أ', 'ب']);
         "Map: بحث سريع بالمفتاح O(1)، تخزين مفتاح-قيمة مرن",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "List: Slow search O(n) without index, inefficient for uniqueness checks",
         "Set: No index access, doesn't maintain insertion order (unless LinkedHashSet)",
@@ -1169,9 +1169,9 @@ orderedSet.addAll(['ج', 'أ', 'ب']);
         "Map: يستخدم ذاكرة أكثر من List، لا ضمان لترتيب التكرار (ما لم يكن LinkedHashMap)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Data Structure Usage:",
           value: [
             "List: Ordered collection, allows duplicates, access by index",
@@ -1182,7 +1182,7 @@ orderedSet.addAll(['ج', 'أ', 'ب']);
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام هياكل البيانات:",
           value: [
             "List: مجموعة مرتبة، تسمح بالتكرار، الوصول بالفهرس",
@@ -1200,15 +1200,15 @@ orderedSet.addAll(['ج', 'أ', 'ب']);
     categories: [.stateManagement],
     type: .practical,
     tags: ["provider", "bloc", "riverpod", "setState", "stateManagement"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Compare setState, Provider, BLoC, and Riverpod for state management.",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter offers multiple state management solutions, each suited for different app complexities:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "setState: Built-in, simple, local state only. Causes the widget and its subtree to rebuild. Best for simple, isolated widget state.",
               "Provider: InheritedWidget wrapper, easy to learn, supports dependency injection. Less boilerplate than BLoC. Good for sharing state across the widget tree.",
@@ -1281,10 +1281,10 @@ ref.read(counterProvider.notifier).increment();''',
         question:
             "قارن بين setState و Provider و BLoC و Riverpod لإدارة الحالة.",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter حلول إدارة حالة متعددة، كل منها مناسب لتعقيدات تطبيق مختلفة:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "setState: مدمج، بسيط، حالة محلية فقط. يسبب إعادة بناء الويدجت وشجرته الفرعية. الأفضل للحالة البسيطة والمعزولة للودجت.",
               "Provider: غلاف InheritedWidget، سهل التعلم، يدعم حقن التبعية. كود نمطي أقل من BLoC. جيد لمشاركة الحالة عبر شجرة الودجتس.",
@@ -1354,7 +1354,7 @@ ref.read(counterProvider.notifier).increment();''',
             "setState للحالة المحلية للودجت، Provider للحالة العامة البسيطة، BLoC لفصل منطق الأعمال المعقد، Riverpod للمشاريع الجديدة التي تريد أمان النوع",
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "setState: Simple, no dependencies, built-in",
         "Provider: Easy learning curve, good community, less boilerplate",
@@ -1368,7 +1368,7 @@ ref.read(counterProvider.notifier).increment();''',
         "Riverpod: آمن من حيث النوع، لا يعتمد على السياق، اختبار ممتاز، أخطاء وقت الترجمة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "setState: Doesn't scale well, hard to manage in large apps, tight coupling",
         "Provider: Can get verbose, runtime errors possible, context dependency",
@@ -1382,9 +1382,9 @@ ref.read(counterProvider.notifier).increment();''',
         "Riverpod: أحدث (نظام بيئي أصغر)، صيغة مختلفة عن Provider، منحنى تعلم",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "State Management Selection:",
           value: [
             "setState: Simple local state in single widget",
@@ -1395,7 +1395,7 @@ ref.read(counterProvider.notifier).increment();''',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار إدارة الحالة:",
           value: [
             "setState: حالة محلية بسيطة في عنصر واحد",
@@ -1413,15 +1413,15 @@ ref.read(counterProvider.notifier).increment();''',
     categories: [.dartBasics],
     type: .practical,
     tags: ["asyncAwait", "futures", "streams", "asynchronous"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Explain Future, async/await, and Streams in Dart with examples.",
         answer: [
-          StringContent(
+          StrContent(
             "Dart provides powerful asynchronous programming features to handle operations that take time without blocking the main thread:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "Future: Represents a potential value or error that will be available at some time in the future. Used for single asynchronous operations that complete once.",
               "async/await: Syntactic sugar for working with Futures that makes asynchronous code look and behave like synchronous code, improving readability.",
@@ -1492,10 +1492,10 @@ Future<void> loadAll() async {
       ar: QuestionContent(
         question: "اشرح Future و async/await و Streams في Dart مع أمثلة.",
         answer: [
-          StringContent(
+          StrContent(
             "توفر Dart ميزات برمجة غير متزامنة قوية للتعامل مع العمليات التي تستغرق وقتًا دون حظر الخيط الرئيسي:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "Future: يمثل قيمة محتملة أو خطأ سيكون متاحًا في وقت ما في المستقبل. يُستخدم للعمليات غير المتزامنة الواحدة التي تكتمل مرة واحدة.",
               "async/await: سكر نحوي للعمل مع Futures يجعل الكود غير المتزامن يبدو ويتصرف مثل الكود المتزامن، مما يحسن قابلية القراءة.",
@@ -1564,7 +1564,7 @@ Future<void> loadAll() async {
             "Future لطلبات HTTP واستعلامات قاعدة البيانات؛ Streams للبيانات في الوقت الفعلي ومعالجة الأحداث وإدخال المستخدم المستمر",
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Future: Clean syntax with async/await, easy error handling, composable",
         "Streams: Handle multiple values, reactive programming, powerful transformations",
@@ -1574,7 +1574,7 @@ Future<void> loadAll() async {
         "Streams: معالجة قيم متعددة، برمجة تفاعلية، تحويلات قوية",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Future: Only one value, can't cancel once started (without extensions)",
         "Streams: More complex, need proper cleanup, memory leaks if not closed",
@@ -1584,9 +1584,9 @@ Future<void> loadAll() async {
         "Streams: أكثر تعقيدًا، تحتاج تنظيف مناسب، تسريبات ذاكرة إذا لم تُغلق",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Async Operations:",
           value: [
             "Future: Single async operation (API call, file read)",
@@ -1596,7 +1596,7 @@ Future<void> loadAll() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "العمليات غير المتزامنة:",
           value: [
             "Future: عملية واحدة غير متزامنة (استدعاء API، قراءة ملف)",
@@ -1613,15 +1613,15 @@ Future<void> loadAll() async {
     categories: [.performance],
     type: .practical,
     tags: ["optimization", "lazyLoading", "memoryManagement", "performance"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What are the best practices for optimizing Flutter app performance?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter performance optimization involves multiple strategies across widget building, rendering, and resource management:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "Use const constructors for immutable widgets to prevent unnecessary rebuilds",
               "Implement ListView.builder for long lists (lazy loading) instead of ListView with all items",
@@ -1698,10 +1698,10 @@ class MyWidget extends StatelessWidget {
       ar: QuestionContent(
         question: "ما هي أفضل الممارسات لتحسين أداء تطبيق Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "يتضمن تحسين أداء Flutter استراتيجيات متعددة عبر بناء الودجتس والعرض وإدارة الموارد:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "استخدم منشئات const للودجتس غير القابلة للتغيير لمنع عمليات إعادة البناء غير الضرورية",
               "نفذ ListView.builder للقوائم الطويلة (التحميل الكسول) بدلاً من ListView مع جميع العناصر",
@@ -1776,9 +1776,9 @@ class MyWidget extends StatelessWidget {
             "طبق هذه التقنيات في تطبيقات الإنتاج مع مشاكل الأداء، خاصة مع القوائم الكبيرة أو واجهة المستخدم المعقدة",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Performance Optimization Usage:",
           value: [
             "ListView.builder: For long or infinite lists to enable lazy loading",
@@ -1789,7 +1789,7 @@ class MyWidget extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام تحسين الأداء:",
           value: [
             "ListView.builder: للقوائم الطويلة أو اللانهائية لتمكين التحميل الكسول",
@@ -1807,14 +1807,14 @@ class MyWidget extends StatelessWidget {
     categories: [.performance, .flutterBasics],
     type: .practical,
     tags: ["keys", "widgets", "optimization", "state"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What are Keys in Flutter and when should you use them?",
         answer: [
-          StringContent(
+          StrContent(
             "Keys control how widgets are identified and replaced in the widget tree. They preserve widget state when widgets move around or when the tree structure changes.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Types of Keys:",
             value: [
               "ValueKey: Uses a simple value (String, int) to identify widgets. Good for primitive identifiers.",
@@ -1824,7 +1824,7 @@ class MyWidget extends StatelessWidget {
               "PageStorageKey: Preserves scroll position across page navigation.",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "When to use Keys:",
             value: [
               "When preserving state in a list of StatefulWidgets that changes order (e.g., reorderable lists)",
@@ -1900,10 +1900,10 @@ ListView.builder(
       ar: QuestionContent(
         question: "ما هي المفاتيح (Keys) في Flutter ومتى يجب استخدامها؟",
         answer: [
-          StringContent(
+          StrContent(
             "تتحكم المفاتيح في كيفية تحديد واستبدال الودجتس في شجرة الودجتس. تحافظ على حالة الودجت عندما تتحرك الودجتس أو عندما يتغير هيكل الشجرة.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "أنواع المفاتيح:",
             value: [
               "ValueKey: يستخدم قيمة بسيطة (String، int) لتحديد الودجتس. جيد للمعرفات البدائية.",
@@ -1913,7 +1913,7 @@ ListView.builder(
               "PageStorageKey: يحافظ على موضع التمرير عبر التنقل بين الصفحات.",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "متى تستخدم المفاتيح:",
             value: [
               "عند الحفاظ على الحالة في قائمة من StatefulWidgets التي يتغير ترتيبها (مثل القوائم القابلة لإعادة الترتيب)",
@@ -1987,7 +1987,7 @@ ListView.builder(
             "قوائم العناصر ذات الحالة التي يُعاد ترتيبها، التحقق من النموذج مع GlobalKey، الحفاظ على موضع التمرير",
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Preserves widget state correctly during reordering",
         "Prevents unexpected UI behavior in dynamic lists",
@@ -1999,7 +1999,7 @@ ListView.builder(
         "GlobalKey يسمح بالوصول من الأب إلى حالة الابن",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Often unnecessary - adds complexity if overused",
         "GlobalKey is expensive - impacts performance",
@@ -2011,9 +2011,9 @@ ListView.builder(
         "يمكن أن يعقد قابلية قراءة الكود إذا استُخدم بشكل مفرط",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Keys when:",
           value: [
             "Preserving state in lists with reordering/removal",
@@ -2024,7 +2024,7 @@ ListView.builder(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Keys عندما:",
           value: [
             "الحفاظ على الحالة في القوائم عند إعادة الترتيب",
@@ -2042,14 +2042,14 @@ ListView.builder(
     categories: [.flutterBasics],
     type: .theoretical,
     tags: ["lifecycle", "appLifecycle", "widgetsBinding", "state"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain the Flutter Application Lifecycle.",
         answer: [
-          StringContent(
+          StrContent(
             "The Flutter app lifecycle tracks the app's state as a whole (not individual widgets). Monitor it using WidgetsBindingObserver and didChangeAppLifecycleState callback.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "App Lifecycle States:",
             value: [
               "detached: App is not hosted by any Flutter engine view. Either starting up or shutting down completely.",
@@ -2122,10 +2122,10 @@ ListView.builder(
       ar: QuestionContent(
         question: "اشرح دورة حياة تطبيق Flutter.",
         answer: [
-          StringContent(
+          StrContent(
             "تتتبع دورة حياة تطبيق Flutter حالة التطبيق ككل (وليس الودجتس الفردية). راقبها باستخدام WidgetsBindingObserver ودالة رد الاتصال didChangeAppLifecycleState.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "حالات دورة حياة التطبيق:",
             value: [
               "detached: التطبيق غير مستضاف بواسطة أي عرض لمحرك Flutter. إما يبدأ أو يُغلق بالكامل.",
@@ -2196,9 +2196,9 @@ ListView.builder(
             "حفظ البيانات عند توقف التطبيق، إيقاف الرسوم المتحركة/المؤقتات في الخلفية، تحرير الموارد عندما لا يكون التطبيق مرئيًا",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "App Lifecycle Usage:",
           value: [
             "paused: Save user progress or sensitive data before app is backgrounded",
@@ -2209,7 +2209,7 @@ ListView.builder(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام دورة حياة التطبيق:",
           value: [
             "paused: حفظ تقدم المستخدم أو البيانات الحساسة قبل ذهاب التطبيق للخلفية",
@@ -2227,15 +2227,15 @@ ListView.builder(
     categories: [.testing],
     type: .practical,
     tags: ["unitTesting", "widgetTesting", "integrationTesting", "testing"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What are the three types of tests in Flutter and how do they differ?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter provides three types of tests, each serving different purposes in ensuring app quality:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "Unit Tests: Test individual functions, methods, or classes in isolation. Very fast (milliseconds). No UI involved. Focus on business logic and data models. Run using 'flutter test'.",
               "Widget Tests: Test individual widgets or widget trees. Verify UI layout, rendering, and user interactions. Use WidgetTester for simulated interactions. Medium speed (seconds). Run in a simulated environment.",
@@ -2325,10 +2325,10 @@ void main() {
       ar: QuestionContent(
         question: "ما هي أنواع الاختبارات الثلاثة في Flutter وكيف تختلف؟",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter ثلاثة أنواع من الاختبارات، كل منها يخدم أغراضًا مختلفة في ضمان جودة التطبيق:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "اختبارات الوحدة: اختبار الدوال أو الطرق أو الفئات الفردية بمعزل. سريعة جدًا (ميلي ثانية). لا واجهة مستخدم. التركيز على منطق الأعمال ونماذج البيانات. التشغيل باستخدام 'flutter test'.",
               "اختبارات الودجت: اختبار ودجتس فردية أو أشجار ودجتس. التحقق من تخطيط واجهة المستخدم، العرض، والتفاعلات. استخدام WidgetTester للتفاعلات المحاكاة. سرعة متوسطة (ثواني). التشغيل في بيئة محاكاة.",
@@ -2416,9 +2416,9 @@ void main() {
             "اختبارات الوحدة لجميع منطق الأعمال، اختبارات الودجت لمكونات واجهة المستخدم الحرجة، اختبارات التكامل لتدفقات المستخدم الأساسية (تسجيل الدخول، الدفع)",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Testing Selection:",
           value: [
             "Unit Tests: Critical business logic, value calculations, utility functions",
@@ -2428,7 +2428,7 @@ void main() {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار الاختبارات:",
           value: [
             "اختبارات الوحدة: منطق الأعمال الحرج، حسابات القيم، الدوال المساعدة",
@@ -2445,15 +2445,15 @@ void main() {
     categories: [.performance, .modernFeatures],
     type: .theoretical,
     tags: ["rendering", "impeller", "skia", "performance"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What is Impeller and how does it improve Flutter performance?",
         answer: [
-          StringContent(
+          StrContent(
             "Impeller is Flutter's new rendering engine designed to replace Skia. It eliminates shader compilation jank by pre-compiling shaders at build time (AOT) instead of runtime.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Key improvements:",
             value: [
               "Pre-compiled shaders: No more first-frame jank from runtime shader compilation",
@@ -2463,7 +2463,7 @@ void main() {
               "Reduced dropped frames: Smoother animations, especially on first run",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "Status:",
             value: [
               "iOS/macOS: Default since Flutter 3.10 (stable)",
@@ -2506,10 +2506,10 @@ void main() {
       ar: QuestionContent(
         question: "ما هو Impeller وكيف يحسن أداء Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "Impeller هو محرك العرض الجديد لـ Flutter المصمم ليحل محل Skia. يلغي تقطع تجميع التظليل عن طريق التجميع المسبق للتظليل في وقت البناء (AOT) بدلاً من وقت التشغيل.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "التحسينات الرئيسية:",
             value: [
               "تظليلات مجمعة مسبقًا: لا مزيد من تقطع الإطار الأول من تجميع التظليل في وقت التشغيل",
@@ -2519,7 +2519,7 @@ void main() {
               "تقليل الإطارات المسقطة: رسوم متحركة أكثر سلاسة، خاصة في التشغيل الأول",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "الحالة:",
             value: [
               "iOS/macOS: افتراضي منذ Flutter 3.10 (مستقر)",
@@ -2560,14 +2560,14 @@ void main() {
             "افتراضي على iOS الآن، اختياري لـ Android عندما تحتاج إلى رسومات عالية الأداء ورسوم متحركة سلسة",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        StringContent(
+        StrContent(
           "Use Impeller when targeting iOS or newer Android versions for better performance, reduced jank, and consistent rendering. It's the default rendering engine replacing Skia in newer Flutter versions.",
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           "استخدم Impeller عند استهداف iOS أو إصدارات Android الحديثة للحصول على أداء أفضل وسلاسة أكثر. إنه محرك العرض الافتراضي الذي يحل محل Skia.",
         ),
       ],
@@ -2579,21 +2579,21 @@ void main() {
     categories: [.networking],
     type: .practical,
     tags: ["http", "dio", "restApi", "networking"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "How to handle networking in Flutter? Difference between http and dio packages?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter provides multiple options for making HTTP requests. The two most popular packages are:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "'http' package: Official, lightweight, simple API. Good for straightforward HTTP requests. Minimal features - just the basics.",
               "'dio' package: Powerful third-party package with advanced features. Includes interceptors for global configuration, automatic request/response transformation, file uploads/downloads, request cancellation, and comprehensive error handling.",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "When to use each:",
             value: [
               "Use 'http' for: Simple apps, prototypes, basic REST API calls, when you want minimal dependencies",
@@ -2696,16 +2696,16 @@ class ApiService {
         question:
             "كيفية التعامل مع الشبكات في Flutter؟ الفرق بين حزمتي http و dio؟",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter خيارات متعددة لإجراء طلبات HTTP. الحزمتان الأكثر شعبية هما:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "حزمة 'http': رسمية، خفيفة الوزن، واجهة برمجة بسيطة. جيدة لطلبات HTTP المباشرة. ميزات قليلة - فقط الأساسيات.",
               "حزمة 'dio': حزمة طرف ثالث قوية مع ميزات متقدمة. تشمل معترضات للتكوين العالمي، تحويل تلقائي للطلب/الاستجابة، تحميل/تنزيل الملفات، إلغاء الطلبات، ومعالجة أخطاء شاملة.",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "متى تستخدم كل منهما:",
             value: [
               "استخدم 'http' لـ: التطبيقات البسيطة، النماذج الأولية، استدعاءات REST API الأساسية، عندما تريد الحد الأدنى من التبعيات",
@@ -2805,9 +2805,9 @@ class ApiService {
             "استخدم Dio لتطبيقات المؤسسات التي تحتاج تحديث رمز المصادقة، إعادة المحاولة التلقائية، التسجيل، وتحميل الملفات. استخدم http للنماذج الأولية البسيطة.",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Networking Package Selection:",
           value: [
             "http: Simple requests, basic GET/POST, small projects",
@@ -2816,7 +2816,7 @@ class ApiService {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار مكتبة الشبكة:",
           value: [
             "http: طلبات بسيطة، مشاريع صغيرة",
@@ -2832,15 +2832,15 @@ class ApiService {
     categories: [.database],
     type: .practical,
     tags: ["sqlite", "hive", "sharedPreferences", "persistence", "database"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Comparison of local database options: SharedPreferences vs SQLite vs Hive.",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter offers several local storage solutions, each optimized for different use cases:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "SharedPreferences: Simple key-value storage backed by platform-specific implementations (UserDefaults on iOS, SharedPreferences on Android). Best for small amounts of primitive data like settings, flags, and simple app state. NOT suitable for large data or complex queries.",
               "SQLite (via sqflite): Full-featured relational database with SQL support. Excellent for structured data with relationships, complex queries, and large datasets. Industry-standard, reliable, and well-tested.",
@@ -2961,10 +2961,10 @@ final adults = box.values.where((user) => user.age >= 18).toList();''',
         question:
             "مقارنة خيارات قواعد البيانات المحلية: SharedPreferences vs SQLite vs Hive.",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter عدة حلول تخزين محلي، كل منها محسّن لحالات استخدام مختلفة:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "SharedPreferences: تخزين بسيط مفتاح-قيمة مدعوم بتنفيذات خاصة بالمنصة (UserDefaults على iOS، SharedPreferences على Android). الأفضل لكميات صغيرة من البيانات البدائية مثل الإعدادات والأعلام وحالة التطبيق البسيطة. غير مناسب للبيانات الكبيرة أو الاستعلامات المعقدة.",
               "SQLite (عبر sqflite): قاعدة بيانات علائقية كاملة الميزات مع دعم SQL. ممتازة للبيانات المنظمة ذات العلاقات، الاستعلامات المعقدة، ومجموعات البيانات الكبيرة. معيار الصناعة، موثوقة، ومختبرة جيدًا.",
@@ -3082,9 +3082,9 @@ final adults = box.values.where((user) => user.age >= 18).toList();''',
             "SharedPreferences لإعدادات التطبيق والأعلام، SQLite للبيانات العلائقية المعقدة والاستعلامات، Hive/Isar لتخزين الكائنات السريع والتطبيقات التي تعمل دون اتصال أولاً",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Local Storage Selection:",
           value: [
             "SharedPreferences: Simple key-value (settings, flags)",
@@ -3094,7 +3094,7 @@ final adults = box.values.where((user) => user.age >= 18).toList();''',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار التخزين المحلي:",
           value: [
             "SharedPreferences: إعدادات بسيطة مفتاح-قيمة",
@@ -3111,15 +3111,15 @@ final adults = box.values.where((user) => user.age >= 18).toList();''',
     categories: [.architecture],
     type: .theoretical,
     tags: ["cleanArchitecture", "mvc", "mvvm", "architecture"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Common Architectural Patterns in Flutter? (MVC, MVVM, Clean Architecture)",
         answer: [
-          StringContent(
+          StrContent(
             "Architecture patterns organize code for better maintainability, testability, and scalability. Flutter supports multiple patterns:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "MVC (Model-View-Controller): Classic pattern separating data (Model), UI (View), and logic (Controller). Often the Controller manages UI state. Simple but can lead to bloated controllers in complex apps.",
               "MVVM (Model-View-ViewModel): View binds to ViewModel, which holds state and logic. ViewModel is unaware of View. Very popular in Flutter - Provider and Riverpod act as ViewModel. Better separation than MVC.",
@@ -3224,10 +3224,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         question:
             "الأنماط المعمارية الشائعة في Flutter؟ (MVC، MVVM، Clean Architecture)",
         answer: [
-          StringContent(
+          StrContent(
             "أنماط البنية تنظم الكود لقابلية صيانة واختبار وتوسع أفضل. يدعم Flutter أنماطًا متعددة:",
           ),
-          OrderedListContent(
+          OLContent(
             value: [
               "MVC (Model-View-Controller): نمط كلاسيكي يفصل البيانات (Model)، واجهة المستخدم (View)، والمنطق (Controller). غالبًا ما يدير Controller حالة واجهة المستخدم. بسيط لكن يمكن أن يؤدي إلى متحكمات منتفخة في التطبيقات المعقدة.",
               "MVVM (Model-View-ViewModel): تربط View بـ ViewModel، الذي يحمل الحالة والمنطق. ViewModel غير مدرك لـ View. شائع جدًا في Flutter - Provider و Riverpod يعملان كـ ViewModel. فصل أفضل من MVC.",
@@ -3329,9 +3329,9 @@ class UserBloc extends Bloc<UserEvent, UserState> {
             "MVVM/Provider للتطبيقات الصغيرة-المتوسطة، البنية النظيفة للتطبيقات المؤسسية الكبيرة ذات منطق الأعمال المعقد، Feature-first للتطبيقات ذات الميزات المتعددة المتميزة",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Architecture Selection:",
           value: [
             "MVC: Simple apps, quick prototypes",
@@ -3341,7 +3341,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار البنية:",
           value: [
             "MVC: تطبيقات بسيطة، نماذج سريعة",
@@ -3358,14 +3358,14 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     categories: [.dartBasics],
     type: .practical,
     tags: ["nullSafety", "soundness", "dart"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Null Safety and how does it help?",
         answer: [
-          StringContent(
+          StrContent(
             "Null Safety is a Dart language feature that helps prevent null reference errors by distinguishing between nullable and non-nullable types at compile time.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Key concepts:",
             value: [
               "Non-nullable by default: Types without '?' cannot be null (e.g., String, int)",
@@ -3374,7 +3374,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
               "Null-aware operators: ?., ??, ??=, ... for safe null handling",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "Benefits:",
             value: [
               "Compile-time error detection: Null errors caught before runtime",
@@ -3453,10 +3453,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "ما هو أمان العدم (Null Safety) وكيف يساعد؟",
         answer: [
-          StringContent(
+          StrContent(
             "أمان العدم هو ميزة في لغة Dart تساعد على منع أخطاء مرجع العدم عن طريق التمييز بين الأنواع القابلة للعدم وغير القابلة للعدم في وقت الترجمة.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "المفاهيم الرئيسية:",
             value: [
               "غير قابل للعدم افتراضيًا: الأنواع بدون '?' لا يمكن أن تكون null (مثل String، int)",
@@ -3465,7 +3465,7 @@ void greet(String name, {String? nickname}) {
               "عوامل الوعي بالعدم: ?.، ??، ??=، ... للتعامل الآمن مع null",
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: "الفوائد:",
             value: [
               "اكتشاف الأخطاء في وقت الترجمة: يتم اكتشاف أخطاء null قبل وقت التشغيل",
@@ -3542,9 +3542,9 @@ void greet(String name, {String? nickname}) {
             "أساسي لجميع مشاريع Dart/Flutter الحديثة. يمنع فئة كاملة من أخطاء وقت التشغيل.",
       ),
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Null Safety Usage:",
           value: [
             "Everywhere: Mandatory for modern Dart/Flutter apps to prevent runtime crashes",
@@ -3554,7 +3554,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام أمان العدم:",
           value: [
             "في كل مكان: إلزامي لتطبيقات Dart/Flutter الحديثة لمنع تعطل وقت التشغيل",
@@ -3571,14 +3571,14 @@ void greet(String name, {String? nickname}) {
     categories: [.performance, .dartBasics],
     type: .practical,
     tags: ["isolates", "concurrency", "eventLoop", "multithreading"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What are Isolates and how do they differ from threads?",
         answer: [
-          StringContent(
+          StrContent(
             "Dart is single-threaded and uses an Event Loop for asynchronous operations. To perform heavy parallel work without blocking the UI, we use Isolates.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Key differences vs Threads:",
             value: [
               "Isolates DO NOT share memory (no shared state concurrency).",
@@ -3588,7 +3588,7 @@ void greet(String name, {String? nickname}) {
               "Spawning an Isolate has overhead, so use for CPU-intensive tasks only.",
             ],
           ),
-          StringContent(
+          StrContent(
             "The 'compute()' function is a convenient helper that spawns an isolate for a single task and handles the message passing automatically.",
           ),
         ],
@@ -3603,10 +3603,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "ما هي العزلات (Isolates) وكيف تختلف عن الخيوط (Threads)؟",
         answer: [
-          StringContent(
+          StrContent(
             "Dart أحادي الخيط ويستخدم حلقة الحدث (Event Loop) للعمليات غير المتزامنة. لأداء عمل متوازٍ ثقيل دون حجب واجهة المستخدم، نستخدم العزلات.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "الاختلافات الرئيسية عن الخيوط:",
             value: [
               "العزلات لا تشترك في الذاكرة (لا توجد حالة مشتركة للتزامن).",
@@ -3616,7 +3616,7 @@ void greet(String name, {String? nickname}) {
               "إنشاء Isolate له عبء إضافي، لذا استخدمه فقط للمهام الحسابية المكثفة.",
             ],
           ),
-          StringContent(
+          StrContent(
             "دالة 'compute()' هي مساعد ملائم ينشئ عزلة لمهمة واحدة ويتعامل مع تمرير الرسائل تلقائيًا.",
           ),
         ],
@@ -3637,7 +3637,7 @@ void greet(String name, {String? nickname}) {
         "// Manual isolate spawn\nimport 'dart:isolate';\n\nvoid main() async {\n  final receivePort = ReceivePort();\n  await Isolate.spawn(heavyTask, receivePort.sendPort);\n  \n  receivePort.listen((message) {\n    print('Received: \$message');\n  });\n}\n\nvoid heavyTask(SendPort sendPort) {\n  // Perform heavy computation\n  final result = expensiveCalculation();\n  sendPort.send(result);\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Enables true parallel execution without blocking the main thread",
         "Eliminates race conditions and memory corruption issues",
@@ -3649,7 +3649,7 @@ void greet(String name, {String? nickname}) {
         "كل عزلة تتعطل بشكل مستقل دون التأثير على الأخرى",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Higher memory overhead due to separate memory heaps",
         "Message passing is slower than shared memory access",
@@ -3661,9 +3661,9 @@ void greet(String name, {String? nickname}) {
         "لا يمكن الوصول مباشرة إلى ودجتس Flutter أو حالة الواجهة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Isolates when:",
           value: [
             "Heavy computations (JSON parsing, image processing)",
@@ -3674,7 +3674,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Isolates عندما:",
           value: [
             "حسابات ثقيلة (تحليل JSON، معالجة صور)",
@@ -3692,14 +3692,14 @@ void greet(String name, {String? nickname}) {
     categories: [.nativePlatform, .architecture],
     type: .practical,
     tags: ["methodChannel", "platformChannels", "nativeCode", "eventChannel"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to communicate with native platform code (Android/iOS)?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter provides Platform Channels to communicate with native code. There are three types: MethodChannel (for method invocation), EventChannel (for event streams), and BasicMessageChannel (for basic messaging).",
           ),
-          OrderedListContent(
+          OLContent(
             title: "MethodChannel workflow:",
             value: [
               "Flutter: Create MethodChannel with unique name, call invokeMethod() with method name and arguments.",
@@ -3708,7 +3708,7 @@ void greet(String name, {String? nickname}) {
               "Data is automatically serialized/deserialized using StandardMessageCodec (supports: null, bool, int, double, String, Uint8List, List, Map).",
             ],
           ),
-          StringContent(
+          StrContent(
             "EventChannel is used for streaming data from native to Flutter (like sensor updates or location changes).",
           ),
         ],
@@ -3724,10 +3724,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "كيف تتواصل مع كود النظام الأساسي الأصلي (Android/iOS)؟",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter قنوات المنصة (Platform Channels) للتواصل مع الكود الأصلي. هناك ثلاثة أنواع: MethodChannel (لاستدعاء الدوال)، EventChannel (لتدفق الأحداث)، و BasicMessageChannel (للرسائل الأساسية).",
           ),
-          OrderedListContent(
+          OLContent(
             title: "سير عمل MethodChannel:",
             value: [
               "Flutter: إنشاء MethodChannel باسم فريد، استدعاء invokeMethod() مع اسم الدالة والمعاملات.",
@@ -3736,7 +3736,7 @@ void greet(String name, {String? nickname}) {
               "يتم تسلسل البيانات/إلغاء تسلسلها تلقائيًا باستخدام StandardMessageCodec (يدعم: null, bool, int, double, String, Uint8List, List, Map).",
             ],
           ),
-          StringContent(
+          StrContent(
             "يُستخدم EventChannel لبث البيانات من الكود الأصلي إلى Flutter (مثل تحديثات المستشعرات أو تغييرات الموقع).",
           ),
         ],
@@ -3758,7 +3758,7 @@ void greet(String name, {String? nickname}) {
         "// Android (Kotlin)\nclass MainActivity: FlutterActivity() {\n  private val CHANNEL = \"com.example/battery\"\n\n  override fun configureFlutterEngine(flutterEngine: FlutterEngine) {\n    MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL)\n      .setMethodCallHandler { call, result ->\n        if (call.method == \"getBatteryLevel\") {\n          val batteryLevel = getBatteryLevel()\n          if (batteryLevel != -1) {\n            result.success(batteryLevel)\n          } else {\n            result.error(\"UNAVAILABLE\", \"Battery level not available.\", null)\n          }\n        } else {\n          result.notImplemented()\n        }\n      }\n  }\n\n  private fun getBatteryLevel(): Int {\n    val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager\n    return batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Access to full native platform capabilities and APIs",
         "Can integrate any native SDK or library",
@@ -3770,7 +3770,7 @@ void greet(String name, {String? nickname}) {
         "العمليات الحرجة للأداء يمكن تشغيلها في الكود الأصلي",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires platform-specific code for each platform",
         "Increases maintenance complexity",
@@ -3782,14 +3782,14 @@ void greet(String name, {String? nickname}) {
         "أمان الأنواع محدود بأنواع codec الرسائل القياسية",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        StringContent(
+        StrContent(
           "Use Platform Channels when accessing native device features not available in Flutter (camera, sensors, bluetooth), integrating existing native code, or using platform-specific APIs.",
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           "استخدم Platform Channels عند الوصول لميزات أصلية غير متوفرة in Flutter (كاميرا، مستشعرات)، أو دمج كود أصلي موجود، أو استخدام APIs خاصة بالمنصة.",
         ),
       ],
@@ -3806,15 +3806,15 @@ void greet(String name, {String? nickname}) {
       "animationController",
       "tween",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What is the difference between Implicit and Explicit Animations?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter provides two animation approaches with different complexity levels and control capabilities.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Implicit Animations:",
             value: [
               "Simple, built-in widgets that automatically animate property changes",
@@ -3823,7 +3823,7 @@ void greet(String name, {String? nickname}) {
               "Best for simple transitions like hover effects, show/hide, color changes",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Explicit Animations:",
             value: [
               "Require manual control using AnimationController and Animation objects",
@@ -3845,10 +3845,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "ما الفرق بين الرسوم المتحركة الضمنية والصريحة؟",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter نهجين للرسوم المتحركة بمستويات مختلفة من التعقيد والتحكم.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الرسوم المتحركة الضمنية:",
             value: [
               "ودجتس بسيطة مدمجة تحرك التغييرات في الخصائص تلقائيًا",
@@ -3857,7 +3857,7 @@ void greet(String name, {String? nickname}) {
               "الأفضل للانتقالات البسيطة مثل تأثيرات التحويم، الإظهار/الإخفاء، تغييرات اللون",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الرسوم المتحركة الصريحة:",
             value: [
               "تتطلب تحكمًا يدويًا باستخدام AnimationController وكائنات Animation",
@@ -3885,7 +3885,7 @@ void greet(String name, {String? nickname}) {
         "// Explicit Animation\nclass MyWidget extends StatefulWidget {\n  @override\n  State<MyWidget> createState() => _MyWidgetState();\n}\n\nclass _MyWidgetState extends State<MyWidget>\n    with SingleTickerProviderStateMixin {\n  late AnimationController _controller;\n  late Animation<double> _animation;\n\n  @override\n  void initState() {\n    super.initState();\n    _controller = AnimationController(\n      duration: Duration(seconds: 1),\n      vsync: this,\n    );\n    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);\n    _controller.forward();\n  }\n\n  @override\n  void dispose() {\n    _controller.dispose();\n    super.dispose();\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return FadeTransition(\n      opacity: _animation,\n      child: Text('Hello'),\n    );\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Implicit: Easy to use, minimal code, automatic transitions",
         "Explicit: Full control over animation behavior, can coordinate complex sequences",
@@ -3895,7 +3895,7 @@ void greet(String name, {String? nickname}) {
         "الصريحة: تحكم كامل في سلوك الرسوم المتحركة، يمكن تنسيق تسلسلات معقدة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Implicit: Limited control, cannot pause or reverse mid-animation",
         "Explicit: More boilerplate code, requires manual controller management",
@@ -3905,9 +3905,9 @@ void greet(String name, {String? nickname}) {
         "الصريحة: كود إضافي أكثر، تتطلب إدارة يدوية للمتحكم",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Animation Type Selection:",
           value: [
             "Implicit: Simple property animations, automatic transitions",
@@ -3916,7 +3916,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار نوع الحركة:",
           value: [
             "Implicit: حركات بسيطة، انتقالات تلقائية",
@@ -3932,14 +3932,14 @@ void greet(String name, {String? nickname}) {
     categories: [.animations, .ui, .performance],
     type: .practical,
     tags: ["customPaint", "canvas", "drawing", "customPainter"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to use CustomPaint in Flutter?",
         answer: [
-          StringContent(
+          StrContent(
             "CustomPaint is a widget that provides a Canvas for low-level 2D drawing operations. It delegates to a CustomPainter subclass for actual rendering.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Implementation steps:",
             value: [
               "Create a class extending CustomPainter",
@@ -3949,7 +3949,7 @@ void greet(String name, {String? nickname}) {
               "Create Paint objects to define color, stroke width, style (fill/stroke)",
             ],
           ),
-          StringContent(
+          StrContent(
             "The Canvas API provides low-level drawing primitives similar to HTML Canvas or Android Canvas. Use Path for complex shapes and bezier curves.",
           ),
         ],
@@ -3965,10 +3965,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "كيفية استخدام CustomPaint في Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "CustomPaint هو ودجت يوفر لوحة (Canvas) لعمليات الرسم ثنائية الأبعاد منخفضة المستوى. يفوض إلى فئة فرعية من CustomPainter للعرض الفعلي.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "خطوات التنفيذ:",
             value: [
               "إنشاء فئة ترث من CustomPainter",
@@ -3978,7 +3978,7 @@ void greet(String name, {String? nickname}) {
               "إنشاء كائنات Paint لتحديد اللون وعرض الحد والنمط (تعبئة/حد)",
             ],
           ),
-          StringContent(
+          StrContent(
             "يوفر Canvas API عناصر رسم منخفضة المستوى مشابهة لـ HTML Canvas أو Android Canvas. استخدم Path للأشكال المعقدة ومنحنيات بيزيه.",
           ),
         ],
@@ -4000,7 +4000,7 @@ void greet(String name, {String? nickname}) {
         "class ComplexShapePainter extends CustomPainter {\n  @override\n  void paint(Canvas canvas, Size size) {\n    final paint = Paint()\n      ..color = Colors.red\n      ..strokeWidth = 2\n      ..style = PaintingStyle.stroke;\n    \n    final path = Path()\n      ..moveTo(0, size.height / 2)\n      ..quadraticBezierTo(\n        size.width / 2, 0,\n        size.width, size.height / 2,\n      )\n      ..lineTo(size.width, size.height)\n      ..lineTo(0, size.height)\n      ..close();\n    \n    canvas.drawPath(path, paint);\n  }\n\n  @override\n  bool shouldRepaint(ComplexShapePainter oldDelegate) => false;\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Full control over rendering with pixel-level precision",
         "Can create any custom visual effect not possible with standard widgets",
@@ -4012,7 +4012,7 @@ void greet(String name, {String? nickname}) {
         "فعال للرسومات المتجهة المعقدة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Performance-intensive if paint() is complex or called frequently",
         "Requires understanding of graphics programming concepts",
@@ -4024,9 +4024,9 @@ void greet(String name, {String? nickname}) {
         "لا يوجد اختبار نقرات مدمج - يجب التنفيذ يدويًا للتفاعلات",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use CustomPaint when:",
           value: [
             "Drawing custom shapes and graphics",
@@ -4037,7 +4037,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم CustomPaint عندما:",
           value: [
             "رسم أشكال ورسومات مخصصة",
@@ -4055,14 +4055,14 @@ void greet(String name, {String? nickname}) {
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["streamBuilder", "futureBuilder", "asyncWidgets", "reactive"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What are StreamBuilder and FutureBuilder?",
         answer: [
-          StringContent(
+          StrContent(
             "These are widgets that build themselves based on the latest interaction with asynchronous data sources, eliminating the need for manual state management.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "FutureBuilder:",
             value: [
               "Rebuilds when a Future completes (one-time asynchronous operation)",
@@ -4071,7 +4071,7 @@ void greet(String name, {String? nickname}) {
               "Provides snapshot with data, error, or loading state",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "StreamBuilder:",
             value: [
               "Rebuilds every time a Stream emits a new event (continuous data)",
@@ -4093,10 +4093,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "ما هما StreamBuilder و FutureBuilder؟",
         answer: [
-          StringContent(
+          StrContent(
             "هذه ودجتس تبني نفسها بناءً على أحدث تفاعل مع مصادر البيانات غير المتزامنة، مما يلغي الحاجة لإدارة الحالة يدويًا.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "FutureBuilder:",
             value: [
               "يعيد البناء عند اكتمال Future (عملية غير متزامنة لمرة واحدة)",
@@ -4105,7 +4105,7 @@ void greet(String name, {String? nickname}) {
               "يوفر snapshot مع البيانات أو الخطأ أو حالة التحميل",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "StreamBuilder:",
             value: [
               "يعيد البناء في كل مرة يصدر Stream حدثًا جديدًا (بيانات مستمرة)",
@@ -4133,7 +4133,7 @@ void greet(String name, {String? nickname}) {
         "class MessageList extends StatelessWidget {\n  final Stream<List<Message>> messageStream;\n\n  MessageList({required this.messageStream});\n\n  @override\n  Widget build(BuildContext context) {\n    return StreamBuilder<List<Message>>(\n      stream: messageStream,\n      builder: (context, snapshot) {\n        if (snapshot.hasError) {\n          return Text('Error: \${snapshot.error}');\n        }\n        \n        if (!snapshot.hasData) {\n          return CircularProgressIndicator();\n        }\n        \n        final messages = snapshot.data!;\n        return ListView.builder(\n          itemCount: messages.length,\n          itemBuilder: (context, index) => Text(messages[index].text),\n        );\n      },\n    );\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Eliminates manual state management for async data",
         "Automatic lifecycle management (subscription/disposal)",
@@ -4145,7 +4145,7 @@ void greet(String name, {String? nickname}) {
         "صياغة إعلانية واضحة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can cause unnecessary rebuilds if not implemented correctly",
         "Limited error handling compared to try-catch blocks",
@@ -4157,9 +4157,9 @@ void greet(String name, {String? nickname}) {
         "قد يكون مفرطًا للعمليات غير المتزامنة البسيطة لمرة واحدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Builder Selection:",
           value: [
             "FutureBuilder: One-time async operations (API call, database query)",
@@ -4168,7 +4168,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار Builder:",
           value: [
             "FutureBuilder: عمليات لمرة واحدة (استدعاء API)",
@@ -4184,14 +4184,14 @@ void greet(String name, {String? nickname}) {
     categories: [.modernFeatures, .ui],
     type: .theoretical,
     tags: ["accessibility", "semantics", "screenReader", "a11y"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How do you make a Flutter app accessible?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter provides the Semantics widget and related APIs to make apps accessible to users with disabilities, particularly for screen readers like TalkBack (Android) and VoiceOver (iOS).",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Key accessibility widgets and practices:",
             value: [
               "Semantics: Wrap widgets to provide label, hint, value, and other properties for screen readers",
@@ -4218,10 +4218,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "كيف تجعل تطبيق Flutter قابلاً للوصول؟",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter ودجت Semantics وواجهات برمجة التطبيقات ذات الصلة لجعل التطبيقات قابلة للوصول للمستخدمين ذوي الإعاقة، خاصةً لقارئات الشاشة مثل TalkBack (Android) و VoiceOver (iOS).",
           ),
-          OrderedListContent(
+          OLContent(
             title: "الودجتس والممارسات الرئيسية لإمكانية الوصول:",
             value: [
               "Semantics: لف الودجتس لتوفير تسمية وتلميح وقيمة وخصائص أخرى لقارئات الشاشة",
@@ -4254,7 +4254,7 @@ void greet(String name, {String? nickname}) {
         "// Merge semantics for card\nMergeSemantics(\n  child: Card(\n    child: Column(\n      children: [\n        Text('John Doe'),\n        Text('Software Engineer'),\n        // Screen reader announces: \"John Doe, Software Engineer\"\n      ],\n    ),\n  ),\n)",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Makes apps usable by millions of users with disabilities",
         "Improves overall UX for all users (larger touch targets, better contrast)",
@@ -4266,7 +4266,7 @@ void greet(String name, {String? nickname}) {
         "مطلوب للامتثال للوائح إمكانية الوصول (ADA, Section 508)",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires additional development time and testing",
         "May increase widget tree complexity",
@@ -4285,11 +4285,11 @@ void greet(String name, {String? nickname}) {
     categories: [.security],
     type: .practical,
     tags: ["obfuscation", "flutterSecureStorage", "sslPinning", "encryption"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What are key security best practices in Flutter?",
         answer: [
-          OrderedListContent(
+          OLContent(
             title: "Essential security practices:",
             value: [
               "Code Obfuscation: Use '--obfuscate --split-debug-info' flags when building releases to make reverse engineering harder",
@@ -4317,7 +4317,7 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "ما هي أفضل ممارسات الأمان الرئيسية في Flutter؟",
         answer: [
-          OrderedListContent(
+          OLContent(
             title: "الممارسات الأمنية الأساسية:",
             value: [
               "تعتيم الكود: استخدم علامات '--obfuscate --split-debug-info' عند بناء الإصدارات لجعل الهندسة العكسية أصعب",
@@ -4351,7 +4351,7 @@ void greet(String name, {String? nickname}) {
         "// SSL Pinning with Dio\nimport 'package:dio/dio.dart';\nimport 'package:dio/adapter.dart';\n\nfinal dio = Dio();\n(dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = \n  (client) {\n    client.badCertificateCallback = \n      (X509Certificate cert, String host, int port) {\n        // Verify certificate fingerprint\n        return cert.sha1.toString() == 'expected_sha1_fingerprint';\n      };\n    return client;\n  };",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Protects user data and app integrity",
         "Reduces risk of data breaches and unauthorized access",
@@ -4363,7 +4363,7 @@ void greet(String name, {String? nickname}) {
         "يبني ثقة المستخدم ويتوافق مع اللوائح (GDPR, HIPAA)",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Adds development complexity and testing requirements",
         "Obfuscation increases build time",
@@ -4382,14 +4382,14 @@ void greet(String name, {String? nickname}) {
     categories: [.deployment],
     type: .theoretical,
     tags: ["ciCd", "codemagic", "githubActions", "fastlane", "automation"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How do you implement CI/CD for a Flutter application?",
         answer: [
-          StringContent(
+          StrContent(
             "CI/CD (Continuous Integration/Continuous Deployment) automates building, testing, and deploying Flutter apps, ensuring code quality and faster releases.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Implementation steps:",
             value: [
               "Choose a CI/CD platform: Codemagic (Flutter-specific), GitHub Actions, GitLab CI, Bitrise, or CircleCI",
@@ -4402,7 +4402,7 @@ void greet(String name, {String? nickname}) {
               "Notifications: Send build status to Slack/Discord/Email",
             ],
           ),
-          StringContent(
+          StrContent(
             "Fastlane is commonly used to script deployment workflows, especially for iOS App Store submission.",
           ),
         ],
@@ -4419,10 +4419,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "كيف تنفذ CI/CD لتطبيق Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "CI/CD (التكامل المستمر/النشر المستمر) يؤتمت بناء واختبار ونشر تطبيقات Flutter، مما يضمن جودة الكود وإصدارات أسرع.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "خطوات التنفيذ:",
             value: [
               "اختر منصة CI/CD: Codemagic (خاص بـ Flutter)، GitHub Actions، GitLab CI، Bitrise، أو CircleCI",
@@ -4435,7 +4435,7 @@ void greet(String name, {String? nickname}) {
               "الإشعارات: إرسال حالة البناء إلى Slack/Discord/البريد الإلكتروني",
             ],
           ),
-          StringContent(
+          StrContent(
             "يُستخدم Fastlane بشكل شائع لبرمجة سير عمل النشر، خاصةً لإرسال App Store لـ iOS.",
           ),
         ],
@@ -4460,7 +4460,7 @@ void greet(String name, {String? nickname}) {
         codeLanguage: .yaml,
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Catches bugs early before production",
         "Automates repetitive tasks, saving hours of manual work",
@@ -4474,7 +4474,7 @@ void greet(String name, {String? nickname}) {
         "وقت أسرع للوصول إلى السوق مع الإصدارات الآلية",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Initial setup complexity and learning curve",
         "CI/CD platform costs for advanced features",
@@ -4493,14 +4493,14 @@ void greet(String name, {String? nickname}) {
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["column", "row", "stack", "expanded", "flex", "layout"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain common layout widgets used in Flutter.",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter uses a composition-based layout system. Understanding these core widgets is fundamental to building any UI.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Essential layout widgets:",
             value: [
               "Column: Arranges children vertically. Use mainAxisAlignment (vertical) and crossAxisAlignment (horizontal).",
@@ -4527,10 +4527,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "اشرح ودجتس التخطيط الشائعة المستخدمة في Flutter.",
         answer: [
-          StringContent(
+          StrContent(
             "يستخدم Flutter نظام تخطيط قائم على التركيب. فهم هذه الودجتس الأساسية ضروري لبناء أي واجهة مستخدم.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "ودجتس التخطيط الأساسية:",
             value: [
               "Column: يرتب الأطفال عموديًا. استخدم mainAxisAlignment (عمودي) و crossAxisAlignment (أفقي).",
@@ -4563,7 +4563,7 @@ void greet(String name, {String? nickname}) {
         "// Stack with Positioned\nStack(\n  children: [\n    Container(color: Colors.blue, width: 200, height: 200),\n    Positioned(\n      top: 20,\n      left: 20,\n      child: Icon(Icons.favorite, color: Colors.red),\n    ),\n    Positioned(\n      bottom: 0,\n      right: 0,\n      child: Text('Bottom Right'),\n    ),\n  ],\n)",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Flexible and composable - can build any layout",
         "Predictable behavior following constraint system",
@@ -4575,7 +4575,7 @@ void greet(String name, {String? nickname}) {
         "متوافقة مع Hot Reload للتكرار السريع للواجهة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Deep nesting can become complex and hard to read",
         "Understanding constraints takes practice",
@@ -4594,14 +4594,14 @@ void greet(String name, {String? nickname}) {
     categories: [.architecture, .flutterBasics],
     type: .practical,
     tags: ["navigator2", "router", "goRouter", "navigation", "deepLinking"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Navigator 2.0 (Router API)?",
         answer: [
-          StringContent(
+          StrContent(
             "Navigator 2.0 is a declarative navigation API that treats navigation as a function of app state, enabling advanced features like deep linking and programmatic URL control.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key concepts:",
             value: [
               "Declarative vs Imperative: Navigator 1.0 uses push/pop (imperative). Navigator 2.0 rebuilds route stack based on state (declarative).",
@@ -4611,7 +4611,7 @@ void greet(String name, {String? nickname}) {
               "BackButtonDispatcher: Handles system back button",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Capabilities enabled:",
             value: [
               "Deep linking: Direct navigation to any app screen via URL",
@@ -4621,7 +4621,7 @@ void greet(String name, {String? nickname}) {
               "State restoration after app restart",
             ],
           ),
-          StringContent(
+          StrContent(
             "Most developers use packages like 'go_router' or 'auto_route' which simplify Navigator 2.0 implementation significantly.",
           ),
         ],
@@ -4637,10 +4637,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "ما هو Navigator 2.0 (Router API)؟",
         answer: [
-          StringContent(
+          StrContent(
             "Navigator 2.0 هو واجهة برمجة تطبيقات تنقل إعلانية تعامل التنقل كدالة لحالة التطبيق، مما يمكّن ميزات متقدمة مثل الروابط العميقة والتحكم البرمجي في عناوين URL.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "المفاهيم الرئيسية:",
             value: [
               "إعلاني مقابل أمري: يستخدم Navigator 1.0 push/pop (أمري). يعيد Navigator 2.0 بناء مجموعة المسارات بناءً على الحالة (إعلاني).",
@@ -4650,7 +4650,7 @@ void greet(String name, {String? nickname}) {
               "BackButtonDispatcher: يتعامل مع زر الرجوع للنظام",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "القدرات الممكّنة:",
             value: [
               "الروابط العميقة: التنقل المباشر إلى أي شاشة تطبيق عبر URL",
@@ -4660,7 +4660,7 @@ void greet(String name, {String? nickname}) {
               "استعادة الحالة بعد إعادة تشغيل التطبيق",
             ],
           ),
-          StringContent(
+          StrContent(
             "يستخدم معظم المطورين حزمًا مثل 'go_router' أو 'auto_route' التي تبسط تنفيذ Navigator 2.0 بشكل كبير.",
           ),
         ],
@@ -4682,7 +4682,7 @@ void greet(String name, {String? nickname}) {
         "// Manual Navigator 2.0 (RouterDelegate example)\nclass MyRouterDelegate extends RouterDelegate<MyRoutePath>\n    with ChangeNotifier, PopNavigatorRouterDelegateMixin<MyRoutePath> {\n  @override\n  final GlobalKey<NavigatorState> navigatorKey;\n\n  MyRouterDelegate() : navigatorKey = GlobalKey<NavigatorState>();\n\n  String? selectedId;\n  bool show404 = false;\n\n  @override\n  MyRoutePath get currentConfiguration {\n    if (show404) return MyRoutePath.unknown();\n    return selectedId == null\n        ? MyRoutePath.home()\n        : MyRoutePath.details(selectedId!);\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Navigator(\n      key: navigatorKey,\n      pages: [\n        MaterialPage(child: HomePage()),\n        if (selectedId != null)\n          MaterialPage(child: DetailsPage(id: selectedId!)),\n        if (show404) MaterialPage(child: NotFoundPage()),\n      ],\n      onPopPage: (route, result) {\n        if (!route.didPop(result)) return false;\n        selectedId = null;\n        notifyListeners();\n        return true;\n      },\n    );\n  }\n\n  @override\n  Future<void> setNewRoutePath(MyRoutePath path) async {\n    if (path.isUnknown) {\n      show404 = true;\n      return;\n    }\n    selectedId = path.id;\n    show404 = false;\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Full control over navigation state",
         "Deep linking and URL synchronization for web",
@@ -4696,7 +4696,7 @@ void greet(String name, {String? nickname}) {
         "دعم استعادة الحالة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Steep learning curve and significant boilerplate",
         "Overkill for simple navigation needs",
@@ -4708,9 +4708,9 @@ void greet(String name, {String? nickname}) {
         "يتطلب إدارة حالة دقيقة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Navigator 2.0 when:",
           value: [
             "Need declarative routing and deep linking",
@@ -4721,7 +4721,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Navigator 2.0 عندما:",
           value: [
             "تحتاج توجيه تصريحي وروابط عميقة",
@@ -4739,15 +4739,15 @@ void greet(String name, {String? nickname}) {
     categories: [.performance, .architecture],
     type: .theoretical,
     tags: ["renderObject", "elements", "widgets", "rendering", "internals"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "Explain the Widgets, Elements, and RenderObjects trees in Flutter.",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter's rendering architecture consists of three trees working together to efficiently display UI. Understanding this is key to performance optimization.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "The three trees:",
             value: [
               "Widget Tree: Immutable configuration describing what UI should look like. Cheap to create and destroy. Rebuilt frequently.",
@@ -4755,7 +4755,7 @@ void greet(String name, {String? nickname}) {
               "RenderObject Tree: Handles layout (computing sizes) and painting (drawing pixels). Expensive to create. Updated in-place when possible.",
             ],
           ),
-          StringContent(
+          StrContent(
             "The reconciliation process: When a widget rebuilds, Flutter compares new widget with old. If type and key match, it updates the existing Element and RenderObject instead of recreating them. This is why 'const' constructors are so important - they allow Flutter to skip updates entirely.",
           ),
         ],
@@ -4771,10 +4771,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "اشرح أشجار الودجتس والعناصر وكائنات العرض في Flutter.",
         answer: [
-          StringContent(
+          StrContent(
             "تتكون بنية العرض في Flutter من ثلاث أشجار تعمل معًا لعرض واجهة المستخدم بكفاءة. فهم هذا هو مفتاح تحسين الأداء.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "الأشجار الثلاث:",
             value: [
               "شجرة الودجتس: تكوين غير قابل للتغيير يصف كيف يجب أن تبدو الواجهة. رخيصة الإنشاء والتدمير. تُعاد بناؤها بشكل متكرر.",
@@ -4782,7 +4782,7 @@ void greet(String name, {String? nickname}) {
               "شجرة كائنات العرض: تتعامل مع التخطيط (حساب الأحجام) والرسم (رسم البكسلات). مكلفة الإنشاء. تُحدّث في مكانها عندما يكون ذلك ممكنًا.",
             ],
           ),
-          StringContent(
+          StrContent(
             "عملية المصالحة: عندما يُعاد بناء ودجت، يقارن Flutter الودجت الجديد بالقديم. إذا تطابق النوع والمفتاح، فإنه يحدّث العنصر و RenderObject الموجودين بدلاً من إعادة إنشائهما. هذا هو سبب أهمية البانيات 'const' - فهي تسمح لـ Flutter بتخطي التحديثات تمامًا.",
           ),
         ],
@@ -4804,7 +4804,7 @@ void greet(String name, {String? nickname}) {
         "// How reconciliation works\n// Frame 1:\nColumn(\n  children: [\n    Text('A'), // Creates Element and RenderObject\n    Text('B'), // Creates Element and RenderObject\n  ],\n)\n\n// Frame 2 (after rebuild):\nColumn(\n  children: [\n    Text('A'), // Reuses Element and RenderObject (type matches)\n    Text('C'), // Updates Element's widget, updates RenderObject\n  ],\n)\n\n// With keys:\nColumn(\n  children: [\n    Text('A', key: ValueKey('a')),\n    Text('B', key: ValueKey('b')),\n  ],\n)\n// If widgets are reordered, keys ensure correct Elements are matched",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Efficient updates - only changed parts are recomputed",
         "Separation of concerns: configuration (Widget), lifecycle (Element), rendering (RenderObject)",
@@ -4816,7 +4816,7 @@ void greet(String name, {String? nickname}) {
         "يمكّن من تحسينات قوية مثل الودجتس const",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Complex architecture with steep learning curve",
         "Can be confusing for beginners",
@@ -4835,14 +4835,14 @@ void greet(String name, {String? nickname}) {
     categories: [.performance, .flutterBasics],
     type: .practical,
     tags: ["memoryLeak", "dispose", "devtools", "optimization"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to detect and fix Memory Leaks in Flutter?",
         answer: [
-          StringContent(
+          StrContent(
             "Memory leaks occur when objects remain referenced after they're no longer needed, preventing Dart's Garbage Collector from reclaiming memory. This leads to increased memory consumption and potential app crashes.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Common causes of memory leaks:",
             value: [
               "Not disposing controllers (AnimationController, TextEditingController, ScrollController)",
@@ -4852,10 +4852,10 @@ void greet(String name, {String? nickname}) {
               "Using listeners without removing them in dispose()",
             ],
           ),
-          StringContent(
+          StrContent(
             "Detection: Use Flutter DevTools Memory view to monitor heap size growth over time. Look for objects that persist after navigating away from screens. Enable the LeakTracker package for automated detection.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "How to fix memory leaks:",
             value: [
               "Always override dispose() in StatefulWidget's State class",
@@ -4878,10 +4878,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: "كيف تكتشف وتعالج تسرب الذاكرة في Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "يحدث تسرب الذاكرة عندما تظل الكائنات مشارًا إليها بعد عدم الحاجة إليها، مما يمنع جامع النفايات في Dart من استعادة الذاكرة. يؤدي هذا إلى زيادة استهلاك الذاكرة وانهيار التطبيق المحتمل.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "الأسباب الشائعة لتسرب الذاكرة:",
             value: [
               "عدم التخلص من المتحكمات (AnimationController، TextEditingController، ScrollController)",
@@ -4891,10 +4891,10 @@ void greet(String name, {String? nickname}) {
               "استخدام المستمعات دون إزالتها في dispose()",
             ],
           ),
-          StringContent(
+          StrContent(
             "الاكتشاف: استخدم عرض الذاكرة في Flutter DevTools لمراقبة نمو حجم الكومة بمرور الوقت. ابحث عن الكائنات التي تستمر بعد الخروج من الشاشات. فعّل حزمة LeakTracker للكشف التلقائي.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "كيفية إصلاح تسريبات الذاكرة:",
             value: [
               "استبدل دائمًا dispose() في فئة State الخاصة بـ StatefulWidget",
@@ -4923,7 +4923,7 @@ void greet(String name, {String? nickname}) {
         "@override\nvoid dispose() {\n  // Missing dispose calls - memory leak!\n  super.dispose();\n  // Controllers not disposed\n  // Subscriptions not cancelled\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Proper disposal prevents memory leaks and improves app performance",
         "DevTools provides excellent visualization of memory usage",
@@ -4935,7 +4935,7 @@ void greet(String name, {String? nickname}) {
         "يُؤتمت LeakTracker الكشف في التطوير",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Easy to forget dispose() calls during development",
         "Can be challenging to track down the source of leaks in complex apps",
@@ -4954,14 +4954,14 @@ void greet(String name, {String? nickname}) {
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["basic", "flutter", "crossplatform", "framework"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What is Flutter?',
         answer: [
-          StringContent(
+          StrContent(
             'Flutter is an open-source UI framework created by Google for building natively compiled applications for mobile (iOS & Android), web, desktop (Windows, macOS, Linux), and embedded devices from a single codebase.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Uses Dart programming language",
@@ -4971,7 +4971,7 @@ void greet(String name, {String? nickname}) {
               "Compiles to native ARM code for high performance",
             ],
           ),
-          StringContent(
+          StrContent(
             "Flutter follows a declarative UI paradigm where you describe what the UI should look like, and the framework handles the updates efficiently.",
           ),
         ],
@@ -4981,10 +4981,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هو Flutter؟',
         answer: [
-          StringContent(
+          StrContent(
             'Flutter هو إطار عمل واجهة مستخدم مفتوح المصدر أنشأته Google لبناء تطبيقات مُترجمة بشكل أصلي للهواتف المحمولة (iOS و Android)، والويب، وسطح المكتب (Windows و macOS و Linux)، والأجهزة المدمجة من قاعدة كود واحدة.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "يستخدم لغة البرمجة Dart",
@@ -4994,7 +4994,7 @@ void greet(String name, {String? nickname}) {
               "يترجم إلى كود ARM أصلي لأداء عالي",
             ],
           ),
-          StringContent(
+          StrContent(
             "يتبع Flutter نموذج واجهة مستخدم إعلاني حيث تصف كيف يجب أن تبدو الواجهة، ويتعامل الإطار مع التحديثات بكفاءة.",
           ),
         ],
@@ -5002,7 +5002,7 @@ void greet(String name, {String? nickname}) {
             'مثالي لبناء تطبيقات عبر المنصات مع واجهة مستخدم مخصصة وجميلة وسلوك متسق عبر المنصات. الأفضل لـ MVP والشركات الناشئة والمشاريع التي تتطلب تطويرًا سريعًا.',
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Single codebase for multiple platforms reduces development time and cost",
         "High performance due to native compilation",
@@ -5018,7 +5018,7 @@ void greet(String name, {String? nickname}) {
         "مجتمع قوي ونظام بيئي متنامٍ",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Larger app size compared to native apps",
         "Fewer third-party libraries compared to mature platforms like iOS/Android native",
@@ -5039,14 +5039,14 @@ void greet(String name, {String? nickname}) {
     categories: [.basic, .dartBasics],
     type: .theoretical,
     tags: ["basic", "dart", "language", "programming"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What is Dart, and why is it used in Flutter?',
         answer: [
-          StringContent(
+          StrContent(
             'Dart is a modern, object-oriented programming language developed by Google. It is optimized for building user interfaces and is the sole programming language used for Flutter development.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features of Dart:",
             value: [
               "Sound null safety prevents null reference errors at compile time",
@@ -5056,7 +5056,7 @@ void greet(String name, {String? nickname}) {
               "Supports modern programming paradigms (functional, reactive)",
             ],
           ),
-          StringContent(
+          StrContent(
             "Dart compiles to native machine code for iOS and Android, JavaScript for web, and native code for desktop platforms, enabling Flutter's cross-platform capabilities with high performance.",
           ),
         ],
@@ -5066,10 +5066,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هي لغة Dart ولماذا تُستخدم في Flutter؟',
         answer: [
-          StringContent(
+          StrContent(
             'Dart هي لغة برمجة حديثة موجهة للكائنات طورتها Google. وهي محسّنة لبناء واجهات المستخدم وهي اللغة الوحيدة المستخدمة لتطوير Flutter.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية لـ Dart:",
             value: [
               "السلامة من القيمة الخالية تمنع أخطاء المرجع الخالي في وقت الترجمة",
@@ -5079,7 +5079,7 @@ void greet(String name, {String? nickname}) {
               "تدعم نماذج البرمجة الحديثة (الوظيفية، التفاعلية)",
             ],
           ),
-          StringContent(
+          StrContent(
             "تترجم Dart إلى كود آلة أصلي لـ iOS و Android، و JavaScript للويب، وكود أصلي لمنصات سطح المكتب، مما يمكّن قدرات Flutter عبر المنصات بأداء عالٍ.",
           ),
         ],
@@ -5087,7 +5087,7 @@ void greet(String name, {String? nickname}) {
             'الأفضل استخدامًا لتطوير تطبيقات Flutter. مناسبة أيضًا لتطوير الواجهة الخلفية مع أطر عمل مثل Shelf والتطبيقات من جانب الخادم حيث يهم الأداء.',
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Easy to learn for developers familiar with C-style syntax (Java, C#, JavaScript)",
         "Excellent tooling and IDE support (VS Code, Android Studio)",
@@ -5101,7 +5101,7 @@ void greet(String name, {String? nickname}) {
         "السلامة من القيمة الخالية تلغي فئة كاملة من أخطاء وقت التشغيل",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Smaller ecosystem compared to JavaScript or Python",
         "Primarily used for Flutter, limiting server-side adoption",
@@ -5122,14 +5122,14 @@ void greet(String name, {String? nickname}) {
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "flutter", "widgets", "ui"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What are Widgets in Flutter?',
         answer: [
-          StringContent(
+          StrContent(
             'Widgets are the fundamental building blocks of a Flutter app\'s user interface. In Flutter, everything is a widget - from structural elements like buttons and text to layout models like rows and columns, and even invisible elements like padding and themes.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Types of widgets:",
             value: [
               "StatelessWidget: Immutable widgets that don't change over time",
@@ -5138,7 +5138,7 @@ void greet(String name, {String? nickname}) {
               "RenderObjectWidget: Directly handles layout and painting",
             ],
           ),
-          StringContent(
+          StrContent(
             "Widgets describe the UI declaratively based on current configuration and state. Flutter rebuilds the widget tree when state changes, using an efficient diffing algorithm to update only what's necessary.",
           ),
         ],
@@ -5148,10 +5148,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هي الودجتس (Widgets) في Flutter؟',
         answer: [
-          StringContent(
+          StrContent(
             'الودجتس هي اللبنات الأساسية لواجهة مستخدم تطبيق Flutter. في Flutter، كل شيء ودجت - من العناصر الهيكلية مثل الأزرار والنصوص إلى نماذج التخطيط مثل الصفوف والأعمدة، وحتى العناصر غير المرئية مثل الحشو والسمات.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "أنواع الودجتس:",
             value: [
               "StatelessWidget: ودجتس ثابتة لا تتغير مع الوقت",
@@ -5160,7 +5160,7 @@ void greet(String name, {String? nickname}) {
               "RenderObjectWidget: تتعامل مباشرة مع التخطيط والرسم",
             ],
           ),
-          StringContent(
+          StrContent(
             "تصف الودجتس الواجهة بشكل إعلاني بناءً على التكوين والحالة الحالية. يعيد Flutter بناء شجرة الودجت عند تغيير الحالة، باستخدام خوارزمية فرق فعالة لتحديث ما هو ضروري فقط.",
           ),
         ],
@@ -5168,7 +5168,7 @@ void greet(String name, {String? nickname}) {
             'استخدم الودجتس لتكوين واجهات المستخدم من مكونات بسيطة قابلة لإعادة الاستخدام. استفد من StatelessWidget للمحتوى الثابت و StatefulWidget للعناصر الديناميكية التفاعلية.',
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Highly composable - build complex UIs from simple widgets",
         "Declarative approach makes code easier to understand and maintain",
@@ -5182,7 +5182,7 @@ void greet(String name, {String? nickname}) {
         "كتالوج ودجت واسع لتصاميم Material و Cupertino",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Deep widget trees can become complex and hard to navigate",
         "Requires understanding widget lifecycle for effective state management",
@@ -5203,15 +5203,15 @@ void greet(String name, {String? nickname}) {
     categories: [.basic, .flutterBasics, .stateManagement],
     type: .theoretical,
     tags: ["basic", "flutter", "widgets", "performance", "state"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What is the difference between StatelessWidget and StatefulWidget?',
         answer: [
-          StringContent(
+          StrContent(
             'StatelessWidget and StatefulWidget are the two fundamental widget types in Flutter, differing in how they handle state and rebuilds.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "StatelessWidget:",
             value: [
               "Immutable - cannot change after being built",
@@ -5221,7 +5221,7 @@ void greet(String name, {String? nickname}) {
               "Example: Text, Icon, Container with fixed properties",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "StatefulWidget:",
             value: [
               "Has mutable state managed by a State object",
@@ -5231,7 +5231,7 @@ void greet(String name, {String? nickname}) {
               "Example: Checkbox, TextField, animations",
             ],
           ),
-          StringContent(
+          StrContent(
             "Choose StatelessWidget for static content that depends only on constructor parameters. Choose StatefulWidget when the UI needs to change in response to user interaction or data updates.",
           ),
         ],
@@ -5241,10 +5241,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما الفرق بين StatelessWidget و StatefulWidget؟',
         answer: [
-          StringContent(
+          StrContent(
             'StatelessWidget و StatefulWidget هما نوعا الودجت الأساسيان في Flutter، يختلفان في كيفية التعامل مع الحالة وإعادة البناء.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "StatelessWidget:",
             value: [
               "ثابتة - لا يمكن تغييرها بعد البناء",
@@ -5254,7 +5254,7 @@ void greet(String name, {String? nickname}) {
               "مثال: Text، Icon، Container بخصائص ثابتة",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "StatefulWidget:",
             value: [
               "لها حالة قابلة للتغيير تُدار بواسطة كائن State",
@@ -5264,7 +5264,7 @@ void greet(String name, {String? nickname}) {
               "مثال: Checkbox، TextField، الرسوم المتحركة",
             ],
           ),
-          StringContent(
+          StrContent(
             "اختر StatelessWidget للمحتوى الثابت الذي يعتمد فقط على معاملات المُنشئ. اختر StatefulWidget عندما تحتاج الواجهة إلى التغيير استجابةً لتفاعل المستخدم أو تحديثات البيانات.",
           ),
         ],
@@ -5280,7 +5280,7 @@ void greet(String name, {String? nickname}) {
         "// StatefulWidget example\nclass Counter extends StatefulWidget {\n  @override\n  State<Counter> createState() => _CounterState();\n}\n\nclass _CounterState extends State<Counter> {\n  int _count = 0;\n\n  void _increment() {\n    setState(() {\n      _count++;\n    });\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Column(\n      children: [\n        Text('Count: \$_count'),\n        ElevatedButton(\n          onPressed: _increment,\n          child: Text('Increment'),\n        ),\n      ],\n    );\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "StatelessWidget is simpler, faster, and easier to test",
         "StatefulWidget enables dynamic UI with lifecycle hooks",
@@ -5294,7 +5294,7 @@ void greet(String name, {String? nickname}) {
         "كلاهما يعمل بسلاسة مع نموذج Flutter التفاعلي",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "StatelessWidget cannot respond to state changes directly",
         "StatefulWidget adds complexity and memory overhead",
@@ -5308,9 +5308,9 @@ void greet(String name, {String? nickname}) {
         "يتطلب فهمًا لمتى يتم استخدام كل نوع",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Widget Type Selection:",
           value: [
             "StatelessWidget: Static content, no internal state changes",
@@ -5319,7 +5319,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار نوع الويدجت:",
           value: [
             "StatelessWidget: محتوى ثابت، لا تغييرات داخلية",
@@ -5335,14 +5335,14 @@ void greet(String name, {String? nickname}) {
     categories: [.flutterBasics, .ui, .performance],
     type: .theoretical,
     tags: ["intermediate", "flutter", "widgets", "keys", "state"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What is a Key in Flutter and why is it used?',
         answer: [
-          StringContent(
+          StrContent(
             'A Key is an identifier for Widgets, Elements, and SemanticsNodes in Flutter. Keys help the framework identify which widgets have changed, been added, or removed when the widget tree is rebuilt.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Types of Keys:",
             value: [
               "ValueKey: Uses a value to identify widgets (e.g., ValueKey(id))",
@@ -5352,7 +5352,7 @@ void greet(String name, {String? nickname}) {
               "PageStorageKey: Preserves scroll position and form state",
             ],
           ),
-          StringContent(
+          StrContent(
             "Keys are particularly important when reordering lists, removing items, or maintaining state across rebuilds. Without keys, Flutter might reuse widgets incorrectly, leading to state bugs or lost data.",
           ),
         ],
@@ -5367,10 +5367,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هو المفتاح (Key) في Flutter ولماذا يُستخدم؟',
         answer: [
-          StringContent(
+          StrContent(
             'المفتاح (Key) هو معرّف للودجتس والعناصر (Elements) وعقد الدلالات في Flutter. تساعد المفاتيح الإطار على تحديد الودجتس التي تغيرت أو أُضيفت أو أُزيلت عند إعادة بناء شجرة الودجت.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "أنواع المفاتيح:",
             value: [
               "ValueKey: يستخدم قيمة لتحديد الودجتس (مثل ValueKey(id))",
@@ -5380,7 +5380,7 @@ void greet(String name, {String? nickname}) {
               "PageStorageKey: يحفظ موضع التمرير وحالة النموذج",
             ],
           ),
-          StringContent(
+          StrContent(
             "المفاتيح مهمة بشكل خاص عند إعادة ترتيب القوائم أو إزالة العناصر أو الحفاظ على الحالة عبر عمليات إعادة البناء. بدون مفاتيح، قد يعيد Flutter استخدام الودجتس بشكل غير صحيح، مما يؤدي إلى أخطاء الحالة أو فقدان البيانات.",
           ),
         ],
@@ -5401,7 +5401,7 @@ void greet(String name, {String? nickname}) {
         "// No keys - state might be lost on reorder\nListView.builder(\n  itemCount: items.length,\n  itemBuilder: (context, index) {\n    return ListTile(\n      // Missing key!\n      title: Text(items[index].name),\n    );\n  },\n)",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Prevents unexpected behavior when reordering widgets",
         "Preserves widget state during rebuilds",
@@ -5415,7 +5415,7 @@ void greet(String name, {String? nickname}) {
         "ضروري للرسوم المتحركة ومعالجات القوائم",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Overusing keys can complicate code unnecessarily",
         "GlobalKey has performance overhead",
@@ -5429,9 +5429,9 @@ void greet(String name, {String? nickname}) {
         "يمكن أن يسبب الارتباك إذا أُسيء استخدامه",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Keys when:",
           value: [
             "Maintaining state in dynamic lists",
@@ -5441,7 +5441,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Keys عندما:",
           value: [
             "الحفاظ على الحالة في القوائم الديناميكية",
@@ -5458,15 +5458,15 @@ void greet(String name, {String? nickname}) {
     categories: [.flutterBasics, .performance],
     type: .theoretical,
     tags: ["intermediate", "flutter", "development", "hotreload"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'Explain the difference between Hot Reload and Hot Restart in Flutter.',
         answer: [
-          StringContent(
+          StrContent(
             'Hot Reload and Hot Restart are two development features in Flutter that speed up the development cycle, but they work differently.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Hot Reload:",
             value: [
               "Injects updated source code into the running Dart VM",
@@ -5477,7 +5477,7 @@ void greet(String name, {String? nickname}) {
               "Keyboard shortcut: r in terminal, or Ctrl/Cmd+S in IDE",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Hot Restart:",
             value: [
               "Completely restarts the application",
@@ -5488,7 +5488,7 @@ void greet(String name, {String? nickname}) {
               "Keyboard shortcut: Shift+r in terminal",
             ],
           ),
-          StringContent(
+          StrContent(
             "Use Hot Reload for UI changes and logic updates. Use Hot Restart when changing app initialization, global variables, main() function, or when Hot Reload doesn't work correctly.",
           ),
         ],
@@ -5503,10 +5503,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'اشرح الفرق بين Hot Reload و Hot Restart في Flutter.',
         answer: [
-          StringContent(
+          StrContent(
             'Hot Reload و Hot Restart هما ميزتان للتطوير في Flutter تسرّعان دورة التطوير، لكنهما يعملان بشكل مختلف.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Hot Reload:",
             value: [
               "يحقن الكود المصدري المحدث في Dart VM قيد التشغيل",
@@ -5517,7 +5517,7 @@ void greet(String name, {String? nickname}) {
               "اختصار لوحة المفاتيح: r في الطرفية، أو Ctrl/Cmd+S في IDE",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Hot Restart:",
             value: [
               "يعيد تشغيل التطبيق بالكامل",
@@ -5528,7 +5528,7 @@ void greet(String name, {String? nickname}) {
               "اختصار لوحة المفاتيح: Shift+r في الطرفية",
             ],
           ),
-          StringContent(
+          StrContent(
             "استخدم Hot Reload لتغييرات الواجهة وتحديثات المنطق. استخدم Hot Restart عند تغيير تهيئة التطبيق أو المتغيرات العامة أو دالة main()، أو عندما لا يعمل Hot Reload بشكل صحيح.",
           ),
         ],
@@ -5549,7 +5549,7 @@ void greet(String name, {String? nickname}) {
         "// Changes that need Hot Restart:\n// - Changing main()\nvoid main() {\n  runApp(MyNewApp()); // Needs Hot Restart\n}\n\n// - Modifying global variables\nfinal String appTitle = 'New Title'; // Needs Hot Restart\n\n// - Changing initState\n@override\nvoid initState() {\n  super.initState();\n  _newInitialization(); // Needs Hot Restart\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Hot Reload dramatically speeds up development with instant feedback",
         "Preserves navigation state and temporary data during reload",
@@ -5563,7 +5563,7 @@ void greet(String name, {String? nickname}) {
         "كلتا الميزتين تعملان بشكل موثوق مع بنية Flutter",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Hot Reload doesn't work for all code changes (native code, app initialization)",
         "Hot Restart is slower and loses current state",
@@ -5577,9 +5577,9 @@ void greet(String name, {String? nickname}) {
         "Hot Reload يمكن أن يؤدي أحيانًا إلى حالة غير متسقة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Development Feature Usage:",
           value: [
             "Hot Reload: Quick UI changes, preserves app state",
@@ -5588,7 +5588,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام ميزات التطوير:",
           value: [
             "Hot Reload: تغييرات سريعة، يحفظ حالة التطبيق",
@@ -5604,15 +5604,15 @@ void greet(String name, {String? nickname}) {
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "flutter", "ui", "material"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What is the purpose of the MaterialApp and Scaffold widgets?',
         answer: [
-          StringContent(
+          StrContent(
             'MaterialApp and Scaffold are foundational widgets that provide structure and Material Design components for Flutter applications.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "MaterialApp provides:",
             value: [
               "Theme configuration (colors, typography, shapes)",
@@ -5622,7 +5622,7 @@ void greet(String name, {String? nickname}) {
               "Wrapper for Material Design requirements",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Scaffold provides:",
             value: [
               "AppBar at the top of the screen",
@@ -5633,7 +5633,7 @@ void greet(String name, {String? nickname}) {
               "Basic Material Design layout structure",
             ],
           ),
-          StringContent(
+          StrContent(
             "MaterialApp is typically the root widget of your app, while Scaffold is used for individual screens to provide consistent layout structure.",
           ),
         ],
@@ -5643,10 +5643,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هو غرض ودجت MaterialApp و Scaffold؟',
         answer: [
-          StringContent(
+          StrContent(
             'MaterialApp و Scaffold هما ودجتان أساسيتان توفران البنية ومكونات Material Design لتطبيقات Flutter.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "توفر MaterialApp:",
             value: [
               "تكوين السمة (الألوان، الطباعة، الأشكال)",
@@ -5656,7 +5656,7 @@ void greet(String name, {String? nickname}) {
               "غلاف لمتطلبات Material Design",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "توفر Scaffold:",
             value: [
               "AppBar في أعلى الشاشة",
@@ -5667,7 +5667,7 @@ void greet(String name, {String? nickname}) {
               "بنية تخطيط Material Design الأساسية",
             ],
           ),
-          StringContent(
+          StrContent(
             "MaterialApp عادةً هي الودجت الجذر لتطبيقك، بينما تُستخدم Scaffold للشاشات الفردية لتوفير بنية تخطيط متسقة.",
           ),
         ],
@@ -5680,7 +5680,7 @@ void greet(String name, {String? nickname}) {
         "import 'package:flutter/material.dart';\n\nvoid main() {\n  runApp(MyApp());\n}\n\nclass MyApp extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      title: 'My App',\n      theme: ThemeData(\n        primarySwatch: Colors.blue,\n      ),\n      home: HomeScreen(),\n    );\n  }\n}\n\nclass HomeScreen extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text('Home'),\n      ),\n      body: Center(\n        child: Text('Hello, Flutter!'),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {},\n        child: Icon(Icons.add),\n      ),\n    );\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "MaterialApp handles theme, navigation, and localization in one place",
         "Scaffold provides pre-built Material Design components",
@@ -5694,7 +5694,7 @@ void greet(String name, {String? nickname}) {
         "تضمن Material Design متسق عبر التطبيق",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Enforces Material Design - not suitable for custom designs",
         "For iOS-style apps, use CupertinoApp and CupertinoPageScaffold instead",
@@ -5708,9 +5708,9 @@ void greet(String name, {String? nickname}) {
         "منحنى تعلم لجميع خصائص Scaffold المتاحة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Core Widgets Usage:",
           value: [
             "MaterialApp: Root widget, Material Design theme, routing",
@@ -5719,7 +5719,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام العناصر الأساسية:",
           value: [
             "MaterialApp: العنصر الجذر، ثيم Material، التوجيه",
@@ -5735,15 +5735,15 @@ void greet(String name, {String? nickname}) {
     categories: [.flutterBasics, .stateManagement],
     type: .theoretical,
     tags: ["intermediate", "flutter", "widgets", "lifecycle"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What is a Flutter Widget\'s lifecycle (StatefulWidget lifecycle)?',
         answer: [
-          StringContent(
+          StrContent(
             'A StatefulWidget has a State object with a well-defined lifecycle consisting of several methods called at different stages.',
           ),
-          OrderedListContent(
+          OLContent(
             title: "Lifecycle methods in order:",
             value: [
               "createState(): Creates the mutable state for the widget",
@@ -5757,7 +5757,7 @@ void greet(String name, {String? nickname}) {
               "reassemble(): Called during hot reload (debug mode only)",
             ],
           ),
-          StringContent(
+          StrContent(
             "Understanding this lifecycle is crucial for proper resource management, such as initializing controllers in initState() and cleaning them up in dispose().",
           ),
         ],
@@ -5774,10 +5774,10 @@ void greet(String name, {String? nickname}) {
         question:
             'ما هي دورة حياة الودجت في Flutter (دورة حياة StatefulWidget)؟',
         answer: [
-          StringContent(
+          StrContent(
             'StatefulWidget لها كائن State بدورة حياة محددة جيدًا تتكون من عدة دوال يتم استدعاؤها في مراحل مختلفة.',
           ),
-          OrderedListContent(
+          OLContent(
             title: "دوال دورة الحياة بالترتيب:",
             value: [
               "createState(): تنشئ الحالة القابلة للتغيير للودجت",
@@ -5791,7 +5791,7 @@ void greet(String name, {String? nickname}) {
               "reassemble(): تُستدعى أثناء Hot Reload (وضع التصحيح فقط)",
             ],
           ),
-          StringContent(
+          StrContent(
             "فهم دورة الحياة هذه ضروري للإدارة الصحيحة للموارد، مثل تهيئة المتحكمات في initState() وتنظيفها في dispose().",
           ),
         ],
@@ -5810,7 +5810,7 @@ void greet(String name, {String? nickname}) {
         "class MyWidget extends StatefulWidget {\n  @override\n  _MyWidgetState createState() => _MyWidgetState();\n}\n\nclass _MyWidgetState extends State<MyWidget> {\n  late AnimationController _controller;\n  StreamSubscription? _subscription;\n\n  @override\n  void initState() {\n    super.initState();\n    // One-time initialization\n    _controller = AnimationController(\n      vsync: this,\n      duration: Duration(seconds: 1),\n    );\n    _setupStream();\n  }\n\n  @override\n  void didChangeDependencies() {\n    super.didChangeDependencies();\n    // Called when inherited widgets change\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    // Build UI - can be called many times\n    return Container();\n  }\n\n  @override\n  void dispose() {\n    // Clean up resources\n    _controller.dispose();\n    _subscription?.cancel();\n    super.dispose();\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Well-defined lifecycle enables proper resource management",
         "Separation of concerns with different lifecycle methods",
@@ -5824,7 +5824,7 @@ void greet(String name, {String? nickname}) {
         "خطافات متاحة لمراحل مختلفة من حياة الودجت",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Complex lifecycle can be confusing for beginners",
         "Easy to forget dispose() calls leading to leaks",
@@ -5838,9 +5838,9 @@ void greet(String name, {String? nickname}) {
         "يتطلب فهم ترتيب التنفيذ",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Lifecycle methods when:",
           value: [
             "initState: Initializing controllers or fetching initial data",
@@ -5851,7 +5851,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم طرق دورة الحياة عندما:",
           value: [
             "initState: تهيئة المتحكمات أو جلب البيانات الأولية",
@@ -5869,14 +5869,14 @@ void greet(String name, {String? nickname}) {
     categories: [.dartBasics, .oop],
     type: .theoretical,
     tags: ["intermediate", "dart", "oop", "mixins"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What are mixins in Dart and how are they used?',
         answer: [
-          StringContent(
+          StrContent(
             'Mixins are a way to reuse code in multiple class hierarchies. They allow you to add functionality to classes without using inheritance, solving the diamond problem of multiple inheritance.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics of mixins:",
             value: [
               "Declared using the 'mixin' keyword",
@@ -5887,7 +5887,7 @@ void greet(String name, {String? nickname}) {
               "Applied in left-to-right order",
             ],
           ),
-          StringContent(
+          StrContent(
             "Mixins are particularly useful for adding common functionality (like logging, serialization, or validation) across unrelated classes without creating a deep inheritance hierarchy.",
           ),
         ],
@@ -5902,10 +5902,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هي الـ mixins في Dart وكيف تُستخدم؟',
         answer: [
-          StringContent(
+          StrContent(
             'الـ mixins هي طريقة لإعادة استخدام الكود في تسلسلات هرمية متعددة للفئات. تسمح لك بإضافة وظائف إلى الفئات دون استخدام الميراث، مما يحل مشكلة الماس في الميراث المتعدد.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية للـ mixins:",
             value: [
               "تُعلن باستخدام الكلمة المحجوزة 'mixin'",
@@ -5916,7 +5916,7 @@ void greet(String name, {String? nickname}) {
               "تُطبق بترتيب من اليسار إلى اليمين",
             ],
           ),
-          StringContent(
+          StrContent(
             "الـ mixins مفيدة بشكل خاص لإضافة وظائف شائعة (مثل التسجيل أو التسلسل أو التحقق) عبر فئات غير مرتبطة دون إنشاء تسلسل هرمي عميق للميراث.",
           ),
         ],
@@ -5934,7 +5934,7 @@ void greet(String name, {String? nickname}) {
         "// Define a mixin\nmixin LoggerMixin {\n  void log(String message) {\n    print('[LOG] \${DateTime.now()}: \$message');\n  }\n}\n\nmixin ValidationMixin {\n  bool validateEmail(String email) {\n    return email.contains('@');\n  }\n}\n\n// Use mixins with 'with'\nclass UserService with LoggerMixin, ValidationMixin {\n  void createUser(String email) {\n    if (validateEmail(email)) {\n      log('Creating user with email: \$email');\n      // Create user logic\n    }\n  }\n}\n\n// Restricted mixin using 'on'\nmixin DatabaseMixin on UserService {\n  void saveToDb() {\n    log('Saving to database');\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Enables code reuse without inheritance constraints",
         "Avoids deep class hierarchies and diamond problem",
@@ -5948,7 +5948,7 @@ void greet(String name, {String? nickname}) {
         "فصل واضح للاهتمامات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Overusing mixins can make code hard to understand",
         "Order of mixins matters - can lead to unexpected behavior",
@@ -5962,9 +5962,9 @@ void greet(String name, {String? nickname}) {
         "أكثر تعقيدًا من الميراث البسيط",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Mixins when:",
           value: [
             "Reusing code across multiple independent class hierarchies",
@@ -5974,7 +5974,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Mixins عندما:",
           value: [
             "إعادة استخدام الكود عبر فئات غير مترابطة",
@@ -5991,14 +5991,14 @@ void greet(String name, {String? nickname}) {
     categories: [.dartBasics, .modernFeatures],
     type: .theoretical,
     tags: ["intermediate", "dart", "extensions"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What are extension methods in Dart?',
         answer: [
-          StringContent(
+          StrContent(
             'Extension methods allow you to add new functionality to existing classes without modifying their source code or creating subclasses. They provide a clean way to extend libraries and built-in types.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features of extensions:",
             value: [
               "Declared using the 'extension' keyword",
@@ -6009,7 +6009,7 @@ void greet(String name, {String? nickname}) {
               "Can be named or anonymous",
             ],
           ),
-          StringContent(
+          StrContent(
             "Extensions are particularly useful for adding utility methods to core types like String, List, or DateTime without polluting the global namespace.",
           ),
         ],
@@ -6025,10 +6025,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هي طرق الامتداد (extension methods) في Dart؟',
         answer: [
-          StringContent(
+          StrContent(
             'طرق الامتداد تسمح لك بإضافة وظائف جديدة إلى الفئات الموجودة دون تعديل كودها المصدري أو إنشاء فئات فرعية. توفر طريقة نظيفة لتوسيع المكتبات والأنواع المدمجة.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية للامتدادات:",
             value: [
               "تُعلن باستخدام الكلمة المحجوزة 'extension'",
@@ -6039,7 +6039,7 @@ void greet(String name, {String? nickname}) {
               "يمكن أن تكون مسماة أو مجهولة",
             ],
           ),
-          StringContent(
+          StrContent(
             "الامتدادات مفيدة بشكل خاص لإضافة طرق مساعدة إلى الأنواع الأساسية مثل String أو List أو DateTime دون تلويث مساحة الأسماء العامة.",
           ),
         ],
@@ -6058,7 +6058,7 @@ void greet(String name, {String? nickname}) {
         "// Extension on String\nextension StringExtensions on String {\n  // Convert to title case\n  String toTitleCase() {\n    if (isEmpty) return this;\n    return split(' ')\n        .map((word) => word[0].toUpperCase() + word.substring(1))\n        .join(' ');\n  }\n  \n  // Check if valid email\n  bool get isValidEmail {\n    return RegExp(r'^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$').hasMatch(this);\n  }\n}\n\n// Extension on int\nextension IntExtensions on int {\n  // Convert to duration\n  Duration get seconds => Duration(seconds: this);\n  Duration get minutes => Duration(minutes: this);\n  \n  // Check if even\n  bool get isEven => this % 2 == 0;\n}\n\n// Usage\nvoid main() {\n  print('hello world'.toTitleCase()); // 'Hello World'\n  print('test@email.com'.isValidEmail); // true\n  await Future.delayed(5.seconds);\n  print(4.isEven); // true\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Adds functionality without modifying original code",
         "Cleaner than creating utility classes",
@@ -6072,7 +6072,7 @@ void greet(String name, {String? nickname}) {
         "يحسن قابلية قراءة الكود والتعبير",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can make code harder to discover - methods not visible in class definition",
         "Cannot add instance fields",
@@ -6086,9 +6086,9 @@ void greet(String name, {String? nickname}) {
         "يتم حلها بشكل ثابت - لا تعمل مع الأنواع الديناميكية",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use extension methods when:",
           value: [
             "Adding utility methods to existing classes (built-in or library)",
@@ -6098,7 +6098,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم طرق الامتداد عندما:",
           value: [
             "إضافة طرق مساعدة إلى الفئات الموجودة (مدمجة أو مكتبة)",
@@ -6115,15 +6115,15 @@ void greet(String name, {String? nickname}) {
     categories: [.basic, .dartBasics, .dataStructures],
     type: .theoretical,
     tags: ["basic", "dart", "datastructures", "collections"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What are Lists, Sets, and Maps in Dart and when to use each?',
         answer: [
-          StringContent(
+          StrContent(
             'Dart provides three primary collection types for storing multiple values: List, Set, and Map. Each has distinct characteristics and use cases.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "List:",
             value: [
               "Ordered collection with indexed access (0-based)",
@@ -6133,7 +6133,7 @@ void greet(String name, {String? nickname}) {
               "Example: [1, 2, 3, 2]",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Set:",
             value: [
               "Unordered collection of unique elements",
@@ -6143,7 +6143,7 @@ void greet(String name, {String? nickname}) {
               "Example: {1, 2, 3} (duplicate 2 removed)",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Map:",
             value: [
               "Key-value pairs collection",
@@ -6161,10 +6161,10 @@ void greet(String name, {String? nickname}) {
         question:
             'ما هي القوائم (Lists) والمجموعات (Sets) والخرائط (Maps) في Dart، ومتى تستخدم كل منها؟',
         answer: [
-          StringContent(
+          StrContent(
             'توفر Dart ثلاثة أنواع رئيسية من المجموعات لتخزين قيم متعددة: List وSet وMap. كل منها له خصائص وحالات استخدام مميزة.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: "List:",
             value: [
               "مجموعة مرتبة مع وصول مفهرس (بدءًا من 0)",
@@ -6174,7 +6174,7 @@ void greet(String name, {String? nickname}) {
               "مثال: [1, 2, 3, 2]",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Set:",
             value: [
               "مجموعة غير مرتبة من العناصر الفريدة",
@@ -6184,7 +6184,7 @@ void greet(String name, {String? nickname}) {
               "مثال: {1, 2, 3} (تمت إزالة 2 المكررة)",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Map:",
             value: [
               "مجموعة من أزواج المفتاح-القيمة",
@@ -6204,7 +6204,7 @@ void greet(String name, {String? nickname}) {
         "// List - ordered, allows duplicates\nList<int> numbers = [1, 2, 3, 2, 4];\nprint(numbers[0]); // 1 (indexed access)\nprint(numbers.length); // 5\n\n// Set - unique elements only\nSet<int> uniqueNumbers = {1, 2, 3, 2, 4};\nprint(uniqueNumbers); // {1, 2, 3, 4}\nprint(uniqueNumbers.contains(2)); // true (fast)\n\n// Map - key-value pairs\nMap<String, dynamic> user = {\n  'name': 'Alice',\n  'age': 25,\n  'email': 'alice@example.com',\n};\nprint(user['name']); // 'Alice'\nuser['age'] = 26; // Update value\n\n// Converting between types\nList<int> list = [1, 2, 2, 3];\nSet<int> set = list.toSet(); // {1, 2, 3}\nList<int> backToList = set.toList(); // [1, 2, 3]",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "List: Fast indexed access O(1), maintains insertion order",
         "Set: O(1) membership testing, ensures uniqueness",
@@ -6218,7 +6218,7 @@ void greet(String name, {String? nickname}) {
         "جميعها تدعم طرق معالجة غنية",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "List: O(n) for searching, no automatic uniqueness",
         "Set: No indexed access, unordered (LinkedHashSet for order)",
@@ -6232,9 +6232,9 @@ void greet(String name, {String? nickname}) {
         "تحتاج لفهم أي نوع يناسب حالة الاستخدام",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Collection Type Selection:",
           value: [
             "List: Ordered, indexed access, allows duplicates",
@@ -6244,7 +6244,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار نوع المجموعة:",
           value: [
             "List: مرتبة، وصول بالفهرس، تسمح بالتكرار",
@@ -6261,15 +6261,15 @@ void greet(String name, {String? nickname}) {
     categories: [.solid, .architecture],
     type: .theoretical,
     tags: ["intermediate", "flutter", "architecture", "solid", "principles"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What are the SOLID principles and how do they apply in Flutter?',
         answer: [
-          StringContent(
+          StrContent(
             'SOLID is an acronym for five object-oriented design principles that help create maintainable, scalable, and testable code.',
           ),
-          OrderedListContent(
+          OLContent(
             title: "SOLID Principles:",
             value: [
               "Single Responsibility: Each class should have one reason to change (e.g., separate UI from business logic)",
@@ -6279,7 +6279,7 @@ void greet(String name, {String? nickname}) {
               "Dependency Inversion: Depend on abstractions, not concretions (use dependency injection)",
             ],
           ),
-          StringContent(
+          StrContent(
             "In Flutter: Keep widgets focused on UI, extract business logic to separate classes, use abstract classes for dependencies, and inject dependencies rather than creating them directly.",
           ),
         ],
@@ -6294,10 +6294,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هي مبادئ SOLID وكيف تُطبق في Flutter؟',
         answer: [
-          StringContent(
+          StrContent(
             'SOLID هو اختصار لخمسة مبادئ تصميم موجهة للكائنات تساعد في إنشاء كود قابل للصيانة وقابل للتوسع وقابل للاختبار.',
           ),
-          OrderedListContent(
+          OLContent(
             title: "مبادئ SOLID:",
             value: [
               "المسؤولية الوحيدة: يجب أن يكون لكل فئة سبب واحد للتغيير (مثل فصل الواجهة عن منطق العمل)",
@@ -6307,7 +6307,7 @@ void greet(String name, {String? nickname}) {
               "عكس التبعية: اعتمد على التجريدات، وليس على التطبيقات (استخدم حقن التبعية)",
             ],
           ),
-          StringContent(
+          StrContent(
             "في Flutter: اجعل الودجتس تركز على الواجهة، واستخرج منطق العمل إلى فئات منفصلة، واستخدم الفئات المجردة للتبعيات، واحقن التبعيات بدلاً من إنشائها مباشرة.",
           ),
         ],
@@ -6325,7 +6325,7 @@ void greet(String name, {String? nickname}) {
         "// Single Responsibility - Separate concerns\nclass UserRepository {\n  Future<User> getUser(String id) async {\n    // Data fetching logic only\n  }\n}\n\nclass UserService {\n  final UserRepository _repository;\n  \n  UserService(this._repository); // Dependency Injection\n  \n  Future<void> updateUserProfile(User user) async {\n    // Business logic only\n  }\n}\n\n// Open/Closed - Use abstractions\nabstract class PaymentMethod {\n  Future<void> processPayment(double amount);\n}\n\nclass CreditCardPayment implements PaymentMethod {\n  @override\n  Future<void> processPayment(double amount) async {\n    // Credit card logic\n  }\n}\n\nclass PayPalPayment implements PaymentMethod {\n  @override\n  Future<void> processPayment(double amount) async {\n    // PayPal logic\n  }\n}",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Makes code more maintainable and testable",
         "Reduces coupling between components",
@@ -6339,7 +6339,7 @@ void greet(String name, {String? nickname}) {
         "يحسن تنظيم الكود والوضوح",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can lead to over-engineering in simple projects",
         "Increases number of files and abstractions",
@@ -6353,9 +6353,9 @@ void greet(String name, {String? nickname}) {
         "قد يضيف كود نموذجي زائد",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Apply SOLID when:",
           value: [
             "Building scalable and maintainable Flutter applications",
@@ -6365,7 +6365,7 @@ void greet(String name, {String? nickname}) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "طبق SOLID عندما:",
           value: [
             "بناء تطبيقات فلاتر قابلة للتوسع والصيانة",
@@ -6388,14 +6388,14 @@ void greet(String name, {String? nickname}) {
       "statemanagement",
       "bloc",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What is the BLoC pattern in Flutter?',
         answer: [
-          StringContent(
+          StrContent(
             'BLoC (Business Logic Component) is an architectural pattern that separates business logic from UI by using Streams. It promotes a reactive programming approach where UI widgets listen to data streams and rebuild accordingly.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Key Characteristics:',
             value: [
               'Uses Dart Streams for data flow',
@@ -6404,7 +6404,7 @@ void greet(String name, {String? nickname}) {
               'Supports both single and broadcast streams',
             ],
           ),
-          StringContent(
+          StrContent(
             'The pattern consists of three main components: Events (user actions), BLoC (processes events and emits states), and States (UI representations).',
           ),
         ],
@@ -6414,10 +6414,10 @@ void greet(String name, {String? nickname}) {
       ar: QuestionContent(
         question: 'ما هو نمط BLoC في فلاتر؟',
         answer: [
-          StringContent(
+          StrContent(
             'BLoC (مكون منطق الأعمال) هو نمط معماري يفصل منطق العمل عن واجهة المستخدم باستخدام التدفقات (Streams). يعزز نهج البرمجة التفاعلية حيث تستمع ودجتس الواجهة إلى تدفقات البيانات وتعيد البناء وفقًا لذلك.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'الخصائص الرئيسية:',
             value: [
               'يستخدم تدفقات دارت (Streams) لتدفق البيانات',
@@ -6426,7 +6426,7 @@ void greet(String name, {String? nickname}) {
               'يدعم التدفقات الأحادية والمتعددة',
             ],
           ),
-          StringContent(
+          StrContent(
             'يتكون النمط من ثلاثة مكونات رئيسية: الأحداث (إجراءات المستخدم)، BLoC (يعالج الأحداث ويُصدر الحالات)، والحالات (تمثيلات الواجهة).',
           ),
         ],
@@ -6473,7 +6473,7 @@ class CounterBloc {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Strong separation of concerns - business logic is completely isolated from UI",
         "Highly testable - BLoCs can be unit tested without widgets",
@@ -6489,7 +6489,7 @@ class CounterBloc {
         "يبسط سيناريوهات إدارة الحالة المعقدة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires significant boilerplate code (stream controllers, sinks, events, states)",
         "Steeper learning curve compared to setState or Provider",
@@ -6505,9 +6505,9 @@ class CounterBloc {
         "المزيد من الملفات والفئات للإدارة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use BLoC when:",
           value: [
             "Strict separation of UI and business logic is required",
@@ -6517,7 +6517,7 @@ class CounterBloc {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم BLoC عندما:",
           value: [
             "يكون الفصل الصارم بين الواجهة ومنطق العمل مطلوبًا",
@@ -6540,15 +6540,15 @@ class CounterBloc {
       "statemanagement",
       "provider",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What is Provider in Flutter and how does it differ from BLoC?',
         answer: [
-          StringContent(
+          StrContent(
             'Provider is a wrapper around InheritedWidget that simplifies state management by providing and accessing state objects throughout the widget tree. Unlike BLoC which is Stream-based, Provider typically uses ChangeNotifier or simple value objects.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Key Differences from BLoC:',
             value: [
               'Provider uses ChangeNotifier pattern instead of Streams',
@@ -6558,7 +6558,7 @@ class CounterBloc {
               'Does not enforce strict architectural patterns',
             ],
           ),
-          StringContent(
+          StrContent(
             'Provider offers multiple variants: Provider, ChangeNotifierProvider, FutureProvider, StreamProvider, and more, each suited for different scenarios.',
           ),
         ],
@@ -6568,10 +6568,10 @@ class CounterBloc {
       ar: QuestionContent(
         question: 'ما هو Provider في فلاتر وكيف يختلف عن BLoC؟',
         answer: [
-          StringContent(
+          StrContent(
             'Provider هو طبقة تغليف حول InheritedWidget تبسط إدارة الحالة من خلال توفير والوصول إلى كائنات الحالة في جميع أنحاء شجرة الودجتس. على عكس BLoC المستند إلى التدفقات، يستخدم Provider عادةً ChangeNotifier أو كائنات قيم بسيطة.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'الفروقات الرئيسية عن BLoC:',
             value: [
               'Provider يستخدم نمط ChangeNotifier بدلاً من التدفقات',
@@ -6581,7 +6581,7 @@ class CounterBloc {
               'لا يفرض أنماط معمارية صارمة',
             ],
           ),
-          StringContent(
+          StrContent(
             'يوفر Provider متغيرات متعددة: Provider، ChangeNotifierProvider، FutureProvider، StreamProvider، وغيرها، كل منها مناسب لسيناريوهات مختلفة.',
           ),
         ],
@@ -6622,7 +6622,7 @@ class CounterDisplay extends StatelessWidget {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Lightweight with minimal boilerplate",
         "Easy to learn and implement",
@@ -6640,7 +6640,7 @@ class CounterDisplay extends StatelessWidget {
         "موصى به رسميًا من فريق فلاتر",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Does not enforce strict architectural patterns - can lead to scattered logic",
         "Less formal separation than BLoC if not disciplined",
@@ -6656,9 +6656,9 @@ class CounterDisplay extends StatelessWidget {
         "إدارة يدوية للتخلص من ChangeNotifiers",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Provider when:",
           value: [
             "Building small to medium-sized applications",
@@ -6668,7 +6668,7 @@ class CounterDisplay extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Provider عندما:",
           value: [
             "بناء تطبيقات صغيرة إلى متوسطة الحجم",
@@ -6685,14 +6685,14 @@ class CounterDisplay extends StatelessWidget {
     categories: [.dartBasics],
     type: .theoretical,
     tags: ["intermediate", "dart", "async", "future", "stream"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What is the difference between Future and Stream in Dart?',
         answer: [
-          StringContent(
+          StrContent(
             'Both Future and Stream handle asynchronous operations in Dart, but they differ fundamentally in how they deliver results.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Future:',
             value: [
               'Represents a single asynchronous computation',
@@ -6701,7 +6701,7 @@ class CounterDisplay extends StatelessWidget {
               'Best for one-time operations like HTTP requests',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Stream:',
             value: [
               'Represents a sequence of asynchronous events over time',
@@ -6711,7 +6711,7 @@ class CounterDisplay extends StatelessWidget {
               'Best for continuous data like WebSocket messages or sensor data',
             ],
           ),
-          StringContent(
+          StrContent(
             'Use FutureBuilder for single async results and StreamBuilder for ongoing data streams in Flutter widgets.',
           ),
         ],
@@ -6721,10 +6721,10 @@ class CounterDisplay extends StatelessWidget {
       ar: QuestionContent(
         question: 'ما الفرق بين Future و Stream في دارت؟',
         answer: [
-          StringContent(
+          StrContent(
             'كلاً من Future و Stream يتعاملان مع العمليات غير المتزامنة في دارت، لكنهما يختلفان جوهريًا في كيفية تسليم النتائج.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Future:',
             value: [
               'يمثل عملية غير متزامنة واحدة',
@@ -6733,7 +6733,7 @@ class CounterDisplay extends StatelessWidget {
               'الأفضل للعمليات الأحادية مثل طلبات HTTP',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Stream:',
             value: [
               'يمثل سلسلة من الأحداث غير المتزامنة على مدار الوقت',
@@ -6743,7 +6743,7 @@ class CounterDisplay extends StatelessWidget {
               'الأفضل للبيانات المستمرة مثل رسائل WebSocket أو بيانات المستشعرات',
             ],
           ),
-          StringContent(
+          StrContent(
             'استخدم FutureBuilder للنتائج غير المتزامنة الأحادية و StreamBuilder لتدفقات البيانات المستمرة في ودجتس فلاتر.',
           ),
         ],
@@ -6781,7 +6781,7 @@ void main() async {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Future: Simple API, easy to understand, built-in error handling",
         "Stream: Handles continuous data, supports backpressure, can be paused/resumed",
@@ -6793,7 +6793,7 @@ void main() async {
         "كلاهما يتكامل بسلاسة مع ودجتس فلاتر (FutureBuilder، StreamBuilder)",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Future: Cannot handle multiple values or continuous updates, must create new Future each time",
         "Stream: More complex API with listeners and subscriptions, requires manual cleanup",
@@ -6805,9 +6805,9 @@ void main() async {
         "Stream: قد يسبب تسرب في الذاكرة إذا لم يتم إلغاء الاشتراكات",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Future vs Stream Selection:",
           value: [
             "Future: Single asynchronous result (API call, shared preferences)",
@@ -6816,7 +6816,7 @@ void main() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار Future مقابل Stream:",
           value: [
             "Future: نتيجة غير متزامنة واحدة (استدعاء API، الإعدادات المفضلة)",
@@ -6832,15 +6832,15 @@ void main() async {
     categories: [.flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "flutter", "navigation", "navigator"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'How do you navigate between screens in Flutter? (push, pushReplacement)',
         answer: [
-          StringContent(
+          StrContent(
             'Navigation in Flutter uses the Navigator widget, which manages a stack of Route objects. The two most common navigation methods are push and pushReplacement.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator.push:',
             value: [
               'Adds a new route to the navigation stack',
@@ -6849,7 +6849,7 @@ void main() async {
               'Suitable for standard forward navigation',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator.pushReplacement:',
             value: [
               'Replaces the current route with a new one',
@@ -6858,7 +6858,7 @@ void main() async {
               'Suitable for login flows, splash screens, or permanent transitions',
             ],
           ),
-          StringContent(
+          StrContent(
             'Both methods accept a Route object, commonly created using MaterialPageRoute or CupertinoPageRoute.',
           ),
         ],
@@ -6868,10 +6868,10 @@ void main() async {
       ar: QuestionContent(
         question: 'كيف تتنقل بين الشاشات في فلاتر؟ (push، pushReplacement)',
         answer: [
-          StringContent(
+          StrContent(
             'التنقل في فلاتر يستخدم ودجت Navigator الذي يدير مكدسًا من كائنات Route. الطريقتان الأكثر شيوعًا للتنقل هما push و pushReplacement.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator.push:',
             value: [
               'يضيف مسارًا جديدًا إلى مكدس التنقل',
@@ -6880,7 +6880,7 @@ void main() async {
               'مناسب للتنقل الأمامي القياسي',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator.pushReplacement:',
             value: [
               'يستبدل المسار الحالي بآخر جديد',
@@ -6889,7 +6889,7 @@ void main() async {
               'مناسب لتدفقات تسجيل الدخول، شاشات البداية، أو الانتقالات الدائمة',
             ],
           ),
-          StringContent(
+          StrContent(
             'كلتا الطريقتين تقبلان كائن Route، يُنشأ عادة باستخدام MaterialPageRoute أو CupertinoPageRoute.',
           ),
         ],
@@ -6913,7 +6913,7 @@ Navigator.pushReplacement(
 );
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "push: Preserves navigation history, allows easy back navigation, maintains screen state",
         "pushReplacement: Prevents unwanted back navigation, cleans up memory by removing previous route",
@@ -6927,7 +6927,7 @@ Navigator.pushReplacement(
         "واجهة برمجية بسيطة وبديهية",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "push: Can accumulate many routes consuming memory if not managed properly",
         "pushReplacement: Loses previous screen state permanently, cannot navigate back",
@@ -6939,9 +6939,9 @@ Navigator.pushReplacement(
         "يحتاج إلى معالجة يدوية لمكدسات التنقل المعقدة (فكر في popUntil أو pushNamedAndRemoveUntil)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Push vs PushReplacement Selection:",
           value: [
             "Push: Forward navigation where returning to the previous screen is meaningful",
@@ -6950,7 +6950,7 @@ Navigator.pushReplacement(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار Push مقابل PushReplacement:",
           value: [
             "Push: التنقل الأمامي حيث تكون العودة للشاشة السابقة ذات معنى",
@@ -6966,15 +6966,15 @@ Navigator.pushReplacement(
     categories: [.flutterBasics, .architecture],
     type: .theoretical,
     tags: ["advanced", "flutter", "navigation", "navigator2.0", "router"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What is the difference between Navigator 1.0 and Navigator 2.0?',
         answer: [
-          StringContent(
+          StrContent(
             'Navigator 1.0 (imperative) and Navigator 2.0 (declarative) represent two different approaches to navigation in Flutter.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator 1.0 (Classic):',
             value: [
               'Imperative API - push/pop methods',
@@ -6984,7 +6984,7 @@ Navigator.pushReplacement(
               'Harder to sync UI state with navigation state',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator 2.0 (Modern):',
             value: [
               'Declarative API using Router, RouteInformationParser, and RouterDelegate',
@@ -6995,7 +6995,7 @@ Navigator.pushReplacement(
               'Integrates with browser back/forward buttons',
             ],
           ),
-          StringContent(
+          StrContent(
             'Navigator 2.0 treats navigation as part of app state, making it predictable and testable.',
           ),
         ],
@@ -7005,10 +7005,10 @@ Navigator.pushReplacement(
       ar: QuestionContent(
         question: 'ما الفرق بين Navigator 1.0 و Navigator 2.0؟',
         answer: [
-          StringContent(
+          StrContent(
             'Navigator 1.0 (الإمبريالي) و Navigator 2.0 (الإعلاني) يمثلان نهجين مختلفين للتنقل في فلاتر.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator 1.0 (الكلاسيكي):',
             value: [
               'واجهة برمجية إمبريالية - طرائق push/pop',
@@ -7018,7 +7018,7 @@ Navigator.pushReplacement(
               'أصعب في مزامنة حالة الواجهة مع حالة التنقل',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Navigator 2.0 (الحديث):',
             value: [
               'واجهة برمجية إعلانية باستخدام Router و RouteInformationParser و RouterDelegate',
@@ -7029,7 +7029,7 @@ Navigator.pushReplacement(
               'يتكامل مع أزرار الرجوع/التقدم في المتصفح',
             ],
           ),
-          StringContent(
+          StrContent(
             'Navigator 2.0 يعامل التنقل كجزء من حالة التطبيق، مما يجعله قابلاً للتنبؤ والاختبار.',
           ),
         ],
@@ -7072,7 +7072,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Navigator 2.0: Full URL control for web, deep linking support, predictable state management",
         "Navigator 2.0: Navigation as app state enables better testing and debugging",
@@ -7086,7 +7086,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
         "Navigator 1.0: كود تكراري أقل للتطبيقات البسيطة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Navigator 2.0: Steep learning curve with significant boilerplate",
         "Navigator 2.0: Complex API with multiple components to implement",
@@ -7100,9 +7100,9 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
         "Navigator 1.0: أصعب في إدارة تدفقات التنقل المعقدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Navigator 1.0 vs 2.0 Selection:",
           value: [
             "Navigator 1.0: Small mobile apps, simple linear navigation",
@@ -7111,7 +7111,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار Navigator 1.0 مقابل 2.0:",
           value: [
             "Navigator 1.0: تطبيقات المحمول الصغيرة، التنقل الخطي البسيط",
@@ -7127,14 +7127,14 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["basic", "flutter", "widgets", "buildcontext"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Flutter's build() method context parameter?",
         answer: [
-          StringContent(
+          StrContent(
             'BuildContext is a handle to the location of a widget in the widget tree. It is passed to the build() method and represents the position where the widget is being built.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'BuildContext enables:',
             value: [
               'Accessing InheritedWidgets like Theme, MediaQuery, or Provider',
@@ -7144,7 +7144,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
               'Accessing localization data',
             ],
           ),
-          StringContent(
+          StrContent(
             'Each widget has its own context. The context passed to build() represents that specific widget\'s location in the tree.',
           ),
         ],
@@ -7159,10 +7159,10 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
       ar: QuestionContent(
         question: 'ما هو معامل BuildContext في دالة build() في فلاتر؟',
         answer: [
-          StringContent(
+          StrContent(
             'BuildContext هو مقبض لموقع ودجت في شجرة الودجتس. يُمرر إلى دالة build() ويمثل الموقع الذي يتم فيه بناء الودجت.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'BuildContext يمكّن من:',
             value: [
               'الوصول إلى InheritedWidgets مثل Theme و MediaQuery أو Provider',
@@ -7172,7 +7172,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
               'الوصول إلى بيانات العولمة',
             ],
           ),
-          StringContent(
+          StrContent(
             'كل ودجت لديه سياقه الخاص. السياق الممرر إلى build() يمثل موقع ذلك الودجت المحدد في الشجرة.',
           ),
         ],
@@ -7221,7 +7221,7 @@ void loadData() async {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Provides access to inherited widgets and app-wide data",
         "Essential for navigation and showing UI overlays",
@@ -7235,7 +7235,7 @@ void loadData() async {
         "أساس تواصل الودجتس في فلاتر",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Misusing context (e.g., after dispose or in async without checks) causes errors",
         "Context from different widget may not have expected inherited widgets",
@@ -7247,9 +7247,9 @@ void loadData() async {
         "قد يؤدي إلى ارتباك للمبتدئين حول بنية شجرة الودجتس",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Using BuildContext when:",
           value: [
             "Accessing Theme/MediaQuery/Localizations",
@@ -7259,7 +7259,7 @@ void loadData() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام BuildContext عندما:",
           value: [
             "الوصول للسمات/بيانات الشاشة/العولمة",
@@ -7276,14 +7276,14 @@ void loadData() async {
     categories: [.dartBasics, .performance],
     type: .theoretical,
     tags: ["advanced", "dart", "concurrency", "isolate", "parallelism"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What is an Isolate in Dart and how is it used?',
         answer: [
-          StringContent(
+          StrContent(
             'An Isolate is an independent worker with its own memory heap and event loop. Unlike threads in other languages, Dart isolates do not share memory - they communicate exclusively through message passing.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Key Characteristics:',
             value: [
               'Each isolate has its own memory heap - no shared state',
@@ -7293,7 +7293,7 @@ void loadData() async {
               'Cannot access UI directly - must send results back to main isolate',
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: 'Creating an Isolate:',
             value: [
               'Define an entry point function (must be top-level or static)',
@@ -7303,7 +7303,7 @@ void loadData() async {
               'Clean up when done',
             ],
           ),
-          StringContent(
+          StrContent(
             'Isolates are essential for CPU-intensive tasks that would otherwise block the UI thread, such as parsing large JSON, image processing, or complex calculations.',
           ),
         ],
@@ -7313,10 +7313,10 @@ void loadData() async {
       ar: QuestionContent(
         question: 'ما هو Isolate في دارت وكيف يُستخدم؟',
         answer: [
-          StringContent(
+          StrContent(
             'الـ Isolate هو عامل مستقل له مساحة ذاكرة وحلقة أحداث خاصة به. على عكس الخيوط في اللغات الأخرى، عوازل دارت لا تشارك الذاكرة - تتواصل حصريًا عبر تمرير الرسائل.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'الخصائص الرئيسية:',
             value: [
               'كل عازل له مساحة ذاكرة خاصة به - لا حالة مشتركة',
@@ -7326,7 +7326,7 @@ void loadData() async {
               'لا يمكن الوصول إلى الواجهة مباشرة - يجب إرسال النتائج للعازل الرئيسي',
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: 'إنشاء Isolate:',
             value: [
               'حدد دالة نقطة دخول (يجب أن تكون على المستوى الأعلى أو ثابتة)',
@@ -7336,7 +7336,7 @@ void loadData() async {
               'نظف عند الانتهاء',
             ],
           ),
-          StringContent(
+          StrContent(
             'العوازل ضرورية للمهام المكثفة للمعالج والتي قد تحجب خيط الواجهة، مثل تحليل JSON الكبير، معالجة الصور، أو الحسابات المعقدة.',
           ),
         ],
@@ -7390,7 +7390,7 @@ Future<int> loadData() async {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "True parallel execution utilizing multiple CPU cores",
         "No shared memory = no race conditions or complex locking",
@@ -7406,7 +7406,7 @@ Future<int> loadData() async {
         "ممتاز لمعالجة الصور، التشفير، تحليل البيانات الكبيرة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Message passing overhead - not suitable for frequent small communications",
         "Higher memory footprint (each isolate has its own heap)",
@@ -7424,9 +7424,9 @@ Future<int> loadData() async {
         "غير مناسب للعمليات البسيطة غير المتزامنة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Isolates when:",
           value: [
             "Handling CPU-intensive tasks (image processing, large data parsing)",
@@ -7436,7 +7436,7 @@ Future<int> loadData() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Isolates عندما:",
           value: [
             "معالجة المهام المكثفة للمعالج (معالجة الصور، تحليل بيانات ضخمة)",
@@ -7460,15 +7460,15 @@ Future<int> loadData() async {
       "futurebuilder",
       "streambuilder",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What are FutureBuilder and StreamBuilder used for in Flutter?',
         answer: [
-          StringContent(
+          StrContent(
             'FutureBuilder and StreamBuilder are widgets that rebuild based on the latest snapshot of asynchronous data. They handle connection states, loading indicators, errors, and data display automatically.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'FutureBuilder:',
             value: [
               'Builds UI based on a single Future result',
@@ -7477,7 +7477,7 @@ Future<int> loadData() async {
               'Automatically manages loading and error states',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'StreamBuilder:',
             value: [
               'Rebuilds UI whenever new Stream events arrive',
@@ -7486,7 +7486,7 @@ Future<int> loadData() async {
               'Perfect for real-time updates, WebSockets, or reactive data',
             ],
           ),
-          StringContent(
+          StrContent(
             'Both builders expose an AsyncSnapshot that contains connection state, data, and error information, simplifying async UI rendering.',
           ),
         ],
@@ -7496,10 +7496,10 @@ Future<int> loadData() async {
       ar: QuestionContent(
         question: 'ما الغرض من FutureBuilder و StreamBuilder في فلاتر؟',
         answer: [
-          StringContent(
+          StrContent(
             'FutureBuilder و StreamBuilder هما ودجتس تعيد البناء بناءً على أحدث لقطة من البيانات غير المتزامنة. يتعاملان مع حالات الاتصال، مؤشرات التحميل، الأخطاء، وعرض البيانات تلقائيًا.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'FutureBuilder:',
             value: [
               'يبني الواجهة بناءً على نتيجة Future واحدة',
@@ -7508,7 +7508,7 @@ Future<int> loadData() async {
               'يدير حالات التحميل والأخطاء تلقائيًا',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'StreamBuilder:',
             value: [
               'يعيد بناء الواجهة كلما وصلت أحداث Stream جديدة',
@@ -7517,7 +7517,7 @@ Future<int> loadData() async {
               'مثالي للتحديثات الفورية، WebSockets، أو البيانات التفاعلية',
             ],
           ),
-          StringContent(
+          StrContent(
             'كلا الباني يعرضان AsyncSnapshot يحتوي على حالة الاتصال، البيانات، ومعلومات الأخطاء، مما يبسط عرض الواجهة غير المتزامنة.',
           ),
         ],
@@ -7562,7 +7562,7 @@ StreamBuilder<int>(
 )
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Automatically handles loading, error, and success states",
         "Eliminates boilerplate for async UI rendering",
@@ -7578,7 +7578,7 @@ StreamBuilder<int>(
         "تتبع مدمج لحالة الاتصال",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "StreamBuilder rebuilds on every event - can impact performance with frequent updates",
         "Creating Future inside build() causes unnecessary rebuilds",
@@ -7594,9 +7594,9 @@ StreamBuilder<int>(
         "قد يتطلب منطقًا إضافيًا لمعالجة الأخطاء المعقدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Future vs Stream Builder Usage:",
           value: [
             "FutureBuilder: For single async results (fetching user data)",
@@ -7605,7 +7605,7 @@ StreamBuilder<int>(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدام FutureBuilder مقابل StreamBuilder:",
           value: [
             "FutureBuilder: للنتائج غير المتزامنة الأحادية (جلب بيانات المستخدم)",
@@ -7621,15 +7621,15 @@ StreamBuilder<int>(
     categories: [.oop, .dartBasics],
     type: .theoretical,
     tags: ["intermediate", "dart", "oop", "constructor", "factory"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What is a Constructor in Dart and what are factory constructors?',
         answer: [
-          StringContent(
+          StrContent(
             'A constructor is a special method used to initialize objects of a class. Dart supports multiple constructor types: default, named, factory, and redirecting constructors.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Regular Constructors:',
             value: [
               'Always create a new instance',
@@ -7638,7 +7638,7 @@ StreamBuilder<int>(
               'Have access to instance members via "this"',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Factory Constructors:',
             value: [
               'Declared with "factory" keyword',
@@ -7648,7 +7648,7 @@ StreamBuilder<int>(
               'Must explicitly return an object',
             ],
           ),
-          StringContent(
+          StrContent(
             'Factory constructors enable design patterns like singleton, caching, or returning different implementations based on parameters.',
           ),
         ],
@@ -7658,10 +7658,10 @@ StreamBuilder<int>(
       ar: QuestionContent(
         question: 'ما هو الباني (Constructor) في دارت وما هي البانيات factory؟',
         answer: [
-          StringContent(
+          StrContent(
             'الباني هو دالة خاصة تُستخدم لتهيئة كائنات من فئة. تدعم دارت أنواع متعددة من البانيات: الافتراضي، المسمى، factory، والموجه.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'البانيات العادية:',
             value: [
               'تنشئ دائمًا مثيلاً جديدًا',
@@ -7670,7 +7670,7 @@ StreamBuilder<int>(
               'لديها وصول إلى أعضاء المثيل عبر "this"',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'بانيات Factory:',
             value: [
               'تُعلن بالكلمة المحجوزة "factory"',
@@ -7680,7 +7680,7 @@ StreamBuilder<int>(
               'يجب إعادة كائن بشكل صريح',
             ],
           ),
-          StringContent(
+          StrContent(
             'بانيات Factory تمكّن من أنماط التصميم مثل المفرد، التخزين المؤقت، أو إعادة تنفيذات مختلفة بناءً على المعاملات.',
           ),
         ],
@@ -7723,7 +7723,7 @@ final logger2 = Logger();
 print(identical(logger1, logger2)); // true - same instance
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Factory constructors enable singleton pattern easily",
         "Can implement caching and object pooling",
@@ -7739,7 +7739,7 @@ print(identical(logger1, logger2)); // true - same instance
         "تحكم أفضل في منطق إنشاء الكائنات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Cannot access 'this' in factory constructors",
         "Must explicitly return an object (more verbose)",
@@ -7762,15 +7762,15 @@ print(identical(logger1, logger2)); // true - same instance
     categories: [.designPatterns, .oop],
     type: .theoretical,
     tags: ["intermediate", "designpattern", "dart", "singleton"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'What is a Singleton pattern and how can you implement it in Dart?',
         answer: [
-          StringContent(
+          StrContent(
             'The Singleton pattern ensures a class has only one instance throughout the application lifetime and provides a global access point to it. This is useful for shared resources like database connections, network clients, or configuration managers.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Singleton Characteristics:',
             value: [
               'Only one instance exists globally',
@@ -7779,7 +7779,7 @@ print(identical(logger1, logger2)); // true - same instance
               'Global access point to the instance',
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: 'Implementation Steps:',
             value: [
               'Create a private static instance variable',
@@ -7795,10 +7795,10 @@ print(identical(logger1, logger2)); // true - same instance
       ar: QuestionContent(
         question: 'ما هو نمط Singleton وكيف يمكنك تنفيذه في دارت؟',
         answer: [
-          StringContent(
+          StrContent(
             'نمط Singleton يضمن أن فئة معينة لها مثيل واحد فقط طوال عمر التطبيق ويوفر نقطة وصول عالمية إليه. هذا مفيد للموارد المشتركة مثل اتصالات قاعدة البيانات، عملاء الشبكة، أو مديري التكوين.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'خصائص Singleton:',
             value: [
               'يوجد مثيل واحد فقط عالميًا',
@@ -7807,7 +7807,7 @@ print(identical(logger1, logger2)); // true - same instance
               'نقطة وصول عالمية إلى المثيل',
             ],
           ),
-          OrderedListContent(
+          OLContent(
             title: 'خطوات التنفيذ:',
             value: [
               'إنشاء متغير مثيل ثابت خاص',
@@ -7862,7 +7862,7 @@ class ApiClient {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Ensures single instance for shared resources",
         "Global access point simplifies usage",
@@ -7878,7 +7878,7 @@ class ApiClient {
         "مفيد للتخزين المؤقت، التكوين، والخدمات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Global state makes unit testing harder",
         "Creates hidden dependencies between classes",
@@ -7896,9 +7896,9 @@ class ApiClient {
         "قد يسبب مشاكل في سيناريوهات العوازل المتعددة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Singleton when:",
           value: [
             "A single instance is required for a shared resource (Database/API client)",
@@ -7908,7 +7908,7 @@ class ApiClient {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Singleton عندما:",
           value: [
             "يكون مثيل واحد مطلوبًا لمورد مشترك (قاعدة بيانات/عميل API)",
@@ -7925,14 +7925,14 @@ class ApiClient {
     categories: [.performance],
     type: .theoretical,
     tags: ["advanced", "flutter", "performance", "optimization"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'How do you optimize Flutter application performance?',
         answer: [
-          StringContent(
+          StrContent(
             'Flutter performance optimization involves multiple strategies across widget building, rendering, memory management, and asset handling.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Widget Optimization:',
             value: [
               'Use const constructors wherever possible to avoid rebuilds',
@@ -7942,7 +7942,7 @@ class ApiClient {
               'Avoid rebuilding entire widget trees unnecessarily',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'List & Scrolling Performance:',
             value: [
               'Use ListView.builder for long lists (lazy loading)',
@@ -7951,7 +7951,7 @@ class ApiClient {
               'Limit list item complexity and depth',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Memory & Assets:',
             value: [
               'Optimize image sizes and use appropriate formats',
@@ -7960,7 +7960,7 @@ class ApiClient {
               'Use efficient data structures (Set for lookups, List for ordered data)',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Advanced Techniques:',
             value: [
               'Offload heavy computations to isolates',
@@ -7976,10 +7976,10 @@ class ApiClient {
       ar: QuestionContent(
         question: 'كيف تحسن أداء تطبيق فلاتر؟',
         answer: [
-          StringContent(
+          StrContent(
             'تحسين أداء فلاتر يتضمن استراتيجيات متعددة عبر بناء الودجتس، العرض، إدارة الذاكرة، ومعالجة الأصول.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'تحسين الودجتس:',
             value: [
               'استخدام البانيات const حيثما أمكن لتجنب إعادة البناء',
@@ -7989,7 +7989,7 @@ class ApiClient {
               'تجنب إعادة بناء أشجار الودجتس الكاملة دون داعٍ',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'أداء القوائم والتمرير:',
             value: [
               'استخدام ListView.builder للقوائم الطويلة (التحميل الكسول)',
@@ -7998,7 +7998,7 @@ class ApiClient {
               'تحديد تعقيد وعمق عناصر القائمة',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'الذاكرة والأصول:',
             value: [
               'تحسين أحجام الصور واستخدام التنسيقات المناسبة',
@@ -8007,7 +8007,7 @@ class ApiClient {
               'استخدام هياكل بيانات فعالة (Set للبحث، List للبيانات المرتبة)',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'التقنيات المتقدمة:',
             value: [
               'نقل الحسابات الثقيلة إلى العوازل',
@@ -8053,7 +8053,7 @@ class MyWidget extends StatelessWidget {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "const constructors significantly reduce rebuilds and improve performance",
         "ListView.builder with itemExtent dramatically improves scroll performance",
@@ -8069,7 +8069,7 @@ class MyWidget extends StatelessWidget {
         "التحليل الصحيح يحدد الاختناقات الحقيقية مقابل التحسين المبكر",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Over-optimizing early can complicate code unnecessarily",
         "Some optimizations add complexity (isolates, RepaintBoundary)",
@@ -8085,9 +8085,9 @@ class MyWidget extends StatelessWidget {
         "التحليل يتطلب وقتًا وفهمًا للأدوات",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Apply Performance Optimization when:",
           value: [
             "Experiencing frame drops (jank) during animations or scrolling",
@@ -8097,7 +8097,7 @@ class MyWidget extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "طبق تحسين الأداء عندما:",
           value: [
             "ملاحظة تساقط الإطارات (تقطيع) أثناء الرسوم المتحركة أو التمرير",
@@ -8114,15 +8114,15 @@ class MyWidget extends StatelessWidget {
     categories: [.flutterBasics, .ui],
     type: .theoretical,
     tags: ["advanced", "flutter", "rendering", "skia", "impeller"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What is Flutter's rendering engine and how does it work (e.g., Skia, Impeller)?",
         answer: [
-          StringContent(
+          StrContent(
             'Flutter uses rendering engines to draw UI to the screen. The engine compiles Flutter widgets into low-level graphics commands that run on the device GPU.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Skia (Traditional Engine):',
             value: [
               'C++-based 2D graphics library',
@@ -8132,7 +8132,7 @@ class MyWidget extends StatelessWidget {
               'Mature and stable on all platforms',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Impeller (New Engine):',
             value: [
               'Next-generation rendering engine for Flutter',
@@ -8142,7 +8142,7 @@ class MyWidget extends StatelessWidget {
               'Better GPU utilization and reduced jank',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'How Rendering Works:',
             value: [
               'Widgets define UI structure',
@@ -8158,10 +8158,10 @@ class MyWidget extends StatelessWidget {
       ar: QuestionContent(
         question: 'ما هو محرك العرض في فلاتر وكيف يعمل (مثل Skia و Impeller)؟',
         answer: [
-          StringContent(
+          StrContent(
             'يستخدم فلاتر محركات عرض لرسم الواجهة على الشاشة. يقوم المحرك بتحويل ودجتس فلاتر إلى أوامر رسومية منخفضة المستوى تعمل على معالج الرسوميات للجهاز.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Skia (المحرك التقليدي):',
             value: [
               'مكتبة رسوميات ثنائية الأبعاد بلغة C++',
@@ -8171,7 +8171,7 @@ class MyWidget extends StatelessWidget {
               'ناضج ومستقر على جميع المنصات',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Impeller (المحرك الجديد):',
             value: [
               'محرك عرض الجيل التالي لفلاتر',
@@ -8181,7 +8181,7 @@ class MyWidget extends StatelessWidget {
               'استخدام أفضل لـ GPU وتقليل التقطيع',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'كيف يعمل العرض:',
             value: [
               'الودجتس تحدد بنية الواجهة',
@@ -8215,7 +8215,7 @@ void main() {
 }
 '''),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Skia: Mature, stable, proven across all platforms",
         "Skia: Excellent rendering quality and broad compatibility",
@@ -8231,7 +8231,7 @@ void main() {
         "كلا المحركين مسرّعان بالعتاد",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Skia: Shader compilation can cause jank on first run",
         "Impeller: Still maturing on Android, may have edge cases",
@@ -8247,9 +8247,9 @@ void main() {
         "Shaders المخصصة قد تحتاج إلى تعديلات عند تبديل المحركات",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Engine Considerations:",
           value: [
             "Impeller: Recommended for iOS to eliminate shader jank",
@@ -8259,7 +8259,7 @@ void main() {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اعتبارات المحرك:",
           value: [
             "Impeller: يوصى به لـ iOS للتخلص من تقطيع الـ shader",
@@ -8282,15 +8282,15 @@ void main() {
       "reactnative",
       "cross-platform",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'Compare Flutter with React Native: what are the pros and cons?',
         answer: [
-          StringContent(
+          StrContent(
             'Flutter and React Native are the two leading cross-platform mobile development frameworks, each with distinct architectural approaches and trade-offs.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Architecture Differences:',
             value: [
               'Flutter compiles to native ARM code and uses Skia rendering engine for complete UI control',
@@ -8298,7 +8298,7 @@ void main() {
               'Flutter\'s rendering is consistent across platforms; React Native\'s appearance varies by OS',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Performance Characteristics:',
             value: [
               'Flutter: Near-native performance with direct compilation, 60/120 FPS animations',
@@ -8306,7 +8306,7 @@ void main() {
               'Both support hot reload, but Flutter\'s is typically faster and more reliable',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Development Experience:',
             value: [
               'Flutter uses Dart (less common but modern, type-safe)',
@@ -8326,10 +8326,10 @@ void main() {
       ar: QuestionContent(
         question: 'قارن بين Flutter و React Native: ما هي المزايا والعيوب؟',
         answer: [
-          StringContent(
+          StrContent(
             'Flutter و React Native هما أبرز إطارات العمل للتطوير عبر المنصات، ولكل منهما نهج معماري مميز ومقايضات مختلفة.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'الفروقات المعمارية:',
             value: [
               'Flutter يُترجم إلى كود ARM أصلي ويستخدم محرك Skia للرسم مع تحكم كامل بالواجهة',
@@ -8337,7 +8337,7 @@ void main() {
               'رسم Flutter متسق عبر المنصات؛ مظهر React Native يختلف حسب نظام التشغيل',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'خصائص الأداء:',
             value: [
               'Flutter: أداء قريب من الأصلي مع ترجمة مباشرة، رسوم متحركة بمعدل 60/120 إطار في الثانية',
@@ -8345,7 +8345,7 @@ void main() {
               'كلاهما يدعم التحديث الفوري، لكن Flutter عادةً أسرع وأكثر استقراراً',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'تجربة التطوير:',
             value: [
               'Flutter يستخدم Dart (أقل شيوعاً لكن حديثة وآمنة نوعياً)',
@@ -8363,7 +8363,7 @@ void main() {
         ],
       ),
     ),
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Flutter: Consistent 60/120 FPS performance, predictable UI across platforms",
         "Flutter: Complete UI customization with rich widget library",
@@ -8385,7 +8385,7 @@ void main() {
         "React Native: دمج أسهل مع التطبيقات الأصلية الموجودة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Flutter: Larger app size (typically 5-10MB overhead)",
         "Flutter: Dart language has smaller developer community",
@@ -8407,9 +8407,9 @@ void main() {
         "React Native: تصحيح الأخطاء قد يكون صعباً مع مشاكل الجسر",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Framework Selection:",
           value: [
             "Flutter: For high-performance, custom-branded UIs and consistency",
@@ -8418,7 +8418,7 @@ void main() {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار إطار العمل:",
           value: [
             "Flutter: للواجهات عالية الأداء المخصصة والاتساق الكامل",
@@ -8434,15 +8434,15 @@ void main() {
     categories: [.oop, .dartBasics],
     type: .theoretical,
     tags: ["intermediate", "dart", "oop", "composition", "inheritance"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             'Explain inheritance and composition in Dart. When should you use each?',
         answer: [
-          StringContent(
+          StrContent(
             'Inheritance and composition are two fundamental ways to achieve code reuse in object-oriented programming, each with different implications for code structure and flexibility.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Inheritance ("is-a" relationship):',
             value: [
               'A class extends another class, inheriting its properties and methods',
@@ -8451,7 +8451,7 @@ void main() {
               'Supports method overriding with @override annotation',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Composition ("has-a" relationship):',
             value: [
               'A class contains instances of other classes as fields',
@@ -8460,7 +8460,7 @@ void main() {
               'Follows "favor composition over inheritance" design principle',
             ],
           ),
-          StringContent(
+          StrContent(
             'Modern Dart/Flutter development heavily favors composition, especially with mixins and interfaces providing better alternatives to deep inheritance hierarchies.',
           ),
         ],
@@ -8476,10 +8476,10 @@ void main() {
         question:
             'اشرح الوراثة (inheritance) والتكوين (composition) في Dart. متى يجب استخدام كل منهما؟',
         answer: [
-          StringContent(
+          StrContent(
             'الوراثة والتكوين هما طريقتان أساسيتان لتحقيق إعادة استخدام الكود في البرمجة الكائنية، ولكل منهما تأثيرات مختلفة على بنية الكود والمرونة.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'الوراثة (علاقة "هو-نوع من"):',
             value: [
               'فئة تمتد من فئة أخرى، فترث خصائصها وطرقها',
@@ -8488,7 +8488,7 @@ void main() {
               'تدعم تجاوز الطرق باستخدام @override',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'التكوين (علاقة "يحتوي-على"):',
             value: [
               'فئة تحتوي على مثيلات من فئات أخرى كحقول',
@@ -8497,7 +8497,7 @@ void main() {
               'تتبع مبدأ التصميم "فضّل التكوين على الوراثة"',
             ],
           ),
-          StringContent(
+          StrContent(
             'تطوير Dart/Flutter الحديث يفضل بشدة التكوين، خاصةً مع mixins والواجهات التي توفر بدائل أفضل للتسلسلات الهرمية العميقة.',
           ),
         ],
@@ -8552,7 +8552,7 @@ void main() {
   car.move(); // Flexible, testable
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Inheritance: Straightforward code reuse for closely related classes",
         "Inheritance: Clear hierarchical relationships in domain modeling",
@@ -8570,7 +8570,7 @@ void main() {
         "التكوين: يتجنب مشكلة الفئة الأساسية الهشة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Inheritance: Creates tight coupling between parent and child",
         "Inheritance: Changes to base class can break subclasses",
@@ -8588,9 +8588,9 @@ void main() {
         "التكوين: قد يكون مبالغة للتسلسلات الهرمية البسيطة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Inheritance vs Composition Selection:",
           value: [
             "Inheritance: Primary relationship is 'is-a' and stable",
@@ -8599,7 +8599,7 @@ void main() {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار الوراثة مقابل التكوين:",
           value: [
             "الوراثة: العلاقة الأساسية هي 'هو نوع من' ومستقرة",
@@ -8615,14 +8615,14 @@ void main() {
     categories: [.oop, .dartBasics],
     type: .theoretical,
     tags: ["basic", "dart", "oop", "polymorphism"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: 'What is polymorphism in object-oriented programming?',
         answer: [
-          StringContent(
+          StrContent(
             'Polymorphism (from Greek "many forms") is the ability of different objects to respond to the same method call in their own way. It allows treating objects of different classes through a common interface.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Key Concepts:',
             value: [
               'A single interface can represent multiple underlying forms (classes)',
@@ -8631,7 +8631,7 @@ void main() {
               'Enables writing flexible, reusable code that works with multiple types',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'Types in Dart:',
             value: [
               'Compile-time polymorphism: Method overloading (limited in Dart)',
@@ -8639,7 +8639,7 @@ void main() {
               'Interface polymorphism: Implementing abstract classes or interfaces',
             ],
           ),
-          StringContent(
+          StrContent(
             'Polymorphism is fundamental to Flutter\'s widget system, where a Widget reference can hold any concrete widget type (Container, Text, Column, etc.).',
           ),
         ],
@@ -8654,10 +8654,10 @@ void main() {
       ar: QuestionContent(
         question: 'ما هو تعدد الأشكال (polymorphism) في البرمجة الكائنية؟',
         answer: [
-          StringContent(
+          StrContent(
             'تعدد الأشكال (من اليونانية "أشكال متعددة") هو قدرة كائنات مختلفة على الاستجابة لنفس استدعاء الطريقة بطريقتها الخاصة. يسمح بمعاملة كائنات من فئات مختلفة من خلال واجهة مشتركة.',
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'المفاهيم الأساسية:',
             value: [
               'واجهة واحدة يمكن أن تمثل أشكال أساسية متعددة (فئات)',
@@ -8666,7 +8666,7 @@ void main() {
               'تمكن من كتابة كود مرن وقابل لإعادة الاستخدام يعمل مع أنواع متعددة',
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: 'الأنواع في Dart:',
             value: [
               'تعدد أشكال وقت الترجمة: تحميل الطرق (محدود في Dart)',
@@ -8674,7 +8674,7 @@ void main() {
               'تعدد أشكال الواجهة: تنفيذ الفئات المجردة أو الواجهات',
             ],
           ),
-          StringContent(
+          StrContent(
             'تعدد الأشكال أساسي في نظام widgets في Flutter، حيث يمكن لمرجع Widget أن يحتوي على أي نوع widget ملموس (Container، Text، Column، إلخ).',
           ),
         ],
@@ -8798,7 +8798,7 @@ class ShapeGallery extends StatelessWidget {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Enables writing flexible, reusable code that works with multiple types",
         "Makes code more maintainable by programming to interfaces",
@@ -8814,7 +8814,7 @@ class ShapeGallery extends StatelessWidget {
         "أساسي لأنماط التصميم مثل Strategy و Factory و Template Method",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can make code harder to understand if overused or deeply nested",
         "Actual object type is less obvious at compile time",
@@ -8830,9 +8830,9 @@ class ShapeGallery extends StatelessWidget {
         "تصحيح الأخطاء قد يكون أكثر صعوبة مع تنفيذات متعددة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Polymorphism when:",
           value: [
             "Building modular systems with interchangeable components",
@@ -8842,7 +8842,7 @@ class ShapeGallery extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم تعدد الأشكال عندما:",
           value: [
             "بناء أنظمة برمجية مع مكونات قابلة للتبديل",
@@ -8859,14 +8859,14 @@ class ShapeGallery extends StatelessWidget {
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["basic", "pubspec", "dependencies", "configuration"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is the purpose of the pubspec.yaml file?",
         answer: [
-          StringContent(
+          StrContent(
             "pubspec.yaml is the configuration file for Flutter and Dart projects. It defines project metadata, dependencies, assets, and build settings.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key sections in pubspec.yaml:",
             value: [
               "name: Project identifier used for imports",
@@ -8877,7 +8877,7 @@ class ShapeGallery extends StatelessWidget {
               "flutter: Flutter-specific configuration (assets, fonts, material design)",
             ],
           ),
-          StringContent(
+          StrContent(
             "This file is crucial for dependency management, asset bundling, and version control. Every Flutter project must have a pubspec.yaml at the root.",
           ),
         ],
@@ -8892,10 +8892,10 @@ class ShapeGallery extends StatelessWidget {
       ar: QuestionContent(
         question: "ما هو الغرض من ملف pubspec.yaml؟",
         answer: [
-          StringContent(
+          StrContent(
             "pubspec.yaml هو ملف التكوين لمشاريع Flutter و Dart. يحدد البيانات الوصفية للمشروع، التبعيات، الأصول، وإعدادات البناء.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الأقسام الرئيسية في pubspec.yaml:",
             value: [
               "name: معرف المشروع المستخدم للاستيراد",
@@ -8906,7 +8906,7 @@ class ShapeGallery extends StatelessWidget {
               "flutter: تكوين خاص بـ Flutter (الأصول، الخطوط، تصميم Material)",
             ],
           ),
-          StringContent(
+          StrContent(
             "هذا الملف حاسم لإدارة التبعيات، تجميع الأصول، والتحكم في الإصدار. يجب أن يحتوي كل مشروع Flutter على pubspec.yaml في الجذر.",
           ),
         ],
@@ -8954,7 +8954,7 @@ flutter:
           weight: 700
 """, codeLanguage: .yaml),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Centralized dependency management",
         "Clear project configuration in one file",
@@ -8968,7 +8968,7 @@ flutter:
         "يدعم الإصدار الدلالي للتبعيات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "YAML syntax can be error-prone (indentation issues)",
         "Large projects may have very long dependency lists",
@@ -8982,9 +8982,9 @@ flutter:
         "ليست كل التبعيات على pub.dev عالية الجودة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Modify pubspec.yaml when:",
           value: [
             "Adding or updating package dependencies",
@@ -8994,7 +8994,7 @@ flutter:
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "عدل pubspec.yaml عندما:",
           value: [
             "إضافة أو تحديث تبعيات الحزم",
@@ -9011,14 +9011,14 @@ flutter:
     categories: [.basic, .flutterBasics, .ui],
     type: .practical,
     tags: ["basic", "assets", "images", "configuration"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How do you add an image to a Flutter project?",
         answer: [
-          StringContent(
+          StrContent(
             "Adding images to Flutter involves two steps: placing the image file in the project directory and declaring it in pubspec.yaml.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Steps to add an image:",
             value: [
               "Create an assets folder in project root (e.g., assets/images/)",
@@ -9028,7 +9028,7 @@ flutter:
               "Use Image.asset() widget to display the image",
             ],
           ),
-          StringContent(
+          StrContent(
             "For network images, use Image.network() without needing pubspec.yaml configuration. For better performance with network images, use the cached_network_image package.",
           ),
         ],
@@ -9043,10 +9043,10 @@ flutter:
       ar: QuestionContent(
         question: "كيف تضيف صورة إلى مشروع Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "إضافة الصور إلى Flutter تتضمن خطوتين: وضع ملف الصورة في دليل المشروع وإعلانه في pubspec.yaml.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "خطوات إضافة صورة:",
             value: [
               "أنشئ مجلد assets في جذر المشروع (مثل assets/images/)",
@@ -9056,7 +9056,7 @@ flutter:
               "استخدم ودجت Image.asset() لعرض الصورة",
             ],
           ),
-          StringContent(
+          StrContent(
             "للصور من الشبكة، استخدم Image.network() دون الحاجة لتكوين pubspec.yaml. لأداء أفضل مع صور الشبكة، استخدم حزمة cached_network_image.",
           ),
         ],
@@ -9107,7 +9107,7 @@ CachedNetworkImage(
   errorWidget: (context, url, error) => Icon(Icons.error),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple asset management system",
         "Supports multiple image resolutions automatically",
@@ -9121,7 +9121,7 @@ CachedNetworkImage(
         "صور الشبكة توفر حجم التطبيق",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Local assets increase app size",
         "Must rebuild after adding new assets",
@@ -9135,9 +9135,9 @@ CachedNetworkImage(
         "لا يوجد تخزين مؤقت مدمج لصور الشبكة بدون حزم",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Local vs Network Assets Selection:",
           value: [
             "Local: Reliable icons, logos, and UI decorations",
@@ -9146,7 +9146,7 @@ CachedNetworkImage(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار الأصول المحلية مقابل الشبكة:",
           value: [
             "المحلية: الأيقونات الموثوقة، الشعارات، وزخارف الواجهة",
@@ -9162,14 +9162,14 @@ CachedNetworkImage(
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["basic", "main", "entry", "runApp"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is the role of the main() function in Flutter?",
         answer: [
-          StringContent(
+          StrContent(
             "The main() function is the entry point of every Dart/Flutter application. It's the first function that runs when the app starts.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key responsibilities:",
             value: [
               "Initialize the Flutter framework",
@@ -9179,7 +9179,7 @@ CachedNetworkImage(
               "Configure error handling and logging",
             ],
           ),
-          StringContent(
+          StrContent(
             "The main() function typically calls runApp() with the root widget (usually MaterialApp or CupertinoApp) which builds the entire widget tree.",
           ),
         ],
@@ -9194,10 +9194,10 @@ CachedNetworkImage(
       ar: QuestionContent(
         question: "ما هو دور دالة main() في Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "دالة main() هي نقطة الدخول لكل تطبيق Dart/Flutter. إنها أول دالة تعمل عند بدء التطبيق.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "المسؤوليات الرئيسية:",
             value: [
               "تهيئة إطار عمل Flutter",
@@ -9207,7 +9207,7 @@ CachedNetworkImage(
               "تكوين معالجة الأخطاء والتسجيل",
             ],
           ),
-          StringContent(
+          StrContent(
             "عادةً ما تستدعي دالة main() دالة runApp() مع الودجت الجذر (عادةً MaterialApp أو CupertinoApp) الذي يبني شجرة الودجت بأكملها.",
           ),
         ],
@@ -9249,7 +9249,7 @@ void main() async {
   runApp(const MyApp());
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Clear entry point for the application",
         "Centralized initialization logic",
@@ -9263,7 +9263,7 @@ void main() async {
         "سهل تكوين معالجة الأخطاء العامة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can become cluttered with too much initialization",
         "Async operations in main can delay app startup",
@@ -9275,9 +9275,9 @@ void main() async {
         "ليس واضحًا أين تضع بعض كود التهيئة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use main() for:",
           value: [
             "Starting the Flutter application",
@@ -9287,7 +9287,7 @@ void main() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم main() لـ:",
           value: [
             "بدء تشغيل تطبيق فلاتر",
@@ -9304,14 +9304,14 @@ void main() async {
     categories: [.basic, .flutterBasics],
     type: .theoretical,
     tags: ["basic", "packages", "plugins", "dependencies"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What are Packages and Plugins in Flutter?",
         answer: [
-          StringContent(
+          StrContent(
             "Packages and Plugins are reusable code libraries that extend Flutter functionality. Both are distributed through pub.dev, but they differ in how they interact with the platform.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Packages:",
             value: [
               "Pure Dart code that works across all platforms",
@@ -9320,7 +9320,7 @@ void main() async {
               "Easier to maintain and test",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Plugins:",
             value: [
               "Dart code with platform-specific implementations",
@@ -9329,7 +9329,7 @@ void main() async {
               "Examples: camera, image_picker, shared_preferences",
             ],
           ),
-          StringContent(
+          StrContent(
             "Both are added to pubspec.yaml under dependencies and installed using 'flutter pub get'.",
           ),
         ],
@@ -9344,10 +9344,10 @@ void main() async {
       ar: QuestionContent(
         question: "ما هي الحزم (Packages) والإضافات (Plugins) في Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "الحزم والإضافات هي مكتبات كود قابلة لإعادة الاستخدام تمدد وظائف Flutter. كلاهما يُوزع عبر pub.dev، لكنهما يختلفان في كيفية تفاعلهما مع المنصة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الحزم:",
             value: [
               "كود Dart نقي يعمل عبر جميع المنصات",
@@ -9356,7 +9356,7 @@ void main() async {
               "أسهل في الصيانة والاختبار",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الإضافات:",
             value: [
               "كود Dart مع تنفيذات خاصة بالمنصة",
@@ -9365,7 +9365,7 @@ void main() async {
               "أمثلة: camera، image_picker، shared_preferences",
             ],
           ),
-          StringContent(
+          StrContent(
             "كلاهما يُضاف إلى pubspec.yaml تحت dependencies ويُثبت باستخدام 'flutter pub get'.",
           ),
         ],
@@ -9414,7 +9414,7 @@ Future<void> pickImage() async {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Extensive ecosystem on pub.dev with thousands of packages",
         "Saves development time by reusing existing solutions",
@@ -9428,7 +9428,7 @@ Future<void> pickImage() async {
         "سهل الإضافة والإزالة من المشاريع",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Plugins require platform-specific permissions and setup",
         "Dependency on third-party code maintenance",
@@ -9442,9 +9442,9 @@ Future<void> pickImage() async {
         "الإضافات تزيد حجم التطبيق أكثر من الحزم النقية",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Package vs Plugin Selection:",
           value: [
             "Package: Cross-platform logic, utilities, and UI widgets",
@@ -9453,7 +9453,7 @@ Future<void> pickImage() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار الحزمة مقابل الإضافة:",
           value: [
             "الحزمة: منطق عابر للمنصات، أدوات مساعدة، وودجتس واجهة",
@@ -9469,15 +9469,15 @@ Future<void> pickImage() async {
     categories: [.flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "initialization", "binding", "async"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What is the purpose of WidgetsFlutterBinding.ensureInitialized()?",
         answer: [
-          StringContent(
+          StrContent(
             "WidgetsFlutterBinding.ensureInitialized() ensures that the Flutter engine is fully initialized before executing any asynchronous operations in main().",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "When it's required:",
             value: [
               "Before calling any async operations in main()",
@@ -9487,7 +9487,7 @@ Future<void> pickImage() async {
               "Before setting system UI overlays or orientations",
             ],
           ),
-          StringContent(
+          StrContent(
             "This method is idempotent (safe to call multiple times) and returns the binding instance. If called after runApp(), it has no effect since runApp() initializes the binding automatically.",
           ),
         ],
@@ -9502,10 +9502,10 @@ Future<void> pickImage() async {
       ar: QuestionContent(
         question: "ما هو الغرض من WidgetsFlutterBinding.ensureInitialized()؟",
         answer: [
-          StringContent(
+          StrContent(
             "WidgetsFlutterBinding.ensureInitialized() تضمن أن محرك Flutter مهيأ بالكامل قبل تنفيذ أي عمليات غير متزامنة في main().",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "متى تكون مطلوبة:",
             value: [
               "قبل استدعاء أي عمليات async في main()",
@@ -9515,7 +9515,7 @@ Future<void> pickImage() async {
               "قبل تعيين تراكبات واجهة النظام أو الاتجاهات",
             ],
           ),
-          StringContent(
+          StrContent(
             "هذه الدالة متماثلة الفاعلية (آمنة للاستدعاء عدة مرات) وتعيد مثيل الربط. إذا استُدعيت بعد runApp()، فلا تأثير لها لأن runApp() تهيئ الربط تلقائيًا.",
           ),
         ],
@@ -9550,7 +9550,7 @@ void main() async {
   runApp(const MyApp());
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Prevents crashes from uninitialized binding access",
         "Enables async initialization before app starts",
@@ -9564,7 +9564,7 @@ void main() async {
         "آمن للاستدعاء عدة مرات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Adds boilerplate to main() function",
         "Easy to forget when needed, causing runtime errors",
@@ -9576,9 +9576,9 @@ void main() async {
         "ليس بديهيًا لماذا ضروري للمبتدئين",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Ensure Initialized when:",
           value: [
             "Calling Firebase.initializeApp() in main",
@@ -9588,7 +9588,7 @@ void main() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اضمن التهيئة عندما:",
           value: [
             "استدعاء Firebase.initializeApp() في main",
@@ -9605,14 +9605,14 @@ void main() async {
     categories: [.basic, .flutterBasics, .ui],
     type: .practical,
     tags: ["basic", "container", "layout", "widget"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain the use of Container widget.",
         answer: [
-          StringContent(
+          StrContent(
             "Container is one of the most versatile widgets in Flutter, combining several common layout and decoration features into a single widget.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Container can provide:",
             value: [
               "Padding: Space inside the container around its child",
@@ -9623,7 +9623,7 @@ void main() async {
               "Transform: Rotate, scale, or translate the container",
             ],
           ),
-          StringContent(
+          StrContent(
             "Container is extremely flexible but should not be overused. For simple cases, prefer more specific widgets like SizedBox, Padding, or DecoratedBox.",
           ),
         ],
@@ -9638,10 +9638,10 @@ void main() async {
       ar: QuestionContent(
         question: "اشرح استخدام ودجت Container.",
         answer: [
-          StringContent(
+          StrContent(
             "Container هو أحد أكثر الودجتس تنوعًا في Flutter، يجمع العديد من ميزات التخطيط والزخرفة الشائعة في ودجت واحد.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "يمكن أن يوفر Container:",
             value: [
               "Padding: مساحة داخل الحاوية حول طفلها",
@@ -9652,7 +9652,7 @@ void main() async {
               "Transform: تدوير أو تحجيم أو ترجمة الحاوية",
             ],
           ),
-          StringContent(
+          StrContent(
             "Container مرن للغاية لكن لا يجب الإفراط في استخدامه. للحالات البسيطة، فضّل ودجتس أكثر تحديدًا مثل SizedBox أو Padding أو DecoratedBox.",
           ),
         ],
@@ -9708,7 +9708,7 @@ Container(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "All-in-one widget for common layout needs",
         "Highly customizable with many properties",
@@ -9722,7 +9722,7 @@ Container(
         "سهل الاستخدام للمبتدئين",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can be overused when more specific widgets would be better",
         "Performance impact if used excessively",
@@ -9736,9 +9736,9 @@ Container(
         "قد يؤدي إلى أشجار ودجتس معقدة دون داعٍ",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Container for:",
           value: [
             "Quickly applying multiple styling properties (padding, decoration, margin)",
@@ -9748,7 +9748,7 @@ Container(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Container لـ:",
           value: [
             "تطبيق خصائص تنسيق متعددة بسرعة (حشو، زخرفة، هوامش)",
@@ -9765,14 +9765,14 @@ Container(
     categories: [.basic, .flutterBasics, .performance],
     type: .theoretical,
     tags: ["basic", "const", "optimization", "performance"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is const in Flutter and why is it recommended?",
         answer: [
-          StringContent(
+          StrContent(
             "The 'const' keyword creates compile-time constant objects in Dart. In Flutter, const widgets are created once and reused, significantly improving performance by preventing unnecessary rebuilds.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Benefits of const widgets:",
             value: [
               "Created at compile time, not runtime (faster)",
@@ -9782,7 +9782,7 @@ Container(
               "Reduces widget tree comparison overhead",
             ],
           ),
-          StringContent(
+          StrContent(
             "Use const constructors whenever the widget's parameters are compile-time constants and don't change during runtime.",
           ),
         ],
@@ -9797,10 +9797,10 @@ Container(
       ar: QuestionContent(
         question: "ما هو const في Flutter ولماذا يُنصح باستخدامه؟",
         answer: [
-          StringContent(
+          StrContent(
             "الكلمة المحجوزة 'const' تنشئ كائنات ثابتة في وقت الترجمة في Dart. في Flutter، ودجتس const تُنشأ مرة واحدة وتُعاد استخدامها، مما يحسن الأداء بشكل كبير بمنع إعادة البناء غير الضرورية.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "فوائد ودجتس const:",
             value: [
               "تُنشأ في وقت الترجمة، وليس وقت التشغيل (أسرع)",
@@ -9810,7 +9810,7 @@ Container(
               "يقلل من تكلفة مقارنة شجرة الودجتس",
             ],
           ),
-          StringContent(
+          StrContent(
             "استخدم بانيات const كلما كانت معاملات الودجت ثوابت في وقت الترجمة ولا تتغير أثناء التشغيل.",
           ),
         ],
@@ -9852,7 +9852,7 @@ String name = 'John';
 const Text(name) // Error: not a constant expression
 """),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Significant performance improvement with zero effort",
         "Reduces memory usage by reusing instances",
@@ -9868,7 +9868,7 @@ const Text(name) // Error: not a constant expression
         "يجعل الكود أكثر وضوحًا حول الثبات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Cannot be used with dynamic values or variables",
         "Requires all constructor parameters to be const",
@@ -9882,9 +9882,9 @@ const Text(name) // Error: not a constant expression
         "سهل النسيان وتحتاج قواعد lint للتذكير",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Const when:",
           value: [
             "The widget and its children are static",
@@ -9894,7 +9894,7 @@ const Text(name) // Error: not a constant expression
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Const عندما:",
           value: [
             "تكون الودجت وأطفالها ثابتة",
@@ -9911,14 +9911,14 @@ const Text(name) // Error: not a constant expression
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "safearea", "layout", "ui"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is SafeArea?",
         answer: [
-          StringContent(
+          StrContent(
             "SafeArea is a widget that insets its child by sufficient padding to avoid system intrusions like the status bar, notch, rounded corners, and home indicator.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "System intrusions SafeArea handles:",
             value: [
               "Status bar (top of screen showing time, battery, etc.)",
@@ -9928,7 +9928,7 @@ const Text(name) // Error: not a constant expression
               "System gesture areas",
             ],
           ),
-          StringContent(
+          StrContent(
             "SafeArea automatically detects these areas using MediaQuery and applies appropriate padding. You can selectively enable/disable padding for specific edges (top, bottom, left, right).",
           ),
         ],
@@ -9943,10 +9943,10 @@ const Text(name) // Error: not a constant expression
       ar: QuestionContent(
         question: "ما هو SafeArea؟",
         answer: [
-          StringContent(
+          StrContent(
             "SafeArea هو ودجت يضيف حشوًا كافيًا حول طفله لتجنب تدخلات النظام مثل شريط الحالة، الشق، الزوايا المستديرة، ومؤشر الصفحة الرئيسية.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "تدخلات النظام التي يتعامل معها SafeArea:",
             value: [
               "شريط الحالة (أعلى الشاشة يظهر الوقت، البطارية، إلخ)",
@@ -9956,7 +9956,7 @@ const Text(name) // Error: not a constant expression
               "مناطق إيماءات النظام",
             ],
           ),
-          StringContent(
+          StrContent(
             "يكتشف SafeArea هذه المناطق تلقائيًا باستخدام MediaQuery ويطبق الحشو المناسب. يمكنك تفعيل/تعطيل الحشو بشكل انتقائي لحواف معينة (أعلى، أسفل، يسار، يمين).",
           ),
         ],
@@ -9991,7 +9991,7 @@ SafeArea(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Automatically adapts to different device screen shapes",
         "Prevents UI from being obscured by system UI",
@@ -10005,7 +10005,7 @@ SafeArea(
         "تحكم انتقائي في الحواف التي يتم حشوها",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Adds extra padding that may not be needed in some designs",
         "Can create unwanted white space if overused",
@@ -10017,9 +10017,9 @@ SafeArea(
         "قد يتعارض مع التخطيطات المخصصة التي تتطلب تصميم من حافة لحافة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use SafeArea when:",
           value: [
             "Building pages without a standard AppBar",
@@ -10029,7 +10029,7 @@ SafeArea(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم SafeArea عندما:",
           value: [
             "بناء صفحات بدون AppBar قياسي",
@@ -10046,14 +10046,14 @@ SafeArea(
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["intermediate", "dialog", "navigation", "fullscreen"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is a Full-screen dialog in Flutter?",
         answer: [
-          StringContent(
+          StrContent(
             "A full-screen dialog is a modal presentation that takes up the entire screen, typically used for creating or editing content. It's distinct from regular dialogs which overlay content.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Characteristics:",
             value: [
               "Occupies entire screen like a new page",
@@ -10063,7 +10063,7 @@ SafeArea(
               "Different animation than regular page transitions",
             ],
           ),
-          StringContent(
+          StrContent(
             "Full-screen dialogs are Material Design pattern for temporary tasks that require focus, like composing email or creating a new item.",
           ),
         ],
@@ -10079,10 +10079,10 @@ SafeArea(
         question:
             "ما هو مربع الحوار بملء الشاشة (Full-screen dialog) في Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "مربع الحوار بملء الشاشة هو عرض نموذجي يشغل الشاشة بأكملها، يُستخدم عادةً لإنشاء أو تحرير المحتوى. يختلف عن مربعات الحوار العادية التي تتراكب على المحتوى.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص:",
             value: [
               "يشغل الشاشة بأكملها مثل صفحة جديدة",
@@ -10092,7 +10092,7 @@ SafeArea(
               "حركة مختلفة عن انتقالات الصفحات العادية",
             ],
           ),
-          StringContent(
+          StrContent(
             "مربعات الحوار بملء الشاشة هي نمط Material Design للمهام المؤقتة التي تتطلب تركيزًا، مثل كتابة بريد إلكتروني أو إنشاء عنصر جديد.",
           ),
         ],
@@ -10156,7 +10156,7 @@ class CreateItemScreen extends StatelessWidget {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Provides focused environment for complex tasks",
         "Clear entry and exit points",
@@ -10170,7 +10170,7 @@ class CreateItemScreen extends StatelessWidget {
         "حركات مناسبة للمنصة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Takes full screen space - no context of previous screen",
         "Can be jarring for simple tasks",
@@ -10184,9 +10184,9 @@ class CreateItemScreen extends StatelessWidget {
         "أكثر تعقيدًا من مربعات الحوار البسيطة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Full-screen Dialogs for:",
           value: [
             "Complex data entry (e.g., creating a new calendar event)",
@@ -10196,7 +10196,7 @@ class CreateItemScreen extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم مربعات الحوار بملء الشاشة لـ:",
           value: [
             "إدخال البيانات المعقدة (مثل إنشاء حدث تقويم جديد)",
@@ -10213,14 +10213,14 @@ class CreateItemScreen extends StatelessWidget {
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "layout", "expanded", "spacer"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain Expanded vs Spacer.",
         answer: [
-          StringContent(
+          StrContent(
             "Both Expanded and Spacer are used in Row/Column to control spacing, but they serve different purposes.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Expanded:",
             value: [
               "Forces its child to fill available space in main axis",
@@ -10229,7 +10229,7 @@ class CreateItemScreen extends StatelessWidget {
               "Multiple Expanded widgets share available space based on flex ratios",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Spacer:",
             value: [
               "Creates empty space that fills available area",
@@ -10238,7 +10238,7 @@ class CreateItemScreen extends StatelessWidget {
               "Essentially Expanded with an empty Container child",
             ],
           ),
-          StringContent(
+          StrContent(
             "Use Expanded when you want a widget to fill space. Use Spacer when you just want empty space between widgets.",
           ),
         ],
@@ -10253,10 +10253,10 @@ class CreateItemScreen extends StatelessWidget {
       ar: QuestionContent(
         question: "اشرح الفرق بين Expanded و Spacer.",
         answer: [
-          StringContent(
+          StrContent(
             "كل من Expanded و Spacer يُستخدمان في Row/Column للتحكم في التباعد، لكن لكل منهما غرض مختلف.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Expanded:",
             value: [
               "يجبر طفله على ملء المساحة المتاحة في المحور الرئيسي",
@@ -10265,7 +10265,7 @@ class CreateItemScreen extends StatelessWidget {
               "عدة ودجتس Expanded تتشارك المساحة المتاحة بناءً على نسب flex",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Spacer:",
             value: [
               "ينشئ مساحة فارغة تملأ المنطقة المتاحة",
@@ -10274,7 +10274,7 @@ class CreateItemScreen extends StatelessWidget {
               "في الأساس Expanded مع طفل Container فارغ",
             ],
           ),
-          StringContent(
+          StrContent(
             "استخدم Expanded عندما تريد أن يملأ ودجت المساحة. استخدم Spacer عندما تريد فقط مساحة فارغة بين الودجتس.",
           ),
         ],
@@ -10321,7 +10321,7 @@ Row(
   ],
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Expanded: Makes widgets responsive to available space",
         "Spacer: Clean way to create flexible gaps",
@@ -10335,7 +10335,7 @@ Row(
         "كلاهما: أساسي للتخطيطات المتجاوبة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Only work inside Flex containers (Row/Column)",
         "Can cause overflow if total flex is miscalculated",
@@ -10349,9 +10349,9 @@ Row(
         "يتطلب فهم نظام flex",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Expanded vs Spacer Selection:",
           value: [
             "Expanded: To make a child widget stretch and fill space",
@@ -10360,7 +10360,7 @@ Row(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختيار Expanded مقابل Spacer:",
           value: [
             "Expanded: لجعل ودجت طفل يمتد ويملأ المساحة",
@@ -10376,14 +10376,14 @@ Row(
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "aspectratio", "layout", "sizing"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is AspectRatio widget?",
         answer: [
-          StringContent(
+          StrContent(
             "AspectRatio is a widget that sizes its child to a specific aspect ratio (width-to-height ratio). It ensures the child maintains the specified proportions regardless of parent constraints.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Takes a single aspectRatio parameter (width / height)",
@@ -10392,7 +10392,7 @@ Row(
               "Useful for responsive designs that need consistent proportions",
             ],
           ),
-          StringContent(
+          StrContent(
             "AspectRatio attempts to size the child to match the aspect ratio while fitting within parent constraints. If impossible to maintain exact ratio, it gets as close as possible.",
           ),
         ],
@@ -10407,10 +10407,10 @@ Row(
       ar: QuestionContent(
         question: "ما هو ودجت AspectRatio؟",
         answer: [
-          StringContent(
+          StrContent(
             "AspectRatio هو ودجت يحدد حجم طفله بنسبة عرض إلى ارتفاع محددة. يضمن أن يحافظ الطفل على النسب المحددة بغض النظر عن قيود الوالد.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "يأخذ معامل aspectRatio واحد (العرض / الارتفاع)",
@@ -10419,7 +10419,7 @@ Row(
               "مفيد للتصاميم المتجاوبة التي تحتاج نسب ثابتة",
             ],
           ),
-          StringContent(
+          StrContent(
             "يحاول AspectRatio تحديد حجم الطفل ليطابق نسبة الأبعاد مع الاحتواء ضمن قيود الوالد. إذا كان من المستحيل الحفاظ على النسبة الدقيقة، يقترب قدر الإمكان.",
           ),
         ],
@@ -10458,7 +10458,7 @@ AspectRatio(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Ensures consistent proportions across different screen sizes",
         "Simple API with single aspectRatio parameter",
@@ -10472,7 +10472,7 @@ AspectRatio(
         "يعمل جيدًا مع الصور والفيديوهات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "May not fit perfectly in all parent constraints",
         "Can cause unexpected sizing if parent constraints conflict",
@@ -10484,9 +10484,9 @@ AspectRatio(
         "يتطلب حساب يدوي لنسبة الأبعاد",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use AspectRatio for:",
           value: [
             "Video players and image previews",
@@ -10496,7 +10496,7 @@ AspectRatio(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم AspectRatio لـ:",
           value: [
             "مشغلات الفيديو ومعاينات الصور",
@@ -10513,14 +10513,14 @@ AspectRatio(
     categories: [.flutterBasics, .ui, .performance],
     type: .theoretical,
     tags: ["intermediate", "intrinsic", "layout", "sizing"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What are IntrinsicHeight and IntrinsicWidth?",
         answer: [
-          StringContent(
+          StrContent(
             "IntrinsicHeight and IntrinsicWidth are widgets that size their children to their intrinsic dimensions - the natural size a widget would prefer to be.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "IntrinsicHeight:",
             value: [
               "Makes all children in a Row have the same height",
@@ -10528,7 +10528,7 @@ AspectRatio(
               "Useful for aligning Row children vertically",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "IntrinsicWidth:",
             value: [
               "Makes all children in a Column have the same width",
@@ -10536,7 +10536,7 @@ AspectRatio(
               "Useful for aligning Column children horizontally",
             ],
           ),
-          StringContent(
+          StrContent(
             "IMPORTANT: These widgets are expensive performance-wise. Flutter must perform layout twice - once to determine intrinsic size, then again to actually layout. Use sparingly.",
           ),
         ],
@@ -10551,10 +10551,10 @@ AspectRatio(
       ar: QuestionContent(
         question: "ما هما IntrinsicHeight و IntrinsicWidth؟",
         answer: [
-          StringContent(
+          StrContent(
             "IntrinsicHeight و IntrinsicWidth هما ودجتس يحددان حجم أطفالهما بناءً على أبعادهم الذاتية - الحجم الطبيعي الذي يفضل الودجت أن يكون عليه.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "IntrinsicHeight:",
             value: [
               "يجعل جميع الأطفال في Row لهم نفس الارتفاع",
@@ -10562,7 +10562,7 @@ AspectRatio(
               "مفيد لمحاذاة أطفال Row عموديًا",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "IntrinsicWidth:",
             value: [
               "يجعل جميع الأطفال في Column لهم نفس العرض",
@@ -10570,7 +10570,7 @@ AspectRatio(
               "مفيد لمحاذاة أطفال Column أفقيًا",
             ],
           ),
-          StringContent(
+          StrContent(
             "مهم: هذه الودجتس مكلفة من حيث الأداء. يجب على Flutter إجراء التخطيط مرتين - مرة لتحديد الحجم الذاتي، ثم مرة أخرى للتخطيط الفعلي. استخدمها بحذر.",
           ),
         ],
@@ -10629,7 +10629,7 @@ IntrinsicWidth(
 // All buttons will be as wide as the widest one
 """),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Makes all children match the largest child's size",
         "Useful for specific alignment cases",
@@ -10641,7 +10641,7 @@ IntrinsicWidth(
         "بسيط الاستخدام عند الحاجة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Expensive performance cost - double layout pass",
         "Should be avoided in lists or frequently rebuilt widgets",
@@ -10655,9 +10655,9 @@ IntrinsicWidth(
         "قد تسبب مشاكل أداء إذا استُخدمت بإفراط",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Intrinsic widgets when:",
           value: [
             "Creating side-by-side buttons of uniform width",
@@ -10667,7 +10667,7 @@ IntrinsicWidth(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم ودجتس Intrinsic عندما:",
           value: [
             "إنشاء أزرار متجاورة بعرض موحد",
@@ -10684,14 +10684,14 @@ IntrinsicWidth(
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "scrolling", "scrollview", "layout"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is SingleChildScrollView?",
         answer: [
-          StringContent(
+          StrContent(
             "SingleChildScrollView is a scrollable widget that makes its single child scrollable. It's useful when you have content that might overflow the screen.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Takes only one child widget",
@@ -10701,7 +10701,7 @@ IntrinsicWidth(
               "Supports physics (bouncing, clamping)",
             ],
           ),
-          StringContent(
+          StrContent(
             "Unlike ListView, SingleChildScrollView builds its entire child upfront. Use it for forms, settings pages, or small content that might overflow. For large lists, use ListView.builder instead.",
           ),
         ],
@@ -10716,10 +10716,10 @@ IntrinsicWidth(
       ar: QuestionContent(
         question: "ما هو SingleChildScrollView؟",
         answer: [
-          StringContent(
+          StrContent(
             "SingleChildScrollView هو ودجت قابل للتمرير يجعل طفله الوحيد قابلاً للتمرير. مفيد عندما يكون لديك محتوى قد يتجاوز الشاشة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "يأخذ ودجت طفل واحد فقط",
@@ -10729,7 +10729,7 @@ IntrinsicWidth(
               "يدعم الفيزياء (الارتداد، التثبيت)",
             ],
           ),
-          StringContent(
+          StrContent(
             "على عكس ListView، يبني SingleChildScrollView طفله بالكامل مسبقًا. استخدمه للنماذج، صفحات الإعدادات، أو المحتوى الصغير الذي قد يتجاوز الشاشة. للقوائم الطويلة، استخدم ListView.builder بدلاً من ذلك.",
           ),
         ],
@@ -10790,7 +10790,7 @@ SingleChildScrollView(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple to use - just wrap your content",
         "Automatically scrolls when content exceeds screen",
@@ -10804,7 +10804,7 @@ SingleChildScrollView(
         "جيد للنماذج وصفحات الإعدادات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Builds entire child at once - no lazy loading",
         "Poor performance with large content",
@@ -10818,9 +10818,9 @@ SingleChildScrollView(
         "يستهلك ذاكرة للطفل بالكامل حتى لو لم يكن مرئيًا",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use SingleChildScrollView for:",
           value: [
             "Scrollable forms and detail pages",
@@ -10830,7 +10830,7 @@ SingleChildScrollView(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم SingleChildScrollView لـ:",
           value: [
             "النماذج القابلة للتمرير وصفحات التفاصيل",
@@ -10847,14 +10847,14 @@ SingleChildScrollView(
     categories: [.basic, .flutterBasics, .ui],
     type: .practical,
     tags: ["basic", "gestures", "interaction", "tap"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to handle taps in Flutter?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter provides multiple ways to handle tap gestures on widgets, each suited for different use cases.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common approaches:",
             value: [
               "GestureDetector: Most flexible, handles all gesture types (tap, double tap, long press, drag, etc.)",
@@ -10863,7 +10863,7 @@ SingleChildScrollView(
               "Listener: Low-level pointer events for advanced cases",
             ],
           ),
-          StringContent(
+          StrContent(
             "GestureDetector is the most common choice for custom widgets. InkWell adds Material ripple animation. Button widgets should be used for actual buttons.",
           ),
         ],
@@ -10878,10 +10878,10 @@ SingleChildScrollView(
       ar: QuestionContent(
         question: "كيف تتعامل مع النقرات (Taps) في Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter طرقًا متعددة للتعامل مع إيماءات النقر على الودجتس، كل منها مناسب لحالات استخدام مختلفة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الأساليب الشائعة:",
             value: [
               "GestureDetector: الأكثر مرونة، يتعامل مع جميع أنواع الإيماءات (نقرة، نقرة مزدوجة، ضغط طويل، سحب، إلخ)",
@@ -10890,7 +10890,7 @@ SingleChildScrollView(
               "Listener: أحداث مؤشر منخفضة المستوى للحالات المتقدمة",
             ],
           ),
-          StringContent(
+          StrContent(
             "GestureDetector هو الخيار الأكثر شيوعًا للودجتس المخصصة. InkWell يضيف حركة تموج Material. يجب استخدام ودجتس الأزرار للأزرار الفعلية.",
           ),
         ],
@@ -10950,7 +10950,7 @@ IconButton(
   },
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "GestureDetector: Flexible, handles many gesture types",
         "InkWell: Provides Material ripple feedback",
@@ -10964,7 +10964,7 @@ IconButton(
         "خيارات متعددة لحالات استخدام مختلفة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "GestureDetector: No visual feedback by default",
         "InkWell: Requires Material ancestor",
@@ -10978,9 +10978,9 @@ IconButton(
         "قد يكون محيرًا للمبتدئين أيهما يُستخدم",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Handle taps when:",
           value: [
             "Creating custom interactive widgets",
@@ -10991,7 +10991,7 @@ IconButton(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "تعامل مع النقرات عندما:",
           value: [
             "إنشاء ودجتس تفاعلية مخصصة",
@@ -11009,14 +11009,14 @@ IconButton(
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "appbar", "scaffold", "ui"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is an AppBar?",
         answer: [
-          StringContent(
+          StrContent(
             "AppBar is a Material Design widget that displays a horizontal bar typically at the top of the screen. It's the primary way to show navigation, titles, and actions in Flutter apps.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common AppBar properties:",
             value: [
               "title: Widget displayed as the app bar title (usually Text)",
@@ -11027,7 +11027,7 @@ IconButton(
               "centerTitle: Whether to center the title",
             ],
           ),
-          StringContent(
+          StrContent(
             "AppBar is typically used inside Scaffold widget. It automatically handles back button, integrates with navigation, and provides consistent Material Design appearance.",
           ),
         ],
@@ -11042,10 +11042,10 @@ IconButton(
       ar: QuestionContent(
         question: "ما هو AppBar؟",
         answer: [
-          StringContent(
+          StrContent(
             "AppBar هو ودجت Material Design يعرض شريطًا أفقيًا عادةً في أعلى الشاشة. إنه الطريقة الأساسية لعرض التنقل والعناوين والإجراءات في تطبيقات Flutter.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "خصائص AppBar الشائعة:",
             value: [
               "title: ودجت يُعرض كعنوان شريط التطبيق (عادةً Text)",
@@ -11056,7 +11056,7 @@ IconButton(
               "centerTitle: ما إذا كان سيتم توسيط العنوان",
             ],
           ),
-          StringContent(
+          StrContent(
             "يُستخدم AppBar عادةً داخل ودجت Scaffold. يتعامل تلقائيًا مع زر الرجوع، ويتكامل مع التنقل، ويوفر مظهر Material Design متسق.",
           ),
         ],
@@ -11111,7 +11111,7 @@ AppBar(
   ],
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Provides consistent navigation UI across the app",
         "Automatically integrates with Navigator (back button)",
@@ -11125,7 +11125,7 @@ AppBar(
         "متوافق مع Material Design افتراضيًا",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Fixed height - not flexible by default",
         "Material Design only - use CupertinoNavigationBar for iOS style",
@@ -11137,9 +11137,9 @@ AppBar(
         "قد يبدو غير مناسب في التطبيقات المصممة بشكل مخصص",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use AppBar when:",
           value: [
             "Providing a screen title and consistent navigation",
@@ -11150,7 +11150,7 @@ AppBar(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم AppBar عندما:",
           value: [
             "توفير عنوان للشاشة وتنقل متسق",
@@ -11168,14 +11168,14 @@ AppBar(
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "cupertino", "ios", "ui"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is CupertinoApp?",
         answer: [
-          StringContent(
+          StrContent(
             "CupertinoApp is the iOS-style equivalent of MaterialApp. It provides iOS-styled widgets and follows Apple's Human Interface Guidelines instead of Material Design.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key differences from MaterialApp:",
             value: [
               "Uses iOS-style navigation (slide transitions)",
@@ -11185,7 +11185,7 @@ AppBar(
               "Different color scheme and design language",
             ],
           ),
-          StringContent(
+          StrContent(
             "You can use Cupertino widgets in MaterialApp and vice versa, but CupertinoApp provides better iOS consistency when targeting iOS users specifically.",
           ),
         ],
@@ -11200,10 +11200,10 @@ AppBar(
       ar: QuestionContent(
         question: "ما هو CupertinoApp؟",
         answer: [
-          StringContent(
+          StrContent(
             "CupertinoApp هو المعادل بنمط iOS لـ MaterialApp. يوفر ودجتس بنمط iOS ويتبع إرشادات واجهة Apple البشرية بدلاً من Material Design.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الفروقات الرئيسية عن MaterialApp:",
             value: [
               "يستخدم تنقل بنمط iOS (انتقالات انزلاقية)",
@@ -11213,7 +11213,7 @@ AppBar(
               "نظام ألوان ولغة تصميم مختلفة",
             ],
           ),
-          StringContent(
+          StrContent(
             "يمكنك استخدام ودجتس Cupertino في MaterialApp والعكس، لكن CupertinoApp يوفر اتساق iOS أفضل عند استهداف مستخدمي iOS على وجه التحديد.",
           ),
         ],
@@ -11274,7 +11274,7 @@ CupertinoSwitch(
   onChanged: (value) {},
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Provides authentic iOS look and feel",
         "Better for iOS-focused apps",
@@ -11288,7 +11288,7 @@ CupertinoSwitch(
         "يمكن مزجه مع ودجتس Material",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Less widget variety than Material Design",
         "Looks out of place on Android",
@@ -11302,9 +11302,9 @@ CupertinoSwitch(
         "تحتاج للتعامل مع فروقات المنصة يدويًا",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use CupertinoApp when:",
           value: [
             "Building an app specifically for iOS users",
@@ -11314,7 +11314,7 @@ CupertinoSwitch(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم CupertinoApp عندما:",
           value: [
             "بناء تطبيق مخصص لمستخدمي iOS",
@@ -11331,14 +11331,14 @@ CupertinoSwitch(
     categories: [.flutterBasics, .ui],
     type: .theoretical,
     tags: ["intermediate", "tabs", "tabcontroller", "navigation"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is DefaultTabController?",
         answer: [
-          StringContent(
+          StrContent(
             "DefaultTabController is a widget that creates and controls a tab-based navigation system. It manages the state and synchronization between TabBar and TabBarView.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key components:",
             value: [
               "DefaultTabController: Wraps TabBar and TabBarView, provides the controller",
@@ -11347,7 +11347,7 @@ CupertinoSwitch(
               "Tab: Individual tab widget (can have text, icon, or both)",
             ],
           ),
-          StringContent(
+          StrContent(
             "DefaultTabController automatically syncs the selected tab with the displayed content. When user taps a tab, the corresponding page is shown. Swiping between pages updates the selected tab.",
           ),
         ],
@@ -11362,10 +11362,10 @@ CupertinoSwitch(
       ar: QuestionContent(
         question: "ما هو DefaultTabController؟",
         answer: [
-          StringContent(
+          StrContent(
             "DefaultTabController هو ودجت ينشئ ويتحكم في نظام تنقل قائم على علامات التبويب. يدير الحالة والمزامنة بين TabBar و TabBarView.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "المكونات الرئيسية:",
             value: [
               "DefaultTabController: يلف TabBar و TabBarView، يوفر المتحكم",
@@ -11374,7 +11374,7 @@ CupertinoSwitch(
               "Tab: ودجت علامة تبويب فردية (يمكن أن تحتوي على نص، أيقونة، أو كليهما)",
             ],
           ),
-          StringContent(
+          StrContent(
             "يزامن DefaultTabController تلقائيًا علامة التبويب المحددة مع المحتوى المعروض. عندما ينقر المستخدم على علامة تبويب، تُعرض الصفحة المقابلة. السحب بين الصفحات يحدث علامة التبويب المحددة.",
           ),
         ],
@@ -11424,7 +11424,7 @@ TabBar(
   ],
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Easy to implement tabbed navigation",
         "Automatic synchronization between tabs and content",
@@ -11438,7 +11438,7 @@ TabBar(
         "يتكامل جيدًا مع AppBar",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "All tab views are built at once (not lazy loaded)",
         "Limited customization compared to custom TabController",
@@ -11450,9 +11450,9 @@ TabBar(
         "قد يكون مكثفًا للذاكرة مع العديد من علامات التبويب المعقدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use DefaultTabController when:",
           value: [
             "Implementing simple tabbed navigation within a screen",
@@ -11462,7 +11462,7 @@ TabBar(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم DefaultTabController عندما:",
           value: [
             "تنفيذ تنقل بسيط بعلامات التبويب داخل الشاشة",
@@ -11479,14 +11479,14 @@ TabBar(
     categories: [.basic, .flutterBasics, .ui],
     type: .practical,
     tags: ["basic", "text", "styling", "typography"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How do you style text in Flutter?",
         answer: [
-          StringContent(
+          StrContent(
             "Text styling in Flutter is done using the TextStyle class, which can be applied directly to Text widgets or defined in app themes.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common TextStyle properties:",
             value: [
               "fontSize: Size of the text",
@@ -11498,7 +11498,7 @@ TabBar(
               "height: Line height multiplier",
             ],
           ),
-          StringContent(
+          StrContent(
             "You can also use predefined text styles from Theme like headline1, bodyText1, etc., which provides consistent typography across the app.",
           ),
         ],
@@ -11513,10 +11513,10 @@ TabBar(
       ar: QuestionContent(
         question: "كيف تنسّق النصوص في Flutter؟",
         answer: [
-          StringContent(
+          StrContent(
             "تنسيق النصوص في Flutter يتم باستخدام فئة TextStyle، التي يمكن تطبيقها مباشرة على ودجتس Text أو تعريفها في سمات التطبيق.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "خصائص TextStyle الشائعة:",
             value: [
               "fontSize: حجم النص",
@@ -11528,7 +11528,7 @@ TabBar(
               "height: مضاعف ارتفاع السطر",
             ],
           ),
-          StringContent(
+          StrContent(
             "يمكنك أيضًا استخدام أنماط نص محددة مسبقًا من Theme مثل headline1، bodyText1، إلخ، والتي توفر طباعة متسقة عبر التطبيق.",
           ),
         ],
@@ -11595,7 +11595,7 @@ const Text(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Rich styling options for text",
         "Theme integration for consistent typography",
@@ -11609,7 +11609,7 @@ const Text(
         "دعم للخطوط المخصصة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can become verbose with many style properties",
         "Need to manually manage consistency without themes",
@@ -11621,9 +11621,9 @@ const Text(
         "الخطوط المخصصة تزيد حجم التطبيق",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Style text when:",
           value: [
             "Defining the visual appearance of individual Text widgets",
@@ -11633,7 +11633,7 @@ const Text(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "نسق النص عندما:",
           value: [
             "تعريف المظهر المرئي لودجتس Text الفردية",
@@ -11650,14 +11650,14 @@ const Text(
     categories: [.flutterBasics, .ui],
     type: .theoretical,
     tags: ["intermediate", "theme", "styling", "design"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is ThemeData?",
         answer: [
-          StringContent(
+          StrContent(
             "ThemeData defines the visual properties for the entire app or specific widget subtrees. It provides a centralized way to configure colors, fonts, shapes, and other design elements.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key ThemeData properties:",
             value: [
               "primaryColor: Main app color (used in AppBar, FloatingActionButton)",
@@ -11668,7 +11668,7 @@ const Text(
               "brightness: Light or dark theme (Brightness.light/dark)",
             ],
           ),
-          StringContent(
+          StrContent(
             "Apply themes at MaterialApp level for app-wide theming, or use Theme widget to override for specific subtrees. Access current theme using Theme.of(context).",
           ),
         ],
@@ -11683,10 +11683,10 @@ const Text(
       ar: QuestionContent(
         question: "ما هو ThemeData؟",
         answer: [
-          StringContent(
+          StrContent(
             "ThemeData يعرّف الخصائص المرئية للتطبيق بأكمله أو أشجار ودجتس فرعية معينة. يوفر طريقة مركزية لتكوين الألوان والخطوط والأشكال وعناصر التصميم الأخرى.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "خصائص ThemeData الرئيسية:",
             value: [
               "primaryColor: لون التطبيق الرئيسي (يُستخدم في AppBar، FloatingActionButton)",
@@ -11697,7 +11697,7 @@ const Text(
               "brightness: سمة فاتحة أو داكنة (Brightness.light/dark)",
             ],
           ),
-          StringContent(
+          StrContent(
             "طبق السمات على مستوى MaterialApp لتطبيق السمة على مستوى التطبيق، أو استخدم ودجت Theme للتجاوز لأشجار فرعية معينة. الوصول للسمة الحالية باستخدام Theme.of(context).",
           ),
         ],
@@ -11758,7 +11758,7 @@ Theme(
   child: ChildWidget(),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Centralized styling for entire app",
         "Easy dark mode implementation",
@@ -11772,7 +11772,7 @@ Theme(
         "وراثة السمة تقلل من تكرار الكود",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can be complex to set up initially",
         "Overriding themes can lead to inconsistencies",
@@ -11784,9 +11784,9 @@ Theme(
         "كائنات ThemeData الكبيرة قد يصعب صيانتها",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use ThemeData when:",
           value: [
             "Establishing a global design system for the entire app",
@@ -11796,7 +11796,7 @@ Theme(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم ThemeData عندما:",
           value: [
             "إنشاء نظام تصميم عالمي للتطبيق بأكمله",
@@ -11813,14 +11813,14 @@ Theme(
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "drawer", "navigation", "ui"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is the Drawer widget?",
         answer: [
-          StringContent(
+          StrContent(
             "Drawer is a Material Design panel that slides in from the side of the screen, typically used for navigation. It's accessed by swiping from the edge or tapping the menu icon in the AppBar.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common usage:",
             value: [
               "Navigation between major app sections",
@@ -11830,7 +11830,7 @@ Theme(
               "Usually contains a ListView with navigation items",
             ],
           ),
-          StringContent(
+          StrContent(
             "Drawer is added to Scaffold's drawer property. Scaffold automatically adds a hamburger menu icon to the AppBar. Drawer can be opened programmatically using Scaffold.of(context).openDrawer().",
           ),
         ],
@@ -11845,10 +11845,10 @@ Theme(
       ar: QuestionContent(
         question: "ما هو ودجت Drawer؟",
         answer: [
-          StringContent(
+          StrContent(
             "Drawer هو لوحة Material Design تنزلق من جانب الشاشة، وتُستخدم عادةً للتنقل. يُصل إليها بالسحب من الحافة أو النقر على أيقونة القائمة في AppBar.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الاستخدام الشائع:",
             value: [
               "التنقل بين أقسام التطبيق الرئيسية",
@@ -11858,7 +11858,7 @@ Theme(
               "عادةً ما يحتوي على ListView مع عناصر التنقل",
             ],
           ),
-          StringContent(
+          StrContent(
             "يُضاف Drawer إلى خاصية drawer في Scaffold. يضيف Scaffold تلقائيًا أيقونة قائمة همبرغر إلى AppBar. يمكن فتح Drawer برمجيًا باستخدام Scaffold.of(context).openDrawer().",
           ),
         ],
@@ -11937,7 +11937,7 @@ Scaffold(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Space-efficient navigation for many sections",
         "Familiar pattern to users",
@@ -11951,7 +11951,7 @@ Scaffold(
         "يُدار تلقائيًا بواسطة Scaffold",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Hidden navigation - users might not discover it",
         "Requires extra tap to access navigation",
@@ -11963,9 +11963,9 @@ Scaffold(
         "غير مناسب كتنقل أساسي لعناصر قليلة جدًا",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Drawer when:",
           value: [
             "Your app has many top-level destinations (more than 5)",
@@ -11975,7 +11975,7 @@ Scaffold(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Drawer عندما:",
           value: [
             "يحتوي تطبيقك على العديد من الوجهات الرئيسية (أكثر من 5)",
@@ -11992,14 +11992,14 @@ Scaffold(
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "fab", "floatingactionbutton", "material"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is FloatingActionButton?",
         answer: [
-          StringContent(
+          StrContent(
             "FloatingActionButton (FAB) is a circular Material Design button that floats above content and performs a primary action. It's one of the most prominent UI elements in an app.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Circular button that floats above the UI",
@@ -12009,7 +12009,7 @@ Scaffold(
               "Can be customized with different sizes (regular, small, large, extended)",
             ],
           ),
-          StringContent(
+          StrContent(
             "FAB draws attention and should represent the most important action on the screen. Common uses include composing messages, creating new items, or sharing content.",
           ),
         ],
@@ -12024,10 +12024,10 @@ Scaffold(
       ar: QuestionContent(
         question: "ما هو FloatingActionButton؟",
         answer: [
-          StringContent(
+          StrContent(
             "FloatingActionButton (FAB) هو زر Material Design دائري يطفو فوق المحتوى ويقوم بإجراء أساسي. إنه أحد عناصر واجهة المستخدم الأكثر بروزًا في التطبيق.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "زر دائري يطفو فوق واجهة المستخدم",
@@ -12037,7 +12037,7 @@ Scaffold(
               "يمكن تخصيصه بأحجام مختلفة (عادي، صغير، كبير، ممتد)",
             ],
           ),
-          StringContent(
+          StrContent(
             "يجذب FAB الانتباه ويجب أن يمثل الإجراء الأكثر أهمية على الشاشة. الاستخدامات الشائعة تشمل كتابة الرسائل، إنشاء عناصر جديدة، أو مشاركة المحتوى.",
           ),
         ],
@@ -12085,7 +12085,7 @@ Scaffold(
   floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Highly visible and accessible",
         "Clearly indicates primary action",
@@ -12099,7 +12099,7 @@ Scaffold(
         "موضع ومظهر قابل للتخصيص",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can obscure content underneath",
         "Should only represent one action",
@@ -12113,9 +12113,9 @@ Scaffold(
         "قد لا يناسب جميع أنظمة التصميم",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use FloatingActionButton when:",
           value: [
             "Promoting the most important, primary action on a screen",
@@ -12125,7 +12125,7 @@ Scaffold(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم FloatingActionButton عندما:",
           value: [
             "الترويج لأهم إجراء أساسي على الشاشة",
@@ -12142,14 +12142,14 @@ Scaffold(
     categories: [.basic, .flutterBasics, .ui],
     type: .practical,
     tags: ["basic", "snackbar", "feedback", "material"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is a SnackBar?",
         answer: [
-          StringContent(
+          StrContent(
             "SnackBar is a lightweight message that briefly appears at the bottom of the screen to provide feedback about an operation. It's a Material Design component for showing temporary notifications.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Appears at bottom of screen",
@@ -12159,7 +12159,7 @@ Scaffold(
               "Displayed using ScaffoldMessenger.of(context).showSnackBar()",
             ],
           ),
-          StringContent(
+          StrContent(
             "SnackBars are ideal for brief messages like 'Item deleted', 'Message sent', or 'No internet connection'. They should not be used for critical information that requires user action.",
           ),
         ],
@@ -12174,10 +12174,10 @@ Scaffold(
       ar: QuestionContent(
         question: "ما هو SnackBar؟",
         answer: [
-          StringContent(
+          StrContent(
             "SnackBar هو رسالة خفيفة تظهر لفترة وجيزة في أسفل الشاشة لتوفير ملاحظات حول عملية ما. إنه مكون Material Design لعرض الإشعارات المؤقتة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يظهر في أسفل الشاشة",
@@ -12187,7 +12187,7 @@ Scaffold(
               "يُعرض باستخدام ScaffoldMessenger.of(context).showSnackBar()",
             ],
           ),
-          StringContent(
+          StrContent(
             "SnackBars مثالية للرسائل القصيرة مثل 'تم حذف العنصر'، 'تم إرسال الرسالة'، أو 'لا يوجد اتصال بالإنترنت'. لا ينبغي استخدامها للمعلومات الحرجة التي تتطلب إجراءً من المستخدم.",
           ),
         ],
@@ -12239,7 +12239,7 @@ ScaffoldMessenger.of(context).showSnackBar(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Non-intrusive feedback mechanism",
         "Automatically dismisses",
@@ -12253,7 +12253,7 @@ ScaffoldMessenger.of(context).showSnackBar(
         "بسيط في التنفيذ والاستخدام",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Easy to miss if user isn't looking",
         "Not suitable for important messages",
@@ -12267,9 +12267,9 @@ ScaffoldMessenger.of(context).showSnackBar(
         "مساحة محدودة للمحتوى",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use SnackBar when:",
           value: [
             "Confirming a user action (e.g., 'Message archived')",
@@ -12279,7 +12279,7 @@ ScaffoldMessenger.of(context).showSnackBar(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم SnackBar عندما:",
           value: [
             "تأكيد إجراء قام به المستخدم (مثل 'تمت أرشفة الرسالة')",
@@ -12296,14 +12296,14 @@ ScaffoldMessenger.of(context).showSnackBar(
     categories: [.flutterBasics, .ui],
     type: .theoretical,
     tags: ["intermediate", "wrap", "layout", "responsive"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain Wrap widget.",
         answer: [
-          StringContent(
+          StrContent(
             "Wrap is a widget that displays its children in multiple horizontal or vertical runs. When a row/column runs out of room, it automatically wraps to the next line.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Automatically wraps children to new lines when space runs out",
@@ -12313,7 +12313,7 @@ ScaffoldMessenger.of(context).showSnackBar(
               "Better than Row/Column for dynamic content that might overflow",
             ],
           ),
-          StringContent(
+          StrContent(
             "Unlike Row/Column which overflow when children don't fit, Wrap automatically creates new lines. It's perfect for displaying a collection of chips, tags, or buttons that should wrap gracefully.",
           ),
         ],
@@ -12328,10 +12328,10 @@ ScaffoldMessenger.of(context).showSnackBar(
       ar: QuestionContent(
         question: "اشرح ودجت Wrap.",
         answer: [
-          StringContent(
+          StrContent(
             "Wrap هو ودجت يعرض أطفاله في عدة صفوف أو أعمدة. عندما ينفد المكان في صف/عمود، يلتف تلقائيًا إلى السطر التالي.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يلف الأطفال تلقائيًا إلى سطور جديدة عندما ينفد المكان",
@@ -12341,7 +12341,7 @@ ScaffoldMessenger.of(context).showSnackBar(
               "أفضل من Row/Column للمحتوى الديناميكي الذي قد يتجاوز",
             ],
           ),
-          StringContent(
+          StrContent(
             "على عكس Row/Column التي تتجاوز عندما لا تناسب الأطفال، ينشئ Wrap سطورًا جديدة تلقائيًا. إنه مثالي لعرض مجموعة من الرقائق أو الوسوم أو الأزرار التي يجب أن تلتف بشكل رشيق.",
           ),
         ],
@@ -12401,7 +12401,7 @@ Wrap(
   ],
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Automatically handles overflow by wrapping",
         "Responsive without manual calculations",
@@ -12415,7 +12415,7 @@ Wrap(
         "تباعد قابل للتكوين بين العناصر والسطور",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Less control over exact positioning",
         "Can be unpredictable with varying child sizes",
@@ -12427,9 +12427,9 @@ Wrap(
         "غير مناسب عندما يكون التخطيط الدقيق مطلوبًا",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Wrap when:",
           value: [
             "Displaying a collection of items (chips, tags) that should wrap to new lines",
@@ -12439,7 +12439,7 @@ Wrap(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Wrap عندما:",
           value: [
             "عرض مجموعة من العناصر (chips، tags) التي يجب أن تلتف إلى سطور جديدة",
@@ -12456,14 +12456,14 @@ Wrap(
     categories: [.basic, .flutterBasics, .ui],
     type: .theoretical,
     tags: ["basic", "opacity", "transparency", "visibility"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Opacity?",
         answer: [
-          StringContent(
+          StrContent(
             "Opacity is a widget that makes its child partially transparent. It takes a value between 0.0 (completely transparent/invisible) and 1.0 (completely opaque/visible).",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "opacity value ranges from 0.0 to 1.0",
@@ -12473,7 +12473,7 @@ Wrap(
               "Child still takes up space even when invisible (opacity: 0.0)",
             ],
           ),
-          StringContent(
+          StrContent(
             "IMPORTANT: Opacity is expensive because it requires offscreen rendering. For better performance, prefer using Color with alpha channel or AnimatedOpacity for opacity changes.",
           ),
         ],
@@ -12488,10 +12488,10 @@ Wrap(
       ar: QuestionContent(
         question: "ما هو Opacity؟",
         answer: [
-          StringContent(
+          StrContent(
             "Opacity هو ودجت يجعل طفله شبه شفاف. يأخذ قيمة بين 0.0 (شفاف تمامًا/غير مرئي) و 1.0 (معتم تمامًا/مرئي).",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "قيمة opacity تتراوح من 0.0 إلى 1.0",
@@ -12501,7 +12501,7 @@ Wrap(
               "الطفل لا يزال يشغل مساحة حتى عندما يكون غير مرئي (opacity: 0.0)",
             ],
           ),
-          StringContent(
+          StrContent(
             "مهم: Opacity مكلف لأنه يتطلب عرضًا خارج الشاشة. لأداء أفضل، فضّل استخدام Color مع قناة alpha أو AnimatedOpacity لتغييرات الشفافية.",
           ),
         ],
@@ -12553,7 +12553,7 @@ AnimatedOpacity(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple way to make widgets transparent",
         "Easy to understand and use",
@@ -12565,7 +12565,7 @@ AnimatedOpacity(
         "يعمل مع أي ودجت",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Expensive performance cost (offscreen rendering)",
         "Widget still takes space even when invisible",
@@ -12579,9 +12579,9 @@ AnimatedOpacity(
         "توجد بدائل أفضل (Color.withOpacity، AnimatedOpacity)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Opacity when:",
           value: [
             "Changing the transparency of any widget to values between 0.0 and 1.0",
@@ -12591,7 +12591,7 @@ AnimatedOpacity(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Opacity عندما:",
           value: [
             "تغيير شفافية أي ودجت إلى قيم بين 0.0 و 1.0",
@@ -12608,14 +12608,14 @@ AnimatedOpacity(
     categories: [.basic, .flutterBasics, .ui],
     type: .practical,
     tags: ["basic", "cliprrect", "borderradius", "clipping"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is ClipRRect?",
         answer: [
-          StringContent(
+          StrContent(
             "ClipRRect clips its child using a rounded rectangle with specified border radius. The 'RRect' stands for 'Rounded Rectangle'. It's commonly used to create rounded corners on images and containers.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common uses:",
             value: [
               "Creating rounded corners on images",
@@ -12625,7 +12625,7 @@ AnimatedOpacity(
               "borderRadius property defines corner roundness",
             ],
           ),
-          StringContent(
+          StrContent(
             "ClipRRect is essential for giving images and containers rounded corners. Without it, square corners would be visible even if decoration has borderRadius.",
           ),
         ],
@@ -12640,10 +12640,10 @@ AnimatedOpacity(
       ar: QuestionContent(
         question: "ما هو ClipRRect؟",
         answer: [
-          StringContent(
+          StrContent(
             "ClipRRect يقص طفله باستخدام مستطيل مستدير مع نصف قطر حدود محدد. 'RRect' تعني 'مستطيل مستدير'. يُستخدم عادةً لإنشاء زوايا مستديرة على الصور والحاويات.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الاستخدامات الشائعة:",
             value: [
               "إنشاء زوايا مستديرة على الصور",
@@ -12653,7 +12653,7 @@ AnimatedOpacity(
               "خاصية borderRadius تحدد استدارة الزاوية",
             ],
           ),
-          StringContent(
+          StrContent(
             "ClipRRect أساسي لإعطاء الصور والحاويات زوايا مستديرة. بدونه، ستكون الزوايا المربعة مرئية حتى لو كان للزخرفة borderRadius.",
           ),
         ],
@@ -12715,7 +12715,7 @@ ClipRRect(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Easy way to create rounded corners",
         "Works with any widget",
@@ -12729,7 +12729,7 @@ ClipRRect(
         "أساسي لتصميم واجهة المستخدم الحديثة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Clipping has performance cost",
         "Can cause anti-aliasing artifacts",
@@ -12741,9 +12741,9 @@ ClipRRect(
         "يضيف طبقة ودجت إضافية",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use ClipRRect when:",
           value: [
             "Creating rounded corners on rectangular widgets (especially images)",
@@ -12753,7 +12753,7 @@ ClipRRect(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم ClipRRect عندما:",
           value: [
             "إنشاء زوايا مستديرة على ودجتس مستطيلة (خاصة الصور)",
@@ -12770,14 +12770,14 @@ ClipRRect(
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["intermediate", "richtext", "textspan", "styling"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is RichText?",
         answer: [
-          StringContent(
+          StrContent(
             "RichText is a widget that displays text with multiple different styles in a single widget. It uses TextSpan to define different styled segments of text.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Display multiple text styles in one widget",
@@ -12787,7 +12787,7 @@ ClipRRect(
               "More powerful than Text widget for mixed styling",
             ],
           ),
-          StringContent(
+          StrContent(
             "RichText is essential for cases like 'I agree to the Terms and Conditions' where 'Terms and Conditions' should be styled differently and clickable. It's more flexible than using multiple Text widgets.",
           ),
         ],
@@ -12802,10 +12802,10 @@ ClipRRect(
       ar: QuestionContent(
         question: "ما هو RichText؟",
         answer: [
-          StringContent(
+          StrContent(
             "RichText هو ودجت يعرض نصًا مع أنماط متعددة مختلفة في ودجت واحد. يستخدم TextSpan لتعريف أجزاء نصية مختلفة الأنماط.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "عرض أنماط نصية متعددة في ودجت واحد",
@@ -12815,7 +12815,7 @@ ClipRRect(
               "أقوى من ودجت Text للتنسيق المختلط",
             ],
           ),
-          StringContent(
+          StrContent(
             "RichText أساسي لحالات مثل 'أوافق على الشروط والأحكام' حيث يجب أن تكون 'الشروط والأحكام' منسقة بشكل مختلف وقابلة للنقر. إنه أكثر مرونة من استخدام ودجتس Text متعددة.",
           ),
         ],
@@ -12909,7 +12909,7 @@ RichText(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Multiple text styles in one widget",
         "Supports clickable text segments",
@@ -12923,7 +12923,7 @@ RichText(
         "قدرات تنسيق متداخلة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "More verbose than simple Text widget",
         "Can become complex with many styles",
@@ -12935,9 +12935,9 @@ RichText(
         "يتطلب فهم هيكل TextSpan",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use RichText when:",
           value: [
             "Mixing multiple styles (colors, fonts, sizes) in a single paragraph",
@@ -12947,7 +12947,7 @@ RichText(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم RichText عندما:",
           value: [
             "مزج أنماط متعددة (ألوان، خطوط، أحجام) في فقرة واحدة",
@@ -12964,14 +12964,14 @@ RichText(
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["intermediate", "layoutbuilder", "responsive", "constraints"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is LayoutBuilder?",
         answer: [
-          StringContent(
+          StrContent(
             "LayoutBuilder is a widget that builds itself based on the parent's constraints. It provides a builder function that receives BoxConstraints, allowing you to create responsive layouts that adapt to available space.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Receives parent constraints in builder function",
@@ -12981,7 +12981,7 @@ RichText(
               "Rebuilds when parent constraints change",
             ],
           ),
-          StringContent(
+          StrContent(
             "LayoutBuilder is perfect for creating responsive UIs that change based on available space - for example, showing a grid on tablets but a list on phones, or adjusting column counts based on width.",
           ),
         ],
@@ -12996,10 +12996,10 @@ RichText(
       ar: QuestionContent(
         question: "ما هو LayoutBuilder؟",
         answer: [
-          StringContent(
+          StrContent(
             "LayoutBuilder هو ودجت يبني نفسه بناءً على قيود الوالد. يوفر دالة بناء تستقبل BoxConstraints، مما يسمح لك بإنشاء تخطيطات متجاوبة تتكيف مع المساحة المتاحة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يستقبل قيود الوالد في دالة البناء",
@@ -13009,7 +13009,7 @@ RichText(
               "يُعاد بناؤه عندما تتغير قيود الوالد",
             ],
           ),
-          StringContent(
+          StrContent(
             "LayoutBuilder مثالي لإنشاء واجهات متجاوبة تتغير بناءً على المساحة المتاحة - على سبيل المثال، عرض شبكة على الأجهزة اللوحية ولكن قائمة على الهواتف، أو تعديل عدد الأعمدة بناءً على العرض.",
           ),
         ],
@@ -13079,7 +13079,7 @@ LayoutBuilder(
   },
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Creates truly responsive layouts",
         "Access to parent constraints",
@@ -13093,7 +13093,7 @@ LayoutBuilder(
         "لا حاجة لنقاط توقف مشفرة بشكل ثابت",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Adds extra build function",
         "Can make code more complex",
@@ -13105,9 +13105,9 @@ LayoutBuilder(
         "قد يُعاد بناؤه بشكل متكرر إذا تغيرت القيود كثيرًا",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use LayoutBuilder when:",
           value: [
             "Implementing truly responsive layouts that adapt based on parent width/height",
@@ -13117,7 +13117,7 @@ LayoutBuilder(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم LayoutBuilder عندما:",
           value: [
             "تنفيذ تخطيطات متجاوبة حقًا تتكيف بناءً على عرض/ارتفاع الأب",
@@ -13134,14 +13134,14 @@ LayoutBuilder(
     categories: [.flutterBasics, .ui, .performance],
     type: .theoretical,
     tags: ["intermediate", "inspector", "debugging", "devtools"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Flutter Inspector?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter Inspector is a powerful debugging tool in Flutter DevTools that visualizes and explores the widget tree. It helps developers understand, debug, and optimize their UI.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Visualize widget tree hierarchy",
@@ -13152,7 +13152,7 @@ LayoutBuilder(
               "Highlight widgets on device/emulator",
             ],
           ),
-          StringContent(
+          StrContent(
             "Flutter Inspector is essential for debugging layout issues, understanding widget structure, and identifying performance bottlenecks. It's available in VS Code, Android Studio, and as a web-based tool in Flutter DevTools.",
           ),
         ],
@@ -13167,10 +13167,10 @@ LayoutBuilder(
       ar: QuestionContent(
         question: "ما هو Flutter Inspector؟",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter Inspector هو أداة تصحيح قوية في Flutter DevTools تصور وتستكشف شجرة الودجتس. تساعد المطورين على فهم وتصحيح وتحسين واجهة المستخدم الخاصة بهم.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "تصور تسلسل هرمي لشجرة الودجتس",
@@ -13181,7 +13181,7 @@ LayoutBuilder(
               "تسليط الضوء على الودجتس على الجهاز/المحاكي",
             ],
           ),
-          StringContent(
+          StrContent(
             "Flutter Inspector أساسي لتصحيح مشاكل التخطيط، فهم هيكل الودجتس، وتحديد اختناقات الأداء. متاح في VS Code و Android Studio وكأداة على الويب في Flutter DevTools.",
           ),
         ],
@@ -13227,7 +13227,7 @@ MaterialApp(
   home: HomeScreen(),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Visual debugging of widget tree",
         "Identify layout and performance issues",
@@ -13241,7 +13241,7 @@ MaterialApp(
         "أساسي لتطوير Flutter",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Only available in debug mode",
         "Can slow down app performance",
@@ -13253,9 +13253,9 @@ MaterialApp(
         "منحنى تعلم للمبتدئين",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Flutter Inspector when:",
           value: [
             "Debugging layout issues and understanding widget bounds",
@@ -13265,7 +13265,7 @@ MaterialApp(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Flutter Inspector عندما:",
           value: [
             "تصحيح مشاكل التخطيط وفهم حدود الودجت",
@@ -13282,14 +13282,14 @@ MaterialApp(
     categories: [.basic, .flutterBasics, .performance],
     type: .theoretical,
     tags: ["basic", "debug", "release", "profile", "modes"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Debug Mode vs Release Mode?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter has three build modes: Debug, Profile, and Release. Each is optimized for different purposes during development and production.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Build modes:",
             value: [
               "Debug Mode: For development. Enables hot reload, assertions, debugging tools. Slow performance, large app size. Use during development.",
@@ -13297,7 +13297,7 @@ MaterialApp(
               "Release Mode: For production. Fully optimized, no debugging tools, smallest size, best performance. Use for app store deployment.",
             ],
           ),
-          StringContent(
+          StrContent(
             "Debug mode prioritizes developer experience with hot reload and debugging. Release mode prioritizes performance and app size for end users. Never ship debug builds to production!",
           ),
         ],
@@ -13312,10 +13312,10 @@ MaterialApp(
       ar: QuestionContent(
         question: "ما الفرق بين Debug Mode و Release Mode؟",
         answer: [
-          StringContent(
+          StrContent(
             "لدى Flutter ثلاثة أوضاع بناء: Debug و Profile و Release. كل منها محسّن لأغراض مختلفة أثناء التطوير والإنتاج.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "أوضاع البناء:",
             value: [
               "Debug Mode: للتطوير. يمكّن إعادة التحميل السريع، التأكيدات، أدوات التصحيح. أداء بطيء، حجم تطبيق كبير. استخدمه أثناء التطوير.",
@@ -13323,7 +13323,7 @@ MaterialApp(
               "Release Mode: للإنتاج. محسّن بالكامل، بدون أدوات تصحيح، أصغر حجم، أفضل أداء. استخدمه لنشر متجر التطبيقات.",
             ],
           ),
-          StringContent(
+          StrContent(
             "وضع Debug يعطي الأولوية لتجربة المطور مع إعادة التحميل السريع والتصحيح. وضع Release يعطي الأولوية للأداء وحجم التطبيق للمستخدمين النهائيين. لا تشحن أبدًا إصدارات debug إلى الإنتاج!",
           ),
         ],
@@ -13366,7 +13366,7 @@ Widget build(BuildContext context) {
   return MyWidget();
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Debug: Hot reload, debugging tools, detailed error messages",
         "Profile: Accurate performance metrics",
@@ -13378,7 +13378,7 @@ Widget build(BuildContext context) {
         "Release: أداء محسّن، حجم صغير",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Debug mode is slow",
         "Release mode can't be debugged",
@@ -13390,9 +13390,9 @@ Widget build(BuildContext context) {
         "يجب إجراء اختبار الأداء فقط في وضع الملف الشخصي أو الإصدار",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Understand build modes when:",
           value: [
             "Developing and debugging logic (Debug mode)",
@@ -13402,7 +13402,7 @@ Widget build(BuildContext context) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "افهم أوضاع البناء عندما:",
           value: [
             "تطوير وتصحيح المنطق (وضع Debug)",
@@ -13419,14 +13419,14 @@ Widget build(BuildContext context) {
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["intermediate", "lifecycle", "initstate", "statefulwidget"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain the initState lifecycle method.",
         answer: [
-          StringContent(
+          StrContent(
             "initState is a lifecycle method in StatefulWidget that is called once when the State object is first created. It's the earliest point where you can initialize data that depends on the widget's context or configuration.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Called exactly once when State is inserted into the widget tree",
@@ -13436,7 +13436,7 @@ Widget build(BuildContext context) {
               "Must call super.initState() first",
             ],
           ),
-          StringContent(
+          StrContent(
             "Common uses include initializing AnimationControllers, subscribing to streams, loading initial data, and setting up listeners. Always remember to dispose resources in dispose() method.",
           ),
         ],
@@ -13451,10 +13451,10 @@ Widget build(BuildContext context) {
       ar: QuestionContent(
         question: "اشرح دالة دورة الحياة initState.",
         answer: [
-          StringContent(
+          StrContent(
             "initState هي دالة دورة حياة في StatefulWidget تُستدعى مرة واحدة عند إنشاء كائن State لأول مرة. إنها أقرب نقطة حيث يمكنك تهيئة البيانات التي تعتمد على سياق أو تكوين الودجت.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "تُستدعى مرة واحدة بالضبط عند إدراج State في شجرة الودجتس",
@@ -13464,7 +13464,7 @@ Widget build(BuildContext context) {
               "يجب استدعاء super.initState() أولاً",
             ],
           ),
-          StringContent(
+          StrContent(
             "الاستخدامات الشائعة تشمل تهيئة AnimationControllers، الاشتراك في التدفقات، تحميل البيانات الأولية، وإعداد المستمعين. تذكر دائمًا التخلص من الموارد في دالة dispose().",
           ),
         ],
@@ -13534,7 +13534,7 @@ class _MyWidgetState extends State<MyWidget> {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Perfect for one-time initialization",
         "Access to widget properties",
@@ -13548,7 +13548,7 @@ class _MyWidgetState extends State<MyWidget> {
         "فصل نظيف لمنطق الإعداد",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Only called once - can't rely on it for value updates",
         "Too much logic here can slow down app start",
@@ -13560,9 +13560,9 @@ class _MyWidgetState extends State<MyWidget> {
         "قد لا يكون BuildContext متاحًا بالكامل لبعض العمليات",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use initState when:",
           value: [
             "Initializing variables that depend on the widget's location in the tree",
@@ -13572,7 +13572,7 @@ class _MyWidgetState extends State<MyWidget> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم initState عندما:",
           value: [
             "تهيئة المتغيرات التي تعتمد على موقع الودجت في الشجرة",
@@ -13589,14 +13589,14 @@ class _MyWidgetState extends State<MyWidget> {
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["intermediate", "lifecycle", "didupdatewidget", "statefulwidget"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain didUpdateWidget.",
         answer: [
-          StringContent(
+          StrContent(
             "didUpdateWidget is a lifecycle method called whenever the parent widget rebuilds and passes new configuration to this widget. It's called when the widget's configuration changes but the State object persists.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Called when parent rebuilds with different widget configuration",
@@ -13606,7 +13606,7 @@ class _MyWidgetState extends State<MyWidget> {
               "Perfect for responding to property changes",
             ],
           ),
-          StringContent(
+          StrContent(
             "Common use cases include updating controllers when widget properties change, restarting animations, or refreshing data when configuration updates. Always call super.didUpdateWidget(oldWidget) first.",
           ),
         ],
@@ -13621,10 +13621,10 @@ class _MyWidgetState extends State<MyWidget> {
       ar: QuestionContent(
         question: "اشرح didUpdateWidget.",
         answer: [
-          StringContent(
+          StrContent(
             "didUpdateWidget هي دالة دورة حياة تُستدعى كلما أعاد الودجت الوالد البناء ومرر تكوينًا جديدًا لهذا الودجت. تُستدعى عندما يتغير تكوين الودجت لكن كائن State يستمر.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "تُستدعى عندما يُعيد الوالد البناء بتكوين ودجت مختلف",
@@ -13634,7 +13634,7 @@ class _MyWidgetState extends State<MyWidget> {
               "مثالية للاستجابة لتغييرات الخصائص",
             ],
           ),
-          StringContent(
+          StrContent(
             "حالات الاستخدام الشائعة تشمل تحديث المتحكمات عندما تتغير خصائص الودجت، إعادة تشغيل الرسوم المتحركة، أو تحديث البيانات عندما يتحدث التكوين. استدع دائمًا super.didUpdateWidget(oldWidget) أولاً.",
           ),
         ],
@@ -13762,7 +13762,7 @@ class _AnimatedBoxState extends State<AnimatedBox>
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Respond to widget configuration changes",
         "Update state based on new properties",
@@ -13776,7 +13776,7 @@ class _AnimatedBoxState extends State<AnimatedBox>
         "الوصول إلى كل من الودجت القديم والجديد",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can be called frequently",
         "Logic here must be efficient",
@@ -13788,9 +13788,9 @@ class _AnimatedBoxState extends State<AnimatedBox>
         "غالبًا ما ينساه المطورون مما يؤدي إلى أخطاء",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use didUpdateWidget when:",
           value: [
             "Updating internal state when the parent widget changes its configuration",
@@ -13800,7 +13800,7 @@ class _AnimatedBoxState extends State<AnimatedBox>
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم didUpdateWidget عندما:",
           value: [
             "تحديث الحالة الداخلية عندما يغير الودجت الأب تكوينه",
@@ -13817,14 +13817,14 @@ class _AnimatedBoxState extends State<AnimatedBox>
     categories: [.flutterBasics, .ui, .performance],
     type: .practical,
     tags: ["intermediate", "lifecycle", "dispose", "cleanup", "memory"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is dispose() used for?",
         answer: [
-          StringContent(
+          StrContent(
             "dispose() is a lifecycle method called when the State object is permanently removed from the widget tree. It's the place to clean up resources and prevent memory leaks.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common cleanup tasks:",
             value: [
               "Dispose controllers (TextEditingController, AnimationController)",
@@ -13835,7 +13835,7 @@ class _AnimatedBoxState extends State<AnimatedBox>
               "Release any other resources",
             ],
           ),
-          StringContent(
+          StrContent(
             "CRITICAL: Always dispose resources to prevent memory leaks. For every resource initialized in initState, there should be corresponding cleanup in dispose. Always call super.dispose() as the LAST statement.",
           ),
         ],
@@ -13850,10 +13850,10 @@ class _AnimatedBoxState extends State<AnimatedBox>
       ar: QuestionContent(
         question: "فيما تُستخدم دالة dispose()؟",
         answer: [
-          StringContent(
+          StrContent(
             "dispose() هي دالة دورة حياة تُستدعى عندما يُزال كائن State نهائيًا من شجرة الودجتس. إنه المكان لتنظيف الموارد ومنع تسريبات الذاكرة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "مهام التنظيف الشائعة:",
             value: [
               "التخلص من المتحكمات (TextEditingController، AnimationController)",
@@ -13864,7 +13864,7 @@ class _AnimatedBoxState extends State<AnimatedBox>
               "تحرير أي موارد أخرى",
             ],
           ),
-          StringContent(
+          StrContent(
             "حرج: تخلص دائمًا من الموارد لمنع تسريبات الذاكرة. لكل مورد مهيأ في initState، يجب أن يكون هناك تنظيف مطابق في dispose. استدع دائمًا super.dispose() كآخر تعليمة.",
           ),
         ],
@@ -13971,7 +13971,7 @@ class _BadWidgetState extends State<BadWidget> {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Prevents memory leaks",
         "Clean resource management",
@@ -13985,7 +13985,7 @@ class _BadWidgetState extends State<BadWidget> {
         "مطلوب لإدارة دورة حياة صحيحة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Failure to call leads to memory leaks",
         "Once disposed, the state cannot be used again",
@@ -13997,9 +13997,9 @@ class _BadWidgetState extends State<BadWidget> {
         "يجب الحذر من عدم استدعاء setState بعد dispose",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use dispose when:",
           value: [
             "Canceling active Stream subscriptions",
@@ -14009,7 +14009,7 @@ class _BadWidgetState extends State<BadWidget> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم dispose عندما:",
           value: [
             "إلغاء اشتراكات Streams النشطة",
@@ -14026,15 +14026,15 @@ class _BadWidgetState extends State<BadWidget> {
     categories: [.basic, .dartBasics],
     type: .theoretical,
     tags: ["basic", "async", "sync", "programming", "dart"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question:
             "What is the difference between asynchronous and synchronous programming in Dart?",
         answer: [
-          StringContent(
+          StrContent(
             "Synchronous and asynchronous programming are two different execution models in Dart.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Synchronous Programming:",
             value: [
               "Code executes line by line in order",
@@ -14044,7 +14044,7 @@ class _BadWidgetState extends State<BadWidget> {
               "Can freeze UI if long operations run on main thread",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Asynchronous Programming:",
             value: [
               "Operations can run concurrently",
@@ -14054,7 +14054,7 @@ class _BadWidgetState extends State<BadWidget> {
               "Keeps UI responsive during long operations",
             ],
           ),
-          StringContent(
+          StrContent(
             "In Flutter, all UI runs on the main thread. Long synchronous operations freeze the app. Use asynchronous programming for network calls, file I/O, database queries, and any operation that takes time.",
           ),
         ],
@@ -14069,10 +14069,10 @@ class _BadWidgetState extends State<BadWidget> {
       ar: QuestionContent(
         question: "ما الفرق بين البرمجة المتزامنة وغير المتزامنة في Dart؟",
         answer: [
-          StringContent(
+          StrContent(
             "البرمجة المتزامنة وغير المتزامنة هما نموذجان تنفيذ مختلفان في Dart.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "البرمجة المتزامنة:",
             value: [
               "ينفذ الكود سطرًا تلو الآخر بالترتيب",
@@ -14082,7 +14082,7 @@ class _BadWidgetState extends State<BadWidget> {
               "قد يجمد واجهة المستخدم إذا عملت عمليات طويلة على الخيط الرئيسي",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "البرمجة غير المتزامنة:",
             value: [
               "يمكن أن تعمل العمليات بشكل متزامن",
@@ -14092,7 +14092,7 @@ class _BadWidgetState extends State<BadWidget> {
               "يحافظ على استجابة واجهة المستخدم أثناء العمليات الطويلة",
             ],
           ),
-          StringContent(
+          StrContent(
             "في Flutter، تعمل جميع واجهة المستخدم على الخيط الرئيسي. العمليات المتزامنة الطويلة تجمد التطبيق. استخدم البرمجة غير المتزامنة لاستدعاءات الشبكة، إدخال/إخراج الملفات، استعلامات قاعدة البيانات، وأي عملية تستغرق وقتًا.",
           ),
         ],
@@ -14156,7 +14156,7 @@ Future<String> getDataAsync() async {
   return response.body;
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Synchronous: Simple, predictable, easy to debug",
         "Asynchronous: Non-blocking, keeps UI responsive, efficient",
@@ -14166,7 +14166,7 @@ Future<String> getDataAsync() async {
         "غير المتزامن: غير محجوب، يحافظ على استجابة واجهة المستخدم، فعال",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Synchronous: Blocks execution, can freeze UI",
         "Asynchronous: More complex, harder to debug, error handling complexity",
@@ -14176,9 +14176,9 @@ Future<String> getDataAsync() async {
         "غير المتزامن: أكثر تعقيدًا، أصعب للتصحيح، تعقيد معالجة الأخطاء",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use asynchronous programming when:",
           value: [
             "Performing I/O operations (network requests, file access, database queries)",
@@ -14188,7 +14188,7 @@ Future<String> getDataAsync() async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم البرمجة غير المتزامنة عندما:",
           value: [
             "إجراء عمليات الإدخال/الإخراج (طلبات الشبكة، الوصول إلى الملفات، استعلامات قاعدة البيانات)",
@@ -14205,14 +14205,14 @@ Future<String> getDataAsync() async {
     categories: [.dartBasics],
     type: .practical,
     tags: ["intermediate", "future", "error", "async", "exception"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How do you handle errors in a Future?",
         answer: [
-          StringContent(
+          StrContent(
             "There are multiple ways to handle errors in Futures in Dart: try-catch with async/await, catchError() method, and onError callback.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "Error handling approaches:",
             value: [
               "try-catch with async/await: Most readable and recommended. Wrap await in try-catch block.",
@@ -14221,7 +14221,7 @@ Future<String> getDataAsync() async {
               "whenComplete(): Like finally - runs regardless of success or error.",
             ],
           ),
-          StringContent(
+          StrContent(
             "Best practice is to use try-catch with async/await for readability. Always handle errors in Futures to prevent unhandled exceptions and app crashes.",
           ),
         ],
@@ -14236,10 +14236,10 @@ Future<String> getDataAsync() async {
       ar: QuestionContent(
         question: "كيف تتعامل مع الأخطاء في Future؟",
         answer: [
-          StringContent(
+          StrContent(
             "هناك طرق متعددة للتعامل مع الأخطاء في Futures في Dart: try-catch مع async/await، دالة catchError()، واستدعاء onError.",
           ),
-          OrderedListContent(
+          OLContent(
             title: "أساليب معالجة الأخطاء:",
             value: [
               "try-catch مع async/await: الأكثر قابلية للقراءة والموصى بها. لف await في كتلة try-catch.",
@@ -14248,7 +14248,7 @@ Future<String> getDataAsync() async {
               "whenComplete(): مثل finally - يعمل بغض النظر عن النجاح أو الخطأ.",
             ],
           ),
-          StringContent(
+          StrContent(
             "أفضل ممارسة هي استخدام try-catch مع async/await لقابلية القراءة. تعامل دائمًا مع الأخطاء في Futures لمنع الاستثناءات غير المعالجة وأعطال التطبيق.",
           ),
         ],
@@ -14356,7 +14356,7 @@ class _DataWidgetState extends State<DataWidget> {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "try-catch: Readable, familiar syntax, supports specific error types",
         "catchError: Good for chaining, non-blocking",
@@ -14368,7 +14368,7 @@ class _DataWidgetState extends State<DataWidget> {
         "يمنع أعطال التطبيق من الأخطاء غير المعالجة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can make code more verbose",
         "Easy to forget error handling",
@@ -14380,9 +14380,9 @@ class _DataWidgetState extends State<DataWidget> {
         "catchError لا يلتقط جميع أنواع الأخطاء",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Handle Future errors when:",
           value: [
             "Making network requests that might fail (e.g., no internet, server error)",
@@ -14392,7 +14392,7 @@ class _DataWidgetState extends State<DataWidget> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "تعامل مع أخطاء Future عندما:",
           value: [
             "إجراء طلبات الشبكة التي قد تفشل (مثل، لا يوجد إنترنت، خطأ في الخادم)",
@@ -14409,14 +14409,14 @@ class _DataWidgetState extends State<DataWidget> {
     categories: [.dartBasics],
     type: .theoretical,
     tags: ["intermediate", "stream", "async", "reactive"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is a Stream?",
         answer: [
-          StringContent(
+          StrContent(
             "A Stream is a sequence of asynchronous events that can emit multiple values over time. Unlike Future (single value), Streams can produce zero, one, or many values.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Emits multiple values over time",
@@ -14427,7 +14427,7 @@ class _DataWidgetState extends State<DataWidget> {
               "Used for continuous data: user input, WebSockets, sensors, timers",
             ],
           ),
-          StringContent(
+          StrContent(
             "Streams are essential for reactive programming. Common uses include listening to user input events, real-time data from servers (WebSocket), sensor data, or periodic updates. Use StreamBuilder widget to rebuild UI based on stream data.",
           ),
         ],
@@ -14442,10 +14442,10 @@ class _DataWidgetState extends State<DataWidget> {
       ar: QuestionContent(
         question: "ما هو Stream؟",
         answer: [
-          StringContent(
+          StrContent(
             "Stream هو تسلسل من الأحداث غير المتزامنة يمكن أن يصدر قيمًا متعددة مع مرور الوقت. على عكس Future (قيمة واحدة)، يمكن أن ينتج Streams صفر أو واحدة أو عدة قيم.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "يصدر قيمًا متعددة مع مرور الوقت",
@@ -14456,7 +14456,7 @@ class _DataWidgetState extends State<DataWidget> {
               "يُستخدم للبيانات المستمرة: إدخال المستخدم، WebSockets، المستشعرات، المؤقتات",
             ],
           ),
-          StringContent(
+          StrContent(
             "Streams أساسية للبرمجة التفاعلية. الاستخدامات الشائعة تشمل الاستماع لأحداث إدخال المستخدم، البيانات في الوقت الفعلي من الخوادم (WebSocket)، بيانات المستشعرات، أو التحديثات الدورية. استخدم ودجت StreamBuilder لإعادة بناء واجهة المستخدم بناءً على بيانات التدفق.",
           ),
         ],
@@ -14586,7 +14586,7 @@ class _SearchWidgetState extends State<SearchWidget> {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Handle multiple values over time",
         "Perfect for real-time data",
@@ -14600,7 +14600,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         "معالجة أخطاء واكتمال مدمجة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "More complex than Future",
         "Need to manage subscriptions (memory leaks if not closed)",
@@ -14614,9 +14614,9 @@ class _SearchWidgetState extends State<SearchWidget> {
         "قد يكون مبالغة للعمليات غير المتزامنة البسيطة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Streams when:",
           value: [
             "Receiving multiple data points over time (e.g., location updates)",
@@ -14626,7 +14626,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Streams عندما:",
           value: [
             "تلقي نقاط بيانات متعددة بمرور الوقت (مثل تحديثات الموقع)",
@@ -14643,14 +14643,14 @@ class _SearchWidgetState extends State<SearchWidget> {
     categories: [.basic, .flutterBasics],
     type: .practical,
     tags: ["basic", "navigation", "push", "pop", "routing"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain Navigator.push and Navigator.pop.",
         answer: [
-          StringContent(
+          StrContent(
             "Navigator.push and Navigator.pop are the fundamental methods for navigating between screens in Flutter. They manage a stack of routes (screens).",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Navigator.push:",
             value: [
               "Adds a new route (screen) on top of the navigation stack",
@@ -14659,7 +14659,7 @@ class _SearchWidgetState extends State<SearchWidget> {
               "Returns a Future that completes when the new route is popped",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Navigator.pop:",
             value: [
               "Removes the current route from the top of the stack",
@@ -14668,7 +14668,7 @@ class _SearchWidgetState extends State<SearchWidget> {
               "Automatically called when user taps back button",
             ],
           ),
-          StringContent(
+          StrContent(
             "Navigation in Flutter uses a stack model. Push adds screens, pop removes them. The Navigator automatically handles the back button and platform-specific transitions.",
           ),
         ],
@@ -14683,10 +14683,10 @@ class _SearchWidgetState extends State<SearchWidget> {
       ar: QuestionContent(
         question: "اشرح Navigator.push و Navigator.pop.",
         answer: [
-          StringContent(
+          StrContent(
             "Navigator.push و Navigator.pop هما الدالتان الأساسيتان للتنقل بين الشاشات في Flutter. يديران مكدس من المسارات (الشاشات).",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Navigator.push:",
             value: [
               "يضيف مسارًا (شاشة) جديدًا في أعلى مكدس التنقل",
@@ -14695,7 +14695,7 @@ class _SearchWidgetState extends State<SearchWidget> {
               "يعيد Future يكتمل عندما يُزال المسار الجديد",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Navigator.pop:",
             value: [
               "يزيل المسار الحالي من أعلى المكدس",
@@ -14704,7 +14704,7 @@ class _SearchWidgetState extends State<SearchWidget> {
               "يُستدعى تلقائيًا عندما ينقر المستخدم زر الرجوع",
             ],
           ),
-          StringContent(
+          StrContent(
             "التنقل في Flutter يستخدم نموذج مكدس. Push يضيف شاشات، pop يزيلها. يتعامل Navigator تلقائيًا مع زر الرجوع والانتقالات الخاصة بالمنصة.",
           ),
         ],
@@ -14806,7 +14806,7 @@ Future<void> navigateAndGetResult(BuildContext context) async {
   print('Received result: \$result');
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple and intuitive API",
         "Automatic back button handling",
@@ -14820,7 +14820,7 @@ Future<void> navigateAndGetResult(BuildContext context) async {
         "يمكن تمرير بيانات بين الشاشات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "All screens remain in memory until popped",
         "Can lead to memory issues with deep navigation",
@@ -14834,9 +14834,9 @@ Future<void> navigateAndGetResult(BuildContext context) async {
         "أصعب لإدارة تدفقات تنقل معقدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Navigator push/pop when:",
           value: [
             "Navigating between simple screens in a small application",
@@ -14846,7 +14846,7 @@ Future<void> navigateAndGetResult(BuildContext context) async {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Navigator push/pop عندما:",
           value: [
             "التنقل بين شاشات بسيطة في تطبيق صغير",
@@ -14863,14 +14863,14 @@ Future<void> navigateAndGetResult(BuildContext context) async {
     categories: [.flutterBasics],
     type: .practical,
     tags: ["intermediate", "navigation", "routes", "namedroutes"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What are Named Routes?",
         answer: [
-          StringContent(
+          StrContent(
             "Named Routes are a way to navigate using string identifiers instead of creating MaterialPageRoute manually each time. Routes are registered in MaterialApp and accessed by name.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key benefits:",
             value: [
               "Centralized route management",
@@ -14881,7 +14881,7 @@ Future<void> navigateAndGetResult(BuildContext context) async {
               "Cleaner navigation code",
             ],
           ),
-          StringContent(
+          StrContent(
             "Named routes are defined in MaterialApp's routes or onGenerateRoute. Navigate using Navigator.pushNamed() instead of Navigator.push(). Particularly useful in large apps with many screens.",
           ),
         ],
@@ -14896,10 +14896,10 @@ Future<void> navigateAndGetResult(BuildContext context) async {
       ar: QuestionContent(
         question: "ما هي Named Routes؟",
         answer: [
-          StringContent(
+          StrContent(
             "Named Routes هي طريقة للتنقل باستخدام معرفات نصية بدلاً من إنشاء MaterialPageRoute يدويًا في كل مرة. تُسجل المسارات في MaterialApp ويُصل إليها بالاسم.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الفوائد الرئيسية:",
             value: [
               "إدارة مسارات مركزية",
@@ -14910,7 +14910,7 @@ Future<void> navigateAndGetResult(BuildContext context) async {
               "كود تنقل أنظف",
             ],
           ),
-          StringContent(
+          StrContent(
             "تُعرّف المسارات المسماة في routes أو onGenerateRoute في MaterialApp. تنقل باستخدام Navigator.pushNamed() بدلاً من Navigator.push(). مفيد بشكل خاص في التطبيقات الكبيرة مع العديد من الشاشات.",
           ),
         ],
@@ -15029,7 +15029,7 @@ class MyApp extends StatelessWidget {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Centralized route management",
         "Cleaner navigation code",
@@ -15045,7 +15045,7 @@ class MyApp extends StatelessWidget {
         "سهل للتعامل مع 404/غير موجود",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Harder to pass type-safe arguments",
         "String identifiers can lead to typos",
@@ -15059,9 +15059,9 @@ class MyApp extends StatelessWidget {
         "يجب تحويل المعاملات للنوع الصحيح",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Named Routes when:",
           value: [
             "Managing navigation in a large app with many screens",
@@ -15071,7 +15071,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Named Routes عندما:",
           value: [
             "إدارة التنقل في تطبيق كبير مع العديد من الشاشات",
@@ -15088,14 +15088,14 @@ class MyApp extends StatelessWidget {
     categories: [.flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "navigation", "modalroute", "routing"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is ModalRoute?",
         answer: [
-          StringContent(
+          StrContent(
             "ModalRoute is a route that prevents interaction with previous routes while it's active. It's the base class for routes like MaterialPageRoute and CupertinoPageRoute that show as full-screen modals.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Blocks interaction with routes below it",
@@ -15106,7 +15106,7 @@ class MyApp extends StatelessWidget {
               "Supports transitions and animations",
             ],
           ),
-          StringContent(
+          StrContent(
             "ModalRoute is primarily used to access route information like arguments passed during navigation. Most commonly used via ModalRoute.of(context)?.settings.arguments to retrieve data passed to the route.",
           ),
         ],
@@ -15121,10 +15121,10 @@ class MyApp extends StatelessWidget {
       ar: QuestionContent(
         question: "ما هو ModalRoute؟",
         answer: [
-          StringContent(
+          StrContent(
             "ModalRoute هو مسار يمنع التفاعل مع المسارات السابقة أثناء نشاطه. إنه الفئة الأساسية للمسارات مثل MaterialPageRoute و CupertinoPageRoute التي تُعرض كنوافذ بملء الشاشة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "يحجب التفاعل مع المسارات أسفله",
@@ -15135,7 +15135,7 @@ class MyApp extends StatelessWidget {
               "يدعم الانتقالات والرسوم المتحركة",
             ],
           ),
-          StringContent(
+          StrContent(
             "يُستخدم ModalRoute بشكل أساسي للوصول إلى معلومات المسار مثل المعاملات الممررة أثناء التنقل. الأكثر استخدامًا عبر ModalRoute.of(context)?.settings.arguments لاسترجاع البيانات الممررة للمسار.",
           ),
         ],
@@ -15237,7 +15237,7 @@ Navigator.pushNamed(
 );
 """),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Access route information anywhere in widget tree",
         "Retrieve navigation arguments easily",
@@ -15251,7 +15251,7 @@ Navigator.pushNamed(
         "يعمل مع المسارات المسماة وغير المسماة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Arguments are untyped (need casting)",
         "Can return null if called at wrong time",
@@ -15263,9 +15263,9 @@ Navigator.pushNamed(
         "غير آمن من حيث النوع بدون غلاف مخصص",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use ModalRoute when:",
           value: [
             "Retrieving arguments passed to a screen during navigation",
@@ -15275,7 +15275,7 @@ Navigator.pushNamed(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم ModalRoute عندما:",
           value: [
             "استرجاع المعاملات الممررة إلى شاشة أثناء التنقل",
@@ -15292,14 +15292,14 @@ Navigator.pushNamed(
     categories: [.flutterBasics],
     type: .practical,
     tags: ["intermediate", "navigation", "maybepop", "conditionalnavigation"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Navigator.maybePop?",
         answer: [
-          StringContent(
+          StrContent(
             "Navigator.maybePop attempts to pop the current route if it's possible, but won't do anything if it's the first route in the navigator. It prevents trying to pop the last route which would cause an error.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key differences from pop:",
             value: [
               "pop() always pops, even if it's the last route (causes error)",
@@ -15309,7 +15309,7 @@ Navigator.pushNamed(
               "Useful when you're unsure if there's a previous route",
             ],
           ),
-          StringContent(
+          StrContent(
             "Use maybePop when implementing custom back button behavior or when you want to safely attempt to go back without knowing if there's a previous route. It returns true if navigation happened, false otherwise.",
           ),
         ],
@@ -15324,10 +15324,10 @@ Navigator.pushNamed(
       ar: QuestionContent(
         question: "ما هو Navigator.maybePop؟",
         answer: [
-          StringContent(
+          StrContent(
             "Navigator.maybePop يحاول إزالة المسار الحالي إذا كان ممكنًا، لكن لن يفعل شيئًا إذا كان المسار الأول في المتنقل. يمنع محاولة إزالة المسار الأخير مما قد يسبب خطأً.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الاختلافات الرئيسية عن pop:",
             value: [
               "pop() دائمًا يزيل، حتى لو كان المسار الأخير (يسبب خطأً)",
@@ -15337,7 +15337,7 @@ Navigator.pushNamed(
               "مفيد عندما لا تكون متأكدًا إذا كان هناك مسار سابق",
             ],
           ),
-          StringContent(
+          StrContent(
             "استخدم maybePop عند تنفيذ سلوك زر رجوع مخصص أو عندما تريد محاولة العودة بأمان دون معرفة ما إذا كان هناك مسار سابق. يعيد true إذا حدث تنقل، false خلاف ذلك.",
           ),
         ],
@@ -15442,7 +15442,7 @@ class CustomBackButton extends StatelessWidget {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Safe - won't error on root route",
         "Returns bool to indicate success",
@@ -15456,7 +15456,7 @@ class CustomBackButton extends StatelessWidget {
         "يمنع أخطاء التنقل",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Returns Future - need to await",
         "Slightly more complex than simple pop",
@@ -15468,9 +15468,9 @@ class CustomBackButton extends StatelessWidget {
         "سلوك أقل وضوحًا من pop للمبتدئين",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use maybePop when:",
           value: [
             "Implementing custom drawer or back-button logic",
@@ -15480,7 +15480,7 @@ class CustomBackButton extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم maybePop عندما:",
           value: [
             "تنفيذ منطق درج أو زر رجوع مخصص",
@@ -15497,14 +15497,14 @@ class CustomBackButton extends StatelessWidget {
     categories: [.animations],
     type: .practical,
     tags: ["intermediate", "animation", "animationcontroller", "vsync"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is AnimationController?",
         answer: [
-          StringContent(
+          StrContent(
             "AnimationController is a class that controls an animation's duration, direction, and value. It generates values from 0.0 to 1.0 over a specified duration and is the foundation of animations in Flutter.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Produces values from 0.0 to 1.0",
@@ -15515,7 +15515,7 @@ class CustomBackButton extends StatelessWidget {
               "Supports listeners and status listeners",
             ],
           ),
-          StringContent(
+          StrContent(
             "AnimationController is the core of Flutter animations. It generates animation values over time, which can be used directly or combined with Tweens to animate properties like size, color, or position.",
           ),
         ],
@@ -15530,10 +15530,10 @@ class CustomBackButton extends StatelessWidget {
       ar: QuestionContent(
         question: "ما هو AnimationController؟",
         answer: [
-          StringContent(
+          StrContent(
             "AnimationController هو فئة تتحكم في مدة ووجهة وقيمة الرسم المتحرك. ينتج قيمًا من 0.0 إلى 1.0 على مدة محددة وهو أساس الرسوم المتحركة في Flutter.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "ينتج قيمًا من 0.0 إلى 1.0",
@@ -15544,7 +15544,7 @@ class CustomBackButton extends StatelessWidget {
               "يدعم المستمعين ومستمعي الحالة",
             ],
           ),
-          StringContent(
+          StrContent(
             "AnimationController هو جوهر الرسوم المتحركة في Flutter. ينتج قيم الرسوم المتحركة مع الوقت، والتي يمكن استخدامها مباشرة أو دمجها مع Tweens لتحريك خصائص مثل الحجم أو اللون أو الموضع.",
           ),
         ],
@@ -15682,7 +15682,7 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Full control over animation timing",
         "Can forward, reverse, repeat",
@@ -15696,7 +15696,7 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
         "أساس للرسوم المتحركة المعقدة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires SingleTickerProviderStateMixin",
         "Must remember to dispose",
@@ -15710,9 +15710,9 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
         "ينتج فقط 0.0-1.0 بدون Tween",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use AnimationController when:",
           value: [
             "Creating complex, fine-tuned animations with full control",
@@ -15722,7 +15722,7 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم AnimationController عندما:",
           value: [
             "إنشاء رسوم متحركة معقدة ومضبوطة بدقة مع تحكم كامل",
@@ -15739,14 +15739,14 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
     categories: [.animations],
     type: .practical,
     tags: ["intermediate", "animation", "tween", "interpolation"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Tween?",
         answer: [
-          StringContent(
+          StrContent(
             "Tween (short for 'in-between') maps AnimationController's 0.0-1.0 values to a different range of values. It interpolates between a begin and end value, allowing you to animate any type: double, Color, Size, Offset, etc.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Maps 0.0-1.0 to any value range",
@@ -15757,7 +15757,7 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
               "Essential for animating specific value ranges",
             ],
           ),
-          StringContent(
+          StrContent(
             "Tween is the bridge between AnimationController (0.0-1.0) and the actual values you want to animate. For example, Tween<double>(begin: 0, end: 200) converts 0.0-1.0 to 0-200 pixels.",
           ),
         ],
@@ -15772,10 +15772,10 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
       ar: QuestionContent(
         question: "ما هو Tween؟",
         answer: [
-          StringContent(
+          StrContent(
             "Tween (اختصار لـ 'in-between') يخطط قيم AnimationController من 0.0-1.0 إلى نطاق قيم مختلف. يستكمل بين قيمة بداية ونهاية، مما يسمح لك بتحريك أي نوع: double، Color، Size، Offset، إلخ.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يخطط 0.0-1.0 إلى أي نطاق قيم",
@@ -15786,7 +15786,7 @@ class _SizeAnimationExampleState extends State<SizeAnimationExample>
               "أساسي لتحريك نطاقات قيم محددة",
             ],
           ),
-          StringContent(
+          StrContent(
             "Tween هو الجسر بين AnimationController (0.0-1.0) والقيم الفعلية التي تريد تحريكها. على سبيل المثال، Tween<double>(begin: 0, end: 200) يحول 0.0-1.0 إلى 0-200 بكسل.",
           ),
         ],
@@ -15956,7 +15956,7 @@ class _ComplexAnimationState extends State<ComplexAnimation>
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Animate any value type",
         "Smooth linear interpolation",
@@ -15970,7 +15970,7 @@ class _ComplexAnimationState extends State<ComplexAnimation>
         "يمكن ربط ودمج Tweens متعددة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Needs AnimationController to work",
         "Additional layer of complexity",
@@ -15982,9 +15982,9 @@ class _ComplexAnimationState extends State<ComplexAnimation>
         "يجب تحديد قيم البداية والنهاية",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Tween when:",
           value: [
             "Animating values outside the standard 0.0 to 1.0 range",
@@ -15994,7 +15994,7 @@ class _ComplexAnimationState extends State<ComplexAnimation>
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Tween عندما:",
           value: [
             "تحريك القيم خارج نطاق 0.0 إلى 1.0 القياسي",
@@ -16011,14 +16011,14 @@ class _ComplexAnimationState extends State<ComplexAnimation>
     categories: [.animations],
     type: .practical,
     tags: ["intermediate", "animation", "curvedanimation", "curves"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is CurvedAnimation?",
         answer: [
-          StringContent(
+          StrContent(
             "CurvedAnimation applies an easing curve to an animation, making it feel more natural and realistic. Instead of linear progression, it can accelerate, decelerate, bounce, or follow other curve patterns.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Applies easing curves to animations",
@@ -16029,7 +16029,7 @@ class _ComplexAnimationState extends State<ComplexAnimation>
               "Essential for professional-looking animations",
             ],
           ),
-          StringContent(
+          StrContent(
             "CurvedAnimation transforms linear animation values using mathematical curves. Common curves include Curves.easeIn (slow start), Curves.easeOut (slow end), Curves.bounceOut (bouncing effect), and many more.",
           ),
         ],
@@ -16044,10 +16044,10 @@ class _ComplexAnimationState extends State<ComplexAnimation>
       ar: QuestionContent(
         question: "ما هو CurvedAnimation؟",
         answer: [
-          StringContent(
+          StrContent(
             "CurvedAnimation يطبق منحنى تسهيل على رسم متحرك، مما يجعله يبدو أكثر طبيعية وواقعية. بدلاً من التقدم الخطي، يمكن أن يتسارع أو يتباطأ أو يرتد أو يتبع أنماط منحنى أخرى.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يطبق منحنيات تسهيل على الرسوم المتحركة",
@@ -16058,7 +16058,7 @@ class _ComplexAnimationState extends State<ComplexAnimation>
               "أساسي للرسوم المتحركة ذات المظهر الاحترافي",
             ],
           ),
-          StringContent(
+          StrContent(
             "CurvedAnimation يحول قيم الرسوم المتحركة الخطية باستخدام منحنيات رياضية. المنحنيات الشائعة تشمل Curves.easeIn (بداية بطيئة)، Curves.easeOut (نهاية بطيئة)، Curves.bounceOut (تأثير ارتداد)، والكثير غيرها.",
           ),
         ],
@@ -16252,7 +16252,7 @@ final examples = {
 };
 """),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Makes animations feel natural and polished",
         "Many built-in curves available",
@@ -16266,7 +16266,7 @@ final examples = {
         "دعم Interval لتوقيت معقد",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Additional complexity layer",
         "Need to understand curve behavior",
@@ -16278,9 +16278,9 @@ final examples = {
         "قد يُستخدم بإفراط (ليست كل الرسوم المتحركة تحتاج منحنيات)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use CurvedAnimation when:",
           value: [
             "Making animations feel more natural and life-like",
@@ -16290,7 +16290,7 @@ final examples = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم CurvedAnimation عندما:",
           value: [
             "جعل الرسوم المتحركة تبدو أكثر طبيعية وواقعية",
@@ -16307,14 +16307,14 @@ final examples = {
     categories: [.animations],
     type: .theoretical,
     tags: ["intermediate", "animation", "ticker", "vsync"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Ticker in animations?",
         answer: [
-          StringContent(
+          StrContent(
             "Ticker is a class that calls a callback once per animation frame (typically 60 times per second). It's essential for smooth animations and is provided by TickerProvider (like SingleTickerProviderStateMixin).",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key characteristics:",
             value: [
               "Triggers callback on every frame (vsync signal)",
@@ -16325,7 +16325,7 @@ final examples = {
               "Prevents unnecessary battery drain",
             ],
           ),
-          StringContent(
+          StrContent(
             "Ticker synchronizes animations with the screen's refresh rate. The 'vsync' parameter in AnimationController takes a TickerProvider, which you get by adding SingleTickerProviderStateMixin or TickerProviderStateMixin to your State class.",
           ),
         ],
@@ -16340,10 +16340,10 @@ final examples = {
       ar: QuestionContent(
         question: "ما هو Ticker في الرسوم المتحركة؟",
         answer: [
-          StringContent(
+          StrContent(
             "Ticker هو فئة تستدعي استدعاء مرة واحدة لكل إطار رسوم متحركة (عادةً 60 مرة في الثانية). إنه أساسي للرسوم المتحركة السلسة ويُوفر بواسطة TickerProvider (مثل SingleTickerProviderStateMixin).",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الخصائص الرئيسية:",
             value: [
               "يفعّل الاستدعاء في كل إطار (إشارة vsync)",
@@ -16354,7 +16354,7 @@ final examples = {
               "يمنع استنزاف البطارية غير الضروري",
             ],
           ),
-          StringContent(
+          StrContent(
             "Ticker يزامن الرسوم المتحركة مع معدل تحديث الشاشة. معامل 'vsync' في AnimationController يأخذ TickerProvider، الذي تحصل عليه بإضافة SingleTickerProviderStateMixin أو TickerProviderStateMixin إلى فئة State الخاصة بك.",
           ),
         ],
@@ -16504,7 +16504,7 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
 }""",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Ensures smooth 60fps animations",
         "Automatically pauses in background (saves battery)",
@@ -16518,7 +16518,7 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
         "مدمج في نظام رسوم Flutter المتحركة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires mixin (SingleTickerProviderStateMixin)",
         "Can't use with StatelessWidget",
@@ -16530,9 +16530,9 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
         "يجب تذكر اختيار mixin الصحيح (Single vs Multiple)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Ticker/vsync when:",
           value: [
             "Building any custom animation that requires an AnimationController",
@@ -16542,7 +16542,7 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Ticker/vsync عندما:",
           value: [
             "بناء أي رسم متحرك مخصص يتطلب AnimationController",
@@ -16559,14 +16559,14 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
     categories: [.dartBasics, .animations],
     type: .theoretical,
     tags: ["intermediate", "mixins", "ticker", "inheritance"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Mixins and SingleTickerProviderStateMixin?",
         answer: [
-          StringContent(
+          StrContent(
             "Mixins are a way to reuse code across multiple class hierarchies without traditional inheritance. SingleTickerProviderStateMixin is a mixin that provides a single Ticker for animations.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Mixins:",
             value: [
               "Allow code reuse without inheritance",
@@ -16576,7 +16576,7 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
               "Dart supports mixins but not multiple inheritance",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "SingleTickerProviderStateMixin:",
             value: [
               "Provides a single Ticker for one AnimationController",
@@ -16585,7 +16585,7 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
               "Automatically manages ticker lifecycle",
             ],
           ),
-          StringContent(
+          StrContent(
             "Use 'with SingleTickerProviderStateMixin' for one AnimationController, 'with TickerProviderStateMixin' for multiple. Mixins are declared with 'mixin' keyword and applied with 'with'.",
           ),
         ],
@@ -16600,10 +16600,10 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
       ar: QuestionContent(
         question: "ما هي Mixins و SingleTickerProviderStateMixin؟",
         answer: [
-          StringContent(
+          StrContent(
             "Mixins هي طريقة لإعادة استخدام الكود عبر تسلسلات فئات متعددة دون الوراثة التقليدية. SingleTickerProviderStateMixin هو mixin يوفر Ticker واحد للرسوم المتحركة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Mixins:",
             value: [
               "تسمح بإعادة استخدام الكود دون الوراثة",
@@ -16613,7 +16613,7 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
               "Dart يدعم mixins لكن ليس الوراثة المتعددة",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "SingleTickerProviderStateMixin:",
             value: [
               "يوفر Ticker واحد لـ AnimationController واحد",
@@ -16622,7 +16622,7 @@ class _CustomTickerExampleState extends State<CustomTickerExample>
               "يدير دورة حياة ticker تلقائيًا",
             ],
           ),
-          StringContent(
+          StrContent(
             "استخدم 'with SingleTickerProviderStateMixin' لـ AnimationController واحد، 'with TickerProviderStateMixin' لعدة. تُعرّف Mixins بكلمة 'mixin' وتُطبق بـ 'with'.",
           ),
         ],
@@ -16811,7 +16811,7 @@ class _GameWidgetState extends State<GameWidget>
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Mixins: Code reuse without inheritance constraints",
         "Multiple mixins on one class",
@@ -16825,7 +16825,7 @@ class _GameWidgetState extends State<GameWidget>
         "فصل نظيف للاهتمامات",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can't have constructors in mixins",
         "Order of mixins matters (linearization)",
@@ -16839,9 +16839,9 @@ class _GameWidgetState extends State<GameWidget>
         "تحتاج لمعرفة أي mixin تستخدم (Single vs Multiple)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Mixins and TickerProvider when:",
           value: [
             "Sharing code/logic between multiple unrelated class hierarchies",
@@ -16851,7 +16851,7 @@ class _GameWidgetState extends State<GameWidget>
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Mixins و TickerProvider عندما:",
           value: [
             "مشاركة الكود/المنطق بين عدة تسلسلات فئات غير مرتبطة",
@@ -16868,14 +16868,14 @@ class _GameWidgetState extends State<GameWidget>
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["intermediate", "forms", "validation", "textfield"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to handle forms and validation?",
         answer: [
-          StringContent(
+          StrContent(
             "Flutter provides Form widget and TextFormField for handling user input and validation. Form manages multiple fields, while GlobalKey<FormState> allows validation and data retrieval.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key components:",
             value: [
               "Form: Wraps form fields and manages validation state",
@@ -16886,7 +16886,7 @@ class _GameWidgetState extends State<GameWidget>
               "autovalidateMode: When to show validation errors",
             ],
           ),
-          StringContent(
+          StrContent(
             "Form validation workflow: 1) Wrap fields in Form widget, 2) Add validator to each TextFormField, 3) Call form.validate() to check all fields, 4) Call form.save() to retrieve values. Use GlobalKey to access FormState.",
           ),
         ],
@@ -16901,10 +16901,10 @@ class _GameWidgetState extends State<GameWidget>
       ar: QuestionContent(
         question: "كيف تتعامل مع النماذج (Forms) والتحقق (Validation)؟",
         answer: [
-          StringContent(
+          StrContent(
             "يوفر Flutter ودجت Form و TextFormField للتعامل مع إدخال المستخدم والتحقق. Form يدير حقول متعددة، بينما GlobalKey<FormState> يسمح بالتحقق واسترجاع البيانات.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "المكونات الرئيسية:",
             value: [
               "Form: يلف حقول النموذج ويدير حالة التحقق",
@@ -16915,7 +16915,7 @@ class _GameWidgetState extends State<GameWidget>
               "autovalidateMode: متى تُعرض أخطاء التحقق",
             ],
           ),
-          StringContent(
+          StrContent(
             "سير عمل التحقق من النموذج: 1) لف الحقول في ودجت Form، 2) أضف validator لكل TextFormField، 3) استدع form.validate() للتحقق من جميع الحقول، 4) استدع form.save() لاسترجاع القيم. استخدم GlobalKey للوصول إلى FormState.",
           ),
         ],
@@ -17138,7 +17138,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Built-in validation system",
         "Centralized form state management",
@@ -17152,7 +17152,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
         "يمكن التحقق من جميع الحقول مرة واحدة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires GlobalKey boilerplate",
         "TextFormField instead of TextField (more complex)",
@@ -17166,9 +17166,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
         "قد يكون مطولاً للنماذج المعقدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Forms and Validation when:",
           value: [
             "Collecting user data that requires specific formats (email, password strength)",
@@ -17178,7 +17178,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم النماذج والتحقق عندما:",
           value: [
             "جمع بيانات المستخدم التي تتطلب تنسيقات محددة (البريد الإلكتروني، قوة كلمة المرور)",
@@ -17195,14 +17195,14 @@ class _RegistrationFormState extends State<RegistrationForm> {
     categories: [.flutterBasics, .ui],
     type: .practical,
     tags: ["intermediate", "focusnode", "keyboard", "textfield"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is FocusNode?",
         answer: [
-          StringContent(
+          StrContent(
             "FocusNode is an object that manages keyboard focus for input widgets. It controls which TextField has focus, allows programmatic focus changes, and listens to focus events.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Controls which input field has keyboard focus",
@@ -17213,7 +17213,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               "Must be disposed to prevent memory leaks",
             ],
           ),
-          StringContent(
+          StrContent(
             "FocusNode is essential for controlling keyboard behavior in forms. Common uses include moving to next field after enter, auto-focusing first field, or dismissing keyboard after form submission.",
           ),
         ],
@@ -17228,10 +17228,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
       ar: QuestionContent(
         question: "ما هو FocusNode؟",
         answer: [
-          StringContent(
+          StrContent(
             "FocusNode هو كائن يدير تركيز لوحة المفاتيح لودجتس الإدخال. يتحكم في أي TextField له التركيز، يسمح بتغييرات تركيز برمجية، ويستمع لأحداث التركيز.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يتحكم في أي حقل إدخال له تركيز لوحة المفاتيح",
@@ -17242,7 +17242,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               "يجب التخلص منه لمنع تسريبات الذاكرة",
             ],
           ),
-          StringContent(
+          StrContent(
             "FocusNode أساسي للتحكم في سلوك لوحة المفاتيح في النماذج. الاستخدامات الشائعة تشمل الانتقال للحقل التالي بعد الضغط على enter، التركيز التلقائي على الحقل الأول، أو إخفاء لوحة المفاتيح بعد إرسال النموذج.",
           ),
         ],
@@ -17430,7 +17430,7 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Full control over keyboard focus",
         "Can move between fields programmatically",
@@ -17444,7 +17444,7 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
         "تحسين تجربة المستخدم للنماذج بشكل كبير",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Must remember to dispose",
         "Additional boilerplate code",
@@ -17458,9 +17458,9 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
         "سهل إنشاء تسريبات ذاكرة إذا لم يُتخلص منه",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use FocusNode when:",
           value: [
             "Controlling which text field is currently active programmatically",
@@ -17470,7 +17470,7 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم FocusNode عندما:",
           value: [
             "التحكم في أي حقل نصي نشط حاليًا برمجيًا",
@@ -17487,14 +17487,14 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
     categories: [.basic, .flutterBasics, .database],
     type: .practical,
     tags: ["basic", "sharedpreferences", "storage", "persistence"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is SharedPreferences used for?",
         answer: [
-          StringContent(
+          StrContent(
             "SharedPreferences is a simple key-value storage for persisting small amounts of primitive data (strings, numbers, booleans). It's used for storing user preferences, settings, and simple app state.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common use cases:",
             value: [
               "Store user preferences (theme, language, notifications)",
@@ -17505,7 +17505,7 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
               "Remember user choices",
             ],
           ),
-          StringContent(
+          StrContent(
             "SharedPreferences is NOT a database. Use it only for small, simple data. For complex data or large datasets, use SQLite (sqflite) or other database solutions. Data persists even after app closes.",
           ),
         ],
@@ -17520,10 +17520,10 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
       ar: QuestionContent(
         question: "فيما تُستخدم SharedPreferences؟",
         answer: [
-          StringContent(
+          StrContent(
             "SharedPreferences هو تخزين بسيط لأزواج مفتاح-قيمة لإبقاء كميات صغيرة من البيانات الأولية (نصوص، أرقام، قيم منطقية). يُستخدم لتخزين تفضيلات المستخدم والإعدادات وحالة التطبيق البسيطة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "حالات الاستخدام الشائعة:",
             value: [
               "تخزين تفضيلات المستخدم (السمة، اللغة، الإشعارات)",
@@ -17534,7 +17534,7 @@ class _LoginFormWithFocusState extends State<LoginFormWithFocus> {
               "تذكر اختيارات المستخدم",
             ],
           ),
-          StringContent(
+          StrContent(
             "SharedPreferences ليست قاعدة بيانات. استخدمها فقط للبيانات الصغيرة والبسيطة. للبيانات المعقدة أو مجموعات البيانات الكبيرة، استخدم SQLite (sqflite) أو حلول قاعدة بيانات أخرى. تستمر البيانات حتى بعد إغلاق التطبيق.",
           ),
         ],
@@ -17685,7 +17685,7 @@ class AuthService {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple key-value storage",
         "Data persists after app closes",
@@ -17699,7 +17699,7 @@ class AuthService {
         "مثالي لتفضيلات المستخدم الصغيرة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Only for primitive types",
         "Not suitable for large data",
@@ -17713,9 +17713,9 @@ class AuthService {
         "غير متزامن (تعقيد طفيف)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use SharedPreferences when:",
           value: [
             "Persisting simple user settings like theme mode or language",
@@ -17725,7 +17725,7 @@ class AuthService {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم SharedPreferences عندما:",
           value: [
             "حفظ إعدادات المستخدم البسيطة مثل وضع السمات أو اللغة",
@@ -17742,14 +17742,14 @@ class AuthService {
     categories: [.ui, .performance],
     type: .practical,
     tags: ["advanced", "sliverappbar", "scrolling", "customscrollview"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain SliverAppBar.",
         answer: [
-          StringContent(
+          StrContent(
             "SliverAppBar is a Material Design app bar that integrates with CustomScrollView and can expand, collapse, and float as the user scrolls. It creates engaging, space-efficient headers.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Expands and collapses with scroll",
@@ -17760,7 +17760,7 @@ class AuthService {
               "Great for image headers or hero sections",
             ],
           ),
-          StringContent(
+          StrContent(
             "SliverAppBar is used in CustomScrollView with other Slivers. Common properties include expandedHeight (size when expanded), floating (appears when scrolling up), pinned (always visible), and flexibleSpace for custom content.",
           ),
         ],
@@ -17775,10 +17775,10 @@ class AuthService {
       ar: QuestionContent(
         question: "اشرح SliverAppBar.",
         answer: [
-          StringContent(
+          StrContent(
             "SliverAppBar هو شريط تطبيق Material Design يتكامل مع CustomScrollView ويمكن أن يتوسع ويطوى ويطفو أثناء تمرير المستخدم. ينشئ رؤوس جذابة وموفرة للمساحة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يتوسع ويطوى مع التمرير",
@@ -17789,7 +17789,7 @@ class AuthService {
               "رائع لرؤوس الصور أو أقسام البطل",
             ],
           ),
-          StringContent(
+          StrContent(
             "يُستخدم SliverAppBar في CustomScrollView مع Slivers أخرى. الخصائص الشائعة تشمل expandedHeight (الحجم عند التوسع)، floating (يظهر عند التمرير للأعلى)، pinned (مرئي دائمًا)، و flexibleSpace للمحتوى المخصص.",
           ),
         ],
@@ -17938,7 +17938,7 @@ class ProfileScreen extends StatelessWidget {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Space-efficient collapsing headers",
         "Engaging scroll effects",
@@ -17952,7 +17952,7 @@ class ProfileScreen extends StatelessWidget {
         "خيارات تخصيص مرنة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Must use CustomScrollView (can't use with ListView)",
         "More complex than regular AppBar",
@@ -17964,9 +17964,9 @@ class ProfileScreen extends StatelessWidget {
         "السلوك قد يكون محيرًا (تركيبات floating، pinned، snap)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use SliverAppBar when:",
           value: [
             "Creating high-end UI headers that collapse or expand during scroll",
@@ -17976,7 +17976,7 @@ class ProfileScreen extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم SliverAppBar عندما:",
           value: [
             "إنشاء رؤوس واجهة مستخدم راقية تطوى أو تتوسع أثناء التمرير",
@@ -17993,14 +17993,14 @@ class ProfileScreen extends StatelessWidget {
     categories: [.ui, .performance],
     type: .theoretical,
     tags: ["advanced", "customscrollview", "slivers", "scrolling"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is CustomScrollView?",
         answer: [
-          StringContent(
+          StrContent(
             "CustomScrollView is a scrollable widget that works with Slivers to create custom scroll effects. It's the foundation for advanced scrolling layouts like collapsing headers, mixed grids and lists, or sticky headers.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Uses Slivers (SliverList, SliverGrid, SliverAppBar, etc.)",
@@ -18011,7 +18011,7 @@ class ProfileScreen extends StatelessWidget {
               "Foundation for Material Design scroll effects",
             ],
           ),
-          StringContent(
+          StrContent(
             "CustomScrollView coordinates multiple Sliver widgets in a single scrollable area. Common Slivers include SliverAppBar (collapsing headers), SliverList (lists), SliverGrid (grids), and SliverToBoxAdapter (regular widgets).",
           ),
         ],
@@ -18026,10 +18026,10 @@ class ProfileScreen extends StatelessWidget {
       ar: QuestionContent(
         question: "ما هو CustomScrollView؟",
         answer: [
-          StringContent(
+          StrContent(
             "CustomScrollView هو ودجت قابل للتمرير يعمل مع Slivers لإنشاء تأثيرات تمرير مخصصة. إنه الأساس لتخطيطات تمرير متقدمة مثل رؤوس قابلة للطي، شبكات وقوائم مختلطة، أو رؤوس ثابتة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يستخدم Slivers (SliverList، SliverGrid، SliverAppBar، إلخ)",
@@ -18040,7 +18040,7 @@ class ProfileScreen extends StatelessWidget {
               "أساس لتأثيرات تمرير Material Design",
             ],
           ),
-          StringContent(
+          StrContent(
             "CustomScrollView ينسق عدة ودجتس Sliver في منطقة تمرير واحدة. Slivers الشائعة تشمل SliverAppBar (رؤوس قابلة للطي)، SliverList (قوائم)، SliverGrid (شبكات)، و SliverToBoxAdapter (ودجتس عادية).",
           ),
         ],
@@ -18211,7 +18211,7 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Create complex scrolling layouts",
         "Better performance than nested scroll views",
@@ -18225,7 +18225,7 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
         "يمكّن تأثيرات تمرير Material Design",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Steeper learning curve",
         "All children must be Slivers (use SliverToBoxAdapter for regular widgets)",
@@ -18239,9 +18239,9 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
         "واجهة برمجية معقدة للمبتدئين",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use CustomScrollView when:",
           value: [
             "Combining mixed scrollable content types (lists, grids, and sticky headers)",
@@ -18251,7 +18251,7 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم CustomScrollView عندما:",
           value: [
             "دمج أنواع محتوى قابلة للتمرير مختلطة (قوائم، شبكات، ورؤوس ثابتة)",
@@ -18274,14 +18274,14 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
       "backbutton",
       "navigation",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is WillPopScope (deprecated in favor of PopScope)?",
         answer: [
-          StringContent(
+          StrContent(
             "WillPopScope (now replaced by PopScope) was a widget that intercepts the back button or pop gesture, allowing you to control whether the route should be popped. PopScope is the modern replacement with better functionality.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "PopScope features:",
             value: [
               "Control back button/gesture behavior",
@@ -18292,7 +18292,7 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
               "Works on both Android back button and iOS swipe",
             ],
           ),
-          StringContent(
+          StrContent(
             "Common use cases include showing 'Are you sure?' dialogs before leaving forms with unsaved changes, preventing accidental exits, or implementing custom back button behavior. PopScope replaces deprecated WillPopScope.",
           ),
         ],
@@ -18307,10 +18307,10 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
       ar: QuestionContent(
         question: "ما هو WillPopScope (تم استبداله بـ PopScope)؟",
         answer: [
-          StringContent(
+          StrContent(
             "WillPopScope (تم استبداله الآن بـ PopScope) كان ودجت يعترض زر الرجوع أو إيماءة الإزالة، مما يسمح لك بالتحكم فيما إذا كان يجب إزالة المسار. PopScope هو البديل الحديث بوظائف أفضل.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "ميزات PopScope:",
             value: [
               "التحكم في سلوك زر/إيماءة الرجوع",
@@ -18321,7 +18321,7 @@ class MySliverHeaderDelegate extends SliverPersistentHeaderDelegate {
               "يعمل على كل من زر رجوع Android وسحب iOS",
             ],
           ),
-          StringContent(
+          StrContent(
             "حالات الاستخدام الشائعة تشمل عرض حوارات 'هل أنت متأكد؟' قبل مغادرة النماذج مع تغييرات غير محفوظة، منع الخروج العرضي، أو تنفيذ سلوك زر رجوع مخصص. PopScope يستبدل WillPopScope المهمل.",
           ),
         ],
@@ -18458,7 +18458,7 @@ WillPopScope(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Prevent data loss from accidental navigation",
         "Custom back button behavior",
@@ -18472,7 +18472,7 @@ WillPopScope(
         "يعمل على كل من Android و iOS",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can be confusing for users if overused",
         "Additional code complexity",
@@ -18486,9 +18486,9 @@ WillPopScope(
         "PopScope لديه واجهة برمجية مختلفة عن WillPopScope",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use PopScope when:",
           value: [
             "Preventing accidental back-button presses that could cause data loss",
@@ -18498,7 +18498,7 @@ WillPopScope(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم PopScope عندما:",
           value: [
             "منع ضغطات زر الرجوع العرضية التي قد تسبب فقدان البيانات",
@@ -18515,14 +18515,14 @@ WillPopScope(
     categories: [.animations, .ui],
     type: .practical,
     tags: ["intermediate", "hero", "animation", "transition"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain Hero animation.",
         answer: [
-          StringContent(
+          StrContent(
             "Hero animation creates smooth transitions when navigating between screens by animating a widget from one route to another. The widget appears to 'fly' from its position on the first screen to its position on the second screen.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Automatic shared element transition",
@@ -18533,7 +18533,7 @@ WillPopScope(
               "Handles size and position changes automatically",
             ],
           ),
-          StringContent(
+          StrContent(
             "Hero animations require two Hero widgets with the same tag (one on each screen). When navigating, Flutter automatically animates the transition. Common use cases include image galleries, product details, and profile avatars.",
           ),
         ],
@@ -18548,10 +18548,10 @@ WillPopScope(
       ar: QuestionContent(
         question: "اشرح حركة Hero.",
         answer: [
-          StringContent(
+          StrContent(
             "حركة Hero تنشئ انتقالات سلسة عند التنقل بين الشاشات عن طريق تحريك ودجت من مسار إلى آخر. يبدو الودجت وكأنه 'يطير' من موضعه على الشاشة الأولى إلى موضعه على الشاشة الثانية.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "انتقال عنصر مشترك تلقائي",
@@ -18562,7 +18562,7 @@ WillPopScope(
               "يتعامل تلقائيًا مع تغييرات الحجم والموضع",
             ],
           ),
-          StringContent(
+          StrContent(
             "تتطلب حركات Hero ودجتين Hero بنفس الوسم (واحد على كل شاشة). عند التنقل، يحرك Flutter الانتقال تلقائيًا. حالات الاستخدام الشائعة تشمل معارض الصور، تفاصيل المنتج، وصور الملف الشخصي.",
           ),
         ],
@@ -18679,7 +18679,7 @@ Hero(
   child: Image.network('...'),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Smooth, polished transitions",
         "Automatic animation handling",
@@ -18693,7 +18693,7 @@ Hero(
         "يحسّن الأداء المدرك",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Both screens must have matching Hero tags",
         "Can be complex with nested navigation",
@@ -18705,9 +18705,9 @@ Hero(
         "قد يحتاج لبناة مخصصين للانتقالات المعقدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Hero animations when:",
           value: [
             "Providing visual continuity for a shared element (like an image) across screens",
@@ -18717,7 +18717,7 @@ Hero(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم حركات Hero عندما:",
           value: [
             "توفير الاستمرارية البصرية لعنصر مشترك (مثل الصورة) عبر الشاشات",
@@ -18734,14 +18734,14 @@ Hero(
     categories: [.ui, .flutterBasics],
     type: .practical,
     tags: ["basic", "refreshindicator", "pulltorefresh", "ui"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to use RefreshIndicator?",
         answer: [
-          StringContent(
+          StrContent(
             "RefreshIndicator is a Material Design widget that implements pull-to-refresh functionality. It wraps a scrollable widget and triggers a callback when the user pulls down from the top.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Wraps any scrollable widget (ListView, GridView, CustomScrollView)",
@@ -18752,7 +18752,7 @@ Hero(
               "Works with async operations",
             ],
           ),
-          StringContent(
+          StrContent(
             "RefreshIndicator requires a scrollable child and an onRefresh callback that returns a Future. The indicator automatically shows while the Future is pending and hides when complete. Essential for data refresh patterns.",
           ),
         ],
@@ -18767,10 +18767,10 @@ Hero(
       ar: QuestionContent(
         question: "كيف تستخدم RefreshIndicator؟",
         answer: [
-          StringContent(
+          StrContent(
             "RefreshIndicator هو ودجت Material Design ينفذ وظيفة السحب للتحديث. يلف ودجت قابل للتمرير ويفعّل استدعاء عندما يسحب المستخدم للأسفل من الأعلى.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يلف أي ودجت قابل للتمرير (ListView، GridView، CustomScrollView)",
@@ -18781,7 +18781,7 @@ Hero(
               "يعمل مع عمليات async",
             ],
           ),
-          StringContent(
+          StrContent(
             "يتطلب RefreshIndicator ودجت فرعي قابل للتمرير واستدعاء onRefresh يعيد Future. يظهر المؤشر تلقائيًا بينما Future معلق ويختفي عند الاكتمال. أساسي لأنماط تحديث البيانات.",
           ),
         ],
@@ -18947,7 +18947,7 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Standard pull-to-refresh pattern",
         "Easy to implement",
@@ -18961,7 +18961,7 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
         "يعمل مع أي ودجت قابل للتمرير",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Only works with scrollable widgets",
         "Limited customization options",
@@ -18973,9 +18973,9 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
         "فقط سحب عمودي للأسفل (لا سحب للأعلى)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use RefreshIndicator when:",
           value: [
             "Implementing pull-to-refresh functionality in lists or grids",
@@ -18985,7 +18985,7 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم RefreshIndicator عندما:",
           value: [
             "تنفيذ وظيفة السحب للتحديث في القوائم أو الشبكات",
@@ -19002,14 +19002,14 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
     categories: [.ui, .flutterBasics],
     type: .practical,
     tags: ["intermediate", "dismissible", "swipetodelete", "gestures"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Dismissible?",
         answer: [
-          StringContent(
+          StrContent(
             "Dismissible is a widget that can be dismissed by dragging in a specified direction. It's commonly used for swipe-to-delete functionality in lists, implementing Material Design swipe actions.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Swipe to dismiss in any direction",
@@ -19020,7 +19020,7 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
               "Smooth Material Design animations",
             ],
           ),
-          StringContent(
+          StrContent(
             "Dismissible requires a unique key for each item. Common patterns include swipe-to-delete in lists, email inbox actions, or task completion. The confirmDismiss callback allows showing confirmation dialogs before dismissal.",
           ),
         ],
@@ -19035,10 +19035,10 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
       ar: QuestionContent(
         question: "ما هو Dismissible؟",
         answer: [
-          StringContent(
+          StrContent(
             "Dismissible هو ودجت يمكن رفضه بالسحب في اتجاه محدد. يُستخدم بشكل شائع لوظيفة السحب للحذف في القوائم، تنفيذ إجراءات السحب في Material Design.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "السحب للرفض في أي اتجاه",
@@ -19049,7 +19049,7 @@ class _ProgrammaticRefreshState extends State<ProgrammaticRefresh> {
               "رسوم متحركة Material Design سلسة",
             ],
           ),
-          StringContent(
+          StrContent(
             "يتطلب Dismissible مفتاحًا فريدًا لكل عنصر. الأنماط الشائعة تشمل السحب للحذف في القوائم، إجراءات صندوق الوارد للبريد الإلكتروني، أو إكمال المهام. يسمح استدعاء confirmDismiss بعرض حوارات تأكيد قبل الرفض.",
           ),
         ],
@@ -19246,7 +19246,7 @@ Dismissible(
   child: ListTile(title: Text(item)),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Intuitive swipe gestures",
         "Material Design compliant",
@@ -19260,7 +19260,7 @@ Dismissible(
         "خلفيات واتجاهات مخصصة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires unique key for each item",
         "Can be accidentally triggered",
@@ -19272,9 +19272,9 @@ Dismissible(
         "قد يحتاج حوارات تأكيد لمنع الأخطاء",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Dismissible when:",
           value: [
             "Implementing intuitive swipe-to-delete or archive actions in list items",
@@ -19284,7 +19284,7 @@ Dismissible(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Dismissible عندما:",
           value: [
             "تنفيذ إجراءات سحب بديهية للحذف أو الأرشفة في عناصر القائمة",
@@ -19301,14 +19301,14 @@ Dismissible(
     categories: [.ui, .flutterBasics],
     type: .practical,
     tags: ["intermediate", "orientation", "mediaquery", "responsive"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to handle device orientation changes?",
         answer: [
-          StringContent(
+          StrContent(
             "Device orientation changes can be handled using MediaQuery to detect current orientation and OrientationBuilder to rebuild UI when orientation changes. You can also lock orientation using SystemChrome.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Approaches:",
             value: [
               "MediaQuery.of(context).orientation - get current orientation",
@@ -19319,7 +19319,7 @@ Dismissible(
               "Handle orientation in initState or didChangeDependencies",
             ],
           ),
-          StringContent(
+          StrContent(
             "Common patterns include showing different layouts for portrait vs landscape, adjusting widget sizes, or locking orientation for specific screens (like video players or games).",
           ),
         ],
@@ -19334,10 +19334,10 @@ Dismissible(
       ar: QuestionContent(
         question: "كيف تتعامل مع تغيّر اتجاه الجهاز؟",
         answer: [
-          StringContent(
+          StrContent(
             "يمكن التعامل مع تغيرات اتجاه الجهاز باستخدام MediaQuery لاكتشاف الاتجاه الحالي و OrientationBuilder لإعادة بناء الواجهة عند تغيير الاتجاه. يمكنك أيضًا قفل الاتجاه باستخدام SystemChrome.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الأساليب:",
             value: [
               "MediaQuery.of(context).orientation - احصل على الاتجاه الحالي",
@@ -19348,7 +19348,7 @@ Dismissible(
               "التعامل مع الاتجاه في initState أو didChangeDependencies",
             ],
           ),
-          StringContent(
+          StrContent(
             "الأنماط الشائعة تشمل عرض تخطيطات مختلفة للوضع الطولي مقابل الأفقي، تعديل أحجام الودجتس، أو قفل الاتجاه لشاشات محددة (مثل مشغلات الفيديو أو الألعاب).",
           ),
         ],
@@ -19564,7 +19564,7 @@ class LayoutBuilderExample extends StatelessWidget {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Create responsive layouts easily",
         "Lock orientation when needed",
@@ -19578,7 +19578,7 @@ class LayoutBuilderExample extends StatelessWidget {
         "تجربة مستخدم أفضل لأوضاع الشاشة المختلفة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "More code complexity for different layouts",
         "State may be lost during orientation change (without proper handling)",
@@ -19590,9 +19590,9 @@ class LayoutBuilderExample extends StatelessWidget {
         "الاختبار لكلا الاتجاهين مطلوب",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Handle Orientation when:",
           value: [
             "Optimizing the user interface for both portrait and landscape modes",
@@ -19602,7 +19602,7 @@ class LayoutBuilderExample extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "تعامل مع الاتجاه عندما:",
           value: [
             "تحسين واجهة المستخدم لكل من الوضع الطولي والأفقي",
@@ -19619,14 +19619,14 @@ class LayoutBuilderExample extends StatelessWidget {
     categories: [.ui, .flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "absorbpointer", "ignorepointer", "gestures"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain AbsorbPointer vs IgnorePointer.",
         answer: [
-          StringContent(
+          StrContent(
             "Both AbsorbPointer and IgnorePointer prevent their child widgets from receiving pointer events (touches, clicks), but they differ in how they handle hit testing.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "AbsorbPointer:",
             value: [
               "Prevents child from receiving pointer events",
@@ -19635,7 +19635,7 @@ class LayoutBuilderExample extends StatelessWidget {
               "Like a solid barrier",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "IgnorePointer:",
             value: [
               "Prevents child from receiving pointer events",
@@ -19644,7 +19644,7 @@ class LayoutBuilderExample extends StatelessWidget {
               "Like an invisible barrier",
             ],
           ),
-          StringContent(
+          StrContent(
             "The key difference: AbsorbPointer stops events completely (nothing behind it can respond), while IgnorePointer allows events to pass through to widgets underneath.",
           ),
         ],
@@ -19659,10 +19659,10 @@ class LayoutBuilderExample extends StatelessWidget {
       ar: QuestionContent(
         question: "اشرح الفرق بين AbsorbPointer و IgnorePointer.",
         answer: [
-          StringContent(
+          StrContent(
             "كلاهما AbsorbPointer و IgnorePointer يمنعان ودجتس الأطفال من تلقي أحداث المؤشر (اللمسات، النقرات)، لكنهما يختلفان في كيفية التعامل مع اختبار الضربة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "AbsorbPointer:",
             value: [
               "يمنع الفرع من تلقي أحداث المؤشر",
@@ -19671,7 +19671,7 @@ class LayoutBuilderExample extends StatelessWidget {
               "مثل حاجز صلب",
             ],
           ),
-          UnorderedListContent(
+          ULContent(
             title: "IgnorePointer:",
             value: [
               "يمنع الفرع من تلقي أحداث المؤشر",
@@ -19680,7 +19680,7 @@ class LayoutBuilderExample extends StatelessWidget {
               "مثل حاجز غير مرئي",
             ],
           ),
-          StringContent(
+          StrContent(
             "الفرق الرئيسي: AbsorbPointer يوقف الأحداث تمامًا (لا شيء خلفه يمكنه الاستجابة)، بينما IgnorePointer يسمح للأحداث بالمرور إلى الودجتس تحته.",
           ),
         ],
@@ -19930,7 +19930,7 @@ class LoadingOverlay extends StatelessWidget {
   }
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple way to disable interaction",
         "No need to modify child widgets",
@@ -19944,7 +19944,7 @@ class LoadingOverlay extends StatelessWidget {
         "يمكن تبديله ديناميكيًا",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Easy to confuse AbsorbPointer with IgnorePointer",
         "Can make UI unresponsive if misused",
@@ -19956,9 +19956,9 @@ class LoadingOverlay extends StatelessWidget {
         "قد لا يعمل كما هو متوقع مع أشجار ودجتس معقدة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Choose AbsorbPointer/IgnorePointer when:",
           value: [
             "Creating non-interactive loading states or partial UI overlays",
@@ -19968,7 +19968,7 @@ class LoadingOverlay extends StatelessWidget {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "اختر AbsorbPointer/IgnorePointer عندما:",
           value: [
             "إنشاء حالات تحميل غير تفاعلية أو تراكبات واجهة مستخدم جزئية",
@@ -19985,14 +19985,14 @@ class LoadingOverlay extends StatelessWidget {
     categories: [.ui, .flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "overflowbox", "layout", "constraints"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is OverflowBox?",
         answer: [
-          StringContent(
+          StrContent(
             "OverflowBox is a widget that allows its child to overflow its parent's constraints. It imposes different constraints on its child than it receives from its parent, enabling the child to be larger or smaller than normally allowed.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Allows child to exceed parent's size constraints",
@@ -20003,7 +20003,7 @@ class LoadingOverlay extends StatelessWidget {
               "Alignment controls positioning within parent",
             ],
           ),
-          StringContent(
+          StrContent(
             "OverflowBox is useful when you need a widget to intentionally overflow its bounds, such as decorative elements, floating action buttons, or creating special visual effects. The overflowing content is not clipped by default.",
           ),
         ],
@@ -20018,10 +20018,10 @@ class LoadingOverlay extends StatelessWidget {
       ar: QuestionContent(
         question: "ما هو OverflowBox؟",
         answer: [
-          StringContent(
+          StrContent(
             "OverflowBox هو ودجت يسمح لفرعه بتجاوز قيود الأب. يفرض قيودًا مختلفة على فرعه عما يتلقاه من والده، مما يمكّن الفرع من أن يكون أكبر أو أصغر مما هو مسموح به عادة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يسمح للفرع بتجاوز قيود حجم الأب",
@@ -20032,7 +20032,7 @@ class LoadingOverlay extends StatelessWidget {
               "المحاذاة تتحكم في الموضع داخل الأب",
             ],
           ),
-          StringContent(
+          StrContent(
             "OverflowBox مفيد عندما تحتاج لودجت ليتجاوز حدوده عمدًا، مثل العناصر الزخرفية، أزرار الإجراءات العائمة، أو إنشاء تأثيرات بصرية خاصة. المحتوى المتجاوز لا يُقص افتراضيًا.",
           ),
         ],
@@ -20265,7 +20265,7 @@ OverflowBox(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Precise control over child constraints",
         "Create decorative overflows",
@@ -20279,7 +20279,7 @@ OverflowBox(
         "يمكن الوضع بالمحاذاة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Can break layout if misused",
         "Content may overflow screen bounds",
@@ -20293,9 +20293,9 @@ OverflowBox(
         "قد يحتاج ClipRect لمنع التجاوز غير المرغوب فيه",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use OverflowBox when:",
           value: [
             "Intentionally allowing a child widget to exceed its parent's constraints",
@@ -20305,7 +20305,7 @@ OverflowBox(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم OverflowBox عندما:",
           value: [
             "السماح لودجت فرع بتجاوز قيود والده عمدًا",
@@ -20322,14 +20322,14 @@ OverflowBox(
     categories: [.basic, .flutterBasics, .ui],
     type: .practical,
     tags: ["basic", "mediaquery", "screensize", "responsive"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "How to get the screen height and width?",
         answer: [
-          StringContent(
+          StrContent(
             "Use MediaQuery to get screen dimensions in Flutter. MediaQuery provides device and screen information including size, orientation, padding, and more.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Common MediaQuery properties:",
             value: [
               "MediaQuery.of(context).size - Screen width and height",
@@ -20340,7 +20340,7 @@ OverflowBox(
               "MediaQuery.of(context).textScaleFactor - User's text size setting",
             ],
           ),
-          StringContent(
+          StrContent(
             "MediaQuery.of(context).size returns a Size object with width and height properties. These values are in logical pixels, not physical pixels. Essential for responsive layouts and adaptive UIs.",
           ),
         ],
@@ -20355,10 +20355,10 @@ OverflowBox(
       ar: QuestionContent(
         question: "كيف تحصل على عرض وارتفاع الشاشة؟",
         answer: [
-          StringContent(
+          StrContent(
             "استخدم MediaQuery للحصول على أبعاد الشاشة في Flutter. يوفر MediaQuery معلومات الجهاز والشاشة بما في ذلك الحجم، الاتجاه، الحشو، والمزيد.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "خصائص MediaQuery الشائعة:",
             value: [
               "MediaQuery.of(context).size - عرض وارتفاع الشاشة",
@@ -20369,7 +20369,7 @@ OverflowBox(
               "MediaQuery.of(context).textScaleFactor - إعداد حجم نص المستخدم",
             ],
           ),
-          StringContent(
+          StrContent(
             "MediaQuery.of(context).size يعيد كائن Size مع خصائص width و height. هذه القيم بالبكسل المنطقي، وليس البكسل الفعلي. أساسي للتخطيطات المتجاوبة والواجهات التكيفية.",
           ),
         ],
@@ -20588,7 +20588,7 @@ void getScreenSizeWithoutContext() {
   print('Screen height: \${size.height}');
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Easy access to screen dimensions",
         "Updates automatically on changes",
@@ -20602,7 +20602,7 @@ void getScreenSizeWithoutContext() {
         "أساسي للتصميم المتجاوب",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires BuildContext",
         "May trigger rebuilds if not used carefully",
@@ -20614,9 +20614,9 @@ void getScreenSizeWithoutContext() {
         "يعيد البكسل المنطقي (قد يحتاج تحويل للبكسل الفعلي)",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Screen Dimensions (MediaQuery) when:",
           value: [
             "Calculating dynamic widths or heights for adaptive components",
@@ -20626,7 +20626,7 @@ void getScreenSizeWithoutContext() {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم أبعاد الشاشة (MediaQuery) عندما:",
           value: [
             "حساب العروض أو الارتفاعات الديناميكية للمكونات التكيفية",
@@ -20643,14 +20643,14 @@ void getScreenSizeWithoutContext() {
     categories: [.ui, .flutterBasics],
     type: .practical,
     tags: ["intermediate", "stepper", "forms", "wizard"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is Stepper?",
         answer: [
-          StringContent(
+          StrContent(
             "Stepper is a Material Design widget that displays progress through a sequence of logical steps. It's commonly used for multi-step forms, onboarding flows, or wizards where users complete tasks in order.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Shows numbered or labeled steps",
@@ -20661,7 +20661,7 @@ void getScreenSizeWithoutContext() {
               "Horizontal or vertical layout",
             ],
           ),
-          StringContent(
+          StrContent(
             "Stepper requires a list of Step widgets, a currentStep index, and callbacks for onStepContinue, onStepCancel, and onStepTapped. Each step can show different content and be marked as complete, active, or disabled.",
           ),
         ],
@@ -20676,10 +20676,10 @@ void getScreenSizeWithoutContext() {
       ar: QuestionContent(
         question: "ما هو Stepper؟",
         answer: [
-          StringContent(
+          StrContent(
             "Stepper هو ودجت Material Design يعرض التقدم عبر تسلسل من الخطوات المنطقية. يُستخدم بشكل شائع للنماذج متعددة الخطوات، تدفقات الإعداد، أو المعالجات حيث يكمل المستخدمون المهام بالترتيب.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يعرض خطوات مرقمة أو معنونة",
@@ -20690,7 +20690,7 @@ void getScreenSizeWithoutContext() {
               "تخطيط أفقي أو عمودي",
             ],
           ),
-          StringContent(
+          StrContent(
             "يتطلب Stepper قائمة من ودجتس Step، فهرس currentStep، واستدعاءات لـ onStepContinue و onStepCancel و onStepTapped. كل خطوة يمكن أن تعرض محتوى مختلف وتُميّز كمكتملة أو نشطة أو معطلة.",
           ),
         ],
@@ -20974,7 +20974,7 @@ Stepper(
   steps: [...],
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Built-in Material Design stepper UI",
         "Easy step progression management",
@@ -20988,7 +20988,7 @@ Stepper(
         "يدعم التدفقات الخطية وغير الخطية",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Limited styling flexibility",
         "Vertical stepper can take much space",
@@ -21002,9 +21002,9 @@ Stepper(
         "قد لا يناسب جميع متطلبات التصميم",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Stepper when:",
           value: [
             "Guiding users through a logical sequence of multi-step tasks",
@@ -21014,7 +21014,7 @@ Stepper(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Stepper عندما:",
           value: [
             "توجيه المستخدمين عبر تسلسل منطقي لمهام متعددة الخطوات",
@@ -21031,14 +21031,14 @@ Stepper(
     categories: [.ui, .flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "table", "layout", "rows", "columns"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain Table widget.",
         answer: [
-          StringContent(
+          StrContent(
             "Table is a widget that displays children in rows and columns with a grid layout. Unlike GridView, Table is not scrollable and all children are rendered at once. Each row can have different numbers of children, and column widths can be customized.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Non-scrollable grid layout",
@@ -21050,7 +21050,7 @@ Stepper(
               "Each cell is a widget",
             ],
           ),
-          StringContent(
+          StrContent(
             "Table is ideal for displaying tabular data like schedules, comparison tables, or structured information. Column widths can be set individually or as default for all columns. Use TableRow to group cells into rows.",
           ),
         ],
@@ -21065,10 +21065,10 @@ Stepper(
       ar: QuestionContent(
         question: "اشرح ودجت Table.",
         answer: [
-          StringContent(
+          StrContent(
             "Table هو ودجت يعرض الأطفال في صفوف وأعمدة بتخطيط شبكي. على عكس GridView، Table غير قابل للتمرير ويتم عرض جميع الأطفال دفعة واحدة. كل صف يمكن أن يحتوي على عدد مختلف من الأطفال، ويمكن تخصيص عروض الأعمدة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "تخطيط شبكي غير قابل للتمرير",
@@ -21080,7 +21080,7 @@ Stepper(
               "كل خلية هي ودجت",
             ],
           ),
-          StringContent(
+          StrContent(
             "Table مثالي لعرض البيانات الجدولية مثل الجداول الزمنية، جداول المقارنة، أو المعلومات المنظمة. يمكن تعيين عروض الأعمدة بشكل فردي أو كإعداد افتراضي لجميع الأعمدة. استخدم TableRow لتجميع الخلايا في صفوف.",
           ),
         ],
@@ -21292,7 +21292,7 @@ Table(
   children: [...],
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple API for tabular layouts",
         "Flexible column sizing options",
@@ -21308,7 +21308,7 @@ Table(
         "جيد للبيانات المنظمة غير القابلة للتمرير",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Not scrollable - all content loaded at once",
         "Can cause performance issues with many rows",
@@ -21324,9 +21324,9 @@ Table(
         "لا فرز أو تصفية مدمجة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use Table when:",
           value: [
             "Displaying static, non-scrollable tabular data like product comparisons",
@@ -21336,7 +21336,7 @@ Table(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم Table عندما:",
           value: [
             "عرض بيانات جدولية ثابتة غير قابلة للتمرير مثل مقارنات المنتجات",
@@ -21353,14 +21353,14 @@ Table(
     categories: [.ui, .flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "backdropfilter", "blur", "effects", "imagefilter"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is BackdropFilter?",
         answer: [
-          StringContent(
+          StrContent(
             "BackdropFilter is a widget that applies an ImageFilter to everything painted behind it. It's commonly used to create blur effects, frosted glass effects, or other visual filters on the content behind a widget.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Applies filters to background content",
@@ -21372,7 +21372,7 @@ Table(
               "Commonly wrapped in ClipRect for clipping",
             ],
           ),
-          StringContent(
+          StrContent(
             "The most common use is ImageFilter.blur() to create blurred backgrounds. BackdropFilter affects everything behind it in the paint order, not just its parent. For best performance, limit the number of BackdropFilters and the blur radius.",
           ),
         ],
@@ -21388,10 +21388,10 @@ Table(
       ar: QuestionContent(
         question: "ما هو BackdropFilter؟",
         answer: [
-          StringContent(
+          StrContent(
             "BackdropFilter هو ودجت يطبق ImageFilter على كل شيء مرسوم خلفه. يُستخدم بشكل شائع لإنشاء تأثيرات التمويه، تأثيرات الزجاج المتجمد، أو مرشحات بصرية أخرى على المحتوى خلف الودجت.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يطبق المرشحات على محتوى الخلفية",
@@ -21403,7 +21403,7 @@ Table(
               "عادة ملفوف في ClipRect للقص",
             ],
           ),
-          StringContent(
+          StrContent(
             "الاستخدام الأكثر شيوعًا هو ImageFilter.blur() لإنشاء خلفيات مموهة. يؤثر BackdropFilter على كل شيء خلفه في ترتيب الرسم، وليس فقط والده. للحصول على أفضل أداء، حدد عدد BackdropFilters ونصف قطر التمويه.",
           ),
         ],
@@ -21658,7 +21658,7 @@ ClipRect(
   ),
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Creates beautiful frosted glass effects",
         "Modern glassmorphism UI patterns",
@@ -21674,7 +21674,7 @@ ClipRect(
         "واجهة برمجية بسيطة",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Computationally expensive - impacts performance",
         "Can cause frame drops if overused",
@@ -21690,9 +21690,9 @@ ClipRect(
         "غير مناسب للرسوم المتحركة أو المحتوى القابل للتمرير",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use BackdropFilter when:",
           value: [
             "Creating modern 'glassmorphism' or frosted glass visual styles",
@@ -21702,7 +21702,7 @@ ClipRect(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم BackdropFilter عندما:",
           value: [
             "إنشاء أنماط بصرية حديثة مثل 'glassmorphism' أو الزجاج المتجمد",
@@ -21719,14 +21719,14 @@ ClipRect(
     categories: [.ui, .flutterBasics],
     type: .theoretical,
     tags: ["intermediate", "indexedstack", "stack", "visibility", "tabview"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "Explain IndexedStack.",
         answer: [
-          StringContent(
+          StrContent(
             "IndexedStack is a Stack widget that shows only one child at a time based on an index. Unlike Stack where all children are visible (possibly overlapping), IndexedStack displays only the child at the current index while keeping all children in the widget tree.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Shows only one child at a time",
@@ -21738,7 +21738,7 @@ ClipRect(
               "Sizing based on currently displayed child",
             ],
           ),
-          StringContent(
+          StrContent(
             "IndexedStack is perfect for preserving state across different views, like tab content where you want to maintain scroll position or form data when switching tabs. All children are built and kept in memory, so use cautiously with many or heavy children.",
           ),
         ],
@@ -21754,10 +21754,10 @@ ClipRect(
       ar: QuestionContent(
         question: "اشرح IndexedStack.",
         answer: [
-          StringContent(
+          StrContent(
             "IndexedStack هو ودجت Stack يعرض طفلًا واحدًا فقط في كل مرة بناءً على فهرس. على عكس Stack حيث جميع الأطفال مرئيون (ربما متداخلون)، يعرض IndexedStack فقط الطفل في الفهرس الحالي مع الحفاظ على جميع الأطفال في شجرة الودجت.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يعرض طفلًا واحدًا فقط في كل مرة",
@@ -21769,7 +21769,7 @@ ClipRect(
               "الحجم بناءً على الطفل المعروض حاليًا",
             ],
           ),
-          StringContent(
+          StrContent(
             "IndexedStack مثالي للحفاظ على الحالة عبر طرق عرض مختلفة، مثل محتوى التبويب حيث تريد الحفاظ على موضع التمرير أو بيانات النموذج عند التبديل بين التبويبات. يتم بناء جميع الأطفال والاحتفاظ بهم في الذاكرة، لذا استخدم بحذر مع العديد من الأطفال أو الأطفال الثقيلين.",
           ),
         ],
@@ -22019,7 +22019,7 @@ IndexedStack(
   children: [...],
 )"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Preserves state of all children",
         "Instant switching without rebuild",
@@ -22035,7 +22035,7 @@ IndexedStack(
         "جيد للنماذج والمحتوى القابل للتمرير",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "All children built and kept in memory",
         "Can be memory intensive with many children",
@@ -22051,9 +22051,9 @@ IndexedStack(
         "قفزات الحجم إذا كان للأطفال أحجام مختلفة",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use IndexedStack when:",
           value: [
             "Navigating between sections while preserving sub-page scroll positions",
@@ -22063,7 +22063,7 @@ IndexedStack(
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم IndexedStack عندما:",
           value: [
             "التنقل بين الأقسام مع الحفاظ على مواضع تمرير الصفحات الفرعية",
@@ -22080,14 +22080,14 @@ IndexedStack(
     categories: [.ui, .flutterBasics],
     type: .practical,
     tags: ["intermediate", "reorderablelistview", "drag", "reorder", "list"],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is ReorderableListView?",
         answer: [
-          StringContent(
+          StrContent(
             "ReorderableListView is a ListView that allows users to reorder items by dragging them. It's built on top of ListView and provides drag-and-drop functionality to rearrange list items interactively.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Drag and drop to reorder items",
@@ -22099,7 +22099,7 @@ IndexedStack(
               "Works with ListView.builder pattern",
             ],
           ),
-          StringContent(
+          StrContent(
             "ReorderableListView requires each child to have a unique Key (typically ValueKey or ObjectKey). The onReorder callback is called when an item is moved, providing old and new indices. You must update your data source in this callback to persist the reorder.",
           ),
         ],
@@ -22115,10 +22115,10 @@ IndexedStack(
       ar: QuestionContent(
         question: "ما هو ReorderableListView؟",
         answer: [
-          StringContent(
+          StrContent(
             "ReorderableListView هو ListView يسمح للمستخدمين بإعادة ترتيب العناصر عن طريق سحبها. إنه مبني على ListView ويوفر وظيفة السحب والإفلات لإعادة ترتيب عناصر القائمة بشكل تفاعلي.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "السحب والإفلات لإعادة ترتيب العناصر",
@@ -22130,7 +22130,7 @@ IndexedStack(
               "يعمل مع نمط ListView.builder",
             ],
           ),
-          StringContent(
+          StrContent(
             "يتطلب ReorderableListView أن يكون لكل طفل Key فريد (عادة ValueKey أو ObjectKey). يتم استدعاء استدعاء onReorder عند نقل عنصر، مما يوفر الفهارس القديمة والجديدة. يجب عليك تحديث مصدر بياناتك في هذا الاستدعاء للحفاظ على إعادة الترتيب.",
           ),
         ],
@@ -22422,7 +22422,7 @@ void _onReorder(int oldIndex, int newIndex) {
   });
 }"""),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Built-in drag and drop functionality",
         "Automatic scroll when dragging near edges",
@@ -22438,7 +22438,7 @@ void _onReorder(int oldIndex, int newIndex) {
         "يدعم كلاً من العمودي والأفقي",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Requires unique keys for each item",
         "Manual data source update needed in onReorder",
@@ -22454,9 +22454,9 @@ void _onReorder(int oldIndex, int newIndex) {
         "حساب الفهرس في onReorder قد يكون مربكًا",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use ReorderableListView when:",
           value: [
             "Building customizable user lists like playlists or priority tasks",
@@ -22466,7 +22466,7 @@ void _onReorder(int oldIndex, int newIndex) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم ReorderableListView عندما:",
           value: [
             "بناء قوائم مستخدم قابلة للتخصيص مثل قوائم التشغيل أو المهام ذات الأولوية",
@@ -22489,14 +22489,14 @@ void _onReorder(int oldIndex, int newIndex) {
       "responsive",
       "percentage",
     ],
-    content: LocalizedValue(
+    content: LocV(
       en: QuestionContent(
         question: "What is FractionallySizedBox?",
         answer: [
-          StringContent(
+          StrContent(
             "FractionallySizedBox is a widget that sizes its child to a fraction of the available space. It allows you to specify the child's width and height as percentages (fractions) of the parent's constraints, making it useful for responsive layouts.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "Key features:",
             value: [
               "Sizes child as fraction of available space",
@@ -22508,7 +22508,7 @@ void _onReorder(int oldIndex, int newIndex) {
               "Values > 1.0 allow child to overflow parent",
             ],
           ),
-          StringContent(
+          StrContent(
             "widthFactor and heightFactor are decimal values where 0.5 means 50%, 1.0 means 100%, etc. If null, the child's size in that dimension is unconstrained. The alignment property positions the child within the fractional box.",
           ),
         ],
@@ -22525,10 +22525,10 @@ void _onReorder(int oldIndex, int newIndex) {
       ar: QuestionContent(
         question: "ما هو FractionallySizedBox؟",
         answer: [
-          StringContent(
+          StrContent(
             "FractionallySizedBox هو ودجت يحدد حجم فرعه بجزء من المساحة المتاحة. يسمح لك بتحديد عرض وارتفاع الطفل كنسب مئوية (كسور) من قيود الأب، مما يجعله مفيدًا للتخطيطات المتجاوبة.",
           ),
-          UnorderedListContent(
+          ULContent(
             title: "الميزات الرئيسية:",
             value: [
               "يحدد حجم الطفل بجزء من المساحة المتاحة",
@@ -22540,7 +22540,7 @@ void _onReorder(int oldIndex, int newIndex) {
               "القيم > 1.0 تسمح للطفل بتجاوز الأب",
             ],
           ),
-          StringContent(
+          StrContent(
             "widthFactor و heightFactor هي قيم عشرية حيث 0.5 يعني 50%، 1.0 يعني 100%، إلخ. إذا كانت null، فإن حجم الطفل في هذا البعد غير مقيد. خاصية alignment تضع الطفل داخل الصندوق الكسري.",
           ),
         ],
@@ -22581,7 +22581,7 @@ void _onReorder(int oldIndex, int newIndex) {
 }""",
       ),
     ],
-    pros: LocalizedValue(
+    pros: LocSL(
       en: [
         "Simple percentage-based sizing",
         "Responsive to parent constraints",
@@ -22597,7 +22597,7 @@ void _onReorder(int oldIndex, int newIndex) {
         "يعمل بشكل جيد مع MediaQuery للتخطيطات التكيفية",
       ],
     ),
-    cons: LocalizedValue(
+    cons: LocSL(
       en: [
         "Limited to simple fractional sizing",
         "Cannot express complex layout logic",
@@ -22613,9 +22613,9 @@ void _onReorder(int oldIndex, int newIndex) {
         "غير مناسب لاحتياجات الحجم الجوهري",
       ],
     ),
-    whenToUse: LocalizedValue(
+    whenToUse: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: "Use FractionallySizedBox when:",
           value: [
             "Creating responsive widgets that adapt to a percentage of their parent's size",
@@ -22625,7 +22625,7 @@ void _onReorder(int oldIndex, int newIndex) {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: "استخدم FractionallySizedBox عندما:",
           value: [
             "إنشاء ودجتس متجاوبة تتكيف مع نسبة مئوية من حجم والديها",

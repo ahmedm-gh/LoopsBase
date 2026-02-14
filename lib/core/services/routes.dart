@@ -12,14 +12,14 @@ import 'package:loopsbase/features/home/view/home_screen.dart';
 import 'package:loopsbase/features/interview_questions/controller/cubit/questions_cubit.dart';
 import 'package:loopsbase/features/interview_questions/view/interview_questions_page.dart';
 import 'package:loopsbase/features/interview_questions/view/question_details_page.dart';
-import 'package:loopsbase/features/programming_terms/controller/cubit/terms_cubit.dart';
+import 'package:loopsbase/features/terms/controller/cubit/terms_cubit.dart';
 import 'package:loopsbase/features/refactoring/refactoring_details_page.dart';
 import 'package:loopsbase/features/refactoring/refactoring_page.dart';
 import 'package:loopsbase/features/splash/splash_screen.dart';
 import 'package:loopsbase/shared/methods/to_value.dart';
 
-import '../../features/programming_terms/view/programming_terms.dart';
-import '../../features/programming_terms/view/term_details.dart';
+import '../../features/terms/view/terms.dart';
+import '../../features/terms/view/term_details.dart';
 import '../../features/useful_plugins/plugin_details.dart';
 import '../../features/useful_plugins/useful_plugins.dart';
 
@@ -102,7 +102,7 @@ abstract class Routes {
       ),
       programmingTermDetails => MaterialPageRoute(
         builder: (_) {
-          return ProgrammingTermDetailsScreen(
+          return TermDetailsScreen(
             arguments: toValue(settings.arguments, null),
           );
         },

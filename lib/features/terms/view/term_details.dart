@@ -7,15 +7,15 @@ import '../../../core/extensions/extensions.dart';
 import '../../../core/models/term.dart';
 import '../../../data/programming_terms.dart';
 
-class ProgrammingTermDetailsScreenArguments {
-  const ProgrammingTermDetailsScreenArguments({required this.term});
+class TermDetailsScreenArguments {
+  const TermDetailsScreenArguments({required this.term});
   final ProgrammingTerm term;
 }
 
-class ProgrammingTermDetailsScreen extends StatelessWidget {
-  const ProgrammingTermDetailsScreen({this.arguments, super.key});
+class TermDetailsScreen extends StatelessWidget {
+  const TermDetailsScreen({this.arguments, super.key});
 
-  final ProgrammingTermDetailsScreenArguments? arguments;
+  final TermDetailsScreenArguments? arguments;
 
   // id,
   // title,
@@ -205,10 +205,9 @@ class ProgrammingTermDetailsScreen extends StatelessWidget {
                               Navigator.pushReplacementNamed(
                                 context,
                                 Routes.programmingTermDetails,
-                                arguments:
-                                    ProgrammingTermDetailsScreenArguments(
-                                      term: relatedTerm,
-                                    ),
+                                arguments: TermDetailsScreenArguments(
+                                  term: relatedTerm,
+                                ),
                               );
                             },
                           ),

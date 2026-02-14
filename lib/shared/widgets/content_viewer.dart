@@ -14,7 +14,7 @@ class ContentViewer extends StatelessWidget {
     final colors = context.colorScheme;
 
     return switch (content) {
-      final StringContent value => Text(value.value),
+      final StrContent value => Text(value.value),
       final ListContent value => Column(
         crossAxisAlignment: .stretch,
         spacing: 7.5,
@@ -41,7 +41,7 @@ class ContentViewer extends StatelessWidget {
       for (var i = 0; i < content.value.length; i++)
         Row(
           children: [
-            if (content is OrderedListContent)
+            if (content is OLContent)
               Container(
                 decoration: BoxDecoration(
                   color: colors.surfaceContainerHighest,

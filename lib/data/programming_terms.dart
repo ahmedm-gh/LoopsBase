@@ -204,25 +204,25 @@ abstract class TermKeys {
 const Map<String, ProgrammingTerm> allTerms = {
   TermKeys.fundamentalsVariable: ProgrammingTerm(
     id: TermKeys.fundamentalsVariable,
-    title: LocalizedString(en: 'Variable', ar: 'المتغير'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Variable', ar: 'المتغير'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An abstract storage location with a symbolic name that holds data. Variables allow programs to store and update values during execution.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'موقع تخزين مجرد له اسم رمزي يحتوي على البيانات. تسمح المتغيرات للبرامج بتخزين القيم وتحديثها أثناء التنفيذ.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Think of it as a labeled box where you can put different values.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'In Dart, variables can be declared using:',
           value: [
             'var - type is inferred automatically',
@@ -233,8 +233,8 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('فكر فيه كصندوق مُسمى يمكنك وضع قيم مختلفة فيه.'),
-        UnorderedListContent(
+        StrContent('فكر فيه كصندوق مُسمى يمكنك وضع قيم مختلفة فيه.'),
+        ULContent(
           title: 'في Dart، يمكن تعريف المتغيرات باستخدام:',
           value: [
             'var - يتم استنتاج النوع تلقائيًا',
@@ -255,25 +255,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsDataType: ProgrammingTerm(
     id: TermKeys.fundamentalsDataType,
-    title: LocalizedString(en: 'Data Type', ar: 'نوع البيانات'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Data Type', ar: 'نوع البيانات'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A classification of data that defines what values it can hold and what operations can be performed on it.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تصنيف للبيانات يحدد القيم التي يمكن أن تحتويها والعمليات التي يمكن إجراؤها عليها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Data types tell the compiler or interpreter how to use the data.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Common primitive types:',
           value: [
             'Integer (int) - whole numbers like 1, 42, -5',
@@ -283,15 +283,15 @@ const Map<String, ProgrammingTerm> allTerms = {
             "Character (char) - single character like 'A'",
           ],
         ),
-        StringContent(
+        StrContent(
           'Dart has strong, static typing with null safety, meaning types are checked at compile time and null errors are prevented.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تخبر أنواع البيانات المترجم أو المفسر كيفية استخدام البيانات.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع الأساسية الشائعة:',
           value: [
             'عدد صحيح (int) - أعداد كاملة مثل 1، 42، -5',
@@ -301,7 +301,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             "حرف (char) - حرف واحد مثل 'أ'",
           ],
         ),
-        StringContent(
+        StrContent(
           'يمتلك Dart نظام كتابة قوي وثابت مع أمان من القيم الفارغة، مما يعني أن الأنواع يتم فحصها في وقت الترجمة ويتم منع أخطاء القيم الفارغة.',
         ),
       ],
@@ -316,22 +316,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsFunction: ProgrammingTerm(
     id: TermKeys.fundamentalsFunction,
-    title: LocalizedString(en: 'Function', ar: 'الدالة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Function', ar: 'الدالة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A reusable block of code that performs a specific task. Functions take input (parameters), process it, and optionally return a result.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'كتلة قابلة لإعادة الاستخدام من التعليمات البرمجية تؤدي مهمة محددة. تأخذ الدوال مدخلات (معاملات)، تعالجها، وتُرجع نتيجة اختياريًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits of functions:',
           value: [
             'Code reusability - write once, use many times',
@@ -340,12 +340,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Abstraction - hide implementation details',
           ],
         ),
-        StringContent(
+        StrContent(
           'In Dart, functions are first-class objects (can be assigned to variables, passed as arguments) and support closures. Methods are functions that belong to a class.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'فوائد الدوال:',
           value: [
             'إعادة استخدام الكود - اكتب مرة واحدة، استخدم عدة مرات',
@@ -354,7 +354,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التجريد - إخفاء تفاصيل التنفيذ',
           ],
         ),
-        StringContent(
+        StrContent(
           'في Dart، الدوال هي كائنات من الدرجة الأولى (يمكن تعيينها للمتغيرات، تمريرها كوسائط) وتدعم الإغلاقات. الأساليب هي دوال تنتمي إلى فئة.',
         ),
       ],
@@ -370,22 +370,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsArgument: ProgrammingTerm(
     id: TermKeys.fundamentalsArgument,
-    title: LocalizedString(en: 'Argument', ar: 'الوسيط'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Argument', ar: 'الوسيط'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The actual value or expression passed to a function when it is called. Arguments are the concrete data you provide to a function.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'القيمة الفعلية أو التعبير الذي يتم تمريره إلى دالة عند استدعائها. الوسائط هي البيانات الفعلية التي تقدمها للدالة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Important distinction:',
           value: [
             'Parameter - the variable name in the function definition',
@@ -399,7 +399,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'تمييز مهم:',
           value: [
             'المعامل (Parameter) - اسم المتغير في تعريف الدالة',
@@ -424,23 +424,23 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsConditional: ProgrammingTerm(
     id: TermKeys.fundamentalsConditional,
-    title: LocalizedString(en: 'Conditional (If-Else)', ar: 'الجملة الشرطية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Conditional (If-Else)', ar: 'الجملة الشرطية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A control flow statement that executes different code blocks based on whether a condition is true or false.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'جملة تحكم في التدفق تنفذ كتل كود مختلفة بناءً على ما إذا كان الشرط صحيحًا أم خاطئًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Conditionals allow programs to make decisions.'),
-        UnorderedListContent(
+        StrContent('Conditionals allow programs to make decisions.'),
+        ULContent(
           title: 'Common conditional structures:',
           value: [
             'if - execute code if condition is true',
@@ -450,7 +450,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'ternary operator (?:) - compact if-else',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'if (age >= 18) {\n'
           '  print("Adult");\n'
@@ -461,8 +461,8 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('تسمح الجمل الشرطية للبرامج باتخاذ القرارات.'),
-        UnorderedListContent(
+        StrContent('تسمح الجمل الشرطية للبرامج باتخاذ القرارات.'),
+        ULContent(
           title: 'هياكل الشرط الشائعة:',
           value: [
             'if - تنفيذ الكود إذا كان الشرط صحيحًا',
@@ -472,7 +472,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'العامل الثلاثي (?:) - if-else مضغوط',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'if (age >= 18) {\n'
           '  print("بالغ");\n'
@@ -494,23 +494,23 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsLoop: ProgrammingTerm(
     id: TermKeys.fundamentalsLoop,
-    title: LocalizedString(en: 'Loop', ar: 'الحلقة التكرارية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Loop', ar: 'الحلقة التكرارية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A control structure that repeats a block of code multiple times until a condition is met.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل تحكم يكرر كتلة من التعليمات البرمجية عدة مرات حتى يتم استيفاء شرط.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Loops allow you to automate repetitive tasks.'),
-        UnorderedListContent(
+        StrContent('Loops allow you to automate repetitive tasks.'),
+        ULContent(
           title: 'Types of loops:',
           value: [
             'for - repeat a specific number of times',
@@ -519,7 +519,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'for-in/forEach - iterate over collections',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'for (int i = 0; i < 5; i++) {\n'
           '  print("Count: \$i");\n'
@@ -528,8 +528,8 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('تسمح لك الحلقات بأتمتة المهام المتكررة.'),
-        UnorderedListContent(
+        StrContent('تسمح لك الحلقات بأتمتة المهام المتكررة.'),
+        ULContent(
           title: 'أنواع الحلقات:',
           value: [
             'for - التكرار عدد محدد من المرات',
@@ -538,7 +538,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'for-in/forEach - التكرار عبر المجموعات',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'for (int i = 0; i < 5; i++) {\n'
           '  print("العدد: \$i");\n'
@@ -561,22 +561,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsAlgorithm: ProgrammingTerm(
     id: TermKeys.fundamentalsAlgorithm,
-    title: LocalizedString(en: 'Algorithm', ar: 'الخوارزمية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Algorithm', ar: 'الخوارزمية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A step-by-step set of instructions designed to solve a specific problem or perform a computation.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة خطوات متسلسلة من التعليمات المصممة لحل مشكلة محددة أو إجراء عملية حسابية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'An algorithm must be:',
           value: [
             'Well-defined - each step is clear and unambiguous',
@@ -584,7 +584,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Effective - each step can be performed',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Examples of algorithms:',
           value: [
             'Sorting algorithms (bubble sort, quick sort, merge sort)',
@@ -593,12 +593,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Encryption algorithms (AES, RSA)',
           ],
         ),
-        StringContent(
+        StrContent(
           'Every program implements one or more algorithms to accomplish its goals.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'يجب أن تكون الخوارزمية:',
           value: [
             'محددة جيدًا - كل خطوة واضحة ولا لبس فيها',
@@ -606,7 +606,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'فعالة - يمكن تنفيذ كل خطوة',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أمثلة على الخوارزميات:',
           value: [
             'خوارزميات الترتيب (الفقاعي، السريع، الدمج)',
@@ -615,7 +615,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'خوارزميات التشفير (AES، RSA)',
           ],
         ),
-        StringContent(
+        StrContent(
           'كل برنامج ينفذ واحدة أو أكثر من الخوارزميات لتحقيق أهدافه.',
         ),
       ],
@@ -629,23 +629,23 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsBigO: ProgrammingTerm(
     id: TermKeys.fundamentalsBigO,
-    title: LocalizedString(en: 'Big O Notation', ar: 'ترميز O الكبير'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Big O Notation', ar: 'ترميز O الكبير'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A mathematical notation that describes how the runtime or space requirements of an algorithm grow as the input size increases.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ترميز رياضي يصف كيف تنمو متطلبات وقت التشغيل أو المساحة للخوارزمية مع زيادة حجم المدخلات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('It measures the worst-case scenario.'),
-        UnorderedListContent(
+        StrContent('It measures the worst-case scenario.'),
+        ULContent(
           title: 'Common Big O complexities (from fastest to slowest):',
           value: [
             'O(1) - Constant: same time regardless of input size',
@@ -656,13 +656,13 @@ const Map<String, ProgrammingTerm> allTerms = {
             'O(2ⁿ) - Exponential: very slow, doubles with each input',
           ],
         ),
-        StringContent(
+        StrContent(
           'Example: Binary search is O(log n), much faster than linear search O(n).',
         ),
       ],
       ar: [
-        StringContent('يقيس أسوأ سيناريو.'),
-        UnorderedListContent(
+        StrContent('يقيس أسوأ سيناريو.'),
+        ULContent(
           title: 'تعقيدات O الكبير الشائعة (من الأسرع إلى الأبطأ):',
           value: [
             'O(1) - ثابت: نفس الوقت بغض النظر عن حجم المدخلات',
@@ -673,7 +673,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'O(2ⁿ) - أسي: بطيء جدًا، يتضاعف مع كل مدخل',
           ],
         ),
-        StringContent(
+        StrContent(
           'مثال: البحث الثنائي هو O(log n)، أسرع بكثير من البحث الخطي O(n).',
         ),
       ],
@@ -688,25 +688,23 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureArray: ProgrammingTerm(
     id: TermKeys.dataStructureArray,
-    title: LocalizedString(en: 'Array / List', ar: 'المصفوفة / القائمة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Array / List', ar: 'المصفوفة / القائمة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An ordered collection of elements of the same type, accessed by index (position number).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة مرتبة من العناصر من نفس النوع، يتم الوصول إليها بواسطة الفهرس (رقم الموضع).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
-          'Arrays are one of the most fundamental data structures.',
-        ),
-        UnorderedListContent(
+        StrContent('Arrays are one of the most fundamental data structures.'),
+        ULContent(
           title: 'Key features:',
           value: [
             'Fast access - retrieve any element in O(1) time using its index',
@@ -714,7 +712,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Fixed or dynamic size - depends on the language',
           ],
         ),
-        StringContent('In Dart, the List class provides a growable array:'),
+        StrContent('In Dart, the List class provides a growable array:'),
         CodeContent(
           'List<int> numbers = [1, 2, 3, 4, 5];\n'
           'print(numbers[0]); // prints 1',
@@ -722,8 +720,8 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('المصفوفات هي واحدة من هياكل البيانات الأساسية.'),
-        UnorderedListContent(
+        StrContent('المصفوفات هي واحدة من هياكل البيانات الأساسية.'),
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'وصول سريع - استرجاع أي عنصر في وقت O(1) باستخدام فهرسه',
@@ -731,7 +729,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'حجم ثابت أو ديناميكي - يعتمد على اللغة',
           ],
         ),
-        StringContent('في Dart، توفر فئة List مصفوفة قابلة للنمو:'),
+        StrContent('في Dart، توفر فئة List مصفوفة قابلة للنمو:'),
         CodeContent(
           'List<int> numbers = [1, 2, 3, 4, 5];\n'
           'print(numbers[0]); // يطبع 1',
@@ -750,22 +748,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureSet: ProgrammingTerm(
     id: TermKeys.dataStructureSet,
-    title: LocalizedString(en: 'Set', ar: 'المجموعة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Set', ar: 'المجموعة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A collection of unique elements with no particular order. Sets automatically prevent duplicates.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من العناصر الفريدة بدون ترتيب معين. تمنع المجموعات التكرارات تلقائيًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key features:',
           value: [
             'Uniqueness - each element appears only once',
@@ -774,7 +772,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Set operations - union, intersection, difference',
           ],
         ),
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           "Set<String> fruits = {'apple', 'banana', 'apple'};\n"
           "print(fruits); // {apple, banana} - no duplicates",
@@ -782,7 +780,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'التفرد - كل عنصر يظهر مرة واحدة فقط',
@@ -791,7 +789,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'عمليات المجموعات - الاتحاد، التقاطع، الفرق',
           ],
         ),
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           "Set<String> fruits = {'apple', 'banana', 'apple'};\n"
           "print(fruits); // {apple, banana} - لا تكرارات",
@@ -809,25 +807,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureMap: ProgrammingTerm(
     id: TermKeys.dataStructureMap,
-    title: LocalizedString(en: 'Map / Dictionary', ar: 'الخريطة / القاموس'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Map / Dictionary', ar: 'الخريطة / القاموس'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A collection of key-value pairs where each key is unique and maps to exactly one value.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من أزواج مفتاح-قيمة حيث كل مفتاح فريد ويرتبط بقيمة واحدة بالضبط.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Also known as a hash table, dictionary, or associative array.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Key features:',
           value: [
             'Fast lookup - find values by key in O(1) average time',
@@ -835,7 +833,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Flexible keys - keys can be strings, numbers, or objects',
           ],
         ),
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           'Map<String, int> ages = {\n'
           "  'Alice': 30,\n"
@@ -846,10 +844,10 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يُعرف أيضًا باسم جدول التجزئة، القاموس، أو المصفوفة الترابطية.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'بحث سريع - البحث عن القيم بالمفتاح في وقت O(1) في المتوسط',
@@ -857,7 +855,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مفاتيح مرنة - يمكن أن تكون المفاتيح نصوصًا أو أرقامًا أو كائنات',
           ],
         ),
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           'Map<String, int> ages = {\n'
           "  'Alice': 30,\n"
@@ -884,22 +882,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureStack: ProgrammingTerm(
     id: TermKeys.dataStructureStack,
-    title: LocalizedString(en: 'Stack', ar: 'المكدس'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Stack', ar: 'المكدس'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Last-In-First-Out (LIFO) data structure. Think of it like a stack of plates - you can only add or remove from the top.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل بيانات الأخير في الأول خارج (LIFO). فكر فيه مثل كومة من الأطباق - يمكنك فقط الإضافة أو الإزالة من الأعلى.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key operations:',
           value: [
             'Push - add an element to the top',
@@ -907,7 +905,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Peek - view the top element without removing it',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Common uses:',
           value: [
             'Undo functionality in editors',
@@ -916,7 +914,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Backtracking algorithms',
           ],
         ),
-        StringContent('In Dart, use List as a stack:'),
+        StrContent('In Dart, use List as a stack:'),
         CodeContent(
           'List<int> stack = [];\n'
           'stack.add(1);  // push\n'
@@ -925,7 +923,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'العمليات الرئيسية:',
           value: [
             'دفع (Push) - إضافة عنصر إلى الأعلى',
@@ -933,7 +931,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'نظرة خاطفة (Peek) - عرض العنصر العلوي دون إزالته',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الاستخدامات الشائعة:',
           value: [
             'وظيفة التراجع في المحررات',
@@ -942,7 +940,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'خوارزميات التتبع العكسي',
           ],
         ),
-        StringContent('في Dart، استخدم List كمكدس:'),
+        StrContent('في Dart، استخدم List كمكدس:'),
         CodeContent(
           'List<int> stack = [];\n'
           'stack.add(1);  // دفع\n'
@@ -961,22 +959,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureQueue: ProgrammingTerm(
     id: TermKeys.dataStructureQueue,
-    title: LocalizedString(en: 'Queue', ar: 'الطابور'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Queue', ar: 'الطابور'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A First-In-First-Out (FIFO) data structure. Think of it like a line of people waiting - the first person to arrive is the first to be served.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل بيانات الأول في الأول خارج (FIFO). فكر فيه مثل طابور من الأشخاص المنتظرين - أول شخص يصل هو أول من يتم خدمته.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key operations:',
           value: [
             'Enqueue - add an element to the back',
@@ -984,7 +982,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Peek - view the front element without removing it',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Common uses:',
           value: [
             'Task scheduling',
@@ -993,7 +991,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Message queues in systems',
           ],
         ),
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           "import 'dart:collection';\n"
           'Queue<String> queue = Queue();\n'
@@ -1003,7 +1001,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'العمليات الرئيسية:',
           value: [
             'إدخال في الطابور (Enqueue) - إضافة عنصر إلى الخلف',
@@ -1011,7 +1009,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'نظرة خاطفة (Peek) - عرض العنصر الأمامي دون إزالته',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الاستخدامات الشائعة:',
           value: [
             'جدولة المهام',
@@ -1020,7 +1018,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'طوابير الرسائل في الأنظمة',
           ],
         ),
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           "import 'dart:collection';\n"
           'Queue<String> queue = Queue();\n'
@@ -1040,22 +1038,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureLinkedList: ProgrammingTerm(
     id: TermKeys.dataStructureLinkedList,
-    title: LocalizedString(en: 'Linked List', ar: 'القائمة المترابطة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Linked List', ar: 'القائمة المترابطة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A linear data structure where elements (nodes) are connected by pointers. Each node contains data and a reference to the next node.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل بيانات خطي حيث يتم ربط العناصر (العقد) بواسطة مؤشرات. تحتوي كل عقدة على بيانات ومرجع للعقدة التالية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Advantages:',
           value: [
             'Dynamic size - grows and shrinks easily',
@@ -1063,14 +1061,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'No wasted memory - uses only what it needs',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Disadvantages:',
           value: [
             'No random access - must traverse from the start',
             'Extra memory for pointers',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Types:',
           value: [
             'Singly linked - points to next node only',
@@ -1078,12 +1076,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Circular - last node points back to first',
           ],
         ),
-        StringContent(
+        StrContent(
           "Note: Dart doesn't have a built-in LinkedList, but you can implement it manually.",
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المزايا:',
           value: [
             'حجم ديناميكي - ينمو ويتقلص بسهولة',
@@ -1091,14 +1089,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'لا ذاكرة مهدرة - يستخدم فقط ما يحتاجه',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'العيوب:',
           value: [
             'لا وصول عشوائي - يجب التنقل من البداية',
             'ذاكرة إضافية للمؤشرات',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع:',
           value: [
             'مترابطة أحادية - تشير للعقدة التالية فقط',
@@ -1106,7 +1104,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'دائرية - العقدة الأخيرة تشير للأولى',
           ],
         ),
-        StringContent(
+        StrContent(
           'ملاحظة: Dart ليس لديه LinkedList مدمج، لكن يمكنك تنفيذه يدويًا.',
         ),
       ],
@@ -1121,22 +1119,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureTree: ProgrammingTerm(
     id: TermKeys.dataStructureTree,
-    title: LocalizedString(en: 'Tree', ar: 'الشجرة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Tree', ar: 'الشجرة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A hierarchical data structure with nodes connected in a parent-child relationship. It has one root node at the top, and every other node has exactly one parent.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل بيانات هرمي مع عقد متصلة في علاقة والد-طفل. له عقدة جذر واحدة في الأعلى، وكل عقدة أخرى لها والد واحد بالضبط.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key concepts:',
           value: [
             'Root - the top node with no parent',
@@ -1146,7 +1144,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Height - longest path from root to leaf',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Common types:',
           value: [
             'Binary tree - each node has at most 2 children',
@@ -1155,12 +1153,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Heap - complete binary tree with heap property',
           ],
         ),
-        StringContent(
+        StrContent(
           'Used for: file systems, DOM, databases, decision trees, Flutter widget tree.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المفاهيم الرئيسية:',
           value: [
             'الجذر (Root) - العقدة العليا بدون والد',
@@ -1170,7 +1168,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الارتفاع (Height) - أطول مسار من الجذر إلى ورقة',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع الشائعة:',
           value: [
             'الشجرة الثنائية - كل عقدة لها طفلان على الأكثر',
@@ -1179,7 +1177,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الكومة (Heap) - شجرة ثنائية كاملة مع خاصية الكومة',
           ],
         ),
-        StringContent(
+        StrContent(
           'تُستخدم في: أنظمة الملفات، DOM، قواعد البيانات، أشجار القرار، شجرة ويدجت Flutter.',
         ),
       ],
@@ -1194,22 +1192,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataStructureGraph: ProgrammingTerm(
     id: TermKeys.dataStructureGraph,
-    title: LocalizedString(en: 'Graph', ar: 'الرسم البياني'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Graph', ar: 'الرسم البياني'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A collection of vertices (nodes) connected by edges. Graphs model relationships and networks.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من الرؤوس (العقد) المتصلة بحواف. تمثل الرسوم البيانية العلاقات والشبكات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types:',
           value: [
             'Directed - edges have direction (A → B)',
@@ -1219,14 +1217,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Acyclic - no cycles (DAG)',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Representations:',
           value: [
             'Adjacency matrix - 2D array of connections',
             'Adjacency list - map of node to its neighbors',
           ],
         ),
-        StringContent(
+        StrContent(
           'Used for: social networks, maps/GPS, recommendation systems, dependency resolution.',
         ),
         CodeContent(
@@ -1235,7 +1233,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع:',
           value: [
             'موجه - الحواف لها اتجاه (A → B)',
@@ -1245,14 +1243,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'لا دوري - لا دورات (DAG)',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'التمثيلات:',
           value: [
             'مصفوفة التجاور - مصفوفة ثنائية للاتصالات',
             'قائمة التجاور - خريطة من العقدة إلى جيرانها',
           ],
         ),
-        StringContent(
+        StrContent(
           'تُستخدم في: الشبكات الاجتماعية، الخرائط/GPS، أنظمة التوصيات، حل التبعيات.',
         ),
         CodeContent(
@@ -1271,25 +1269,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopClass: ProgrammingTerm(
     id: TermKeys.oopClass,
-    title: LocalizedString(en: 'Class', ar: 'الفئة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Class', ar: 'الفئة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A blueprint or template for creating objects. A class defines the properties (data) and methods (behavior) that objects of that class will have.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مخطط أو قالب لإنشاء الكائنات. تحدد الفئة الخصائص (البيانات) والأساليب (السلوك) التي ستمتلكها كائنات تلك الفئة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Think of a class as a cookie cutter, and objects as the cookies made from it.',
         ),
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           'class Person {\n'
           '  String name;\n'
@@ -1303,15 +1301,15 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Classes are fundamental to Object-Oriented Programming (OOP).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'فكر في الفئة كقالب البسكويت، والكائنات كالبسكويت المصنوع منه.',
         ),
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           'class Person {\n'
           '  String name;\n'
@@ -1325,7 +1323,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent('الفئات أساسية للبرمجة الموجهة للكائنات (OOP).'),
+        StrContent('الفئات أساسية للبرمجة الموجهة للكائنات (OOP).'),
       ],
     ),
     type: .concept,
@@ -1338,22 +1336,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopObject: ProgrammingTerm(
     id: TermKeys.oopObject,
-    title: LocalizedString(en: 'Object', ar: 'الكائن'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Object', ar: 'الكائن'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An instance of a class - a concrete entity with actual data. If a class is a blueprint, an object is the actual building created from it.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نسخة من فئة - كيان ملموس ببيانات فعلية. إذا كانت الفئة مخططًا، فالكائن هو المبنى الفعلي المنشأ منه.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Objects have:',
           value: [
             'State - the current values of their properties',
@@ -1361,19 +1359,19 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Identity - a unique reference in memory',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'Person alice = Person("Alice", 30);\n'
           'Person bob = Person("Bob", 25);\n'
           'alice.introduce();  // "Hi, I\'m Alice, age 30"',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'alice and bob are different objects (instances) of the Person class.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'للكائنات:',
           value: [
             'الحالة - القيم الحالية لخصائصها',
@@ -1381,14 +1379,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الهوية - مرجع فريد في الذاكرة',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'Person alice = Person("Alice", 30);\n'
           'Person bob = Person("Bob", 25);\n'
           'alice.introduce();  // "مرحبًا، أنا Alice، عمري 30"',
           codeLanguage: .dart,
         ),
-        StringContent('alice و bob كائنان مختلفان (نسخ) من فئة Person.'),
+        StrContent('alice و bob كائنان مختلفان (نسخ) من فئة Person.'),
       ],
     ),
     type: .concept,
@@ -1402,22 +1400,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopInterface: ProgrammingTerm(
     id: TermKeys.oopInterface,
-    title: LocalizedString(en: 'Interface', ar: 'الواجهة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Interface', ar: 'الواجهة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A contract that defines a set of method signatures (names and parameters) without implementation. Classes that implement an interface must provide concrete implementations for all its methods.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عقد يحدد مجموعة من تواقيع الأساليب (الأسماء والمعاملات) بدون تنفيذ. الفئات التي تنفذ واجهة يجب أن توفر تطبيقات ملموسة لجميع أساليبها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Purpose:',
           value: [
             'Define a common API for different classes',
@@ -1425,7 +1423,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Separate "what" from "how" (interface from implementation)',
           ],
         ),
-        StringContent('In Dart, any class can serve as an interface:'),
+        StrContent('In Dart, any class can serve as an interface:'),
         CodeContent(
           'class Flyable {\n'
           '  void fly();\n'
@@ -1438,7 +1436,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الغرض:',
           value: [
             'تحديد واجهة برمجة تطبيقات مشتركة لفئات مختلفة',
@@ -1446,7 +1444,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'فصل "ماذا" عن "كيف" (الواجهة عن التنفيذ)',
           ],
         ),
-        StringContent('في Dart، يمكن لأي فئة أن تكون واجهة:'),
+        StrContent('في Dart، يمكن لأي فئة أن تكون واجهة:'),
         CodeContent(
           'class Flyable {\n'
           '  void fly();\n'
@@ -1470,22 +1468,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopAbstractClass: ProgrammingTerm(
     id: TermKeys.oopAbstractClass,
-    title: LocalizedString(en: 'Abstract Class', ar: 'الفئة المجردة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Abstract Class', ar: 'الفئة المجردة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A class that cannot be instantiated directly and typically contains abstract methods (methods without implementation). It serves as a base class for other classes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'فئة لا يمكن إنشاء نسخ منها مباشرة وعادة تحتوي على أساليب مجردة (أساليب بدون تنفيذ). تعمل كفئة أساس لفئات أخرى.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Differences from interfaces:',
           value: [
             'Can have concrete (implemented) methods',
@@ -1494,7 +1492,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'A class can extend only one abstract class (single inheritance)',
           ],
         ),
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           'abstract class Animal {\n'
           '  String name;\n'
@@ -1507,7 +1505,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفروقات عن الواجهات:',
           value: [
             'يمكن أن تحتوي على أساليب ملموسة (منفذة)',
@@ -1516,7 +1514,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'يمكن للفئة أن ترث فئة مجردة واحدة فقط (وراثة أحادية)',
           ],
         ),
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           'abstract class Animal {\n'
           '  String name;\n'
@@ -1539,22 +1537,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopInheritance: ProgrammingTerm(
     id: TermKeys.oopInheritance,
-    title: LocalizedString(en: 'Inheritance', ar: 'الوراثة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Inheritance', ar: 'الوراثة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A mechanism where a class (child/subclass) derives properties and methods from another class (parent/superclass). It enables code reuse and creates hierarchical relationships.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'آلية حيث تستمد فئة (الطفل/الفئة الفرعية) الخصائص والأساليب من فئة أخرى (الوالد/الفئة الأساسية). تمكن من إعادة استخدام الكود وإنشاء علاقات هرمية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Code reusability - inherit existing functionality',
@@ -1562,7 +1560,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Hierarchical organization - model real-world relationships',
           ],
         ),
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           'class Animal {\n'
           '  void eat() => print("Eating");\n'
@@ -1575,10 +1573,10 @@ const Map<String, ProgrammingTerm> allTerms = {
           'd.bark(); // own method',
           codeLanguage: .dart,
         ),
-        StringContent('Dart supports single inheritance (one parent only).'),
+        StrContent('Dart supports single inheritance (one parent only).'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'إعادة استخدام الكود - وراثة الوظائف الموجودة',
@@ -1586,7 +1584,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التنظيم الهرمي - نمذجة العلاقات الواقعية',
           ],
         ),
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           'class Animal {\n'
           '  void eat() => print("يأكل");\n'
@@ -1599,7 +1597,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           'd.bark(); // أسلوب خاص',
           codeLanguage: .dart,
         ),
-        StringContent('Dart يدعم الوراثة الأحادية (والد واحد فقط).'),
+        StrContent('Dart يدعم الوراثة الأحادية (والد واحد فقط).'),
       ],
     ),
     type: .concept,
@@ -1617,29 +1615,29 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopPolymorphism: ProgrammingTerm(
     id: TermKeys.oopPolymorphism,
-    title: LocalizedString(en: 'Polymorphism', ar: 'تعدد الأشكال'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Polymorphism', ar: 'تعدد الأشكال'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The ability of objects of different types to be treated as objects of a common type. "Poly" means many, "morph" means forms - literally "many forms."',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'قدرة كائنات من أنواع مختلفة على أن تُعامل ككائنات من نوع مشترك. "Poly" تعني كثير، "morph" تعني أشكال - حرفيًا "أشكال كثيرة."',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Two main types:',
           value: [
             'Compile-time (Method Overloading) - same method name, different parameters',
             'Runtime (Method Overriding) - subclass provides specific implementation',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'void makeSound(Animal animal) {\n'
           '  animal.speak();  // different behavior for Dog, Cat, Bird\n'
@@ -1649,17 +1647,17 @@ const Map<String, ProgrammingTerm> allTerms = {
           'makeSound(Bird());  // "Tweet!"',
           codeLanguage: .dart,
         ),
-        StringContent('This enables writing flexible, reusable code.'),
+        StrContent('This enables writing flexible, reusable code.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'نوعان رئيسيان:',
           value: [
             'وقت الترجمة (تحميل زائد للأساليب) - نفس اسم الأسلوب، معاملات مختلفة',
             'وقت التشغيل (تجاوز الأساليب) - الفئة الفرعية توفر تنفيذًا محددًا',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'void makeSound(Animal animal) {\n'
           '  animal.speak();  // سلوك مختلف لـ Dog، Cat، Bird\n'
@@ -1669,7 +1667,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           'makeSound(Bird());  // "تغريد!"',
           codeLanguage: .dart,
         ),
-        StringContent('هذا يمكن من كتابة كود مرن وقابل لإعادة الاستخدام.'),
+        StrContent('هذا يمكن من كتابة كود مرن وقابل لإعادة الاستخدام.'),
       ],
     ),
     type: .concept,
@@ -1683,22 +1681,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopEncapsulation: ProgrammingTerm(
     id: TermKeys.oopEncapsulation,
-    title: LocalizedString(en: 'Encapsulation', ar: 'التغليف'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Encapsulation', ar: 'التغليف'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Bundling data (properties) and methods that operate on that data within a single unit (class), and restricting direct access to some components.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تجميع البيانات (الخصائص) والأساليب التي تعمل على تلك البيانات ضمن وحدة واحدة (فئة)، وتقييد الوصول المباشر إلى بعض المكونات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Data hiding - internal details are protected',
@@ -1707,7 +1705,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Modularity - self-contained units',
           ],
         ),
-        StringContent('In Dart, use underscore prefix for private members:'),
+        StrContent('In Dart, use underscore prefix for private members:'),
         CodeContent(
           'class BankAccount {\n'
           '  double _balance = 0;  // private\n'
@@ -1722,7 +1720,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'إخفاء البيانات - التفاصيل الداخلية محمية',
@@ -1731,7 +1729,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'النمطية - وحدات مستقلة',
           ],
         ),
-        StringContent('في Dart، استخدم شرطة سفلية كبادئة للأعضاء الخاصة:'),
+        StrContent('في Dart، استخدم شرطة سفلية كبادئة للأعضاء الخاصة:'),
         CodeContent(
           'class BankAccount {\n'
           '  double _balance = 0;  // خاص\n'
@@ -1757,29 +1755,29 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopAbstraction: ProgrammingTerm(
     id: TermKeys.oopAbstraction,
-    title: LocalizedString(en: 'Abstraction', ar: 'التجريد'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Abstraction', ar: 'التجريد'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Hiding complex implementation details and showing only the essential features. Abstraction simplifies complexity by modeling classes at an appropriate level.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'إخفاء تفاصيل التنفيذ المعقدة وإظهار الميزات الأساسية فقط. يبسط التجريد التعقيد من خلال نمذجة الفئات في المستوى المناسب.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Think of driving a car:',
           value: [
             'You use simple interfaces (steering wheel, pedals)',
             "You don't need to know how the engine works internally",
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'In programming:',
           value: [
             'Abstract classes and interfaces define "what" without "how"',
@@ -1787,19 +1785,19 @@ const Map<String, ProgrammingTerm> allTerms = {
             'User works with simple, intuitive APIs',
           ],
         ),
-        StringContent(
+        StrContent(
           "Example: Using List in Dart - you don't need to know the internal array implementation, you just use add(), remove(), etc.",
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'فكر في قيادة السيارة:',
           value: [
             'تستخدم واجهات بسيطة (عجلة القيادة، الدواسات)',
             'لا تحتاج لمعرفة كيف يعمل المحرك داخليًا',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'في البرمجة:',
           value: [
             'الفئات المجردة والواجهات تحدد "ماذا" بدون "كيف"',
@@ -1807,7 +1805,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'المستخدم يعمل مع واجهات برمجة بسيطة وبديهية',
           ],
         ),
-        StringContent(
+        StrContent(
           'مثال: استخدام List في Dart - لا تحتاج لمعرفة تنفيذ المصفوفة الداخلي، فقط تستخدم add()، remove()، إلخ.',
         ),
       ],
@@ -1826,25 +1824,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.paradigmOop: ProgrammingTerm(
     id: TermKeys.paradigmOop,
-    title: LocalizedString(
+    title: LocS(
       en: 'Object-Oriented Programming',
       ar: 'البرمجة الموجهة للكائنات',
     ),
-    quickOverview: LocalizedValue(
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A programming paradigm based on the concept of "objects" - entities that encapsulate data and behavior. OOP organizes code around objects rather than functions and logic.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج برمجة يعتمد على مفهوم "الكائنات" - كيانات تغلف البيانات والسلوك. تنظم OOP الكود حول الكائنات بدلاً من الدوال والمنطق.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Four pillars of OOP:',
           value: [
             '1. Encapsulation - bundling data and methods',
@@ -1853,7 +1851,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '4. Polymorphism - objects taking many forms',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Modularity - code is organized in self-contained units',
@@ -1862,12 +1860,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Real-world modeling - maps naturally to real concepts',
           ],
         ),
-        StringContent(
+        StrContent(
           'Dart is fundamentally object-oriented - everything is an object.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأعمدة الأربعة لـ OOP:',
           value: [
             '1. التغليف - تجميع البيانات والأساليب',
@@ -1876,7 +1874,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '4. تعدد الأشكال - الكائنات تأخذ أشكالاً عديدة',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'النمطية - الكود منظم في وحدات مستقلة',
@@ -1885,7 +1883,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'نمذجة العالم الواقعي - يتوافق بشكل طبيعي مع المفاهيم الواقعية',
           ],
         ),
-        StringContent('Dart هو في الأساس موجه للكائنات - كل شيء هو كائن.'),
+        StrContent('Dart هو في الأساس موجه للكائنات - كل شيء هو كائن.'),
       ],
     ),
     type: .paradigm,
@@ -1906,25 +1904,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.paradigmFunctional: ProgrammingTerm(
     id: TermKeys.paradigmFunctional,
-    title: LocalizedString(
-      en: 'Functional Programming',
-      ar: 'البرمجة الوظيفية',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Functional Programming', ar: 'البرمجة الوظيفية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A programming paradigm where computation is done by evaluating mathematical functions and avoiding changing state or mutable data.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج برمجة حيث يتم الحساب من خلال تقييم الدوال الرياضية وتجنب تغيير الحالة أو البيانات القابلة للتعديل.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key concepts:',
           value: [
             'Pure functions - same input always produces same output, no side effects',
@@ -1934,8 +1929,8 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Function composition - combining simple functions to build complex ones',
           ],
         ),
-        StringContent('Common operations: map, filter, reduce'),
-        StringContent(
+        StrContent('Common operations: map, filter, reduce'),
+        StrContent(
           'Dart supports functional programming with first-class functions:',
         ),
         CodeContent(
@@ -1945,7 +1940,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المفاهيم الرئيسية:',
           value: [
             'دوال نقية - نفس المدخل ينتج دائمًا نفس المخرج، بدون آثار جانبية',
@@ -1955,8 +1950,8 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تركيب الدوال - دمج دوال بسيطة لبناء دوال معقدة',
           ],
         ),
-        StringContent('العمليات الشائعة: map، filter، reduce'),
-        StringContent('Dart يدعم البرمجة الوظيفية مع دوال من الدرجة الأولى:'),
+        StrContent('العمليات الشائعة: map، filter، reduce'),
+        StrContent('Dart يدعم البرمجة الوظيفية مع دوال من الدرجة الأولى:'),
         CodeContent(
           'final numbers = [1, 2, 3, 4];\n'
           'final doubled = numbers.map((n) => n * 2).toList();',
@@ -1975,25 +1970,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.paradigmProcedural: ProgrammingTerm(
     id: TermKeys.paradigmProcedural,
-    title: LocalizedString(
-      en: 'Procedural Programming',
-      ar: 'البرمجة الإجرائية',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Procedural Programming', ar: 'البرمجة الإجرائية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A programming paradigm based on the concept of procedure calls - step-by-step instructions organized into procedures (functions/subroutines).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج برمجة يعتمد على مفهوم استدعاءات الإجراءات - تعليمات خطوة بخطوة منظمة في إجراءات (دوال/إجراءات فرعية).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Characteristics:',
           value: [
             'Sequential execution - code runs from top to bottom',
@@ -2002,7 +1994,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Focus on "how" - step-by-step instructions',
           ],
         ),
-        StringContent(
+        StrContent(
           'Languages like C and Pascal are procedural. Even in OOP languages like Dart, simple scripts often use procedural style:',
         ),
         CodeContent(
@@ -2015,7 +2007,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الخصائص:',
           value: [
             'تنفيذ متسلسل - الكود يعمل من الأعلى إلى الأسفل',
@@ -2024,7 +2016,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التركيز على "كيف" - تعليمات خطوة بخطوة',
           ],
         ),
-        StringContent(
+        StrContent(
           'لغات مثل C و Pascal هي إجرائية. حتى في لغات OOP مثل Dart، البرامج النصية البسيطة غالبًا تستخدم الأسلوب الإجرائي:',
         ),
         CodeContent(
@@ -2047,22 +2039,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.concurrencyThread: ProgrammingTerm(
     id: TermKeys.concurrencyThread,
-    title: LocalizedString(en: 'Thread', ar: 'الخيط'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Thread', ar: 'الخيط'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The smallest sequence of programmed instructions that can be managed independently by a scheduler. Threads allow multiple tasks to run concurrently within a single process.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أصغر تسلسل من التعليمات المبرمجة التي يمكن إدارتها بشكل مستقل بواسطة مجدول. تسمح الخيوط بتشغيل مهام متعددة بشكل متزامن ضمن عملية واحدة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key points:',
           value: [
             'Lightweight - share memory and resources within the same process',
@@ -2070,12 +2062,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Shared memory - can access same variables (requires synchronization)',
           ],
         ),
-        StringContent(
+        StrContent(
           'Note: Dart uses isolates instead of traditional threads. Isolates have their own memory and communicate via message passing, avoiding shared memory issues.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'النقاط الرئيسية:',
           value: [
             'خفيف الوزن - يشارك الذاكرة والموارد ضمن نفس العملية',
@@ -2083,7 +2075,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'ذاكرة مشتركة - يمكن الوصول لنفس المتغيرات (يتطلب تزامن)',
           ],
         ),
-        StringContent(
+        StrContent(
           'ملاحظة: Dart يستخدم isolates بدلاً من الخيوط التقليدية. لدى Isolates ذاكرتها الخاصة وتتواصل عبر تمرير الرسائل، متجنبة مشاكل الذاكرة المشتركة.',
         ),
       ],
@@ -2102,22 +2094,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.concurrencyProcess: ProgrammingTerm(
     id: TermKeys.concurrencyProcess,
-    title: LocalizedString(en: 'Process', ar: 'العملية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Process', ar: 'العملية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An instance of a computer program that is being executed. A process has its own memory space, resources, and execution context.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نسخة من برنامج كمبيوتر قيد التنفيذ. للعملية مساحة ذاكرة خاصة بها، موارد، وسياق تنفيذ.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key differences from threads:',
           value: [
             "Isolated memory - processes don't share memory",
@@ -2126,12 +2118,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'IPC needed - Inter-Process Communication for data sharing',
           ],
         ),
-        StringContent(
+        StrContent(
           'Operating systems run multiple processes concurrently. Dart/Flutter apps typically run in a single process with multiple isolates.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفروقات الرئيسية عن الخيوط:',
           value: [
             'ذاكرة معزولة - العمليات لا تشارك الذاكرة',
@@ -2140,7 +2132,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تحتاج IPC - اتصال بين العمليات لمشاركة البيانات',
           ],
         ),
-        StringContent(
+        StrContent(
           'أنظمة التشغيل تشغل عمليات متعددة بشكل متزامن. تطبيقات Dart/Flutter عادة تعمل في عملية واحدة مع isolates متعددة.',
         ),
       ],
@@ -2154,55 +2146,55 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.concurrencySemaphore: ProgrammingTerm(
     id: TermKeys.concurrencySemaphore,
-    title: LocalizedString(en: 'Semaphore', ar: 'الإشارة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Semaphore', ar: 'الإشارة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A synchronization primitive used to control access to shared resources in concurrent systems. A semaphore maintains a counter that limits how many threads/processes can access a resource.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'بدائية تزامن تُستخدم للتحكم في الوصول إلى الموارد المشتركة في الأنظمة المتزامنة. تحافظ الإشارة على عداد يحد من عدد الخيوط/العمليات التي يمكنها الوصول إلى مورد.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types:',
           value: [
             'Binary semaphore (mutex) - allows 0 or 1 thread (like a lock)',
             'Counting semaphore - allows N threads (e.g., connection pool)',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Operations:',
           value: [
             'Wait/P/acquire - decrement counter, block if zero',
             'Signal/V/release - increment counter, wake waiting thread',
           ],
         ),
-        StringContent(
+        StrContent(
           'Used to prevent race conditions and coordinate access to limited resources.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع:',
           value: [
             'إشارة ثنائية (mutex) - تسمح بـ 0 أو 1 خيط (مثل القفل)',
             'إشارة عد - تسمح بـ N خيط (مثل، تجمع الاتصالات)',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'العمليات:',
           value: [
             'انتظار/P/استحواذ - تقليل العداد، حظر إذا كان صفرًا',
             'إشارة/V/إطلاق - زيادة العداد، إيقاظ خيط منتظر',
           ],
         ),
-        StringContent(
+        StrContent(
           'تُستخدم لمنع ظروف السباق وتنسيق الوصول إلى الموارد المحدودة.',
         ),
       ],
@@ -2219,22 +2211,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.concurrencyDeadlock: ProgrammingTerm(
     id: TermKeys.concurrencyDeadlock,
-    title: LocalizedString(en: 'Deadlock', ar: 'الجمود'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Deadlock', ar: 'الجمود'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A situation in concurrent programming where two or more threads/processes are permanently blocked, each waiting for a resource held by another.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'موقف في البرمجة المتزامنة حيث يتم حظر خيطين أو أكثر/عمليات بشكل دائم، كل منها ينتظر موردًا يحتفظ به الآخر.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Classic example:',
           value: [
             'Thread A holds Resource 1, waits for Resource 2',
@@ -2242,7 +2234,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Both threads wait forever → deadlock!',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Four necessary conditions for deadlock:',
           value: [
             "Mutual exclusion - resources can't be shared",
@@ -2251,12 +2243,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Circular wait - circular chain of waiting',
           ],
         ),
-        StringContent(
+        StrContent(
           'Prevention: avoid circular dependencies, use timeouts, acquire locks in consistent order.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'مثال كلاسيكي:',
           value: [
             'الخيط A يحتفظ بالمورد 1، ينتظر المورد 2',
@@ -2264,7 +2256,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'كلا الخيطين ينتظران للأبد → جمود!',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أربعة شروط ضرورية للجمود:',
           value: [
             'الاستبعاد المتبادل - لا يمكن مشاركة الموارد',
@@ -2273,7 +2265,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الانتظار الدائري - سلسلة دائرية من الانتظار',
           ],
         ),
-        StringContent(
+        StrContent(
           'الوقاية: تجنب التبعيات الدائرية، استخدام مهلات، الحصول على الأقفال بترتيب ثابت.',
         ),
       ],
@@ -2290,25 +2282,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.concurrencyRaceCondition: ProgrammingTerm(
     id: TermKeys.concurrencyRaceCondition,
-    title: LocalizedString(en: 'Race Condition', ar: 'ظرف السباق'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Race Condition', ar: 'ظرف السباق'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A bug that occurs when the behavior of software depends on the timing or ordering of uncontrollable events.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'خطأ يحدث عندما يعتمد سلوك البرنامج على توقيت أو ترتيب الأحداث التي لا يمكن التحكم فيها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In multi-threaded programs, this happens when multiple threads access shared data without proper synchronization.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Example:',
           value: [
             'Thread 1: reads counter (value = 5)',
@@ -2318,7 +2310,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Expected: 7, Got: 6 → race condition!',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Prevention:',
           value: [
             'Use locks/mutexes for synchronization',
@@ -2329,10 +2321,10 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في البرامج متعددة الخيوط، يحدث هذا عندما تصل خيوط متعددة إلى بيانات مشتركة بدون تزامن مناسب.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'مثال:',
           value: [
             'الخيط 1: يقرأ العداد (القيمة = 5)',
@@ -2342,7 +2334,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'المتوقع: 7، الناتج: 6 → ظرف سباق!',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الوقاية:',
           value: [
             'استخدام الأقفال/mutexes للتزامن',
@@ -2366,28 +2358,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.concurrencyAsync: ProgrammingTerm(
     id: TermKeys.concurrencyAsync,
-    title: LocalizedString(
-      en: 'Asynchronous Programming',
-      ar: 'البرمجة غير المتزامنة',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Asynchronous Programming', ar: 'البرمجة غير المتزامنة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A programming model where operations run without blocking the main execution flow.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج برمجة حيث تعمل العمليات دون حظر تدفق التنفيذ الرئيسي.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Long-running tasks (I/O, network requests) run in the background while the program continues.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Responsiveness - UI stays responsive during long operations',
@@ -2395,7 +2384,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Scalability - handle many concurrent operations',
           ],
         ),
-        StringContent('In Dart, use async/await:'),
+        StrContent('In Dart, use async/await:'),
         CodeContent(
           'Future<String> fetchData() async {\n'
           '  final response = await http.get(url);\n'
@@ -2403,15 +2392,15 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'The await keyword waits for the Future without blocking the event loop.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'المهام طويلة الأمد (الإدخال/الإخراج، طلبات الشبكة) تعمل في الخلفية بينما يستمر البرنامج.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'الاستجابة - تبقى واجهة المستخدم مستجيبة أثناء العمليات الطويلة',
@@ -2419,7 +2408,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'قابلية التوسع - التعامل مع عمليات متزامنة كثيرة',
           ],
         ),
-        StringContent('في Dart، استخدم async/await:'),
+        StrContent('في Dart، استخدم async/await:'),
         CodeContent(
           'Future<String> fetchData() async {\n'
           '  final response = await http.get(url);\n'
@@ -2427,9 +2416,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
-          'الكلمة المفتاحية await تنتظر Future دون حظر حلقة الأحداث.',
-        ),
+        StrContent('الكلمة المفتاحية await تنتظر Future دون حظر حلقة الأحداث.'),
       ],
     ),
     type: .concept,
@@ -2443,25 +2430,23 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartLanguage: ProgrammingTerm(
     id: TermKeys.dartLanguage,
-    title: LocalizedString(en: 'Dart', ar: 'دارت'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Dart', ar: 'دارت'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A modern, client-optimized programming language developed by Google for building apps on multiple platforms.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'لغة برمجة حديثة محسنة للعميل طورتها Google لبناء التطبيقات على منصات متعددة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
-          'Dart is the language used to build Flutter applications.',
-        ),
-        UnorderedListContent(
+        StrContent('Dart is the language used to build Flutter applications.'),
+        ULContent(
           title: 'Key features:',
           value: [
             'Object-oriented - everything is an object',
@@ -2472,17 +2457,17 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Async/await - built-in asynchronous programming',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Dart can compile to:',
           value: ['Native machine code (mobile/desktop)', 'JavaScript (web)'],
         ),
-        StringContent(
+        StrContent(
           'Used for: Flutter apps, web apps, server-side development.',
         ),
       ],
       ar: [
-        StringContent('Dart هي اللغة المستخدمة لبناء تطبيقات Flutter.'),
-        UnorderedListContent(
+        StrContent('Dart هي اللغة المستخدمة لبناء تطبيقات Flutter.'),
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'موجهة للكائنات - كل شيء هو كائن',
@@ -2493,11 +2478,11 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Async/await - برمجة غير متزامنة مدمجة',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'يمكن لـ Dart الترجمة إلى:',
           value: ['كود آلة أصلي (موبايل/سطح مكتب)', 'JavaScript (ويب)'],
         ),
-        StringContent(
+        StrContent(
           'تُستخدم في: تطبيقات Flutter، تطبيقات الويب، التطوير من جانب الخادم.',
         ),
       ],
@@ -2513,22 +2498,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterFramework: ProgrammingTerm(
     id: TermKeys.flutterFramework,
-    title: LocalizedString(en: 'Flutter', ar: 'فلاتر'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Flutter', ar: 'فلاتر'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           "Google's open-source UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase using Dart.",
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة أدوات واجهة المستخدم مفتوحة المصدر من Google لبناء تطبيقات جميلة مترجمة أصليًا للموبايل والويب وسطح المكتب من كود واحد باستخدام Dart.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key features:',
           value: [
             'Write once, run anywhere - single codebase for all platforms',
@@ -2538,12 +2523,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Material Design & Cupertino - platform-specific designs',
           ],
         ),
-        StringContent(
+        StrContent(
           'Flutter uses a widget tree architecture where everything is a widget. Widgets describe what the UI should look like.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'اكتب مرة، شغل في أي مكان - كود واحد لجميع المنصات',
@@ -2553,7 +2538,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Material Design و Cupertino - تصاميم خاصة بالمنصة',
           ],
         ),
-        StringContent(
+        StrContent(
           'Flutter يستخدم معمارية شجرة الويدجت حيث كل شيء هو ويدجت. تصف الويدجت كيف يجب أن تبدو واجهة المستخدم.',
         ),
       ],
@@ -2573,22 +2558,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterWidget: ProgrammingTerm(
     id: TermKeys.flutterWidget,
-    title: LocalizedString(en: 'Widget', ar: 'الويدجت'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Widget', ar: 'الويدجت'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The fundamental building block of a Flutter user interface. A widget is an immutable description of part of the UI.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'اللبنة الأساسية لواجهة المستخدم في Flutter. الويدجت هو وصف ثابت لجزء من واجهة المستخدم.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Everything in Flutter is a widget:',
           value: [
             'Layout widgets - Row, Column, Container, Stack',
@@ -2597,10 +2582,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Material/Cupertino widgets - platform-specific designs',
           ],
         ),
-        StringContent(
+        StrContent(
           'Widgets are arranged in a tree hierarchy. When state changes, Flutter rebuilds the affected widgets efficiently.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Two main types:',
           value: [
             'StatelessWidget - for static content',
@@ -2609,7 +2594,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'كل شيء في Flutter هو ويدجت:',
           value: [
             'ويدجت التخطيط - Row، Column، Container، Stack',
@@ -2618,10 +2603,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'ويدجت Material/Cupertino - تصاميم خاصة بالمنصة',
           ],
         ),
-        StringContent(
+        StrContent(
           'يتم ترتيب الويدجت في تسلسل هرمي شجري. عندما تتغير الحالة، يعيد Flutter بناء الويدجت المتأثر بكفاءة.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'نوعان رئيسيان:',
           value: [
             'StatelessWidget - للمحتوى الثابت',
@@ -2644,22 +2629,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterStatelessWidget: ProgrammingTerm(
     id: TermKeys.flutterStatelessWidget,
-    title: LocalizedString(en: 'StatelessWidget', ar: 'ويدجت بدون حالة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'StatelessWidget', ar: 'ويدجت بدون حالة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           "A Flutter widget that has no mutable state. Its appearance is completely determined by its constructor parameters and doesn't change over time.",
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ويدجت Flutter ليس له حالة قابلة للتغيير. يتم تحديد مظهره بالكامل بواسطة معاملات المنشئ ولا يتغير مع مرور الوقت.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Use StatelessWidget when:',
           value: [
             "The UI doesn't change dynamically",
@@ -2667,7 +2652,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Widget depends only on constructor parameters',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'class Greeting extends StatelessWidget {\n'
           '  final String name;\n'
@@ -2683,7 +2668,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'استخدم StatelessWidget عندما:',
           value: [
             'لا تتغير واجهة المستخدم ديناميكيًا',
@@ -2691,7 +2676,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'يعتمد الويدجت فقط على معاملات المنشئ',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'class Greeting extends StatelessWidget {\n'
           '  final String name;\n'
@@ -2717,22 +2702,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterStatefulWidget: ProgrammingTerm(
     id: TermKeys.flutterStatefulWidget,
-    title: LocalizedString(en: 'StatefulWidget', ar: 'ويدجت ذو حالة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'StatefulWidget', ar: 'ويدجت ذو حالة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Flutter widget that maintains mutable state in a separate State object. When the state changes, the widget can rebuild to reflect those changes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ويدجت Flutter يحافظ على حالة قابلة للتغيير في كائن State منفصل. عندما تتغير الحالة، يمكن للويدجت إعادة البناء لتعكس تلك التغييرات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Use StatefulWidget when:',
           value: [
             'The UI changes based on user interaction',
@@ -2740,7 +2725,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Widget has internal data that can change',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'class Counter extends StatefulWidget {\n'
           '  @override\n'
@@ -2766,7 +2751,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'استخدم StatefulWidget عندما:',
           value: [
             'تتغير واجهة المستخدم بناءً على تفاعل المستخدم',
@@ -2774,7 +2759,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الويدجت له بيانات داخلية يمكن أن تتغير',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'class Counter extends StatefulWidget {\n'
           '  @override\n'
@@ -2810,22 +2795,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterHotReload: ProgrammingTerm(
     id: TermKeys.flutterHotReload,
-    title: LocalizedString(en: 'Hot Reload', ar: 'إعادة التحميل الساخن'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Hot Reload', ar: 'إعادة التحميل الساخن'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Flutter feature that allows you to inject updated source code into a running app and see changes almost instantly without restarting the app or losing its state.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ميزة Flutter تسمح لك بحقن كود مصدر محدث في تطبيق قيد التشغيل ورؤية التغييرات على الفور تقريبًا دون إعادة تشغيل التطبيق أو فقدان حالته.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Instant feedback - see changes in less than a second',
@@ -2834,7 +2819,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Works on all platforms - mobile, web, desktop',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'How to use:',
           value: [
             'Press "r" in terminal',
@@ -2842,12 +2827,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Save the file (if auto-reload enabled)',
           ],
         ),
-        StringContent(
+        StrContent(
           "Hot reload is one of Flutter's most loved features for rapid development.",
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'ملاحظات فورية - شاهد التغييرات في أقل من ثانية',
@@ -2856,7 +2841,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'يعمل على جميع المنصات - موبايل، ويب، سطح مكتب',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'كيفية الاستخدام:',
           value: [
             'اضغط "r" في الطرفية',
@@ -2864,7 +2849,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'احفظ الملف (إذا كانت إعادة التحميل التلقائي مفعلة)',
           ],
         ),
-        StringContent(
+        StrContent(
           'إعادة التحميل الساخن هي واحدة من أكثر ميزات Flutter المحبوبة للتطوير السريع.',
         ),
       ],
@@ -2879,22 +2864,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterHotRestart: ProgrammingTerm(
     id: TermKeys.flutterHotRestart,
-    title: LocalizedString(en: 'Hot Restart', ar: 'إعادة التشغيل الساخن'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Hot Restart', ar: 'إعادة التشغيل الساخن'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Flutter feature similar to hot reload, but restarts the app from the main() function. This loses the current state but is faster than a full restart.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ميزة Flutter مشابهة لإعادة التحميل الساخن، لكنها تعيد تشغيل التطبيق من دالة main(). هذا يفقد الحالة الحالية لكنه أسرع من إعادة التشغيل الكاملة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Differences from hot reload:',
           value: [
             'Restarts from main() - loses all state',
@@ -2902,7 +2887,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'More thorough - catches more types of changes',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'When to use hot restart:',
           value: [
             "When hot reload doesn't pick up changes",
@@ -2911,12 +2896,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'When hot reload shows unexpected behavior',
           ],
         ),
-        StringContent(
+        StrContent(
           'How to use: Press "R" (capital) in terminal or click the hot restart button.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفروقات عن إعادة التحميل الساخن:',
           value: [
             'يعيد التشغيل من main() - يفقد كل الحالة',
@@ -2924,7 +2909,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أكثر شمولاً - يلتقط أنواعًا أكثر من التغييرات',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'متى تستخدم إعادة التشغيل الساخن:',
           value: [
             'عندما لا تلتقط إعادة التحميل الساخن التغييرات',
@@ -2933,7 +2918,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'عندما تظهر إعادة التحميل الساخن سلوكًا غير متوقع',
           ],
         ),
-        StringContent(
+        StrContent(
           'كيفية الاستخدام: اضغط "R" (كبير) في الطرفية أو انقر زر إعادة التشغيل الساخن.',
         ),
       ],
@@ -2948,22 +2933,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterMaterialDesign: ProgrammingTerm(
     id: TermKeys.flutterMaterialDesign,
-    title: LocalizedString(en: 'Material Design', ar: 'تصميم ماتيريال'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Material Design', ar: 'تصميم ماتيريال'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An open-source design system created by Google that provides guidelines for visual, motion, and interaction design across platforms and devices.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نظام تصميم مفتوح المصدر أنشأته Google يوفر إرشادات للتصميم المرئي والحركي والتفاعلي عبر المنصات والأجهزة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title:
               "Flutter's material library implements Material Design components:",
           value: [
@@ -2973,7 +2958,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Material theming - consistent colors, typography, shapes',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Material Design principles:',
           value: [
             'Material as metaphor - inspired by physical materials',
@@ -2981,12 +2966,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Motion provides meaning - purposeful animations',
           ],
         ),
-        StringContent(
+        StrContent(
           'Widely used for Android apps and cross-platform consistency.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'مكتبة material في Flutter تنفذ مكونات Material Design:',
           value: [
             'MaterialApp - ويدجت جذر لتطبيقات Material',
@@ -2995,7 +2980,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تصميم Material - ألوان متسقة، طباعة، أشكال',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'مبادئ Material Design:',
           value: [
             'المادة كاستعارة - مستوحى من المواد الفيزيائية',
@@ -3003,9 +2988,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الحركة توفر معنى - رسوم متحركة هادفة',
           ],
         ),
-        StringContent(
-          'يستخدم على نطاق واسع لتطبيقات Android واتساق عبر المنصات.',
-        ),
+        StrContent('يستخدم على نطاق واسع لتطبيقات Android واتساق عبر المنصات.'),
       ],
     ),
     type: .designSystem,
@@ -3019,22 +3002,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartNullSafety: ProgrammingTerm(
     id: TermKeys.dartNullSafety,
-    title: LocalizedString(en: 'Null Safety', ar: 'أمان القيم الفارغة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Null Safety', ar: 'أمان القيم الفارغة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Dart language feature that helps prevent null reference errors by distinguishing between nullable and non-nullable types at compile time.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ميزة لغة Dart تساعد في منع أخطاء المراجع الفارغة من خلال التمييز بين الأنواع القابلة للقيم الفارغة وغير القابلة في وقت الترجمة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key concepts:',
           value: [
             "Non-nullable by default - variables can't be null unless explicitly marked",
@@ -3043,19 +3026,19 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Compile-time safety - catch errors before runtime',
           ],
         ),
-        StringContent('Examples:'),
+        StrContent('Examples:'),
         CodeContent(
           'String name = "Alice";  // Cannot be null\n'
           'String? nickname;  // Can be null\n'
           'int length = nickname?.length ?? 0;  // Safe access',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Null safety eliminates one of the most common sources of runtime errors.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المفاهيم الرئيسية:',
           value: [
             'غير فارغة افتراضيًا - المتغيرات لا يمكن أن تكون فارغة إلا إذا وُسمت صراحة',
@@ -3064,14 +3047,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أمان وقت الترجمة - اكتشاف الأخطاء قبل وقت التشغيل',
           ],
         ),
-        StringContent('أمثلة:'),
+        StrContent('أمثلة:'),
         CodeContent(
           'String name = "Alice";  // لا يمكن أن يكون فارغًا\n'
           'String? nickname;  // يمكن أن يكون فارغًا\n'
           'int length = nickname?.length ?? 0;  // وصول آمن',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'أمان القيم الفارغة يزيل واحدًا من أكثر مصادر أخطاء وقت التشغيل شيوعًا.',
         ),
       ],
@@ -3086,22 +3069,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartPub: ProgrammingTerm(
     id: TermKeys.dartPub,
-    title: LocalizedString(en: 'pub (Package Manager)', ar: 'pub (مدير الحزم)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'pub (Package Manager)', ar: 'pub (مدير الحزم)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           "Dart's package manager and command-line tool for managing dependencies, publishing packages, and running scripts.",
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مدير حزم Dart وأداة سطر الأوامر لإدارة التبعيات، نشر الحزم، وتشغيل البرامج النصية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key features:',
           value: [
             'Dependency management - install and update packages',
@@ -3110,7 +3093,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Script running - execute Dart scripts',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Common commands:',
           value: [
             'pub get - install dependencies from pubspec.yaml',
@@ -3118,12 +3101,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'pub publish - publish a package to pub.dev',
           ],
         ),
-        StringContent(
-          'Similar to: npm (JavaScript), pip (Python), Maven (Java)',
-        ),
+        StrContent('Similar to: npm (JavaScript), pip (Python), Maven (Java)'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'إدارة التبعيات - تثبيت وتحديث الحزم',
@@ -3132,7 +3113,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تشغيل البرامج النصية - تنفيذ برامج Dart النصية',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الأوامر الشائعة:',
           value: [
             'pub get - تثبيت التبعيات من pubspec.yaml',
@@ -3140,7 +3121,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'pub publish - نشر حزمة على pub.dev',
           ],
         ),
-        StringContent('مشابه لـ: npm (JavaScript)، pip (Python)، Maven (Java)'),
+        StrContent('مشابه لـ: npm (JavaScript)، pip (Python)، Maven (Java)'),
       ],
     ),
     type: .tool,
@@ -3154,22 +3135,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartIsolate: ProgrammingTerm(
     id: TermKeys.dartIsolate,
-    title: LocalizedString(en: 'Isolate', ar: 'العزلة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Isolate', ar: 'العزلة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           "Dart's concurrency model - an independent worker with its own memory heap and event loop. Isolates run code in parallel without sharing memory.",
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج التزامن في Dart - عامل مستقل له كومة ذاكرة خاصة وحلقة أحداث. تعمل Isolates بشكل متوازي دون مشاركة الذاكرة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key features:',
           value: [
             'True parallelism - run on separate threads',
@@ -3178,7 +3159,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'No shared state - prevents race conditions and deadlocks',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Use isolates for:',
           value: [
             'CPU-intensive computations (parsing large JSON, image processing)',
@@ -3186,14 +3167,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Running background tasks',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'await Isolate.spawn(heavyComputation, data);',
           codeLanguage: .dart,
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'توازي حقيقي - تعمل على خيوط منفصلة',
@@ -3202,7 +3183,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'بدون حالة مشتركة - يمنع ظروف السباق والجمود',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'استخدم isolates لـ:',
           value: [
             'الحسابات المكثفة لوحدة المعالجة المركزية (تحليل JSON كبير، معالجة الصور)',
@@ -3210,7 +3191,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تشغيل المهام في الخلفية',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'await Isolate.spawn(heavyComputation, data);',
           codeLanguage: .dart,
@@ -3231,22 +3212,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartFuture: ProgrammingTerm(
     id: TermKeys.dartFuture,
-    title: LocalizedString(en: 'Future', ar: 'المستقبل'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Future', ar: 'المستقبل'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Dart object representing a value or error that will be available at some point in the future. Futures are used for asynchronous operations.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'كائن Dart يمثل قيمة أو خطأ سيكون متاحًا في وقت ما في المستقبل. تُستخدم Futures للعمليات غير المتزامنة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'States of a Future:',
           value: [
             'Uncompleted - operation still running',
@@ -3254,7 +3235,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Completed with error - operation failed',
           ],
         ),
-        StringContent('Using Futures:'),
+        StrContent('Using Futures:'),
         CodeContent(
           'Future<String> fetchData() async {\n'
           '  await Future.delayed(Duration(seconds: 2));\n'
@@ -3266,10 +3247,10 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent('Similar to: Promise in JavaScript, Task in C#'),
+        StrContent('Similar to: Promise in JavaScript, Task in C#'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'حالات Future:',
           value: [
             'غير مكتمل - العملية لا تزال قيد التشغيل',
@@ -3277,7 +3258,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مكتمل بخطأ - العملية فشلت',
           ],
         ),
-        StringContent('استخدام Futures:'),
+        StrContent('استخدام Futures:'),
         CodeContent(
           'Future<String> fetchData() async {\n'
           '  await Future.delayed(Duration(seconds: 2));\n'
@@ -3289,7 +3270,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent('مشابه لـ: Promise في JavaScript، Task في C#'),
+        StrContent('مشابه لـ: Promise في JavaScript، Task في C#'),
       ],
     ),
     type: .concept,
@@ -3303,29 +3284,29 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartStream: ProgrammingTerm(
     id: TermKeys.dartStream,
-    title: LocalizedString(en: 'Stream', ar: 'التدفق'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Stream', ar: 'التدفق'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A sequence of asynchronous events delivered over time. Unlike Future (single value), Stream can deliver multiple values.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تسلسل من الأحداث غير المتزامنة يتم تسليمها عبر الزمن. على عكس Future (قيمة واحدة)، يمكن لـ Stream تسليم قيم متعددة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types:',
           value: [
             'Single-subscription - only one listener allowed',
             'Broadcast - multiple listeners allowed',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Use streams for:',
           value: [
             'User input events (clicks, keyboard)',
@@ -3334,7 +3315,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Timer events - periodic updates',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'Stream<int> countStream() async* {\n'
           '  for (int i = 1; i <= 5; i++) {\n'
@@ -3349,14 +3330,14 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع:',
           value: [
             'اشتراك واحد - مستمع واحد فقط مسموح',
             'بث - مستمعون متعددون مسموحون',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'استخدم التدفقات لـ:',
           value: [
             'أحداث إدخال المستخدم (نقرات، لوحة المفاتيح)',
@@ -3365,7 +3346,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أحداث المؤقت - تحديثات دورية',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'Stream<int> countStream() async* {\n'
           '  for (int i = 1; i <= 5; i++) {\n'
@@ -3391,22 +3372,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartMixin: ProgrammingTerm(
     id: TermKeys.dartMixin,
-    title: LocalizedString(en: 'Mixin', ar: 'المزيج'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Mixin', ar: 'المزيج'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A way to reuse code in multiple class hierarchies without using inheritance. Mixins allow you to add functionality to classes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'طريقة لإعادة استخدام الكود في تسلسلات هرمية متعددة للفئات دون استخدام الوراثة. تسمح لك Mixins بإضافة وظائف للفئات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Code reuse - share methods across unrelated classes',
@@ -3414,7 +3395,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Composition over inheritance - more flexible than extending',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'mixin Swimmer {\n'
           '  void swim() => print("Swimming");\n'
@@ -3433,7 +3414,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'إعادة استخدام الكود - مشاركة الأساليب عبر فئات غير مرتبطة',
@@ -3441,7 +3422,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التركيب على الوراثة - أكثر مرونة من التمديد',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'mixin Swimmer {\n'
           '  void swim() => print("سباحة");\n'
@@ -3471,22 +3452,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsConstant: ProgrammingTerm(
     id: TermKeys.fundamentalsConstant,
-    title: LocalizedString(en: 'Constant', ar: 'الثابت'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Constant', ar: 'الثابت'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A value that cannot be changed after it is set. Constants are used to define values that remain the same throughout program execution.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'قيمة لا يمكن تغييرها بعد تعيينها. تُستخدم الثوابت لتعريف القيم التي تبقى كما هي طوال تنفيذ البرنامج.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits of constants:',
           value: [
             'Prevents accidental modification of important values',
@@ -3495,7 +3476,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Type safety - errors caught at compile time',
           ],
         ),
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           'const double pi = 3.14159;  // Compile-time constant\n'
           'final currentTime = DateTime.now();  // Runtime constant\n'
@@ -3507,7 +3488,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'فوائد الثوابت:',
           value: [
             'تمنع التعديل العرضي للقيم المهمة',
@@ -3516,7 +3497,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أمان النوع - يتم اكتشاف الأخطاء في وقت الترجمة',
           ],
         ),
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           'const double pi = 3.14159;  // ثابت وقت الترجمة\n'
           'final currentTime = DateTime.now();  // ثابت وقت التشغيل\n'
@@ -3539,22 +3520,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsParameter: ProgrammingTerm(
     id: TermKeys.fundamentalsParameter,
-    title: LocalizedString(en: 'Parameter', ar: 'المعامل'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Parameter', ar: 'المعامل'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A variable in a function definition that receives a value when the function is called. Parameters define what inputs a function expects.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'متغير في تعريف الدالة يتلقى قيمة عند استدعاء الدالة. تحدد المعاملات المدخلات التي تتوقعها الدالة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of parameters in Dart:',
           value: [
             'Required positional - must be provided in order',
@@ -3563,7 +3544,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Required named - named parameters that must be provided',
           ],
         ),
-        StringContent('Examples:'),
+        StrContent('Examples:'),
         CodeContent(
           '// Required positional\n'
           'void greet(String name) { }\n'
@@ -3578,12 +3559,12 @@ const Map<String, ProgrammingTerm> allTerms = {
           'void greet({required String name}) { }',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Important: Parameter is the variable in the definition, Argument is the actual value passed.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع المعاملات في Dart:',
           value: [
             'موضعي مطلوب - يجب توفيره بالترتيب',
@@ -3592,7 +3573,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مسمى مطلوب - معاملات مسماة يجب توفيرها',
           ],
         ),
-        StringContent('أمثلة:'),
+        StrContent('أمثلة:'),
         CodeContent(
           '// موضعي مطلوب\n'
           'void greet(String name) { }\n'
@@ -3607,7 +3588,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           'void greet({required String name}) { }',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'مهم: المعامل هو المتغير في التعريف، الوسيط هو القيمة الفعلية الممررة.',
         ),
       ],
@@ -3625,22 +3606,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsReturnValue: ProgrammingTerm(
     id: TermKeys.fundamentalsReturnValue,
-    title: LocalizedString(en: 'Return Value', ar: 'القيمة المرجعة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Return Value', ar: 'القيمة المرجعة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The output that a function sends back to the caller. A function can return a value using the return statement.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الناتج الذي ترسله الدالة إلى المستدعي. يمكن للدالة إرجاع قيمة باستخدام جملة return.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key points:',
           value: [
             'Functions can return a value to the caller',
@@ -3649,7 +3630,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'return statement stops function execution',
           ],
         ),
-        StringContent('Examples:'),
+        StrContent('Examples:'),
         CodeContent(
           'int add(int a, int b) {\n'
           '  return a + b;  // Returns an integer\n'
@@ -3666,7 +3647,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'النقاط الرئيسية:',
           value: [
             'يمكن للدوال إرجاع قيمة للمستدعي',
@@ -3675,7 +3656,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'جملة return توقف تنفيذ الدالة',
           ],
         ),
-        StringContent('أمثلة:'),
+        StrContent('أمثلة:'),
         CodeContent(
           'int add(int a, int b) {\n'
           '  return a + b;  // يرجع عددًا صحيحًا\n'
@@ -3703,22 +3684,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsNull: ProgrammingTerm(
     id: TermKeys.fundamentalsNull,
-    title: LocalizedString(en: 'Null', ar: 'القيمة الفارغة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Null', ar: 'القيمة الفارغة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A special value representing the absence of a value. Null indicates that a variable has no value assigned to it.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'قيمة خاصة تمثل غياب القيمة. تشير null إلى أن المتغير لا يحتوي على قيمة مخصصة له.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Important concepts:',
           value: [
             'Null is different from 0, empty string, or false',
@@ -3726,7 +3707,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Modern languages provide null safety features',
           ],
         ),
-        StringContent('In Dart with null safety:'),
+        StrContent('In Dart with null safety:'),
         CodeContent(
           'String name = "Alice";  // Cannot be null\n'
           'String? nickname;  // Can be null (notice the ?)\n'
@@ -3741,12 +3722,12 @@ const Map<String, ProgrammingTerm> allTerms = {
           'int length2 = nickname!.length;  // Throws if null',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Null pointer exceptions are one of the most common programming errors, which is why Dart has built-in null safety.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'مفاهيم مهمة:',
           value: [
             'null مختلف عن 0، نص فارغ، أو false',
@@ -3754,7 +3735,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'توفر اللغات الحديثة ميزات أمان القيم الفارغة',
           ],
         ),
-        StringContent('في Dart مع أمان القيم الفارغة:'),
+        StrContent('في Dart مع أمان القيم الفارغة:'),
         CodeContent(
           'String name = "Alice";  // لا يمكن أن يكون null\n'
           'String? nickname;  // يمكن أن يكون null (لاحظ ?)\n'
@@ -3769,7 +3750,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           'int length2 = nickname!.length;  // يرمي خطأ إذا كان null',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'استثناءات المؤشر الفارغ هي واحدة من أكثر أخطاء البرمجة شيوعًا، ولهذا السبب لدى Dart أمان مدمج للقيم الفارغة.',
         ),
       ],
@@ -3785,22 +3766,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.fundamentalsRecursion: ProgrammingTerm(
     id: TermKeys.fundamentalsRecursion,
-    title: LocalizedString(en: 'Recursion', ar: 'التكرار الذاتي'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Recursion', ar: 'التكرار الذاتي'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A programming technique where a function calls itself to solve a problem by breaking it down into smaller, similar subproblems.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تقنية برمجة حيث تستدعي الدالة نفسها لحل مشكلة من خلال تقسيمها إلى مشاكل فرعية أصغر ومشابهة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Every recursive function needs:',
           value: [
             'Base case - condition to stop recursion',
@@ -3808,7 +3789,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Progress toward base case - each call gets closer to ending',
           ],
         ),
-        StringContent('Classic example - calculating factorial:'),
+        StrContent('Classic example - calculating factorial:'),
         CodeContent(
           'int factorial(int n) {\n'
           '  // Base case\n'
@@ -3825,14 +3806,14 @@ const Map<String, ProgrammingTerm> allTerms = {
           '//              = 5 * 4 * 3 * 2 * 1 = 120',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Advantages:',
           value: [
             'Elegant solutions for naturally recursive problems (trees, graphs)',
             'Simpler code for complex problems',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Disadvantages:',
           value: [
             'Can cause stack overflow if too deep',
@@ -3842,7 +3823,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'كل دالة تكرارية تحتاج:',
           value: [
             'حالة أساسية - شرط لإيقاف التكرار',
@@ -3850,7 +3831,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تقدم نحو الحالة الأساسية - كل استدعاء يقترب من النهاية',
           ],
         ),
-        StringContent('مثال كلاسيكي - حساب المضروب:'),
+        StrContent('مثال كلاسيكي - حساب المضروب:'),
         CodeContent(
           'int factorial(int n) {\n'
           '  // الحالة الأساسية\n'
@@ -3867,14 +3848,14 @@ const Map<String, ProgrammingTerm> allTerms = {
           '//              = 5 * 4 * 3 * 2 * 1 = 120',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'المزايا:',
           value: [
             'حلول أنيقة للمشاكل التكرارية الطبيعية (الأشجار، الرسوم البيانية)',
             'كود أبسط للمشاكل المعقدة',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'العيوب:',
           value: [
             'يمكن أن يسبب فيضان المكدس إذا كان عميقًا جدًا',
@@ -3894,22 +3875,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopMethod: ProgrammingTerm(
     id: TermKeys.oopMethod,
-    title: LocalizedString(en: 'Method', ar: 'الأسلوب'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Method', ar: 'الأسلوب'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A function that belongs to a class or object. Methods define the behaviors and actions that objects of that class can perform.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'دالة تنتمي إلى فئة أو كائن. تحدد الأساليب السلوكيات والإجراءات التي يمكن لكائنات تلك الفئة تنفيذها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of methods:',
           value: [
             'Instance methods - operate on object instances',
@@ -3918,7 +3899,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Setters - modify property values',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'class Car {\n'
           '  String brand;\n'
@@ -3943,7 +3924,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع الأساليب:',
           value: [
             'أساليب النسخة - تعمل على نسخ الكائنات',
@@ -3952,7 +3933,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Setters - تعديل قيم الخصائص',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'class Car {\n'
           '  String brand;\n'
@@ -3988,22 +3969,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopConstructor: ProgrammingTerm(
     id: TermKeys.oopConstructor,
-    title: LocalizedString(en: 'Constructor', ar: 'المنشئ'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Constructor', ar: 'المنشئ'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A special method that is automatically called when creating a new object. Constructors initialize the object\'s properties and set up its initial state.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أسلوب خاص يتم استدعاؤه تلقائيًا عند إنشاء كائن جديد. تقوم المنشئات بتهيئة خصائص الكائن وإعداد حالته الأولية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Constructor types in Dart:',
           value: [
             'Default constructor - same name as class',
@@ -4012,7 +3993,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Factory constructor - can return existing instances',
           ],
         ),
-        StringContent('Examples:'),
+        StrContent('Examples:'),
         CodeContent(
           'class Person {\n'
           '  String name;\n'
@@ -4036,7 +4017,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع المنشئات في Dart:',
           value: [
             'المنشئ الافتراضي - نفس اسم الفئة',
@@ -4045,7 +4026,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'المنشئ المصنعي - يمكنه إرجاع نسخ موجودة',
           ],
         ),
-        StringContent('أمثلة:'),
+        StrContent('أمثلة:'),
         CodeContent(
           'class Person {\n'
           '  String name;\n'
@@ -4083,22 +4064,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.oopGetterSetter: ProgrammingTerm(
     id: TermKeys.oopGetterSetter,
-    title: LocalizedString(en: 'Getter and Setter', ar: 'المُحصِّل والمُعيِّن'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Getter and Setter', ar: 'المُحصِّل والمُعيِّن'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Special methods for accessing (getter) and modifying (setter) private properties of a class. They provide controlled access to object data.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أساليب خاصة للوصول (getter) وتعديل (setter) الخصائص الخاصة لفئة. توفر وصولاً محكومًا لبيانات الكائن.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Encapsulation - control how properties are accessed',
@@ -4107,7 +4088,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Read-only properties - getter without setter',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'class Temperature {\n'
           '  double _celsius;  // Private property\n'
@@ -4137,7 +4118,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'التغليف - التحكم في كيفية الوصول للخصائص',
@@ -4146,7 +4127,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'خصائص للقراءة فقط - getter بدون setter',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'class Temperature {\n'
           '  double _celsius;  // خاصية خاصة\n'
@@ -4187,22 +4168,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.immutable: ProgrammingTerm(
     id: TermKeys.immutable,
-    title: LocalizedString(en: 'Immutable', ar: 'غير قابل للتغيير'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Immutable', ar: 'غير قابل للتغيير'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An object or value that cannot be modified after creation. Once created, its state remains constant throughout its lifetime.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'كائن أو قيمة لا يمكن تعديلها بعد الإنشاء. بمجرد إنشائها، تبقى حالتها ثابتة طوال عمرها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits of immutability:',
           value: [
             'Thread safety - no race conditions',
@@ -4211,7 +4192,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Debugging - state doesn\'t change unexpectedly',
           ],
         ),
-        StringContent('Examples in Dart:'),
+        StrContent('Examples in Dart:'),
         CodeContent(
           '// Immutable class\n'
           'class Point {\n'
@@ -4230,12 +4211,10 @@ const Map<String, ProgrammingTerm> allTerms = {
           'final name = "Alice";  // Strings are immutable in Dart',
           codeLanguage: .dart,
         ),
-        StringContent(
-          'Opposite: Mutable objects can be changed after creation.',
-        ),
+        StrContent('Opposite: Mutable objects can be changed after creation.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'فوائد عدم القابلية للتغيير:',
           value: [
             'أمان الخيوط - لا ظروف سباق',
@@ -4244,7 +4223,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تصحيح الأخطاء - الحالة لا تتغير بشكل غير متوقع',
           ],
         ),
-        StringContent('أمثلة في Dart:'),
+        StrContent('أمثلة في Dart:'),
         CodeContent(
           '// فئة غير قابلة للتغيير\n'
           'class Point {\n'
@@ -4263,9 +4242,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           'final name = "أليس";  // النصوص غير قابلة للتغيير في Dart',
           codeLanguage: .dart,
         ),
-        StringContent(
-          'العكس: الكائنات القابلة للتغيير يمكن تعديلها بعد الإنشاء.',
-        ),
+        StrContent('العكس: الكائنات القابلة للتغيير يمكن تعديلها بعد الإنشاء.'),
       ],
     ),
     type: .concept,
@@ -4278,22 +4255,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.state: ProgrammingTerm(
     id: TermKeys.state,
-    title: LocalizedString(en: 'State', ar: 'الحالة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'State', ar: 'الحالة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The data that an application or component maintains and can change over time. State represents the current condition or snapshot of an object or system.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'البيانات التي يحافظ عليها التطبيق أو المكون ويمكن أن تتغير بمرور الوقت. تمثل الحالة الوضع الحالي أو اللقطة لكائن أو نظام.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of state:',
           value: [
             'Local state - data used within a single widget/component',
@@ -4302,7 +4279,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Persistent state - saved between app sessions',
           ],
         ),
-        StringContent('Example in Flutter:'),
+        StrContent('Example in Flutter:'),
         CodeContent(
           'class CounterWidget extends StatefulWidget {\n'
           '  @override\n'
@@ -4327,7 +4304,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع الحالة:',
           value: [
             'حالة محلية - بيانات مستخدمة ضمن ويدجت/مكون واحد',
@@ -4336,7 +4313,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'حالة مستمرة - محفوظة بين جلسات التطبيق',
           ],
         ),
-        StringContent('مثال في Flutter:'),
+        StrContent('مثال في Flutter:'),
         CodeContent(
           'class CounterWidget extends StatefulWidget {\n'
           '  @override\n'
@@ -4371,25 +4348,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.typeInference: ProgrammingTerm(
     id: TermKeys.typeInference,
-    title: LocalizedString(en: 'Type Inference', ar: 'استنتاج النوع'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Type Inference', ar: 'استنتاج النوع'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The ability of a compiler to automatically deduce the data type of a variable based on its initial value, without requiring explicit type declaration.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'قدرة المترجم على استنتاج نوع بيانات المتغير تلقائيًا بناءً على قيمته الأولية، دون الحاجة لتصريح النوع صراحة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Type inference makes code cleaner while maintaining type safety.',
         ),
-        StringContent('Examples in Dart:'),
+        StrContent('Examples in Dart:'),
         CodeContent(
           '// Explicit type\n'
           'String name = "Alice";\n'
@@ -4407,7 +4384,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// name2 = 123;  // Error: A value of type int can\'t be assigned to String',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Less verbose code',
@@ -4418,10 +4395,8 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
-          'استنتاج النوع يجعل الكود أنظف مع الحفاظ على أمان النوع.',
-        ),
-        StringContent('أمثلة في Dart:'),
+        StrContent('استنتاج النوع يجعل الكود أنظف مع الحفاظ على أمان النوع.'),
+        StrContent('أمثلة في Dart:'),
         CodeContent(
           '// نوع صريح\n'
           'String name = "أليس";\n'
@@ -4439,7 +4414,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// name2 = 123;  // خطأ: لا يمكن تعيين قيمة من نوع int إلى String',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'كود أقل إسهابًا',
@@ -4463,22 +4438,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.staticTyping: ProgrammingTerm(
     id: TermKeys.staticTyping,
-    title: LocalizedString(en: 'Static Typing', ar: 'الكتابة الثابتة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Static Typing', ar: 'الكتابة الثابتة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A type system where variable types are checked at compile time. Once a variable is declared with a type, it cannot hold values of other types.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نظام كتابة حيث يتم فحص أنواع المتغيرات في وقت الترجمة. بمجرد تصريح متغير بنوع، لا يمكنه احتواء قيم من أنواع أخرى.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Characteristics:',
           value: [
             'Types are known before runtime',
@@ -4487,7 +4462,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Usually better performance',
           ],
         ),
-        StringContent('Example in Dart (statically typed):'),
+        StrContent('Example in Dart (statically typed):'),
         CodeContent(
           'int age = 25;\n'
           '// age = "twenty-five";  // Compile error!\n'
@@ -4499,12 +4474,12 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// numbers.add("four");  // Compile error!',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Statically typed languages: Dart, Java, C++, C#, TypeScript, Swift',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الخصائص:',
           value: [
             'الأنواع معروفة قبل وقت التشغيل',
@@ -4513,7 +4488,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'عادة أداء أفضل',
           ],
         ),
-        StringContent('مثال في Dart (مكتوب بشكل ثابت):'),
+        StrContent('مثال في Dart (مكتوب بشكل ثابت):'),
         CodeContent(
           'int age = 25;\n'
           '// age = "خمسة وعشرون";  // خطأ في الترجمة!\n'
@@ -4525,7 +4500,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// numbers.add("أربعة");  // خطأ في الترجمة!',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'لغات مكتوبة بشكل ثابت: Dart، Java، C++، C#، TypeScript، Swift',
         ),
       ],
@@ -4540,22 +4515,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dynamicTyping: ProgrammingTerm(
     id: TermKeys.dynamicTyping,
-    title: LocalizedString(en: 'Dynamic Typing', ar: 'الكتابة الديناميكية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Dynamic Typing', ar: 'الكتابة الديناميكية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A type system where variable types are checked at runtime. Variables can hold values of any type and can change types during execution.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نظام كتابة حيث يتم فحص أنواع المتغيرات في وقت التشغيل. يمكن للمتغيرات احتواء قيم من أي نوع ويمكنها تغيير الأنواع أثناء التنفيذ.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Characteristics:',
           value: [
             'Types are determined at runtime',
@@ -4564,14 +4539,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Faster to prototype',
           ],
         ),
-        StringContent('Example in Python (dynamically typed):'),
+        StrContent('Example in Python (dynamically typed):'),
         CodeContent(
           'x = 42        # x is an integer\n'
           'x = "hello"   # Now x is a string (allowed!)\n'
           'x = [1, 2, 3] # Now x is a list (also allowed!)',
           codeLanguage: .python,
         ),
-        StringContent('Dart supports dynamic typing with the dynamic keyword:'),
+        StrContent('Dart supports dynamic typing with the dynamic keyword:'),
         CodeContent(
           'dynamic value = 42;\n'
           'value = "hello";  // Allowed with dynamic\n'
@@ -4581,12 +4556,12 @@ const Map<String, ProgrammingTerm> allTerms = {
           'print(value.length);  // No error until runtime',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Dynamically typed languages: Python, JavaScript, Ruby, PHP',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الخصائص:',
           value: [
             'يتم تحديد الأنواع في وقت التشغيل',
@@ -4595,16 +4570,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أسرع للنماذج الأولية',
           ],
         ),
-        StringContent('مثال في Python (مكتوب بشكل ديناميكي):'),
+        StrContent('مثال في Python (مكتوب بشكل ديناميكي):'),
         CodeContent(
           'x = 42        # x عدد صحيح\n'
           'x = "hello"   # الآن x نص (مسموح!)\n'
           'x = [1, 2, 3] # الآن x قائمة (مسموح أيضًا!)',
           codeLanguage: .python,
         ),
-        StringContent(
-          'Dart يدعم الكتابة الديناميكية بالكلمة المفتاحية dynamic:',
-        ),
+        StrContent('Dart يدعم الكتابة الديناميكية بالكلمة المفتاحية dynamic:'),
         CodeContent(
           'dynamic value = 42;\n'
           'value = "hello";  // مسموح مع dynamic\n'
@@ -4614,9 +4587,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           'print(value.length);  // لا خطأ حتى وقت التشغيل',
           codeLanguage: .dart,
         ),
-        StringContent(
-          'لغات مكتوبة بشكل ديناميكي: Python، JavaScript، Ruby، PHP',
-        ),
+        StrContent('لغات مكتوبة بشكل ديناميكي: Python، JavaScript، Ruby، PHP'),
       ],
     ),
     type: .concept,
@@ -4629,22 +4600,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.compilation: ProgrammingTerm(
     id: TermKeys.compilation,
-    title: LocalizedString(en: 'Compilation', ar: 'الترجمة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Compilation', ar: 'الترجمة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of translating source code written in a high-level programming language into machine code or intermediate code that a computer can execute.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية ترجمة الكود المصدري المكتوب بلغة برمجة عالية المستوى إلى كود آلة أو كود وسيط يمكن للكمبيوتر تنفيذه.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Compilation process stages:',
           value: [
             'Lexical analysis - breaking code into tokens',
@@ -4654,19 +4625,19 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Code generation - producing executable code',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Types of compilation:',
           value: [
             'AOT (Ahead-of-Time) - compiled before execution',
             'JIT (Just-in-Time) - compiled during execution',
           ],
         ),
-        StringContent(
+        StrContent(
           'Dart uses both: JIT during development (hot reload), AOT for production (better performance).',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'مراحل عملية الترجمة:',
           value: [
             'التحليل المعجمي - تقسيم الكود إلى رموز',
@@ -4676,14 +4647,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'توليد الكود - إنتاج كود قابل للتنفيذ',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع الترجمة:',
           value: [
             'AOT (مسبقًا) - يترجم قبل التنفيذ',
             'JIT (في الوقت المناسب) - يترجم أثناء التنفيذ',
           ],
         ),
-        StringContent(
+        StrContent(
           'Dart يستخدم كليهما: JIT أثناء التطوير (إعادة التحميل الساخن)، AOT للإنتاج (أداء أفضل).',
         ),
       ],
@@ -4698,22 +4669,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.runtime: ProgrammingTerm(
     id: TermKeys.runtime,
-    title: LocalizedString(en: 'Runtime', ar: 'وقت التشغيل'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Runtime', ar: 'وقت التشغيل'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The period during which a program is executing. Also refers to the environment and libraries needed to run a program.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الفترة التي يكون فيها البرنامج قيد التنفيذ. يشير أيضًا إلى البيئة والمكتبات اللازمة لتشغيل البرنامج.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Runtime includes:',
           value: [
             'Execution environment - where code runs',
@@ -4722,14 +4693,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Error handling - exception management',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Compile-time vs Runtime:',
           value: [
             'Compile-time - errors caught by compiler before running',
             'Runtime - errors that occur during program execution',
           ],
         ),
-        StringContent('Examples:'),
+        StrContent('Examples:'),
         CodeContent(
           '// Compile-time error (caught before running)\n'
           '// int x = "hello";  // Type mismatch\n'
@@ -4744,7 +4715,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'وقت التشغيل يشمل:',
           value: [
             'بيئة التنفيذ - حيث يعمل الكود',
@@ -4753,14 +4724,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'معالجة الأخطاء - إدارة الاستثناءات',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'وقت الترجمة مقابل وقت التشغيل:',
           value: [
             'وقت الترجمة - أخطاء يكتشفها المترجم قبل التشغيل',
             'وقت التشغيل - أخطاء تحدث أثناء تنفيذ البرنامج',
           ],
         ),
-        StringContent('أمثلة:'),
+        StrContent('أمثلة:'),
         CodeContent(
           '// خطأ وقت الترجمة (يُكتشف قبل التشغيل)\n'
           '// int x = "hello";  // عدم تطابق النوع\n'
@@ -4785,22 +4756,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.compiler: ProgrammingTerm(
     id: TermKeys.compiler,
-    title: LocalizedString(en: 'Compiler', ar: 'المترجم'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Compiler', ar: 'المترجم'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A program that translates source code from a high-level programming language into machine code or intermediate code.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'برنامج يترجم الكود المصدري من لغة برمجة عالية المستوى إلى كود آلة أو كود وسيط.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'What compilers do:',
           value: [
             'Check syntax and type errors',
@@ -4809,15 +4780,15 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Produce error messages and warnings',
           ],
         ),
-        StringContent(
+        StrContent(
           'Examples: GCC (C/C++), javac (Java), Dart compiler, rustc (Rust)',
         ),
-        StringContent(
+        StrContent(
           'The Dart compiler can produce: native machine code (mobile/desktop), JavaScript (web), or kernel bytecode.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'ما يفعله المترجمون:',
           value: [
             'فحص أخطاء البناء والنوع',
@@ -4826,10 +4797,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'إنتاج رسائل أخطاء وتحذيرات',
           ],
         ),
-        StringContent(
+        StrContent(
           'أمثلة: GCC (C/C++)، javac (Java)، مترجم Dart، rustc (Rust)',
         ),
-        StringContent(
+        StrContent(
           'يمكن لمترجم Dart إنتاج: كود آلة أصلي (موبايل/سطح مكتب)، JavaScript (ويب)، أو kernel bytecode.',
         ),
       ],
@@ -4847,22 +4818,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.interpreter: ProgrammingTerm(
     id: TermKeys.interpreter,
-    title: LocalizedString(en: 'Interpreter', ar: 'المفسر'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Interpreter', ar: 'المفسر'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A program that directly executes source code line-by-line without prior compilation to machine code.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'برنامج ينفذ الكود المصدري مباشرة سطرًا بسطر دون ترجمة مسبقة إلى كود آلة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Compiler vs Interpreter:',
           value: [
             'Compiler - translates entire program, then runs it',
@@ -4871,15 +4842,15 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Interpreted - slower execution, faster to start',
           ],
         ),
-        StringContent(
+        StrContent(
           'Examples: Python interpreter, JavaScript engines (V8, SpiderMonkey), Ruby interpreter',
         ),
-        StringContent(
+        StrContent(
           'Note: Modern systems often use a hybrid approach (e.g., JIT compilation).',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المترجم مقابل المفسر:',
           value: [
             'المترجم - يترجم البرنامج بالكامل، ثم يشغله',
@@ -4888,10 +4859,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مفسر - تنفيذ أبطأ، بداية أسرع',
           ],
         ),
-        StringContent(
+        StrContent(
           'أمثلة: مفسر Python، محركات JavaScript (V8، SpiderMonkey)، مفسر Ruby',
         ),
-        StringContent(
+        StrContent(
           'ملاحظة: الأنظمة الحديثة غالبًا تستخدم نهجًا هجينًا (مثل، ترجمة JIT).',
         ),
       ],
@@ -4905,22 +4876,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.package: ProgrammingTerm(
     id: TermKeys.package,
-    title: LocalizedString(en: 'Package', ar: 'الحزمة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Package', ar: 'الحزمة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A collection of related code files and resources bundled together that can be shared and reused across projects.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من ملفات الكود والموارد ذات الصلة مجمعة معًا يمكن مشاركتها وإعادة استخدامها عبر المشاريع.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Packages provide:',
           value: [
             'Code reusability - use pre-built functionality',
@@ -4929,7 +4900,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Distribution - share code with others',
           ],
         ),
-        StringContent('In Dart/Flutter:'),
+        StrContent('In Dart/Flutter:'),
         CodeContent(
           '// pubspec.yaml\n'
           'dependencies:\n'
@@ -4943,12 +4914,12 @@ const Map<String, ProgrammingTerm> allTerms = {
           "import 'package:provider/provider.dart';",
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Packages are hosted on pub.dev for Dart/Flutter, npm for JavaScript, PyPI for Python.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'توفر الحزم:',
           value: [
             'إعادة استخدام الكود - استخدام وظائف مبنية مسبقًا',
@@ -4957,7 +4928,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التوزيع - مشاركة الكود مع الآخرين',
           ],
         ),
-        StringContent('في Dart/Flutter:'),
+        StrContent('في Dart/Flutter:'),
         CodeContent(
           '// pubspec.yaml\n'
           'dependencies:\n'
@@ -4969,7 +4940,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           "import 'package:provider/provider.dart';",
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'تُستضاف الحزم على pub.dev لـ Dart/Flutter، npm لـ JavaScript، PyPI لـ Python.',
         ),
       ],
@@ -4985,22 +4956,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dependency: ProgrammingTerm(
     id: TermKeys.dependency,
-    title: LocalizedString(en: 'Dependency', ar: 'التبعية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Dependency', ar: 'التبعية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'External code that a project relies on to function. Dependencies are packages or libraries that your code imports and uses.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'كود خارجي يعتمد عليه المشروع للعمل. التبعيات هي حزم أو مكتبات يستوردها كودك ويستخدمها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of dependencies:',
           value: [
             'Direct dependencies - packages you directly use',
@@ -5009,7 +4980,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Peer dependencies - required by packages you use',
           ],
         ),
-        StringContent('Managing dependencies in Dart:'),
+        StrContent('Managing dependencies in Dart:'),
         CodeContent(
           '// pubspec.yaml\n'
           'dependencies:\n'
@@ -5023,7 +4994,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// dart pub get',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Best practices:',
           value: [
             'Keep dependencies up to date',
@@ -5034,7 +5005,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع التبعيات:',
           value: [
             'تبعيات مباشرة - حزم تستخدمها مباشرة',
@@ -5043,7 +5014,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تبعيات النظير - مطلوبة من الحزم التي تستخدمها',
           ],
         ),
-        StringContent('إدارة التبعيات في Dart:'),
+        StrContent('إدارة التبعيات في Dart:'),
         CodeContent(
           '// pubspec.yaml\n'
           'dependencies:\n'
@@ -5057,7 +5028,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// dart pub get',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أفضل الممارسات:',
           value: [
             'حافظ على تحديث التبعيات',
@@ -5078,22 +5049,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.library: ProgrammingTerm(
     id: TermKeys.library,
-    title: LocalizedString(en: 'Library', ar: 'المكتبة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Library', ar: 'المكتبة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A collection of pre-written code that provides specific functionality and can be imported into programs to avoid rewriting common operations.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من الكود المكتوب مسبقًا توفر وظائف محددة ويمكن استيرادها في البرامج لتجنب إعادة كتابة العمليات الشائعة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of libraries:',
           value: [
             'Standard library - comes with the language',
@@ -5101,7 +5072,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Internal library - created for your project',
           ],
         ),
-        StringContent('Dart standard libraries:'),
+        StrContent('Dart standard libraries:'),
         CodeContent(
           "import 'dart:core';  // Core types (automatically imported)\n"
           "import 'dart:async';  // Async programming (Future, Stream)\n"
@@ -5111,7 +5082,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           "import 'dart:math';  // Math functions",
           codeLanguage: .dart,
         ),
-        StringContent('Creating your own library:'),
+        StrContent('Creating your own library:'),
         CodeContent(
           '// lib/my_library.dart\n'
           'library my_library;\n'
@@ -5125,7 +5096,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع المكتبات:',
           value: [
             'المكتبة القياسية - تأتي مع اللغة',
@@ -5133,7 +5104,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مكتبة داخلية - أنشئت لمشروعك',
           ],
         ),
-        StringContent('مكتبات Dart القياسية:'),
+        StrContent('مكتبات Dart القياسية:'),
         CodeContent(
           "import 'dart:core';  // الأنواع الأساسية (مستوردة تلقائيًا)\n"
           "import 'dart:async';  // البرمجة غير المتزامنة (Future، Stream)\n"
@@ -5143,7 +5114,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           "import 'dart:math';  // دوال رياضية",
           codeLanguage: .dart,
         ),
-        StringContent('إنشاء مكتبتك الخاصة:'),
+        StrContent('إنشاء مكتبتك الخاصة:'),
         CodeContent(
           '// lib/my_library.dart\n'
           'library my_library;\n'
@@ -5172,22 +5143,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.importExport: ProgrammingTerm(
     id: TermKeys.importExport,
-    title: LocalizedString(en: 'Import/Export', ar: 'الاستيراد/التصدير'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Import/Export', ar: 'الاستيراد/التصدير'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Mechanisms for using code from other files or packages (import) and making code available to other files (export).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'آليات لاستخدام الكود من ملفات أو حزم أخرى (استيراد) وجعل الكود متاحًا لملفات أخرى (تصدير).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Import in Dart:'),
+        StrContent('Import in Dart:'),
         CodeContent(
           "// Import entire library\n"
           "import 'dart:math';\n"
@@ -5208,7 +5179,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           "import 'models/user.dart';",
           codeLanguage: .dart,
         ),
-        StringContent('Export in Dart:'),
+        StrContent('Export in Dart:'),
         CodeContent(
           '// lib/my_library.dart\n'
           '// Re-export files\n'
@@ -5221,7 +5192,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('الاستيراد في Dart:'),
+        StrContent('الاستيراد في Dart:'),
         CodeContent(
           "// استيراد المكتبة بالكامل\n"
           "import 'dart:math';\n"
@@ -5242,7 +5213,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           "import 'models/user.dart';",
           codeLanguage: .dart,
         ),
-        StringContent('التصدير في Dart:'),
+        StrContent('التصدير في Dart:'),
         CodeContent(
           '// lib/my_library.dart\n'
           '// إعادة تصدير الملفات\n'
@@ -5265,22 +5236,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.frameworkConcept: ProgrammingTerm(
     id: TermKeys.frameworkConcept,
-    title: LocalizedString(en: 'Framework', ar: 'إطار العمل'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Framework', ar: 'إطار العمل'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A pre-built structure that provides a foundation for developing applications. Frameworks dictate the architecture and provide reusable components.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل مبني مسبقًا يوفر أساسًا لتطوير التطبيقات. تحدد أطر العمل المعمارية وتوفر مكونات قابلة لإعادة الاستخدام.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Framework vs Library:',
           value: [
             'Library - you call its code (you are in control)',
@@ -5289,7 +5260,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Framework - follow its structure and conventions',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Examples:',
           value: [
             'Flutter - UI framework for building cross-platform apps',
@@ -5299,12 +5270,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Angular - TypeScript web framework',
           ],
         ),
-        StringContent(
+        StrContent(
           'Frameworks typically provide: project structure, build tools, routing, state management, and common patterns.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'إطار العمل مقابل المكتبة:',
           value: [
             'المكتبة - أنت تستدعي كودها (أنت في السيطرة)',
@@ -5313,7 +5284,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'إطار العمل - اتبع هيكله واتفاقياته',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أمثلة:',
           value: [
             'Flutter - إطار واجهة المستخدم لبناء تطبيقات متعددة المنصات',
@@ -5323,7 +5294,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Angular - إطار ويب TypeScript',
           ],
         ),
-        StringContent(
+        StrContent(
           'عادة ما توفر أطر العمل: هيكل المشروع، أدوات البناء، التوجيه، إدارة الحالة، والأنماط الشائعة.',
         ),
       ],
@@ -5338,25 +5309,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.sdk: ProgrammingTerm(
     id: TermKeys.sdk,
-    title: LocalizedString(
+    title: LocS(
       en: 'SDK (Software Development Kit)',
       ar: 'حزمة تطوير البرمجيات',
     ),
-    quickOverview: LocalizedValue(
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A collection of tools, libraries, documentation, and code samples that developers use to create applications for a specific platform or framework.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من الأدوات والمكتبات والوثائق وعينات الكود التي يستخدمها المطورون لإنشاء تطبيقات لمنصة أو إطار عمل محدد.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'SDK typically includes:',
           value: [
             'Compiler or interpreter',
@@ -5367,7 +5338,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Build tools',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Examples:',
           value: [
             'Dart SDK - tools for Dart development',
@@ -5377,12 +5348,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'JDK (Java Development Kit)',
           ],
         ),
-        StringContent(
+        StrContent(
           'Installing Flutter SDK gives you the Flutter framework, Dart SDK, and development tools.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'عادة ما يتضمن SDK:',
           value: [
             'مترجم أو مفسر',
@@ -5393,7 +5364,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أدوات البناء',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أمثلة:',
           value: [
             'Dart SDK - أدوات لتطوير Dart',
@@ -5403,7 +5374,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'JDK (حزمة تطوير Java)',
           ],
         ),
-        StringContent(
+        StrContent(
           'تثبيت Flutter SDK يمنحك إطار Flutter، Dart SDK، وأدوات التطوير.',
         ),
       ],
@@ -5423,25 +5394,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.api: ProgrammingTerm(
     id: TermKeys.api,
-    title: LocalizedString(
+    title: LocS(
       en: 'API (Application Programming Interface)',
       ar: 'واجهة برمجة التطبيقات',
     ),
-    quickOverview: LocalizedValue(
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A set of rules, protocols, and tools that define how software components should interact. APIs specify what operations are available and how to use them.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من القواعد والبروتوكولات والأدوات التي تحدد كيف يجب أن تتفاعل مكونات البرمجيات. تحدد واجهات برمجة التطبيقات العمليات المتاحة وكيفية استخدامها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of APIs:',
           value: [
             'Library/Framework API - functions and classes you can use',
@@ -5450,7 +5421,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Hardware API - access device capabilities',
           ],
         ),
-        StringContent('Example - using a REST API:'),
+        StrContent('Example - using a REST API:'),
         CodeContent(
           "import 'package:http/http.dart' as http;\n"
           '\n'
@@ -5465,12 +5436,12 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'APIs allow programs to communicate without knowing internal implementation details.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع واجهات برمجة التطبيقات:',
           value: [
             'واجهة المكتبة/إطار العمل - دوال وفئات يمكنك استخدامها',
@@ -5479,7 +5450,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'واجهة الأجهزة - الوصول إلى قدرات الجهاز',
           ],
         ),
-        StringContent('مثال - استخدام REST API:'),
+        StrContent('مثال - استخدام REST API:'),
         CodeContent(
           "import 'package:http/http.dart' as http;\n"
           '\n'
@@ -5494,7 +5465,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'تسمح واجهات برمجة التطبيقات للبرامج بالتواصل دون معرفة تفاصيل التنفيذ الداخلية.',
         ),
       ],
@@ -5510,22 +5481,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.exception: ProgrammingTerm(
     id: TermKeys.exception,
-    title: LocalizedString(en: 'Exception', ar: 'الاستثناء'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Exception', ar: 'الاستثناء'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An event that disrupts the normal flow of program execution. Exceptions represent errors or unexpected conditions that occur during runtime.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'حدث يعطل التدفق الطبيعي لتنفيذ البرنامج. تمثل الاستثناءات الأخطاء أو الظروف غير المتوقعة التي تحدث أثناء وقت التشغيل.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common types of exceptions:',
           value: [
             'NullPointerException - accessing null object',
@@ -5535,7 +5506,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'IOException - input/output error',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'void divide(int a, int b) {\n'
           '  if (b == 0) {\n'
@@ -5553,7 +5524,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع الاستثناءات الشائعة:',
           value: [
             'NullPointerException - الوصول إلى كائن فارغ',
@@ -5563,7 +5534,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'IOException - خطأ في الإدخال/الإخراج',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'void divide(int a, int b) {\n'
           '  if (b == 0) {\n'
@@ -5592,22 +5563,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.errorHandling: ProgrammingTerm(
     id: TermKeys.errorHandling,
-    title: LocalizedString(en: 'Error Handling', ar: 'معالجة الأخطاء'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Error Handling', ar: 'معالجة الأخطاء'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of anticipating, detecting, and resolving errors that occur during program execution to prevent crashes and provide graceful degradation.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية توقع واكتشاف وحل الأخطاء التي تحدث أثناء تنفيذ البرنامج لمنع الانهيارات وتوفير تدهور تدريجي.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Error handling strategies:',
           value: [
             'Try-catch blocks - catch and handle exceptions',
@@ -5617,8 +5588,8 @@ const Map<String, ProgrammingTerm> allTerms = {
             'User feedback - inform users of errors gracefully',
           ],
         ),
-        StringContent('Best practices:'),
-        UnorderedListContent(
+        StrContent('Best practices:'),
+        ULContent(
           value: [
             'Handle expected errors, let unexpected ones crash',
             'Provide meaningful error messages',
@@ -5628,7 +5599,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'استراتيجيات معالجة الأخطاء:',
           value: [
             'كتل Try-catch - اصطياد ومعالجة الاستثناءات',
@@ -5638,8 +5609,8 @@ const Map<String, ProgrammingTerm> allTerms = {
             'ملاحظات المستخدم - إعلام المستخدمين بالأخطاء بلطف',
           ],
         ),
-        StringContent('أفضل الممارسات:'),
-        UnorderedListContent(
+        StrContent('أفضل الممارسات:'),
+        ULContent(
           value: [
             'تعامل مع الأخطاء المتوقعة، دع غير المتوقعة تنهار',
             'وفر رسائل خطأ ذات معنى',
@@ -5659,22 +5630,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.tryCatch: ProgrammingTerm(
     id: TermKeys.tryCatch,
-    title: LocalizedString(en: 'Try-Catch', ar: 'Try-Catch'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Try-Catch', ar: 'Try-Catch'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A control structure for handling exceptions. Code that might throw an exception is placed in the try block, and error handling code goes in the catch block.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل تحكم لمعالجة الاستثناءات. يُوضع الكود الذي قد يرمي استثناءً في كتلة try، ويذهب كود معالجة الأخطاء في كتلة catch.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Syntax in Dart:'),
+        StrContent('Syntax in Dart:'),
         CodeContent(
           'try {\n'
           '  // Code that might throw an exception\n'
@@ -5699,7 +5670,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Key points:',
           value: [
             'try - contains code that might fail',
@@ -5710,7 +5681,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('الصيغة في Dart:'),
+        StrContent('الصيغة في Dart:'),
         CodeContent(
           'try {\n'
           '  // كود قد يرمي استثناءً\n'
@@ -5735,7 +5706,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'نقاط رئيسية:',
           value: [
             'try - يحتوي على كود قد يفشل',
@@ -5757,22 +5728,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.assertion: ProgrammingTerm(
     id: TermKeys.assertion,
-    title: LocalizedString(en: 'Assertion', ar: 'التأكيد'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Assertion', ar: 'التأكيد'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A statement that checks if a condition is true during development. If false, the program throws an error. Assertions help catch bugs early.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'جملة تتحقق من صحة شرط أثناء التطوير. إذا كانت خاطئة، يرمي البرنامج خطأ. تساعد التأكيدات في اكتشاف الأخطاء مبكرًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('In Dart:'),
+        StrContent('In Dart:'),
         CodeContent(
           'void setAge(int age) {\n'
           '  assert(age >= 0, \'Age cannot be negative\');\n'
@@ -5787,7 +5758,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// dart run --enable-asserts my_app.dart',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'When to use assertions:',
           value: [
             'Verify assumptions during development',
@@ -5798,7 +5769,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('في Dart:'),
+        StrContent('في Dart:'),
         CodeContent(
           'void setAge(int age) {\n'
           '  assert(age >= 0, \'لا يمكن أن يكون العمر سالبًا\');\n'
@@ -5813,7 +5784,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '// dart run --enable-asserts my_app.dart',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'متى تستخدم التأكيدات:',
           value: [
             'التحقق من الافتراضات أثناء التطوير',
@@ -5835,22 +5806,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.testing: ProgrammingTerm(
     id: TermKeys.testing,
-    title: LocalizedString(en: 'Testing', ar: 'الاختبار'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Testing', ar: 'الاختبار'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of evaluating software to find bugs and verify it works as expected. Testing ensures code quality and reliability.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تقييم البرمجيات لإيجاد الأخطاء والتحقق من عملها كما هو متوقع. يضمن الاختبار جودة الكود وموثوقيته.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of testing:',
           value: [
             'Unit Testing - test individual functions/classes',
@@ -5860,7 +5831,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Manual Testing - human testers use the app',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Catch bugs early',
@@ -5871,7 +5842,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع الاختبار:',
           value: [
             'اختبار الوحدة - اختبار دوال/فئات فردية',
@@ -5881,7 +5852,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الاختبار اليدوي - مختبرون بشريون يستخدمون التطبيق',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'اكتشاف الأخطاء مبكرًا',
@@ -5906,22 +5877,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.unitTest: ProgrammingTerm(
     id: TermKeys.unitTest,
-    title: LocalizedString(en: 'Unit Test', ar: 'اختبار الوحدة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Unit Test', ar: 'اختبار الوحدة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A test that verifies the behavior of a single unit of code (usually a function or method) in isolation from the rest of the system.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'اختبار يتحقق من سلوك وحدة واحدة من الكود (عادة دالة أو أسلوب) بمعزل عن بقية النظام.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           "import 'package:test/test.dart';\n"
           '\n'
@@ -5942,7 +5913,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Best practices:',
           value: [
             'Test one thing per test',
@@ -5954,7 +5925,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           "import 'package:test/test.dart';\n"
           '\n'
@@ -5975,7 +5946,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أفضل الممارسات:',
           value: [
             'اختبر شيئًا واحدًا لكل اختبار',
@@ -5997,22 +5968,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.widgetTest: ProgrammingTerm(
     id: TermKeys.widgetTest,
-    title: LocalizedString(en: 'Widget Test', ar: 'اختبار الويدجت'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Widget Test', ar: 'اختبار الويدجت'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Flutter-specific test that verifies the behavior of widgets. Tests user interactions, widget rendering, and state changes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'اختبار خاص بـ Flutter يتحقق من سلوك الويدجت. يختبر تفاعلات المستخدم، عرض الويدجت، وتغييرات الحالة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           "import 'package:flutter_test/flutter_test.dart';\n"
           "import 'package:flutter/material.dart';\n"
@@ -6037,7 +6008,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Key methods:',
           value: [
             'pumpWidget - build the widget tree',
@@ -6049,7 +6020,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           "import 'package:flutter_test/flutter_test.dart';\n"
           "import 'package:flutter/material.dart';\n"
@@ -6074,7 +6045,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الأساليب الرئيسية:',
           value: [
             'pumpWidget - بناء شجرة الويدجت',
@@ -6096,22 +6067,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.integrationTest: ProgrammingTerm(
     id: TermKeys.integrationTest,
-    title: LocalizedString(en: 'Integration Test', ar: 'اختبار التكامل'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Integration Test', ar: 'اختبار التكامل'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A test that verifies how different parts of the system work together. Tests complete features or user flows across multiple components.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'اختبار يتحقق من كيفية عمل أجزاء مختلفة من النظام معًا. يختبر ميزات كاملة أو تدفقات المستخدم عبر مكونات متعددة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'What integration tests verify:',
           value: [
             'Multiple components working together',
@@ -6121,7 +6092,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Real device/platform behavior',
           ],
         ),
-        StringContent(
+        StrContent(
           'In Flutter, integration tests run on real devices or emulators:',
         ),
         CodeContent(
@@ -6150,7 +6121,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'ما يتحقق منه اختبار التكامل:',
           value: [
             'مكونات متعددة تعمل معًا',
@@ -6160,7 +6131,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'سلوك الجهاز/المنصة الحقيقي',
           ],
         ),
-        StringContent(
+        StrContent(
           'في Flutter، تعمل اختبارات التكامل على أجهزة حقيقية أو محاكيات:',
         ),
         CodeContent(
@@ -6200,22 +6171,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.mock: ProgrammingTerm(
     id: TermKeys.mock,
-    title: LocalizedString(en: 'Mock', ar: 'المحاكاة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Mock', ar: 'المحاكاة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A simulated object that mimics the behavior of real objects in testing. Mocks replace dependencies to test code in isolation.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'كائن محاكى يحاكي سلوك الكائنات الحقيقية في الاختبار. تستبدل المحاكيات التبعيات لاختبار الكود بمعزل.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Why use mocks:',
           value: [
             'Test without external dependencies (database, API)',
@@ -6224,7 +6195,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Verify interactions (method calls, parameters)',
           ],
         ),
-        StringContent('Example using Mockito in Dart:'),
+        StrContent('Example using Mockito in Dart:'),
         CodeContent(
           "import 'package:mockito/mockito.dart';\n"
           "import 'package:test/test.dart';\n"
@@ -6258,7 +6229,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'لماذا نستخدم المحاكيات:',
           value: [
             'الاختبار بدون تبعيات خارجية (قاعدة بيانات، API)',
@@ -6267,7 +6238,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التحقق من التفاعلات (استدعاءات الأساليب، المعاملات)',
           ],
         ),
-        StringContent('مثال باستخدام Mockito في Dart:'),
+        StrContent('مثال باستخدام Mockito في Dart:'),
         CodeContent(
           "import 'package:mockito/mockito.dart';\n"
           "import 'package:test/test.dart';\n"
@@ -6312,22 +6283,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.versionControl: ProgrammingTerm(
     id: TermKeys.versionControl,
-    title: LocalizedString(en: 'Version Control', ar: 'التحكم في الإصدار'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Version Control', ar: 'التحكم في الإصدار'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A system that tracks changes to files over time, allowing you to recall specific versions, collaborate with others, and manage code history.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نظام يتتبع التغييرات على الملفات مع مرور الوقت، مما يسمح لك باسترجاع إصدارات محددة، التعاون مع الآخرين، وإدارة تاريخ الكود.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Track all changes to code',
@@ -6337,7 +6308,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Review code before merging',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Popular systems:',
           value: [
             'Git - most widely used (GitHub, GitLab, Bitbucket)',
@@ -6345,10 +6316,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Mercurial - distributed system',
           ],
         ),
-        StringContent('Git is the industry standard for version control.'),
+        StrContent('Git is the industry standard for version control.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'تتبع جميع التغييرات على الكود',
@@ -6358,7 +6329,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مراجعة الكود قبل الدمج',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الأنظمة الشائعة:',
           value: [
             'Git - الأكثر استخدامًا (GitHub، GitLab، Bitbucket)',
@@ -6366,7 +6337,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Mercurial - نظام موزع',
           ],
         ),
-        StringContent('Git هو المعيار الصناعي للتحكم في الإصدار.'),
+        StrContent('Git هو المعيار الصناعي للتحكم في الإصدار.'),
       ],
     ),
     type: .concept,
@@ -6379,22 +6350,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.git: ProgrammingTerm(
     id: TermKeys.git,
-    title: LocalizedString(en: 'Git', ar: 'Git'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Git', ar: 'Git'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A distributed version control system that tracks changes in source code. Created by Linus Torvalds in 2005.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نظام تحكم في الإصدار موزع يتتبع التغييرات في الكود المصدري. أنشأه Linus Torvalds في 2005.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Basic Git commands:',
           value: [
             'git init - create a new repository',
@@ -6406,7 +6377,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'git status - check current state',
           ],
         ),
-        StringContent('Basic workflow:'),
+        StrContent('Basic workflow:'),
         CodeContent(
           '# Initialize repository\n'
           'git init\n'
@@ -6426,7 +6397,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أوامر Git الأساسية:',
           value: [
             'git init - إنشاء مستودع جديد',
@@ -6438,7 +6409,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'git status - فحص الحالة الحالية',
           ],
         ),
-        StringContent('سير العمل الأساسي:'),
+        StrContent('سير العمل الأساسي:'),
         CodeContent(
           '# تهيئة المستودع\n'
           'git init\n'
@@ -6468,22 +6439,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.commit: ProgrammingTerm(
     id: TermKeys.commit,
-    title: LocalizedString(en: 'Commit', ar: 'الإيداع'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Commit', ar: 'الإيداع'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A snapshot of changes in version control. A commit saves the current state of files with a descriptive message.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'لقطة من التغييرات في التحكم في الإصدار. يحفظ الإيداع الحالة الحالية للملفات مع رسالة وصفية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Good commit practices:',
           value: [
             'Write clear, descriptive messages',
@@ -6492,7 +6463,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Don\'t commit broken code',
           ],
         ),
-        StringContent('Creating commits:'),
+        StrContent('Creating commits:'),
         CodeContent(
           '# Stage specific files\n'
           'git add file1.dart file2.dart\n'
@@ -6512,7 +6483,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'ممارسات الإيداع الجيدة:',
           value: [
             'اكتب رسائل واضحة ووصفية',
@@ -6521,7 +6492,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'لا تودع كودًا مكسورًا',
           ],
         ),
-        StringContent('إنشاء الإيداعات:'),
+        StrContent('إنشاء الإيداعات:'),
         CodeContent(
           '# تجهيز ملفات محددة\n'
           'git add file1.dart file2.dart\n'
@@ -6551,22 +6522,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.branch: ProgrammingTerm(
     id: TermKeys.branch,
-    title: LocalizedString(en: 'Branch', ar: 'الفرع'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Branch', ar: 'الفرع'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A parallel version of a repository. Branches allow you to work on new features or fixes without affecting the main codebase.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نسخة موازية من المستودع. تسمح الفروع بالعمل على ميزات أو إصلاحات جديدة دون التأثير على قاعدة الكود الرئيسية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common branching strategies:',
           value: [
             'main/master - production-ready code',
@@ -6576,7 +6547,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'hotfix/* - urgent production fixes',
           ],
         ),
-        StringContent('Working with branches:'),
+        StrContent('Working with branches:'),
         CodeContent(
           '# Create and switch to new branch\n'
           'git checkout -b feature/user-profile\n'
@@ -6596,7 +6567,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'استراتيجيات التفرع الشائعة:',
           value: [
             'main/master - كود جاهز للإنتاج',
@@ -6606,7 +6577,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'hotfix/* - إصلاحات إنتاج عاجلة',
           ],
         ),
-        StringContent('العمل مع الفروع:'),
+        StrContent('العمل مع الفروع:'),
         CodeContent(
           '# إنشاء والانتقال لفرع جديد\n'
           'git checkout -b feature/user-profile\n'
@@ -6635,22 +6606,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.merge: ProgrammingTerm(
     id: TermKeys.merge,
-    title: LocalizedString(en: 'Merge', ar: 'الدمج'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Merge', ar: 'الدمج'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of combining changes from one branch into another. Merging integrates separate development lines.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية دمج التغييرات من فرع إلى آخر. يدمج الدمج خطوط التطوير المنفصلة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Merging branches:'),
+        StrContent('Merging branches:'),
         CodeContent(
           '# Switch to target branch\n'
           'git checkout main\n'
@@ -6664,7 +6635,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '# 3. Complete merge: git commit',
           codeLanguage: .bash,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Merge conflicts occur when:',
           value: [
             'Same lines modified in both branches',
@@ -6672,12 +6643,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Both branches modify same file differently',
           ],
         ),
-        StringContent(
+        StrContent(
           'Best practice: Pull latest changes before merging to minimize conflicts.',
         ),
       ],
       ar: [
-        StringContent('دمج الفروع:'),
+        StrContent('دمج الفروع:'),
         CodeContent(
           '# الانتقال للفرع المستهدف\n'
           'git checkout main\n'
@@ -6691,7 +6662,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '# 3. إكمال الدمج: git commit',
           codeLanguage: .bash,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'تحدث تعارضات الدمج عندما:',
           value: [
             'تعديل نفس الأسطر في كلا الفرعين',
@@ -6699,7 +6670,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تعديل كلا الفرعين لنفس الملف بشكل مختلف',
           ],
         ),
-        StringContent(
+        StrContent(
           'أفضل ممارسة: اسحب أحدث التغييرات قبل الدمج لتقليل التعارضات.',
         ),
       ],
@@ -6714,22 +6685,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.pullRequest: ProgrammingTerm(
     id: TermKeys.pullRequest,
-    title: LocalizedString(en: 'Pull Request (PR)', ar: 'طلب السحب'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Pull Request (PR)', ar: 'طلب السحب'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A request to merge code changes from one branch into another. PRs enable code review and discussion before integration.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'طلب لدمج تغييرات الكود من فرع إلى آخر. تتيح طلبات السحب مراجعة الكود والنقاش قبل الدمج.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Pull request workflow:',
           value: [
             '1. Create feature branch',
@@ -6741,7 +6712,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '7. PR approved and merged',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Good PR practices:',
           value: [
             'Write clear description of changes',
@@ -6751,10 +6722,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Respond to feedback promptly',
           ],
         ),
-        StringContent('Also called "Merge Request" (MR) in GitLab.'),
+        StrContent('Also called "Merge Request" (MR) in GitLab.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'سير عمل طلب السحب:',
           value: [
             '1. إنشاء فرع الميزة',
@@ -6766,7 +6737,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '7. الموافقة على طلب السحب ودمجه',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'ممارسات طلب السحب الجيدة:',
           value: [
             'اكتب وصفًا واضحًا للتغييرات',
@@ -6776,7 +6747,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'استجب للملاحظات بسرعة',
           ],
         ),
-        StringContent('يُسمى أيضًا "طلب الدمج" (MR) في GitLab.'),
+        StrContent('يُسمى أيضًا "طلب الدمج" (MR) في GitLab.'),
       ],
     ),
     type: .concept,
@@ -6789,22 +6760,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.codeReview: ProgrammingTerm(
     id: TermKeys.codeReview,
-    title: LocalizedString(en: 'Code Review', ar: 'مراجعة الكود'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Code Review', ar: 'مراجعة الكود'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The practice of examining code written by others to find bugs, improve quality, share knowledge, and ensure standards are met.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ممارسة فحص الكود المكتوب من قبل الآخرين لإيجاد الأخطاء، تحسين الجودة، مشاركة المعرفة، والتأكد من استيفاء المعايير.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'What reviewers check:',
           value: [
             'Correctness - does it work as intended?',
@@ -6815,7 +6786,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Standards - follows team conventions?',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Catch bugs early',
@@ -6827,7 +6798,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'ما يفحصه المراجعون:',
           value: [
             'الصحة - هل يعمل كما هو مقصود؟',
@@ -6838,7 +6809,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'المعايير - يتبع اتفاقيات الفريق؟',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'اكتشاف الأخطاء مبكرًا',
@@ -6859,22 +6830,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.singleton: ProgrammingTerm(
     id: TermKeys.singleton,
-    title: LocalizedString(en: 'Singleton Pattern', ar: 'نمط المفرد'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Singleton Pattern', ar: 'نمط المفرد'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A design pattern that ensures a class has only one instance and provides a global point of access to it.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط تصميم يضمن أن للفئة نسخة واحدة فقط ويوفر نقطة وصول عامة لها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Use cases:',
           value: [
             'Database connections',
@@ -6883,7 +6854,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Cache managers',
           ],
         ),
-        StringContent('Implementation in Dart:'),
+        StrContent('Implementation in Dart:'),
         CodeContent(
           'class DatabaseConnection {\n'
           '  // Private constructor\n'
@@ -6908,7 +6879,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'حالات الاستخدام:',
           value: [
             'اتصالات قاعدة البيانات',
@@ -6917,7 +6888,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مدراء التخزين المؤقت',
           ],
         ),
-        StringContent('التنفيذ في Dart:'),
+        StrContent('التنفيذ في Dart:'),
         CodeContent(
           'class DatabaseConnection {\n'
           '  // منشئ خاص\n'
@@ -6952,22 +6923,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.factoryConstructor: ProgrammingTerm(
     id: TermKeys.factoryConstructor,
-    title: LocalizedString(en: 'Factory Constructor', ar: 'المنشئ المصنعي'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Factory Constructor', ar: 'المنشئ المصنعي'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A special constructor in Dart that can return an existing instance or a subclass instance instead of always creating a new object.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'منشئ خاص في Dart يمكنه إرجاع نسخة موجودة أو نسخة فئة فرعية بدلاً من إنشاء كائن جديد دائمًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Factory constructors can:',
           value: [
             'Return cached instances',
@@ -6976,7 +6947,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Implement singleton pattern',
           ],
         ),
-        StringContent('Examples:'),
+        StrContent('Examples:'),
         CodeContent(
           'class Logger {\n'
           '  final String name;\n'
@@ -7003,7 +6974,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'يمكن للمنشئات المصنعية:',
           value: [
             'إرجاع نسخ مخزنة مؤقتًا',
@@ -7012,7 +6983,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تنفيذ نمط المفرد',
           ],
         ),
-        StringContent('أمثلة:'),
+        StrContent('أمثلة:'),
         CodeContent(
           'class Logger {\n'
           '  final String name;\n'
@@ -7049,22 +7020,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.observerPattern: ProgrammingTerm(
     id: TermKeys.observerPattern,
-    title: LocalizedString(en: 'Observer Pattern', ar: 'نمط المراقب'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Observer Pattern', ar: 'نمط المراقب'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A design pattern where an object (subject) maintains a list of dependents (observers) and notifies them of state changes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط تصميم حيث يحتفظ كائن (الموضوع) بقائمة من التابعين (المراقبين) ويخطرهم بتغييرات الحالة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Components:',
           value: [
             'Subject - maintains observers, notifies them',
@@ -7073,7 +7044,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'ConcreteObserver - specific response to changes',
           ],
         ),
-        StringContent('Example in Dart:'),
+        StrContent('Example in Dart:'),
         CodeContent(
           'abstract class Observer {\n'
           '  void update(String message);\n'
@@ -7100,12 +7071,12 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'Used in: Event systems, MVC, reactive programming (Streams in Dart).',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المكونات:',
           value: [
             'الموضوع - يحتفظ بالمراقبين، يخطرهم',
@@ -7114,7 +7085,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'المراقب الملموس - استجابة محددة للتغييرات',
           ],
         ),
-        StringContent('مثال في Dart:'),
+        StrContent('مثال في Dart:'),
         CodeContent(
           'abstract class Observer {\n'
           '  void update(String message);\n'
@@ -7141,7 +7112,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
+        StrContent(
           'يُستخدم في: أنظمة الأحداث، MVC، البرمجة التفاعلية (Streams في Dart).',
         ),
       ],
@@ -7157,22 +7128,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.mvc: ProgrammingTerm(
     id: TermKeys.mvc,
-    title: LocalizedString(en: 'MVC (Model-View-Controller)', ar: 'نمط MVC'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'MVC (Model-View-Controller)', ar: 'نمط MVC'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An architectural pattern that separates an application into three interconnected components: Model (data), View (UI), and Controller (logic).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط معماري يفصل التطبيق إلى ثلاثة مكونات متصلة: النموذج (البيانات)، العرض (واجهة المستخدم)، والمتحكم (المنطق).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Components:',
           value: [
             'Model - manages data and business logic',
@@ -7180,7 +7151,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Controller - handles user input, updates model/view',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Separation of concerns',
@@ -7189,12 +7160,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Code reusability',
           ],
         ),
-        StringContent(
+        StrContent(
           'Flow: User interacts with View → Controller updates Model → Model notifies View → View updates display',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المكونات:',
           value: [
             'النموذج - يدير البيانات ومنطق الأعمال',
@@ -7202,7 +7173,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'المتحكم - يتعامل مع إدخال المستخدم، يحدث النموذج/العرض',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'فصل الاهتمامات',
@@ -7211,7 +7182,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'إعادة استخدام الكود',
           ],
         ),
-        StringContent(
+        StrContent(
           'التدفق: المستخدم يتفاعل مع العرض → المتحكم يحدث النموذج → النموذج يخطر العرض → العرض يحدث العرض',
         ),
       ],
@@ -7226,22 +7197,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.mvvm: ProgrammingTerm(
     id: TermKeys.mvvm,
-    title: LocalizedString(en: 'MVVM (Model-View-ViewModel)', ar: 'نمط MVVM'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'MVVM (Model-View-ViewModel)', ar: 'نمط MVVM'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An architectural pattern that separates UI (View) from business logic through a ViewModel that exposes data and commands for the View to bind to.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط معماري يفصل واجهة المستخدم (العرض) عن منطق الأعمال من خلال ViewModel يعرض البيانات والأوامر للعرض للربط بها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Components:',
           value: [
             'Model - data and business logic',
@@ -7249,7 +7220,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'ViewModel - mediator between Model and View',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Key differences from MVC:',
           value: [
             'View binds directly to ViewModel',
@@ -7257,12 +7228,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Better suited for declarative UI (like Flutter)',
           ],
         ),
-        StringContent(
+        StrContent(
           'Popular in Flutter with Provider, Riverpod, or BLoC for state management.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المكونات:',
           value: [
             'النموذج - البيانات ومنطق الأعمال',
@@ -7270,7 +7241,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'ViewModel - وسيط بين النموذج والعرض',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'الفروقات الرئيسية عن MVC:',
           value: [
             'العرض يرتبط مباشرة بـ ViewModel',
@@ -7278,7 +7249,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أنسب لواجهة المستخدم التصريحية (مثل Flutter)',
           ],
         ),
-        StringContent(
+        StrContent(
           'شائع في Flutter مع Provider، Riverpod، أو BLoC لإدارة الحالة.',
         ),
       ],
@@ -7294,22 +7265,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dependencyInjection: ProgrammingTerm(
     id: TermKeys.dependencyInjection,
-    title: LocalizedString(en: 'Dependency Injection', ar: 'حقن التبعية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Dependency Injection', ar: 'حقن التبعية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A design pattern where objects receive their dependencies from external sources rather than creating them internally.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط تصميم حيث تتلقى الكائنات تبعياتها من مصادر خارجية بدلاً من إنشائها داخليًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Benefits:',
           value: [
             'Loose coupling - easier to change implementations',
@@ -7318,7 +7289,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Single Responsibility - objects don\'t manage dependencies',
           ],
         ),
-        StringContent('Example without DI:'),
+        StrContent('Example without DI:'),
         CodeContent(
           'class UserService {\n'
           '  final database = Database();  // Tight coupling!\n'
@@ -7329,7 +7300,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent('With DI (Constructor Injection):'),
+        StrContent('With DI (Constructor Injection):'),
         CodeContent(
           'class UserService {\n'
           '  final Database database;\n'
@@ -7348,7 +7319,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الفوائد:',
           value: [
             'ارتباط فضفاض - أسهل لتغيير التنفيذات',
@@ -7357,7 +7328,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مسؤولية واحدة - الكائنات لا تدير التبعيات',
           ],
         ),
-        StringContent('مثال بدون DI:'),
+        StrContent('مثال بدون DI:'),
         CodeContent(
           'class UserService {\n'
           '  final database = Database();  // ارتباط محكم!\n'
@@ -7368,7 +7339,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent('مع DI (حقن المنشئ):'),
+        StrContent('مع DI (حقن المنشئ):'),
         CodeContent(
           'class UserService {\n'
           '  final Database database;\n'
@@ -7398,22 +7369,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.callback: ProgrammingTerm(
     id: TermKeys.callback,
-    title: LocalizedString(en: 'Callback', ar: 'الاستدعاء الراجع'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Callback', ar: 'الاستدعاء الراجع'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A function passed as an argument to another function, to be executed later when a certain event occurs or condition is met.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'دالة تُمرر كوسيط لدالة أخرى، ليتم تنفيذها لاحقًا عند حدوث حدث معين أو استيفاء شرط.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common uses:',
           value: [
             'Event handlers (button clicks, gestures)',
@@ -7422,7 +7393,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Animation completion',
           ],
         ),
-        StringContent('Examples in Dart:'),
+        StrContent('Examples in Dart:'),
         CodeContent(
           '// Simple callback\n'
           'void fetchData(void Function(String) onComplete) {\n'
@@ -7448,7 +7419,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الاستخدامات الشائعة:',
           value: [
             'معالجات الأحداث (نقرات الأزرار، الإيماءات)',
@@ -7457,7 +7428,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'إكمال الرسوم المتحركة',
           ],
         ),
-        StringContent('أمثلة في Dart:'),
+        StrContent('أمثلة في Dart:'),
         CodeContent(
           '// استدعاء راجع بسيط\n'
           'void fetchData(void Function(String) onComplete) {\n'
@@ -7494,22 +7465,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.json: ProgrammingTerm(
     id: TermKeys.json,
-    title: LocalizedString(en: 'JSON (JavaScript Object Notation)', ar: 'JSON'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'JSON (JavaScript Object Notation)', ar: 'JSON'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تنسيق تبادل بيانات خفيف الوزن سهل القراءة والكتابة للبشر، وسهل التحليل والتوليد للآلات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'JSON data types:',
           value: [
             'String - text in double quotes',
@@ -7520,7 +7491,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Array - ordered list in []',
           ],
         ),
-        StringContent('Example JSON:'),
+        StrContent('Example JSON:'),
         CodeContent(
           '{\n'
           '  "name": "Alice",\n'
@@ -7534,7 +7505,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .json,
         ),
-        StringContent('Working with JSON in Dart:'),
+        StrContent('Working with JSON in Dart:'),
         CodeContent(
           "import 'dart:convert';\n"
           '\n'
@@ -7551,7 +7522,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع بيانات JSON:',
           value: [
             'نص - نص بين علامات اقتباس مزدوجة',
@@ -7562,7 +7533,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'مصفوفة - قائمة مرتبة في []',
           ],
         ),
-        StringContent('مثال JSON:'),
+        StrContent('مثال JSON:'),
         CodeContent(
           '{\n'
           '  "name": "أليس",\n'
@@ -7576,7 +7547,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .json,
         ),
-        StringContent('العمل مع JSON في Dart:'),
+        StrContent('العمل مع JSON في Dart:'),
         CodeContent(
           "import 'dart:convert';\n"
           '\n'
@@ -7602,22 +7573,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.serialization: ProgrammingTerm(
     id: TermKeys.serialization,
-    title: LocalizedString(en: 'Serialization', ar: 'التسلسل'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Serialization', ar: 'التسلسل'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of converting an object or data structure into a format that can be stored or transmitted, and reconstructed later.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تحويل كائن أو هيكل بيانات إلى تنسيق يمكن تخزينه أو نقله، وإعادة بنائه لاحقًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common formats:',
           value: [
             'JSON - human-readable, widely used',
@@ -7626,7 +7597,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'MessagePack - binary JSON alternative',
           ],
         ),
-        StringContent('Serialization in Dart:'),
+        StrContent('Serialization in Dart:'),
         CodeContent(
           'class User {\n'
           '  final String name;\n'
@@ -7654,7 +7625,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'التنسيقات الشائعة:',
           value: [
             'JSON - قابل للقراءة، مستخدم على نطاق واسع',
@@ -7663,7 +7634,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'MessagePack - بديل JSON ثنائي',
           ],
         ),
-        StringContent('التسلسل في Dart:'),
+        StrContent('التسلسل في Dart:'),
         CodeContent(
           'class User {\n'
           '  final String name;\n'
@@ -7701,22 +7672,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.httpHttps: ProgrammingTerm(
     id: TermKeys.httpHttps,
-    title: LocalizedString(en: 'HTTP/HTTPS', ar: 'HTTP/HTTPS'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'HTTP/HTTPS', ar: 'HTTP/HTTPS'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'HTTP (HyperText Transfer Protocol) is the foundation of data communication on the web. HTTPS is the secure version using encryption.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'HTTP (بروتوكول نقل النص التشعبي) هو أساس اتصال البيانات على الويب. HTTPS هو النسخة الآمنة باستخدام التشفير.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'HTTP Methods:',
           value: [
             'GET - retrieve data',
@@ -7726,7 +7697,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'DELETE - remove resource',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Status codes:',
           value: [
             '200 OK - success',
@@ -7737,7 +7708,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '500 Internal Server Error - server error',
           ],
         ),
-        StringContent('Making HTTP requests in Dart:'),
+        StrContent('Making HTTP requests in Dart:'),
         CodeContent(
           "import 'package:http/http.dart' as http;\n"
           "import 'dart:convert';\n"
@@ -7764,12 +7735,10 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent(
-          'HTTPS adds SSL/TLS encryption for secure communication.',
-        ),
+        StrContent('HTTPS adds SSL/TLS encryption for secure communication.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أساليب HTTP:',
           value: [
             'GET - استرجاع البيانات',
@@ -7779,7 +7748,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'DELETE - إزالة مورد',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'رموز الحالة:',
           value: [
             '200 OK - نجاح',
@@ -7790,7 +7759,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '500 Internal Server Error - خطأ في الخادم',
           ],
         ),
-        StringContent('إجراء طلبات HTTP في Dart:'),
+        StrContent('إجراء طلبات HTTP في Dart:'),
         CodeContent(
           "import 'package:http/http.dart' as http;\n"
           "import 'dart:convert';\n"
@@ -7817,7 +7786,7 @@ const Map<String, ProgrammingTerm> allTerms = {
           '}',
           codeLanguage: .dart,
         ),
-        StringContent('HTTPS يضيف تشفير SSL/TLS للاتصال الآمن.'),
+        StrContent('HTTPS يضيف تشفير SSL/TLS للاتصال الآمن.'),
       ],
     ),
     type: .protocol,
@@ -7829,22 +7798,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.restApi: ProgrammingTerm(
     id: TermKeys.restApi,
-    title: LocalizedString(en: 'REST API', ar: 'واجهة REST'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'REST API', ar: 'واجهة REST'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Representational State Transfer - an architectural style for designing networked applications using HTTP requests to access and manipulate data.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نقل الحالة التمثيلية - نمط معماري لتصميم تطبيقات الشبكة باستخدام طلبات HTTP للوصول إلى البيانات ومعالجتها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'REST principles:',
           value: [
             'Stateless - each request is independent',
@@ -7854,7 +7823,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Resource-based - data represented as resources',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Example endpoints:',
           value: [
             'GET /api/users - get all users',
@@ -7864,10 +7833,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'DELETE /api/users/123 - delete user',
           ],
         ),
-        StringContent('REST APIs typically use JSON for data exchange.'),
+        StrContent('REST APIs typically use JSON for data exchange.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'مبادئ REST:',
           value: [
             'عديم الحالة - كل طلب مستقل',
@@ -7877,7 +7846,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'قائم على الموارد - البيانات ممثلة كموارد',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أمثلة نقاط النهاية:',
           value: [
             'GET /api/users - الحصول على جميع المستخدمين',
@@ -7887,7 +7856,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'DELETE /api/users/123 - حذف مستخدم',
           ],
         ),
-        StringContent('عادة ما تستخدم واجهات REST API JSON لتبادل البيانات.'),
+        StrContent('عادة ما تستخدم واجهات REST API JSON لتبادل البيانات.'),
       ],
     ),
     type: .architecture,
@@ -7900,22 +7869,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.websocket: ProgrammingTerm(
     id: TermKeys.websocket,
-    title: LocalizedString(en: 'WebSocket', ar: 'WebSocket'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'WebSocket', ar: 'WebSocket'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A protocol providing full-duplex communication channels over a single TCP connection, enabling real-time bidirectional data transfer.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'بروتوكول يوفر قنوات اتصال كاملة الازدواجية عبر اتصال TCP واحد، مما يتيح نقل البيانات الثنائي في الوقت الفعلي.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Use cases:',
           value: [
             'Chat applications - instant messaging',
@@ -7925,7 +7894,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Stock tickers - live price updates',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'WebSocket vs HTTP:',
           value: [
             'HTTP - request-response, one-way',
@@ -7933,7 +7902,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'WebSocket - lower latency for real-time',
           ],
         ),
-        StringContent('Using WebSocket in Dart:'),
+        StrContent('Using WebSocket in Dart:'),
         CodeContent(
           "import 'dart:io';\n"
           '\n'
@@ -7952,7 +7921,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'حالات الاستخدام:',
           value: [
             'تطبيقات الدردشة - المراسلة الفورية',
@@ -7962,7 +7931,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'أسعار الأسهم - تحديثات الأسعار المباشرة',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'WebSocket مقابل HTTP:',
           value: [
             'HTTP - طلب-استجابة، اتجاه واحد',
@@ -7970,7 +7939,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'WebSocket - زمن انتقال أقل للوقت الفعلي',
           ],
         ),
-        StringContent('استخدام WebSocket في Dart:'),
+        StrContent('استخدام WebSocket في Dart:'),
         CodeContent(
           "import 'dart:io';\n"
           '\n'
@@ -7999,22 +7968,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.authentication: ProgrammingTerm(
     id: TermKeys.authentication,
-    title: LocalizedString(en: 'Authentication', ar: 'المصادقة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Authentication', ar: 'المصادقة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of verifying the identity of a user, device, or system. Confirms "who you are".',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية التحقق من هوية مستخدم أو جهاز أو نظام. تؤكد "من أنت".',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common methods:',
           value: [
             'Password-based - username and password',
@@ -8024,14 +7993,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Social login - Google, Facebook, Apple',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Authentication vs Authorization:',
           value: [
             'Authentication - who you are (login)',
             'Authorization - what you can do (permissions)',
           ],
         ),
-        StringContent('Example: Firebase Authentication in Flutter'),
+        StrContent('Example: Firebase Authentication in Flutter'),
         CodeContent(
           "import 'package:firebase_auth/firebase_auth.dart';\n"
           '\n'
@@ -8050,7 +8019,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الطرق الشائعة:',
           value: [
             'قائمة على كلمة المرور - اسم المستخدم وكلمة المرور',
@@ -8060,14 +8029,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تسجيل الدخول الاجتماعي - Google، Facebook، Apple',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'المصادقة مقابل التفويض:',
           value: [
             'المصادقة - من أنت (تسجيل الدخول)',
             'التفويض - ما يمكنك فعله (الأذونات)',
           ],
         ),
-        StringContent('مثال: مصادقة Firebase في Flutter'),
+        StrContent('مثال: مصادقة Firebase في Flutter'),
         CodeContent(
           "import 'package:firebase_auth/firebase_auth.dart';\n"
           '\n'
@@ -8095,22 +8064,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.authorization: ProgrammingTerm(
     id: TermKeys.authorization,
-    title: LocalizedString(en: 'Authorization', ar: 'التفويض'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Authorization', ar: 'التفويض'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of determining what actions an authenticated user is allowed to perform. Confirms "what you can do".',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تحديد الإجراءات التي يُسمح للمستخدم المصادق عليه بتنفيذها. تؤكد "ما يمكنك فعله".',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common models:',
           value: [
             'Role-Based Access Control (RBAC) - permissions by role',
@@ -8118,7 +8087,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Access Control Lists (ACL) - explicit permissions',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'class User {\n'
           '  final String id;\n'
@@ -8140,7 +8109,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'النماذج الشائعة:',
           value: [
             'التحكم في الوصول القائم على الأدوار (RBAC) - أذونات حسب الدور',
@@ -8148,7 +8117,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'قوائم التحكم في الوصول (ACL) - أذونات صريحة',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'class User {\n'
           '  final String id;\n'
@@ -8180,22 +8149,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.jwt: ProgrammingTerm(
     id: TermKeys.jwt,
-    title: LocalizedString(en: 'JWT (JSON Web Token)', ar: 'رمز JWT'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'JWT (JSON Web Token)', ar: 'رمز JWT'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A compact, URL-safe token format for securely transmitting information between parties as a JSON object. Commonly used for authentication.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تنسيق رمز مضغوط وآمن لعنوان URL لنقل المعلومات بشكل آمن بين الأطراف ككائن JSON. يُستخدم عادة للمصادقة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'JWT structure (3 parts separated by dots):',
           value: [
             'Header - algorithm and token type',
@@ -8203,14 +8172,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Signature - verifies token integrity',
           ],
         ),
-        StringContent('Example JWT:'),
+        StrContent('Example JWT:'),
         CodeContent(
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.\n'
           'eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.\n'
           'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
           codeLanguage: .text,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'How it works:',
           value: [
             '1. User logs in with credentials',
@@ -8222,7 +8191,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'هيكل JWT (3 أجزاء مفصولة بنقاط):',
           value: [
             'الرأس - الخوارزمية ونوع الرمز',
@@ -8230,14 +8199,14 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التوقيع - يتحقق من سلامة الرمز',
           ],
         ),
-        StringContent('مثال JWT:'),
+        StrContent('مثال JWT:'),
         CodeContent(
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.\n'
           'eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.\n'
           'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
           codeLanguage: .text,
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'كيف يعمل:',
           value: [
             '1. المستخدم يسجل الدخول ببيانات الاعتماد',
@@ -8259,22 +8228,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.stateManagement: ProgrammingTerm(
     id: TermKeys.stateManagement,
-    title: LocalizedString(en: 'State Management', ar: 'إدارة الحالة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'State Management', ar: 'إدارة الحالة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The practice of managing and coordinating application state across components. Essential for keeping UI in sync with data.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ممارسة إدارة وتنسيق حالة التطبيق عبر المكونات. أساسي للحفاظ على تزامن واجهة المستخدم مع البيانات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Why state management matters:',
           value: [
             'Share data between widgets',
@@ -8284,7 +8253,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Enable time-travel debugging',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Popular Flutter solutions:',
           value: [
             'setState - built-in, simple',
@@ -8298,7 +8267,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'لماذا إدارة الحالة مهمة:',
           value: [
             'مشاركة البيانات بين الويدجت',
@@ -8308,7 +8277,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'تمكين تصحيح السفر عبر الزمن',
           ],
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'حلول Flutter الشائعة:',
           value: [
             'setState - مدمج، بسيط',
@@ -8332,25 +8301,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.bloc: ProgrammingTerm(
     id: TermKeys.bloc,
-    title: LocalizedString(
-      en: 'BLoC (Business Logic Component)',
-      ar: 'نمط BLoC',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'BLoC (Business Logic Component)', ar: 'نمط BLoC'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A state management pattern in Flutter that separates business logic from UI using streams. Events go in, states come out.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط إدارة حالة في Flutter يفصل منطق الأعمال عن واجهة المستخدم باستخدام التدفقات. الأحداث تدخل، الحالات تخرج.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Core concepts:',
           value: [
             'Events - user actions (button clicks, etc.)',
@@ -8359,7 +8325,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Streams - communication channel',
           ],
         ),
-        StringContent('Simple counter example:'),
+        StrContent('Simple counter example:'),
         CodeContent(
           "import 'package:flutter_bloc/flutter_bloc.dart';\n"
           '\n'
@@ -8384,7 +8350,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المفاهيم الأساسية:',
           value: [
             'الأحداث - إجراءات المستخدم (نقرات الأزرار، إلخ)',
@@ -8393,7 +8359,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التدفقات - قناة الاتصال',
           ],
         ),
-        StringContent('مثال عداد بسيط:'),
+        StrContent('مثال عداد بسيط:'),
         CodeContent(
           "import 'package:flutter_bloc/flutter_bloc.dart';\n"
           '\n'
@@ -8429,22 +8395,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.providerPattern: ProgrammingTerm(
     id: TermKeys.providerPattern,
-    title: LocalizedString(en: 'Provider', ar: 'Provider'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Provider', ar: 'Provider'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A recommended state management solution for Flutter that uses InheritedWidget to propagate state down the widget tree efficiently.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'حل إدارة حالة موصى به لـ Flutter يستخدم InheritedWidget لنشر الحالة عبر شجرة الويدجت بكفاءة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Basic Provider example:'),
+        StrContent('Basic Provider example:'),
         CodeContent(
           "import 'package:flutter/material.dart';\n"
           "import 'package:provider/provider.dart';\n"
@@ -8479,7 +8445,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('مثال Provider الأساسي:'),
+        StrContent('مثال Provider الأساسي:'),
         CodeContent(
           "import 'package:flutter/material.dart';\n"
           "import 'package:provider/provider.dart';\n"
@@ -8524,22 +8490,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.reactiveProgramming: ProgrammingTerm(
     id: TermKeys.reactiveProgramming,
-    title: LocalizedString(en: 'Reactive Programming', ar: 'البرمجة التفاعلية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Reactive Programming', ar: 'البرمجة التفاعلية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A programming paradigm focused on data streams and the propagation of change. When data changes, dependent values automatically update.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج برمجة يركز على تدفقات البيانات ونشر التغيير. عند تغيير البيانات، تتحدث القيم التابعة تلقائيًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key concepts:',
           value: [
             'Observable/Stream - source of data',
@@ -8548,7 +8514,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Automatic updates - no manual refresh needed',
           ],
         ),
-        StringContent('Simple example with Dart Streams:'),
+        StrContent('Simple example with Dart Streams:'),
         CodeContent(
           "import 'dart:async';\n"
           '\n'
@@ -8572,7 +8538,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المفاهيم الرئيسية:',
           value: [
             'القابل للمراقبة/التدفق - مصدر البيانات',
@@ -8581,7 +8547,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'التحديثات التلقائية - لا حاجة لتحديث يدوي',
           ],
         ),
-        StringContent('مثال بسيط مع Dart Streams:'),
+        StrContent('مثال بسيط مع Dart Streams:'),
         CodeContent(
           "import 'dart:async';\n"
           '\n'
@@ -8616,22 +8582,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.buildMethod: ProgrammingTerm(
     id: TermKeys.buildMethod,
-    title: LocalizedString(en: 'build() Method', ar: 'أسلوب build()'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'build() Method', ar: 'أسلوب build()'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The core method in Flutter widgets that describes how to display the widget in terms of other, lower-level widgets.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الأسلوب الأساسي في ويدجت Flutter الذي يصف كيفية عرض الويدجت من حيث الويدجت الأخرى منخفضة المستوى.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key points:',
           value: [
             'Called when widget needs to render',
@@ -8641,7 +8607,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Performance matters - avoid heavy computation',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'class MyWidget extends StatelessWidget {\n'
           '  @override\n'
@@ -8670,7 +8636,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'نقاط رئيسية:',
           value: [
             'يُستدعى عندما يحتاج الويدجت للعرض',
@@ -8680,7 +8646,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الأداء مهم - تجنب الحسابات الثقيلة',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'class MyWidget extends StatelessWidget {\n'
           '  @override\n'
@@ -8719,22 +8685,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.buildContext: ProgrammingTerm(
     id: TermKeys.buildContext,
-    title: LocalizedString(en: 'BuildContext', ar: 'BuildContext'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'BuildContext', ar: 'BuildContext'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A handle to the location of a widget in the widget tree. Provides access to inherited widgets, themes, and navigation.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مقبض لموقع ويدجت في شجرة الويدجت. يوفر وصولاً إلى الويدجت الموروثة، السمات، والتنقل.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common uses:',
           value: [
             'Access theme data: Theme.of(context)',
@@ -8744,7 +8710,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Get screen size: MediaQuery.of(context)',
           ],
         ),
-        StringContent('Example:'),
+        StrContent('Example:'),
         CodeContent(
           'Widget build(BuildContext context) {\n'
           '  // Access theme\n'
@@ -8772,7 +8738,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الاستخدامات الشائعة:',
           value: [
             'الوصول لبيانات السمة: Theme.of(context)',
@@ -8782,7 +8748,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الحصول على حجم الشاشة: MediaQuery.of(context)',
           ],
         ),
-        StringContent('مثال:'),
+        StrContent('مثال:'),
         CodeContent(
           'Widget build(BuildContext context) {\n'
           '  // الوصول للسمة\n'
@@ -8820,22 +8786,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.eventLoop: ProgrammingTerm(
     id: TermKeys.eventLoop,
-    title: LocalizedString(en: 'Event Loop', ar: 'حلقة الأحداث'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Event Loop', ar: 'حلقة الأحداث'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A programming construct that waits for and dispatches events or messages in a program. Central to asynchronous programming.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'بنية برمجة تنتظر وترسل الأحداث أو الرسائل في برنامج. محوري للبرمجة غير المتزامنة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'How Dart event loop works:',
           value: [
             '1. Executes main() function',
@@ -8844,7 +8810,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '4. Repeats until queues are empty',
           ],
         ),
-        StringContent(
+        StrContent(
           'The event loop enables Dart to handle async operations without blocking the main thread, keeping UIs responsive.',
         ),
         CodeContent(
@@ -8864,7 +8830,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'كيف تعمل حلقة أحداث Dart:',
           value: [
             '1. تنفيذ دالة main()',
@@ -8873,7 +8839,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             '4. التكرار حتى تفرغ الطوابير',
           ],
         ),
-        StringContent(
+        StrContent(
           'تمكّن حلقة الأحداث Dart من التعامل مع العمليات غير المتزامنة دون حظر الخيط الرئيسي، مما يحافظ على استجابة واجهات المستخدم.',
         ),
         CodeContent(
@@ -8903,22 +8869,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.architectureClean: ProgrammingTerm(
     id: TermKeys.architectureClean,
-    title: LocalizedString(en: 'Clean Architecture', ar: 'العمارة النظيفة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Clean Architecture', ar: 'العمارة النظيفة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A software design philosophy that separates elements into ring levels. The main rule is that dependencies can only point inwards, towards high-level policies.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'فلسفة تصميم برمجيات تفصل العناصر إلى مستويات حلقية. القاعدة الرئيسية هي أن التبعيات يمكن أن تشير فقط إلى الداخل، نحو السياسات عالية المستوى.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Layers (Outer to Inner):',
           value: [
             'Infrastructure (Frameworks, DB, UI)',
@@ -8927,12 +8893,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Entities (Enterprise Business Rules)',
           ],
         ),
-        StringContent(
+        StrContent(
           'Benefits: Independent of UI, Database, and Frameworks. Highly testable.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الطبقات (من الخارج للداخل):',
           value: [
             'البنية التحتية (أطر العمل، قواعد البيانات، واجهة المستخدم)',
@@ -8941,7 +8907,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'الكيانات (قواعد أعمال المؤسسة)',
           ],
         ),
-        StringContent(
+        StrContent(
           'الفوائد: مستقلة عن واجهة المستخدم، وقاعدة البيانات، وأطر العمل. قابلة للاختبار بشكل كبير.',
         ),
       ],
@@ -8960,22 +8926,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.architectureLayered: ProgrammingTerm(
     id: TermKeys.architectureLayered,
-    title: LocalizedString(en: 'Layered Architecture', ar: 'العمارة الطبقية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Layered Architecture', ar: 'العمارة الطبقية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A traditional architectural pattern that organizes code into horizontal layers, where each layer performs a specific role and interacts only with the layer directly below it.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط معماري تقليدي ينظم الكود في طبقات أفقية، حيث تؤدي كل طبقة دورًا محددًا وتتفاعل فقط مع الطبقة التي تحتها مباشرة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common Layers:',
           value: [
             'Presentation Layer (UI)',
@@ -8983,12 +8949,12 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Data Access Layer (Repository/Database)',
           ],
         ),
-        StringContent(
+        StrContent(
           'Simple to understand and implement, but can lead to "tight coupling" if not managed well.',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الطبقات الشائعة:',
           value: [
             'طبقة العرض (واجهة المستخدم)',
@@ -8996,7 +8962,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'طبقة الوصول للبيانات (المستودع/قاعدة البيانات)',
           ],
         ),
-        StringContent(
+        StrContent(
           'بسيطة للفهم والتنفيذ، لكن قد تؤدي إلى "ارتباط محكم" إذا لم تتم إدارتها بشكل جيد.',
         ),
       ],
@@ -9010,22 +8976,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.patternRepository: ProgrammingTerm(
     id: TermKeys.patternRepository,
-    title: LocalizedString(en: 'Repository Pattern', ar: 'نمط المستودع'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Repository Pattern', ar: 'نمط المستودع'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A design pattern that mediates between the domain and data mapping layers using a collection-like interface for accessing domain objects.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط تصميم يتوسط بين المجال وطبقات تعيين البيانات باستخدام واجهة تشبه المجموعة للوصول إلى كائنات المجال.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'It abstracts the data source (API, SQL, Cache) so the app logic doesn\'t care where data comes from.',
         ),
         CodeContent(
@@ -9041,7 +9007,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يقوم بتجريد مصدر البيانات (API، SQL، التخزين المؤقت) بحيث لا يهتم منطق التطبيق بمصدر البيانات.',
         ),
         CodeContent(
@@ -9067,22 +9033,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.patternServiceLocator: ProgrammingTerm(
     id: TermKeys.patternServiceLocator,
-    title: LocalizedString(en: 'Service Locator', ar: 'محدد الخدمة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Service Locator', ar: 'محدد الخدمة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A design pattern used to decouple the interface with an implementation by creating a central registry (the locator) where services are registered and retrieved.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط تصميم يستخدم لفصل الواجهة عن التنفيذ عن طريق إنشاء سجل مركزي (المحدد) حيث يتم تسجيل الخدمات واسترجاعها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Often considered an alternative to Dependency Injection. In Dart, `GetIt` is a popular service locator.',
         ),
         CodeContent(
@@ -9097,7 +9063,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'غالبًا ما يعتبر بديلاً لحقن التبعية. في Dart، يعد `GetIt` محدد خدمة شائع.',
         ),
         CodeContent(
@@ -9122,22 +9088,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.stateManagementCubit: ProgrammingTerm(
     id: TermKeys.stateManagementCubit,
-    title: LocalizedString(en: 'Cubit', ar: 'Cubit'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Cubit', ar: 'Cubit'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A subset of the BLoC pattern that simplifies state management by using functions to emit states instead of event streams.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة فرعية من نمط BLoC تبسط إدارة الحالة باستخدام الدوال لإصدار الحالات بدلاً من تدفقات الأحداث.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Cubits are easier to write than full BLoCs because you call methods directly.',
         ),
         CodeContent(
@@ -9150,7 +9116,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تعد Cubits أسهل في الكتابة من BLoC الكامل لأنك تستدعي الأساليب مباشرة.',
         ),
         CodeContent(
@@ -9173,22 +9139,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.toolRiverpod: ProgrammingTerm(
     id: TermKeys.toolRiverpod,
-    title: LocalizedString(en: 'Riverpod', ar: 'Riverpod'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Riverpod', ar: 'Riverpod'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A reactive caching and data-binding framework for Dart and Flutter. It is often seen as a "rewrite of Provider" that is compile-safe and testable.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'إطار عمل للتخزين المؤقت التفاعلي وربط البيانات لـ Dart و Flutter. غالبًا ما يُنظر إليه على أنه "إعادة كتابة لـ Provider" آمنة في وقت الترجمة وقابلة للاختبار.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key Advantages:',
           value: [
             'Compile-time safety (no ProviderNotFoundException)',
@@ -9205,7 +9171,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المزايا الرئيسية:',
           value: [
             'أمان وقت الترجمة (لا يوجد ProviderNotFoundException)',
@@ -9232,31 +9198,31 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.toolGetIt: ProgrammingTerm(
     id: TermKeys.toolGetIt,
-    title: LocalizedString(en: 'GetIt', ar: 'GetIt'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'GetIt', ar: 'GetIt'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A simple, direct Service Locator for Dart and Flutter. It allows you to access your business logic objects from anywhere in the UI without passing context.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'محدد خدمة بسيط ومباشر لـ Dart و Flutter. يسمح لك بالوصول إلى كائنات منطق الأعمال الخاصة بك من أي مكان في واجهة المستخدم دون تمرير السياق.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'It decouples your implementation from the interface and is commonly used with Dependency Injection.',
         ),
-        StringContent(
+        StrContent(
           'Note: While convenient, overuse can make testing harder if not managed cleanly.',
         ),
       ],
       ar: [
-        StringContent('يفصل تنفيذك عن الواجهة ويستخدم عادة مع حقن التبعية.'),
-        StringContent(
+        StrContent('يفصل تنفيذك عن الواجهة ويستخدم عادة مع حقن التبعية.'),
+        StrContent(
           'ملاحظة: على الرغم من ملاءمته، فإن الإفراط في استخدامه قد يجعل الاختبار أصعب إذا لم تتم إدارته بنظافة.',
         ),
       ],
@@ -9274,22 +9240,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.patternRedux: ProgrammingTerm(
     id: TermKeys.patternRedux,
-    title: LocalizedString(en: 'Redux', ar: 'Redux'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Redux', ar: 'Redux'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A predictable state container for applications. It relies on a single source of truth (Store), read-only state, and pure functions (Reducers) to modify state.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'حاوية حالة قابلة للتنبؤ للتطبيقات. تعتمد على مصدر حقيقة واحد (Store)، وحالة للقراءة فقط، ودوال نقية (Reducers) لتعديل الحالة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Core Cycle:',
           value: [
             'Action: Describes what happened',
@@ -9297,10 +9263,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'Store: Holds the state',
           ],
         ),
-        StringContent('Very popular in React, also available in Flutter.'),
+        StrContent('Very popular in React, also available in Flutter.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الدورة الأساسية:',
           value: [
             'الإجراء (Action): يصف ما حدث',
@@ -9308,7 +9274,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'المخزن (Store): يحتفظ بالحالة',
           ],
         ),
-        StringContent('شائع جدًا في React، ومتاح أيضًا في Flutter.'),
+        StrContent('شائع جدًا في React، ومتاح أيضًا في Flutter.'),
       ],
     ),
     type: .pattern,
@@ -9321,22 +9287,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptDesignPattern: ProgrammingTerm(
     id: TermKeys.conceptDesignPattern,
-    title: LocalizedString(en: 'Design Pattern', ar: 'نمط التصميم'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Design Pattern', ar: 'نمط التصميم'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A general, reusable solution to a commonly occurring problem within a given context in software design. It is a template, not code.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'حل عام قابل لإعادة الاستخدام لمشكلة شائعة الحدوث في سياق معين في تصميم البرمجيات. إنه قالب وليس كودًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types of Patterns (Gang of Four):',
           value: [
             'Creational: Creating objects (Singleton, Factory)',
@@ -9346,7 +9312,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أنواع الأنماط (عصابة الأربعة):',
           value: [
             'إنشائية: إنشاء الكائنات (المفرد، المصنع)',
@@ -9369,22 +9335,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.principleSolid: ProgrammingTerm(
     id: TermKeys.principleSolid,
-    title: LocalizedString(en: 'SOLID Principles', ar: 'مبادئ SOLID'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'SOLID Principles', ar: 'مبادئ SOLID'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An acronym for five design principles intended to make software designs more understandable, flexible, and maintainable.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'اختصار لخمسة مبادئ تصميم تهدف إلى جعل تصميمات البرمجيات أكثر قابلية للفهم والمرونة والصيانة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'The Principles:',
           value: [
             'S - Single Responsibility: One reason to change',
@@ -9396,7 +9362,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المبادئ:',
           value: [
             'S - المسؤولية الواحدة: سبب واحد للتغيير',
@@ -9418,30 +9384,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.principleDry: ProgrammingTerm(
     id: TermKeys.principleDry,
-    title: LocalizedString(
-      en: 'DRY (Don\'t Repeat Yourself)',
-      ar: 'لا تكرر نفسك',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'DRY (Don\'t Repeat Yourself)', ar: 'لا تكرر نفسك'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A principle of software development aimed at reducing repetition of software patterns, replacing it with abstractions or using data normalization.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مبدأ في تطوير البرمجيات يهدف إلى تقليل تكرار أنماط البرمجيات، واستبدالها بالتجريدات أو استخدام تسوية البيانات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يجب أن يكون لكل جزء من المعرفة تمثيل واحد، غير غامض، وموثوق داخل النظام.',
         ),
       ],
@@ -9455,30 +9418,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.principleKiss: ProgrammingTerm(
     id: TermKeys.principleKiss,
-    title: LocalizedString(
-      en: 'KISS (Keep It Simple, Stupid)',
-      ar: 'اجعلها بسيطة وغبية',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'KISS (Keep It Simple, Stupid)', ar: 'اجعلها بسيطة وغبية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A design principle stating that systems work best if they are kept simple rather than made complicated.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مبدأ تصميم ينص على أن الأنظمة تعمل بشكل أفضل إذا تم الحفاظ على بساطتها بدلاً من جعلها معقدة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Avoid unnecessary complexity. Simple code is easier to maintain, debug, and understand.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تجنب التعقيد غير الضروري. الكود البسيط أسهل في الصيانة وتصحيح الأخطاء والفهم.',
         ),
       ],
@@ -9492,30 +9452,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.principleYagni: ProgrammingTerm(
     id: TermKeys.principleYagni,
-    title: LocalizedString(
-      en: 'YAGNI (You Ain\'t Gonna Need It)',
-      ar: 'لن تحتاج إليها',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'YAGNI (You Ain\'t Gonna Need It)', ar: 'لن تحتاج إليها'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A principle of Extreme Programming (XP) that states a programmer should not add functionality until deemed necessary.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مبدأ من البرمجة المتطرفة (XP) ينص على أنه يجب على المبرمج عدم إضافة وظائف حتى تعتبر ضرورية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Don\'t write code for the future. Solve the current problem. Unused code is technical debt.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'لا تكتب كودًا للمستقبل. حل المشكلة الحالية. الكود غير المستخدم هو دين تقني.',
         ),
       ],
@@ -9529,22 +9486,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.gitRebase: ProgrammingTerm(
     id: TermKeys.gitRebase,
-    title: LocalizedString(en: 'Rebase', ar: 'Rebase (إعادة التأسيس)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Rebase', ar: 'Rebase (إعادة التأسيس)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Git command used to integrate changes from one branch into another by moving the entire sequence of commits to a new base commit.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أمر Git يُستخدم لدمج التغييرات من فرع إلى آخر عن طريق نقل تسلسل الإيداعات بالكامل إلى إيداع أساس جديد.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Creates a linear history, unlike `merge` which creates a merge commit. Warning: Do not rebase public branches!',
         ),
         CodeContent(
@@ -9553,7 +9510,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ينشئ تاريخًا خطيًا، على عكس `merge` الذي ينشئ إيداع دمج. تحذير: لا تقم بعمل rebase للفروع العامة!',
         ),
         CodeContent(
@@ -9572,25 +9529,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptRefactoring: ProgrammingTerm(
     id: TermKeys.conceptRefactoring,
-    title: LocalizedString(en: 'Refactoring', ar: 'إعادة الهيكلة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Refactoring', ar: 'إعادة الهيكلة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of restructuring existing computer code without changing its external behavior.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية إعادة هيكلة كود الكمبيوتر الموجود دون تغيير سلوكه الخارجي.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Goal: Improve nonfunctional attributes (readability, reduce complexity) to make code easier to maintain.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'Examples:',
           value: [
             'Renaming variables to be meaningful',
@@ -9600,10 +9557,10 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الهدف: تحسين السمات غير الوظيفية (القراءة، تقليل التعقيد) لجعل الكود أسهل في الصيانة.',
         ),
-        UnorderedListContent(
+        ULContent(
           title: 'أمثلة:',
           value: [
             'إعادة تسمية المتغيرات لتكون ذات معنى',
@@ -9622,22 +9579,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptCodeSmell: ProgrammingTerm(
     id: TermKeys.conceptCodeSmell,
-    title: LocalizedString(en: 'Code Smell', ar: 'رائحة الكود'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Code Smell', ar: 'رائحة الكود'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A surface indication that usually corresponds to a deeper problem in the system. It\'s not necessarily a bug, but a weakness in design.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مؤشر سطحي يتوافق عادةً مع مشكلة أعمق في النظام. ليس بالضرورة خطأً برمجيًا، بل ضعف في التصميم.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common Smells:',
           value: [
             'Long Method: Function does too much',
@@ -9648,7 +9605,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'روائح شائعة:',
           value: [
             'الأسلوب الطويل: الدالة تفعل الكثير',
@@ -9668,27 +9625,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.technicalDebt: ProgrammingTerm(
     id: TermKeys.technicalDebt,
-    title: LocalizedString(en: 'Technical Debt', ar: 'الدين التقني'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Technical Debt', ar: 'الدين التقني'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'التكلفة الضمنية لإعادة العمل الإضافية الناتجة عن اختيار حل سهل (محدود) الآن بدلاً من استخدام نهج أفضل سيستغرق وقتًا أطول.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Like financial debt, if not paid back (refactored), it accumulates interest (development becomes slower and harder).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مثل الدين المالي، إذا لم يتم سداده (إعادة الهيكلة)، فإنه يراكم الفوائد (يصبح التطوير أبطأ وأصعب).',
         ),
       ],
@@ -9702,22 +9659,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.toolLint: ProgrammingTerm(
     id: TermKeys.toolLint,
-    title: LocalizedString(en: 'Linter', ar: 'المدقق البرمجي (Linter)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Linter', ar: 'المدقق البرمجي (Linter)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أداة تحلل الكود المصدري لتحديد أخطاء البرمجة، والأخطاء، والأخطاء الأسلوبية، والتركيبات المشبوهة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Dart, `flutter_lints` is commonly used to enforce rules.',
         ),
         CodeContent(
@@ -9730,9 +9687,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
-          'في Dart، يُستخدم `flutter_lints` بشكل شائع لفرض القواعد.',
-        ),
+        StrContent('في Dart، يُستخدم `flutter_lints` بشكل شائع لفرض القواعد.'),
         CodeContent(
           '// analysis_options.yaml\n'
           'linter:\n'
@@ -9753,27 +9708,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.memoryGarbageCollection: ProgrammingTerm(
     id: TermKeys.memoryGarbageCollection,
-    title: LocalizedString(en: 'Garbage Collection (GC)', ar: 'جمع القمامة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Garbage Collection (GC)', ar: 'جمع القمامة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A form of automatic memory management. The garbage collector attempts to reclaim memory occupied by objects that are no longer in use by the program.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'شكل من أشكال إدارة الذاكرة التلقائية. يحاول جامع القمامة استعادة الذاكرة التي تشغلها الكائنات التي لم يعد يستخدمها البرنامج.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Dart uses a generational garbage collector (Young Space / Old Space). You don\'t need to free memory manually like in C++.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يستخدم Dart جامع قمامة جيلي (المساحة الشابة / المساحة القديمة). لا تحتاج إلى تحرير الذاكرة يدويًا كما في C++.',
         ),
       ],
@@ -9788,27 +9743,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.memoryLeak: ProgrammingTerm(
     id: TermKeys.memoryLeak,
-    title: LocalizedString(en: 'Memory Leak', ar: 'تسرب الذاكرة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Memory Leak', ar: 'تسرب الذاكرة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Occurs when a program allocates memory but fails to release it back to the operating system when no longer needed, leading to reduced performance or crashes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يحدث عندما يخصص البرنامج ذاكرة ولكنه يفشل في إعادتها إلى نظام التشغيل عندما لا تكون هناك حاجة إليها، مما يؤدي إلى انخفاض الأداء أو الانهيار.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Common causes in Flutter: forgetting to dispose controllers (`TextEditingController`, `StreamController`) or adding listeners without removing them.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الأسباب الشائعة في Flutter: نسيان التخلص من المتحكمات (`TextEditingController`، `StreamController`) أو إضافة مستمعين دون إزالتهم.',
         ),
       ],
@@ -9822,27 +9777,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.memoryHeap: ProgrammingTerm(
     id: TermKeys.memoryHeap,
-    title: LocalizedString(en: 'Heap Memory', ar: 'ذاكرة الكومة (Heap)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Heap Memory', ar: 'ذاكرة الكومة (Heap)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A region of computer memory used for dynamic memory allocation. Objects are stored here.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'منطقة من ذاكرة الكمبيوتر تستخدم لتخصيص الذاكرة الديناميكية. يتم تخزين الكائنات هنا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Large, somewhat unstructured, and slower to access than Stack. Objects live here until Garbage Collected.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'كبيرة، غير منظمة إلى حد ما، وأبطأ في الوصول من المكدس. تعيش الكائنات هنا حتى يتم جمعها (Garbage Collected).',
         ),
       ],
@@ -9856,27 +9811,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.memoryStack: ProgrammingTerm(
     id: TermKeys.memoryStack,
-    title: LocalizedString(en: 'Stack Memory', ar: 'ذاكرة المكدس (Stack)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Stack Memory', ar: 'ذاكرة المكدس (Stack)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A region of memory used for static memory allocation and function call execution contexts.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'منطقة من الذاكرة تستخدم لتخصيص الذاكرة الثابتة وسياقات تنفيذ استدعاء الدوال.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Fast access (LIFO). Stores local primitive variables and references to objects in the Heap. Automatically cleared when function returns.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'وصول سريع (LIFO). يخزن المتغيرات الأولية المحلية والمراجع للكائنات في الكومة. يتم مسحها تلقائيًا عند عودة الدالة.',
         ),
       ],
@@ -9890,23 +9845,23 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptPointer: ProgrammingTerm(
     id: TermKeys.conceptPointer,
-    title: LocalizedString(en: 'Pointer', ar: 'المؤشر'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Pointer', ar: 'المؤشر'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A variable that stores the memory address of another variable.',
         ),
       ],
-      ar: [StringContent('متغير يخزن عنوان الذاكرة لمتغير آخر.')],
+      ar: [StrContent('متغير يخزن عنوان الذاكرة لمتغير آخر.')],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Dart doesn\'t use pointers explicitly (like C++), it uses References. However, knowing pointers helps understand how objects are passed.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'لا يستخدم Dart المؤشرات صراحة (مثل C++)، بل يستخدم المراجع. ومع ذلك، معرفة المؤشرات تساعد في فهم كيفية تمرير الكائنات.',
         ),
       ],
@@ -9921,22 +9876,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptReference: ProgrammingTerm(
     id: TermKeys.conceptReference,
-    title: LocalizedString(en: 'Reference', ar: 'المرجع'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Reference', ar: 'المرجع'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A value that enables a program to indirectly access a particular datum, such as a variable\'s value, in the computer\'s memory or on some other storage device.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'قيمة تمكن البرنامج من الوصول بشكل غير مباشر إلى بيان معين، مثل قيمة متغير، في ذاكرة الكمبيوتر أو على جهاز تخزين آخر.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Dart, objects are passed by reference. If you pass an object to a function and modify it inside, the original object changes.',
         ),
         CodeContent(
@@ -9951,7 +9906,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Dart، يتم تمرير الكائنات بالمرجع. إذا مررت كائنًا إلى دالة وقمت بتعديله بداخلها، يتغير الكائن الأصلي.',
         ),
         CodeContent(
@@ -9976,22 +9931,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dataDeserialization: ProgrammingTerm(
     id: TermKeys.dataDeserialization,
-    title: LocalizedString(en: 'Deserialization', ar: 'إلغاء التسلسل'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Deserialization', ar: 'إلغاء التسلسل'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The reverse process of serialization; converting a stream of bytes or data format (like JSON) back into an object in memory.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'العملية العكسية للتسلسل؛ تحويل تدفق من البايتات أو تنسيق البيانات (مثل JSON) مرة أخرى إلى كائن في الذاكرة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Commonly used when receiving data from an API.'),
+        StrContent('Commonly used when receiving data from an API.'),
         CodeContent(
           '// JSON string -> Dart Map -> User Object\n'
           'User user = User.fromJson(jsonDecode(jsonString));',
@@ -9999,7 +9954,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('يستخدم عادة عند استقبال البيانات من API.'),
+        StrContent('يستخدم عادة عند استقبال البيانات من API.'),
         CodeContent(
           '// JSON string -> Dart Map -> User Object\n'
           'User user = User.fromJson(jsonDecode(jsonString));',
@@ -10016,22 +9971,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.securityEncryption: ProgrammingTerm(
     id: TermKeys.securityEncryption,
-    title: LocalizedString(en: 'Encryption', ar: 'التشفير'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Encryption', ar: 'التشفير'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of encoding information so that only authorized parties can access it.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية ترميز المعلومات بحيث لا يمكن الوصول إليها إلا للأطراف المصرح لها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types:',
           value: [
             'Symmetric (AES): Same key for encryption/decryption',
@@ -10040,7 +9995,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع:',
           value: [
             'متماثل (AES): نفس المفتاح للتشفير/فك التشفير',
@@ -10058,27 +10013,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.securityHashing: ProgrammingTerm(
     id: TermKeys.securityHashing,
-    title: LocalizedString(en: 'Hashing', ar: 'التهشير (Hashing)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Hashing', ar: 'التهشير (Hashing)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A one-way process of mapping data of arbitrary size to fixed-size values. It is irreversible.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية أحادية الاتجاه لتعيين بيانات ذات حجم عشوائي إلى قيم ذات حجم ثابت. وهي غير قابلة للعكس.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Used for passwords (storing hash instead of plain text) and data integrity (checksums). Examples: SHA-256, MD5.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يستخدم لكلمات المرور (تخزين الهاش بدلاً من النص العادي) وسلامة البيانات (الاختبار الجمعي). أمثلة: SHA-256، MD5.',
         ),
       ],
@@ -10092,27 +10047,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dbDatabase: ProgrammingTerm(
     id: TermKeys.dbDatabase,
-    title: LocalizedString(en: 'Database', ar: 'قاعدة البيانات'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Database', ar: 'قاعدة البيانات'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An organized collection of structured information, or data, typically stored electronically in a computer system.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة منظمة من المعلومات المهيكلة، أو البيانات، مخزنة عادةً إلكترونيًا في نظام كمبيوتر.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Managed by a DBMS (Database Management System). Can be local (SQLite, Hive) or remote (PostgreSQL, Firebase).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تدار بواسطة DBMS (نظام إدارة قواعد البيانات). يمكن أن تكون محلية (SQLite، Hive) أو بعيدة (PostgreSQL، Firebase).',
         ),
       ],
@@ -10126,28 +10081,28 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dbSql: ProgrammingTerm(
     id: TermKeys.dbSql,
-    title: LocalizedString(en: 'SQL', ar: 'SQL'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'SQL', ar: 'SQL'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Structured Query Language. A standard language for storing, manipulating, and retrieving data in databases.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'لغة الاستعلام الهيكلية. لغة قياسية لتخزين ومعالجة واسترجاع البيانات في قواعد البيانات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Used in Relational Databases (RDBMS) like MySQL, PostgreSQL, SQLite.',
         ),
         CodeContent('SELECT * FROM users WHERE age > 18;', codeLanguage: .sql),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تستخدم في قواعد البيانات العلائقية (RDBMS) مثل MySQL، PostgreSQL، SQLite.',
         ),
         CodeContent('SELECT * FROM users WHERE age > 18;', codeLanguage: .sql),
@@ -10163,27 +10118,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dbNosql: ProgrammingTerm(
     id: TermKeys.dbNosql,
-    title: LocalizedString(en: 'NoSQL', ar: 'NoSQL'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'NoSQL', ar: 'NoSQL'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Non-relational databases that store data in formats other than tabular relations, such as documents, key-value pairs, or graphs.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'قواعد بيانات غير علائقية تخزن البيانات بتنسيقات غير العلاقات الجدولية، مثل المستندات، أو أزواج المفتاح-القيمة، أو الرسوم البيانية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Examples: MongoDB (Document), Firebase Firestore (Document), Redis (Key-Value). Flexible schema.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أمثلة: MongoDB (مستند)، Firebase Firestore (مستند)، Redis (مفتاح-قيمة). مخطط مرن.',
         ),
       ],
@@ -10197,27 +10152,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dbOrm: ProgrammingTerm(
     id: TermKeys.dbOrm,
-    title: LocalizedString(en: 'ORM (Object-Relational Mapping)', ar: 'ORM'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'ORM (Object-Relational Mapping)', ar: 'ORM'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A technique that lets you query and manipulate data from a database using an object-oriented paradigm instead of writing SQL directly.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تقنية تسمح لك بالاستعلام عن البيانات ومعالجتها من قاعدة بيانات باستخدام نموذج موجه للكائنات بدلاً من كتابة SQL مباشرة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter: Drift or Isar are popular. It maps Database Tables to Dart Classes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter: تعتبر Drift أو Isar شائعة. تقوم بتعيين جداول قاعدة البيانات إلى فئات Dart.',
         ),
       ],
@@ -10231,27 +10186,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.performanceCaching: ProgrammingTerm(
     id: TermKeys.performanceCaching,
-    title: LocalizedString(en: 'Caching', ar: 'التخزين المؤقت'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Caching', ar: 'التخزين المؤقت'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of storing copies of files or data in a temporary storage location (cache) so that they can be accessed more quickly.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تخزين نسخ من الملفات أو البيانات في موقع تخزين مؤقت (ذاكرة التخزين المؤقت) بحيث يمكن الوصول إليها بسرعة أكبر.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Used to reduce network load and improve app speed. Can be in-memory (RAM) or persistent (Disk).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تستخدم لتقليل حمل الشبكة وتحسين سرعة التطبيق. يمكن أن تكون في الذاكرة (RAM) أو دائمة (القرص).',
         ),
       ],
@@ -10265,27 +10220,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.devopsDocker: ProgrammingTerm(
     id: TermKeys.devopsDocker,
-    title: LocalizedString(en: 'Docker', ar: 'Docker (دوكر)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Docker', ar: 'Docker (دوكر)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A platform designed to help developers build, share, and run applications in containers. It packages software into standardized units.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'منصة مصممة لمساعدة المطورين على بناء ومشاركة وتشغيل التطبيقات في حاويات. تقوم بتغليف البرمجيات في وحدات قياسية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Solves the "it works on my machine" problem by bundling the app with all its dependencies (libraries, runtime, OS settings).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يحل مشكلة "إنه يعمل على جهازي" عن طريق تجميع التطبيق مع جميع تبعياته (المكتبات، وقت التشغيل، إعدادات نظام التشغيل).',
         ),
       ],
@@ -10299,30 +10254,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.devopsContainerization: ProgrammingTerm(
     id: TermKeys.devopsContainerization,
-    title: LocalizedString(
-      en: 'Containerization',
-      ar: 'التحوية (Containerization)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Containerization', ar: 'التحوية (Containerization)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A form of operating system virtualization where applications run in isolated user spaces called containers, sharing the same OS kernel.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'شكل من أشكال محاكاة نظام التشغيل الافتراضية حيث تعمل التطبيقات في مساحات مستخدم معزولة تسمى حاويات، وتتشارك نفس نواة نظام التشغيل.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Lighter than Virtual Machines (VMs) because they don\'t need a full OS for each instance.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أخف من الأجهزة الافتراضية (VMs) لأنها لا تحتاج إلى نظام تشغيل كامل لكل نسخة.',
         ),
       ],
@@ -10336,37 +10288,35 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.cloudComputing: ProgrammingTerm(
     id: TermKeys.cloudComputing,
-    title: LocalizedString(en: 'Cloud Computing', ar: 'الحوسبة السحابية'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Cloud Computing', ar: 'الحوسبة السحابية'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The delivery of computing services—including servers, storage, databases, networking, software, and intelligence—over the Internet ("the cloud").',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تقديم خدمات الحوسبة - بما في ذلك الخوادم والتخزين وقواعد البيانات والشبكات والبرمجيات والذكاء - عبر الإنترنت ("السحابة").',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Providers:',
           value: ['AWS (Amazon)', 'GCP (Google)', 'Azure (Microsoft)'],
         ),
-        StringContent(
+        StrContent(
           'Models: IaaS (Infrastructure), PaaS (Platform), SaaS (Software).',
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'المزودون:',
           value: ['AWS (Amazon)', 'GCP (Google)', 'Azure (Microsoft)'],
         ),
-        StringContent(
-          'النماذج: IaaS (بنية تحتية)، PaaS (منصة)، SaaS (برمجيات).',
-        ),
+        StrContent('النماذج: IaaS (بنية تحتية)، PaaS (منصة)، SaaS (برمجيات).'),
       ],
     ),
     type: .concept,
@@ -10378,27 +10328,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.cloudServerless: ProgrammingTerm(
     id: TermKeys.cloudServerless,
-    title: LocalizedString(en: 'Serverless', ar: 'بدون خادم (Serverless)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Serverless', ar: 'بدون خادم (Serverless)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A cloud computing execution model where the cloud provider runs the server, and dynamically manages the allocation of machine resources.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج تنفيذ للحوسبة السحابية حيث يقوم مزود السحابة بتشغيل الخادم، وإدارة تخصيص موارد الآلة ديناميكيًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'You just write code (functions) and pay only when they run. Examples: AWS Lambda, Google Cloud Functions, Firebase Functions.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أنت تكتب الكود فقط (دوال) وتدفع فقط عند تشغيلها. أمثلة: AWS Lambda، Google Cloud Functions، Firebase Functions.',
         ),
       ],
@@ -10412,30 +10362,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.architectureMicroservices: ProgrammingTerm(
     id: TermKeys.architectureMicroservices,
-    title: LocalizedString(
-      en: 'Microservices',
-      ar: 'الخدمات المصغرة (Microservices)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Microservices', ar: 'الخدمات المصغرة (Microservices)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An architectural style that structures an application as a collection of loosely coupled services, which implement business capabilities.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط معماري ينظم التطبيق كمجموعة من الخدمات المرتبطة بشكل فضفاض، والتي تنفذ قدرات الأعمال.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Each service runs in its own process and communicates via lightweight mechanisms (HTTP/API). Opposite of Monolith.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تعمل كل خدمة في عمليتها الخاصة وتتواصل عبر آليات خفيفة الوزن (HTTP/API). عكس الـ Monolith.',
         ),
       ],
@@ -10449,27 +10396,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.architectureMonolith: ProgrammingTerm(
     id: TermKeys.architectureMonolith,
-    title: LocalizedString(en: 'Monolith', ar: 'أحادي الكتلة (Monolith)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Monolith', ar: 'أحادي الكتلة (Monolith)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A traditional unified model for the design of a software program. Everything is composed all in one piece.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نموذج موحد تقليدي لتصميم برنامج حاسوبي. كل شيء يتكون في قطعة واحدة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Easier to develop/test initially, but harder to scale and maintain as it grows large.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أسهل في التطوير/الاختبار في البداية، ولكن يصعب توسيعه وصيانته عندما يكبر.',
         ),
       ],
@@ -10483,27 +10430,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.devopsConcept: ProgrammingTerm(
     id: TermKeys.devopsConcept,
-    title: LocalizedString(en: 'DevOps', ar: 'DevOps (ديف أوبس)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'DevOps', ar: 'DevOps (ديف أوبس)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A set of practices that combines software development (Dev) and IT operations (Ops) to shorten the systems development life cycle.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من الممارسات التي تجمع بين تطوير البرمجيات (Dev) وعمليات تكنولوجيا المعلومات (Ops) لتقصير دورة حياة تطوير الأنظمة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Focuses on automation, continuous integration, continuous delivery, and monitoring.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يركز على الأتمتة، والتكامل المستمر، والتسليم المستمر، والمراقبة.',
         ),
       ],
@@ -10517,22 +10464,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.devopsCiCd: ProgrammingTerm(
     id: TermKeys.devopsCiCd,
-    title: LocalizedString(en: 'CI/CD', ar: 'التكامل المستمر/النشر المستمر'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'CI/CD', ar: 'التكامل المستمر/النشر المستمر'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Continuous Integration (CI) and Continuous Delivery/Deployment (CD). A method to frequently deliver apps to customers by introducing automation into the stages of app development.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'التكامل المستمر (CI) والتسليم/النشر المستمر (CD). طريقة لتسليم التطبيقات بشكل متكرر للعملاء عن طريق إدخال الأتمتة في مراحل تطوير التطبيق.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Pipeline steps:',
           value: [
             'Code Commit',
@@ -10544,7 +10491,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'خطوات خط الأنابيب (Pipeline):',
           value: [
             'إيداع الكود',
@@ -10565,27 +10512,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.devopsDeployment: ProgrammingTerm(
     id: TermKeys.devopsDeployment,
-    title: LocalizedString(en: 'Deployment', ar: 'النشر (Deployment)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Deployment', ar: 'النشر (Deployment)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of making a software application available for use. This involves moving code from a development environment to a production environment.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية جعل تطبيق برمجي متاحًا للاستخدام. يتضمن ذلك نقل الكود من بيئة التطوير إلى بيئة الإنتاج.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In mobile apps (Flutter), this means uploading .apk or .ipa files to Google Play Store or Apple App Store.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في تطبيقات الهاتف المحمول (Flutter)، يعني هذا رفع ملفات .apk أو .ipa إلى متجر Google Play أو متجر تطبيقات Apple.',
         ),
       ],
@@ -10599,22 +10546,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.environmentConcept: ProgrammingTerm(
     id: TermKeys.environmentConcept,
-    title: LocalizedString(en: 'Environment', ar: 'البيئة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Environment', ar: 'البيئة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A specific configuration where software runs. Separating environments ensures that testing and development do not affect real users.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تكوين محدد حيث تعمل البرمجيات. يضمن فصل البيئات أن الاختبار والتطوير لا يؤثران على المستخدمين الحقيقيين.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Common Types:',
           value: [
             'Development (Local machine)',
@@ -10624,7 +10571,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع الشائعة:',
           value: [
             'التطوير (الجهاز المحلي)',
@@ -10643,27 +10590,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.environmentProduction: ProgrammingTerm(
     id: TermKeys.environmentProduction,
-    title: LocalizedString(en: 'Production', ar: 'بيئة الإنتاج'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Production', ar: 'بيئة الإنتاج'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The live environment where the application is used by real end-users. Code here must be stable and optimized.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'البيئة المباشرة حيث يتم استخدام التطبيق من قبل المستخدمين النهائيين الحقيقيين. يجب أن يكون الكود هنا مستقرًا ومحسنًا.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Often referred to as "Prod" or "Live". Data here is real customer data.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يشار إليها غالبًا باسم "Prod" أو "Live". البيانات هنا هي بيانات العملاء الحقيقية.',
         ),
       ],
@@ -10677,27 +10624,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.environmentStaging: ProgrammingTerm(
     id: TermKeys.environmentStaging,
-    title: LocalizedString(en: 'Staging', ar: 'بيئة التجربة (Staging)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Staging', ar: 'بيئة التجربة (Staging)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An environment that mirrors the production environment as closely as possible. It is used for final testing before deployment.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'بيئة تعكس بيئة الإنتاج بأكبر قدر ممكن. تستخدم للاختبار النهائي قبل النشر.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Used to catch bugs that might occur due to environment differences (e.g., database latency, server configurations).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تستخدم لاكتشاف الأخطاء التي قد تحدث بسبب اختلافات البيئة (مثل زمن انتقال قاعدة البيانات، تكوينات الخادم).',
         ),
       ],
@@ -10711,27 +10658,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.toolDebugMode: ProgrammingTerm(
     id: TermKeys.toolDebugMode,
-    title: LocalizedString(en: 'Debug Mode', ar: 'وضع التصحيح'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Debug Mode', ar: 'وضع التصحيح'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A compile mode optimizing for development speed and debugging. It includes assertions, detailed error messages, and supports features like Hot Reload.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'وضع ترجمة يحسن سرعة التطوير وتصحيح الأخطاء. يتضمن التأكيدات، رسائل الخطأ المفصلة، ويدعم ميزات مثل إعادة التحميل الساخن.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter: Apps run slower in debug mode (JIT compilation) but allow for debugging breakpoints and inspection.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter: تعمل التطبيقات بشكل أبطأ في وضع التصحيح (ترجمة JIT) ولكنها تسمح بنقاط توقف التصحيح والفحص.',
         ),
       ],
@@ -10750,27 +10697,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.toolReleaseMode: ProgrammingTerm(
     id: TermKeys.toolReleaseMode,
-    title: LocalizedString(en: 'Release Mode', ar: 'وضع الإصدار'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Release Mode', ar: 'وضع الإصدار'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A compile mode optimizing for execution speed and binary size. It removes debugging information and assertions.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'وضع ترجمة يحسن سرعة التنفيذ وحجم الملف الثنائي. يزيل معلومات التصحيح والتأكيدات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter: Apps are compiled Ahead-of-Time (AOT) to native machine code. Hot Reload is disabled.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter: يتم تجميع التطبيقات مسبقًا (AOT) إلى كود آلة أصلي. يتم تعطيل إعادة التحميل الساخن.',
         ),
       ],
@@ -10785,27 +10732,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.uiResponsive: ProgrammingTerm(
     id: TermKeys.uiResponsive,
-    title: LocalizedString(en: 'Responsive Design', ar: 'التصميم المستجيب'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Responsive Design', ar: 'التصميم المستجيب'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An approach to UI design that makes web or app content render well on a variety of devices and window or screen sizes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نهج لتصميم واجهة المستخدم يجعل محتوى الويب أو التطبيق يُعرض بشكل جيد على مجموعة متنوعة من الأجهزة وأحجام النوافذ أو الشاشات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter, this is achieved using widgets like `LayoutBuilder`, `MediaQuery`, `Flex`, and `Expanded` to adapt layouts.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter، يتحقق ذلك باستخدام ويدجت مثل `LayoutBuilder`، `MediaQuery`، `Flex`، و`Expanded` لتكييف التخطيطات.',
         ),
       ],
@@ -10823,27 +10770,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterCupertino: ProgrammingTerm(
     id: TermKeys.flutterCupertino,
-    title: LocalizedString(en: 'Cupertino', ar: 'Cupertino (كوبرتينو)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Cupertino', ar: 'Cupertino (كوبرتينو)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A set of Flutter widgets that implement the current iOS design language (Apple style), as opposed to Material Design (Android style).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مجموعة من ويدجت Flutter التي تنفذ لغة تصميم iOS الحالية (نمط Apple)، على عكس Material Design (نمط Android).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Includes widgets like `CupertinoButton`, `CupertinoNavigationBar`, and `CupertinoSwitch` to give apps a native iOS feel.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تتضمن ويدجت مثل `CupertinoButton`، `CupertinoNavigationBar`، و`CupertinoSwitch` لمنح التطبيقات شعور iOS الأصلي.',
         ),
       ],
@@ -10858,22 +10805,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.uiAnimation: ProgrammingTerm(
     id: TermKeys.uiAnimation,
-    title: LocalizedString(en: 'Animation', ar: 'الرسوم المتحركة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Animation', ar: 'الرسوم المتحركة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of creating motion and shape change in the UI. In Flutter, this adds visual cues and improves user experience.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية إنشاء الحركة وتغيير الشكل في واجهة المستخدم. في Flutter، يضيف هذا إشارات بصرية ويحسن تجربة المستخدم.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types in Flutter:',
           value: [
             'Implicit Animations (AnimatedContainer, AnimatedOpacity)',
@@ -10882,7 +10829,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع في Flutter:',
           value: [
             'الرسوم المتحركة الضمنية (AnimatedContainer، AnimatedOpacity)',
@@ -10901,27 +10848,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptLifecycle: ProgrammingTerm(
     id: TermKeys.conceptLifecycle,
-    title: LocalizedString(en: 'Lifecycle', ar: 'دورة الحياة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Lifecycle', ar: 'دورة الحياة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The series of states that an object (like a Widget or Controller) goes through from its creation to its destruction.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'سلسلة الحالات التي يمر بها الكائن (مثل Widget أو المتحكم) من إنشائه إلى تدميره.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Understanding lifecycle is crucial for initializing data, subscribing to streams, and freeing resources (memory management).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'فهم دورة الحياة أمر بالغ الأهمية لتهيئة البيانات، والاشتراك في التدفقات، وتحرير الموارد (إدارة الذاكرة).',
         ),
       ],
@@ -10936,22 +10883,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterLifecycleMethod: ProgrammingTerm(
     id: TermKeys.flutterLifecycleMethod,
-    title: LocalizedString(en: 'Lifecycle Methods', ar: 'أساليب دورة الحياة'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Lifecycle Methods', ar: 'أساليب دورة الحياة'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Specific methods in a State object that are called at specific points in its lifecycle, allowing you to hook into these events.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أساليب محددة في كائن State يتم استدعاؤها في نقاط معينة من دورة حياته، مما يسمح لك بالربط مع هذه الأحداث.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key Flutter Methods:',
           value: [
             'initState(): Called once when inserted into tree.',
@@ -10962,7 +10909,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'أساليب Flutter الرئيسية:',
           value: [
             'initState(): يُستدعى مرة واحدة عند الإدراج في الشجرة.',
@@ -10983,27 +10930,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterRendering: ProgrammingTerm(
     id: TermKeys.flutterRendering,
-    title: LocalizedString(en: 'Rendering', ar: 'العرض (Rendering)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Rendering', ar: 'العرض (Rendering)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of generating an image from the 2D/3D model (in Flutter\'s case, the Widget Tree).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية توليد صورة من النموذج ثنائي/ثلاثي الأبعاد (في حالة Flutter، شجرة الويدجت).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Flutter Pipeline: Widget Tree -> Element Tree -> RenderObject Tree -> Layer Tree -> GPU.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'خط أنابيب Flutter: شجرة الويدجت -> شجرة العناصر -> شجرة كائنات العرض -> شجرة الطبقات -> وحدة معالجة الرسومات.',
         ),
       ],
@@ -11018,27 +10965,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterWidgetLayout: ProgrammingTerm(
     id: TermKeys.flutterWidgetLayout,
-    title: LocalizedString(en: 'Layout', ar: 'التخطيط'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Layout', ar: 'التخطيط'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of determining the size and position of widgets on the screen. In Flutter, "Constraints go down. Sizes go up. Parent sets position."',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تحديد حجم وموضع الويدجت على الشاشة. في Flutter، "القيود تنزل للأسفل. الأحجام تصعد للأعلى. الوالد يحدد الموضع."',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Widgets like `Row`, `Column`, and `Stack` are layout widgets designed to arrange their children.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ويدجت مثل `Row`، `Column`، و`Stack` هي ويدجت تخطيط مصممة لترتيب أطفالها.',
         ),
       ],
@@ -11053,27 +11000,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterConstraint: ProgrammingTerm(
     id: TermKeys.flutterConstraint,
-    title: LocalizedString(en: 'Constraint', ar: 'القيد (Constraint)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Constraint', ar: 'القيد (Constraint)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A rule describing the minimum and maximum width and height a widget can have. Passed from parent to child.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'قاعدة تصف الحد الأدنى والأقصى للعرض والارتفاع الذي يمكن أن يمتلكه الويدجت. تمرر من الوالد إلى الطفل.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'BoxConstraints(minWidth, maxWidth, minHeight, maxHeight). If min==max, the size is "tight".',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'BoxConstraints(minWidth, maxWidth, minHeight, maxHeight). إذا كان الحد الأدنى == الحد الأقصى، فإن الحجم يكون "محكمًا" (tight).',
         ),
       ],
@@ -11088,27 +11035,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterWidgetFlex: ProgrammingTerm(
     id: TermKeys.flutterWidgetFlex,
-    title: LocalizedString(en: 'Flex', ar: 'Flex'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Flex', ar: 'Flex'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A layout widget that displays its children in a one-dimensional array (Row or Column). It allows flexible sizing of children.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ويدجت تخطيط يعرض أطفاله في مصفوفة أحادية البعد (صف أو عمود). يسمح بتحجيم مرن للأطفال.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           '`Row` and `Column` extend `Flex`. They use MainAxisAlignment and CrossAxisAlignment to align children.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           '`Row` و `Column` يمددان `Flex`. يستخدمان MainAxisAlignment و CrossAxisAlignment لمحاذاة الأطفال.',
         ),
       ],
@@ -11126,27 +11073,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterWidgetExpanded: ProgrammingTerm(
     id: TermKeys.flutterWidgetExpanded,
-    title: LocalizedString(en: 'Expanded', ar: 'Expanded'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Expanded', ar: 'Expanded'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A widget that expands a child of a `Row`, `Column`, or `Flex` so that the child fills the available space.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ويدجت يوسع طفل `Row`، أو `Column`، أو `Flex` بحيث يملأ الطفل المساحة المتاحة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Similar to `Flexible` but with `fit: FlexFit.tight` forced. Use `flex` factor to distribute space proportionally among multiple Expanded widgets.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مشابه لـ `Flexible` لكن مع فرض `fit: FlexFit.tight`. استخدم عامل `flex` لتوزيع المساحة بشكل متناسب بين ويدجت Expanded متعددة.',
         ),
       ],
@@ -11161,27 +11108,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterWidgetMediaQuery: ProgrammingTerm(
     id: TermKeys.flutterWidgetMediaQuery,
-    title: LocalizedString(en: 'MediaQuery', ar: 'MediaQuery'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'MediaQuery', ar: 'MediaQuery'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A widget that establishes a subtree in which media queries resolve to the given data (e.g., screen size, orientation, text scale factor).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ويدجت ينشئ شجرة فرعية يتم فيها حل استعلامات الوسائط إلى البيانات المعطاة (مثل حجم الشاشة، الاتجاه، عامل تكبير النص).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Common usage: `MediaQuery.of(context).size` to get screen dimensions for responsive design.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الاستخدام الشائع: `MediaQuery.of(context).size` للحصول على أبعاد الشاشة للتصميم المستجيب.',
         ),
       ],
@@ -11196,27 +11143,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterNavigator: ProgrammingTerm(
     id: TermKeys.flutterNavigator,
-    title: LocalizedString(en: 'Navigator', ar: 'المتنقل (Navigator)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Navigator', ar: 'المتنقل (Navigator)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A widget that manages a set of child widgets with a stack discipline. It allows you to move between different screens (Routes) in the app.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ويدجت يدير مجموعة من الويدجت الفرعية بنظام المكدس. يسمح لك بالانتقال بين الشاشات المختلفة (المسارات) في التطبيق.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Basic operations: `push` (add screen to top), `pop` (remove top screen). Uses `MaterialPageRoute` for transitions.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'العمليات الأساسية: `push` (إضافة شاشة للأعلى)، `pop` (إزالة الشاشة العلوية). يستخدم `MaterialPageRoute` للانتقالات.',
         ),
       ],
@@ -11231,27 +11178,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterRouting: ProgrammingTerm(
     id: TermKeys.flutterRouting,
-    title: LocalizedString(en: 'Routing', ar: 'التوجيه (Routing)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Routing', ar: 'التوجيه (Routing)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The mechanism of mapping a specific screen (widget) to a specific path or name (e.g., "/home", "/details").',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'آلية تعيين شاشة معينة (ويدجت) لمسار أو اسم محدد (مثل "/home"، "/details").',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Flutter supports declarative routing (Navigator 2.0 / GoRouter) and imperative routing (Navigator.pushNamed).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يدعم Flutter التوجيه التصريحي (Navigator 2.0 / GoRouter) والتوجيه الإلزامي (Navigator.pushNamed).',
         ),
       ],
@@ -11266,30 +11213,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterDeepLinking: ProgrammingTerm(
     id: TermKeys.flutterDeepLinking,
-    title: LocalizedString(
-      en: 'Deep Linking',
-      ar: 'الربط العميق (Deep Linking)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Deep Linking', ar: 'الربط العميق (Deep Linking)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The ability to open a specific page or state inside a mobile app directly via a URL from outside the app (e.g., from a website or email).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'القدرة على فتح صفحة أو حالة معينة داخل تطبيق جوال مباشرة عبر رابط URL من خارج التطبيق (مثلًا من موقع ويب أو بريد إلكتروني).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Requires configuring AndroidManifest.xml and Info.plist to handle custom schemes or universal links.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يتطلب تكوين AndroidManifest.xml و Info.plist للتعامل مع المخططات المخصصة أو الروابط العالمية.',
         ),
       ],
@@ -11304,27 +11248,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.uiTheming: ProgrammingTerm(
     id: TermKeys.uiTheming,
-    title: LocalizedString(en: 'Theming', ar: 'التنسيق (Theming)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Theming', ar: 'التنسيق (Theming)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of defining a consistent look and feel for an application by specifying colors, fonts, and shapes in a central place.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تحديد مظهر وإحساس متسقين للتطبيق من خلال تحديد الألوان والخطوط والأشكال في مكان مركزي.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter: `ThemeData` passed to `MaterialApp` allows global styling. Access using `Theme.of(context)`.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter: `ThemeData` الممررة إلى `MaterialApp` تسمح بالتنسيق العالمي. يمكن الوصول إليها باستخدام `Theme.of(context)`.',
         ),
       ],
@@ -11339,30 +11283,30 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.i18nL10N: ProgrammingTerm(
     id: TermKeys.i18nL10N,
-    title: LocalizedString(
+    title: LocS(
       en: 'Internationalization (i18n) & Localization (l10n)',
       ar: 'التدويل (i18n) والتعريب (l10n)',
     ),
-    quickOverview: LocalizedValue(
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'i18n: Designing software so it can be adapted to various languages/regions without engineering changes. l10n: Adapting it to a specific region (translating text, formatting dates).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'i18n: تصميم البرمجيات بحيث يمكن تكييفها مع لغات/مناطق مختلفة دون تغييرات هندسية. l10n: تكييفها لمنطقة معينة (ترجمة النصوص، تنسيق التواريخ).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Flutter uses `flutter_localizations` package and ARB files to manage translations.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يستخدم Flutter حزمة `flutter_localizations` وملفات ARB لإدارة الترجمات.',
         ),
       ],
@@ -11377,30 +11321,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.uiAccessibility: ProgrammingTerm(
     id: TermKeys.uiAccessibility,
-    title: LocalizedString(
-      en: 'Accessibility (a11y)',
-      ar: 'إمكانية الوصول (a11y)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Accessibility (a11y)', ar: 'إمكانية الوصول (a11y)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The design of products, devices, services, or environments for people with disabilities. Examples: Screen readers, high contrast modes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تصميم المنتجات أو الأجهزة أو الخدمات أو البيئات للأشخاص ذوي الإعاقة. أمثلة: قارئات الشاشة، أوضاع التباين العالي.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Flutter provides `Semantics` widget to annotate the UI for screen readers (TalkBack/VoiceOver).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يوفر Flutter ويدجت `Semantics` لإضافة شروحات لواجهة المستخدم لقارئات الشاشة (TalkBack/VoiceOver).',
         ),
       ],
@@ -11415,27 +11356,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.performanceOptimization: ProgrammingTerm(
     id: TermKeys.performanceOptimization,
-    title: LocalizedString(en: 'Performance Optimization', ar: 'تحسين الأداء'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Performance Optimization', ar: 'تحسين الأداء'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The process of modifying a system to make it work more efficiently or use fewer resources (CPU, Memory, Battery).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تعديل النظام لجعله يعمل بكفاءة أكبر أو استخدام موارد أقل (وحدة المعالجة المركزية، الذاكرة، البطارية).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter: Use `const` constructors, avoid rebuilding widgets unnecessarily, minimize expensive calculations in build().',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter: استخدم منشئات `const`، تجنب إعادة بناء الويدجت بشكل غير ضروري، قلل من الحسابات المكلفة في build().',
         ),
       ],
@@ -11453,30 +11394,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.performanceLazyLoading: ProgrammingTerm(
     id: TermKeys.performanceLazyLoading,
-    title: LocalizedString(
-      en: 'Lazy Loading',
-      ar: 'التحميل الكسول (Lazy Loading)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Lazy Loading', ar: 'التحميل الكسول (Lazy Loading)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A design pattern that defers the initialization of an object or the loading of a resource until the point at which it is needed.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نمط تصميم يؤجل تهيئة كائن أو تحميل مورد حتى النقطة التي تكون هناك حاجة إليه فيها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Example: `ListView.builder` in Flutter creates widgets only when they scroll into view, saving memory.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مثال: `ListView.builder` في Flutter ينشئ الويدجت فقط عندما تظهر في العرض أثناء التمرير، مما يوفر الذاكرة.',
         ),
       ],
@@ -11491,27 +11429,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.compilationAot: ProgrammingTerm(
     id: TermKeys.compilationAot,
-    title: LocalizedString(en: 'AOT Compilation', ar: 'ترجمة AOT (مسبقة)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'AOT Compilation', ar: 'ترجمة AOT (مسبقة)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Ahead-Of-Time compilation. Code is compiled into native machine code before execution (at build time).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الترجمة المسبقة (Ahead-Of-Time). يتم ترجمة الكود إلى كود آلة أصلي قبل التنفيذ (في وقت البناء).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Used by Flutter in Release mode. Results in faster startup and execution but no Hot Reload.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يستخدمه Flutter في وضع الإصدار (Release mode). ينتج عنه بدء تشغيل وتنفيذ أسرع ولكن بدون إعادة تحميل ساخن.',
         ),
       ],
@@ -11526,27 +11464,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.compilationJit: ProgrammingTerm(
     id: TermKeys.compilationJit,
-    title: LocalizedString(en: 'JIT Compilation', ar: 'ترجمة JIT (آنية)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'JIT Compilation', ar: 'ترجمة JIT (آنية)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Just-In-Time compilation. Code is compiled during execution (at runtime).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الترجمة الآنية (Just-In-Time). يتم ترجمة الكود أثناء التنفيذ (في وقت التشغيل).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Used by Flutter in Debug mode. Enables fast development cycles and Hot Reload, but app performance is slower.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يستخدمه Flutter في وضع التصحيح (Debug mode). يمكن دورات تطوير سريعة وإعادة تحميل ساخن، ولكن أداء التطبيق يكون أبطأ.',
         ),
       ],
@@ -11561,27 +11499,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptTreeShaking: ProgrammingTerm(
     id: TermKeys.conceptTreeShaking,
-    title: LocalizedString(en: 'Tree Shaking', ar: 'هز الشجرة (Tree Shaking)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Tree Shaking', ar: 'هز الشجرة (Tree Shaking)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A dead code elimination technique used by compilers (like Dart\'s) to remove unused code from the final executable, reducing app size.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تقنية لإزالة الكود الميت يستخدمها المترجمون (مثل Dart) لحذف الكود غير المستخدم من الملف القابل للتنفيذ النهائي، مما يقلل من حجم التطبيق.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'It "shakes" the dependency tree so that dead leaves (unused functions/classes) fall off. Essential for Flutter web and mobile builds.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تقوم "بهز" شجرة التبعية بحيث تسقط الأوراق الميتة (الدوال/الفئات غير المستخدمة). ضروري لبناء تطبيقات Flutter للويب والموبايل.',
         ),
       ],
@@ -11596,22 +11534,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptObfuscation: ProgrammingTerm(
     id: TermKeys.conceptObfuscation,
-    title: LocalizedString(en: 'Obfuscation', ar: 'التعمية (Obfuscation)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Obfuscation', ar: 'التعمية (Obfuscation)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The practice of making source code or machine code difficult for humans to understand to protect intellectual property and prevent reverse engineering.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ممارسة جعل الكود المصدري أو كود الآلة صعب الفهم للبشر لحماية الملكية الفكرية ومنع الهندسة العكسية.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter: Renames classes, methods, and variables to random characters in the release build. Reduces size and increases security.',
         ),
         CodeContent(
@@ -11620,7 +11558,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter: تعيد تسمية الفئات، والأساليب، والمتغيرات إلى أحرف عشوائية في إصدار الإطلاق. يقلل الحجم ويزيد الأمان.',
         ),
         CodeContent(
@@ -11638,22 +11576,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartGenerics: ProgrammingTerm(
     id: TermKeys.dartGenerics,
-    title: LocalizedString(en: 'Generics', ar: 'الأنواع العامة (Generics)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Generics', ar: 'الأنواع العامة (Generics)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A feature that allows you to write flexible, reusable code capable of working with any data type while maintaining type safety.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ميزة تسمح لك بكتابة كود مرن وقابل لإعادة الاستخدام قادر على العمل مع أي نوع بيانات مع الحفاظ على أمان النوع.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Defined using angle brackets `<T>`. Used extensively in Collections (List<String>).',
         ),
         CodeContent(
@@ -11668,7 +11606,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تعرف باستخدام الأقواس الزاوية `<T>`. تستخدم بكثرة في المجموعات (List<String>).',
         ),
         CodeContent(
@@ -11693,25 +11631,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartExtensions: ProgrammingTerm(
     id: TermKeys.dartExtensions,
-    title: LocalizedString(
-      en: 'Extension Methods',
-      ar: 'طرق التمديد (Extension Methods)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Extension Methods', ar: 'طرق التمديد (Extension Methods)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A Dart feature that allows you to add new functionality (methods) to existing libraries or classes without modifying them or subclassing.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ميزة في Dart تسمح لك بإضافة وظائف جديدة (أساليب) إلى المكتبات أو الفئات الموجودة دون تعديلها أو إنشاء فئات فرعية منها.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Example: Adding a method to the built-in String class.'),
+        StrContent('Example: Adding a method to the built-in String class.'),
         CodeContent(
           'extension StringParsing on String {\n'
           '  int parseInt() {\n'
@@ -11725,7 +11660,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('مثال: إضافة أسلوب إلى فئة String المدمجة.'),
+        StrContent('مثال: إضافة أسلوب إلى فئة String المدمجة.'),
         CodeContent(
           'extension StringParsing on String {\n'
           '  int parseInt() {\n'
@@ -11749,22 +11684,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartRecords: ProgrammingTerm(
     id: TermKeys.dartRecords,
-    title: LocalizedString(en: 'Records', ar: 'السجلات (Records)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Records', ar: 'السجلات (Records)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A feature introduced in Dart 3 that lets you bundle multiple values into a single object. Records are immutable and type-safe.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ميزة تم تقديمها في Dart 3 تسمح لك تجميع قيم متعددة في كائن واحد. السجلات غير قابلة للتغيير وآمنة النوع.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'More lightweight than creating a Class for simple data holding.',
         ),
         CodeContent(
@@ -11783,7 +11718,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('أخف وزناً من إنشاء فئة (Class) لحفظ البيانات البسيطة.'),
+        StrContent('أخف وزناً من إنشاء فئة (Class) لحفظ البيانات البسيطة.'),
         CodeContent(
           '// تعريف سجل\n'
           'var record = (\'first\', a: 2, b: true, \'last\');\n'
@@ -11811,22 +11746,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dartPatterns: ProgrammingTerm(
     id: TermKeys.dartPatterns,
-    title: LocalizedString(en: 'Patterns', ar: 'الأنماط (Patterns)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Patterns', ar: 'الأنماط (Patterns)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A syntactic category in Dart 3 that represents the "shape" of a set of values, used for matching and destructuring data.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'فئة نحوية في Dart 3 تمثل "شكل" مجموعة من القيم، تستخدم لمطابقة وتفكيك البيانات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Used in switch statements and variable assignments for cleaner code.',
         ),
         CodeContent(
@@ -11841,7 +11776,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent('تستخدم في جمل switch وتعيينات المتغيرات لكود أنظف.'),
+        StrContent('تستخدم في جمل switch وتعيينات المتغيرات لكود أنظف.'),
         CodeContent(
           'var list = [1, 2, 3];\n'
           'var [a, b, c] = list; // تفكيك (Destructuring)\n'
@@ -11865,25 +11800,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterPlatformChannel: ProgrammingTerm(
     id: TermKeys.flutterPlatformChannel,
-    title: LocalizedString(
-      en: 'Platform Channel',
-      ar: 'قناة المنصة (Platform Channel)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Platform Channel', ar: 'قناة المنصة (Platform Channel)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A mechanism in Flutter that enables communication between Dart code and platform-specific native code (Kotlin/Java for Android, Swift/Obj-C for iOS).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'آلية في Flutter تمكن التواصل بين كود Dart والكود الأصلي الخاص بالمنصة (Kotlin/Java لـ Android، Swift/Obj-C لـ iOS).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Types:',
           value: [
             'MethodChannel: Invoke methods (Dart -> Native -> Dart)',
@@ -11891,10 +11823,10 @@ const Map<String, ProgrammingTerm> allTerms = {
             'BasicMessageChannel: Send structured data',
           ],
         ),
-        StringContent('Example: Getting battery level from Android/iOS.'),
+        StrContent('Example: Getting battery level from Android/iOS.'),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الأنواع:',
           value: [
             'MethodChannel: استدعاء الأساليب (Dart -> Native -> Dart)',
@@ -11902,7 +11834,7 @@ const Map<String, ProgrammingTerm> allTerms = {
             'BasicMessageChannel: إرسال بيانات مهيكلة',
           ],
         ),
-        StringContent('مثال: الحصول على مستوى البطارية من Android/iOS.'),
+        StrContent('مثال: الحصول على مستوى البطارية من Android/iOS.'),
       ],
     ),
     type: .feature,
@@ -11915,25 +11847,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.flutterGoldenTest: ProgrammingTerm(
     id: TermKeys.flutterGoldenTest,
-    title: LocalizedString(
-      en: 'Golden Test',
-      ar: 'الاختبار الذهبي (Golden Test)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Golden Test', ar: 'الاختبار الذهبي (Golden Test)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A type of visual regression test in Flutter where a rendered widget is compared pixel-by-pixel against a master reference image (the "golden file").',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'نوع من اختبار الانحدار البصري في Flutter حيث تتم مقارنة الويدجت المعروض بكسل تلو الآخر مقابل صورة مرجعية رئيسية ("الملف الذهبي").',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Ensures that UI changes don\'t accidentally break the visual appearance of the app.',
         ),
         CodeContent(
@@ -11948,7 +11877,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يضمن أن تغييرات واجهة المستخدم لا تكسر المظهر المرئي للتطبيق عن طريق الخطأ.',
         ),
         CodeContent(
@@ -11973,30 +11902,30 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.methodologyTdd: ProgrammingTerm(
     id: TermKeys.methodologyTdd,
-    title: LocalizedString(
+    title: LocS(
       en: 'TDD (Test Driven Development)',
       ar: 'التطوير القائم على الاختبار (TDD)',
     ),
-    quickOverview: LocalizedValue(
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A software development process where you write the test BEFORE writing the actual code. Cycle: Red (fail) -> Green (pass) -> Refactor.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'عملية تطوير برمجيات حيث تكتب الاختبار قبل كتابة الكود الفعلي. الدورة: أحمر (فشل) -> أخضر (نجاح) -> إعادة هيكلة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Forces you to think about the interface and requirements first. Results in high test coverage and cleaner code.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يجبرك على التفكير في الواجهة والمتطلبات أولاً. ينتج عنه تغطية اختبار عالية وكود أنظف.',
         ),
       ],
@@ -12010,25 +11939,25 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.methodologyBdd: ProgrammingTerm(
     id: TermKeys.methodologyBdd,
-    title: LocalizedString(
+    title: LocS(
       en: 'BDD (Behavior Driven Development)',
       ar: 'التطوير القائم على السلوك (BDD)',
     ),
-    quickOverview: LocalizedValue(
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'An extension of TDD that uses a natural language (like Gherkin: Given-When-Then) to describe the expected behavior of the system.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'امتداد لـ TDD يستخدم لغة طبيعية (مثل Gherkin: Given-When-Then) لوصف السلوك المتوقع للنظام.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Encourages collaboration between developers, QA, and business stakeholders.',
         ),
         CodeContent(
@@ -12041,7 +11970,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يشجع التعاون بين المطورين، وضمان الجودة، وأصحاب المصلحة التجاريين.',
         ),
         CodeContent(
@@ -12063,22 +11992,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.netGraphql: ProgrammingTerm(
     id: TermKeys.netGraphql,
-    title: LocalizedString(en: 'GraphQL', ar: 'GraphQL'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'GraphQL', ar: 'GraphQL'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A query language for APIs and a runtime for fulfilling those queries. Unlike REST, it allows the client to request exactly the data they need.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'لغة استعلام لواجهات برمجة التطبيقات ووقت تشغيل لتنفيذ تلك الاستعلامات. على عكس REST، يسمح للعميل بطلب البيانات التي يحتاجها بالضبط.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        UnorderedListContent(
+        ULContent(
           title: 'Key features:',
           value: [
             'Single Endpoint (usually /graphql)',
@@ -12098,7 +12027,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        UnorderedListContent(
+        ULContent(
           title: 'الميزات الرئيسية:',
           value: [
             'نقطة نهاية واحدة (عادة /graphql)',
@@ -12127,27 +12056,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.netGrpc: ProgrammingTerm(
     id: TermKeys.netGrpc,
-    title: LocalizedString(en: 'gRPC', ar: 'gRPC'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'gRPC', ar: 'gRPC'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A high-performance Remote Procedure Call (RPC) framework developed by Google. It uses Protocol Buffers (binary) instead of JSON.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'إطار عمل عالي الأداء لاستدعاء الإجراءات عن بعد (RPC) طورته Google. يستخدم Protocol Buffers (ثنائي) بدلاً من JSON.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Faster and lighter than REST/JSON. Ideal for microservices and mobile-backend communication where bandwidth is limited.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أسرع وأخف من REST/JSON. مثالي للخدمات المصغرة واتصالات الموبايل بالخلفية حيث يكون النطاق الترددي محدودًا.',
         ),
       ],
@@ -12161,27 +12090,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.securitySslPinning: ProgrammingTerm(
     id: TermKeys.securitySslPinning,
-    title: LocalizedString(en: 'SSL Pinning', ar: 'تثبيت SSL (SSL Pinning)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'SSL Pinning', ar: 'تثبيت SSL (SSL Pinning)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A security measure where the app verifies the server\'s certificate against a known copy (pin) to prevent Man-in-the-Middle (MITM) attacks.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'تدبير أمني حيث يتحقق التطبيق من شهادة الخادم مقابل نسخة معروفة (الدبوس) لمنع هجمات الوسيط (MITM).',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Ensures the app is talking to *your* server, not an interceptor. If the certificate changes on the server, the app must be updated.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يضمن أن التطبيق يتحدث إلى *خادمك*، وليس معترضًا. إذا تغيرت الشهادة على الخادم، يجب تحديث التطبيق.',
         ),
       ],
@@ -12195,30 +12124,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptCodeSplitting: ProgrammingTerm(
     id: TermKeys.conceptCodeSplitting,
-    title: LocalizedString(
-      en: 'Code Splitting',
-      ar: 'تقسيم الكود (Code Splitting)',
-    ),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Code Splitting', ar: 'تقسيم الكود (Code Splitting)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'The practice of splitting code into smaller chunks which can then be loaded on demand or in parallel, rather than loading one massive bundle at start.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'ممارسة تقسيم الكود إلى أجزاء أصغر يمكن تحميلها عند الطلب أو بشكل متوازٍ، بدلاً من تحميل حزمة ضخمة واحدة عند البدء.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Flutter Web, this happens automatically with deferred imports (`import ... deferred as ...`), speeding up initial load times.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Flutter Web، يحدث هذا تلقائيًا مع الواردات المؤجلة (`import ... deferred as ...`)، مما يسرع أوقات التحميل الأولية.',
         ),
       ],
@@ -12232,27 +12158,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.toolFormatter: ProgrammingTerm(
     id: TermKeys.toolFormatter,
-    title: LocalizedString(en: 'Formatter', ar: 'المنسق (Formatter)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Formatter', ar: 'المنسق (Formatter)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A tool that automatically modifies source code to follow a specific style guide (indentation, spacing, line breaks) without changing its logic.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'أداة تقوم تلقائيًا بتعديل الكود المصدري لاتباع دليل نمط معين (المسافة البادئة، التباعد، فواصل الأسطر) دون تغيير منطقه.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Dart: `dart format .` ensures all code looks consistent, ending debates about style in code reviews.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Dart: `dart format .` يضمن أن يبدو كل الكود متسقًا، مما ينهي النقاشات حول النمط في مراجعات الكود.',
         ),
       ],
@@ -12266,27 +12192,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dbMigration: ProgrammingTerm(
     id: TermKeys.dbMigration,
-    title: LocalizedString(en: 'Migration', ar: 'التهجير (Migration)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Migration', ar: 'التهجير (Migration)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A way to manage changes to a database schema over time. It allows you to evolve your database structure without losing data.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'طريقة لإدارة التغييرات على مخطط قاعدة البيانات بمرور الوقت. يسمح لك بتطوير هيكل قاعدة البيانات الخاصة بك دون فقدان البيانات.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Like version control for databases. Example: Adding a "phone_number" column to an existing "users" table.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'مثل التحكم في الإصدار لقواعد البيانات. مثال: إضافة عمود "رقم الهاتف" إلى جدول "المستخدمين" الموجود.',
         ),
       ],
@@ -12300,27 +12226,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.dbIndex: ProgrammingTerm(
     id: TermKeys.dbIndex,
-    title: LocalizedString(en: 'Index', ar: 'الفهرس (Index)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Index', ar: 'الفهرس (Index)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A data structure used to quickly locate and access the data in a database table. It speeds up reads but slows down writes.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'هيكل بيانات يستخدم لتحديد موقع البيانات والوصول إليها بسرعة في جدول قاعدة البيانات. يسرع القراءة ولكنه يبطئ الكتابة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Think of it like the index at the back of a book. Without it, you have to scan every page (full table scan) to find what you want.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'فكر فيه مثل الفهرس في الجزء الخلفي من الكتاب. بدونه، عليك مسح كل صفحة (مسح كامل للجدول) للعثور على ما تريد.',
         ),
       ],
@@ -12334,27 +12260,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.testingStub: ProgrammingTerm(
     id: TermKeys.testingStub,
-    title: LocalizedString(en: 'Stub', ar: 'Stub (كعب/بديل)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Stub', ar: 'Stub (كعب/بديل)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A simple fake object used in testing that provides canned answers to calls made during the test, usually not responding to anything outside what\'s programmed.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'كائن مزيف بسيط يستخدم في الاختبار يوفر إجابات جاهزة للاستدعاءات التي تتم أثناء الاختبار، وعادة لا يستجيب لأي شيء خارج ما هو مبرمج.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'Difference from Mock: Stubs provide state verification (return specific data), Mocks provide behavior verification (check if method was called).',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'الفرق عن Mock: توفر Stubs التحقق من الحالة (إرجاع بيانات محددة)، وتوفر Mocks التحقق من السلوك (التحقق مما إذا تم استدعاء الأسلوب).',
         ),
       ],
@@ -12368,27 +12294,27 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptModule: ProgrammingTerm(
     id: TermKeys.conceptModule,
-    title: LocalizedString(en: 'Module', ar: 'الوحدة (Module)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Module', ar: 'الوحدة (Module)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A distinct part of a computer program that can be compiled and run separately or used within a larger system. Encapsulates related code.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'جزء متميز من برنامج كمبيوتر يمكن ترجمته وتشغيله بشكل منفصل أو استخدامه داخل نظام أكبر. يغلف الكود ذي الصلة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent(
+        StrContent(
           'In Dart, every file is technically a library/module. Promotes separation of concerns.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'في Dart، كل ملف هو من الناحية الفنية مكتبة/وحدة. يعزز فصل الاهتمامات.',
         ),
       ],
@@ -12402,22 +12328,22 @@ const Map<String, ProgrammingTerm> allTerms = {
   ),
   TermKeys.conceptNamespace: ProgrammingTerm(
     id: TermKeys.conceptNamespace,
-    title: LocalizedString(en: 'Namespace', ar: 'مساحة الاسم (Namespace)'),
-    quickOverview: LocalizedValue(
+    title: LocS(en: 'Namespace', ar: 'مساحة الاسم (Namespace)'),
+    quickOverview: LocV(
       en: [
-        StringContent(
+        StrContent(
           'A container that allows you to group identifiers (names of classes, variables) to prevent name collisions when using multiple libraries.',
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'حاوية تسمح لك بتجميع المعرفات (أسماء الفئات، المتغيرات) لمنع تصادم الأسماء عند استخدام مكتبات متعددة.',
         ),
       ],
     ),
-    details: LocalizedValue(
+    details: LocV(
       en: [
-        StringContent('Dart uses `as` keyword for namespacing imports.'),
+        StrContent('Dart uses `as` keyword for namespacing imports.'),
         CodeContent(
           "import 'package:http/http.dart' as http;\n"
           "// Now we use http.get() instead of just get()",
@@ -12425,7 +12351,7 @@ const Map<String, ProgrammingTerm> allTerms = {
         ),
       ],
       ar: [
-        StringContent(
+        StrContent(
           'يستخدم Dart الكلمة المفتاحية `as` لاستيراد مساحات الأسماء.',
         ),
         CodeContent(

@@ -1,30 +1,37 @@
-class LocalizedValue<E> {
-  const LocalizedValue({required this.en, required this.ar});
+/// Localized Generic Value [T]
+class LocV<T> {
+  const LocV({required this.en, required this.ar});
 
-  final E en, ar;
+  final T en, ar;
 
-  E get(String languageCode) => switch (languageCode) {
+  /// Get localized value based on `language-code`
+  T get(String langCode) => switch (langCode) {
     "ar" => ar,
     _ => en,
   };
 
-  E call(String languageCode) => get(languageCode);
+  T call(String langCode) => get(langCode);
 
-  Map<String, E> toMap() => {"en": en, "ar": ar};
+  Map<String, T> toMap() => {"en": en, "ar": ar};
+
+  @override
+  String toString() => "$runtimeType(en: $en, ar: $ar)";
 
   @override
   int get hashCode => en.hashCode ^ ar.hashCode;
 
   @override
   bool operator ==(Object other) {
-    return other is LocalizedValue && other.en == en && other.ar == ar;
+    return other is LocV && other.en == en && other.ar == ar;
   }
 }
 
-class LocalizedString extends LocalizedValue<String> {
-  const LocalizedString({required super.en, required super.ar});
+/// Localized String
+class LocS extends LocV<String> {
+  const LocS({required super.en, required super.ar});
 }
 
-class LocalizedStringList extends LocalizedValue<List<String>> {
-  const LocalizedStringList({required super.en, required super.ar});
+/// Localized List of Strings
+class LocSL extends LocV<List<String>> {
+  const LocSL({required super.en, required super.ar});
 }

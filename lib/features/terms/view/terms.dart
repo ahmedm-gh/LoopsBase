@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:loopsbase/features/programming_terms/controller/cubit/terms_cubit.dart';
-import 'package:loopsbase/features/programming_terms/view/widgets/term_card.dart';
-import 'package:loopsbase/features/programming_terms/view/widgets/term_cards_wrapper.dart';
+import 'package:loopsbase/features/terms/controller/cubit/terms_cubit.dart';
+import 'package:loopsbase/features/terms/view/widgets/term_card.dart';
+import 'package:loopsbase/features/terms/view/widgets/term_cards_wrapper.dart';
 import 'package:loopsbase/shared/app_widgets.dart';
 
 import '../../../core/enums/term_enums.dart';
@@ -117,6 +117,7 @@ class _TermsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final lang = l10n.language;
     final mediaQuery = context.mediaQuery;
     final crossAxisCount = (mediaQuery.size.width / 280).floor();
 

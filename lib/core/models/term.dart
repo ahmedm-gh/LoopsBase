@@ -29,19 +29,19 @@ class ProgrammingTerm with EquatableMixin {
   final String id;
 
   /// Localized title
-  final LocalizedString title;
+  final LocS title;
 
   /// Main explanation (Quick explanation)
-  final LocalizedValue<List<Content>> quickOverview; // description (previously)
+  final LocV<List<Content>> quickOverview; // description (previously)
 
   /// Additional deep technical notes
-  final LocalizedValue<List<Content>> details;
+  final LocV<List<Content>> details;
 
   /// Additional deep technical notes
-  final LocalizedValue<List<Content>>? notes;
+  final LocV<List<Content>>? notes;
 
   /// When this term is best used
-  final LocalizedValue<List<Content>>? bestUse;
+  final LocV<List<Content>>? bestUse;
 
   /// What kind of term this is
   final TermType type;
