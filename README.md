@@ -123,7 +123,7 @@ Each pattern entry provides a deep dive into its **Pros**, **Cons**, **When to U
 ### Installation
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/ahmedm-gh/oop.git
+   git clone https://github.com/ahmedm-gh/loopsbase.git
    ```
 2. **Install dependencies**:
    ```bash
