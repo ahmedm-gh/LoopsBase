@@ -63,7 +63,7 @@ class _CodeBlockViewerState extends State<CodeBlockViewer> {
           ),
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: .min,
           children: [
             _CodeHeader(
               language: widget.code.codeLanguage.displayName,
@@ -76,7 +76,7 @@ class _CodeBlockViewerState extends State<CodeBlockViewer> {
             AnimatedSize(
               duration: const Duration(milliseconds: 200),
               curve: Curves.easeInOut,
-              alignment: Alignment.topCenter,
+              alignment: .topCenter,
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 150),
                 switchInCurve: Curves.easeIn,

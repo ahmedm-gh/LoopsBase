@@ -87,6 +87,7 @@ final class DiagramContent extends Content<String> {
 }
 
 /// Diagram description (textual description of structure)
-final class SvgDiagramContent extends Content<String Function(String)> {
+final class SvgDiagramContent
+    extends Content<String Function(String langCode, ColorScheme colors)> {
   const SvgDiagramContent(super.value);
 }

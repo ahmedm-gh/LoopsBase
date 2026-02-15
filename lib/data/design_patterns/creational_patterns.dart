@@ -72,9 +72,11 @@ const Map<String, DesignPattern> creationalPatternsData = {
             "المُنشئ المحدد (ConcreteCreator): يُعيد تعريف طريقة المصنع لإرجاع كائنات المنتج المحدد",
           ],
         ),
-        DiagramContent(
-          "تدفق البنية:\nالعميل ← Creator.factoryMethod() ← واجهة المنتج\n         ↓                        ↓\n   ConcreteCreator          ConcreteProduct",
-        ),
+
+        // DiagramContent(
+        //   "تدفق البنية:\nالعميل ← Creator.factoryMethod() ← واجهة المنتج\n         ↓                        ↓\n   ConcreteCreator          ConcreteProduct",
+        // ),
+        SvgDiagramContent(Diagrams.generateFactorySvg),
         StrContent(
           "يتبع النمط مبدأ المفتوح/المغلق (Open/Closed Principle): يمكنك إضافة أنواع منتجات جديدة دون تعديل كود العميل الموجود. فقط أنشئ مُنشئين ومنتجات محددة جديدة.",
         ),

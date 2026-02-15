@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:loopsbase/core/extensions/extensions.dart';
 import 'package:loopsbase/core/models/content.dart';
+import 'package:loopsbase/core/services/platform.dart';
 import 'package:loopsbase/l10n/app_localizations.dart';
 
 import 'code_block.dart';
@@ -166,7 +167,7 @@ class ContentViewer extends StatelessWidget {
       icon: Icons.account_tree_outlined,
       color: colors.primary,
       content: Container(
-        width: double.infinity,
+        width: .infinity,
         padding: const .all(12),
         decoration: BoxDecoration(
           color: colors.surface,
@@ -193,14 +194,18 @@ class ContentViewer extends StatelessWidget {
       title: Text(l10n.structureDiagram),
       icon: Icons.account_tree_outlined,
       color: colors.primary,
-      content: Container(
-        width: double.infinity,
-        padding: const .all(12),
-        decoration: BoxDecoration(
-          color: colors.surface,
-          borderRadius: .circular(6),
+      content: Directionality(
+        textDirection: .ltr,
+        child: SizedBox(
+          width: .infinity,
+          child: PlatformHelper.isMobile
+              ? InteractiveViewer(
+                  child: SvgPicture.string(
+                    content.value(l10n.language, colors),
+                  ),
+                )
+              : SvgPicture.string(content.value(l10n.language, colors)),
         ),
-        child: SvgPicture.string(content.value(l10n.language)),
       ),
     );
   }
