@@ -1207,6 +1207,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Explore'**
   String get explore;
+
+  /// No description provided for @noteInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Info'**
+  String get noteInfo;
+
+  /// No description provided for @noteWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Warning'**
+  String get noteWarning;
+
+  /// No description provided for @noteTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip'**
+  String get noteTip;
+
+  /// No description provided for @noteImportant.
+  ///
+  /// In en, this message translates to:
+  /// **'Important'**
+  String get noteImportant;
+
+  /// No description provided for @analogy.
+  ///
+  /// In en, this message translates to:
+  /// **'Analogy'**
+  String get analogy;
+
+  /// No description provided for @comparison.
+  ///
+  /// In en, this message translates to:
+  /// **'Comparison'**
+  String get comparison;
+
+  /// No description provided for @structureDiagram.
+  ///
+  /// In en, this message translates to:
+  /// **'Structure Diagram'**
+  String get structureDiagram;
 }
 
 class _AppLocalizationsDelegate

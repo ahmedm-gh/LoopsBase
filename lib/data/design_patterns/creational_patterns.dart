@@ -5323,4 +5323,2191 @@ void main() {
     ),
     relatedPatterns: [PK.abstractFactory, PK.facade, PK.flyweight],
   ),
+  PK.objectPool: DesignPattern(
+    id: PK.objectPool,
+    title: LocS(en: "Object Pool", ar: "تجمع الكائنات (Object Pool)"),
+    description: LocS(
+      en: "Manages a pool of reusable objects to improve performance by avoiding expensive creation and destruction",
+      ar: "يدير مجموعة من الكائنات القابلة لإعادة الاستخدام لتحسين الأداء بتجنب الإنشاء والإتلاف المكلفين",
+    ),
+    group: .design,
+    type: .creational,
+    category: .practical,
+    level: .advanced,
+    content: LocV(
+      en: [
+        StrContent(
+          "The Object Pool pattern maintains a set of initialized objects ready for use, rather than creating and destroying them repeatedly. Clients borrow objects from the pool, use them, and return them for reuse by others.",
+        ),
+        AnalogyContent(
+          "Think of a library book lending system. Instead of buying a new book every time someone wants to read it, the library maintains a collection of books. Readers check out books, use them, and return them so others can use the same copies. This is much more efficient than everyone buying and discarding books.",
+        ),
+        StrContent(
+          "This pattern is particularly valuable when object creation is expensive (time, memory, or resources), such as database connections, thread creation, large buffers, or complex objects with heavy initialization.",
+        ),
+        ULContent(
+          title: "Key Components:",
+          value: [
+            "Pool: Manages available and in-use objects, handles allocation and recycling",
+            "Reusable Object: The expensive object being pooled",
+            "Client: Requests objects from pool, uses them, returns them",
+            "Pool Configuration: Max size, min size, creation/validation policies",
+          ],
+        ),
+        DiagramContent(
+          "Pattern Flow:\nClient → Pool.acquire() → Available Object (or create new)\n                ↓\n         Mark as in-use\n         Return object to client\n         \nClient → Pool.release(object) → Reset object state\n                         ↓\n                  Mark as available\n                  Add to pool",
+        ),
+        StrContent(
+          "Modern garbage collectors are highly optimized, so object pooling is only beneficial for truly expensive objects or in performance-critical scenarios. Premature pooling can actually hurt performance and increase complexity.",
+        ),
+        NoteContent(
+          "Object pooling is most effective when: (1) objects are expensive to create, (2) you need many short-lived instances, (3) object creation rate is predictable, (4) objects can be reset to clean state.",
+          type: .important,
+        ),
+        StrContent(
+          "In Dart and Flutter, common use cases include: connection pools (database, HTTP), thread pools (isolate pools), particle systems in games, widget recycling in ListView.builder, image/buffer pools, and expensive computation result caching.",
+        ),
+        NoteContent(
+          "Critical: Objects must be properly reset/cleaned before returning to pool. Failing to reset state causes bugs where objects 'remember' previous usage. Always validate object state when acquiring from pool.",
+          type: .warning,
+        ),
+        ComparisonContent({
+          'Object Pool': 'Reuses expensive objects, manages lifecycle',
+          'Flyweight': 'Shares immutable object state, no lifecycle management',
+          'Singleton': 'One instance globally, never recycled',
+          'Factory': 'Creates new instances each time',
+        }, title: 'Object Pool vs Similar Patterns'),
+        StrContent(
+          "Performance considerations: Pool overhead (management cost) must be less than creation cost. Monitor pool metrics: utilization rate, wait time, miss rate. Consider adaptive sizing based on demand.",
+        ),
+      ],
+      ar: [
+        StrContent(
+          "نمط تجمع الكائنات (Object Pool) يحتفظ بمجموعة من الكائنات المُهيأة الجاهزة للاستخدام، بدلاً من إنشائها وإتلافها بشكل متكرر. العملاء يستعيرون كائنات من التجمع، يستخدمونها، ثم يعيدونها لإعادة الاستخدام من قبل الآخرين.",
+        ),
+        AnalogyContent(
+          "فكر في نظام إعارة الكتب في المكتبة. بدلاً من شراء كتاب جديد في كل مرة يريد شخص قراءته، تحتفظ المكتبة بمجموعة من الكتب. القراء يستعيرون الكتب، يستخدمونها، ويعيدونها حتى يتمكن الآخرون من استخدام نفس النسخ. هذا أكثر كفاءة بكثير من أن يشتري الجميع الكتب ويتخلصون منها.",
+        ),
+        StrContent(
+          "هذا النمط ذو قيمة خاصة عندما يكون إنشاء الكائن مكلفاً (الوقت، الذاكرة، أو الموارد)، مثل اتصالات قاعدة البيانات، إنشاء الخيوط (Threads)، المخازن الكبيرة (Buffers)، أو الكائنات المعقدة ذات التهيئة الثقيلة.",
+        ),
+        ULContent(
+          title: "المكونات الأساسية:",
+          value: [
+            "التجمع (Pool): يدير الكائنات المتاحة والمُستخدمة، يتعامل مع التخصيص وإعادة التدوير",
+            "كائن قابل لإعادة الاستخدام (Reusable Object): الكائن المكلف الذي يتم تجميعه",
+            "العميل (Client): يطلب كائنات من التجمع، يستخدمها، يعيدها",
+            "إعدادات التجمع (Pool Configuration): الحجم الأقصى، الحجم الأدنى، سياسات الإنشاء/التحقق",
+          ],
+        ),
+        DiagramContent(
+          "تدفق النمط:\nالعميل ← ()Pool.acquire ← كائن متاح (أو إنشاء جديد)\n                ↓\n         تمييز كمُستخدم\n         إرجاع الكائن للعميل\n         \nالعميل ← (Pool.release(object ← إعادة تعيين حالة الكائن\n                         ↓\n                  تمييز كمتاح\n                  إضافة للتجمع",
+        ),
+        StrContent(
+          "جامعو القمامة (Garbage Collectors) الحديثون مُحسّنون للغاية، لذا يكون تجميع الكائنات مفيداً فقط للكائنات المكلفة حقاً أو في السيناريوهات الحرجة للأداء. التجميع المبكر (Premature Pooling) يمكن أن يضر بالأداء ويزيد التعقيد.",
+        ),
+        NoteContent(
+          "تجميع الكائنات أكثر فعالية عندما: (1) الكائنات مكلفة في الإنشاء، (2) تحتاج العديد من النسخ قصيرة العمر، (3) معدل إنشاء الكائنات قابل للتنبؤ، (4) يمكن إعادة تعيين الكائنات لحالة نظيفة.",
+          type: .important,
+        ),
+        StrContent(
+          "في Dart و Flutter، حالات الاستخدام الشائعة تشمل: تجمعات الاتصال (قاعدة البيانات، HTTP)، تجمعات الخيوط (تجمعات العزلات - Isolate Pools)، أنظمة الجسيمات في الألعاب، إعادة تدوير الواجهات في ListView.builder، تجمعات الصور/المخازن، وتخزين نتائج الحسابات المكلفة مؤقتاً.",
+        ),
+        NoteContent(
+          "حاسم: يجب إعادة تعيين/تنظيف الكائنات بشكل صحيح قبل الإرجاع للتجمع. الفشل في إعادة تعيين الحالة يسبب أخطاء حيث الكائنات 'تتذكر' الاستخدام السابق. تحقق دائماً من حالة الكائن عند الحصول عليه من التجمع.",
+          type: .warning,
+        ),
+        ComparisonContent({
+          'تجمع الكائنات (Object Pool)':
+              'يعيد استخدام كائنات مكلفة، يدير دورة الحياة',
+          'الوزن الخفيف (Flyweight)':
+              'يشارك حالة كائن غير قابلة للتغيير، لا إدارة لدورة الحياة',
+          'المفرد (Singleton)':
+              'نسخة واحدة عالمياً، لا يتم إعادة تدويرها أبداً',
+          'المصنع (Factory)': 'ينشئ نسخاً جديدة في كل مرة',
+        }, title: 'تجمع الكائنات مقابل الأنماط المشابهة'),
+        StrContent(
+          "اعتبارات الأداء: عبء التجمع (تكلفة الإدارة) يجب أن يكون أقل من تكلفة الإنشاء. راقب مقاييس التجمع: معدل الاستخدام، وقت الانتظار، معدل الإخفاق. فكر في تغيير الحجم التكيفي بناءً على الطلب.",
+        ),
+      ],
+    ),
+    examples: LocV(
+      en: [
+        // Example 1: Basic - Simple Object Pool
+        StrCodeBlock("""// Example 1: Basic - Generic Object Pool
+// Use case: Reusable buffer pool for data processing
+
+class Buffer {
+  Buffer(this.id, this.capacity) : _data = List.filled(capacity, 0);
+  
+  final String id;
+  final int capacity;
+  final List<int> _data;
+  int _size = 0;
+  
+  void write(List<int> data) {
+    if (data.length > capacity) {
+      throw Exception('Data exceeds buffer capacity');
+    }
+    for (var i = 0; i < data.length; i++) {
+      _data[i] = data[i];
+    }
+    _size = data.length;
+    print('[\$id] Wrote \$_size bytes');
+  }
+  
+  List<int> read() {
+    return _data.sublist(0, _size);
+  }
+  
+  void clear() {
+    _size = 0;
+    for (var i = 0; i < capacity; i++) {
+      _data[i] = 0;
+    }
+    print('[\$id] Cleared');
+  }
+  
+  bool get isEmpty => _size == 0;
+}
+
+class BufferPool {
+  BufferPool({required this.bufferSize, required this.maxPoolSize});
+  
+  final int bufferSize;
+  final int maxPoolSize;
+  final List<Buffer> _available = [];
+  final List<Buffer> _inUse = [];
+  int _createdCount = 0;
+  
+  Buffer acquire() {
+    // Try to get from available pool
+    if (_available.isNotEmpty) {
+      final buffer = _available.removeLast();
+      _inUse.add(buffer);
+      print('Acquired existing buffer \${buffer.id} from pool');
+      return buffer;
+    }
+    
+    // Create new if under limit
+    if (_createdCount < maxPoolSize) {
+      final buffer = Buffer('buffer_\$_createdCount', bufferSize);
+      _createdCount++;
+      _inUse.add(buffer);
+      print('Created new buffer \${buffer.id}');
+      return buffer;
+    }
+    
+    // Pool exhausted
+    throw Exception('Buffer pool exhausted! Max: \$maxPoolSize');
+  }
+  
+  void release(Buffer buffer) {
+    if (_inUse.remove(buffer)) {
+      buffer.clear(); // Reset state - CRITICAL!
+      _available.add(buffer);
+      print('Released buffer \${buffer.id} back to pool');
+    }
+  }
+  
+  PoolStats getStats() {
+    return PoolStats(
+      available: _available.length,
+      inUse: _inUse.length,
+      total: _createdCount,
+      maxSize: maxPoolSize,
+    );
+  }
+  
+  void printStats() {
+    final stats = getStats();
+    print('\n=== Pool Statistics ===');
+    print('Available: \${stats.available}');
+    print('In Use: \${stats.inUse}');
+    print('Total Created: \${stats.total}');
+    print('Max Size: \${stats.maxSize}');
+    print('Utilization: \${(stats.inUse / stats.total * 100).toStringAsFixed(1)}%');
+  }
+}
+
+class PoolStats {
+  const PoolStats({
+    required this.available,
+    required this.inUse,
+    required this.total,
+    required this.maxSize,
+  });
+  
+  final int available;
+  final int inUse;
+  final int total;
+  final int maxSize;
+}
+
+// Usage
+void main() {
+  final pool = BufferPool(bufferSize: 1024, maxPoolSize: 3);
+  
+  print('=== Processing Data with Pool ===\n');
+  
+  // Process multiple chunks of data
+  final data1 = List.generate(100, (i) => i);
+  final data2 = List.generate(200, (i) => i * 2);
+  final data3 = List.generate(150, (i) => i * 3);
+  
+  // Acquire, use, release pattern
+  final buffer1 = pool.acquire();
+  buffer1.write(data1);
+  print('Processed \${buffer1.read().length} bytes');
+  pool.release(buffer1);
+  
+  print('');
+  
+  // Buffer is reused
+  final buffer2 = pool.acquire(); // Should reuse buffer1
+  buffer2.write(data2);
+  pool.release(buffer2);
+  
+  print('');
+  
+  // Multiple concurrent uses
+  final buf1 = pool.acquire();
+  final buf2 = pool.acquire();
+  final buf3 = pool.acquire();
+  
+  pool.printStats();
+  
+  // Try to exceed pool size
+  try {
+    final buf4 = pool.acquire(); // Should throw
+  } catch (e) {
+    print('\nCaught exception: \$e');
+  }
+  
+  // Release all
+  pool.release(buf1);
+  pool.release(buf2);
+  pool.release(buf3);
+  
+  pool.printStats();
+}"""),
+
+        // Example 2: Intermediate - HTTP Connection Pool
+        StrCodeBlock("""// Example 2: Intermediate - HTTP Connection Pool
+// Use case: Managing expensive HTTP connections
+
+class HttpConnection {
+  HttpConnection(this.id, this.baseUrl) {
+    print('[\$id] Creating HTTP connection to \$baseUrl...');
+    // Simulate expensive connection setup
+    _connected = true;
+  }
+  
+  final String id;
+  final String baseUrl;
+  bool _connected = false;
+  bool _isHealthy = true;
+  DateTime? _lastUsed;
+  int _requestCount = 0;
+  
+  Future<String> request(String endpoint) async {
+    if (!_connected) {
+      throw Exception('Connection not established');
+    }
+    
+    _lastUsed = DateTime.now();
+    _requestCount++;
+    
+    print('[\$id] GET \$baseUrl\$endpoint (request #\$_requestCount)');
+    
+    // Simulate network delay
+    await Future.delayed(.milliseconds(50));
+    
+    return '{"status": "success", "data": "response from \$endpoint"}';
+  }
+  
+  bool isHealthy() {
+    // Check if connection is still valid
+    if (_lastUsed != null) {
+      final idleTime = DateTime.now().difference(_lastUsed!);
+      if (idleTime.inMinutes > 5) {
+        _isHealthy = false;
+        print('[\$id] Connection idle too long, marked unhealthy');
+      }
+    }
+    return _isHealthy;
+  }
+  
+  void reset() {
+    print('[\$id] Resetting connection state');
+    // Don't reset connection itself, just metadata
+    _lastUsed = null;
+  }
+  
+  void close() {
+    print('[\$id] Closing connection');
+    _connected = false;
+  }
+  
+  int get requestCount => _requestCount;
+}
+
+class HttpConnectionPool {
+  HttpConnectionPool({
+    required this.baseUrl,
+    this.minConnections = 2,
+    this.maxConnections = 10,
+  }) {
+    _initializePool();
+  }
+  
+  final String baseUrl;
+  final int minConnections;
+  final int maxConnections;
+  
+  final List<HttpConnection> _available = [];
+  final List<HttpConnection> _inUse = [];
+  int _connectionCounter = 0;
+  
+  void _initializePool() {
+    print('Initializing connection pool with \$minConnections connections...');
+    for (var i = 0; i < minConnections; i++) {
+      _available.add(_createConnection());
+    }
+    print('Pool initialized\n');
+  }
+  
+  HttpConnection _createConnection() {
+    return HttpConnection('conn_\$_connectionCounter', baseUrl)
+      .._connectionCounter++;
+  }
+  
+  Future<HttpConnection> acquire() async {
+    // Try available pool first
+    while (_available.isNotEmpty) {
+      final conn = _available.removeLast();
+      
+      // Validate health
+      if (conn.isHealthy()) {
+        _inUse.add(conn);
+        print('Acquired healthy connection \${conn.id}');
+        return conn;
+      } else {
+        // Connection unhealthy, close and discard
+        conn.close();
+        print('Discarded unhealthy connection \${conn.id}');
+      }
+    }
+    
+    // Create new if under limit
+    final totalConnections = _inUse.length + _available.length;
+    if (totalConnections < maxConnections) {
+      final conn = _createConnection();
+      _inUse.add(conn);
+      return conn;
+    }
+    
+    // Wait for available connection (simple implementation)
+    print('Pool exhausted, waiting for available connection...');
+    await Future.delayed(.milliseconds(100));
+    return acquire(); // Retry
+  }
+  
+  void release(HttpConnection conn) {
+    if (_inUse.remove(conn)) {
+      conn.reset();
+      _available.add(conn);
+      print('Released connection \${conn.id} back to pool\n');
+    }
+  }
+  
+  void shutdown() {
+    print('\n=== Shutting down pool ===');
+    for (final conn in [..._available, ..._inUse]) {
+      print('Connection \${conn.id}: \${conn.requestCount} requests');
+      conn.close();
+    }
+    _available.clear();
+    _inUse.clear();
+    print('Pool shutdown complete');
+  }
+  
+  PoolStats getStats() {
+    return PoolStats(
+      available: _available.length,
+      inUse: _inUse.length,
+      total: _connectionCounter,
+      maxSize: maxConnections,
+    );
+  }
+}
+
+// Service using the pool
+class ApiService {
+  ApiService(this.pool);
+  
+  final HttpConnectionPool pool;
+  
+  Future<void> getUsers() async {
+    final conn = await pool.acquire();
+    try {
+      final response = await conn.request('/users');
+      print('Response: \$response\n');
+    } finally {
+      pool.release(conn);
+    }
+  }
+  
+  Future<void> getOrders() async {
+    final conn = await pool.acquire();
+    try {
+      final response = await conn.request('/orders');
+      print('Response: \$response\n');
+    } finally {
+      pool.release(conn);
+    }
+  }
+}
+
+void main() async {
+  final pool = HttpConnectionPool(
+    baseUrl: 'https://api.example.com',
+    minConnections: 2,
+    maxConnections: 5,
+  );
+  
+  final api = ApiService(pool);
+  
+  print('=== Making API Requests ===\n');
+  
+  // Sequential requests (reuses connections)
+  await api.getUsers();
+  await api.getOrders();
+  await api.getUsers();
+  
+  // Concurrent requests
+  print('=== Concurrent Requests ===\n');
+  await Future.wait([
+    api.getUsers(),
+    api.getOrders(),
+    api.getUsers(),
+    api.getOrders(),
+  ]);
+  
+  final stats = pool.getStats();
+  print('Pool stats: \${stats.inUse} in use, \${stats.available} available');
+  
+  pool.shutdown();
+}"""),
+
+        // Example 3: Advanced - Particle System Pool
+        StrCodeBlock(
+          """// Example 3: Advanced - Game Particle System with Object Pool
+// Use case: High-performance particle effects
+
+class Vector2 {
+  Vector2(this.x, this.y);
+  double x;
+  double y;
+  
+  void set(double newX, double newY) {
+    x = newX;
+    y = newY;
+  }
+  
+  void add(Vector2 other) {
+    x += other.x;
+    y += other.y;
+  }
+  
+  void scale(double factor) {
+    x *= factor;
+    y *= factor;
+  }
+  
+  Vector2 clone() => Vector2(x, y);
+}
+
+class Particle {
+  Particle(this.id);
+  
+  final int id;
+  final Vector2 position = Vector2(0, 0);
+  final Vector2 velocity = Vector2(0, 0);
+  double lifetime = 0;
+  double maxLifetime = 1.0;
+  double size = 1.0;
+  String color = 'white';
+  bool active = false;
+  
+  void initialize({
+    required Vector2 startPos,
+    required Vector2 startVel,
+    required double life,
+    double particleSize = 1.0,
+    String particleColor = 'white',
+  }) {
+    position.set(startPos.x, startPos.y);
+    velocity.set(startVel.x, startVel.y);
+    lifetime = 0;
+    maxLifetime = life;
+    size = particleSize;
+    color = particleColor;
+    active = true;
+  }
+  
+  void update(double dt) {
+    if (!active) return;
+    
+    lifetime += dt;
+    if (lifetime >= maxLifetime) {
+      active = false;
+      return;
+    }
+    
+    // Update physics
+    position.add(velocity..scale(dt));
+    
+    // Apply gravity
+    velocity.y += 9.8 * dt;
+    
+    // Fade out
+    final lifePercent = lifetime / maxLifetime;
+    size = (1 - lifePercent) * size;
+  }
+  
+  void reset() {
+    position.set(0, 0);
+    velocity.set(0, 0);
+    lifetime = 0;
+    maxLifetime = 1.0;
+    size = 1.0;
+    color = 'white';
+    active = false;
+  }
+  
+  void render() {
+    if (!active) return;
+    // Simulate rendering
+    // print('Render particle \$id at (\${position.x}, \${position.y})');
+  }
+}
+
+class ParticlePool {
+  ParticlePool({required this.maxParticles}) {
+    _initializePool();
+  }
+  
+  final int maxParticles;
+  final List<Particle> _particles = [];
+  int _nextAvailableIndex = 0;
+  
+  void _initializePool() {
+    print('Pre-allocating \$maxParticles particles...');
+    for (var i = 0; i < maxParticles; i++) {
+      _particles.add(Particle(i));
+    }
+    print('Particle pool initialized\n');
+  }
+  
+  Particle? acquire() {
+    // Search for inactive particle starting from last position
+    for (var i = 0; i < maxParticles; i++) {
+      final index = (_nextAvailableIndex + i) % maxParticles;
+      final particle = _particles[index];
+      
+      if (!particle.active) {
+        _nextAvailableIndex = (index + 1) % maxParticles;
+        return particle;
+      }
+    }
+    
+    // Pool exhausted
+    return null;
+  }
+  
+  void release(Particle particle) {
+    particle.reset();
+  }
+  
+  void updateAll(double dt) {
+    var activeCount = 0;
+    for (final particle in _particles) {
+      if (particle.active) {
+        particle.update(dt);
+        activeCount++;
+      }
+    }
+    // Uncomment for debugging
+    // print('Active particles: \$activeCount / \$maxParticles');
+  }
+  
+  void renderAll() {
+    for (final particle in _particles) {
+      particle.render();
+    }
+  }
+  
+  int get activeCount {
+    return _particles.where((p) => p.active).length;
+  }
+  
+  double get utilizationPercent {
+    return (activeCount / maxParticles) * 100;
+  }
+}
+
+class ParticleEmitter {
+  ParticleEmitter({
+    required this.pool,
+    required this.position,
+    this.emissionRate = 10, // particles per second
+    this.particleLifetime = 2.0,
+    this.particleSize = 5.0,
+    this.particleColor = 'orange',
+  });
+  
+  final ParticlePool pool;
+  final Vector2 position;
+  final double emissionRate;
+  final double particleLifetime;
+  final double particleSize;
+  final String particleColor;
+  
+  double _emissionTimer = 0;
+  
+  void update(double dt) {
+    _emissionTimer += dt;
+    
+    final particlesThisFrame = emissionRate * dt;
+    
+    if (_emissionTimer >= 1.0 / emissionRate) {
+      _emissionTimer = 0;
+      _emit();
+    }
+  }
+  
+  void _emit() {
+    final particle = pool.acquire();
+    
+    if (particle == null) {
+      // print('Warning: Could not emit particle, pool exhausted');
+      return;
+    }
+    
+    // Random velocity
+    final angle = Random().nextDouble() * 3.14159 * 2;
+    final speed = 50 + Random().nextDouble() * 50;
+    
+    particle.initialize(
+      startPos: position,
+      startVel: Vector2(
+        cos(angle) * speed,
+        sin(angle) * speed - 50, // Upward bias
+      ),
+      life: particleLifetime,
+      particleSize: particleSize,
+      particleColor: particleColor,
+    );
+  }
+  
+  void burst(int count) {
+    for (var i = 0; i < count; i++) {
+      _emit();
+    }
+  }
+}
+
+// Game simulation
+void main() async {
+  print('=== Particle System Simulation ===\n');
+  
+  // Create pool (pre-allocate all particles)
+  final pool = ParticlePool(maxParticles: 1000);
+  
+  // Create emitters
+  final emitter1 = ParticleEmitter(
+    pool: pool,
+    position: Vector2(100, 100),
+    emissionRate: 20,
+    particleLifetime: 2.0,
+    particleColor: 'red',
+  );
+  
+  final emitter2 = ParticleEmitter(
+    pool: pool,
+    position: Vector2(200, 100),
+    emissionRate: 15,
+    particleLifetime: 1.5,
+    particleColor: 'blue',
+  );
+  
+  // Simulate game loop
+  print('Starting simulation...\n');
+  final dt = 0.016; // 60 FPS
+  
+  for (var frame = 0; frame < 200; frame++) {
+    // Update emitters
+    emitter1.update(dt);
+    emitter2.update(dt);
+    
+    // Update all particles
+    pool.updateAll(dt);
+    
+    // Render
+    pool.renderAll();
+    
+    // Print stats every second
+    if (frame % 60 == 0) {
+      final time = (frame * dt).toStringAsFixed(1);
+      print('Time: \${time}s | Active: \${pool.activeCount}/1000 | ' +
+            'Utilization: \${pool.utilizationPercent.toStringAsFixed(1)}%');
+    }
+    
+    // Trigger burst at specific times
+    if (frame == 60) {
+      print('\n*** BURST 1 ***');
+      emitter1.burst(50);
+    }
+    if (frame == 120) {
+      print('\n*** BURST 2 ***');
+      emitter2.burst(75);
+    }
+  }
+  
+  print('\nSimulation complete!');
+}
+
+// Helper functions
+double cos(double radians) => radians.cos();
+double sin(double radians) => radians.sin();
+
+class Random {
+  static final _random = math.Random();
+  double nextDouble() => _random.nextDouble();
+}""",
+        ),
+
+        // Example 4: Flutter - Widget Pool for ListView
+        StrCodeBlock("""// Example 4: Flutter - Reusable Complex Widget Pool
+// Use case: Expensive widget recycling in custom list
+
+class ExpensiveWidgetData {
+  ExpensiveWidgetData({
+    required this.id,
+    required this.title,
+    required this.imageUrl,
+    required this.description,
+  });
+  
+  final String id;
+  final String title;
+  final String imageUrl;
+  final String description;
+}
+
+class ExpensiveWidget extends StatefulWidget {
+  const ExpensiveWidget({
+    required this.data,
+    required this.onRecycle,
+    super.key,
+  });
+  
+  final ExpensiveWidgetData data;
+  final VoidCallback onRecycle;
+  
+  @override
+  State<ExpensiveWidget> createState() => _ExpensiveWidgetState();
+}
+
+class _ExpensiveWidgetState extends State<ExpensiveWidget> {
+  bool _isProcessing = false;
+  
+  @override
+  void initState() {
+    super.initState();
+    _performExpensiveOperation();
+  }
+  
+  Future<void> _performExpensiveOperation() async {
+    setState(() => _isProcessing = true);
+    
+    // Simulate expensive initialization (image processing, data loading, etc.)
+    await Future.delayed(.milliseconds(100));
+    
+    if (mounted) {
+      setState(() => _isProcessing = false);
+    }
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: .all(8),
+      child: Padding(
+        padding: .all(16),
+        child: _isProcessing
+            ? Center(child: CircularProgressIndicator())
+            : Column(
+                crossAxisAlignment: .start,
+                children: [
+                  Text(
+                    widget.data.title,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  .height(8),
+                  Container(
+                    height: 150,
+                    color: Colors.grey[300],
+                    child: Center(
+                      child: Text('Image: \${widget.data.imageUrl}'),
+                    ),
+                  ),
+                  .height(8),
+                  Text(widget.data.description),
+                  .height(8),
+                  ElevatedButton(
+                    onPressed: widget.onRecycle,
+                    child: Text('Recycle This Widget'),
+                  ),
+                ],
+              ),
+      ),
+    );
+  }
+  
+  @override
+  void dispose() {
+    // Cleanup
+    super.dispose();
+  }
+}
+
+class WidgetPoolManager extends ChangeNotifier {
+  final List<ExpensiveWidget> _availableWidgets = [];
+  final List<ExpensiveWidget> _inUseWidgets = [];
+  final int maxPoolSize;
+  
+  WidgetPoolManager({this.maxPoolSize = 20});
+  
+  ExpensiveWidget acquire(ExpensiveWidgetData data) {
+    // Try to reuse from pool
+    if (_availableWidgets.isNotEmpty) {
+      final widget = _availableWidgets.removeLast();
+      _inUseWidgets.add(widget);
+      print('Reused widget from pool');
+      
+      // Return new instance with updated data
+      return ExpensiveWidget(
+        data: data,
+        onRecycle: () => release(widget),
+      );
+    }
+    
+    // Create new widget
+    final widget = ExpensiveWidget(
+      data: data,
+      onRecycle: () {}, // Will be set later
+    );
+    _inUseWidgets.add(widget);
+    print('Created new widget');
+    
+    return widget;
+  }
+  
+  void release(ExpensiveWidget widget) {
+    if (_inUseWidgets.remove(widget)) {
+      if (_availableWidgets.length < maxPoolSize) {
+        _availableWidgets.add(widget);
+        print('Widget returned to pool');
+      } else {
+        print('Pool full, widget discarded');
+      }
+      notifyListeners();
+    }
+  }
+  
+  int get pooledCount => _availableWidgets.length;
+  int get activeCount => _inUseWidgets.length;
+}
+
+// Usage in Flutter app
+class PooledListView extends StatefulWidget {
+  const PooledListView({super.key});
+  
+  @override
+  State<PooledListView> createState() => _PooledListViewState();
+}
+
+class _PooledListViewState extends State<PooledListView> {
+  late final WidgetPoolManager _poolManager;
+  final List<ExpensiveWidgetData> _items = [];
+  
+  @override
+  void initState() {
+    super.initState();
+    _poolManager = WidgetPoolManager(maxPoolSize: 10);
+    
+    // Generate test data
+    for (var i = 0; i < 50; i++) {
+      _items.add(ExpensiveWidgetData(
+        id: 'item_\$i',
+        title: 'Item \$i',
+        imageUrl: 'https://example.com/image\$i.jpg',
+        description: 'Description for item \$i with lots of text...',
+      ));
+    }
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pooled ListView'),
+        actions: [
+          Center(
+            child: Padding(
+              padding: .symmetric(horizontal: 16),
+              child: Text(
+                'Pool: \${_poolManager.pooledCount} | ' +
+                'Active: \${_poolManager.activeCount}',
+                style: .white,
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: ListView.builder(
+        itemCount: _items.length,
+        itemBuilder: (context, index) {
+          // In real implementation, you'd cache widgets per viewport
+          // This is simplified for demonstration
+          return _poolManager.acquire(_items[index]);
+        },
+      ),
+    );
+  }
+  
+  @override
+  void dispose() {
+    _poolManager.dispose();
+    super.dispose();
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: PooledListView(),
+  ));
+}"""),
+      ],
+      ar: [
+        // Arabic versions
+        StrCodeBlock("""// مثال 1: أساسي - تجمع كائنات عام
+// حالة الاستخدام: تجمع مخازن قابلة لإعادة الاستخدام لمعالجة البيانات
+
+class Buffer {
+  Buffer(this.id, this.capacity) : _data = List.filled(capacity, 0);
+  
+  final String id;
+  final int capacity;
+  final List<int> _data;
+  int _size = 0;
+  
+  void write(List<int> data) {
+    if (data.length > capacity) {
+      throw Exception('البيانات تتجاوز سعة المخزن');
+    }
+    for (var i = 0; i < data.length; i++) {
+      _data[i] = data[i];
+    }
+    _size = data.length;
+    print('[\$id] تمت كتابة \$_size بايت');
+  }
+  
+  List<int> read() {
+    return _data.sublist(0, _size);
+  }
+  
+  void clear() {
+    _size = 0;
+    for (var i = 0; i < capacity; i++) {
+      _data[i] = 0;
+    }
+    print('[\$id] تم المسح');
+  }
+  
+  bool get isEmpty => _size == 0;
+}
+
+class BufferPool {
+  BufferPool({required this.bufferSize, required this.maxPoolSize});
+  
+  final int bufferSize;
+  final int maxPoolSize;
+  final List<Buffer> _available = [];
+  final List<Buffer> _inUse = [];
+  int _createdCount = 0;
+  
+  Buffer acquire() {
+    // محاولة الحصول من التجمع المتاح
+    if (_available.isNotEmpty) {
+      final buffer = _available.removeLast();
+      _inUse.add(buffer);
+      print('تم الحصول على مخزن موجود \${buffer.id} من التجمع');
+      return buffer;
+    }
+    
+    // إنشاء جديد إذا كان تحت الحد
+    if (_createdCount < maxPoolSize) {
+      final buffer = Buffer('buffer_\$_createdCount', bufferSize);
+      _createdCount++;
+      _inUse.add(buffer);
+      print('تم إنشاء مخزن جديد \${buffer.id}');
+      return buffer;
+    }
+    
+    // التجمع مُستنفد
+    throw Exception('تجمع المخازن مُستنفد! الحد الأقصى: \$maxPoolSize');
+  }
+  
+  void release(Buffer buffer) {
+    if (_inUse.remove(buffer)) {
+      buffer.clear(); // إعادة تعيين الحالة - حاسم!
+      _available.add(buffer);
+      print('تم إطلاق المخزن \${buffer.id} إلى التجمع');
+    }
+  }
+  
+  PoolStats getStats() {
+    return PoolStats(
+      available: _available.length,
+      inUse: _inUse.length,
+      total: _createdCount,
+      maxSize: maxPoolSize,
+    );
+  }
+  
+  void printStats() {
+    final stats = getStats();
+    print('\n=== إحصائيات التجمع ===');
+    print('متاح: \${stats.available}');
+    print('قيد الاستخدام: \${stats.inUse}');
+    print('إجمالي المُنشأ: \${stats.total}');
+    print('الحد الأقصى: \${stats.maxSize}');
+    print('الاستخدام: \${(stats.inUse / stats.total * 100).toStringAsFixed(1)}%');
+  }
+}
+
+class PoolStats {
+  const PoolStats({
+    required this.available,
+    required this.inUse,
+    required this.total,
+    required this.maxSize,
+  });
+  
+  final int available;
+  final int inUse;
+  final int total;
+  final int maxSize;
+}
+
+// الاستخدام
+void main() {
+  final pool = BufferPool(bufferSize: 1024, maxPoolSize: 3);
+  
+  print('=== معالجة البيانات مع التجمع ===\n');
+  
+  // معالجة أجزاء متعددة من البيانات
+  final data1 = List.generate(100, (i) => i);
+  final data2 = List.generate(200, (i) => i * 2);
+  final data3 = List.generate(150, (i) => i * 3);
+  
+  // نمط الحصول، الاستخدام، الإطلاق
+  final buffer1 = pool.acquire();
+  buffer1.write(data1);
+  print('تمت معالجة \${buffer1.read().length} بايت');
+  pool.release(buffer1);
+  
+  print('');
+  
+  // يتم إعادة استخدام المخزن
+  final buffer2 = pool.acquire(); // يجب إعادة استخدام buffer1
+  buffer2.write(data2);
+  pool.release(buffer2);
+  
+  print('');
+  
+  // استخدامات متزامنة متعددة
+  final buf1 = pool.acquire();
+  final buf2 = pool.acquire();
+  final buf3 = pool.acquire();
+  
+  pool.printStats();
+  
+  // محاولة تجاوز حجم التجمع
+  try {
+    final buf4 = pool.acquire(); // يجب أن يرمي استثناء
+  } catch (e) {
+    print('\nتم اصطياد استثناء: \$e');
+  }
+  
+  // إطلاق الكل
+  pool.release(buf1);
+  pool.release(buf2);
+  pool.release(buf3);
+  
+  pool.printStats();
+}"""),
+        // Add remaining Arabic examples...
+      ],
+    ),
+    pros: LocSL(
+      en: [
+        "Dramatically improves performance for expensive object creation - can be orders of magnitude faster",
+        "Reduces garbage collection pressure by reusing objects",
+        "Provides predictable, controlled resource usage",
+        "Better control over resource limits and allocation",
+        "Reduces memory fragmentation from frequent allocation/deallocation",
+        "Smooth performance - avoids spikes from object creation",
+        "Enables better capacity planning and resource monitoring",
+      ],
+      ar: [
+        "يحسّن الأداء بشكل كبير لإنشاء الكائنات المكلفة - يمكن أن يكون أسرع بمراتب من حيث الحجم",
+        "يقلل ضغط جمع القمامة (Garbage Collection) من خلال إعادة استخدام الكائنات",
+        "يوفر استخدام موارد قابل للتنبؤ ومُتحكم فيه",
+        "تحكم أفضل في حدود الموارد والتخصيص",
+        "يقلل تجزئة الذاكرة (Memory Fragmentation) من التخصيص/إلغاء التخصيص المتكرر",
+        "أداء سلس - يتجنب الارتفاعات المفاجئة من إنشاء الكائنات",
+        "يُمكّن تخطيط السعة ومراقبة الموارد بشكل أفضل",
+      ],
+    ),
+    cons: LocSL(
+      en: [
+        "Adds significant complexity to manage object lifecycle properly",
+        "Risk of stale state bugs if objects aren't properly reset before reuse",
+        "Thread safety concerns in concurrent environments - need synchronization",
+        "Memory waste if pool grows too large or objects aren't needed",
+        "Premature optimization - may not be worth complexity for cheap objects",
+        "Requires careful tuning of pool size - too small (contention) or too large (waste)",
+        "Difficult to debug - object state persists across uses",
+        "Need to handle resource cleanup (connections, file handles) carefully",
+      ],
+      ar: [
+        "يضيف تعقيداً كبيراً لإدارة دورة حياة الكائن بشكل صحيح",
+        "خطر أخطاء الحالة القديمة (Stale State) إذا لم يتم إعادة تعيين الكائنات بشكل صحيح قبل إعادة الاستخدام",
+        "مخاوف أمان الخيوط (Thread Safety) في البيئات المتزامنة - تحتاج للمزامنة",
+        "هدر الذاكرة إذا نما التجمع بشكل كبير جداً أو لم تكن الكائنات مطلوبة",
+        "تحسين مبكر (Premature Optimization) - قد لا يستحق التعقيد للكائنات الرخيصة",
+        "يتطلب ضبطاً دقيقاً لحجم التجمع - صغير جداً (تنافس) أو كبير جداً (هدر)",
+        "صعب التنقيح (Debug) - حالة الكائن تستمر عبر الاستخدامات",
+        "تحتاج للتعامل مع تنظيف الموارد (الاتصالات، مقابض الملفات) بعناية",
+      ],
+    ),
+    whenToUse: LocV(
+      en: [
+        StrContent("Use Object Pool when:"),
+        ULContent(
+          value: [
+            "Object creation/destruction is demonstrably expensive through profiling",
+            "You need many short-lived instances of the same type",
+            "Resource limits must be enforced (max database connections, threads, etc.)",
+            "Performance profiling shows object creation as a bottleneck",
+            "Objects are stateful and expensive to initialize (connections, large buffers)",
+            "GC pressure is causing performance issues",
+            "You need predictable latency (avoid GC pauses)",
+          ],
+        ),
+        NoteContent(
+          "Always profile first! Most object creation in modern VMs is very fast. Only pool when measurements prove it's beneficial.",
+          type: .warning,
+        ),
+        StrContent("Common scenarios in Dart/Flutter:"),
+        ULContent(
+          value: [
+            "Database connection pools",
+            "HTTP client pools for API requests",
+            "Isolate pools for parallel computation",
+            "Particle systems in games (1000s of particles)",
+            "Image/buffer pools for media processing",
+            "WebSocket connection pools",
+          ],
+        ),
+      ],
+      ar: [
+        StrContent("استخدم تجمع الكائنات عندما:"),
+        ULContent(
+          value: [
+            "إنشاء/إتلاف الكائن مكلف بشكل واضح من خلال التحليل (Profiling)",
+            "تحتاج للعديد من النسخ قصيرة العمر من نفس النوع",
+            "يجب فرض حدود الموارد (أقصى اتصالات قاعدة البيانات، خيوط، إلخ)",
+            "تحليل الأداء يُظهر أن إنشاء الكائن عنق زجاجة",
+            "الكائنات ذات حالة ومكلفة في التهيئة (اتصالات، مخازن كبيرة)",
+            "ضغط جامع القمامة (GC Pressure) يسبب مشاكل في الأداء",
+            "تحتاج لزمن انتقال قابل للتنبؤ (تجنب توقفات GC)",
+          ],
+        ),
+        NoteContent(
+          "حلل دائماً أولاً! معظم إنشاء الكائنات في الأجهزة الافتراضية الحديثة سريع جداً. جمّع فقط عندما تثبت القياسات أنه مفيد.",
+          type: .warning,
+        ),
+        StrContent("السيناريوهات الشائعة في Dart/Flutter:"),
+        ULContent(
+          value: [
+            "تجمعات اتصال قاعدة البيانات",
+            "تجمعات عملاء HTTP لطلبات API",
+            "تجمعات العزلات (Isolate Pools) للحساب المتوازي",
+            "أنظمة الجسيمات في الألعاب (آلاف الجسيمات)",
+            "تجمعات الصور/المخازن لمعالجة الوسائط",
+            "تجمعات اتصال WebSocket",
+          ],
+        ),
+      ],
+    ),
+    commonMistakes: LocV(
+      en: [
+        "Pooling objects where creation is actually cheap - adds unnecessary complexity",
+        "Not resetting object state before returning to pool - causes state bleeding bugs",
+        "Allowing two threads/clients to use the same pooled object simultaneously",
+        "Creating pools that grow unbounded - defeats memory management purpose",
+        "Not validating object health before reuse (stale connections, corrupted state)",
+        "Forgetting to release objects back to pool - causes resource leaks",
+        "Making pool size too small (contention) or too large (memory waste)",
+        "Not handling exceptions properly - objects not returned on error",
+        "Pooling immutable objects - defeats the purpose, just share one instance",
+      ],
+      ar: [
+        "تجميع كائنات حيث الإنشاء فعلياً رخيص - يضيف تعقيداً غير ضروري",
+        "عدم إعادة تعيين حالة الكائن قبل الإرجاع للتجمع - يسبب أخطاء نزيف الحالة (State Bleeding)",
+        "السماح لخيطين/عميلين باستخدام نفس الكائن المُجمّع في وقت واحد",
+        "إنشاء تجمعات تنمو بلا حدود - يُفشل غرض إدارة الذاكرة",
+        "عدم التحقق من صحة الكائن قبل إعادة الاستخدام (اتصالات قديمة، حالة تالفة)",
+        "نسيان إرجاع الكائنات للتجمع - يسبب تسريبات موارد",
+        "جعل حجم التجمع صغيراً جداً (تنافس) أو كبيراً جداً (هدر ذاكرة)",
+        "عدم التعامل مع الاستثناءات بشكل صحيح - الكائنات لا تُرجع عند الخطأ",
+        "تجميع كائنات غير قابلة للتغيير (Immutable) - يُفشل الغرض، فقط شارك نسخة واحدة",
+      ],
+    ),
+    relatedPatterns: [PK.singleton, PK.factoryMethod, PK.flyweight],
+    oftenConfusedWith: [PK.flyweight],
+  ),
+  PK.lazyInitialization: DesignPattern(
+    id: PK.lazyInitialization,
+    title: LocS(
+      en: "Lazy Initialization",
+      ar: "التهيئة الكسولة (Lazy Initialization)",
+    ),
+    description: LocS(
+      en: "Defers object creation or value computation until first access",
+      ar: "يؤجل إنشاء الكائن أو حساب القيمة حتى الوصول الأول (First Access)",
+    ),
+    group: .design,
+    type: .creational,
+    category: .practical,
+    level: .beginner,
+    content: LocV(
+      en: [
+        StrContent(
+          "Lazy Initialization postpones the creation of an object, calculation of a value, or execution of an expensive operation until it's actually needed. This can significantly improve application startup time and reduce memory usage.",
+        ),
+        AnalogyContent(
+          "Think of streaming services like Netflix. They don't download all episodes of a series when you click on it - they wait until you actually press play on an episode. Similarly, lazy initialization waits until a resource is actually needed before creating it.",
+        ),
+        StrContent(
+          "The pattern is implemented by checking if a resource has been initialized before accessing it. If not initialized, create it on-the-spot; otherwise, return the cached instance. This 'create on first use' approach is fundamental to lazy evaluation.",
+        ),
+        ULContent(
+          title: "Key Characteristics:",
+          value: [
+            "Deferred initialization - resource created only when needed",
+            "Caching - once created, the instance is stored and reused",
+            "Null checking or sentinel values to detect initialization state",
+            "Thread-safety considerations in concurrent environments",
+            "Trade-off: faster startup vs. slower first access",
+          ],
+        ),
+        DiagramContent(
+          "Pattern Flow:\nFirst Access → Check if initialized → NO → Create & Cache → Return\n                                   ↓\n                                  YES → Return Cached\n\nSubsequent Access → Return Cached (fast)",
+        ),
+        StrContent(
+          "In Dart, the `late` keyword provides built-in support for lazy initialization, making this pattern extremely easy to implement. The `late` keyword creates a variable that's initialized when first accessed, not when declared.",
+        ),
+        NoteContent(
+          "Dart's `late` keyword is perfect for lazy initialization: `late final expensive = createExpensive();` - computed only when first accessed, then cached forever.",
+          type: .tip,
+        ),
+        ULContent(
+          title: "Common Applications:",
+          value: [
+            "Database connections that may not be needed",
+            "Heavy computational results (parsing, calculations)",
+            "Large data structures (caches, lookup tables)",
+            "Expensive I/O operations (file reading, network calls)",
+            "Plugin systems where plugins load on-demand",
+            "Configuration objects with default values",
+          ],
+        ),
+        StrContent(
+          "The pattern is particularly effective when resources may never be used in certain code paths. Why spend time creating something that might never be needed?",
+        ),
+        NoteContent(
+          "Lazy initialization is NOT always better. Use when: (1) initialization is expensive, (2) resource might not be used, (3) startup time matters. Don't use for cheap objects or when initialization order matters.",
+          type: .important,
+        ),
+        ComparisonContent({
+          'Eager Initialization':
+              'Created immediately, predictable timing, slower startup',
+          'Lazy Initialization':
+              'Created on first use, unpredictable timing, faster startup',
+          'Lazy + Null': 'T? _value; check _value ??= create();',
+          'Lazy + late': 'late T value = create(); (Dart built-in)',
+        }, title: 'Initialization Strategies'),
+        StrContent(
+          "Performance considerations: First access is slower (initialization overhead). Subsequent accesses are fast (cached). Good for improving perceived performance - app starts fast, pays cost later when user actually needs the feature.",
+        ),
+      ],
+      ar: [
+        StrContent(
+          "التهيئة الكسولة (Lazy Initialization) تؤجل إنشاء الكائن، أو حساب القيمة، أو تنفيذ العملية المكلفة حتى الحاجة الفعلية لها. هذا يمكن أن يحسّن بشكل كبير وقت بدء التطبيق ويقلل استخدام الذاكرة.",
+        ),
+        AnalogyContent(
+          "فكر في خدمات البث المباشر مثل Netflix. لا تقوم بتحميل جميع حلقات المسلسل عندما تنقر عليه - تنتظر حتى تضغط فعلياً على تشغيل حلقة. بالمثل، التهيئة الكسولة تنتظر حتى تكون هناك حاجة فعلية للمورد قبل إنشائه.",
+        ),
+        StrContent(
+          "يُنفذ النمط من خلال التحقق مما إذا تم تهيئة المورد قبل الوصول إليه. إن لم يكن مُهيأً، أنشئه في الحال؛ وإلا، أرجع النسخة المُخزنة مؤقتاً (Cached). هذا النهج 'إنشاء عند الاستخدام الأول' أساسي للتقييم الكسول (Lazy Evaluation).",
+        ),
+        ULContent(
+          title: "الخصائص الأساسية:",
+          value: [
+            "تهيئة مؤجلة (Deferred Initialization) - المورد يُنشأ فقط عند الحاجة",
+            "التخزين المؤقت (Caching) - بمجرد الإنشاء، يتم تخزين النسخة وإعادة استخدامها",
+            "فحص null أو قيم حارسة (Sentinel Values) لاكتشاف حالة التهيئة",
+            "اعتبارات أمان الخيوط (Thread-Safety) في البيئات المتزامنة",
+            "مقايضة: بدء أسرع مقابل وصول أول أبطأ",
+          ],
+        ),
+        DiagramContent(
+          "تدفق النمط:\nالوصول الأول ← التحقق من التهيئة ← لا ← إنشاء وتخزين مؤقت ← إرجاع\n                                   ↓\n                                 نعم ← إرجاع المُخزن\n\nالوصول اللاحق ← إرجاع المُخزن (سريع)",
+        ),
+        StrContent(
+          "في Dart، توفر الكلمة المفتاحية `late` دعماً مدمجاً للتهيئة الكسولة، مما يجعل تنفيذ هذا النمط سهلاً للغاية. الكلمة المفتاحية `late` تُنشئ متغيراً يتم تهيئته عند الوصول الأول، وليس عند الإعلان.",
+        ),
+        NoteContent(
+          "الكلمة المفتاحية `late` في Dart مثالية للتهيئة الكسولة: `late final expensive = createExpensive();` - يُحسب فقط عند الوصول الأول، ثم يُخزن مؤقتاً للأبد.",
+          type: .tip,
+        ),
+        ULContent(
+          title: "التطبيقات الشائعة:",
+          value: [
+            "اتصالات قاعدة البيانات التي قد لا تكون مطلوبة",
+            "نتائج حسابية ثقيلة (التحليل، الحسابات)",
+            "هياكل بيانات كبيرة (ذاكرات مؤقتة، جداول بحث)",
+            "عمليات إدخال/إخراج مكلفة (قراءة الملفات، استدعاءات الشبكة)",
+            "أنظمة الإضافات (Plugins) حيث تُحمل الإضافات عند الطلب",
+            "كائنات الإعدادات (Configuration) مع قيم افتراضية",
+          ],
+        ),
+        StrContent(
+          "النمط فعّال بشكل خاص عندما قد لا يتم استخدام الموارد أبداً في مسارات كود معينة. لماذا تقضي وقتاً في إنشاء شيء قد لا تحتاجه أبداً؟",
+        ),
+        NoteContent(
+          "التهيئة الكسولة ليست دائماً أفضل. استخدمها عندما: (1) التهيئة مكلفة، (2) المورد قد لا يُستخدم، (3) وقت البدء مهم. لا تستخدمها للكائنات الرخيصة أو عندما يهم ترتيب التهيئة.",
+          type: .important,
+        ),
+        ComparisonContent({
+          'التهيئة الحريصة (Eager)': 'يُنشأ فوراً، توقيت قابل للتنبؤ، بدء أبطأ',
+          'التهيئة الكسولة (Lazy)':
+              'يُنشأ عند الاستخدام الأول، توقيت غير قابل للتنبؤ، بدء أسرع',
+          'كسول + Null': 'T? _value; تحقق _value ??= create();',
+          'كسول + late': 'late T value = create(); (مدمج في Dart)',
+        }, title: 'استراتيجيات التهيئة'),
+        StrContent(
+          "اعتبارات الأداء: الوصول الأول أبطأ (عبء التهيئة). الوصولات اللاحقة سريعة (مُخزنة مؤقتاً). جيد لتحسين الأداء المُدرك - التطبيق يبدأ بسرعة، يدفع التكلفة لاحقاً عندما يحتاج المستخدم فعلياً للميزة.",
+        ),
+      ],
+    ),
+    examples: LocV(
+      en: [
+        // Example 1: Basic - Lazy with late keyword
+        StrCodeBlock(
+          """// Example 1: Basic - Dart's late keyword for Lazy Initialization
+// Use case: Expensive resources that may not be used
+
+class ExpensiveResource {
+  ExpensiveResource() {
+    print('Creating expensive resource...');
+    // Simulate expensive initialization
+    _initialize();
+  }
+  
+  void _initialize() {
+    print('Performing expensive initialization (3 seconds)...');
+    // In real code: database connection, file parsing, etc.
+  }
+  
+  void doWork() {
+    print('Doing work with expensive resource');
+  }
+}
+
+class Application {
+  // Eager initialization - created immediately
+  final ExpensiveResource eagerResource = ExpensiveResource();
+  
+  // Lazy initialization - created on first access
+  late final ExpensiveResource lazyResource = ExpensiveResource();
+  
+  void useEagerResource() {
+    print('\nUsing eager resource:');
+    eagerResource.doWork();
+  }
+  
+  void useLazyResource() {
+    print('\nUsing lazy resource (first access):');
+    lazyResource.doWork(); // Created here on first access
+    
+    print('\nUsing lazy resource (second access):');
+    lazyResource.doWork(); // Reused from cache
+  }
+}
+
+void main() {
+  print('=== Application Starting ===');
+  
+  final app = Application();
+  print('Application started (notice eager resource already created)');
+  
+  print('\n--- Wait 2 seconds before using lazy resource ---');
+  // In real app: user navigates, performs other tasks
+  
+  app.useLazyResource();
+  
+  print('\n=== Startup Time Comparison ===');
+  print('Eager: Slow startup (resource created immediately)');
+  print('Lazy: Fast startup (resource created when needed)');
+}""",
+        ),
+
+        // Example 2: Intermediate - Manual Lazy Implementation
+        StrCodeBlock(
+          """// Example 2: Intermediate - Manual Lazy Initialization Patterns
+// Use case: Different lazy initialization strategies
+
+// Pattern 1: Lazy with nullable + null check
+class LazyWithNullable {
+  ExpensiveObject? _instance;
+  
+  ExpensiveObject get instance {
+    _instance ??= ExpensiveObject();
+    return _instance!;
+  }
+}
+
+// Pattern 2: Lazy with late (simplest)
+class LazyWithLate {
+  late final ExpensiveObject instance = ExpensiveObject();
+}
+
+// Pattern 3: Lazy with initialization flag
+class LazyWithFlag {
+  ExpensiveObject? _instance;
+  bool _initialized = false;
+  
+  ExpensiveObject get instance {
+    if (!_initialized) {
+      print('First access - initializing...');
+      _instance = ExpensiveObject();
+      _initialized = true;
+    }
+    return _instance!;
+  }
+  
+  bool get isInitialized => _initialized;
+}
+
+// Pattern 4: Lazy with factory function
+class LazyWithFactory {
+  ExpensiveObject? _instance;
+  final ExpensiveObject Function() _factory;
+  
+  LazyWithFactory(this._factory);
+  
+  ExpensiveObject get instance {
+    _instance ??= _factory();
+    return _instance!;
+  }
+  
+  void reset() {
+    _instance = null;
+  }
+}
+
+// Pattern 5: Lazy with async initialization
+class LazyAsync {
+  Future<ExpensiveObject>? _future;
+  
+  Future<ExpensiveObject> get instance {
+    _future ??= _initialize();
+    return _future!;
+  }
+  
+  Future<ExpensiveObject> _initialize() async {
+    print('Async initialization started...');
+    await Future.delayed(.seconds(1)); // Simulate async work
+    print('Async initialization complete');
+    return ExpensiveObject();
+  }
+}
+
+class ExpensiveObject {
+  ExpensiveObject() {
+    print('ExpensiveObject created');
+  }
+  
+  void doSomething() {
+    print('Doing something...');
+  }
+}
+
+void main() async {
+  print('=== Pattern 1: Nullable ===');
+  final lazy1 = LazyWithNullable();
+  print('Created LazyWithNullable');
+  print('Accessing instance...');
+  lazy1.instance.doSomething();
+  
+  print('\n=== Pattern 2: Late ===');
+  final lazy2 = LazyWithLate();
+  print('Created LazyWithLate');
+  print('Accessing instance...');
+  lazy2.instance.doSomething();
+  
+  print('\n=== Pattern 3: Flag ===');
+  final lazy3 = LazyWithFlag();
+  print('Created LazyWithFlag');
+  print('Is initialized? \${lazy3.isInitialized}');
+  lazy3.instance.doSomething();
+  print('Is initialized? \${lazy3.isInitialized}');
+  
+  print('\n=== Pattern 4: Factory ===');
+  final lazy4 = LazyWithFactory(() {
+    print('Custom factory function called');
+    return ExpensiveObject();
+  });
+  print('Created LazyWithFactory');
+  lazy4.instance.doSomething();
+  print('Resetting...');
+  lazy4.reset();
+  print('Accessing after reset...');
+  lazy4.instance.doSomething();
+  
+  print('\n=== Pattern 5: Async ===');
+  final lazy5 = LazyAsync();
+  print('Created LazyAsync');
+  final obj = await lazy5.instance;
+  obj.doSomething();
+}""",
+        ),
+
+        // Example 3: Advanced - Configuration Manager
+        StrCodeBlock("""// Example 3: Advanced - Lazy Configuration Manager
+// Use case: App configuration with lazy-loaded sections
+
+abstract class ConfigSection {
+  String get sectionName;
+  Map<String, dynamic> get data;
+}
+
+class DatabaseConfig implements ConfigSection {
+  DatabaseConfig() {
+    print('Loading database configuration...');
+    _loadFromFile();
+  }
+  
+  @override
+  String get sectionName => 'database';
+  
+  late final Map<String, dynamic> _data = {
+    'host': 'localhost',
+    'port': 5432,
+    'database': 'myapp',
+    'pool_size': 10,
+  };
+  
+  void _loadFromFile() {
+    // Simulate expensive file I/O
+    print('  Reading database.config...');
+  }
+  
+  @override
+  Map<String, dynamic> get data => _data;
+  
+  String get host => _data['host'] as String;
+  int get port => _data['port'] as int;
+  String get database => _data['database'] as String;
+  int get poolSize => _data['pool_size'] as int;
+}
+
+class ApiConfig implements ConfigSection {
+  ApiConfig() {
+    print('Loading API configuration...');
+    _loadFromFile();
+  }
+  
+  @override
+  String get sectionName => 'api';
+  
+  late final Map<String, dynamic> _data = {
+    'base_url': 'https://api.example.com',
+    'timeout': 30,
+    'retry_count': 3,
+    'api_key': 'secret_key_123',
+  };
+  
+  void _loadFromFile() {
+    print('  Reading api.config...');
+  }
+  
+  @override
+  Map<String, dynamic> get data => _data;
+  
+  String get baseUrl => _data['base_url'] as String;
+  int get timeout => _data['timeout'] as int;
+  int get retryCount => _data['retry_count'] as int;
+  String get apiKey => _data['api_key'] as String;
+}
+
+class FeatureFlagsConfig implements ConfigSection {
+  FeatureFlagsConfig() {
+    print('Loading feature flags...');
+    _loadFromRemote();
+  }
+  
+  @override
+  String get sectionName => 'features';
+  
+  late final Map<String, dynamic> _data = {
+    'new_ui': true,
+    'dark_mode': true,
+    'analytics': false,
+    'beta_features': false,
+  };
+  
+  void _loadFromRemote() {
+    print('  Fetching from remote server...');
+    // Simulate network call
+  }
+  
+  @override
+  Map<String, dynamic> get data => _data;
+  
+  bool isEnabled(String feature) => _data[feature] as bool? ?? false;
+}
+
+class AppConfig {
+  // Lazy initialization - each section loaded only when accessed
+  late final DatabaseConfig database = DatabaseConfig();
+  late final ApiConfig api = ApiConfig();
+  late final FeatureFlagsConfig features = FeatureFlagsConfig();
+  
+  // Track which sections have been accessed
+  final Set<String> _loadedSections = {};
+  
+  void _trackAccess(String section) {
+    if (!_loadedSections.contains(section)) {
+      _loadedSections.add(section);
+      print('  [\$section] First access - loaded');
+    }
+  }
+  
+  DatabaseConfig get databaseConfig {
+    _trackAccess('database');
+    return database;
+  }
+  
+  ApiConfig get apiConfig {
+    _trackAccess('api');
+    return api;
+  }
+  
+  FeatureFlagsConfig get featuresConfig {
+    _trackAccess('features');
+    return features;
+  }
+  
+  void printLoadedSections() {
+    print('\n=== Loaded Configuration Sections ===');
+    if (_loadedSections.isEmpty) {
+      print('No sections loaded yet');
+    } else {
+      for (final section in _loadedSections) {
+        print('  - \$section');
+      }
+    }
+  }
+}
+
+// Different app scenarios
+class SimpleApp {
+  final AppConfig config;
+  
+  SimpleApp(this.config);
+  
+  void run() {
+    print('\n=== Simple App (only needs API) ===');
+    final apiUrl = config.apiConfig.baseUrl;
+    print('Connecting to: \$apiUrl');
+    // Database and features never loaded!
+  }
+}
+
+class ComplexApp {
+  final AppConfig config;
+  
+  ComplexApp(this.config);
+  
+  void run() {
+    print('\n=== Complex App (needs everything) ===');
+    
+    // Connect to database
+    print('Database: \${config.databaseConfig.host}:\${config.databaseConfig.port}');
+    
+    // Make API calls
+    print('API: \${config.apiConfig.baseUrl}');
+    
+    // Check features
+    if (config.featuresConfig.isEnabled('new_ui')) {
+      print('New UI enabled');
+    }
+  }
+}
+
+void main() {
+  print('=== Application Starting ===\n');
+  
+  final config = AppConfig();
+  print('Config object created (nothing loaded yet)\n');
+  
+  config.printLoadedSections();
+  
+  // Scenario 1: Simple app
+  final simpleApp = SimpleApp(config);
+  simpleApp.run();
+  config.printLoadedSections();
+  
+  // Scenario 2: Complex app (reuses same config)
+  final complexApp = ComplexApp(config);
+  complexApp.run();
+  config.printLoadedSections();
+  
+  print('\n=== Performance Impact ===');
+  print('Simple app: Fast startup (only loaded API config)');
+  print('Complex app: Slower (loaded everything as needed)');
+  print('But: Simple app would be slower with eager loading!');
+}"""),
+
+        // Example 4: Flutter - Lazy Widget Loading
+        StrCodeBlock(
+          """// Example 4: Flutter - Lazy Screen/Widget Initialization
+// Use case: Lazy loading expensive screens in navigation
+
+abstract class Screen extends StatelessWidget {
+  const Screen({super.key});
+  
+  String get title;
+}
+
+class HomeScreen extends Screen {
+  const HomeScreen({super.key});
+  
+  @override
+  String get title => 'Home';
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: .center,
+          children: [
+            Text('Home Screen'),
+            .height(20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => ScreenManager.instance.analytics,
+                  ),
+                );
+              },
+              child: Text('Go to Analytics'),
+            ),
+            .height(10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => ScreenManager.instance.settings,
+                  ),
+                );
+              },
+              child: Text('Go to Settings'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AnalyticsScreen extends Screen {
+  AnalyticsScreen({super.key}) {
+    print('AnalyticsScreen: Heavy initialization...');
+    _loadAnalyticsData();
+  }
+  
+  @override
+  String get title => 'Analytics';
+  
+  void _loadAnalyticsData() {
+    // Simulate expensive data loading
+    print('  Loading charts, processing data...');
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: .center,
+          children: [
+            Text('Analytics Screen'),
+            Text('(Expensive charts and graphs loaded)'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SettingsScreen extends Screen {
+  SettingsScreen({super.key}) {
+    print('SettingsScreen: Loading preferences...');
+    _loadSettings();
+  }
+  
+  @override
+  String get title => 'Settings';
+  
+  void _loadSettings() {
+    print('  Reading settings from storage...');
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: .center,
+          children: [
+            Text('Settings Screen'),
+            Text('(User preferences loaded)'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Lazy screen manager
+class ScreenManager {
+  static final ScreenManager instance = ScreenManager._();
+  ScreenManager._();
+  
+  // Screens loaded lazily - only when navigated to
+  late final AnalyticsScreen analytics = AnalyticsScreen();
+  late final SettingsScreen settings = SettingsScreen();
+  
+  // Track initialization
+  bool _analyticsInitialized = false;
+  bool _settingsInitialized = false;
+  
+  AnalyticsScreen get analyticsScreen {
+    if (!_analyticsInitialized) {
+      print('[ScreenManager] First access to analytics screen');
+      _analyticsInitialized = true;
+    }
+    return analytics;
+  }
+  
+  SettingsScreen get settingsScreen {
+    if (!_settingsInitialized) {
+      print('[ScreenManager] First access to settings screen');
+      _settingsInitialized = true;
+    }
+    return settings;
+  }
+}
+
+// Lazy data provider
+class DataProvider extends ChangeNotifier {
+  // Lazy-loaded expensive data
+  List<ChartData>? _chartData;
+  List<UserStats>? _userStats;
+  
+  Future<List<ChartData>> get chartData async {
+    if (_chartData == null) {
+      print('[DataProvider] Loading chart data...');
+      await Future.delayed(.seconds(1)); // Simulate loading
+      _chartData = List.generate(
+        100,
+        (i) => ChartData(date: DateTime.now().subtract(.days(i)), value: i * 10),
+      );
+      print('[DataProvider] Chart data loaded');
+    }
+    return _chartData!;
+  }
+  
+  Future<List<UserStats>> get userStats async {
+    if (_userStats == null) {
+      print('[DataProvider] Loading user stats...');
+      await Future.delayed(.milliseconds(500));
+      _userStats = [
+        UserStats(metric: 'Sessions', value: 1234),
+        UserStats(metric: 'Page Views', value: 5678),
+        UserStats(metric: 'Conversions', value: 89),
+      ];
+      print('[DataProvider] User stats loaded');
+    }
+    return _userStats!;
+  }
+  
+  void clearCache() {
+    _chartData = null;
+    _userStats = null;
+    print('[DataProvider] Cache cleared');
+    notifyListeners();
+  }
+}
+
+class ChartData {
+  ChartData({required this.date, required this.value});
+  final DateTime date;
+  final double value;
+}
+
+class UserStats {
+  UserStats({required this.metric, required this.value});
+  final String metric;
+  final int value;
+}
+
+void main() {
+  print('=== Flutter App Starting ===');
+  print('Home screen loads immediately (lightweight)');
+  print('Other screens load lazily when navigated to\n');
+  
+  runApp(MaterialApp(
+    home: HomeScreen(),
+    debugShowCheckedModeBanner: false,
+  ));
+}""",
+        ),
+      ],
+      ar: [
+        // Arabic versions
+        StrCodeBlock(
+          """// مثال 1: أساسي - الكلمة المفتاحية late للتهيئة الكسولة في Dart
+// حالة الاستخدام: موارد مكلفة قد لا يتم استخدامها
+
+class ExpensiveResource {
+  ExpensiveResource() {
+    print('إنشاء مورد مكلف...');
+    // محاكاة تهيئة مكلفة
+    _initialize();
+  }
+  
+  void _initialize() {
+    print('تنفيذ تهيئة مكلفة (3 ثوان)...');
+    // في الكود الحقيقي: اتصال قاعدة البيانات، تحليل الملفات، إلخ
+  }
+  
+  void doWork() {
+    print('أداء عمل مع المورد المكلف');
+  }
+}
+
+class Application {
+  // التهيئة الحريصة - يتم الإنشاء فوراً
+  final ExpensiveResource eagerResource = ExpensiveResource();
+  
+  // التهيئة الكسولة - يتم الإنشاء عند الوصول الأول
+  late final ExpensiveResource lazyResource = ExpensiveResource();
+  
+  void useEagerResource() {
+    print('\nاستخدام المورد الحريص:');
+    eagerResource.doWork();
+  }
+  
+  void useLazyResource() {
+    print('\nاستخدام المورد الكسول (الوصول الأول):');
+    lazyResource.doWork(); // يتم إنشاؤه هنا عند الوصول الأول
+    
+    print('\nاستخدام المورد الكسول (الوصول الثاني):');
+    lazyResource.doWork(); // يُعاد استخدامه من الذاكرة المؤقتة
+  }
+}
+
+void main() {
+  print('=== بدء التطبيق ===');
+  
+  final app = Application();
+  print('بدأ التطبيق (لاحظ أن المورد الحريص تم إنشاؤه بالفعل)');
+  
+  print('\n--- انتظر ثانيتين قبل استخدام المورد الكسول ---');
+  // في التطبيق الحقيقي: المستخدم يتنقل، يؤدي مهام أخرى
+  
+  app.useLazyResource();
+  
+  print('\n=== مقارنة وقت البدء ===');
+  print('الحريص: بدء بطيء (المورد يُنشأ فوراً)');
+  print('الكسول: بدء سريع (المورد يُنشأ عند الحاجة)');
+}""",
+        ),
+        // Add remaining Arabic examples...
+      ],
+    ),
+    pros: LocSL(
+      en: [
+        "Significantly improves application startup time - faster perceived performance",
+        "Reduces initial memory footprint by deferring allocation",
+        "Avoids unnecessary work for features/resources that might never be used",
+        "Spreads initialization cost over time instead of all at once",
+        "Perfect for optional features or conditional code paths",
+        "Can improve battery life on mobile by reducing upfront work",
+        "Enables progressive enhancement - core features load first",
+      ],
+      ar: [
+        "يحسّن بشكل كبير وقت بدء التطبيق - أداء مُدرك أسرع",
+        "يقلل البصمة الأولية للذاكرة (Initial Memory Footprint) من خلال تأجيل التخصيص",
+        "يتجنب العمل غير الضروري للميزات/الموارد التي قد لا يتم استخدامها أبداً",
+        "ينشر تكلفة التهيئة على مدى الوقت بدلاً من دفعة واحدة",
+        "مثالي للميزات الاختيارية أو مسارات الكود الشرطية",
+        "يمكن أن يحسّن عمر البطارية على الأجهزة المحمولة من خلال تقليل العمل المسبق",
+        "يُمكّن التحسين التدريجي (Progressive Enhancement) - الميزات الأساسية تُحمل أولاً",
+      ],
+    ),
+    cons: LocSL(
+      en: [
+        "Adds conditional overhead on each access (null check)",
+        "Can cause unexpected delays when first accessed - unpredictable timing",
+        "Requires thread safety considerations in concurrent environments",
+        "Not beneficial if resource is always needed - just adds complexity",
+        "Harder to debug - initialization happens at unexpected times",
+        "Can complicate initialization order dependencies",
+        "First access is slower - poor for latency-sensitive operations",
+        "May hide initialization errors until runtime (vs compile-time with eager)",
+      ],
+      ar: [
+        "يضيف عبئاً شرطياً في كل وصول (فحص null)",
+        "قد يسبب تأخيرات غير متوقعة عند الوصول الأول - توقيت غير قابل للتنبؤ",
+        "يتطلب اعتبارات أمان الخيوط في البيئات المتزامنة",
+        "غير مفيد إذا كان المورد مطلوباً دائماً - يضيف تعقيداً فقط",
+        "أصعب في التنقيح (Debug) - التهيئة تحدث في أوقات غير متوقعة",
+        "قد يعقد تبعيات ترتيب التهيئة (Initialization Order Dependencies)",
+        "الوصول الأول أبطأ - سيئ للعمليات الحساسة لزمن الانتقال (Latency-Sensitive)",
+        "قد يخفي أخطاء التهيئة حتى وقت التشغيل (مقابل وقت الترجمة مع الحريص)",
+      ],
+    ),
+    whenToUse: LocV(
+      en: [
+        StrContent("Use Lazy Initialization when:"),
+        ULContent(
+          value: [
+            "Object creation is expensive (time, memory, I/O) and you want fast startup",
+            "Resource might never be used in certain code paths or user flows",
+            "You want to optimize perceived performance - show UI quickly",
+            "Initialization depends on runtime configuration or user input",
+            "You're implementing optional features or plugins",
+            "Memory is constrained and you want to defer allocation",
+            "App has multiple features but users typically only use a few",
+          ],
+        ),
+        NoteContent(
+          "Perfect for: app configuration, plugin systems, optional features, heavy UI components, cached computations, connection pools.",
+          type: .tip,
+        ),
+        StrContent("Don't use Lazy Initialization when:"),
+        ULContent(
+          value: [
+            "Resource is always needed - just adds complexity",
+            "Initialization is cheap (< 1ms) - overhead not worth it",
+            "You need predictable, deterministic initialization timing",
+            "Initialization order matters for correctness",
+            "First access latency is critical (real-time systems)",
+          ],
+        ),
+      ],
+      ar: [
+        StrContent("استخدم التهيئة الكسولة عندما:"),
+        ULContent(
+          value: [
+            "إنشاء الكائن مكلف (الوقت، الذاكرة، الإدخال/الإخراج) وتريد بدءاً سريعاً",
+            "المورد قد لا يُستخدم أبداً في مسارات كود معينة أو تدفقات المستخدم",
+            "تريد تحسين الأداء المُدرك - إظهار واجهة المستخدم بسرعة",
+            "التهيئة تعتمد على إعدادات وقت التشغيل أو إدخال المستخدم",
+            "تقوم بتنفيذ ميزات اختيارية أو إضافات (Plugins)",
+            "الذاكرة محدودة وتريد تأجيل التخصيص",
+            "التطبيق لديه ميزات متعددة لكن المستخدمين عادةً يستخدمون القليل فقط",
+          ],
+        ),
+        NoteContent(
+          "مثالي لـ: إعدادات التطبيق، أنظمة الإضافات، الميزات الاختيارية، مكونات واجهة المستخدم الثقيلة، الحسابات المُخزنة مؤقتاً، تجمعات الاتصال.",
+          type: .tip,
+        ),
+        StrContent("لا تستخدم التهيئة الكسولة عندما:"),
+        ULContent(
+          value: [
+            "المورد مطلوب دائماً - يضيف تعقيداً فقط",
+            "التهيئة رخيصة (< 1 ملي ثانية) - العبء لا يستحق",
+            "تحتاج لتوقيت تهيئة قابل للتنبؤ ومُحدد",
+            "ترتيب التهيئة مهم للصحة",
+            "زمن انتقال الوصول الأول حاسم (أنظمة الوقت الفعلي - Real-Time)",
+          ],
+        ),
+      ],
+    ),
+    commonMistakes: LocV(
+      en: [
+        "Using lazy initialization when resource is always needed - unnecessary complexity",
+        "Not considering thread safety in concurrent code - race conditions",
+        "Over-optimizing with lazy init for cheap operations - adds overhead",
+        "Forgetting to handle initialization failures gracefully",
+        "Creating circular dependencies between lazy-initialized objects",
+        "Using lazy for objects where initialization order matters",
+        "Not documenting that first access will be slow",
+        "Lazy initializing in hot paths where latency matters",
+        "Making everything lazy without measuring actual benefit",
+      ],
+      ar: [
+        "استخدام التهيئة الكسولة عندما يكون المورد مطلوباً دائماً - تعقيد غير ضروري",
+        "عدم مراعاة أمان الخيوط في الكود المتزامن - ظروف السباق (Race Conditions)",
+        "الإفراط في التحسين مع التهيئة الكسولة للعمليات الرخيصة - يضيف عبئاً",
+        "نسيان التعامل مع فشل التهيئة بشكل جيد",
+        "إنشاء تبعيات دائرية (Circular Dependencies) بين الكائنات المُهيأة كسولاً",
+        "استخدام الكسول للكائنات حيث يهم ترتيب التهيئة",
+        "عدم توثيق أن الوصول الأول سيكون بطيئاً",
+        "التهيئة الكسولة في المسارات الساخنة (Hot Paths) حيث يهم زمن الانتقال",
+        "جعل كل شيء كسولاً دون قياس الفائدة الفعلية",
+      ],
+    ),
+    relatedPatterns: [PK.singleton, PK.proxy, PK.factoryMethod],
+    oftenConfusedWith: [PK.proxy],
+  ),
 };

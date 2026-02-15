@@ -191,5 +191,13 @@
     "usefulPubPackagesSubtitle": "Essential libraries",
     "comingSoon": "Coming Soon",
     "extraTopics": "Extra Topics",
-    "explore": "Explore"
+    "explore": "Explore",
+
+    "noteInfo": "Info",
+    "noteWarning": "Warning",
+    "noteTip": "Tip",
+    "noteImportant": "Important",
+    "analogy": "Analogy",
+    "comparison": "Comparison",
+    "structureDiagram": "Structure Diagram"
 }

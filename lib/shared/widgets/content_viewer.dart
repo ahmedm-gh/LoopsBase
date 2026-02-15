@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loopsbase/core/extensions/extensions.dart';
 import 'package:loopsbase/core/models/content.dart';
+import 'package:loopsbase/l10n/app_localizations.dart';
 
 import 'code_block.dart';
+import 'small_titled_list.dart';
 
 class ContentViewer extends StatelessWidget {
   const ContentViewer(this.content, {super.key});
@@ -13,6 +15,7 @@ class ContentViewer extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.colorScheme;
     final textTheme = context.textTheme;
+    final l10n = context.l10n;
 
     return switch (content) {
       // KEEP
@@ -39,66 +42,60 @@ class ContentViewer extends StatelessWidget {
       // KEEP
       final CodeContent value => CodeBlockViewer.fromStrCodeBlock(value.code),
 
-      // UPDATE THIS ONE
-      final NoteContent value => _buildNote(value, colors, textTheme),
+      final NoteContent value => _buildNote(value, textTheme, l10n),
 
-      // UPDATE THIS ONE
-      final AnalogyContent value => _buildAnalogy(value, colors, textTheme),
+      final AnalogyContent value => _buildAnalogy(
+        value,
+        colors,
+        textTheme,
+        l10n,
+      ),
 
-      // UPDATE THIS ONE
       final ComparisonContent value => _buildComparison(
         value,
         colors,
         textTheme,
+        l10n,
       ),
 
-      // UPDATE THIS ONE
-      final DiagramContent value => _buildDiagram(value, colors, textTheme),
+      final DiagramContent value => _buildDiagram(
+        value,
+        colors,
+        textTheme,
+        l10n,
+      ),
     };
   }
 
   Widget _buildNote(
     NoteContent content,
-    ColorScheme colors,
     TextTheme textTheme,
+    AppLocalizations l10n,
   ) {
-    final noteConfig = _getNoteConfig(content.type, colors);
+    final (icon, label, color) = switch (content.type) {
+      NoteType.info => (Icons.info_outline, l10n.noteInfo, Colors.blue),
+      NoteType.warning => (
+        Icons.warning_amber_outlined,
+        l10n.noteWarning,
+        Colors.orange,
+      ),
+      NoteType.tip => (
+        Icons.tips_and_updates_outlined,
+        l10n.noteTip,
+        Colors.green,
+      ),
+      NoteType.important => (
+        Icons.priority_high,
+        l10n.noteImportant,
+        Colors.red,
+      ),
+    };
 
-    return Container(
-      decoration: BoxDecoration(
-        color: noteConfig.backgroundColor,
-        borderRadius: .circular(8),
-        border: Border.all(color: noteConfig.borderColor, width: 1.5),
-      ),
-      padding: const .all(12),
-      child: Row(
-        crossAxisAlignment: .start,
-        children: [
-          Icon(noteConfig.icon, color: noteConfig.iconColor, size: 20),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: .start,
-              children: [
-                Text(
-                  noteConfig.label,
-                  style: textTheme.titleSmall?.copyWith(
-                    fontWeight: .bold,
-                    color: noteConfig.iconColor,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  content.value,
-                  style: textTheme.bodyMedium?.copyWith(
-                    color: colors.onSurface,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+    return SmallTitledList(
+      title: Text(label),
+      icon: icon,
+      color: color,
+      content: Text(content.value),
     );
   }
 
@@ -106,61 +103,15 @@ class ContentViewer extends StatelessWidget {
     AnalogyContent content,
     ColorScheme colors,
     TextTheme textTheme,
+    AppLocalizations l10n,
   ) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            colors.primaryContainer.withValues(alpha: 0.3),
-            colors.secondaryContainer.withValues(alpha: 0.3),
-          ],
-          begin: .topLeft,
-          end: .bottomRight,
-        ),
-        borderRadius: .circular(12),
-        border: Border.all(color: colors.primary.withValues(alpha: 0.3)),
-      ),
-      padding: const .all(16),
-      child: Row(
-        crossAxisAlignment: .start,
-        children: [
-          Container(
-            padding: const .all(8),
-            decoration: BoxDecoration(
-              color: colors.primaryContainer,
-              shape: .circle,
-            ),
-            child: Icon(
-              Icons.lightbulb_outline,
-              color: colors.primary,
-              size: 22,
-            ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: .start,
-              children: [
-                Text(
-                  'Analogy',
-                  style: textTheme.titleSmall?.copyWith(
-                    fontWeight: .bold,
-                    color: colors.primary,
-                    letterSpacing: 0.5,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  content.value,
-                  style: textTheme.bodyMedium?.copyWith(
-                    fontStyle: .italic,
-                    height: 1.5,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+    return SmallTitledList(
+      title: Text(l10n.analogy),
+      icon: Icons.lightbulb_outline,
+      color: colors.primary,
+      content: Text(
+        content.value,
+        style: textTheme.bodyMedium?.copyWith(fontStyle: .italic, height: 1.5),
       ),
     );
   }
@@ -169,72 +120,35 @@ class ContentViewer extends StatelessWidget {
     ComparisonContent content,
     ColorScheme colors,
     TextTheme textTheme,
+    AppLocalizations l10n,
   ) {
-    return Container(
-      decoration: BoxDecoration(
-        color: colors.surfaceContainerLowest,
-        borderRadius: .circular(8),
-        border: Border.all(color: colors.outlineVariant, width: 1),
-      ),
-      padding: const .symmetric(vertical: 8),
-      child: Column(
-        crossAxisAlignment: .stretch,
-        children: [
-          if (content.title case final title?) ...[
-            Padding(
-              padding: const .symmetric(horizontal: 16, vertical: 8),
-              child: Text(
-                title,
-                style: textTheme.titleMedium?.copyWith(
-                  fontWeight: .bold,
-                  color: colors.primary,
+    return SmallTitledList(
+      title: Text(content.title ?? l10n.comparison),
+      icon: Icons.compare_arrows_rounded,
+      color: colors.tertiary,
+      items: [
+        for (final entry in content.value.entries)
+          Row(
+            crossAxisAlignment: .start,
+            children: [
+              Expanded(
+                flex: 2,
+                child: Text(
+                  entry.key,
+                  style: textTheme.bodyMedium?.copyWith(
+                    fontWeight: .w600,
+                    color: colors.tertiary,
+                  ),
                 ),
               ),
-            ),
-            Divider(height: 1, color: colors.outlineVariant),
-          ],
-          ...content.value.entries.map(
-            (entry) =>
-                _buildComparisonRow(entry.key, entry.value, colors, textTheme),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildComparisonRow(
-    String key,
-    String value,
-    ColorScheme colors,
-    TextTheme textTheme,
-  ) {
-    return Container(
-      padding: const .symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: colors.outlineVariant.withValues(alpha: 0.5),
-            width: 0.5,
-          ),
-        ),
-      ),
-      child: Row(
-        crossAxisAlignment: .start,
-        children: [
-          Expanded(
-            flex: 2,
-            child: Text(
-              key,
-              style: textTheme.bodyMedium?.copyWith(
-                fontWeight: .w600,
-                color: colors.secondary,
+              const SizedBox(width: 16),
+              Expanded(
+                flex: 3,
+                child: Text(entry.value, style: textTheme.bodyMedium),
               ),
-            ),
+            ],
           ),
-          const SizedBox(width: 16),
-          Expanded(flex: 3, child: Text(value, style: textTheme.bodyMedium)),
-        ],
-      ),
+      ],
     );
   }
 
@@ -242,51 +156,27 @@ class ContentViewer extends StatelessWidget {
     DiagramContent content,
     ColorScheme colors,
     TextTheme textTheme,
+    AppLocalizations l10n,
   ) {
-    return Container(
-      decoration: BoxDecoration(
-        color: colors.surfaceContainerHigh,
-        borderRadius: .circular(8),
-        border: Border.all(color: colors.outline.withValues(alpha: 0.5)),
-      ),
-      padding: const .all(16),
-      child: Column(
-        crossAxisAlignment: .start,
-        children: [
-          Row(
-            children: [
-              Icon(
-                Icons.account_tree_outlined,
-                size: 18,
-                color: colors.primary,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                'Structure Diagram',
-                style: textTheme.labelLarge?.copyWith(
-                  color: colors.primary,
-                  fontWeight: .w600,
-                ),
-              ),
-            ],
+    return SmallTitledList(
+      title: Text(l10n.structureDiagram),
+      icon: Icons.account_tree_outlined,
+      color: colors.primary,
+      content: Container(
+        width: double.infinity,
+        padding: const .all(12),
+        decoration: BoxDecoration(
+          color: colors.surface,
+          borderRadius: .circular(6),
+        ),
+        child: Text(
+          content.value,
+          style: textTheme.bodyMedium?.copyWith(
+            fontFamily: 'monospace',
+            height: 1.6,
+            letterSpacing: 0.2,
           ),
-          const SizedBox(height: 12),
-          Container(
-            padding: const .all(12),
-            decoration: BoxDecoration(
-              color: colors.surface,
-              borderRadius: .circular(6),
-            ),
-            child: Text(
-              content.value,
-              style: textTheme.bodyMedium?.copyWith(
-                fontFamily: 'monospace',
-                height: 1.6,
-                letterSpacing: 0.2,
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -335,53 +225,4 @@ class ContentViewer extends StatelessWidget {
         ),
     ];
   }
-
-  _NoteConfig _getNoteConfig(NoteType type, ColorScheme colors) {
-    return switch (type) {
-      .info => _NoteConfig(
-        icon: Icons.info_outline,
-        label: 'Info',
-        iconColor: colors.primary,
-        backgroundColor: colors.primaryContainer.withValues(alpha: 0.3),
-        borderColor: colors.primary.withValues(alpha: 0.5),
-      ),
-      .warning => _NoteConfig(
-        icon: Icons.warning_amber_outlined,
-        label: 'Warning',
-        iconColor: Colors.orange,
-        backgroundColor: Colors.orange.withValues(alpha: 0.1),
-        borderColor: Colors.orange.withValues(alpha: 0.5),
-      ),
-      .tip => _NoteConfig(
-        icon: Icons.tips_and_updates_outlined,
-        label: 'Tip',
-        iconColor: Colors.green,
-        backgroundColor: Colors.green.withValues(alpha: 0.1),
-        borderColor: Colors.green.withValues(alpha: 0.5),
-      ),
-      .important => _NoteConfig(
-        icon: Icons.priority_high,
-        label: 'Important',
-        iconColor: Colors.red,
-        backgroundColor: Colors.red.withValues(alpha: 0.1),
-        borderColor: Colors.red.withValues(alpha: 0.5),
-      ),
-    };
-  }
-}
-
-class _NoteConfig {
-  const _NoteConfig({
-    required this.icon,
-    required this.label,
-    required this.iconColor,
-    required this.backgroundColor,
-    required this.borderColor,
-  });
-
-  final IconData icon;
-  final String label;
-  final Color iconColor;
-  final Color backgroundColor;
-  final Color borderColor;
 }

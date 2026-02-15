@@ -192,5 +192,13 @@
    "usefulPubPackagesSubtitle": "مكتبات أساسية",
    "comingSoon": "قريباً",
    "extraTopics": "مواضيع إضافية",
-   "explore": "استكشف"
+   "explore": "استكشف",
+
+   "noteInfo": "معلومة",
+   "noteWarning": "تحذير",
+   "noteTip": "نصيحة",
+   "noteImportant": "مهم",
+   "analogy": "تشبيه",
+   "comparison": "مقارنة",
+   "structureDiagram": "مخطط هيكلي"
 }

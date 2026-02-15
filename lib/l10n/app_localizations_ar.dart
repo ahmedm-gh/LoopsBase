@@ -573,4 +573,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get explore => 'استكشف';
+
+  @override
+  String get noteInfo => 'معلومة';
+
+  @override
+  String get noteWarning => 'تحذير';
+
+  @override
+  String get noteTip => 'نصيحة';
+
+  @override
+  String get noteImportant => 'مهم';
+
+  @override
+  String get analogy => 'تشبيه';
+
+  @override
+  String get comparison => 'مقارنة';
+
+  @override
+  String get structureDiagram => 'مخطط هيكلي';
 }

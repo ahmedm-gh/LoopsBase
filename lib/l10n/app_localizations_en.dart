@@ -566,4 +566,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get explore => 'Explore';
+
+  @override
+  String get noteInfo => 'Info';
+
+  @override
+  String get noteWarning => 'Warning';
+
+  @override
+  String get noteTip => 'Tip';
+
+  @override
+  String get noteImportant => 'Important';
+
+  @override
+  String get analogy => 'Analogy';
+
+  @override
+  String get comparison => 'Comparison';
+
+  @override
+  String get structureDiagram => 'Structure Diagram';
 }
