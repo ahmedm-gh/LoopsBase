@@ -1,6 +1,6 @@
 {
     "@@locale": "ar",
-    "appTitle": "إتقان البرمجة الكائنية (OOP Mastery)",
+    "appTitle": "LoopsBase",
     "home": "الرئيسية",
     "designPatterns": "أنماط التصميم",
     "refactoring": "إعادة هيكلة الكود",
@@ -181,5 +181,16 @@
   "viewDetails": "عرض التفاصيل",
   "keyCharacteristics": "المميزات الرئيسية",
   "commonUseCases": "الاستخدامات الشائعة",
-  "realWorldExamples": "الإسهامات الحقيقية" 
+  "realWorldExamples": "الإسهامات الحقيقية",
+
+   "welcomeBack": "أهلاً بعودتك",
+   "featured": "مميز",
+   "designPatternsSubtitle": "أتقن المخططات الأساسية للبرمجيات كائنية التوجه القابلة لإعادة الاستخدام.",
+   "programmingTermsSubtitle": "مسرد ومصطلحات",
+   "interviewQuestionsSubtitle": "استعد لمقابلة العمل",
+   "refactoringSubtitle": "تقنيات الكود النظيف",
+   "usefulPubPackagesSubtitle": "مكتبات أساسية",
+   "comingSoon": "قريباً",
+   "extraTopics": "مواضيع إضافية",
+   "explore": "استكشف"
 }

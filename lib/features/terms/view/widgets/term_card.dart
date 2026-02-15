@@ -108,13 +108,13 @@ class TermCard extends StatelessWidget {
                     mainAxisSize: .min,
                     children: [
                       FilledIcon(
-                        icon: Icon(
+                        background: pt.color,
+                        padding: const EdgeInsets.all(2.5),
+                        child: Icon(
                           Icons.trending_up_rounded,
                           size: 12,
                           color: pt.color.pairedColor,
                         ),
-                        background: pt.color,
-                        padding: const EdgeInsets.all(2.5),
                       ),
                       const SizedBox(width: 7.5),
                       Flexible(
@@ -141,9 +141,9 @@ class TermCard extends StatelessWidget {
     return Row(
       children: [
         FilledIcon(
-          icon: const Icon(Icons.chevron_right_rounded),
           background: colors.primary,
           padding: const EdgeInsets.all(2.5),
+          child: const Icon(Icons.chevron_right_rounded),
         ),
         const SizedBox(width: 10),
         Expanded(

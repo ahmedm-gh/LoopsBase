@@ -9,7 +9,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'إتقان البرمجة الكائنية (OOP Mastery)';
+  String get appTitle => 'LoopsBase';
 
   @override
   String get home => 'الرئيسية';
@@ -542,4 +542,35 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get realWorldExamples => 'الإسهامات الحقيقية';
+
+  @override
+  String get welcomeBack => 'أهلاً بعودتك';
+
+  @override
+  String get featured => 'مميز';
+
+  @override
+  String get designPatternsSubtitle =>
+      'أتقن المخططات الأساسية للبرمجيات كائنية التوجه القابلة لإعادة الاستخدام.';
+
+  @override
+  String get programmingTermsSubtitle => 'مسرد ومصطلحات';
+
+  @override
+  String get interviewQuestionsSubtitle => 'استعد لمقابلة العمل';
+
+  @override
+  String get refactoringSubtitle => 'تقنيات الكود النظيف';
+
+  @override
+  String get usefulPubPackagesSubtitle => 'مكتبات أساسية';
+
+  @override
+  String get comingSoon => 'قريباً';
+
+  @override
+  String get extraTopics => 'مواضيع إضافية';
+
+  @override
+  String get explore => 'استكشف';
 }

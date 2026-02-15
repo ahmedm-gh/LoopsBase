@@ -117,8 +117,8 @@ class SmallTitledList extends StatelessWidget {
             Row(
               children: [
                 FilledIcon(
-                  icon: Icon(icon, color: color),
                   background: color.withValues(alpha: 0.1),
+                  child: Icon(icon, color: color),
                 ),
                 const SizedBox(width: 5),
                 Expanded(

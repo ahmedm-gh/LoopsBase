@@ -2,156 +2,8 @@ import "package:flutter/material.dart";
 import "package:loopsbase/core/extensions/extensions.dart";
 import "package:loopsbase/core/services/routes.dart";
 
+import "../../../shared/design_layouts.dart";
 import "widgets/home_button.dart";
-
-// final l = [
-//   "الأنماط المعمارية الشائعة في Flutter؟",
-//   "الأنماط المعمارية الشائعة في Flutter (MVC، MVVM، Clean Architecture)؟",
-//   "الأنماط المعمارية الشائعة في Flutter؟",
-//   "الأنماط المعمارية الشائعة في Flutter؟ (MVC، MVVM، Clean Architecture)",
-//   "كيف تتواصل مع كود النظام الأساسي الأصلي (Android/iOS)؟",
-//   "استخدم main() مع runApp(...) لبدء التطبيق",
-//   "كمان تقدر تستخدم .dot shorthands",
-//   "كمان تقدر تستخدم dot shorthands. بطاطس",
-//   "كمان تقدر تستخدم .dot shorthands بطاطس",
-//   "كمان تعمل كدة context.l10n",
-//   "دي بقى تجربة عشوائية context.colorScheme()",
-//   "كمان تعمل كدة context.l10n ودا نص اضافي",
-//   "دي بقى تجربة عشوائية context.colorScheme() ودا نص اضافي",
-//   "دي بقى تجربة عشوائية context.colorScheme.try() ودا نص اضافي",
-//   "دي بقى تجربة عشوائية context colorScheme try() ودا نص اضافي",
-//   "كمان تقدر تستخدم .dot shorthands",
-//   "كمان تعمل كدة context.l10n",
-//   "كمان تعمل كدة context l10n",
-//   "كمان تعمل كدة context l10n تجربة",
-//   "ما هو Flutter وكيف يختلف عن أطر تطوير التطبيقات المحمولة الأخرى؟",
-//   "ما الفرق بين StatelessWidget و StatefulWidget؟",
-//   "ما هو BuildContext ولماذا هو مهم؟",
-//   "اشرح الأعمدة الأربعة للبرمجة كائنية التوجه مع أمثلة Dart.",
-//   "اشرح جميع مبادئ SOLID الخمسة مع أمثلة Flutter/Dart.",
-//   "نفذ أنماط Singleton و Factory و Repository في Flutter.",
-//   "ما هي هياكل البيانات الرئيسية المتاحة في Dart ومتى تستخدم كل منها؟",
-//   "قارن بين setState و Provider و BLoC و Riverpod لإدارة الحالة.",
-//   "اشرح Future و async/await و Streams في Dart مع أمثلة.",
-//   "ما هي أفضل الممارسات لتحسين أداء تطبيق Flutter؟",
-//   "ما هي المفاتيح (Keys) في Flutter ومتى يجب استخدامها؟",
-//   "اشرح دورة حياة تطبيق Flutter.",
-//   "ما هي أنواع الاختبارات الثلاثة في Flutter وكيف تختلف؟",
-//   "ما هو Impeller وكيف يحسن أداء Flutter؟",
-//   "كيفية التعامل مع الشبكات في Flutter؟ الفرق بين حزمتي http و dio؟",
-//   "مقارنة خيارات قواعد البيانات المحلية: SharedPreferences vs SQLite vs Hive.",
-//   "الأنماط المعمارية الشائعة في Flutter؟ (MVC، MVVM، Clean Architecture)",
-//   "ما هو أمان العدم (Null Safety) وكيف يساعد؟",
-//   "ما هي العزلات (Isolates) وكيف تختلف عن الخيوط (Threads)؟",
-//   "كيف تتواصل مع كود النظام الأساسي الأصلي (Android/iOS)؟",
-//   "ما الفرق بين الرسوم المتحركة الضمنية والصريحة؟",
-//   "كيفية استخدام CustomPaint في Flutter؟",
-//   "ما هما StreamBuilder و FutureBuilder؟",
-//   "كيف تجعل تطبيق Flutter قابلاً للوصول؟",
-//   "ما هي أفضل ممارسات الأمان الرئيسية في Flutter؟",
-//   "[XX] كيف تنفذ CI/CD لتطبيق Flutter؟",
-//   "[XX] كيف تنفذ C1:C2:C3:C4 لتطبيق Flutter؟",
-//   "[XX] كيف تنفذ CI-CD لتطبيق Flutter؟",
-//   "[XX] كيف تنفذ C1-C2-C3-C4 لتطبيق Flutter؟",
-//   "[XX] كيف تنفذ CI CD لتطبيق Flutter؟",
-//   "اشرح ودجتس التخطيط الشائعة المستخدمة في Flutter.",
-//   "ما هو Navigator 2.0 (Router API)؟",
-//   "اشرح أشجار الودجتس والعناصر وكائنات العرض في Flutter.",
-//   "كيف تكتشف وتعالج تسرب الذاكرة في Flutter؟",
-//   'ما هو Flutter؟',
-//   'ما هي لغة Dart ولماذا تُستخدم في Flutter؟',
-//   'ما هي الودجتس (Widgets) في Flutter؟',
-//   'ما الفرق بين StatelessWidget و StatefulWidget؟',
-//   'ما هو المفتاح (Key) في Flutter ولماذا يُستخدم؟',
-//   'اشرح الفرق بين Hot Reload و Hot Restart في Flutter.',
-//   'ما هو غرض ودجت MaterialApp و Scaffold؟',
-//   'ما هي دورة حياة الودجت في Flutter (دورة حياة StatefulWidget)؟',
-//   'ما هي دورة حياة الودجت في Flutter [دورة حياة StatefulWidget]؟',
-//   'ما هي دورة حياة الودجت في Flutter {دورة حياة StatefulWidget}؟',
-//   'ما هي دورة حياة الودجت في Flutter <دورة حياة StatefulWidget>؟',
-//   'ما هي الـ mixins في Dart وكيف تُستخدم؟',
-//   'ما هي طرق الامتداد (extension methods) في Dart؟',
-//   'ما هي القوائم (Lists) والمجموعات (Sets) والخرائط (Maps) في Dart، ومتى تستخدم كل منها؟',
-//   'ما هي مبادئ SOLID وكيف تُطبق في Flutter؟',
-//   'ما هو نمط BLoC في فلاتر؟',
-//   'ما هو Provider في فلاتر وكيف يختلف عن BLoC؟',
-//   'ما الفرق بين Future و Stream في دارت؟',
-//   'كيف تتنقل بين الشاشات في فلاتر؟ (push، pushReplacement)',
-//   'ما الفرق بين Navigator 1.0 و Navigator 2.0؟',
-//   'ما هو معامل BuildContext في دالة build() في فلاتر؟',
-//   'ما هو Isolate في دارت وكيف يُستخدم؟',
-//   'ما الغرض من FutureBuilder و StreamBuilder في فلاتر؟',
-//   'ما هو الباني (Constructor) في دارت وما هي البانيات factory؟',
-//   'ما هو نمط Singleton وكيف يمكنك تنفيذه في دارت؟',
-//   'كيف تحسن أداء تطبيق فلاتر؟',
-//   'ما هو محرك العرض في فلاتر وكيف يعمل (مثل Skia و Impeller)؟',
-//   'قارن بين Flutter و React Native: ما هي المزايا والعيوب؟',
-//   'اشرح الوراثة (inheritance) والتكوين (composition) في Dart. متى يجب استخدام كل منهما؟',
-//   'ما هو تعدد الأشكال (polymorphism) في البرمجة الكائنية؟',
-//   "ما هو الغرض من ملف pubspec.yaml؟",
-//   "كيف تضيف صورة إلى مشروع Flutter؟",
-//   "ما هو دور دالة main() في Flutter؟",
-//   "ما هي الحزم (Packages) والإضافات (Plugins) في Flutter؟",
-//   "ما هو الغرض من WidgetsFlutterBinding.ensureInitialized()؟",
-//   "اشرح استخدام ودجت Container.",
-//   "ما هو const في Flutter ولماذا يُنصح باستخدامه؟",
-//   "ما هو SafeArea؟",
-//   "ما هو مربع الحوار بملء الشاشة (Full-screen dialog) في Flutter؟",
-//   "اشرح الفرق بين Expanded و Spacer.",
-//   "ما هو ودجت AspectRatio؟",
-//   "ما هما IntrinsicHeight و IntrinsicWidth؟",
-//   "ما هو SingleChildScrollView؟",
-//   "كيف تتعامل مع النقرات (Taps) في Flutter؟",
-//   "ما هو AppBar؟",
-//   "ما هو CupertinoApp؟",
-//   "ما هو DefaultTabController؟",
-//   "كيف تنسّق النصوص في Flutter؟",
-//   "ما هو ThemeData؟",
-//   "ما هو ودجت Drawer؟",
-//   "ما هو FloatingActionButton؟",
-//   "ما هو SnackBar؟",
-//   "اشرح ودجت Wrap.",
-//   "ما هو Opacity؟",
-//   "ما هو ClipRRect؟",
-//   "ما هو RichText؟",
-//   "ما هو LayoutBuilder؟",
-//   "ما هو Flutter Inspector؟",
-//   "ما الفرق بين Debug Mode و Release Mode؟",
-//   "اشرح دالة دورة الحياة initState.",
-//   "اشرح didUpdateWidget.",
-//   "فيما تُستخدم دالة dispose()؟",
-//   "ما الفرق بين البرمجة المتزامنة وغير المتزامنة في Dart؟",
-//   "كيف تتعامل مع الأخطاء في Future؟",
-//   "ما هو Stream؟",
-//   "اشرح Navigator.push و Navigator.pop.",
-//   "ما هي Named Routes؟",
-//   "ما هو ModalRoute؟",
-//   "ما هو Navigator.maybePop؟",
-//   "ما هو AnimationController؟",
-//   "ما هو Tween؟",
-//   "ما هو CurvedAnimation؟",
-//   "ما هو Ticker في الرسوم المتحركة؟",
-//   "ما هي Mixins و SingleTickerProviderStateMixin؟",
-//   "كيف تتعامل مع النماذج (Forms) والتحقق (Validation)؟",
-//   "ما هو FocusNode؟",
-//   "فيما تُستخدم SharedPreferences؟",
-//   "اشرح SliverAppBar.",
-//   "ما هو CustomScrollView؟",
-//   "ما هو WillPopScope (تم استبداله بـ PopScope)؟",
-//   "اشرح حركة Hero.",
-//   "كيف تستخدم RefreshIndicator؟",
-//   "ما هو Dismissible؟",
-//   "كيف تتعامل مع تغيّر اتجاه الجهاز؟",
-//   "اشرح الفرق بين AbsorbPointer و IgnorePointer.",
-//   "ما هو OverflowBox؟",
-//   "كيف تحصل على عرض وارتفاع الشاشة؟",
-//   "ما هو Stepper؟",
-//   "اشرح ودجت Table.",
-//   "ما هو BackdropFilter؟",
-//   "اشرح IndexedStack.",
-//   "ما هو ReorderableListView؟",
-//   "ما هو FractionallySizedBox؟",
-// ];
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -160,69 +12,210 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final colors = context.colorScheme;
+    final textTheme = context.textTheme;
+    final isDark = context.isDark;
 
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.appTitle)),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const .all(24),
-          child: Column(
-            crossAxisAlignment: .stretch,
-            mainAxisAlignment: .center,
-            spacing: 20,
-            children: [
-              // if (kDebugMode)
-              //   Text(
-              //     l.join("\n").safeBidi(),
-              //     textScaler: const TextScaler.linear(1.5),
-              //   ),
-              // if (kDebugMode)
-              //   Text(l.join("\n"), textScaler: const TextScaler.linear(1.5)),
-              HomeMenuCard(
-                title: l10n.programmingTerms,
-                icon: const Icon(Icons.format_quote_rounded),
-                color: colors.secondary,
-                onTap: () {
-                  Navigator.pushNamed(context, Routes.programmingTermsList);
-                },
-              ),
-              HomeMenuCard(
-                title: l10n.designPatterns,
-                icon: const Icon(Icons.architecture_rounded),
-                color: colors.primary,
-                onTap: () => Navigator.pushNamed(
-                  context,
-                  Routes.designPatternCategoriesScreen,
+    return Material(
+      child: CustomPaint(
+        painter: CirclesPainter.custom(
+          circles: [
+            CustomCircle(
+              offset: const FractionalOffset(0.95, 0.05),
+              color: colors.primary.withValues(alpha: 0.0125),
+              radius: 140,
+            ),
+            CustomCircle(
+              offset: const FractionalOffset(0.1, 0.3),
+              color: colors.primary.withValues(alpha: 0.0075),
+              radius: 90,
+            ),
+            CustomCircle(
+              offset: const FractionalOffset(0.8, 0.8),
+              color: colors.primary.withValues(alpha: 0.0125),
+              radius: 160,
+            ),
+          ],
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: DL.pagePadding,
+            child: Column(
+              spacing: DL.listSeparatorHeight,
+              crossAxisAlignment: .stretch,
+              children: [
+                // Greeting header
+                const _GreetingHeader(),
+
+                // Featured card: Design Patterns
+                FeaturedTopicCard(
+                  title: l10n.designPatterns,
+                  subtitle: l10n.designPatternsSubtitle,
+                  icon: const Icon(Icons.architecture_rounded),
+                  gradientColors: const [Color(0xFF6C63FF), Color(0xFF9F44D3)],
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    Routes.designPatternCategoriesScreen,
+                  ),
                 ),
-              ),
-              HomeMenuCard(
-                title: l10n.interviewQuestions,
-                icon: const Icon(Icons.question_mark_rounded),
-                color: colors.secondary,
-                onTap: () => Navigator.pushNamed(context, Routes.questionList),
-              ),
-              HomeMenuCard(
-                title: l10n.refactoring,
-                icon: const Icon(Icons.auto_fix_high_rounded),
-                color: colors.tertiary,
-                onTap: null,
-                // onTap: () => Navigator.push(
-                //   context,
-                //   MaterialPageRoute<void>(
-                //     builder: (_) => const RefactoringPage(),
-                //   ),
-                // ),
-              ),
-              HomeMenuCard(
-                title: l10n.usefulPubPackages,
-                icon: const Icon(Icons.extension_rounded),
-                color: colors.secondary,
-                onTap: null,
-              ),
-            ],
+
+                // Section: Explore
+                Text(
+                  l10n.explore,
+                  style: textTheme.titleMedium?.copyWith(
+                    fontWeight: .w700,
+                    color: colors.onSurface,
+                    letterSpacing: 0.2,
+                  ),
+                ),
+
+                // 2-column grid of compact cards
+                // Responsive grid of compact cards
+                _ResponsiveGrid(
+                  children: [
+                    CompactTopicCard(
+                      title: l10n.interviewQuestions,
+                      subtitle: l10n.interviewQuestionsSubtitle,
+                      icon: const Icon(Icons.question_mark_rounded),
+                      accentColor: const Color(0xFF2DC653),
+                      onTap: () =>
+                          Navigator.pushNamed(context, Routes.questionList),
+                    ),
+                    CompactTopicCard(
+                      title: l10n.programmingTerms,
+                      subtitle: l10n.programmingTermsSubtitle,
+                      icon: const Icon(Icons.format_quote_rounded),
+                      accentColor: const Color(0xFF00B4D8),
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        Routes.programmingTermsList,
+                      ),
+                    ),
+                  ],
+                ),
+
+                // Section: Extra Topics
+                Text.rich(
+                  TextSpan(
+                    text: l10n.extraTopics,
+                    children: [
+                      TextSpan(
+                        text: " (${l10n.comingSoon})",
+                        style: TextStyle(
+                          fontWeight: .w300,
+                          color: colors.onSurfaceVariant,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                  style: textTheme.titleMedium?.copyWith(
+                    fontWeight: .w700,
+                    color: colors.onSurface,
+                    letterSpacing: 0.2,
+                  ),
+                ),
+
+                // 2-column grid of coming-soon cards
+                // Responsive grid of coming-soon cards
+                _ResponsiveGrid(
+                  children: [
+                    CompactTopicCard(
+                      title: l10n.refactoring,
+                      subtitle: l10n.refactoringSubtitle,
+                      icon: const Icon(Icons.auto_fix_high_rounded),
+                      accentColor: const Color(0xFFF77F00),
+                      onTap: null,
+                    ),
+                    CompactTopicCard(
+                      title: l10n.usefulPubPackages,
+                      subtitle: l10n.usefulPubPackagesSubtitle,
+                      icon: const Icon(Icons.extension_rounded),
+                      accentColor: const Color(0xFFE63946),
+                      onTap: null,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _GreetingHeader extends StatelessWidget {
+  const _GreetingHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final colors = context.colorScheme;
+
+    return Column(
+      crossAxisAlignment: .start,
+      children: [
+        Text(
+          l10n.welcomeBack.toUpperCase(),
+          style: TextStyle(
+            fontSize: 12,
+            color: colors.onSurfaceVariant,
+            letterSpacing: 1.5,
+            fontWeight: .w500,
+          ),
+        ),
+        Text(
+          l10n.appTitle,
+          textDirection: .ltr,
+          style: const TextStyle(fontSize: 26, fontWeight: .bold, height: 1),
+        ),
+      ],
+    );
+  }
+}
+
+class _ResponsiveGrid extends StatelessWidget {
+  const _ResponsiveGrid({required this.children});
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // Calculate column count based on available width (min 1)
+        final int targetCount = (constraints.maxWidth / 250).floor();
+        final int crossAxisCount = targetCount < 1 ? 1 : targetCount;
+
+        final rows = <Widget>[];
+        for (int i = 0; i < children.length; i += crossAxisCount) {
+          final end = (i + crossAxisCount < children.length)
+              ? i + crossAxisCount
+              : children.length;
+          final chunk = children.sublist(i, end);
+
+          final rowChildren = <Widget>[];
+          for (final child in chunk) {
+            rowChildren.add(Expanded(child: child));
+          }
+
+          // Add spacers to maintain alignment in the last row
+          final missing = crossAxisCount - chunk.length;
+          for (int j = 0; j < missing; j++) {
+            rowChildren.add(const Spacer());
+          }
+
+          rows.add(
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 14,
+              children: rowChildren,
+            ),
+          );
+        }
+
+        return Column(spacing: 14, children: rows);
+      },
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FilledIcon extends StatelessWidget {
   const FilledIcon({
-    required this.icon,
+    required this.child,
     this.background,
     this.borderRadius = const .all(.circular(5)),
     this.decoration,
@@ -10,7 +10,7 @@ class FilledIcon extends StatelessWidget {
     super.key,
   });
 
-  final Icon icon;
+  final Widget child;
   final Color? background;
   final BorderRadius? borderRadius;
   final BoxDecoration? decoration;
@@ -20,7 +20,7 @@ class FilledIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final icon2 = IconTheme.merge(
       data: const IconThemeData(size: 18),
-      child: icon,
+      child: child,
     );
 
     return DecoratedBox(

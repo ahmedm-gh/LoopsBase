@@ -106,13 +106,13 @@ class TermDetailsScreen extends StatelessWidget {
                 Row(
                   children: [
                     FilledIcon(
-                      icon: Icon(
+                      background: pt.color,
+                      padding: const .all(4),
+                      child: Icon(
                         Icons.trending_up_rounded,
                         size: 16,
                         color: pt.color.pairedColor,
                       ),
-                      background: pt.color,
-                      padding: const .all(4),
                     ),
                     const SizedBox(width: 8),
                     Text(

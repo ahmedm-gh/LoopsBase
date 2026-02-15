@@ -86,8 +86,8 @@ class PatternCategoryCard extends StatelessWidget {
                                   // ),
                                   if (category.isClassic) ...[
                                     FilledIcon(
-                                      icon: const Icon(Icons.book),
                                       background: colors.tertiary.withAlpha(50),
+                                      child: const Icon(Icons.book),
                                     ),
                                   ],
                                 ],
@@ -98,14 +98,14 @@ class PatternCategoryCard extends StatelessWidget {
 
                         // Category icon
                         FilledIcon(
-                          icon: Icon(
+                          padding: const .all(7.5),
+                          background: categoryColor.withAlpha(15),
+                          borderRadius: DL.inCardRadius,
+                          child: Icon(
                             category.icon,
                             size: 28,
                             color: categoryColor,
                           ),
-                          padding: const .all(7.5),
-                          background: categoryColor.withAlpha(15),
-                          borderRadius: DL.inCardRadius,
                         ),
                       ],
                     ),

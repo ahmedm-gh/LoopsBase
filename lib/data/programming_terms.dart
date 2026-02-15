@@ -9521,7 +9521,6 @@ const Map<String, ProgrammingTerm> allTerms = {
     ),
     type: .tool,
     category: .versionControl,
-    languages: [],
     relatedTerms: [TermKeys.git, TermKeys.merge, TermKeys.branch],
     tags: ['git', 'rebase', 'history', 'linear'],
     era: .classic,

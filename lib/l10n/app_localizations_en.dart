@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'OOP Mastery';
+  String get appTitle => 'LoopsBase';
 
   @override
   String get home => 'Home';
@@ -535,4 +535,35 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get realWorldExamples => 'Real World Examples';
+
+  @override
+  String get welcomeBack => 'Welcome back';
+
+  @override
+  String get featured => 'Featured';
+
+  @override
+  String get designPatternsSubtitle =>
+      'Master the blueprints of reusable object-oriented software.';
+
+  @override
+  String get programmingTermsSubtitle => 'Glossary & definitions';
+
+  @override
+  String get interviewQuestionsSubtitle => 'Prep for your job';
+
+  @override
+  String get refactoringSubtitle => 'Clean code techniques';
+
+  @override
+  String get usefulPubPackagesSubtitle => 'Essential libraries';
+
+  @override
+  String get comingSoon => 'Coming Soon';
+
+  @override
+  String get extraTopics => 'Extra Topics';
+
+  @override
+  String get explore => 'Explore';
 }

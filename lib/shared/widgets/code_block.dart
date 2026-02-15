@@ -365,7 +365,7 @@ class SQLSyntaxHighlighter extends SyntaxHighlighter {
       _sqlPattern,
       onMatch: (m) {
         Color color = plain;
-        String text = m.group(0)!;
+        final text = m.group(0) ?? "";
 
         // Group 1: Comments
         if (m.group(1) != null) {
@@ -469,7 +469,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
       _dartPattern,
       onMatch: (m) {
         Color color = plain;
-        String text = m.group(0)!;
+        String text = m.group(0) ?? "";
 
         // Group 1: Comments
         if (m.group(1) != null) {
@@ -499,7 +499,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
         // Group 7: Function
         else if (m.group(7) != null) {
           color = function;
-          text = m.group(7)!;
+          text = m.group(7) ?? "";
         }
         // Group 8: Type (PascalCase)
         else if (m.group(8) != null) {
@@ -512,7 +512,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
         // Group 10: Named Param
         else if (m.group(10) != null) {
           color = param;
-          text = m.group(10)!;
+          text = m.group(10) ?? "";
         }
         // Group 11: Punctuation/Operators
         else if (m.group(11) != null) {
@@ -560,7 +560,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
       onMatch: (m) {
         if (m.group(1) != null) {
           // Case: ${nestedExpression}
-          final fullMatch = m.group(1)!;
+          final fullMatch = m.group(1) ?? "";
           spans.add(
             TextSpan(
               text: r'${',
@@ -577,7 +577,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
           );
         } else if (m.group(2) != null) {
           // Case: $simpleVariable
-          final fullMatch = m.group(2)!;
+          final fullMatch = m.group(2) ?? "";
           spans.add(
             TextSpan(
               text: r'$',
@@ -648,7 +648,7 @@ class PythonSyntaxHighlighter extends SyntaxHighlighter {
       _pythonPattern,
       onMatch: (m) {
         Color color = plain;
-        String text = m.group(0)!;
+        String text = m.group(0) ?? "";
 
         // Group 1: Comments
         if (m.group(1) != null) {
@@ -673,7 +673,7 @@ class PythonSyntaxHighlighter extends SyntaxHighlighter {
         // Group 7: Function names
         else if (m.group(7) != null) {
           color = function;
-          text = m.group(7)!;
+          text = m.group(7) ?? "";
         }
         // Group 8: Types
         else if (m.group(8) != null) {
@@ -686,7 +686,7 @@ class PythonSyntaxHighlighter extends SyntaxHighlighter {
         // Group 10: Parameters
         else if (m.group(10) != null) {
           color = param;
-          text = m.group(10)!;
+          text = m.group(10) ?? "";
         }
         // Group 11: Operators / punctuation
         else if (m.group(11) != null) {
@@ -752,7 +752,7 @@ class YamlSyntaxHighlighter extends SyntaxHighlighter {
       _yamlPattern,
       onMatch: (m) {
         Color color = plain;
-        String text = m.group(0)!;
+        String text = m.group(0) ?? "";
 
         // Group 1: Comments
         if (m.group(1) != null) {
@@ -761,7 +761,7 @@ class YamlSyntaxHighlighter extends SyntaxHighlighter {
         // Group 2: Keys
         else if (m.group(2) != null) {
           color = keyword;
-          text = '${m.group(2)!}:';
+          text = '${m.group(2) ?? ""}:';
         }
         // Group 3: Quoted strings
         else if (m.group(3) != null) {

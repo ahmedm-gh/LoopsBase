@@ -1,6 +1,6 @@
 {
     "@@locale": "en",
-    "appTitle": "OOP Mastery",
+    "appTitle": "LoopsBase",
     "home": "Home",
     "designPatterns": "Design Patterns",
     "refactoring": "Refactoring",
@@ -180,5 +180,16 @@
   "viewDetails": "View Details",
   "keyCharacteristics": "Key Characteristics",
   "commonUseCases": "Common Use Cases",
-  "realWorldExamples": "Real World Examples"
+    "realWorldExamples": "Real World Examples",
+
+    "welcomeBack": "Welcome back",
+    "featured": "Featured",
+    "designPatternsSubtitle": "Master the blueprints of reusable object-oriented software.",
+    "programmingTermsSubtitle": "Glossary & definitions",
+    "interviewQuestionsSubtitle": "Prep for your job",
+    "refactoringSubtitle": "Clean code techniques",
+    "usefulPubPackagesSubtitle": "Essential libraries",
+    "comingSoon": "Coming Soon",
+    "extraTopics": "Extra Topics",
+    "explore": "Explore"
 }

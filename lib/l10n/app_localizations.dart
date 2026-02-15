@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'OOP Mastery'**
+  /// **'LoopsBase'**
   String get appTitle;
 
   /// No description provided for @home.
@@ -1147,6 +1147,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Real World Examples'**
   String get realWorldExamples;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back'**
+  String get welcomeBack;
+
+  /// No description provided for @featured.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured'**
+  String get featured;
+
+  /// No description provided for @designPatternsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Master the blueprints of reusable object-oriented software.'**
+  String get designPatternsSubtitle;
+
+  /// No description provided for @programmingTermsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Glossary & definitions'**
+  String get programmingTermsSubtitle;
+
+  /// No description provided for @interviewQuestionsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Prep for your job'**
+  String get interviewQuestionsSubtitle;
+
+  /// No description provided for @refactoringSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clean code techniques'**
+  String get refactoringSubtitle;
+
+  /// No description provided for @usefulPubPackagesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Essential libraries'**
+  String get usefulPubPackagesSubtitle;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming Soon'**
+  String get comingSoon;
+
+  /// No description provided for @extraTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra Topics'**
+  String get extraTopics;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
 }
 
 class _AppLocalizationsDelegate
