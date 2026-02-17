@@ -58,6 +58,9 @@ class ContentViewer extends StatelessWidget {
         l10n,
       ),
 
+      final SvgDiagramContent _ => const SizedBox.shrink(),
+      final DiagramContent _ => const SizedBox.shrink(),
+
       // final DiagramContent value => _buildDiagram(
       //   value,
       //   colors,
@@ -66,8 +69,6 @@ class ContentViewer extends StatelessWidget {
       // ),
 
       // final SvgDiagramContent value => SvgDiagramViewer(content: value),
-      final SvgDiagramContent _ => const SizedBox.shrink(),
-      final DiagramContent _ => const SizedBox.shrink(),
     };
   }
 

@@ -55,8 +55,8 @@ class AbstractFactoryDiagramData {
     this.productA2 = "المنتج أ2",
     this.productB1 = "المنتج ب1",
     this.productB2 = "المنتج ب2",
-    this.createProductA = "()createProductA",
-    this.createProductB = "()createProductB",
+    this.createProductA = "createProductA()",
+    this.createProductB = "createProductB()",
   });
 
   final String client;
@@ -90,10 +90,10 @@ class BuilderDiagramData {
     this.builder = "البناء",
     this.concreteBuilder = "البناء المحدد",
     this.product = "المنتج",
-    this.construct = "()construct",
-    this.buildPart1 = "()buildPart1",
-    this.buildPart2 = "()buildPart2",
-    this.getResult = "()getResult",
+    this.construct = "construct()",
+    this.buildPart1 = "buildPart1()",
+    this.buildPart2 = "buildPart2()",
+    this.getResult = "getResult()",
   });
 
   final String director;
@@ -120,7 +120,7 @@ class PrototypeDiagramData {
     this.prototype = "النموذج الأولي",
     this.concretePrototype1 = "النموذج المحدد 1",
     this.concretePrototype2 = "النموذج المحدد 2",
-    this.clone = "()clone",
+    this.clone = "clone()",
   });
 
   final String client;
@@ -142,9 +142,9 @@ class SingletonDiagramData {
   const SingletonDiagramData.ar({
     this.client = "العميل",
     this.singleton = "المفرد",
-    this.instance = "Singleton :instance -",
-    this.getInstance = "()Singleton getInstance: +",
-    this.constructor = "()Singleton -",
+    this.instance = "- instance: Singleton",
+    this.getInstance = "+ getInstance(): Singleton",
+    this.constructor = "- Singleton()",
   });
 
   final String client;
@@ -169,8 +169,8 @@ class ObjectPoolDiagramData {
     this.client = "العميل",
     this.pool = "التجمع",
     this.reusableObject = "قابل لإعادة الاستخدام",
-    this.acquire = "()acquire",
-    this.release = "()release",
+    this.acquire = "acquire()",
+    this.release = "release()",
     this.available = "متاح",
     this.inUse = "قيد الاستخدام",
   });
@@ -201,7 +201,7 @@ class LazyInitializationDiagramData {
     this.client = "العميل",
     this.lazyHolder = "الحامل الكسول",
     this.resource = "المورد",
-    this.getResource = "()getResource",
+    this.getResource = "getResource()",
     this.initialized = "مُهيأ؟",
     this.yes = "نعم",
     this.no = "لا",
@@ -234,11 +234,11 @@ class MultitonDiagramData {
   const MultitonDiagramData.ar({
     this.client = "العميل",
     this.multiton = "المتعدد",
-    this.instances = "Map :instances -",
-    this.getInstance = "(getInstance(key",
-    this.instance1 = "'key1' نسخة",
-    this.instance2 = "'key2' نسخة",
-    this.instance3 = "'key3' نسخة",
+    this.instances = "- instances: Map",
+    this.getInstance = "getInstance(key)",
+    this.instance1 = "Instance 'key1'",
+    this.instance2 = "Instance 'key2'",
+    this.instance3 = "Instance 'key3'",
   });
 
   final String client;
@@ -268,8 +268,8 @@ class FactoryKitDiagramData {
     this.client = "العميل",
     this.factoryKit = "مجموعة المصنع",
     this.product = "المنتج",
-    this.register = "(register(key, factory",
-    this.create = "(create(key",
+    this.register = "register(key, factory)",
+    this.create = "create(key)",
     this.registry = "السجل",
     this.factory1 = "مصنع 1",
     this.factory2 = "مصنع 2",
@@ -290,106 +290,87 @@ class FactoryKitDiagramData {
 }
 
 extension ColorToHex on Color {
-  /// Converts Color to CSS hex string (e.g., #FF0000)
-  /// Uses toARGB32() to replace deprecated .value
   String toCssString() {
-    // toARGB32() returns an int (AARRGGBB).
-    // We convert to Hex, pad to 8 chars, and substring(2) to strip Alpha (AA)
-    // leaving us with RRGGBB.
     return '#${toARGB32().toRadixString(16).padLeft(8, '0').substring(2)}';
   }
 }
 
 abstract class Diagrams {
   static String generateFactoryMethodSvg(String langCode, ColorScheme colors) {
-    // 1. Get the text content
     final data = const LocV(
       ar: FactoryMethodDiagramData.ar(),
       en: FactoryMethodDiagramData.en(),
     )(langCode);
 
     final bool isRtl = langCode == 'ar';
-
-    // 2. Extract Colors from the passed ColorScheme
     final String bgColor = colors.surface.toCssString();
     final String concreteColor = colors.surfaceContainerHighest.toCssString();
     final String lineColor = colors.onSurface.toCssString();
     final String concreteTextColor = colors.onSurfaceVariant.toCssString();
 
-    // 3. Define Styles
     final String boxStyle =
         'fill="$bgColor" stroke="$lineColor" stroke-width="2"';
     final String concreteBoxStyle =
         'fill="$concreteColor" stroke="$lineColor" stroke-width="2"';
-
-    // FIX: Added font-family="sans-serif".
-    // Without this, SVGs often default to a font that does not support Arabic glyphs.
-    // "sans-serif" triggers the system UI font fallback (like Arial, Roboto, or San Francisco)
-    // which includes Arabic support.
     final String titleStyle =
         'font-family="sans-serif" font-size="16" font-weight="bold" fill="$lineColor" text-anchor="middle"';
     final String methodStyle =
         'font-family="sans-serif" font-size="14" fill="$lineColor" text-anchor="middle"';
-
-    // Optional: Add interface specific style
     final String interfaceTagStyle =
-        'font-family="sans-serif" font-size="12" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="12" fill="$lineColor" text-anchor="middle" font-style="italic"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 690 290" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
     </marker>
+    <marker id="triangleArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
+    </marker>
   </defs>
 
-  <!-- ROW 1: ABSTRACT / CREATOR -->
+  <!-- ROW 1: Client, Creator, Product -->
+  <!-- Client -->
+  <rect x="20" y="20" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="65" $titleStyle>${data.client}</text>
 
-  <!-- Client Node -->
-  <g transform="translate(0, 20)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <!-- Creator (Abstract) -->
+  <rect x="240" y="20" width="220" height="80" $boxStyle rx="5" />
+  <text x="350" y="40" $interfaceTagStyle>&lt;&lt;Abstract&gt;&gt;</text>
+  <text x="350" y="65" $titleStyle>${data.creator}</text>
+  <line x1="240" y1="75" x2="460" y2="75" stroke="$lineColor" stroke-width="1" />
+  <text x="350" y="95" $methodStyle>${data.factoryMethod}</text>
 
-  <!-- Creator Node -->
-  <g transform="translate(220, 0)">
-    <rect $boxStyle width="200" height="100" rx="5" />
-    <text x="100" y="30" $titleStyle>${data.creator}</text>
-    <line x1="0" y1="45" x2="200" y2="45" stroke="$lineColor" stroke-width="1" />
-    <text x="100" y="75" $methodStyle>${data.factoryMethod}</text>
-  </g>
+  <!-- Product (Interface) -->
+  <rect x="540" y="20" width="160" height="80" $boxStyle rx="5" />
+  <text x="620" y="40" $interfaceTagStyle>&lt;&lt;Interface&gt;&gt;</text>
+  <text x="620" y="65" $titleStyle>${data.productInterface}</text>
 
-  <!-- Product Interface Node -->
-  <g transform="translate(500, 20)">
-    <rect $boxStyle width="180" height="60" rx="5" />
-    <text x="90" y="25" $interfaceTagStyle>&lt;&lt;Interface&gt;&gt;</text>
-    <text x="90" y="45" $titleStyle>${data.productInterface}</text>
-  </g>
+  <!-- ROW 2: Concrete Implementations -->
+  <!-- ConcreteCreator -->
+  <rect x="240" y="240" width="220" height="80" $concreteBoxStyle rx="5" />
+  <text x="350" y="285" $titleStyle fill="$concreteTextColor">${data.concreteCreator}</text>
 
-  <!-- ROW 2: CONCRETE IMPLEMENTATIONS -->
-
-  <!-- Concrete Creator -->
-  <g transform="translate(220, 220)">
-    <rect $concreteBoxStyle width="200" height="60" rx="5" />
-    <text x="100" y="35" $titleStyle fill="$concreteTextColor">${data.concreteCreator}</text>
-  </g>
-
-  <!-- Concrete Product -->
-  <g transform="translate(500, 220)">
-    <rect $concreteBoxStyle width="180" height="60" rx="5" />
-    <text x="90" y="35" $titleStyle fill="$concreteTextColor">${data.concreteProduct}</text>
-  </g>
+  <!-- ConcreteProduct -->
+  <rect x="540" y="240" width="160" height="80" $concreteBoxStyle rx="5" />
+  <text x="620" y="285" $titleStyle fill="$concreteTextColor">${data.concreteProduct}</text>
 
   <!-- CONNECTIONS -->
-  
-  <!-- Horizontal Solid Arrows -->
-  <path d="M 120 50 L 220 50" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-  <path d="M 420 50 L 500 50" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-  
-  <!-- Vertical Dashed Arrows -->
-  <path d="M 320 100 L 320 210" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 590 80 L 590 210" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <!-- Client to Creator (solid arrow) -->
+  <path d="M 160 60 L 240 60" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
 
+  <!-- Creator to Product (solid arrow) -->
+  <path d="M 460 60 L 540 60" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Creator to ConcreteCreator (dashed inheritance) -->
+  <path d="M 350 100 L 350 240" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- Product to ConcreteProduct (dashed inheritance) -->
+  <path d="M 620 100 L 620 240" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteCreator to ConcreteProduct (dashed creates) -->
+  <path d="M 460 280 L 540 280" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -416,12 +397,12 @@ abstract class Diagrams {
     final String titleStyle =
         'font-family="sans-serif" font-size="14" font-weight="bold" fill="$lineColor" text-anchor="middle"';
     final String methodStyle =
-        'font-family="sans-serif" font-size="12" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="11" fill="$lineColor" text-anchor="middle"';
     final String interfaceStyle =
-        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle" font-style="italic"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 420" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -429,83 +410,90 @@ abstract class Diagrams {
   </defs>
 
   <!-- Client -->
-  <g transform="translate(20, 90)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <rect x="20" y="100" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="145" $titleStyle>${data.client}</text>
 
   <!-- Abstract Factory -->
-  <g transform="translate(240, 40)">
-    <rect $boxStyle width="200" height="160" rx="5" />
-    <text x="100" y="25" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
-    <text x="100" y="45" $titleStyle>${data.abstractFactory}</text>
-    <line x1="0" y1="60" x2="200" y2="60" stroke="$lineColor" stroke-width="1" />
-    <text x="100" y="85" $methodStyle>${data.createProductA}</text>
-    <text x="100" y="105" $methodStyle>${data.createProductB}</text>
-  </g>
+  <rect x="240" y="40" width="240" height="120" $boxStyle rx="5" />
+  <text x="360" y="60" $interfaceStyle>&lt;&lt;Abstract&gt;&gt;</text>
+  <text x="360" y="85" $titleStyle>${data.abstractFactory}</text>
+  <line x1="240" y1="100" x2="480" y2="100" stroke="$lineColor" stroke-width="1" />
+  <text x="360" y="125" $methodStyle>${data.createProductA}</text>
+  <text x="360" y="145" $methodStyle>${data.createProductB}</text>
 
   <!-- Product A Interface -->
-  <g transform="translate(520, 10)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="20" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
-    <text x="60" y="40" $titleStyle>${data.productA}</text>
-  </g>
+  <rect x="620" y="20" width="140" height="80" $boxStyle rx="5" />
+  <text x="690" y="40" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
+  <text x="690" y="65" $titleStyle>${data.productA}</text>
 
   <!-- Product B Interface -->
-  <g transform="translate(520, 140)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="20" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
-    <text x="60" y="40" $titleStyle>${data.productB}</text>
-  </g>
+  <rect x="620" y="140" width="140" height="80" $boxStyle rx="5" />
+  <text x="690" y="160" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
+  <text x="690" y="185" $titleStyle>${data.productB}</text>
 
   <!-- Concrete Factory 1 -->
-  <g transform="translate(140, 280)">
-    <rect $concreteBoxStyle width="160" height="60" rx="5" />
-    <text x="80" y="35" $titleStyle fill="$concreteTextColor">${data.concreteFactory1}</text>
-  </g>
+  <rect x="140" y="280" width="200" height="80" $concreteBoxStyle rx="5" />
+  <text x="240" y="325" $titleStyle fill="$concreteTextColor">${data.concreteFactory1}</text>
 
   <!-- Concrete Factory 2 -->
-  <g transform="translate(340, 280)">
-    <rect $concreteBoxStyle width="160" height="60" rx="5" />
-    <text x="80" y="35" $titleStyle fill="$concreteTextColor">${data.concreteFactory2}</text>
-  </g>
+  <rect x="440" y="280" width="200" height="80" $concreteBoxStyle rx="5" />
+  <text x="540" y="325" $titleStyle fill="$concreteTextColor">${data.concreteFactory2}</text>
 
   <!-- Product A1 -->
-  <g transform="translate(540, 250)">
-    <rect $concreteBoxStyle width="100" height="50" rx="5" />
-    <text x="50" y="30" $titleStyle fill="$concreteTextColor">${data.productA1}</text>
-  </g>
+  <rect x="620" y="280" width="120" height="60" $concreteBoxStyle rx="5" />
+  <text x="680" y="315" $titleStyle fill="$concreteTextColor">${data.productA1}</text>
 
   <!-- Product A2 -->
-  <g transform="translate(660, 250)">
-    <rect $concreteBoxStyle width="100" height="50" rx="5" />
-    <text x="50" y="30" $titleStyle fill="$concreteTextColor">${data.productA2}</text>
-  </g>
+  <rect x="760" y="280" width="120" height="60" $concreteBoxStyle rx="5" />
+  <text x="820" y="315" $titleStyle fill="$concreteTextColor">${data.productA2}</text>
 
   <!-- Product B1 -->
-  <g transform="translate(540, 330)">
-    <rect $concreteBoxStyle width="100" height="50" rx="5" />
-    <text x="50" y="30" $titleStyle fill="$concreteTextColor">${data.productB1}</text>
-  </g>
+  <rect x="620" y="380" width="120" height="60" $concreteBoxStyle rx="5" />
+  <text x="680" y="415" $titleStyle fill="$concreteTextColor">${data.productB1}</text>
 
   <!-- Product B2 -->
-  <g transform="translate(660, 330)">
-    <rect $concreteBoxStyle width="100" height="50" rx="5" />
-    <text x="50" y="30" $titleStyle fill="$concreteTextColor">${data.productB2}</text>
-  </g>
+  <rect x="760" y="380" width="120" height="60" $concreteBoxStyle rx="5" />
+  <text x="820" y="415" $titleStyle fill="$concreteTextColor">${data.productB2}</text>
 
   <!-- Arrows -->
-  <path d="M 140 120 L 240 120" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 440 100 L 520 40" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 440 120 L 520 170" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  
-  <path d="M 220 200 L 220 280" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 420 200 L 420 280" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  
-  <path d="M 590 70 L 590 250" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 710 70 L 710 250" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 590 200 L 590 330" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 710 200 L 710 330" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <!-- Client to AbstractFactory -->
+  <path d="M 160 140 L 240 100" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- AbstractFactory to ProductA -->
+  <path d="M 480 70 L 620 60" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- AbstractFactory to ProductB -->
+  <path d="M 480 150 L 620 180" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteFactory1 to AbstractFactory (inheritance) -->
+  <path d="M 240 280 L 280 160" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteFactory2 to AbstractFactory (inheritance) -->
+  <path d="M 540 280 L 440 160" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteFactory1 creates ProductA1 -->
+  <path d="M 340 310 L 620 310" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteFactory1 creates ProductA2 -->
+  <path d="M 340 330 L 760 310" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteFactory2 creates ProductB1 -->
+  <path d="M 540 340 L 680 380" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteFactory2 creates ProductB2 -->
+  <path d="M 560 340 L 820 380" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+
+  <!-- ProductA1 implements ProductA -->
+  <path d="M 680 280 L 690 100" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- ProductA2 implements ProductA -->
+  <path d="M 820 280 L 800 100" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- ProductB1 implements ProductB -->
+  <path d="M 680 380 L 690 220" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- ProductB2 implements ProductB -->
+  <path d="M 820 380 L 800 220" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -529,12 +517,12 @@ abstract class Diagrams {
     final String titleStyle =
         'font-family="sans-serif" font-size="14" font-weight="bold" fill="$lineColor" text-anchor="middle"';
     final String methodStyle =
-        'font-family="sans-serif" font-size="12" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="11" fill="$lineColor" text-anchor="middle"';
     final String interfaceStyle =
-        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle" font-style="italic"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 320" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -542,40 +530,43 @@ abstract class Diagrams {
   </defs>
 
   <!-- Director -->
-  <g transform="translate(20, 60)">
-    <rect $boxStyle width="140" height="80" rx="5" />
-    <text x="70" y="30" $titleStyle>${data.director}</text>
-    <line x1="0" y1="45" x2="140" y2="45" stroke="$lineColor" stroke-width="1" />
-    <text x="70" y="65" $methodStyle>${data.construct}</text>
-  </g>
+  <rect x="20" y="80" width="160" height="100" $boxStyle rx="5" />
+  <text x="100" y="110" $titleStyle>${data.director}</text>
+  <line x1="20" y1="130" x2="180" y2="130" stroke="$lineColor" stroke-width="1" />
+  <text x="100" y="160" $methodStyle>${data.construct}</text>
 
   <!-- Builder Interface -->
-  <g transform="translate(240, 20)">
-    <rect $boxStyle width="160" height="160" rx="5" />
-    <text x="80" y="25" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
-    <text x="80" y="45" $titleStyle>${data.builder}</text>
-    <line x1="0" y1="60" x2="160" y2="60" stroke="$lineColor" stroke-width="1" />
-    <text x="80" y="85" $methodStyle>${data.buildPart1}</text>
-    <text x="80" y="105" $methodStyle>${data.buildPart2}</text>
-    <text x="80" y="125" $methodStyle>${data.getResult}</text>
-  </g>
+  <rect x="280" y="40" width="180" height="140" $boxStyle rx="5" />
+  <text x="370" y="60" $interfaceStyle>&lt;&lt;Abstract&gt;&gt;</text>
+  <text x="370" y="85" $titleStyle>${data.builder}</text>
+  <line x1="280" y1="100" x2="460" y2="100" stroke="$lineColor" stroke-width="1" />
+  <text x="370" y="125" $methodStyle>${data.buildPart1}</text>
+  <text x="370" y="150" $methodStyle>${data.buildPart2}</text>
+  <text x="370" y="175" $methodStyle>${data.getResult}</text>
 
   <!-- Product -->
-  <g transform="translate(480, 60)">
-    <rect $concreteBoxStyle width="120" height="80" rx="5" />
-    <text x="60" y="45" $titleStyle fill="$concreteTextColor">${data.product}</text>
-  </g>
+  <rect x="560" y="80" width="140" height="100" $concreteBoxStyle rx="5" />
+  <text x="630" y="135" $titleStyle fill="$concreteTextColor">${data.product}</text>
 
-  <!-- Concrete Builder -->
-  <g transform="translate(240, 240)">
-    <rect $concreteBoxStyle width="160" height="60" rx="5" />
-    <text x="80" y="35" $titleStyle fill="$concreteTextColor">${data.concreteBuilder}</text>
-  </g>
+  <!-- ConcreteBuilder -->
+  <rect x="280" y="260" width="180" height="80" $concreteBoxStyle rx="5" />
+  <text x="370" y="305" $titleStyle fill="$concreteTextColor">${data.concreteBuilder}</text>
 
   <!-- Arrows -->
-  <path d="M 160 100 L 240 100" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 400 100 L 480 100" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 320 180 L 320 240" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <!-- Director to Builder -->
+  <path d="M 180 130 L 280 110" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Builder to Product -->
+  <path d="M 460 110 L 560 130" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteBuilder implements Builder -->
+  <path d="M 370 260 L 370 180" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- Director uses ConcreteBuilder -->
+  <path d="M 100 180 Q 100 220 300 260" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+
+  <!-- ConcreteBuilder builds Product -->
+  <path d="M 460 290 L 560 160" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -599,12 +590,12 @@ abstract class Diagrams {
     final String titleStyle =
         'font-family="sans-serif" font-size="14" font-weight="bold" fill="$lineColor" text-anchor="middle"';
     final String methodStyle =
-        'font-family="sans-serif" font-size="12" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="11" fill="$lineColor" text-anchor="middle"';
     final String interfaceStyle =
-        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle" font-style="italic"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -612,40 +603,37 @@ abstract class Diagrams {
   </defs>
 
   <!-- Client -->
-  <g transform="translate(20, 50)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <rect x="20" y="70" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="115" $titleStyle>${data.client}</text>
 
   <!-- Prototype Interface -->
-  <g transform="translate(220, 30)">
-    <rect $boxStyle width="140" height="100" rx="5" />
-    <text x="70" y="25" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
-    <text x="70" y="45" $titleStyle>${data.prototype}</text>
-    <line x1="0" y1="60" x2="140" y2="60" stroke="$lineColor" stroke-width="1" />
-    <text x="70" y="85" $methodStyle>${data.clone}</text>
-  </g>
+  <rect x="260" y="30" width="160" height="120" $boxStyle rx="5" />
+  <text x="340" y="50" $interfaceStyle>&lt;&lt;Abstract&gt;&gt;</text>
+  <text x="340" y="75" $titleStyle>${data.prototype}</text>
+  <line x1="260" y1="90" x2="420" y2="90" stroke="$lineColor" stroke-width="1" />
+  <text x="340" y="120" $methodStyle>${data.clone}</text>
 
-  <!-- Concrete Prototype 1 -->
-  <g transform="translate(140, 200)">
-    <rect $concreteBoxStyle width="160" height="60" rx="5" />
-    <text x="80" y="35" $titleStyle fill="$concreteTextColor">${data.concretePrototype1}</text>
-  </g>
+  <!-- ConcretePrototype1 -->
+  <rect x="140" y="220" width="180" height="80" $concreteBoxStyle rx="5" />
+  <text x="230" y="265" $titleStyle fill="$concreteTextColor">${data.concretePrototype1}</text>
 
-  <!-- Concrete Prototype 2 -->
-  <g transform="translate(340, 200)">
-    <rect $concreteBoxStyle width="160" height="60" rx="5" />
-    <text x="80" y="35" $titleStyle fill="$concreteTextColor">${data.concretePrototype2}</text>
-  </g>
+  <!-- ConcretePrototype2 -->
+  <rect x="400" y="220" width="180" height="80" $concreteBoxStyle rx="5" />
+  <text x="490" y="265" $titleStyle fill="$concreteTextColor">${data.concretePrototype2}</text>
 
   <!-- Arrows -->
-  <path d="M 140 80 L 220 80" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 220 130 L 220 200" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 420 130 L 420 200" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  
-  <!-- Clone arrows (curved back) -->
-  <path d="M 160 200 Q 120 170 160 140" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
-  <path d="M 480 200 Q 520 170 480 140" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+  <!-- Client to Prototype -->
+  <path d="M 160 110 L 260 90" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ConcretePrototype1 implements Prototype -->
+  <path d="M 230 220 L 280 150" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- ConcretePrototype2 implements Prototype -->
+  <path d="M 490 220 L 420 150" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- Client creates instances -->
+  <path d="M 90 150 L 200 220" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+  <path d="M 110 150 L 440 220" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -659,16 +647,17 @@ abstract class Diagrams {
     final bool isRtl = langCode == 'ar';
     final String bgColor = colors.surface.toCssString();
     final String lineColor = colors.onSurface.toCssString();
+    final String textColor = colors.onSurface.toCssString();
 
     final String boxStyle =
         'fill="$bgColor" stroke="$lineColor" stroke-width="2"';
     final String titleStyle =
         'font-family="sans-serif" font-size="14" font-weight="bold" fill="$lineColor" text-anchor="middle"';
-    final String methodStyle =
-        'font-family="sans-serif" font-size="12" fill="$lineColor" text-anchor="start"';
+    final String memberStyle =
+        'font-family="sans-serif" font-size="12" fill="$textColor" text-anchor="start"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 240" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -676,27 +665,24 @@ abstract class Diagrams {
   </defs>
 
   <!-- Client -->
-  <g transform="translate(20, 60)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <rect x="20" y="80" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="125" $titleStyle>${data.client}</text>
 
   <!-- Singleton -->
-  <g transform="translate(240, 20)">
-    <rect $boxStyle width="220" height="160" rx="5" />
-    <text x="110" y="25" $titleStyle>${data.singleton}</text>
-    <line x1="0" y1="40" x2="220" y2="40" stroke="$lineColor" stroke-width="1" />
-    <text x="10" y="65" $methodStyle>${data.instance}</text>
-    <line x1="0" y1="80" x2="220" y2="80" stroke="$lineColor" stroke-width="1" />
-    <text x="10" y="105" $methodStyle>${data.constructor}</text>
-    <text x="10" y="130" $methodStyle>${data.getInstance}</text>
-  </g>
+  <rect x="260" y="20" width="240" height="200" $boxStyle rx="5" />
+  <text x="380" y="50" $titleStyle>${data.singleton}</text>
+  <line x1="260" y1="65" x2="500" y2="65" stroke="$lineColor" stroke-width="1" />
+  <text x="275" y="95" $memberStyle>${data.instance}</text>
+  <line x1="260" y1="110" x2="500" y2="110" stroke="$lineColor" stroke-width="1" />
+  <text x="275" y="140" $memberStyle>${data.constructor}</text>
+  <text x="275" y="165" $memberStyle>${data.getInstance}</text>
 
   <!-- Arrows -->
-  <path d="M 140 90 L 240 90" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  
-  <!-- Self-reference (instance) -->
-  <path d="M 460 60 Q 490 90 460 120" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <!-- Client uses Singleton -->
+  <path d="M 160 120 L 260 120" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Singleton self-reference -->
+  <path d="M 500 100 Q 530 120 500 140" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -725,7 +711,7 @@ abstract class Diagrams {
         'font-family="sans-serif" font-size="11" fill="$lineColor" text-anchor="middle"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 320" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 360" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -733,46 +719,45 @@ abstract class Diagrams {
   </defs>
 
   <!-- Client -->
-  <g transform="translate(20, 90)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <rect x="20" y="110" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="155" $titleStyle>${data.client}</text>
 
-  <!-- Pool -->
-  <g transform="translate(220, 50)">
-    <rect $boxStyle width="140" height="120" rx="5" />
-    <text x="70" y="30" $titleStyle>${data.pool}</text>
-    <line x1="0" y1="45" x2="140" y2="45" stroke="$lineColor" stroke-width="1" />
-    <text x="70" y="70" $methodStyle>${data.acquire}</text>
-    <text x="70" y="90" $methodStyle>${data.release}</text>
-  </g>
+  <!-- Pool Manager -->
+  <rect x="260" y="50" width="160" height="140" $boxStyle rx="5" />
+  <text x="340" y="75" $titleStyle>${data.pool}</text>
+  <line x1="260" y1="90" x2="420" y2="90" stroke="$lineColor" stroke-width="1" />
+  <text x="340" y="120" $methodStyle>${data.acquire}</text>
+  <text x="340" y="145" $methodStyle>${data.release}</text>
 
-  <!-- Reusable Objects Container -->
-  <g transform="translate(420, 30)">
-    <rect $concreteBoxStyle width="100" height="160" rx="5" />
-    <text x="50" y="20" $titleStyle fill="$concreteTextColor">${data.reusableObject}</text>
-    <line x1="0" y1="35" x2="100" y2="35" stroke="$lineColor" stroke-width="1" />
-    
-    <!-- Available section -->
-    <text x="50" y="55" $labelStyle fill="$concreteTextColor">${data.available}</text>
-    <circle cx="50" cy="75" r="8" $concreteBoxStyle />
-    <circle cx="30" cy="95" r="8" $concreteBoxStyle />
-    <circle cx="70" cy="95" r="8" $concreteBoxStyle />
-    
-    <line x1="10" y1="115" x2="90" y2="115" stroke="$lineColor" stroke-width="1" stroke-dasharray="3,3" />
-    
-    <!-- In Use section -->
-    <text x="50" y="135" $labelStyle fill="$concreteTextColor">${data.inUse}</text>
-    <circle cx="50" cy="155" r="8" fill="${colors.primary.toCssString()}" stroke="$lineColor" stroke-width="2" />
-  </g>
+  <!-- Available Objects -->
+  <rect x="480" y="20" width="120" height="80" $concreteBoxStyle rx="5" />
+  <text x="540" y="45" $titleStyle fill="$concreteTextColor">${data.available}</text>
+  <circle cx="510" cy="70" r="6" fill="$lineColor" />
+  <circle cx="540" cy="70" r="6" fill="$lineColor" />
+  <circle cx="570" cy="70" r="6" fill="$lineColor" />
+
+  <!-- In-Use Objects -->
+  <rect x="480" y="130" width="120" height="80" $concreteBoxStyle rx="5" />
+  <text x="540" y="155" $titleStyle fill="$concreteTextColor">${data.inUse}</text>
+  <circle cx="540" cy="185" r="6" fill="${colors.primary.toCssString()}" stroke="$lineColor" stroke-width="2" />
+
+  <!-- Reusable Type -->
+  <rect x="480" y="240" width="120" height="80" $concreteBoxStyle rx="5" />
+  <text x="540" y="285" $titleStyle fill="$concreteTextColor">${data.reusableObject}</text>
 
   <!-- Arrows -->
-  <path d="M 140 120 L 220 120" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 360 110 L 420 110" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  
-  <!-- Acquire/Release flow -->
-  <text x="270" y="30" $labelStyle>${data.acquire}</text>
-  <text x="270" y="200" $labelStyle>${data.release}</text>
+  <!-- Client to Pool -->
+  <path d="M 160 150 L 260 120" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Pool to Available -->
+  <path d="M 420 90 L 480 60" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="445" y="65" $labelStyle>${data.acquire}</text>
+
+  <!-- Pool to In-Use -->
+  <path d="M 420 150 L 480 170" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Pool to Reusable (implementation) -->
+  <path d="M 420 160 L 540 240" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -791,13 +776,14 @@ abstract class Diagrams {
     final String concreteColor = colors.surfaceContainerHighest.toCssString();
     final String lineColor = colors.onSurface.toCssString();
     final String concreteTextColor = colors.onSurfaceVariant.toCssString();
+    final String decisionColor = colors.primaryContainer.toCssString();
 
     final String boxStyle =
         'fill="$bgColor" stroke="$lineColor" stroke-width="2"';
     final String concreteBoxStyle =
         'fill="$concreteColor" stroke="$lineColor" stroke-width="2"';
     final String decisionStyle =
-        'fill="${colors.primaryContainer.toCssString()}" stroke="$lineColor" stroke-width="2"';
+        'fill="$decisionColor" stroke="$lineColor" stroke-width="2"';
     final String titleStyle =
         'font-family="sans-serif" font-size="14" font-weight="bold" fill="$lineColor" text-anchor="middle"';
     final String methodStyle =
@@ -806,7 +792,7 @@ abstract class Diagrams {
         'font-family="sans-serif" font-size="11" fill="$lineColor" text-anchor="middle"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 340" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -814,60 +800,48 @@ abstract class Diagrams {
   </defs>
 
   <!-- Client -->
-  <g transform="translate(20, 90)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <rect x="20" y="110" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="155" $titleStyle>${data.client}</text>
 
-  <!-- Lazy Holder -->
-  <g transform="translate(200, 70)">
-    <rect $boxStyle width="140" height="100" rx="5" />
-    <text x="70" y="30" $titleStyle>${data.lazyHolder}</text>
-    <line x1="0" y1="45" x2="140" y2="45" stroke="$lineColor" stroke-width="1" />
-    <text x="70" y="70" $methodStyle>${data.getResource}</text>
-  </g>
+  <!-- LazyHolder -->
+  <rect x="260" y="80" width="160" height="120" $boxStyle rx="5" />
+  <text x="340" y="110" $titleStyle>${data.lazyHolder}</text>
+  <line x1="260" y1="130" x2="420" y2="130" stroke="$lineColor" stroke-width="1" />
+  <text x="340" y="160" $methodStyle>${data.getResource}</text>
 
   <!-- Decision Diamond -->
-  <g transform="translate(270, 230)">
-    <path d="M 0 -30 L 35 0 L 0 30 L -35 0 Z" $decisionStyle />
-    <text x="0" y="5" $labelStyle>${data.initialized}</text>
-  </g>
+  <path d="M 460 200 L 510 240 L 460 280 L 410 240 Z" $decisionStyle />
+  <text x="460" y="245" $labelStyle>${data.initialized}</text>
 
-  <!-- Yes path - Return cached -->
-  <g transform="translate(420, 210)">
-    <rect $concreteBoxStyle width="140" height="60" rx="5" />
-    <text x="70" y="35" $methodStyle fill="$concreteTextColor">${data.returnCached}</text>
-  </g>
+  <!-- Create Branch -->
+  <rect x="280" y="300" width="120" height="60" $concreteBoxStyle rx="5" />
+  <text x="340" y="335" $methodStyle fill="$concreteTextColor">${data.create}</text>
 
-  <!-- No path - Create -->
-  <g transform="translate(180, 290)">
-    <rect $concreteBoxStyle width="100" height="40" rx="5" />
-    <text x="50" y="25" $methodStyle fill="$concreteTextColor">${data.create}</text>
-  </g>
+  <!-- Return Cached Branch -->
+  <rect x="520" y="300" width="140" height="60" $concreteBoxStyle rx="5" />
+  <text x="590" y="335" $methodStyle fill="$concreteTextColor">${data.returnCached}</text>
 
   <!-- Resource -->
-  <g transform="translate(430, 80)">
-    <rect $concreteBoxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle fill="$concreteTextColor">${data.resource}</text>
-  </g>
+  <rect x="520" y="60" width="140" height="80" $concreteBoxStyle rx="5" />
+  <text x="590" y="110" $titleStyle fill="$concreteTextColor">${data.resource}</text>
 
   <!-- Arrows -->
-  <path d="M 140 120 L 200 120" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 270 170 L 270 200" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  
-  <!-- Yes branch -->
-  <path d="M 305 230 L 420 240" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <text x="340" y="225" $labelStyle>${data.yes}</text>
-  
-  <!-- No branch -->
-  <path d="M 270 260 L 270 290 L 230 290" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <text x="250" y="285" $labelStyle>${data.no}</text>
-  
-  <!-- Create to cache -->
-  <path d="M 230 310 L 230 270 L 420 270" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  
-  <!-- Resource reference -->
-  <path d="M 340 120 L 430 120" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <!-- Client to LazyHolder -->
+  <path d="M 160 150 L 260 140" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- LazyHolder to Decision -->
+  <path d="M 420 140 L 410 240" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Decision No path to Create -->
+  <path d="M 410 260 L 340 300" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="370" y="280" $labelStyle>${data.no}</text>
+
+  <!-- Decision Yes path to Return Cached -->
+  <path d="M 510 260 L 590 300" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="530" y="280" $labelStyle>${data.yes}</text>
+
+  <!-- LazyHolder to Resource -->
+  <path d="M 420 110 L 520 100" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -890,13 +864,13 @@ abstract class Diagrams {
         'fill="$concreteColor" stroke="$lineColor" stroke-width="2"';
     final String titleStyle =
         'font-family="sans-serif" font-size="14" font-weight="bold" fill="$lineColor" text-anchor="middle"';
-    final String methodStyle =
+    final String memberStyle =
         'font-family="sans-serif" font-size="12" fill="$lineColor" text-anchor="start"';
     final String instanceStyle =
         'font-family="sans-serif" font-size="11" fill="$concreteTextColor" text-anchor="middle"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 280" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 320" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -904,40 +878,37 @@ abstract class Diagrams {
   </defs>
 
   <!-- Client -->
-  <g transform="translate(20, 70)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <rect x="20" y="90" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="135" $titleStyle>${data.client}</text>
 
   <!-- Multiton -->
-  <g transform="translate(200, 40)">
-    <rect $boxStyle width="180" height="120" rx="5" />
-    <text x="90" y="25" $titleStyle>${data.multiton}</text>
-    <line x1="0" y1="40" x2="180" y2="40" stroke="$lineColor" stroke-width="1" />
-    <text x="10" y="65" $methodStyle>${data.instances}</text>
-    <line x1="0" y1="80" x2="180" y2="80" stroke="$lineColor" stroke-width="1" />
-    <text x="10" y="105" $methodStyle>${data.getInstance}</text>
-  </g>
+  <rect x="260" y="40" width="220" height="160" $boxStyle rx="5" />
+  <text x="370" y="65" $titleStyle>${data.multiton}</text>
+  <line x1="260" y1="80" x2="480" y2="80" stroke="$lineColor" stroke-width="1" />
+  <text x="275" y="110" $memberStyle>${data.instances}</text>
+  <line x1="260" y1="125" x2="480" y2="125" stroke="$lineColor" stroke-width="1" />
+  <text x="275" y="155" $memberStyle>${data.getInstance}</text>
 
   <!-- Instance Registry -->
-  <g transform="translate(440, 20)">
-    <rect $concreteBoxStyle width="120" height="180" rx="5" />
-    <text x="60" y="25" $titleStyle fill="$concreteTextColor">Registry</text>
-    <line x1="0" y1="40" x2="120" y2="40" stroke="$lineColor" stroke-width="1" />
-    
-    <rect x="10" y="50" width="100" height="35" $concreteBoxStyle rx="3" />
-    <text x="60" y="70" $instanceStyle>${data.instance1}</text>
-    
-    <rect x="10" y="95" width="100" height="35" $concreteBoxStyle rx="3" />
-    <text x="60" y="115" $instanceStyle>${data.instance2}</text>
-    
-    <rect x="10" y="140" width="100" height="35" $concreteBoxStyle rx="3" />
-    <text x="60" y="160" $instanceStyle>${data.instance3}</text>
-  </g>
+  <rect x="540" y="20" width="120" height="220" $concreteBoxStyle rx="5" />
+  <text x="600" y="45" $titleStyle fill="$concreteTextColor">Registry</text>
+  <line x1="540" y1="60" x2="660" y2="60" stroke="$lineColor" stroke-width="1" />
+
+  <rect x="555" y="75" width="90" height="40" $concreteBoxStyle rx="3" />
+  <text x="600" y="100" $instanceStyle>${data.instance1}</text>
+
+  <rect x="555" y="130" width="90" height="40" $concreteBoxStyle rx="3" />
+  <text x="600" y="155" $instanceStyle>${data.instance2}</text>
+
+  <rect x="555" y="185" width="90" height="40" $concreteBoxStyle rx="3" />
+  <text x="600" y="210" $instanceStyle>${data.instance3}</text>
 
   <!-- Arrows -->
-  <path d="M 140 100 L 200 100" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 380 100 L 440 100" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <!-- Client to Multiton -->
+  <path d="M 160 130 L 260 120" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Multiton to Registry -->
+  <path d="M 480 130 L 540 130" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
@@ -953,13 +924,14 @@ abstract class Diagrams {
     final String concreteColor = colors.surfaceContainerHighest.toCssString();
     final String lineColor = colors.onSurface.toCssString();
     final String concreteTextColor = colors.onSurfaceVariant.toCssString();
+    final String registryColor = colors.primaryContainer.toCssString();
 
     final String boxStyle =
         'fill="$bgColor" stroke="$lineColor" stroke-width="2"';
     final String concreteBoxStyle =
         'fill="$concreteColor" stroke="$lineColor" stroke-width="2"';
     final String registryStyle =
-        'fill="${colors.primaryContainer.toCssString()}" stroke="$lineColor" stroke-width="2"';
+        'fill="$registryColor" stroke="$lineColor" stroke-width="2"';
     final String titleStyle =
         'font-family="sans-serif" font-size="14" font-weight="bold" fill="$lineColor" text-anchor="middle"';
     final String methodStyle =
@@ -967,10 +939,10 @@ abstract class Diagrams {
     final String labelStyle =
         'font-family="sans-serif" font-size="11" fill="$lineColor" text-anchor="middle"';
     final String interfaceStyle =
-        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle"';
+        'font-family="sans-serif" font-size="10" fill="$lineColor" text-anchor="middle" font-style="italic"';
 
     return '''
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" direction="${isRtl ? 'rtl' : 'ltr'}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" direction="${isRtl ? 'rtl' : 'ltr'}">
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="$lineColor" />
@@ -978,59 +950,55 @@ abstract class Diagrams {
   </defs>
 
   <!-- Client -->
-  <g transform="translate(20, 90)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="35" $titleStyle>${data.client}</text>
-  </g>
+  <rect x="20" y="110" width="140" height="80" $boxStyle rx="5" />
+  <text x="90" y="155" $titleStyle>${data.client}</text>
 
-  <!-- Factory Kit -->
-  <g transform="translate(200, 50)">
-    <rect $boxStyle width="180" height="140" rx="5" />
-    <text x="90" y="30" $titleStyle>${data.factoryKit}</text>
-    <line x1="0" y1="45" x2="180" y2="45" stroke="$lineColor" stroke-width="1" />
-    <text x="90" y="70" $methodStyle>${data.register}</text>
-    <text x="90" y="90" $methodStyle>${data.create}</text>
-  </g>
-
-  <!-- Registry -->
-  <g transform="translate(220, 250)">
-    <rect $registryStyle width="140" height="70" rx="5" />
-    <text x="70" y="25" $titleStyle>${data.registry}</text>
-    <text x="70" y="45" $labelStyle>${data.factory1}</text>
-    <text x="70" y="60" $labelStyle>${data.factory2}</text>
-  </g>
+  <!-- FactoryKit -->
+  <rect x="260" y="50" width="200" height="160" $boxStyle rx="5" />
+  <text x="360" y="80" $titleStyle>${data.factoryKit}</text>
+  <line x1="260" y1="100" x2="460" y2="100" stroke="$lineColor" stroke-width="1" />
+  <text x="360" y="130" $methodStyle>${data.register}</text>
+  <text x="360" y="160" $methodStyle>${data.create}</text>
 
   <!-- Product Interface -->
-  <g transform="translate(460, 80)">
-    <rect $boxStyle width="120" height="60" rx="5" />
-    <text x="60" y="20" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
-    <text x="60" y="40" $titleStyle>${data.product}</text>
-  </g>
+  <rect x="540" y="70" width="140" height="80" $boxStyle rx="5" />
+  <text x="610" y="90" $interfaceStyle>&lt;&lt;Interface&gt;&gt;</text>
+  <text x="610" y="115" $titleStyle>${data.product}</text>
 
-  <!-- Product 1 -->
-  <g transform="translate(440, 200)">
-    <rect $concreteBoxStyle width="80" height="50" rx="5" />
-    <text x="40" y="30" $titleStyle fill="$concreteTextColor">${data.product1}</text>
-  </g>
+  <!-- Registry -->
+  <rect x="280" y="280" width="160" height="100" $registryStyle rx="5" />
+  <text x="360" y="310" $titleStyle>${data.registry}</text>
+  <line x1="280" y1="330" x2="440" y2="330" stroke="$lineColor" stroke-width="1" />
+  <text x="360" y="355" $labelStyle>${data.factory1}</text>
+  <text x="360" y="375" $labelStyle>${data.factory2}</text>
 
-  <!-- Product 2 -->
-  <g transform="translate(560, 200)">
-    <rect $concreteBoxStyle width="80" height="50" rx="5" />
-    <text x="40" y="30" $titleStyle fill="$concreteTextColor">${data.product2}</text>
-  </g>
+  <!-- Product1 -->
+  <rect x="540" y="260" width="100" height="60" $concreteBoxStyle rx="5" />
+  <text x="590" y="295" $titleStyle fill="$concreteTextColor">${data.product1}</text>
+
+  <!-- Product2 -->
+  <rect x="680" y="260" width="100" height="60" $concreteBoxStyle rx="5" />
+  <text x="730" y="295" $titleStyle fill="$concreteTextColor">${data.product2}</text>
 
   <!-- Arrows -->
-  <path d="M 140 120 L 200 120" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  <path d="M 290 190 L 290 250" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 380 110 L 460 110" stroke="$lineColor" stroke-width="2" marker-end="url(#arrowhead)" />
-  
-  <!-- Registry to products -->
-  <path d="M 280 250 L 280 220 L 440 220" stroke="$lineColor" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
-  <path d="M 300 250 L 300 230 L 560 230" stroke="$lineColor" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
-  
-  <!-- Product implementations -->
-  <path d="M 480 140 L 480 200" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
-  <path d="M 600 140 L 600 200" stroke="$lineColor" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <!-- Client to FactoryKit -->
+  <path d="M 160 150 L 260 130" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- FactoryKit to Product Interface -->
+  <path d="M 460 110 L 540 110" stroke="$lineColor" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- FactoryKit to Registry -->
+  <path d="M 360 210 L 360 280" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- Product1 implements Product -->
+  <path d="M 590 260 L 610 150" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- Product2 implements Product -->
+  <path d="M 730 260 L 700 150" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+
+  <!-- Registry creates Products -->
+  <path d="M 400 320 L 540 290" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
+  <path d="M 440 320 L 680 290" stroke="$lineColor" stroke-width="2" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowhead)" />
 </svg>
 ''';
   }
