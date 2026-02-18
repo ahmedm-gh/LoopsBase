@@ -261,8 +261,7 @@ void main() async {
     PayPalAdapter(PayPalSDK()),
   );
   await paypalCheckout.checkout(149.99);
-}r''',
-        ),
+}'''),
 
         // Example 2: Intermediate - Data Format Adapter
         StrCodeBlock(r'''// Example 2: Intermediate - Adapting Data Formats
@@ -404,7 +403,7 @@ void main() {
   );
   modernService.displayProduct('67890');
   modernService.searchProducts('product');
-}r'''),
+}'''),
 
         // Example 3: Advanced - Multiple Interface Adaptation
         StrCodeBlock(r'''import 'dart:io';
@@ -610,7 +609,7 @@ void main() async {
   } catch (e) {
     print('Caught error (as expected)');
   }
-}r'''),
+}'''),
 
         // Example 4: Flutter - Platform Adapter
         StrCodeBlock(
@@ -1174,8 +1173,7 @@ void main() {
   rect3.draw();
   
   print('\n✓ Shapes and renderers vary independently!');
-}r''',
-        ),
+}'''),
 
         // Example 2: Intermediate - Cross-Platform UI
         StrCodeBlock(
@@ -1640,8 +1638,7 @@ void main() async {
   await sqliteRepo.disconnect();
   
   print('\n✓ Same repository code works with all database drivers!');
-}r''',
-        ),
+}'''),
 
         // Example 4: Flutter - Theme System
         StrCodeBlock(
@@ -2286,7 +2283,7 @@ void main() {
   explorer.searchFiles(root, 'readme');
   
   print('\nTotal files in root: ${root.getFileCount()}');
-}r'''),
+}'''),
 
         // Example 2: Intermediate - UI Component Tree
         StrCodeBlock(r'''// Example 2: Intermediate - UI Component Hierarchy
@@ -2545,10 +2542,11 @@ void main() {
   loginForm.enable();
   
   print('\nTotal components in form: ${loginForm.componentCount}');
-}r'''),
+}'''),
 
         // Example 3: Advanced - Mathematical Expression Tree
-        StrCodeBlock(r'''// Example 3: Advanced - Mathematical Expression Evaluator
+        StrCodeBlock(
+          r'''// Example 3: Advanced - Mathematical Expression Evaluator
 // Use case: Building and evaluating complex mathematical expressions
 
 // Component: Expression element
@@ -2823,7 +2821,7 @@ void main() {
 }
 
 // Import for math functions
-import 'dart:math';r''',
+import 'dart:math';''',
         ),
 
         // Example 4: Flutter - Nested Menu System
@@ -3085,7 +3083,7 @@ void main() {
   runApp(MaterialApp(
     home: MenuDemo(),
   ));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions would go here
@@ -3293,7 +3291,7 @@ void main() {
     ),
     // ... continues with examples
     // TODO: Add examples
-    examples: LocV(en: [StrCodeBlock(r'''// MISSING EXAMPLESr''')], ar: []),
+    examples: LocV(en: [StrCodeBlock(r'''// MISSING EXAMPLES''')], ar: []),
     pros: LocSL(
       en: [
         "More flexible than static inheritance - add behavior at runtime",
@@ -3629,7 +3627,7 @@ void main() {
   print('=== Direct subsystem access ===');
   projector.on();
   projector.setInput('HDMI-2');
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Database Facade
         StrCodeBlock(r'''import 'dart:async';
@@ -3936,7 +3934,7 @@ void main() async {
   
   print('');
   db.shutdown();
-}r'''),
+}'''),
 
         // Example 3: Advanced - Payment Processing Facade
         StrCodeBlock(r'''// Example 3: Advanced - Multi-Provider Payment System
@@ -4299,7 +4297,7 @@ void main() async {
   );
   
   payment.generateReport();
-}r'''),
+}'''),
 
         // Example 4: Flutter - Camera Facade
         StrCodeBlock(r'''import 'package:flutter/material.dart';
@@ -4582,7 +4580,7 @@ void main() {
   runApp(MaterialApp(
     home: CameraDemo(),
   ));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions would go here
@@ -4948,10 +4946,11 @@ void main() {
   
   doc.render();
   doc.printMemoryStats();
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Game Particle System
-        StrCodeBlock(r'''// Example 2: Intermediate - Particle System with Flyweight
+        StrCodeBlock(
+          r'''// Example 2: Intermediate - Particle System with Flyweight
 // Use case: Rendering thousands of particles efficiently
 
 import 'dart:math';
@@ -5152,7 +5151,7 @@ void main() {
   print('Without Flyweight: 270 particles × ~1KB = 270KB');
   print('With Flyweight: 4 types × 1KB + 270 particles × 64 bytes = ~21KB');
   print('Memory saved: ~92%!');
-}r''',
+}''',
         ),
 
         // Example 3: Advanced - Forest Rendering
@@ -5396,7 +5395,7 @@ void main() {
   print('  - Memory reduction: 99.93%!');
 }
 
-import 'dart:math';r'''),
+import 'dart:math';'''),
 
         // Example 4: Flutter - Icon System
         StrCodeBlock(r'''import 'package:flutter/material.dart';
@@ -5637,7 +5636,7 @@ void main() {
   runApp(MaterialApp(
     home: IconFlyweightDemo(),
   ));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions would go here
@@ -5985,7 +5984,7 @@ void main() {
   gallery.showStatus();
   
   print('\n✓ Images 1, 3, 5 were never loaded - saving memory and time!');
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Protection Proxy
         StrCodeBlock(r'''import 'dart:io';
@@ -6172,8 +6171,7 @@ void main() {
     ProtectedFileSystem(realFileSystem, User('Dave', UserRole.superAdmin)),
     'Super Admin Access',
   );
-}r''',
-        ),
+}'''),
 
         // Example 3: Advanced - Caching + Logging Proxy
         StrCodeBlock(r'''// Example 3: Advanced - Caching and Logging Proxy
@@ -6474,7 +6472,7 @@ void main() async {
   print('\nDirect API calls made: ${realService.callCount}');
   print('Total requests made: 7');
   print('API calls saved by cache: ${7 - realService.callCount}');
-}r'''),
+}'''),
 
         // Example 4: Flutter - Network Request Proxy
         StrCodeBlock(r'''import 'package:flutter/material.dart';
@@ -6803,7 +6801,7 @@ void main() {
   runApp(MaterialApp(
     home: ApiProxyDemo(),
   ));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions would go here
@@ -7154,7 +7152,7 @@ void main() {
   );
   combined.fetchData('flutter'); // Auth check → cache miss → fetch
   combined.fetchData('flutter'); // Auth check → cache hit
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Progressive Enhancement
         StrCodeBlock(r'''import 'package:flutter/material.dart';
@@ -7320,8 +7318,7 @@ void main() async {
   print('Log entries: ${logged.requestLog.length}');
   print('Cache size: ${cached.cacheSize}');
   print('Total HTTP attempts: ${retried.totalAttempts}');
-}r''',
-        ),
+}'''),
 
         // Example 3: Advanced - Flutter Widget Wrapper
         StrCodeBlock(r'''// Example 3: Advanced - Flutter Widget Wrappers
@@ -7591,7 +7588,7 @@ class _WrapperDemoState extends State<WrapperDemo> {
 
 void main() {
   runApp(MaterialApp(home: WrapperDemo()));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions would go here
@@ -7957,7 +7954,7 @@ void main() {
   for (final u in users) {
     print(u);
   }
-}r'''),
+}'''),
 
         // Example 2: Intermediate - SQLite Database Mapper
         StrCodeBlock(r'''// Example 2: Intermediate - SQLite Database Mapper
@@ -8207,7 +8204,7 @@ void main() async {
     print('  - ${p.name} (${p.price}) stock: ${p.stockQuantity}');
     if (p.isLowStock) print('    ⚠️ Low stock!');
   }
-}r'''),
+}'''),
 
         // Example 3: Advanced - Multi-Source Mapper with Identity Map
         StrCodeBlock(r'''import 'dart:convert';
@@ -8478,8 +8475,7 @@ void main() {
   print('=== Same Customer Object? ===');
   // Both orders share exact same Customer instance
   print('Same instance: ${identical(orders[0].customer, orders[1].customer)}');
-}r''',
-        ),
+}'''),
 
         // Example 4: Flutter - API to Domain Model Mapper
         StrCodeBlock(
@@ -9232,7 +9228,7 @@ void main() async {
   final updateRequest = UpdateProfileRequest(bio: 'Flutter developer');
   print('Has changes: ${updateRequest.hasChanges}');
   print('Payload: ${updateRequest.toJson()}');
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Layer DTOs
         StrCodeBlock(
@@ -9511,7 +9507,8 @@ void main() {
         ),
 
         // Example 3: Advanced - Isolate-safe DTOs
-        StrCodeBlock(r'''// Example 3: Advanced - Isolate-Safe DTOs for Heavy Computation
+        StrCodeBlock(
+          r'''// Example 3: Advanced - Isolate-Safe DTOs for Heavy Computation
 // Use case: Passing data safely between Flutter isolates
 
 import 'dart:isolate';
@@ -9748,7 +9745,7 @@ void main() async {
   } else {
     print('Processing failed: ${result.errorMessage}');
   }
-}r''',
+}''',
         ),
 
         // Example 4: Flutter - Form DTO with State Management
@@ -10038,7 +10035,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
 void main() {
   runApp(const MaterialApp(home: RegistrationScreen()));
-}r'''),
+}'''),
       ],
       ar: [],
     ),
@@ -10454,7 +10451,7 @@ void main() {
 
   // Cleanup
   enhancedWidget.dispose();
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Node Extension System
         StrCodeBlock(
@@ -11016,8 +11013,7 @@ void main() {
   service.printProductCapabilities(usb);
   final usbPrice = service.getPriceForUser(usb, 'user_alice');
   print('USB price: \$${usbPrice.toStringAsFixed(2)}');
-}r''',
-        ),
+}'''),
 
         // Example 4: Flutter - Widget Extension System
         StrCodeBlock(r'''// Example 4: Flutter - Widget Extension Capabilities
@@ -11303,7 +11299,7 @@ class ExtensionDemo extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(home: ExtensionDemo()));
-}r'''),
+}'''),
       ],
       ar: [],
     ),
@@ -11772,7 +11768,7 @@ void main() async {
   await settings.save('sync_enabled', 'true');
   print('sync: ${await settings.load("sync_enabled")}');
   print('keys: ${await registry.active.listKeys()}');
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Authentication Plugin System
         StrCodeBlock(
@@ -12382,7 +12378,7 @@ void main() async {
   await analytics.track('some_event'); // Only Firebase receives it
 
   print('All app code used the same analytics.track() API!');
-}r'''),
+}'''),
 
         // Example 4: Flutter - Payment Plugin System
         StrCodeBlock(r'''// Example 4: Flutter - Payment Provider Plugin System
@@ -12751,7 +12747,7 @@ class ShopDemo extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(home: ShopDemo()));
-}r'''),
+}'''),
       ],
       ar: [],
     ),

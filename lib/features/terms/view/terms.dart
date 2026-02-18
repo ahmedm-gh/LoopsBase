@@ -117,9 +117,6 @@ class _TermsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final lang = l10n.language;
-    final mediaQuery = context.mediaQuery;
-    final crossAxisCount = (mediaQuery.size.width / 280).floor();
 
     return BlocSelector<TermsCubit, TermsState, bool>(
       selector: (state) => state.terms.isEmpty,

@@ -7,3 +7,10 @@ add "Why design patterns?"
 - Improve code readability, maintainability, scalability, testability, reusability, flexibility, extensibility, performance, security, reliability, efficiency, simplicity and 
 - Communication between developers, using a common vocabulary
 - Leverage the power of Object-Oriented Programming (OOP)
+
+
+next time
+- DO NOT ADD \n in the first char in the print or log like that `print('\n...)`, instead make it like that `print('...')`
+- only use DART SHORTHANDS when available, dot shorthands not working with `Duration`s.
+- Use raw multi-line string (r```...```) instead of normal one (```...```) so you don't have to add slashes for special chars. also note! it has only one `r`, so instead of `r'''...r''' just use `r'''...'''`.
+- make sure to include the needed imports

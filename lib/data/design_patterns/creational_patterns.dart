@@ -152,7 +152,7 @@ void main() {
   }
   
   factory.showDialog(); // Creates appropriate dialog
-}r'''),
+}'''),
 
         // Example 2: Intermediate - HTTP Client Factory
         StrCodeBlock(r'''// Example 2: Intermediate - Network Client Factory
@@ -239,7 +239,7 @@ class Response {
 class User {
   User(this.name);
   final String name;
-}r'''),
+}'''),
 
         // Example 3: Advanced - Document Parser Factory
         StrCodeBlock(r'''import 'package:flutter/material.dart';
@@ -362,7 +362,7 @@ void main() {
   
   // Parser reused from cache on second call
   print(processor.processDocument('another.json', '{}'));
-}r'''),
+}'''),
 
         // Example 4: Flutter Widget Factory
         StrCodeBlock(r'''// Example 4: Flutter - Theme-Aware Button Factory
@@ -521,7 +521,7 @@ class ThemedApp extends StatelessWidget {
       ),
     );
   }
-}r'''),
+}'''),
       ],
       ar: [
         // Same examples with Arabic comments
@@ -585,7 +585,7 @@ void main() {
   }
   
   factory.showDialog(); // ينشئ مربع الحوار المناسب
-}r'''),
+}'''),
 
         StrCodeBlock(r'''// مثال 2: متوسط - مصنع عميل HTTP
 import 'dart:async';
@@ -671,7 +671,7 @@ class Response {
 class User {
   User(this.name);
   final String name;
-}r'''),
+}'''),
 
         StrCodeBlock(r'''import 'dart:convert';
 
@@ -792,7 +792,7 @@ void main() {
   
   // المحلل يُعاد استخدامه من الذاكرة المؤقتة في الاستدعاء الثاني
   print(processor.processDocument('another.json', '{}'));
-}r'''),
+}'''),
 
         StrCodeBlock(r'''// مثال 4: Flutter - مصنع أزرار واعٍ بالثيم
 import 'dart:io';
@@ -950,7 +950,7 @@ class ThemedApp extends StatelessWidget {
       ),
     );
   }
-}r'''),
+}'''),
       ],
     ),
     pros: LocSL(
@@ -1302,7 +1302,7 @@ void main() {
   runApp(MaterialApp(
     home: LoginScreen(factory),
   ));
-}r'''),
+}'''),
 
         // Example 2: Data Layer Factory
         StrCodeBlock(r'''// Example 2: Intermediate - Data Layer Factory
@@ -1500,7 +1500,7 @@ class User {
       User(json['id'], json['name']);
   
   Map<String, dynamic> toJson() => {'id': id, 'name': name};
-}r'''),
+}'''),
 
         // Example 3: Advanced - Game Entity Factory
         StrCodeBlock(r'''import 'dart:math';
@@ -1801,8 +1801,7 @@ class Particle {
   final Vector2 position;
   bool isDead = false;
   void update(double dt) {}
-}r''',
-        ),
+}'''),
       ],
       ar: [
         // Arabic versions with same structure but Arabic comments
@@ -1971,7 +1970,7 @@ void main() {
   runApp(MaterialApp(
     home: LoginScreen(factory),
   ));
-}r'''),
+}'''),
         // Add other Arabic examples similarly...
       ],
     ),
@@ -2283,7 +2282,7 @@ void main() {
   //   body: {'name': 'John', 'email': 'john@example.com'},
   //   timeout: Duration(seconds: 60),
   // );
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Widget Builder
         StrCodeBlock(r'''// Example 2: Intermediate - Complex Widget Builder
@@ -2509,10 +2508,11 @@ class CardDemo extends StatelessWidget {
       ],
     );
   }
-}r'''),
+}'''),
 
         // Example 3: Advanced - Query Builder with Validation
-        StrCodeBlock(r'''// Example 3: Advanced - SQL Query Builder with Validation
+        StrCodeBlock(
+          r'''// Example 3: Advanced - SQL Query Builder with Validation
 // Use case: Building complex database queries with type safety
 
 class QueryResult {
@@ -2748,7 +2748,7 @@ void main() {
   print('Cheap products:\n$cheapProducts');
   print('---');
   print('Expensive products:\n$expensiveProducts');
-}r''',
+}''',
         ),
 
         // Example 4: Test Data Builder
@@ -2954,7 +2954,7 @@ void main() {
       .inactive
       .build();
   print('Inactive: ${inactiveUser.name} (active: ${inactiveUser.isActive})');
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions
@@ -3079,7 +3079,7 @@ void main() {
   //   body: {'name': 'John', 'email': 'john@example.com'},
   //   timeout: Duration(seconds: 60),
   // );
-}r'''),
+}'''),
         // Add other Arabic examples following same pattern...
       ],
     ),
@@ -3447,7 +3447,7 @@ void main() {
   editor.duplicateShape(1); // Duplicate rectangle
   
   editor.drawAll();
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Game Entity System
         StrCodeBlock(r'''import 'dart:math';
@@ -3619,8 +3619,7 @@ void main() {
     abilities: ['Quick Attack', 'Dodge', 'Summon Minions', 'Poison'],
   );
   print('Created boss: $bossGoblin');
-}r''',
-        ),
+}'''),
 
         // Example 3: Advanced - Document Template System
         StrCodeBlock(
@@ -4060,7 +4059,7 @@ class _SettingsView extends StatelessWidget {
       ),
     );
   }
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions
@@ -4227,7 +4226,7 @@ void main() {
   editor.duplicateShape(1); // تكرار المستطيل
   
   editor.drawAll();
-}r'''),
+}'''),
         // Add remaining Arabic examples...
       ],
     ),
@@ -4565,7 +4564,7 @@ void main() {
   final modern1 = ConfigManagerModern.instance;
   final modern2 = ConfigManagerModern();
   print('Are they the same? ${identical(modern1, modern2)}');
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Logger Singleton
         StrCodeBlock(
@@ -4909,8 +4908,7 @@ void main() async {
   print('${ConnectionPool.instance.getStats()}');
   
   ConnectionPool.instance.shutdown();
-}r''',
-        ),
+}'''),
 
         // Example 4: Flutter - Analytics Service
         StrCodeBlock(r'''// Example 4: Flutter - Analytics Service Singleton
@@ -5157,7 +5155,7 @@ void main() {
   runApp(MaterialApp(
     home: HomeScreen(),
   ));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions
@@ -5264,7 +5262,7 @@ void main() {
   final modern1 = ConfigManagerModern.instance;
   final modern2 = ConfigManagerModern();
   print('هل هما نفس الشيء؟ ${identical(modern1, modern2)}');
-}r'''),
+}'''),
         // Add remaining Arabic examples following same pattern...
       ],
     ),
@@ -5655,7 +5653,7 @@ void main() {
   pool.release(buf3);
   
   pool.printStats();
-}r'''),
+}'''),
 
         // Example 2: Intermediate - HTTP Connection Pool
         StrCodeBlock(r'''import 'dart:async';
@@ -5865,7 +5863,7 @@ void main() async {
   print('Pool stats: ${stats.inUse} in use, ${stats.available} available');
   
   pool.shutdown();
-}r'''),
+}'''),
 
         // Example 3: Advanced - Particle System Pool
         StrCodeBlock(
@@ -6369,7 +6367,7 @@ void main() {
   runApp(MaterialApp(
     home: PooledListView(),
   ));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions
@@ -6529,7 +6527,7 @@ void main() {
   pool.release(buf3);
   
   pool.printStats();
-}r'''),
+}'''),
         // Add remaining Arabic examples...
       ],
     ),
@@ -6802,7 +6800,8 @@ void main() {
     examples: LocV(
       en: [
         // Example 1: Basic - Lazy with late keyword
-        StrCodeBlock(r'''// Example 1: Basic - Dart's late keyword for Lazy Initialization
+        StrCodeBlock(
+          r'''// Example 1: Basic - Dart's late keyword for Lazy Initialization
 // Use case: Expensive resources that may not be used
 
 class ExpensiveResource {
@@ -6857,7 +6856,7 @@ void main() {
   print('=== Startup Time Comparison ===');
   print('Eager: Slow startup (resource created immediately)');
   print('Lazy: Fast startup (resource created when needed)');
-}r''',
+}''',
         ),
 
         // Example 2: Intermediate - Manual Lazy Implementation
@@ -7178,7 +7177,7 @@ void main() {
   print('Simple app: Fast startup (only loaded API config)');
   print('Complex app: Slower (loaded everything as needed)');
   print('But: Simple app would be slower with eager loading!');
-}r'''),
+}'''),
 
         // Example 4: Flutter - Lazy Widget Loading
         StrCodeBlock(
@@ -7395,7 +7394,8 @@ void main() {
       ],
       ar: [
         // Arabic versions
-        StrCodeBlock(r'''// مثال 1: أساسي - الكلمة المفتاحية late للتهيئة الكسولة في Dart
+        StrCodeBlock(
+          r'''// مثال 1: أساسي - الكلمة المفتاحية late للتهيئة الكسولة في Dart
 // حالة الاستخدام: موارد مكلفة قد لا يتم استخدامها
 
 class ExpensiveResource {
@@ -7450,7 +7450,7 @@ void main() {
   print('=== مقارنة وقت البدء ===');
   print('الحريص: بدء بطيء (المورد يُنشأ فوراً)');
   print('الكسول: بدء سريع (المورد يُنشأ عند الحاجة)');
-}r''',
+}''',
         ),
         // Add remaining Arabic examples...
       ],
@@ -7782,7 +7782,7 @@ void main() {
   
   print('\nClosing all connections...');
   DatabaseConnection.closeAll();
-}r'''),
+}'''),
 
         // Example 2: Intermediate - Logger Multiton
         StrCodeBlock(r'''import 'dart:async';
@@ -7941,7 +7941,7 @@ void main() async {
   print('');
   auth.login('jane_doe'); // Should not log (below ERROR level)
   Logger.auth.error('Critical auth error'); // Should log
-}r'''),
+}'''),
 
         // Example 3: Advanced - Configuration Manager
         StrCodeBlock(
@@ -8329,7 +8329,7 @@ void main() {
   
   // Run Flutter app
   runApp(ThemedApp());
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions
@@ -8414,7 +8414,7 @@ void main() {
   
   print('\nإغلاق جميع الاتصالات...');
   DatabaseConnection.closeAll();
-}r'''),
+}'''),
         // Add remaining Arabic examples...
       ],
     ),
@@ -8824,8 +8824,7 @@ void main() {
   
   // Try to create unregistered type
   final zombie = enemyKit.create('zombie');
-}r''',
-        ),
+}'''),
 
         // Example 2: Intermediate - Widget Factory Kit
         StrCodeBlock(
@@ -9419,7 +9418,7 @@ void main() {
   for (final obj in allObjects) {
     print('  - $obj (${obj.runtimeType})');
   }
-}r'''),
+}'''),
 
         // Example 4: Game Plugin System
         StrCodeBlock(r'''// Example 4: Flutter Game - Extensible Power-Up System
@@ -9748,7 +9747,7 @@ void main() {
   runApp(MaterialApp(
     home: PowerUpDemo(powerUpKit: powerUpKit),
   ));
-}r'''),
+}'''),
       ],
       ar: [
         // Arabic versions
@@ -9907,7 +9906,7 @@ void main() {
   
   // محاولة إنشاء نوع غير مُسجل
   final zombie = enemyKit.create('zombie');
-}r'''),
+}'''),
         // Add remaining Arabic examples...
       ],
     ),
