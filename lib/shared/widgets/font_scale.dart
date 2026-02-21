@@ -22,22 +22,12 @@ Future<double?> showFontScaler(
     showDragHandle: true,
     useSafeArea: true,
     builder: (context) {
-      return DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.40,
-        maxChildSize: 0.75,
-        minChildSize: 0.3,
-        snap: true,
-        builder: (context, scrollController) {
-          return FontScaler(
-            scrollController: scrollController,
-            onChanged: onChanged,
-            onSubmit: onSubmit,
-            showTitleSample: showTitleSample,
-            showSubtitleSample: showSubtitleSample,
-            showNormalSample: showNormalSample,
-          );
-        },
+      return FontScaler(
+        onChanged: onChanged,
+        onSubmit: onSubmit,
+        showTitleSample: showTitleSample,
+        showSubtitleSample: showSubtitleSample,
+        showNormalSample: showNormalSample,
       );
     },
   );
@@ -45,7 +35,6 @@ Future<double?> showFontScaler(
 
 class FontScaler extends StatefulWidget {
   const FontScaler({
-    this.scrollController,
     this.onChanged,
     this.onSubmit,
     this.showTitleSample = true,
@@ -54,10 +43,11 @@ class FontScaler extends StatefulWidget {
     super.key,
   });
 
-  final ScrollController? scrollController;
   final ValueChanged<double>? onChanged, onSubmit;
   final bool showTitleSample, showSubtitleSample, showNormalSample;
-  static bool isOpen = false;
+
+  static bool _isOpen = false;
+  static bool get isOpen => _isOpen;
 
   @override
   State<FontScaler> createState() => _FontScalerState();
@@ -69,7 +59,7 @@ class _FontScalerState extends State<FontScaler> {
   @override
   void initState() {
     super.initState();
-    FontScaler.isOpen = true;
+    FontScaler._isOpen = true;
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
@@ -86,46 +76,72 @@ class _FontScalerState extends State<FontScaler> {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    return SingleChildScrollView(
-      controller: widget.scrollController,
-      padding: DL.pagePadding,
-      child: PopScope(
-        onPopInvokedWithResult: (_, _) {
-          FontScaler.isOpen = false;
-        },
-        child: SafeArea(
-          top: false,
+    return PopScope(
+      onPopInvokedWithResult: (_, _) {
+        FontScaler._isOpen = false;
+      },
+      child: SafeArea(
+        top: false,
+        child: Padding(
+          padding: DL.listHorizontalBottomPadding,
+
           child: Column(
             mainAxisSize: .min,
-            crossAxisAlignment: .start,
+            crossAxisAlignment: .stretch,
             spacing: 10,
             children: [
-              if (widget.showTitleSample)
-                Text(
-                  l10n.headingFontSize,
-                  textScaler: TextScaler.linear(value),
-                  style: Theme.of(context).textTheme.titleLarge,
+              DefaultTextStyle.merge(
+                textHeightBehavior: const TextHeightBehavior(
+                  applyHeightToFirstAscent: false,
+                  applyHeightToLastDescent: false,
                 ),
-              if (widget.showSubtitleSample)
-                Text(
-                  l10n.subheadingFontSize,
-                  textScaler: TextScaler.linear(value),
-                  style: Theme.of(context).textTheme.titleMedium,
+                maxLines: 1,
+                overflow: .ellipsis,
+                child: Column(
+                  mainAxisSize: .min,
+                  crossAxisAlignment: .stretch,
+                  spacing: 5,
+                  children: [
+                    if (widget.showTitleSample)
+                      Text(
+                        l10n.headingFontSize,
+                        textScaler: TextScaler.linear(value),
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    if (widget.showSubtitleSample)
+                      Text(
+                        l10n.subheadingFontSize,
+                        textScaler: TextScaler.linear(value),
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    if (widget.showNormalSample)
+                      Text(
+                        l10n.normalFontSize,
+                        textScaler: TextScaler.linear(value),
+                      ),
+                  ],
                 ),
-              if (widget.showNormalSample)
-                Text(l10n.normalFontSize, textScaler: TextScaler.linear(value)),
+              ),
               const LiteDivider(),
               Row(
                 spacing: 2.5,
+                mainAxisAlignment: .end,
                 children: [
                   IconButton(
                     onPressed: setToDefault,
                     tooltip: l10n.theDefault,
+                    style: const ButtonStyle(tapTargetSize: .shrinkWrap),
                     icon: const Icon(Icons.settings_backup_restore_rounded),
                   ),
                   Expanded(
-                    child: Padding(
-                      padding: const .all(10),
+                    child: SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                        trackHeight: 4,
+                        overlayShape: .noOverlay,
+                        thumbShape: const RoundSliderThumbShape(
+                          enabledThumbRadius: 8,
+                        ),
+                      ),
                       child: Slider(
                         value: value,
                         min: 0.25,
@@ -138,6 +154,7 @@ class _FontScalerState extends State<FontScaler> {
                     ),
                   ),
                   IconButton(
+                    style: const ButtonStyle(tapTargetSize: .shrinkWrap),
                     onPressed: () {
                       if (widget.onSubmit != null) {
                         widget.onSubmit?.call(value);
@@ -146,7 +163,6 @@ class _FontScalerState extends State<FontScaler> {
                           value,
                         );
                       }
-                      // Navigator.of(context).pop(value);
                     },
                     tooltip: l10n.apply,
                     icon: const Icon(Icons.task_alt_rounded),

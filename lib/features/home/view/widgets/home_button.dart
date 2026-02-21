@@ -93,6 +93,7 @@ class CompactTopicCard extends StatelessWidget {
     required this.icon,
     required this.accentColor,
     required this.onTap,
+    this.constraints,
     super.key,
   });
 
@@ -101,6 +102,7 @@ class CompactTopicCard extends StatelessWidget {
   final Icon icon;
   final Color accentColor;
   final VoidCallback? onTap;
+  final BoxConstraints? constraints;
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +114,6 @@ class CompactTopicCard extends StatelessWidget {
 
     final random = math.Random(title.hashCode);
 
-    // 2 or 3 circles
     final int circleCount = 2 + random.nextInt(2);
 
     final circleColor = isDisabled
@@ -120,7 +121,6 @@ class CompactTopicCard extends StatelessWidget {
         : Colors.white;
 
     final circles = <CustomCircle>[
-      // Circle 1: Top Right area
       CustomCircle(
         offset: FractionalOffset(
           0.6 + random.nextDouble() * 0.4,
@@ -131,7 +131,7 @@ class CompactTopicCard extends StatelessWidget {
         ),
         radius: 40 + random.nextDouble() * 50,
       ),
-      // Circle 2: Bottom Left area
+
       CustomCircle(
         offset: FractionalOffset(
           random.nextDouble() * 0.4,
@@ -145,7 +145,6 @@ class CompactTopicCard extends StatelessWidget {
     ];
 
     if (circleCount == 3) {
-      // Circle 3: Bottom Right area (smaller, more subtle)
       circles.add(
         CustomCircle(
           offset: FractionalOffset(
@@ -160,21 +159,15 @@ class CompactTopicCard extends StatelessWidget {
       );
     }
 
-    final child = DecoratedBox(
+    Widget child = DecoratedBox(
       decoration: BoxDecoration(
-        // color: colors.surfaceContainerLow,
         gradient: LinearGradient(
           colors: [accentColor.withAlpha(75), accentColor.withAlpha(100)],
-          // colors: [accentColor.withAlpha(15), accentColor.withAlpha(25)],
+
           begin: .topLeft,
           end: .bottomRight,
         ),
         borderRadius: borderRadius,
-        // border: Border.all(
-        //   color: isDisabled
-        //       ? colors.outlineVariant.withValues(alpha: 0.3)
-        //       : colors.outlineVariant.withValues(alpha: 0.5),
-        // ),
       ),
       child: ClipRRect(
         borderRadius: borderRadius,
@@ -191,7 +184,6 @@ class CompactTopicCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Icon bubble
                     IconTheme.merge(
                       data: IconThemeData(
                         color: isDark ? accentColor : null,
@@ -234,22 +226,28 @@ class CompactTopicCard extends StatelessWidget {
       ),
     );
 
-    return isDisabled
-        ? Stack(
-            alignment: .center,
-            fit: .passthrough,
-            children: [
-              Opacity(opacity: 0.125, child: child),
-              Center(
-                child: Icon(
-                  Icons.construction_rounded,
-                  size: 48,
-                  color: colors.onSurfaceVariant.withAlpha(150),
-                ),
-              ),
-            ],
-          )
-        : child;
+    if (isDisabled) {
+      child = Stack(
+        alignment: .center,
+        fit: .passthrough,
+        children: [
+          Opacity(opacity: 0.125, child: child),
+          Center(
+            child: Icon(
+              Icons.construction_rounded,
+              size: 48,
+              color: colors.onSurfaceVariant.withAlpha(150),
+            ),
+          ),
+        ],
+      );
+    }
+
+    if (constraints case final constraints?) {
+      child = ConstrainedBox(constraints: constraints, child: child);
+    }
+
+    return child;
   }
 }
 
@@ -289,14 +287,12 @@ class CirclesPainter extends CustomPainter {
       ..color = color.withValues(alpha: 0.1)
       ..style = PaintingStyle.fill;
 
-    // Circle 1: Top Right
     canvas.drawCircle(Offset(size.width - 30, 30), 60, paint1);
 
     final paint2 = Paint()
       ..color = color.withValues(alpha: 0.08)
       ..style = PaintingStyle.fill;
 
-    // Circle 2: Bottom Left
     canvas.drawCircle(Offset(20, size.height - 20), 40, paint2);
   }
 

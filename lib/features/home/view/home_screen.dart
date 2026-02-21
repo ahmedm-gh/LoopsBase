@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:loopsbase/core/extensions/extensions.dart";
 import "package:loopsbase/core/services/routes.dart";
+import "package:loopsbase/shared/app_widgets.dart";
 
 import "../../../shared/design_layouts.dart";
 import "widgets/home_button.dart";
@@ -14,130 +15,149 @@ class HomeScreen extends StatelessWidget {
     final colors = context.colorScheme;
     final textTheme = context.textTheme;
 
+    final compactTopicCardConstraints = BoxConstraints(minWidth: 350);
+
     return Material(
-      child: CustomPaint(
-        painter: CirclesPainter.custom(
-          circles: [
-            CustomCircle(
-              offset: const FractionalOffset(0.95, 0.05),
-              color: colors.primary.withValues(alpha: 0.0125),
-              radius: 140,
-            ),
-            CustomCircle(
-              offset: const FractionalOffset(0.1, 0.3),
-              color: colors.primary.withValues(alpha: 0.0075),
-              radius: 90,
-            ),
-            CustomCircle(
-              offset: const FractionalOffset(0.8, 0.8),
-              color: colors.primary.withValues(alpha: 0.0125),
-              radius: 160,
-            ),
-          ],
-        ),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            padding: DL.pagePadding,
-            child: Column(
-              spacing: DL.listSeparatorHeight,
-              crossAxisAlignment: .stretch,
-              children: [
-                // Greeting header
-                const _GreetingHeader(),
-
-                // Featured card: Design Patterns
-                FeaturedTopicCard(
-                  title: l10n.designPatterns,
-                  subtitle: l10n.designPatternsSubtitle,
-                  icon: const Icon(Icons.architecture_rounded),
-                  gradientColors: const [Color(0xFF6C63FF), Color(0xFF9F44D3)],
-                  onTap: () => Navigator.pushNamed(
-                    context,
-                    Routes.designPatternCategoriesScreen,
-                  ),
+      child: Stack(
+        fit: .expand,
+        children: [
+          const AnimatedBackground(),
+          CustomPaint(
+            painter: CirclesPainter.custom(
+              circles: [
+                CustomCircle(
+                  offset: const FractionalOffset(0.95, 0.05),
+                  color: colors.primary.withValues(alpha: 0.0125),
+                  radius: 140,
                 ),
-
-                // Section: Explore
-                Text(
-                  l10n.explore,
-                  style: textTheme.titleMedium?.copyWith(
-                    fontWeight: .w700,
-                    color: colors.onSurface,
-                    letterSpacing: 0.2,
-                  ),
+                CustomCircle(
+                  offset: const FractionalOffset(0.1, 0.3),
+                  color: colors.primary.withValues(alpha: 0.0075),
+                  radius: 90,
                 ),
-
-                // 2-column grid of compact cards
-                // Responsive grid of compact cards
-                _ResponsiveGrid(
-                  children: [
-                    CompactTopicCard(
-                      title: l10n.interviewQuestions,
-                      subtitle: l10n.interviewQuestionsSubtitle,
-                      icon: const Icon(Icons.question_mark_rounded),
-                      accentColor: const Color(0xFF2DC653),
-                      onTap: () =>
-                          Navigator.pushNamed(context, Routes.questionList),
-                    ),
-                    CompactTopicCard(
-                      title: l10n.programmingTerms,
-                      subtitle: l10n.programmingTermsSubtitle,
-                      icon: const Icon(Icons.format_quote_rounded),
-                      accentColor: const Color(0xFF00B4D8),
-                      onTap: () => Navigator.pushNamed(
-                        context,
-                        Routes.programmingTermsList,
-                      ),
-                    ),
-                  ],
-                ),
-
-                // Section: Extra Topics
-                Text.rich(
-                  TextSpan(
-                    text: l10n.extraTopics,
-                    children: [
-                      TextSpan(
-                        text: " (${l10n.comingSoon})",
-                        style: TextStyle(
-                          fontWeight: .w300,
-                          color: colors.onSurfaceVariant,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                  style: textTheme.titleMedium?.copyWith(
-                    fontWeight: .w700,
-                    color: colors.onSurface,
-                    letterSpacing: 0.2,
-                  ),
-                ),
-
-                // 2-column grid of coming-soon cards
-                // Responsive grid of coming-soon cards
-                _ResponsiveGrid(
-                  children: [
-                    CompactTopicCard(
-                      title: l10n.refactoring,
-                      subtitle: l10n.refactoringSubtitle,
-                      icon: const Icon(Icons.auto_fix_high_rounded),
-                      accentColor: const Color(0xFFF77F00),
-                      onTap: null,
-                    ),
-                    CompactTopicCard(
-                      title: l10n.usefulPubPackages,
-                      subtitle: l10n.usefulPubPackagesSubtitle,
-                      icon: const Icon(Icons.extension_rounded),
-                      accentColor: const Color(0xFFE63946),
-                      onTap: null,
-                    ),
-                  ],
+                CustomCircle(
+                  offset: const FractionalOffset(0.8, 0.8),
+                  color: colors.primary.withValues(alpha: 0.0125),
+                  radius: 160,
                 ),
               ],
             ),
+            child: SafeArea(
+              child: SingleChildScrollView(
+                padding: DL.pagePadding,
+                child: Column(
+                  spacing: DL.listSeparatorHeight,
+                  crossAxisAlignment: .stretch,
+                  children: [
+                    // Greeting header
+                    const _GreetingHeader(),
+
+                    // Featured card: Design Patterns
+                    FeaturedTopicCard(
+                      title: l10n.designPatterns,
+                      subtitle: l10n.designPatternsSubtitle,
+                      icon: const Icon(Icons.architecture_rounded),
+                      gradientColors: const [
+                        Color(0xFF6C63FF),
+                        Color(0xFF9F44D3),
+                      ],
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        Routes.designPatternCategoriesScreen,
+                      ),
+                    ),
+
+                    // Section: Explore
+                    Text(
+                      l10n.explore,
+                      style: textTheme.titleMedium?.copyWith(
+                        fontWeight: .w700,
+                        color: colors.onSurface,
+                        letterSpacing: 0.2,
+                      ),
+                    ),
+
+                    // 2-column grid of compact cards
+                    // Responsive grid of compact cards
+                    // ResponsiveGrid(
+                    ScrollableRow(
+                      spacing: DL.listSeparatorHeight,
+                      children: [
+                        CompactTopicCard(
+                          constraints: compactTopicCardConstraints,
+                          title: l10n.interviewQuestions,
+                          subtitle: l10n.interviewQuestionsSubtitle,
+                          icon: const Icon(Icons.question_mark_rounded),
+                          accentColor: const Color(0xFF2DC653),
+                          onTap: () =>
+                              Navigator.pushNamed(context, Routes.questionList),
+                        ),
+                        CompactTopicCard(
+                          constraints: compactTopicCardConstraints,
+                          title: l10n.programmingTerms,
+                          subtitle: l10n.programmingTermsSubtitle,
+                          icon: const Icon(Icons.format_quote_rounded),
+                          accentColor: const Color(0xFF00B4D8),
+                          onTap: () => Navigator.pushNamed(
+                            context,
+                            Routes.programmingTermsList,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // Section: Extra Topics
+                    Text.rich(
+                      TextSpan(
+                        text: l10n.extraTopics,
+                        children: [
+                          TextSpan(
+                            text: " (${l10n.comingSoon})",
+                            style: TextStyle(
+                              fontWeight: .w300,
+                              color: colors.onSurfaceVariant,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                      style: textTheme.titleMedium?.copyWith(
+                        fontWeight: .w700,
+                        color: colors.onSurface,
+                        letterSpacing: 0.2,
+                      ),
+                    ),
+
+                    // 2-column grid of coming-soon cards
+                    // Responsive grid of coming-soon cards
+                    // ResponsiveGrid(
+                    ScrollableRow(
+                      spacing: DL.listSeparatorHeight,
+                      children: [
+                        CompactTopicCard(
+                          constraints: compactTopicCardConstraints,
+                          title: l10n.refactoring,
+                          subtitle: l10n.refactoringSubtitle,
+                          icon: const Icon(Icons.auto_fix_high_rounded),
+                          accentColor: const Color(0xFFF77F00),
+                          onTap: null,
+                        ),
+                        CompactTopicCard(
+                          constraints: compactTopicCardConstraints,
+                          title: l10n.usefulPubPackages,
+                          subtitle: l10n.usefulPubPackagesSubtitle,
+                          icon: const Icon(Icons.extension_rounded),
+                          accentColor: const Color(0xFFE63946),
+                          onTap: null,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -185,8 +205,8 @@ class _GreetingHeader extends StatelessWidget {
   }
 }
 
-class _ResponsiveGrid extends StatelessWidget {
-  const _ResponsiveGrid({required this.children});
+class ResponsiveGrid extends StatelessWidget {
+  const ResponsiveGrid({required this.children, super.key});
 
   final List<Widget> children;
 

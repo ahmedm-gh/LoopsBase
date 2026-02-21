@@ -15,3 +15,7 @@ export 'widgets/tags.dart';
 export 'widgets/style_wrappers.dart';
 export 'widgets/id_text.dart';
 export 'widgets/font_scale.dart';
+export 'widgets/app_bottom_bar.dart';
+export 'widgets/system_overlay.dart';
+export 'widgets/animated_background.dart';
+export 'widgets/scrollable_row.dart';

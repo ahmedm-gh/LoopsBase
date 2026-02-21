@@ -131,7 +131,6 @@ class ContentViewer extends StatelessWidget {
       title: Text(content.title ?? l10n.comparison),
       icon: Icons.compare_arrows_rounded,
       color: colors.tertiary,
-      itemsSpacing: 5,
       items: [
         for (final entry in content.value.entries)
           DecoratedBox(

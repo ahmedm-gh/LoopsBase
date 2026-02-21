@@ -12,18 +12,13 @@ Built with a focus on developer experience, the app features a responsive design
 
 ## Key Features
 
-### 1. Design Patterns Catalogue
-Explore a comprehensive library of design patterns categorized by their purpose. Each pattern includes:
-- **Concept & Definition**: Clear explanation of the pattern.
-- **Real-world Analogy**: To make complex concepts relatable.
-- **Code Implementation**: "Bad vs. Good" implementation comparisons.
-- **Visual Diagrams**: (Coming soon) To illustrate structure and flow.
-
 | Category | Patterns |
 | :--- | :--- |
-| **Creational** | Singleton, Factory Method, Builder, Abstract Factory, Prototype |
-| **Structural** | Adapter, Bridge, Composite, Decorator, Facade, Proxy |
-| **Behavioral** | Observer, Strategy, Command, State, Chain of Responsibility, Iterator |
+| **Creational** | Singleton, Factory Method, Builder, Abstract Factory, Prototype, Object Pool, Lazy Initialization, Multiton, Factory Kit |
+| **Structural** | Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy, Wrapper, DTO, Data Mapper, Plugin |
+| **Behavioral** | Observer, Strategy, Command, State, Chain of Responsibility, Iterator, Mediator, Memento, Visitor, DI, Repository, Specification |
+| **Architectural** | MVC, MVP, MVVM, Clean Architecture, Hexagonal, Layered, Microservices, CQRS, Event Sourcing |
+| **State Mgmt** | BLoC, Cubit, Provider, StateNotifier, Redux, Unidirectional Data Flow, Feature-First |
 
 ### 2. Refactoring Suite
 Master the art of improving code without changing its external behavior.
@@ -32,17 +27,17 @@ Master the art of improving code without changing its external behavior.
 - **Organizing Data**: Self Encapsulate Field, Replace Data Value with Object.
 
 ### 3. Interview Preparation
-Prepare for your next technical interview with a curated list of OOP and common programming questions.
-- **Categorized by Difficulty**: Entry, Intermediate, and Advanced.
-- **Detailed Answers**: In-depth explanations for each question.
+Prepare for your next technical interview with 90+ curated tags covering OOP, SOLID, Flutter internals, and advanced system design.
+- **Comprehensive Coverage**: From basic Dart syntax to complex rendering optimizations.
+- **Detailed Answers**: In-depth explanations for each question with best practices.
 - **Bookmarking**: Save important questions to review later.
-- **Search & Filter**: Quickly find questions by topic or difficulty.
+- **Search & Filter**: Quickly find questions by tag, difficulty, or keyword.
 
 ### 4. Programming Terms
 A glossary of essential programming concepts and terminology.
-- **Searchable Database**: Quickly find definitions.
-- **Category Filtering**: Filter terms by OOP, Clean Code, Architecture, etc.
-- **Persistent Bookmarks**: Keep your most-used terms handy.
+- **Searchable Database**: Quickly find definitions for technical jargon.
+- **Category Filtering**: Filter terms by OOP, Clean Code, Architecture, and Performance.
+- **Persistent Bookmarks**: Keep your most-used terms handy at all times.
 
 ---
 
@@ -64,6 +59,7 @@ A glossary of essential programming concepts and terminology.
 - **State Management**: [flutter_bloc](https://pub.dev/packages/flutter_bloc) & [HydratedBloc](https://pub.dev/packages/hydrated_bloc)
 - **Dependency Injection**: [get_it](https://pub.dev/packages/get_it)
 - **Vector Graphics**: [flutter_svg](https://pub.dev/packages/flutter_svg)
+- **Navigation & OS**: [url_launcher](https://pub.dev/packages/url_launcher)
 - **Icons**: Material Icons & Custom SVGs
 - **Storage**: [path_provider](https://pub.dev/packages/path_provider)
 
@@ -75,19 +71,21 @@ A glossary of essential programming concepts and terminology.
 lib/
 ├── core/               # Shared business logic and infrastructure
 │   ├── app_controller/ # Global state (Theme, Locale, Font Scale) using HydratedBloc
-│   ├── services/       # Service locator (GetIt) and central routing (Navigator 1.0)
+│   ├── services/       # Service locator (GetIt) and central routing
 │   ├── extensions/      # Shared extensions (Context, String, Color, etc.)
 │   ├── enums/          # Domain-specific enums (Difficulty, Pattern levels, etc.)
-│   └── models/         # Core data models with Equatable for state comparison
+│   ├── models/         # Core data models with Equatable for state comparison
+│   └── interview_data/ # (Internal) Curated interview logic and code blocks
 ├── features/           # Modular feature implementations
-│   ├── design_patterns/      # Logic and UI for GoF, Modern, and Practical patterns
-│   ├── interview_questions/  # Interview prep with search, filter, and bookmarking
-│   ├── programming_terms/    # Educational glossary with search and categories
+│   ├── home/                # Adaptive dashboard and entry point
+│   ├── design_patterns/      # Logic and UI for 50+ patterns (GoF, Modern, Architectural)
+│   ├── interview_questions/  # Interview prep with search, filter, and tagging
+│   ├── terms/               # Educational glossary with search and categories
 │   ├── refactoring/          # UI for code transformation techniques (Coming Soon)
 │   ├── splash/               # Initial entry point
-│   └── useful_plugins/      # Curated list of Dart/Flutter packages (Coming Soon)
+│   └── useful_plugins/      # Curated list of Dart/Flutter packages
 ├── shared/             # Reusable UI components and design system layouts (DL)
-├── data/               # Static and SVG assets defined in code
+├── data/               # Static data, Svg assets, and pattern definitions
 ├── l10n/               # Multi-language localization (AR/EN)
 └── main.dart           # Bootstrap logic with HydratedStorage and GetIt
 ```

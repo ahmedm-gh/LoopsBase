@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 import '../extensions/brightness_extensions.dart';
@@ -38,6 +40,10 @@ class AppControllerCubit extends HydratedCubit<AppControllerState> {
             },
       ),
     );
+  }
+
+  void changeSeedColor(Color color) {
+    emit(state.copyWith(seedColor: color));
   }
 
   @override

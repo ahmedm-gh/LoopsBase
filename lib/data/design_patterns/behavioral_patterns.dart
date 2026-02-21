@@ -3901,9 +3901,72 @@ void main() {
     ),
     examples: LocV(
       en: [
-        // Example 1: Simple Observer Implementation
-        StrCodeBlock(r"""// Example 1: Basic Observer Pattern
-// Use case: Stock price monitoring
+        // Example 1: Simple Agent Notifications
+        StrCodeBlock(r"""// Example 1: Simple Observer — Weather Agent
+// Use case: People subscribe to weather updates
+
+// Person (Observer)
+class Person {
+  final String name;
+  final String emoji;
+
+  Person(this.name, this.emoji);
+
+  void update(String weather) {
+    print('   $emoji $name sees: $weather');
+  }
+}
+
+// Subject (Observable)
+class WeatherAgent {
+  final List<Person> _subscribers = [];
+
+  void subscribe(Person person) {
+    // Prevent duplicate subscriptions
+    if (!_subscribers.contains(person)) {
+      _subscribers.add(person);
+    }
+  }
+
+  void unsubscribe(Person person) {
+    _subscribers.remove(person);
+  }
+
+  void setWeather(String weather) {
+    print('\n📢 Weather now is: $weather');
+
+    for (final person in _subscribers) {
+      person.update(weather);
+    }
+  }
+}
+
+void main() {
+  final weather = WeatherAgent();
+
+  final ahmed = Person('Ahmed', '🧑🏻');
+  final sara = Person('Sara', '👩🏻‍⚕️');
+  final omar = Person('Omar', '👴🏻');
+  final lila = Person('Lila', '👩🏻‍🍳');
+  final noah = Person('Noah', '🧑🏻‍🎨');
+
+  weather.subscribe(ahmed);
+  weather.subscribe(sara);
+  weather.subscribe(omar);
+  weather.subscribe(lila);
+  weather.subscribe(noah);
+
+  weather.setWeather('Sunny ☀️');
+
+  weather.unsubscribe(omar);
+  weather.unsubscribe(lila);
+
+  weather.setWeather('Rainy 🌧️');
+}"""),
+
+        // Example 2: Stock Observer
+        StrCodeBlock(r"""// Example 2: Stock Price Observer
+// Use case: Stock price monitoring with different observer types
 
 // Observer interface
 abstract class Observer {
@@ -4038,8 +4101,8 @@ void main() {
   tesla.setPrice(220.00);
 }"""),
 
-        // Example 2: Using Dart's Built-in Streams
-        StrCodeBlock(r"""// Example 2: Observer Pattern with Dart Streams
+        // Example 3: Using Dart's Built-in Streams
+        StrCodeBlock(r"""// Example 3: Observer Pattern with Dart Streams
 // Use case: Real-time temperature monitoring
 
 import 'dart:async';

@@ -7,6 +7,7 @@ class AppControllerState extends Equatable {
     required this.locale,
     required this.brightness,
     required this.fontScale,
+    required this.seedColor,
   });
 
   factory AppControllerState.initial() {
@@ -14,6 +15,7 @@ class AppControllerState extends Equatable {
       locale: Locale('en'),
       brightness: Brightness.dark,
       fontScale: 1.0,
+      seedColor: Colors.blue,
     );
   }
 
@@ -22,22 +24,26 @@ class AppControllerState extends Equatable {
       locale: Locale(toValue(json["languageCode"], "en")),
       brightness: Brightness.values[toValue(json["brightness"], 0)],
       fontScale: toValue(json["fontScale"], 1.0),
+      seedColor: Color(toValue(json["seedColor"], Colors.blue.toARGB32())),
     );
   }
 
   final Locale locale;
   final Brightness brightness;
   final double fontScale;
+  final Color seedColor;
 
   AppControllerState copyWith({
     Locale? locale,
     Brightness? brightness,
     double? fontScale,
+    Color? seedColor,
   }) {
     return AppControllerState(
       locale: locale ?? this.locale,
       brightness: brightness ?? this.brightness,
       fontScale: fontScale ?? this.fontScale,
+      seedColor: seedColor ?? this.seedColor,
     );
   }
 
@@ -46,9 +52,10 @@ class AppControllerState extends Equatable {
       "languageCode": locale.languageCode,
       "brightness": brightness.index,
       "fontScale": fontScale,
+      "seedColor": seedColor.toARGB32(),
     };
   }
 
   @override
-  List<Object?> get props => [locale, brightness, fontScale];
+  List<Object?> get props => [locale, brightness, fontScale, seedColor];
 }

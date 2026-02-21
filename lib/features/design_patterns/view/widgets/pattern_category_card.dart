@@ -18,10 +18,6 @@ class PatternCategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = context.colorScheme;
-    final locale = context.l10n.localeName;
-    final l10n = context.l10n;
-    final isDark = context.isDark;
     final categoryColor = category.color;
 
     return Card(
@@ -40,99 +36,124 @@ class PatternCategoryCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           borderRadius: DL.inListCardBorderRadius,
-          child: Stack(
-            children: [
-              // Background icon
-              PositionedDirectional(
-                bottom: -10,
-                end: -10,
-                child: Icon(
-                  category.icon,
-                  size: 140,
-                  color: categoryColor.withValues(alpha: isDark ? 0.06 : 0.04),
-                ),
-              ),
-
-              // Content
-              Padding(
-                padding: const .all(20),
-                child: Column(
-                  crossAxisAlignment: .stretch,
-                  spacing: 10,
-                  children: [
-                    // Header with badges
-                    Row(
-                      crossAxisAlignment: .start,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: .start,
-                            children: [
-                              Text(
-                                category.title(locale),
-                                style: context.textTheme.titleLarge?.copyWith(
-                                  fontWeight: .w600,
-                                  color: categoryColor,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-
-                              Row(
-                                spacing: 10,
-                                children: [
-                                  // FilledIcon(
-                                  //   icon: const Icon(Icons.grid_view_rounded),
-                                  //   background: categoryColor.withAlpha(50),
-                                  // ),
-                                  if (category.isClassic) ...[
-                                    FilledIcon(
-                                      background: colors.tertiary.withAlpha(50),
-                                      child: const Icon(Icons.book),
-                                    ),
-                                  ],
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        // Category icon
-                        FilledIcon(
-                          padding: const .all(7.5),
-                          background: categoryColor.withAlpha(15),
-                          borderRadius: DL.inCardRadius,
-                          child: Icon(
-                            category.icon,
-                            size: 28,
-                            color: categoryColor,
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    // Description
-                    for (final content in category.description(locale))
-                      ContentViewer(content),
-
-                    if (showMoreDetailsWidgets) ...[
-                      const LiteDivider(),
-                      Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: Text(
-                          l10n.viewDetails,
-                          style: context.textTheme.labelMedium?.copyWith(
-                            fontWeight: .w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-            ],
+          child: PatternCategoryCardContent(
+            category: category,
+            categoryColor: categoryColor,
+            showMoreDetailsWidgets: showMoreDetailsWidgets,
           ),
         ),
       ),
+    );
+  }
+}
+
+class PatternCategoryCardContent extends StatelessWidget {
+  const PatternCategoryCardContent({
+    required this.category,
+    required this.categoryColor,
+    required this.showMoreDetailsWidgets,
+    this.padding = const .all(20),
+    super.key,
+  });
+
+  final DesignPatternsCategory category;
+  final Color categoryColor;
+  final bool showMoreDetailsWidgets;
+  final EdgeInsets padding;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.colorScheme;
+    final locale = context.l10n.localeName;
+    final l10n = context.l10n;
+    final isDark = context.isDark;
+
+    return Stack(
+      children: [
+        // Background icon
+        PositionedDirectional(
+          bottom: -10,
+          end: -10,
+          child: Icon(
+            category.icon,
+            size: 140,
+            color: categoryColor.withValues(alpha: isDark ? 0.06 : 0.04),
+          ),
+        ),
+
+        // Content
+        Padding(
+          padding: padding,
+          child: Column(
+            crossAxisAlignment: .stretch,
+            spacing: 10,
+            children: [
+              // Header with badges
+              Row(
+                crossAxisAlignment: .start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        Text(
+                          category.title(locale),
+                          style: context.textTheme.titleLarge?.copyWith(
+                            fontWeight: .w600,
+                            color: categoryColor,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+
+                        Row(
+                          spacing: 10,
+                          children: [
+                            // FilledIcon(
+                            //   icon: const Icon(Icons.grid_view_rounded),
+                            //   background: categoryColor.withAlpha(50),
+                            // ),
+                            if (category.isClassic) ...[
+                              FilledIcon(
+                                background: colors.tertiary.withAlpha(50),
+                                child: const Icon(Icons.book),
+                              ),
+                            ],
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Category icon
+                  FilledIcon(
+                    padding: const .all(7.5),
+                    background: categoryColor.withAlpha(15),
+                    borderRadius: DL.inCardRadius,
+                    child: Icon(category.icon, size: 28, color: categoryColor),
+                  ),
+                ],
+              ),
+
+              // Description
+              for (final content in category.description(locale))
+                ContentViewer(content),
+
+              if (showMoreDetailsWidgets) ...[
+                const LiteDivider(),
+                Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: Text(
+                    l10n.viewDetails,
+                    style: context.textTheme.labelMedium?.copyWith(
+                      fontWeight: .w500,
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

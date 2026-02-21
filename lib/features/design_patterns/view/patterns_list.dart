@@ -51,12 +51,11 @@ class PatternsListScreen extends StatelessWidget {
           spacing: DL.listSeparatorHeight,
           children: [
             if (category != null) ...[
-              PatternCategoryCardWrapper(
-                child: PatternCategoryCard(
-                  category: category,
-                  showMoreDetailsWidgets: false,
-                  onTap: null,
-                ),
+              PatternCategoryCardContent(
+                category: category,
+                showMoreDetailsWidgets: false,
+                categoryColor: categoryColor,
+                padding: .zero,
               ),
               SingleChildScrollView(
                 scrollDirection: .horizontal,
