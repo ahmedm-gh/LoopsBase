@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -212,7 +213,10 @@ class _SpectrumSliderState extends State<SpectrumSlider> {
             resetDragState();
             widget.onChanged?.call(widget.hue);
           },
-          onTapDown: (d) => _updateFromLocal(d.localPosition.dx, trackWidth),
+          onTapDown: (d) {
+            _updateFromLocal(d.localPosition.dx, trackWidth);
+            widget.onChanged?.call(widget.hue);
+          },
           child: SizedBox(
             height: trackH,
             width: trackWidth,
